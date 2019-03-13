@@ -1,9 +1,9 @@
 Config = {
-	Locale = 'fr',
+	Locale = 'en',
 	DrawDistance = 100,
 	Price = 1500,
 	DamageMultiplier = 5,
-	PropertyGarages = false, -- Enabling allows use of Property Garages if you own a property at location.
+	PropertyGarages = true, -- Enabling allows use of Property Garages if you own a property at location.
 	BlipInfos = {
 		Sprite = 290,
 		Color = 38 
