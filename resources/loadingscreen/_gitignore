@@ -1,7 +1,0 @@
-#Synn FiveM GitIgnore v1.0.0
-
-#Ignore batch files.
-*.bat
-
-#Ignore release folder
-[Rr]elease/
