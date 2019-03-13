@@ -45,11 +45,11 @@ function UpdateMusicInfo()
 
     if(title.length != 0)
     {
-        np.innerHTML = "موزیک در حال پخش: " + title;
+        np.innerHTML = "Now playing: " + title;
     }
     else
     {
-        np.innerHTML = "موزیکی در حال پخش نیست";
+        np.innerHTML = "Now playing: n.a.";
     }
 }
 

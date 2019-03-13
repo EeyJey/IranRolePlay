@@ -93,7 +93,7 @@ function skip()
 
 function play() 
 {
-    title = "";
+    title = "n.a.";
 
     var idx = musicIndex % config.music.length;
     var videoId = config.music[idx];
