@@ -257,20 +257,14 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		--if Config.EnableControls then
-			--if IsControlJustReleased(0, Keys['K']) and GetLastInputMethod(2) and not isDead then
-			--	OpenAccessoryMenu()
-			--end
-		--end
+		if Config.EnableControls then
+			if IsControlJustReleased(0, Keys['K']) and GetLastInputMethod(2) and not isDead then
+				OpenAccessoryMenu()
+			end
+		end
 
 	end
 end)
-
---if Config.EnableControls then
-	--if IsControlJustReleased(0, Keys['K']) and GetLastInputMethod(2) and not isDead then
-	--	OpenAccessoryMenu()
-	--end
---end
 
 ---------------------------------------------------------------------------------------------------------
 --NB : gestion des menu

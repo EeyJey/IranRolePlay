@@ -3,7 +3,7 @@ Config                            = {}
 Config.DrawDistance               = 100.0
 Config.MarkerColor                = { r = 102, g = 0, b = 102 }
 Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
-Config.ReviveReward               = 800  -- revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 1000  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = true -- disable if you're using fivem-ipl or other IPL loaders
 Config.Locale                     = 'en'
@@ -12,7 +12,7 @@ local second = 1000
 local minute = 60 * second
 
 -- How much time before auto respawn at hospital
-Config.RespawnDelayAfterRPDeath   = 2 * minute
+Config.RespawnDelayAfterRPDeath   = 5 * minute
 
 Config.EnablePlayerManagement       = true
 Config.EnableSocietyOwnedVehicles   = false
@@ -25,9 +25,9 @@ Config.RemoveItemsAfterRPDeath      = false
 Config.ShowDeathTimer               = true
 
 -- Will allow respawn after half of RespawnDelayAfterRPDeath has elapsed.
-Config.EarlyRespawn                 = false
+Config.EarlyRespawn                 = true
 -- The player will be fined for respawning early (on bank account)
-Config.EarlyRespawnFine                  = false
+Config.EarlyRespawnFine                  = true
 Config.EarlyRespawnFineAmount            = 500
 
 Config.Blip = {

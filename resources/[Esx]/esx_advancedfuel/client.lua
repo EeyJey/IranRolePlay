@@ -407,7 +407,7 @@ function renderBoxes()
 			if(showText) then
 				local percent = (essence/0.142)*100
 
-				DrawAdvancedText(text_x, text_y, 0.003, 0.0020, 0.3,round(percent,1).."%", 255, 255, 255, 255, 0, 1)
+				-- DrawAdvancedText(text_x, text_y, 0.003, 0.0020, 0.3,round(percent,1).."%", 255, 255, 255, 255, 0, 1)
 			end
 		end
 	end

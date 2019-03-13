@@ -1,5 +1,5 @@
 Config					= {}
-Config.Locale			= 'fr'
+Config.Locale			= 'en'
 Config.Slice			= 10000
 Config.Percentage		= 75
 Config.MarkerSize   	= {x = 3.0, y = 3.0, z = 3.0}

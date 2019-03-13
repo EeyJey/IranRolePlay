@@ -8,9 +8,9 @@ Config.EnableArmoryManagement     = false
 Config.EnableESXIdentity          = true -- only turn this on if you are using esx_identity
 Config.EnableNonFreemodePeds      = false -- turn this on if you want custom peds
 Config.EnableSocietyOwnedVehicles = false
-Config.EnableLicenses             = false
+Config.EnableLicenses             = true
 Config.MaxInService               = -1
-Config.Locale                     = 'fr'
+Config.Locale                     = 'en'
 
 Config.ArmyStations = {
 

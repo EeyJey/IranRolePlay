@@ -1,5 +1,5 @@
 Config                          = {}
-Config.Locale = 'fr'
+Config.Locale = 'en'
 Config.DrawDistance = 100
 Config.Zones = {
   PetShop = {

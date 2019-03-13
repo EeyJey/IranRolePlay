@@ -9,6 +9,7 @@ files {
 client_scripts {
 	'@es_extended/locale.lua',
 	'locale/fr.lua',
+	'locale/en.lua',
 	'config.lua',
 	'client/main.lua'
 }
@@ -17,6 +18,7 @@ server_scripts {
 	'@es_extended/locale.lua',
 	'@mysql-async/lib/MySQL.lua',
 	'locale/fr.lua',
+	'locale/en.lua',
 	'config.lua',
 	'server/main.lua'
 }
