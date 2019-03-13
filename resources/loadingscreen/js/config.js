@@ -66,19 +66,19 @@ var config =
     */
     loadingMessages:
     [
-        "Bienvenue sur TaLife Roleplay",
-        "Connexion en cours...",
-        "Connexion en cours...",
-        "Connexion en cours...",
-        "Chargement de vos items et argent...",
-        "Chargement de vos items et argent...",
-        "Chargement de vos items et argent...",
-        "Chargement de votre personnage...",
-        "Chargement de votre personnage...",
-        "Chargement de votre personnage...",
-        "Telechargement de la MAP...",
-        "Telechargement de la MAP...",
-        "Telechargement de la MAP..."
+        "Welcome to RP server...",
+        "Connecting...",
+        "Connecting...",
+        "Connecting...",
+        "Loading banks locations...",
+        "Loading weeds locations...",
+        "Loading meths locations...",
+        "Loading cars locations...",
+        "Loading legal jobs...",
+        "Loading illegal jobs...",
+        "Loading lester...",
+        "What do you waiting for?...",
+        "Starting engines..."
     ],
  
     /*
