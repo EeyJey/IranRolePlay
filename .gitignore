@@ -6,4 +6,5 @@
 !resources
 !resources/*
 !server.cfg
+!tables.sql
 #####################################
