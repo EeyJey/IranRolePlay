@@ -7,7 +7,7 @@ weaponblacklist = {
 }
 
 -- Don't allow any weapons at all (overrides the blacklist)
-disableallweapons = false
+disableallweapons = true
 
 -- CODE --
 

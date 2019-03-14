@@ -47,19 +47,19 @@ Citizen.CreateThread(function()
 			if currentdistancevoice == 0 then
 				NetworkSetTalkerProximity(defaultdistance) -- 5 meters range
 				TriggerEvent("ZAUB1_CORE:Notif",{
-            		text = "Vous parlez <b style='color:LightBlue'>Normalement</b>",
+            		text = "Dar hale sohbat dar <b style='color:LightBlue'>Normal</b>",
             		timeout = (5000)
        		 	})
 			elseif currentdistancevoice == 1 then
 				NetworkSetTalkerProximity(highdistance) -- 12 meters range
 				TriggerEvent("ZAUB1_CORE:Notif",{
-            		text = "Vous <b style='color:Crimson'>Criez</b>",
+            		text = "dar hale <b style='color:Crimson'>dad zadan</b>",
             		timeout = (5000)
        		 	})
 			elseif currentdistancevoice == 2 then
 				NetworkSetTalkerProximity(lowdistance) -- 1 meters range
 				TriggerEvent("ZAUB1_CORE:Notif",{
-            		text = "Vous <b style='color:LightGreen'>Chuchottez</b>",
+            		text = "dar hale <b style='color:LightGreen'>harf zadan</b>",
             		timeout = (5000)
        		 	})
 			end
@@ -72,19 +72,19 @@ Citizen.CreateThread(function()
 	Citizen.Wait(0)
 		if NetworkIsPlayerTalking(PlayerId()) then
 			if currentdistancevoice == 0 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Voix : Normale", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Seda : Mamooli", 255, 255, 255, 255)
 			elseif currentdistancevoice == 1 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Voix : Forte", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Seda : Boland", 255, 255, 255, 255)
 			elseif currentdistancevoice == 2 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Voix : Faible", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~b~ Seda : Aroom", 255, 255, 255, 255)
 			end
 		else
 			if currentdistancevoice == 0 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Voix : Normale", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Seda : Mamooli", 255, 255, 255, 255)
 			elseif currentdistancevoice == 1 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Voix : Forte", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Seda : Boland", 255, 255, 255, 255)
 			elseif currentdistancevoice == 2 then
-				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Voix : Faible", 255, 255, 255, 255)
+				drawTxt(0.52, 0.506, 1.0,1.0,0.4, "~w~ Seda : Aroom", 255, 255, 255, 255)
 			end
 		end
 	end

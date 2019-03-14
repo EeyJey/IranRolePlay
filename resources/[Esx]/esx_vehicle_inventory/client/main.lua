@@ -63,9 +63,9 @@ end
 function VehicleMaxSpeed(vehicle,weight,maxweight)
   local percent = (weight/maxweight)*100
   local hashk= GetEntityModel(vehicle)
-  print('poid '..weight)
- print('max '..maxweight)
- print('perc'..percent)
+  print('vazn '..weight)
+ print('hadeaksar '..maxweight)
+ print('darsad'..percent)
   if percent > 80  then
     print('slow')
     SetEntityMaxSpeed(vehFront,GetVehicleModelMaxSpeed(hashk)/1.4)
@@ -84,7 +84,7 @@ Citizen.CreateThread(function()
 
     Wait(0)
 
-    if IsControlPressed(0, Keys["L"]) and (GetGameTimer() - GUI.Time) > 150 then
+    if IsControlPressed(0, Keys["LEFTALT"]) and (GetGameTimer() - GUI.Time) > 150 then
         local vehFront = VehicleInFront()
 	    local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1),true))
 	    local closecar = GetClosestVehicle(x, y, z, 4.0, 0, 71)
@@ -104,11 +104,11 @@ Citizen.CreateThread(function()
 
 	              TriggerServerEvent("esx_truck_inventory:getInventory", GetVehicleNumberPlateText(vehFront))
 	            else
-	          	   ESX.ShowNotification('Ce coffre est ~r~fermé')
+	          	   ESX.ShowNotification('Ghofl ast')
               end
             end
         else
-        	ESX.ShowNotification('Pas de ~r~véhicule~w~ à proximité')
+        	ESX.ShowNotification('Mashini nazdik nist')
           end
       lastOpen = true
       GUI.Time  = GetGameTimer()
@@ -153,7 +153,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 	ESX.UI.Menu.Open(
 	  'default', GetCurrentResourceName(), 'inventory_deposit',
 	  {
-	    title    = 'Contenu du coffre',
+	    title    = 'Mohtava ye dashboard',
 	    align    = 'bottom-right',
 	    elements = elements,
 	  },
@@ -175,14 +175,14 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 			ESX.UI.Menu.Open(
 			  'default', GetCurrentResourceName(), 'inventory_player',
 			  {
-			    title    = 'Contenu de l\'inventaire',
+			    title    = 'vasayele mojood tooye kif',
 			    align    = 'bottom-right',
 			    elements = elem,
 			  },function(data3, menu3)
 				ESX.UI.Menu.Open(
 				  'dialog', GetCurrentResourceName(), 'inventory_item_count_give',
 				  {
-				    title = 'quantité'
+				    title = 'meghdar'
 				  },
 				  function(data4, menu4)
             local quantity = tonumber(data4.value)
@@ -250,10 +250,10 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
   				      TriggerServerEvent('esx_truck_inventory:addInventoryItem', GetVehicleClass(closecar), GetDisplayNameFromVehicleModel(GetEntityModel(closecar)), GetVehicleNumberPlateText(vehFront), data3.current.value, quantity, data3.current.name,ownedV)
                 ESX.ShowNotification('Poid du coffre : ~g~'.. Kgweight .. ' Kg / '..MaxVh..' Kg')
               else
-                ESX.ShowNotification('Vous avez atteint la limite des ~r~ '..MaxVh..' Kg')
+                ESX.ShowNotification('Be hade aksar vazn residid ~r~ '..MaxVh..' Kg')
               end
 				    else
-			      		ESX.ShowNotification('~r~ Quantité invalide')
+			      		ESX.ShowNotification('~r~ meghdar na motabar')
 				    end
 
 				    ESX.UI.Menu.CloseAll()
@@ -270,7 +270,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 			ESX.UI.Menu.Open(
 			  'dialog', GetCurrentResourceName(), 'inventory_item_count_give',
 			  {
-			    title = 'quantité'
+			    title = 'meghdar'
 			  },
 			  function(data2, menu2)
 
@@ -298,17 +298,17 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
           --fin test
 
 
-			    if quantity > 0 and quantity <= tonumber(data.current.count) and vehFront > 0 then
+		if quantity > 0 and quantity <= tonumber(data.current.count) and vehFront > 0 then
             if not max then
               --  VehicleMaxSpeed(vehFront,poid,Config.VehicleLimit[GetVehicleClass(vehFront)])
                TriggerServerEvent('esx_truck_inventory:removeInventoryItem', GetVehicleNumberPlateText(vehFront), data.current.value, quantity)
 
             else
-              ESX.ShowNotification('~r~ Tu en porte trops')
+              ESX.ShowNotification('~r~ Emkan pazir nist')
             end
-			    else
-			      ESX.ShowNotification('~r~ Quantité invalide')
-			    end
+		else
+		  ESX.ShowNotification('~r~ meghdar na motabar')
+		end
 
 			    ESX.UI.Menu.CloseAll()
 

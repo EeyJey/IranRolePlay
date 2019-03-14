@@ -12,8 +12,8 @@ body {
 	/*top: 17vh;*/
 	bottom: -100%;
 	left: 70%; /*25*/
-	width: 80px;
-	height: 80px;
+	width: 10px;
+	height: 10px;
 	display: none;
 	flex-direction: column;
 }

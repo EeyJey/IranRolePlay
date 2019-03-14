@@ -1,6 +1,6 @@
 Config              = {}
 Config.DrawDistance = 100.0
-Config.Locale = 'fr'
+Config.Locale = 'en'
 Config.IsMecanoJobOnly = true
 
 Config.Zones = {

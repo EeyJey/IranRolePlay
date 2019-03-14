@@ -111,16 +111,16 @@ function openmenuvehicle()
 						  TriggerServerEvent("esx_truck_inventory:getInventory", GetVehicleNumberPlateText(vehFront))
 						  end
 						else
-						   ESX.ShowNotification('Ce coffre est ~r~fermé')
+						   ESX.ShowNotification('Ghofl ast')
 					  end
 					end
 				else
-					ESX.ShowNotification('Pas de ~r~véhicule~w~ à proximité')
+					ESX.ShowNotification('Nazdik e mashin nistid')
 				end
 				lastOpen = true
 				GUI.Time  = GetGameTimer()
 			else
-				TriggerEvent('esx:showNotification', "Quelqu'un regarde déja le coffre.")
+				TriggerEvent('esx:showNotification', "tavasote kasi ghofl shode")
 			end
 		end, globalplate)
 	end
@@ -132,7 +132,7 @@ Citizen.CreateThread(function()
   while true do
 
     Wait(0)
-    if IsControlPressed(0, Keys["L"]) and (GetGameTimer() - GUI.Time) > 1000 then
+    if IsControlPressed(0, Keys["LEFTALT"]) and (GetGameTimer() - GUI.Time) > 1000 then
 		if count == 0 then
 			openmenuvehicle()
 			count = count +1
@@ -184,7 +184,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
   TriggerServerEvent("esx_truck_inventory:getOwnedVehicule")
 
 	table.insert(elements, {
-      label     = 'Déposer',
+      label     = 'gharar dadan',
       count     = 0,
       value     = 'deposit',
     })
@@ -221,7 +221,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 	ESX.UI.Menu.Open(
 	  'default', GetCurrentResourceName(), 'inventory_deposit',
 	  {
-	    title    = 'Contenu du coffre',
+	    title    = 'aghlam e mojood',
 	    align    = 'bottom-right',
 	    elements = elements,
 	  },
@@ -278,14 +278,14 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 			ESX.UI.Menu.Open(
 			  'default', GetCurrentResourceName(), 'inventory_player',
 			  {
-			    title    = 'Contenu de l\'inventaire',
+			    title    = 'Aghlam e mojood',
 			    align    = 'bottom-right',
 			    elements = elem,
 			  },function(data3, menu3)
 				ESX.UI.Menu.Open(
 				  'dialog', GetCurrentResourceName(), 'inventory_item_count_give',
 				  {
-				    title = 'quantité'
+				    title = 'meghdar'
 				  },
 				  function(data4, menu4)
             local quantity = tonumber(data4.value)
@@ -326,14 +326,14 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
               --  VehicleMaxSpeed(closecar,totalweight,Config.VehicleLimit[GetVehicleClass(closecar)])
 
   				TriggerServerEvent('esx_truck_inventory:addInventoryItem', GetVehicleClass(closecar), GetDisplayNameFromVehicleModel(GetEntityModel(closecar)), GetVehicleNumberPlateText(vehFront), data3.current.value, quantity, data3.current.name, data3.current.type, ownedV)
-                ESX.ShowNotification('Poid du coffre : ~g~'.. Kgweight .. ' Kg / '..MaxVh..' Kg')
+                ESX.ShowNotification('vazn : ~g~'.. Kgweight .. ' Kg / '..MaxVh..' Kg')
 				Citizen.Wait(500)
 				TriggerServerEvent("esx_truck_inventory:getInventory", GetVehicleNumberPlateText(vehFront))
               else
-                ESX.ShowNotification('Vous avez atteint la limite des ~r~ '..MaxVh..' Kg')
+                ESX.ShowNotification('shoma be hade aksar vazn residid ~r~ '..MaxVh..' Kg')
               end
 			else
-				ESX.ShowNotification('~r~ Quantité invalide')
+				ESX.ShowNotification('~r~ meghdar na motabar')
 			end
 
 				    ESX.UI.Menu.CloseAll()
@@ -357,7 +357,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 			ESX.UI.Menu.Open(
 			  'dialog', GetCurrentResourceName(), 'inventory_item_count_give',
 			  {
-			    title = 'quantité'
+			    title = 'meghdar'
 			  },
 			  function(data2, menu2)
 
@@ -398,7 +398,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
               ESX.ShowNotification('~r~ Tu en porte trops')
             end
 			    else
-			      ESX.ShowNotification('~r~ Quantité invalide')
+			      ESX.ShowNotification('~r~ meghdar na motabar')
 			    end
 
 			    ESX.UI.Menu.CloseAll()
