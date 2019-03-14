@@ -2,12 +2,10 @@
 
 -- Blacklisted weapons
 weaponblacklist = {
-	"WEAPON_PISTOL",
-	"WEAPON_PUMPSHOTGUN"
 }
 
 -- Don't allow any weapons at all (overrides the blacklist)
-disableallweapons = true
+disableallweapons = false
 
 -- CODE --
 
