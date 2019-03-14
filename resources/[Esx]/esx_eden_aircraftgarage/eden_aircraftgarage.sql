@@ -1,1 +1,0 @@
-ALTER TABLE `owned_aircrafts` ADD `state` BOOLEAN NOT NULL DEFAULT FALSE COMMENT 'State of the aircraft' AFTER `owner`;
