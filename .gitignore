@@ -2,6 +2,7 @@
 *
 ##########Except these files#########
 !.gitignore
-!./resources/
-!./server.conf/
+!resources/
+!resources/*
+!server.cfg
 #####################################
