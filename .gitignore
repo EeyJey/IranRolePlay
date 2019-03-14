@@ -1,8 +1,8 @@
 ##############Ignore All#############
-*
+/*
 ##########Except these files#########
 !.gitignore
-!resources/
+!resources
 !resources/*
 !server.cfg
 #####################################

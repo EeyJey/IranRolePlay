@@ -1,0 +1,23 @@
+#status_list {	
+    position: absolute;	
+	direction: flex;
+	flex-direction: row;
+	transform: rotate(-90deg);
+	left   : 11.5%;
+	bottom : 9.8%;
+	width  : 10%;
+	opacity: 0.3;
+	background-color: black;
+}
+
+.status {
+	margin: 0em;
+}
+
+.status_inner {
+	background-color: black;
+}
+
+.status_val {
+	height : 0.5em;
+}
