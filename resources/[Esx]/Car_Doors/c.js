@@ -1,13 +1,13 @@
 const names = [
-    "avant droite",
-    "arrière gauche",
-    "arrière droite",
+    "Jolo rast",
+    "Aghab chap",
+    "Aghab rast",
 ];
 
 const names2 = [
-    "avant droit",
-    "arrière gauche",
-    "arrière droite",
+    "Jolo rast",
+    "Aghab chap",
+    "Aghab rast",
 ];
 
 HelpText = function(msg)
@@ -55,11 +55,11 @@ setTick(() => {
             if (Vdist2(pco[0], pco[1], pco[2], coord[0], coord[1], coord[2]) < 0.75 && !DoesEntityExist(GetPedInVehicleSeat(veh, i - 1)) && GetVehicleDoorLockStatus(veh) !== 2)
             {
                 if (names[i - 1] && !IsThisModelABike(GetEntityModel(veh)) && !IsThisModelABoat(GetEntityModel(veh)))
-                    HelpText("Appuyez sur ~INPUT_CONTEXT~ pour rentrer par la porte " + names[i - 1]);
+                    HelpText("Baraye vorood ~INPUT_CONTEXT~ ra bezanid~n~dare ~b~" + names[i - 1]);
                 else if (names2[i - 1] && IsThisModelABike(GetEntityModel(veh)) && IsThisModelABoat(GetEntityModel(veh)))
-                    HelpText("Appuyez sur ~INPUT_CONTEXT~ pour rentrer sur le siège " + names2[i - 1]);
+                    HelpText("Baraye neshastan ~INPUT_CONTEXT~ ra bezanid~n~dare ~b~" + names2[i - 1]);
                 else
-                    HelpText("Appuyez sur ~INPUT_CONTEXT~ pour rentrer par cette porte");
+                    HelpText("Baraye vorood be in dar ~INPUT_CONTEXT~ ra bezanid");
 
                 if (IsControlJustPressed(1, 38))
                 {
