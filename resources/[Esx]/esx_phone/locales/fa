@@ -1,0 +1,13 @@
+Locales['en'] = {
+	['new_message'] = '~b~Shoma Yek SMS Daryaft Kardid~s~ %s',
+	['press_take_call'] = '%s - Press ~INPUT_CONTEXT~ to take the call',
+	['taken_call'] = '~y~%s~s~ has taken the call',
+	['gps_position'] = 'Maghsad Be Gps Shoma Ezafe Shod',
+	['message_sent'] = 'SMS Ersal shod',
+	['cannot_add_self'] = 'Shoma Nemitavanid Khodetan Save konid!',
+	['number_in_contacts'] = 'In Shomare Az Ghabl Vujud Darad',
+	['contact_added'] = 'Mokhatab Ezafe Shod!',
+	['contact_removed'] = 'Mokhatab Pak Shod Az List!',
+	['number_not_assigned'] = 'Shomare Morede Nazar Vujud Nadard!',
+	['invalid_number'] = 'In\'s Shomare Motabar Nist!',
+}
