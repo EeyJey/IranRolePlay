@@ -1,0 +1,21 @@
+Locales ['fa'] = {
+
+	['valid_purchase'] = 'Etebar Kharid darid ?',
+	['yes'] = 'yes',
+	['no'] = 'no',
+	['helmet'] = 'Kolah imeni / kolah',
+	['glasses'] = 'Eynak',
+	['mask'] = 'mask',
+	['ears'] = 'Lavazem Janebi mobayl',
+	['shop'] = 'Az Forushgah',
+	['set_unset'] = 'Pushidan / Dar Avardan',
+	['not_enough_money'] = 'Shoma Pool Be Andaze Kafi Nadarid',
+	['press_access'] = 'press ~INPUT_CONTEXT~ to access the menu',
+	['accessories_blip'] = 'Lavazem Janebi',
+	['no_ears'] = 'Shoma Lavazem janebi Gushi Nadarid',
+	['no_glasses'] = 'Shoma Eynak Nadarid',
+	['no_helmet'] = 'Shoma Kolah imeni Nadarid',
+	['no_mask'] = 'Shoma Mask Nadarid',
+	['you_paid'] = 'To Pardakhti ',
+
+}
