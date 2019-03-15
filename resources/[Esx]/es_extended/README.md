@@ -1,10 +1,11 @@
 # es_extended
-es_extended is a roleplay framework for FiveM. It is developed on top of [EssentialMode](https://essentialmode.com/) (aka ES), thus commonly named ESX - the **Es**sentialMode **E**xtended framework for FiveM.
+es_extended is a roleplay framework for FiveM. It is developed on top of [EssentialMode](https://essentialmode.com/) (aka ES), thus commonly named ESX - the **Es**sentialMode E**x**tended framework for FiveM.
 
 ### Links & Read more
-- [Official Discord community](https://discord.me/fivem_esx)
-- [ESX Documentation](https://esx-org.github.io/) (incomplete)
+- [ESX Documentation](https://esx-org.github.io/)
 - [ES Documentation](https://docs.essentialmode.com/)
+- [ESX Discord Community](https://discord.gg/MsWzPqE)
+- [FiveM Forum Thread](https://forum.fivem.net/t/release-esx-base/39881)
 - [FiveM Native Reference](https://runtime.fivem.net/doc/reference.html)
 
 ### Screenshot preview (todo)
@@ -12,7 +13,7 @@ es_extended is a roleplay framework for FiveM. It is developed on top of [Essent
 ![screenshot](http://i.imgur.com/aPFdJl3.jpg)
 
 ### Features
-- Accounts (bank / black money) you can also add others accounts
+- Accounts (bank / black money). You can add further accounts
 - Advanced inventory system (press `F2` ingame)
 - Job system
 - Loadouts and position synced in database
@@ -22,11 +23,11 @@ es_extended is a roleplay framework for FiveM. It is developed on top of [Essent
 
 ### Requirements
 This order also applies in the startup order.
-- Base events
-- [mysql-async](https://github.com/brouznouf/fivem-mysql-async/releases/latest)
-- [EssentialMode](https://essentialmode.com/) (es_admin2 included, a basic admin tool)
-- [esplugin_mysql](https://forum.fivem.net/t/release-essentialmode-base/3665/1181)
-- [async](https://github.com/ESX-Org/async/releases/latest)
+
+- [mysql-async](https://github.com/brouznouf/fivem-mysql-async)
+- [essentialmode](https://github.com/kanersps/essentialmode)
+- [esplugin_mysql](https://github.com/kanersps/esplugin_mysql)
+- [async](https://github.com/ESX-Org/async)
 
 ### Download & Installation
 
@@ -63,12 +64,9 @@ git clone https://github.com/ESX-Org/esx_menu_list [esx]/[ui]/esx_menu_list
 - Configure your `server.cfg` to look like this
 
 ```
-start baseevents
-
 start mysql-async
 start essentialmode
 start esplugin_mysql
-start es_admin2
 
 start es_extended
 

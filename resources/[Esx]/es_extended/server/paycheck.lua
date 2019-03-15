@@ -6,7 +6,7 @@ ESX.StartPayCheck = function()
 		for i=1, #xPlayers, 1 do
 			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 			local job     = xPlayer.job.grade_name
-			local salary  = xPlayer.job.grade_salary		
+			local salary  = xPlayer.job.grade_salary
 
 			if salary > 0 then
 				if job == 'unemployed' then -- unemployed
@@ -33,7 +33,7 @@ ESX.StartPayCheck = function()
 				else -- generic job
 					xPlayer.addAccountMoney('bank', salary)
 					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
-				end		
+				end
 			end
 
 		end

@@ -19,24 +19,23 @@ end, {help = "Teleport to coordinates", params = {{name = "x", help = "X coords"
 TriggerEvent('es:addGroupCommand', 'setjob', 'jobmaster', function(source, args, user)
 	if tonumber(args[1]) and args[2] and tonumber(args[3]) then
 		local xPlayer = ESX.GetPlayerFromId(args[1])
-		if xPlayer ~= nil then
-			xPlayer.setJob(args[2], tonumber(args[3]))
+
+		if xPlayer then
+			if ESX.DoesJobExist(args[2], args[3]) then
+				xPlayer.setJob(args[2], args[3])
+			else
+				TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'That job does not exist.' } })
+			end
+
 		else
-			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Player not online.")
+			TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
 		end
 	else
-		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Invalid usage.")
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid usage.' } })
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('setjob'), params = {{name = "id", help = _U('id_param')}, {name = "job", help = _U('setjob_param2')}, {name = "grade_id", help = _U('setjob_param3')}}})
-
-TriggerEvent('es:addGroupCommand', 'setorg', 'admin', function(source, args, user)
-  local xPlayer = ESX.GetPlayerFromId(args[1])
-  xPlayer.setOrg(args[2], tonumber(args[3]))
-end, function(source, args, user)
-  TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = _U('setorg'), params = {{name = "id", help = _U('id_param')}, {name = "org", help = _U('setorg_param2')}, {name = "gradeorg_id", help = _U('setorg_param3')}}})
 
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
 	TriggerClientEvent('esx:loadIPL', -1, args[1])
@@ -207,3 +206,47 @@ TriggerEvent('es:addGroupCommand', 'clearall', 'admin', function(source, args, u
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('chat_clear_all')})
+
+TriggerEvent('es:addGroupCommand', 'clearinventory', 'admin', function(source, args, user)
+	local xPlayer
+
+	if args[1] then
+		xPlayer = ESX.GetPlayerFromId(args[1])
+	else
+		xPlayer = ESX.GetPlayerFromId(source)
+	end
+
+	if not xPlayer then
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
+		return
+	end
+
+	for i=1, #xPlayer.inventory, 1 do
+		if xPlayer.inventory[i].count > 0 then
+			xPlayer.setInventoryItem(xPlayer.inventory[i].name, 0)
+		end
+	end
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = _U('command_clearinventory'), params = {{name = "playerId", help = _U('command_playerid_param')}}})
+
+TriggerEvent('es:addGroupCommand', 'clearloadout', 'admin', function(source, args, user)
+	local xPlayer
+
+	if args[1] then
+		xPlayer = ESX.GetPlayerFromId(args[1])
+	else
+		xPlayer = ESX.GetPlayerFromId(source)
+	end
+
+	if not xPlayer then
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
+		return
+	end
+
+	for i=#xPlayer.loadout, 1, -1 do
+		xPlayer.removeWeapon(xPlayer.loadout[i].name)
+	end
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = _U('command_clearloadout'), params = {{name = "playerId", help = _U('command_playerid_param')}}})
