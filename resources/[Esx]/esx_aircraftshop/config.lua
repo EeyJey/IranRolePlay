@@ -6,7 +6,7 @@ Config.EnablePaCommand            = false
 Config.EnableOwnedVehicles        = true
 Config.EnableSocietyOwnedVehicles = false -- use with EnablePlayerManagement disabled, or else it wont have any effects
 Config.ResellPercentage           = 50
-Config.Locale                     = 'en'
+Config.Locale                     = 'fa'
 Config.EnableLicense              = true -- only turn this on if you are using esx_license
 Config.LicensePrice               = 25000
 
