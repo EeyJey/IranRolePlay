@@ -41,10 +41,10 @@ Config.VehicleLimit = {
     [13] = 0, --Cycles
     [14] = 5000, --Boats
     [15] = 20000, --Helicopters
-    [16] = 20000, --Planes
+    [16] = 0, --Planes
     [17] = 40000, --Service
     [18] = 40000, --Emergency
-    [19] = 20000, --Military
+    [19] = 0, --Military
     [20] = 300000, --Commercial
-    [21] = 20000, --Trains
+    [21] = 0, --Trains
 }

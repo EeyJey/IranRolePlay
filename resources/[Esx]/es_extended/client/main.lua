@@ -22,7 +22,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 	ESX.PlayerLoaded  = true
 	ESX.PlayerData    = xPlayer
 	
-    local moneyTpl = '<div><img src="http://image.noelshack.com/fichiers/2018/42/7/1540144899-cash.png"/>\t{{money}}</div>'
+    local moneyTpl = '<div><img src="http://image.noelshack.com/fichiers/2018/42/7/1540144899-cash.png"/> {{money}}</div>'
 
     ESX.UI.HUD.RegisterElement('money', 0, 0, moneyTpl, {
       money = 0
@@ -40,7 +40,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 
     end)
 	for i=1, #xPlayer.accounts, 1 do
-		local accountTpl = '<div><img src="img/accounts/' .. xPlayer.accounts[i].name .. '.png"/>\t{{money}}</div>'
+		local accountTpl = '<div><img src="img/accounts/' .. xPlayer.accounts[i].name .. '.png"/>{{money}}</div>'
 
 		ESX.UI.HUD.RegisterElement('account_' .. xPlayer.accounts[i].name, i-1, 0, accountTpl, {
 			money = 0
