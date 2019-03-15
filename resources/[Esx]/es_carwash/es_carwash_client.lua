@@ -42,7 +42,7 @@ Citizen.CreateThread(function ()
 				garageCoords2 = vehicleWashStation[i]
 				DrawMarker(1, garageCoords2[1], garageCoords2[2], garageCoords2[3], 0, 0, 0, 0, 0, 0, 5.0, 5.0, 2.0, 0, 157, 0, 155, 0, 0, 2, 0, 0, 0, 0)
 				if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), garageCoords2[1], garageCoords2[2], garageCoords2[3], true ) < 5 then
-					es_carwash_DrawSubtitleTimed("Beraye Shostan vasile naghlie bezanid [~g~ENTER~s~] !")
+					es_carwash_DrawSubtitleTimed("Beraye Shostan vasile naghlie [~g~ENTER~s~] bezanid!")
 					if IsControlJustPressed(1, Key) then
 						TriggerServerEvent('es_carwash:checkmoney')
 					end
@@ -56,7 +56,7 @@ RegisterNetEvent('es_carwash:success')
 AddEventHandler('es_carwash:success', function (price)
 	WashDecalsFromVehicle(GetVehiclePedIsUsing(GetPlayerPed(-1)), 1.0)
 	SetVehicleDirtLevel(GetVehiclePedIsUsing(GetPlayerPed(-1)))
-	es_carwash_DrawNotification("vasile Naghlie Shod  ~y~Shoste ~s~ Shod! ~g~-$" .. price .. "~s~!")
+	es_carwash_DrawNotification("vasile Naghlie ~y~Shoste ~s~ Shod! ~g~-$" .. price .. "~s~!")
 end)
 
 RegisterNetEvent('es_carwash:notenoughmoney')
@@ -68,5 +68,5 @@ RegisterNetEvent('es_carwash:free')
 AddEventHandler('es_carwash:free', function ()
 	WashDecalsFromVehicle(GetVehiclePedIsUsing(GetPlayerPed(-1)), 1.0)
 	SetVehicleDirtLevel(GetVehiclePedIsUsing(GetPlayerPed(-1)))
-	es_carwash_DrawNotification("vasile naghlie Shoma ~y~Tamiz~s~  shode ast~!")
+	es_carwash_DrawNotification("vasile naghlie Shoma ~y~Tamiz~s~  shod~!")
 end)
