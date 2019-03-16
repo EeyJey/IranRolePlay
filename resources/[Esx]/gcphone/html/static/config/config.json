@@ -1,5 +1,5 @@
 {
-  "reseau": "Aféction Télécom",
+  "reseau": "Irancell",
   
   "themeColor": "#303f9f",
   "colors": [
@@ -35,11 +35,13 @@
 
 
   "background" : {
-    "Porsche GT2 RS": "back001.jpg",
+    "Milad tower": "back001.jpg",
+    "Hasan Abad": "back002.jpg",
+    "Tehran": "back003.jpg",
     "Custom URL": "URL"
   },
   "background_default": {
-    "label": "Porsche GT2 RS",
+    "label": "Milad tower",
     "value": "back001.jpg"
   },
 
@@ -56,11 +58,11 @@
 
   "serviceCall": [
     {
-      "display": "LSPD",
+      "display": "Edare Police",
       "icon": "/html/static/img/icons_app/policier.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "police"
@@ -69,11 +71,11 @@
       ]
     },
     {
-      "display": "Mécano",
+      "display": "Mekanik",
       "icon": "/html/static/img/icons_app/mecano.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "mecano"
@@ -86,7 +88,7 @@
       "icon": "/html/static/img/icons_app/taxi.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "taxi"
@@ -95,11 +97,11 @@
       ]
     },
 	{
-      "display": "Concessionnaire",
+      "display": "Foorooshgah mashin",
       "icon": "/html/static/img/icons_app/conces.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "cardealer"
@@ -108,11 +110,11 @@
       ]
     },
 	{
-      "display": "Justice",
+      "display": "Dadgostari",
       "icon": "/html/static/img/icons_app/avocat.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "avocat"
@@ -121,11 +123,11 @@
       ]
     },
 	{
-      "display": "Epicerie",
+      "display": "Kharo bar forooshi",
       "icon": "/html/static/img/icons_app/epicerie.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "epicerie"
@@ -134,11 +136,11 @@
       ]
     },
 	{
-      "display": "Unicorn",
+      "display": "Kabare",
       "icon": "/html/static/img/icons_app/unicorn.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "unicorn"
@@ -147,11 +149,11 @@
       ]
     },
 	{
-      "display": "Brinks",
+      "display": "Groohe amniyati",
       "icon": "/html/static/img/icons_app/brinks.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "brinks"
@@ -160,11 +162,11 @@
       ]
     },
 	{
-      "display": "Bahamas",
+      "display": "Disco",
       "icon": "/html/static/img/icons_app/bahama.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "mamas"
@@ -173,11 +175,11 @@
       ]
     },
 	{
-      "display": "Journaliste",
+      "display": "Khabar negar",
       "icon": "/html/static/img/icons_app/journaliste.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "journaliste"
@@ -186,11 +188,11 @@
       ]
     },
     {
-      "display": "Ambulance",
+      "display": "Bimarestan",
       "icon": "/html/static/img/icons_app/ambulancier.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "ambulance"
@@ -202,13 +204,13 @@
 
   "apps": [
     {
-      "name": "Téléphone",
+      "name": "Call",
       "icons": "/html/static/img/icons_app/call.png",
       "routeName": "appels",
       "inHomePage": true
     },
     {
-      "name": "Messages",
+      "name": "Messaging",
       "icons": "/html/static/img/icons_app/sms.png",
       "routeName": "messages",
       "inHomePage": true,
@@ -221,13 +223,13 @@
       "inHomePage": true
     },
     {
-      "name": "Paramètres",
+      "name": "Setting",
       "icons": "/html/static/img/icons_app/settings.png",
       "routeName": "parametre",
       "inHomePage": true
     },
     {
-      "name": "Bourse",
+      "name": "Stock",
       "icons": "/html/static/img/icons_app/bourse.png",
       "routeName": "bourse",
       "enabled": true
@@ -238,7 +240,7 @@
       "routeName": "photo"
     },
     {
-      "name": "Dark Chat",
+      "name": "Secret Chat",
       "icons": "/html/static/img/icons_app/tchat.png",
       "routeName": "tchat"
     },

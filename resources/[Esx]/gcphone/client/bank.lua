@@ -2,9 +2,9 @@
 --  Function APP BANK
 --====================================================================================
 
---[[
-      Appeller SendNUIMessage({event = 'updateBankbalance', banking = xxxx})
-      à la connection & à chaque changement du compte
+
+--      Appeller SendNUIMessage({event = 'updateBankbalance', banking = xxxx})
+--      à la connection & à chaque changement du compte
 
 
 
@@ -39,4 +39,4 @@ AddEventHandler('esx:setAccountMoney', function(account)
   if account.name == 'bank' then
     SendNUIMessage({event = 'updateBankbalance', banking = account.money})
   end 
-end)--]]
+end)

@@ -37,6 +37,15 @@ Citizen.CreateThread(function()
 			frontCam = not frontCam
 			CellFrontCamActivate(frontCam)
 		end
+		
+		-- if IsControlJustPressed(1, 176) and phone == true then -- TAKE.. PIC
+			-- TakePhoto()
+			-- if (WasPhotoTaken() and SavePhoto(-1)) then
+				---- SetLoadingPromptTextEntry("CELL_278")
+				---- ShowLoadingPrompt(1)
+				-- ClearPhoto()
+			-- end
+		-- end
 			
 		if phone == true then
 			HideHudComponentThisFrame(7)
