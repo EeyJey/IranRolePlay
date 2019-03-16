@@ -1,38 +1,14 @@
-ESX               = nil
-local cars 		  = {}
+ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 ESX.RegisterServerCallback('esx_vehiclelock:requestPlayerCars', function(source, cb, plate)
-
 	local xPlayer = ESX.GetPlayerFromId(source)
 
-	MySQL.Async.fetchAll(
-		'SELECT * FROM owned_vehicles WHERE owner = @identifier', 
-		{
-			['@identifier'] = xPlayer.identifier
-		},
-		function(result)
-
-			local found = false
-
-			for i=1, #result, 1 do
-
-				local vehicleProps = json.decode(result[i].vehicle)
-
-				if vehicleProps.plate == plate then
-					found = true
-					break
-				end
-
-			end
-
-			if found then
-				cb(true)
-			else
-				cb(false)
-			end
-
-		end
-	)
+	MySQL.Async.fetchAll('SELECT 1 FROM owned_vehicles WHERE owner = @owner AND plate = @plate', {
+		['@owner'] = xPlayer.identifier,
+		['@plate'] = plate
+	}, function(result)
+		cb(result[1] ~= nil)
+	end)
 end)
