@@ -1,4 +1,5 @@
-"reseau": "namemobile",
+{
+  "reseau": "Aféction Télécom",
   
   "themeColor": "#303f9f",
   "colors": [
@@ -34,33 +35,29 @@
 
 
   "background" : {
-    "Calvin & Hobbes": "back001.jpg",
-    "Destiny": "back002.jpg",
-    "Stormtrooper": "back003.jpg",
+    "Porsche GT2 RS": "back001.jpg",
     "Custom URL": "URL"
   },
   "background_default": {
-    "label": "Calvin & Hobbes",
+    "label": "Porsche GT2 RS",
     "value": "back001.jpg"
   },
 
 
   "coque": {
     "Sansumg S8": "s8.png",
-    "Iphone X": "iphonex.png",
-    "Brick Base": "base.png",
-    "Transparent": "transparent.png"
+    "Iphone X": "iphonex.png"
   },
   "coque_default": {
-    "label": "Sansumg S8",
-    "value": "s8.png"
+    "label": "Iphone X",
+    "value": "iphonex.png"
   },
 
 
   "serviceCall": [
     {
-      "display": "Police",
-      "icon": "/html/static/img/icons_app/bank.png",
+      "display": "LSPD",
+      "icon": "/html/static/img/icons_app/policier.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
@@ -68,191 +65,12 @@
           "type": {
             "number": "police"
           }
-        },
-        {
-					"title": "Appeler le standard",
-					"eventName": "gcphone:autoCallNumber",
-					"type": {
-						"number": "911"
-					}
-				},
-				{
-					"title": "Signaler un vol",
-					"eventName": "esx_addons_gcphone:call",
-					"type": {
-						"number": "police",
-						"message": "Vol en cours, merci de venir au plus vite !"
-					}
-				},
-				{
-					"title": "Signaler une agression",
-					"eventName": "esx_addons_gcphone:call",
-					"type": {
-						"number": "police",
-						"message": "Victime d'agression"
-					}
-				}
-			]
-		},
+        }
+      ]
+    },
     {
-      "display": "Ambulance",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "ambulance"
-          }
-        }
-      ]
-    },
-{                                                                --you can put a label that you do not want too long
-      "display": "Gouvernement",                       -- alias , label job here ''labelname",
-      "backgroundColor": "red",                         -- color job in gcphone red, blue, green....
-      "subMenu": [                                                --not all colors work
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "state"                                -- Job name in ddb ,database                                            
-          }                                                             -- you have to have this job if not remove or replace
-        }
-      ]
-    },
-	{
-      "display": "Army",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "army"
-          }
-        }
-      ]
-    },
-	{
-      "display": "FIB",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "fib"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Juge",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "juge"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Avocat",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "avocat"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Agent de Securite",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "security"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Espion",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "Espion"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Tueur à gage contract oral baladins",
-      "backgroundColor": "red",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "baladins"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Voiture Concessionaire",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "cardealer"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Helicoptere concessionaire",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "aircraftdealer"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Bateau concessionaire",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "dock"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Mecano",
-      "backgroundColor": "grey",
+      "display": "Mécano",
+      "icon": "/html/static/img/icons_app/mecano.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
@@ -264,86 +82,8 @@
       ]
     },
 	{
-      "display": "Armurier",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "armurier"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Gang Cartel",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "cartel"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Gang Mafia",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "mafia"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Gang",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "gang"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Gang Biker",
-      "backgroundColor": "grey",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "biker"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Eboueur",
-      "backgroundColor": "orange",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "eboueur"
-          }
-        }
-      ]
-    },
-		{
       "display": "Taxi",
-      "backgroundColor": "orange",
+      "icon": "/html/static/img/icons_app/taxi.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
@@ -355,116 +95,106 @@
       ]
     },
 	{
-      "display": "Bus",
-      "backgroundColor": "orange",
+      "display": "Concessionnaire",
+      "icon": "/html/static/img/icons_app/conces.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
-            "number": "bus"
+            "number": "cardealer"
+          }
+        }
+      ]
+    },
+	{
+      "display": "Justice",
+      "icon": "/html/static/img/icons_app/avocat.png",
+      "subMenu": [
+        {
+          "title": "Envoyer un message",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "avocat"
+          }
+        }
+      ]
+    },
+	{
+      "display": "Epicerie",
+      "icon": "/html/static/img/icons_app/epicerie.png",
+      "subMenu": [
+        {
+          "title": "Envoyer un message",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "epicerie"
+          }
+        }
+      ]
+    },
+	{
+      "display": "Unicorn",
+      "icon": "/html/static/img/icons_app/unicorn.png",
+      "subMenu": [
+        {
+          "title": "Envoyer un message",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "unicorn"
+          }
+        }
+      ]
+    },
+	{
+      "display": "Brinks",
+      "icon": "/html/static/img/icons_app/brinks.png",
+      "subMenu": [
+        {
+          "title": "Envoyer un message",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "brinks"
+          }
+        }
+      ]
+    },
+	{
+      "display": "Bahamas",
+      "icon": "/html/static/img/icons_app/bahama.png",
+      "subMenu": [
+        {
+          "title": "Envoyer un message",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "mamas"
           }
         }
       ]
     },
 	{
       "display": "Journaliste",
-      "backgroundColor": "orange",
+      "icon": "/html/static/img/icons_app/journaliste.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
-            "number": "reporter"
+            "number": "journaliste"
           }
         }
       ]
     },
-	{
-      "display": "Chauffeur pilote",
-      "backgroundColor": "orange",
+    {
+      "display": "Ambulance",
+      "icon": "/html/static/img/icons_app/ambulancier.png",
       "subMenu": [
         {
           "title": "Envoyer un message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
-            "number": "pilot"
+            "number": "ambulance"
           }
-        }
-      ]
-    },
-	{
-      "display": "Chauffeur rally",
-      "backgroundColor": "orange",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "rally"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Discotheque Bar Striptease",
-      "backgroundColor": "green",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "disco"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Bahama Bar Deluxe",
-      "backgroundColor": "green",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "bahama"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Cuisinier ambulant",
-      "backgroundColor": "green",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "foodtruck"
-          }
-        }
-      ]
-    },
-	{
-      "display": "vendeur de tabac",
-      "backgroundColor": "green",
-      "subMenu": [
-        {
-          "title": "Envoyer un message",
-          "eventName": "esx_addons_gcphone:call",
-          "type": {
-            "number": "tabac"
-          }
-        }
-      ]
-    },
-	{
-      "display": "Agent Immobilier",
-	  "backgroundColor": "green",
-      "subMenu": [
-        {
-		  "title": "Envoyer un message",
-          "eventName": "realestateagent"
         }
       ]
     }
@@ -495,12 +225,6 @@
       "icons": "/html/static/img/icons_app/settings.png",
       "routeName": "parametre",
       "inHomePage": true
-    },
-    {
-      "name": "Bank",
-      "icons": "/html/static/img/icons_app/bank.png",
-      "routeName": "bank",
-      "inHomePage": false
     },
     {
       "name": "Bourse",
