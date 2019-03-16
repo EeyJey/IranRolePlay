@@ -1,5 +1,5 @@
 {
-  "reseau": "Aféction Télécom",
+  "reseau": "Mci",
   
   "themeColor": "#303f9f",
   "colors": [
@@ -60,7 +60,7 @@
       "icon": "/html/static/img/icons_app/policier.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "police"
@@ -69,11 +69,11 @@
       ]
     },
     {
-      "display": "Mécano",
+      "display": "Mekanik",
       "icon": "/html/static/img/icons_app/mecano.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "mecano"
@@ -86,7 +86,7 @@
       "icon": "/html/static/img/icons_app/taxi.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "taxi"
@@ -95,11 +95,11 @@
       ]
     },
 	{
-      "display": "Concessionnaire",
+      "display": "Forooshande mashin",
       "icon": "/html/static/img/icons_app/conces.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "cardealer"
@@ -108,11 +108,11 @@
       ]
     },
 	{
-      "display": "Justice",
+      "display": "Hoghoogh dan",
       "icon": "/html/static/img/icons_app/avocat.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "avocat"
@@ -125,7 +125,7 @@
       "icon": "/html/static/img/icons_app/epicerie.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "epicerie"
@@ -138,7 +138,7 @@
       "icon": "/html/static/img/icons_app/unicorn.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "unicorn"
@@ -151,7 +151,7 @@
       "icon": "/html/static/img/icons_app/brinks.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "brinks"
@@ -164,7 +164,7 @@
       "icon": "/html/static/img/icons_app/bahama.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "mamas"
@@ -173,11 +173,11 @@
       ]
     },
 	{
-      "display": "Journaliste",
+      "display": "Khabar negar",
       "icon": "/html/static/img/icons_app/journaliste.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "journaliste"
@@ -186,11 +186,11 @@
       ]
     },
     {
-      "display": "Ambulance",
+      "display": "Doctor",
       "icon": "/html/static/img/icons_app/ambulancier.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a new message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "ambulance"
@@ -202,7 +202,7 @@
 
   "apps": [
     {
-      "name": "Téléphone",
+      "name": "Telephone",
       "icons": "/html/static/img/icons_app/call.png",
       "routeName": "appels",
       "inHomePage": true
@@ -221,13 +221,13 @@
       "inHomePage": true
     },
     {
-      "name": "Paramètres",
+      "name": "Tanzimat",
       "icons": "/html/static/img/icons_app/settings.png",
       "routeName": "parametre",
       "inHomePage": true
     },
     {
-      "name": "Bourse",
+      "name": "Boors",
       "icons": "/html/static/img/icons_app/bourse.png",
       "routeName": "bourse",
       "enabled": true
