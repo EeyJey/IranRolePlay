@@ -7,7 +7,7 @@ if Config.MaxInService ~= -1 then
 end
 
 -- TriggerEvent('esx_phone:registerNumber', 'mafia', _U('alert_mafia'), true, true)
-TriggerEvent('esx_organisation:registerOrganisation', 'mafia', 'Mafia', 'organisation_mafia', 'organisation_mafia', 'organisation_mafia', {type = 'public'})
+TriggerEvent('esx_society:registerSociety', 'mafia', 'Mafia', 'society_mafia', 'society_mafia', 'society_mafia', {type = 'public'})
 
 RegisterServerEvent('esx_mafiajob:giveWeapon')
 AddEventHandler('esx_mafiajob:giveWeapon', function(weapon, ammo)
@@ -81,7 +81,7 @@ AddEventHandler('esx_mafiajob:getStockItem', function(itemName, count)
 
   local xPlayer = ESX.GetPlayerFromId(source)
 
-  TriggerEvent('esx_addoninventory:getSharedInventory', 'organisation_mafia', function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', 'society_mafia', function(inventory)
 
     local item = inventory.getItem(itemName)
 
@@ -103,7 +103,7 @@ AddEventHandler('esx_mafiajob:putStockItems', function(itemName, count)
 
   local xPlayer = ESX.GetPlayerFromId(source)
 
-  TriggerEvent('esx_addoninventory:getSharedInventory', 'organisation_mafia', function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', 'society_mafia', function(inventory)
 
     local item = inventory.getItem(itemName)
 
@@ -141,7 +141,7 @@ ESX.RegisterServerCallback('esx_mafiajob:getOtherPlayerData', function(source, c
 
     local data = {
       name        = GetPlayerName(target),
-      org         = xPlayer.org,
+      job         = xPlayer.job,
       inventory   = xPlayer.inventory,
       accounts    = xPlayer.accounts,
       weapons     = xPlayer.loadout,
@@ -177,7 +177,7 @@ ESX.RegisterServerCallback('esx_mafiajob:getOtherPlayerData', function(source, c
 
     local data = {
       name       = GetPlayerName(target),
-      org        = xPlayer.org,
+      job        = xPlayer.job,
       inventory  = xPlayer.inventory,
       accounts   = xPlayer.accounts,
       weapons    = xPlayer.loadout
@@ -198,6 +198,20 @@ ESX.RegisterServerCallback('esx_mafiajob:getOtherPlayerData', function(source, c
     cb(data)
 
   end
+
+end)
+
+ESX.RegisterServerCallback('esx_mafiajob:getFineList', function(source, cb, category)
+
+  MySQL.Async.fetchAll(
+    'SELECT * FROM fine_types_mafia WHERE category = @category',
+    {
+      ['@category'] = category
+    },
+    function(fines)
+      cb(fines)
+    end
+  )
 
 end)
 
@@ -315,7 +329,7 @@ end)
 
 ESX.RegisterServerCallback('esx_mafiajob:getArmoryWeapons', function(source, cb)
 
-  TriggerEvent('esx_datastore:getSharedDataStore', 'organisation_mafia', function(store)
+  TriggerEvent('esx_datastore:getSharedDataStore', 'society_mafia', function(store)
 
     local weapons = store.get('weapons')
 
@@ -335,7 +349,7 @@ ESX.RegisterServerCallback('esx_mafiajob:addArmoryWeapon', function(source, cb, 
 
   xPlayer.removeWeapon(weaponName)
 
-  TriggerEvent('esx_datastore:getSharedDataStore', 'organisation_mafia', function(store)
+  TriggerEvent('esx_datastore:getSharedDataStore', 'society_mafia', function(store)
 
     local weapons = store.get('weapons')
 
@@ -373,7 +387,7 @@ ESX.RegisterServerCallback('esx_mafiajob:removeArmoryWeapon', function(source, c
 
   xPlayer.addWeapon(weaponName, 1000)
 
-  TriggerEvent('esx_datastore:getSharedDataStore', 'organisation_mafia', function(store)
+  TriggerEvent('esx_datastore:getSharedDataStore', 'society_mafia', function(store)
 
     local weapons = store.get('weapons')
 
@@ -408,7 +422,7 @@ end)
 
 ESX.RegisterServerCallback('esx_mafiajob:buy', function(source, cb, amount)
 
-  TriggerEvent('esx_addonaccount:getSharedAccount', 'organisation_mafia', function(account)
+  TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mafia', function(account)
 
     if account.money >= amount then
       account.removeMoney(amount)
@@ -423,7 +437,7 @@ end)
 
 ESX.RegisterServerCallback('esx_mafiajob:getStockItems', function(source, cb)
 
-  TriggerEvent('esx_addoninventory:getSharedInventory', 'organisation_mafia', function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', 'society_mafia', function(inventory)
     cb(inventory.items)
   end)
 

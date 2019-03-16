@@ -5,10 +5,10 @@ Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
 Config.EnablePlayerManagement     = true
 Config.EnableArmoryManagement     = true
-Config.EnableESXIdentity          = false -- only turn this on if you are using esx_identity
+Config.EnableESXIdentity          = true -- only turn this on if you are using esx_identity
 Config.EnableNonFreemodePeds      = false -- turn this on if you want custom peds
 Config.EnableSocietyOwnedVehicles = false
-Config.EnableLicenses             = true
+Config.EnableLicenses             = false
 Config.MaxInService               = -1
 Config.Locale                     = 'en'
 
@@ -25,37 +25,32 @@ Config.MafiaStations = {
     },
 
     AuthorizedWeapons = {
-    {name = 'WEAPON_FIREEXTINGUISHER', price = 500},
-    {name = 'WEAPON_STUNGUN',          price = 1000},
-    {name = 'WEAPON_BZGAS',            price = 3000},
-    {name = 'WEAPON_MOLOTOV',          price = 1500},
-    {name = 'WEAPON_SMOKEGRENADE',     price = 1500},            
-    {name = 'WEAPON_HEAVYPISTOL',      price = 8000},
-    {name = 'WEAPON_COMBATPISTOL',     price = 10000},    
-    {name = 'WEAPON_MICROSMG',         price = 12000},
-    {name = 'WEAPON_SMG',              price = 16000},
-    {name = 'WEAPON_CARBINERIFLE',     price = 18000},  
-    {name = 'WEAPON_MG',               price = 25000},
-    {name = 'WEAPON_COMPACTRIFLE',     price = 25000}, 
-    {name = 'WEAPON_ASSAULTRIFLE',     price = 25000},
-    {name = 'WEAPON_COMBATPDW',        price = 25000},
-    {name = 'WEAPON_SPECIALCARBINE',   price = 35000},           
-    {name = 'WEAPON_SAWNOFFSHOTGUN',   price = 17500},    
-    {name = 'WEAPON_PUMPSHOTGUN',      price = 17500},
-    {name = 'WEAPON_HEAVYSHOTGUN',     price = 25000},
-    {name = 'WEAPON_MARKSMANRIFLE',    price = 30000},
-    {name = 'WEAPON_SNIPERRIFLE',      price = 500000},
-    {name = 'WEAPON_HEAVYSNIPER',      price = 650000},    
-    {name = 'WEAPON_GUSENBERG',        price = 800000},
-    {name = 'WEAPON_STICKYBOMB',       price = 100000},
-    {name = 'WEAPON_PIPEBOMB',         price = 150000},
-    {name = 'WEAPON_COMPACTLAUNCHER',  price = 1650000},
-    {name = 'WEAPON_HOMINGLAUNCHER',   price = 3500000},
+      { name = 'WEAPON_COMBATPISTOL',     price = 4000 },
+      { name = 'WEAPON_ASSAULTSMG',       price = 15000 },
+      { name = 'WEAPON_ASSAULTRIFLE',     price = 25000 },
+      { name = 'WEAPON_PUMPSHOTGUN',      price = 9000 },
+      { name = 'WEAPON_STUNGUN',          price = 250 },
+      { name = 'WEAPON_FLASHLIGHT',       price = 50 },
+      { name = 'WEAPON_FIREEXTINGUISHER', price = 50 },
+      { name = 'WEAPON_FLAREGUN',         price = 3000 },
+      { name = 'GADGET_PARACHUTE',        price = 2000 },
+      { name = 'WEAPON_SNIPERRIFLE',      price = 50000 },
+      { name = 'WEAPON_FIREWORK',         price = 5000 },
+      { name = 'WEAPON_BZGAS',            price = 8000 },
+      { name = 'WEAPON_SMOKEGRENADE',     price = 8000 },
+      { name = 'WEAPON_APPISTOL',         price = 12000 },
+      { name = 'WEAPON_CARBINERIFLE',     price = 25000 },
+      { name = 'WEAPON_HEAVYSNIPER',      price = 100000 },
+      { name = 'WEAPON_FLARE',            price = 8000 },
+      { name = 'WEAPON_SWITCHBLADE',      price = 500 },
+	  { name = 'WEAPON_REVOLVER',         price = 6000 },
+	  { name = 'WEAPON_POOLCUE',          price = 100 },
+	  { name = 'WEAPON_GUSENBERG',        price = 17500 },
 	  
     },
 
 	  AuthorizedVehicles = {
-		  { name = 'charublu',  label = 'Dodge Charger' },
+		  { name = 'schafter3',  label = 'Véhicule Civil' },
 		  { name = 'btype',      label = 'Roosevelt' },
 		  { name = 'sandking',   label = '4X4' },
 		  { name = 'mule3',      label = 'Camion de Transport' },
@@ -65,18 +60,18 @@ Config.MafiaStations = {
 	  },
 
     Cloakrooms = {
-      --{ x = 9.283, y = 528.914, z = 169.635 },
+      { x = 9.283, y = 528.914, z = 169.635 },
     },
 
     Armories = {
-      { x = -154.7972869873, y = -1642.2658691406, z = 36.851192474365 },
+      { x = 1.550, y = 527.397, z = 169.617 },
     },
 
     Vehicles = {
       {
-        Spawner    = { x = -161.51164245605, y = -1626.3983154297, z = 33.653587341309 },
-        SpawnPoint = { x = -178.9008026123, y = -1626.8348388672, z = 33.214611053467 },
-        Heading    = 359.728027,
+        Spawner    = { x = 13.40, y = 549.1, z = 175.187 },
+        SpawnPoint = { x = 8.237, y = 556.963, z = 175.266 },
+        Heading    = 90.0,
       }
     },
 	
@@ -89,12 +84,12 @@ Config.MafiaStations = {
     },
 
     VehicleDeleters = {
-      { x = -178.20602416992, y = -1611.8439941406, z = 33.496162414551 },
+      { x = 22.74, y = 545.9, z = 175.027 },
       { x = 21.35, y = 543.3, z = 175.027 },
     },
 
     BossActions = {
-      { x = -160.87924194336, y = -1636.7623291016, z = 37.245941162109 }
+      { x = 4.113, y = 526.897, z = 173.628 }
     },
 
   },

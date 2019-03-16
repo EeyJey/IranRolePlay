@@ -77,7 +77,7 @@ function OpenCloakroomMenu()
 
       --Taken from SuperCoolNinja
       if data.current.value == 'citizen_wear' then
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, orgSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
           local model = nil
 
           if skin.sex == 0 then
@@ -102,12 +102,12 @@ function OpenCloakroomMenu()
 
       if data.current.value == 'mafia_wear' then
 
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, orgSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 
           if skin.sex == 0 then
-            TriggerEvent('skinchanger:loadClothes', skin, orgSkin.skin_male)
+            TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
           else
-            TriggerEvent('skinchanger:loadClothes', skin, orgSkin.skin_female)
+            TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
           end
 
         end)
@@ -116,21 +116,39 @@ function OpenCloakroomMenu()
 
       if data.current.value == 'mafia_wear' then
 
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, orgSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 
-          if skin.sex == 0 then
-            TriggerEvent('skinchanger:loadClothes', skin, orgSkin.skin_male)
-          else
-            TriggerEvent('skinchanger:loadClothes', skin, orgSkin.skin_female)
+        if skin.sex == 0 then
+
+          local model = GetHashKey("G_M_M_ArmBoss_01")
+
+          RequestModel(model)
+          while not HasModelLoaded(model) do
+            RequestModel(model)
+            Citizen.Wait(0)
+          end
+
+          SetPlayerModel(PlayerId(), model)
+          SetModelAsNoLongerNeeded(model)
+      else
+          local model = GetHashKey("G_M_M_ArmBoss_01")
+
+          RequestModel(model)
+          while not HasModelLoaded(model) do
+            RequestModel(model)
+            Citizen.Wait(0)
+          end
+
+          SetPlayerModel(PlayerId(), model)
+          SetModelAsNoLongerNeeded(model)
           end
 
         end)
-
       end
 
       if data.current.value == 'lieutenant_wear' then
 
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, orgSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 
         if skin.sex == 0 then
           local model = GetHashKey("G_M_M_ArmBoss_01")
@@ -161,7 +179,7 @@ function OpenCloakroomMenu()
 
       if data.current.value == 'commandant_wear' then
 
-        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, orgSkin)
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 
         if skin.sex == 0 then
           local model = GetHashKey("G_M_M_ArmBoss_01")
@@ -219,7 +237,7 @@ function OpenArmoryMenu(station)
       {label = 'Déposer objet',  value = 'put_stock'}
     }
 
-    if PlayerData.org.gradeorg_name == 'boss' then
+    if PlayerData.job.grade_name == 'boss' then
       table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
     end
 
@@ -248,11 +266,11 @@ function OpenArmoryMenu(station)
 
         if data.current.value == 'put_stock' then
               OpenPutStocksMenu()
-        end
+            end
 
-        if data.current.value == 'get_stock' then
+            if data.current.value == 'get_stock' then
               OpenGetStocksMenu()
-        end
+            end
 
       end,
       function(data, menu)
@@ -308,11 +326,11 @@ function OpenVehicleSpawnerMenu(station, partNum)
 
   ESX.UI.Menu.CloseAll()
 
-  if Config.EnableOrganisationOwnedVehicles then
+  if Config.EnableSocietyOwnedVehicles then
 
     local elements = {}
 
-    ESX.TriggerServerCallback('esx_organisation:getVehiclesInGarage', function(garageVehicles)
+    ESX.TriggerServerCallback('esx_society:getVehiclesInGarage', function(garageVehicles)
 
       for i=1, #garageVehicles, 1 do
         table.insert(elements, {label = GetDisplayNameFromVehicleModel(garageVehicles[i].model) .. ' [' .. garageVehicles[i].plate .. ']', value = garageVehicles[i]})
@@ -337,7 +355,7 @@ function OpenVehicleSpawnerMenu(station, partNum)
             TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
           end)
 
-          TriggerServerEvent('esx_organisation:removeVehicleFromGarage', 'mafia', vehicleProps)
+          TriggerServerEvent('esx_society:removeVehicleFromGarage', 'mafia', vehicleProps)
 
         end,
         function(data, menu)
@@ -465,7 +483,8 @@ function OpenMafiaActionsMenu()
               {label = _U('handcuff'),    value = 'handcuff'},
               {label = _U('drag'),      value = 'drag'},
               {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
-              {label = _U('out_the_vehicle'), value = 'out_the_vehicle'}
+              {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
+              {label = _U('fine'),            value = 'fine'}
             },
           },
           function(data2, menu2)
@@ -645,17 +664,17 @@ function OpenIdentityCardMenu(player)
 
     ESX.TriggerServerCallback('esx_mafiajob:getOtherPlayerData', function(data)
 
-      local orgLabel    = nil
+      local jobLabel    = nil
       local sexLabel    = nil
       local sex         = nil
       local dobLabel    = nil
       local heightLabel = nil
       local idLabel     = nil
 
-      if data.org.gradeorg_label ~= nil and  data.org.gradeorg_label ~= '' then
-        orgLabel = 'org : ' .. data.org.label .. ' - ' .. data.org.gradeorg_label
+      if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
+        jobLabel = 'Job : ' .. data.job.label .. ' - ' .. data.job.grade_label
       else
-        orgLabel = 'org : ' .. data.org.label
+        jobLabel = 'Job : ' .. data.job.label
       end
 
       if data.sex ~= nil then
@@ -692,7 +711,7 @@ function OpenIdentityCardMenu(player)
         {label = sexLabel,    value = nil},
         {label = dobLabel,    value = nil},
         {label = heightLabel, value = nil},
-        {label = orgLabel,    value = nil},
+        {label = jobLabel,    value = nil},
         {label = idLabel,     value = nil},
       }
 
@@ -731,17 +750,17 @@ function OpenIdentityCardMenu(player)
 
     ESX.TriggerServerCallback('esx_mafiajob:getOtherPlayerData', function(data)
 
-      local orgLabel = nil
+      local jobLabel = nil
 
-      if data.org.gradeorg_label ~= nil and  data.org.gradeorg_label ~= '' then
-        orgLabel = 'org : ' .. data.org.label .. ' - ' .. data.org.gradeorg_label
+      if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
+        jobLabel = 'Job : ' .. data.job.label .. ' - ' .. data.job.grade_label
       else
-        orgLabel = 'org : ' .. data.org.label
+        jobLabel = 'Job : ' .. data.job.label
       end
 
         local elements = {
           {label = _U('name') .. data.name, value = nil},
-          {label = orgLabel,              value = nil},
+          {label = jobLabel,              value = nil},
         }
 
       if data.drunk ~= nil then
@@ -853,6 +872,81 @@ function OpenBodySearchMenu(player)
     )
 
   end, GetPlayerServerId(player))
+
+end
+
+function OpenFineMenu(player)
+
+  ESX.UI.Menu.Open(
+    'default', GetCurrentResourceName(), 'fine',
+    {
+      title    = _U('fine'),
+      align    = 'top-left',
+      elements = {
+        {label = _U('traffic_offense'),   value = 0},
+        {label = _U('minor_offense'),     value = 1},
+        {label = _U('average_offense'),   value = 2},
+        {label = _U('major_offense'),     value = 3}
+      },
+    },
+    function(data, menu)
+
+      OpenFineCategoryMenu(player, data.current.value)
+
+    end,
+    function(data, menu)
+      menu.close()
+    end
+  )
+
+end
+
+function OpenFineCategoryMenu(player, category)
+
+  ESX.TriggerServerCallback('esx_mafiajob:getFineList', function(fines)
+
+    local elements = {}
+
+    for i=1, #fines, 1 do
+      table.insert(elements, {
+        label     = fines[i].label .. ' $' .. fines[i].amount,
+        value     = fines[i].id,
+        amount    = fines[i].amount,
+        fineLabel = fines[i].label
+      })
+    end
+
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'fine_category',
+      {
+        title    = _U('fine'),
+        align    = 'top-left',
+        elements = elements,
+      },
+      function(data, menu)
+
+        local label  = data.current.fineLabel
+        local amount = data.current.amount
+
+        menu.close()
+
+        if Config.EnablePlayerManagement then
+          TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(player), 'society_mafia', _U('fine_total') .. label, amount)
+        else
+          TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(player), '', _U('fine_total') .. label, amount)
+        end
+
+        ESX.SetTimeout(300, function()
+          OpenFineCategoryMenu(player, category)
+        end)
+
+      end,
+      function(data, menu)
+        menu.close()
+      end
+    )
+
+  end, category)
 
 end
 
@@ -1140,9 +1234,9 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
   PlayerData = xPlayer
 end)
 
-RegisterNetEvent('esx:setOrg')
-AddEventHandler('esx:setOrg', function(org)
-  PlayerData.org = org
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+  PlayerData.job = job
 end)
 
 -- RegisterNetEvent('esx_phone:loaded')
@@ -1233,7 +1327,7 @@ AddEventHandler('esx_mafiajob:hasEnteredEntityZone', function(entity)
 
   local playerPed = GetPlayerPed(-1)
 
-  if PlayerData.org ~= nil and PlayerData.org.name == 'mafia' and not IsPedInAnyVehicle(playerPed, false) then
+  if PlayerData.job ~= nil and PlayerData.job.name == 'mafia' and not IsPedInAnyVehicle(playerPed, false) then
     CurrentAction     = 'remove_entity'
     CurrentActionMsg  = _U('remove_object')
     CurrentActionData = {entity = entity}
@@ -1403,7 +1497,7 @@ Citizen.CreateThread(function()
 
     Wait(0)
 
-    if PlayerData.org ~= nil and PlayerData.org.name == 'mafia' then
+    if PlayerData.job ~= nil and PlayerData.job.name == 'mafia' then
 
       local playerPed = GetPlayerPed(-1)
       local coords    = GetEntityCoords(playerPed)
@@ -1434,7 +1528,7 @@ Citizen.CreateThread(function()
           end
         end
 
-        if Config.EnablePlayerManagement and PlayerData.org ~= nil and PlayerData.org.name == 'mafia' and PlayerData.org.gradeorg_name == 'boss' then
+        if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'mafia' and PlayerData.job.grade_name == 'boss' then
 
           for i=1, #v.BossActions, 1 do
             if not v.BossActions[i].disabled and GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.DrawDistance then
@@ -1458,7 +1552,7 @@ Citizen.CreateThread(function()
 
     Wait(0)
 
-    if PlayerData.org ~= nil and PlayerData.org.name == 'mafia' then
+    if PlayerData.job ~= nil and PlayerData.job.name == 'mafia' then
 
       local playerPed      = GetPlayerPed(-1)
       local coords         = GetEntityCoords(playerPed)
@@ -1532,7 +1626,7 @@ Citizen.CreateThread(function()
           end
         end
 
-        if Config.EnablePlayerManagement and PlayerData.org ~= nil and PlayerData.org.name == 'mafia' and PlayerData.org.gradeorg_name == 'boss' then
+        if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'mafia' and PlayerData.job.grade_name == 'boss' then
 
           for i=1, #v.BossActions, 1 do
             if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then
@@ -1649,7 +1743,7 @@ Citizen.CreateThread(function()
       AddTextComponentString(CurrentActionMsg)
       DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
-      if IsControlPressed(0,  Keys['E']) and PlayerData.org ~= nil and PlayerData.org.name == 'mafia' and (GetGameTimer() - GUI.Time) > 150 then
+      if IsControlPressed(0,  Keys['E']) and PlayerData.job ~= nil and PlayerData.job.name == 'mafia' and (GetGameTimer() - GUI.Time) > 150 then
 
         if CurrentAction == 'menu_cloakroom' then
           OpenCloakroomMenu()
@@ -1665,10 +1759,10 @@ Citizen.CreateThread(function()
 
         if CurrentAction == 'delete_vehicle' then
 
-          if Config.EnableOrganisationOwnedVehicles then
+          if Config.EnableSocietyOwnedVehicles then
 
             local vehicleProps = ESX.Game.GetVehicleProperties(CurrentActionData.vehicle)
-            TriggerServerEvent('esx_organisation:putVehicleInGarage', 'mafia', vehicleProps)
+            TriggerServerEvent('esx_society:putVehicleInGarage', 'mafia', vehicleProps)
 
           else
 
@@ -1693,7 +1787,7 @@ Citizen.CreateThread(function()
 
           ESX.UI.Menu.CloseAll()
 
-          TriggerEvent('esx_organisation:openBossMenu', 'mafia', function(data, menu)
+          TriggerEvent('esx_society:openBossMenu', 'mafia', function(data, menu)
 
             menu.close()
 
@@ -1716,7 +1810,7 @@ Citizen.CreateThread(function()
 
     end
 
-   if IsControlPressed(0,  Keys['F9']) and PlayerData.org ~= nil and PlayerData.org.name == 'mafia' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'mafia_actions') and (GetGameTimer() - GUI.Time) > 150 then
+   if IsControlPressed(0,  Keys['F6']) and PlayerData.job ~= nil and PlayerData.job.name == 'mafia' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'mafia_actions') and (GetGameTimer() - GUI.Time) > 150 then
      OpenMafiaActionsMenu()
      GUI.Time = GetGameTimer()
     end
