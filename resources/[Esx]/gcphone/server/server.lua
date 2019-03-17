@@ -542,6 +542,8 @@ AddEventHandler('es:playerLoaded',function(source)
         TriggerClientEvent("gcPhone:myPhoneNumber", sourcePlayer, myPhoneNumber)
         TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
         TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
+		TriggerEvent("bank:getbank")
+		
     end)
 end)
 
@@ -683,3 +685,21 @@ function onRejectFixePhone(source, infoCall, rtcAnswer)
     AppelsEnCours[id] = nil
     
 end
+
+local function getBankFromUser(id_user)
+	local xPlayer = ESX.GetPlayerFromId(id_user)
+	local account = xPlayer.getAccount('bank')
+	return account.money
+end
+
+RegisterServerEvent('bank:getbank')
+AddEventHandler('bank:getbank', function()
+	local _source = source
+	print("source: ", _source)
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	if xPlayer ~= nil then
+		local bank = getBankFromUser(_source)
+		print("bank: ", bank)
+		TriggerClientEvent("banking:updateBalance", _source, bank)
+	end
+end)

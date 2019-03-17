@@ -228,6 +228,11 @@
       "routeName": "parametre",
       "inHomePage": true
     },
+	{
+      "name": "Bank",
+      "icons": "/html/static/img/icons_app/bank.png",
+      "routeName": "bank"
+    },
     {
       "name": "Stock",
       "icons": "/html/static/img/icons_app/bourse.png",

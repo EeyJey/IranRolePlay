@@ -1,4 +1,4 @@
---====================================================================================
+ --====================================================================================
 --  Function APP BANK
 --====================================================================================
 
@@ -15,6 +15,7 @@ RegisterNetEvent('es:displayBank')
 AddEventHandler('es:displayBank', function(a)
   print('BANK ', a)
 	SendNUIMessage({event = 'updateBankbalance', banking = a})
+	TriggerServerEvent('bank:getbank') 
 end)
 
 RegisterNetEvent("es:addedBank")

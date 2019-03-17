@@ -40,6 +40,7 @@ Locales['en'] = {
   ['put_in_vehicle'] = 'put in Vehicle',
   ['out_the_vehicle'] = 'drag out from vehicle',
   ['fine'] = 'fine',
+  ['jail'] = 'jail',
   ['unpaid_bills'] = 'manage unpaid bills',
   ['license_check'] = 'manage license',
   ['license_revoke'] = 'revoke license',

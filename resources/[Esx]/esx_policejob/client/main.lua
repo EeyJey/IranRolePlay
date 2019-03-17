@@ -495,6 +495,7 @@ function OpenPoliceActionsMenu()
 				{label = _U('drag'),			value = 'drag'},
 				{label = _U('put_in_vehicle'),	value = 'put_in_vehicle'},
 				{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'},
+				{label = _U('jail'),			value = 'jail'},
 				{label = _U('fine'),			value = 'fine'},
 				{label = _U('unpaid_bills'),	value = 'unpaid_bills'}
 			}
@@ -529,6 +530,8 @@ function OpenPoliceActionsMenu()
 						TriggerServerEvent('esx_policejob:OutVehicle', GetPlayerServerId(closestPlayer))
 					elseif action == 'fine' then
 						OpenFineMenu(closestPlayer)
+					elseif action == 'jail' then
+						openJailMenu(GetPlayerServerId(closestPlayer))
 					elseif action == 'license' then
 						ShowPlayerLicense(closestPlayer)
 					elseif action == 'unpaid_bills' then
@@ -2054,3 +2057,61 @@ RegisterNetEvent('NB:openMenuPolice')
 AddEventHandler('NB:openMenuPolice', function()
 	OpenPoliceActionsMenu()
 end)
+
+---------------------------------------------------------------------------------------------------------
+--                                              Jail                                                   --
+---------------------------------------------------------------------------------------------------------
+
+
+function openJailMenu(playerid)
+  local elements = {
+    {label = "Celule 1",     value = 'JailPoliceStation1'},
+    {label = "Celule 2",     value = 'JailPoliceStation2'},
+    {label = "Celule 3",     value = 'JailPoliceStation3'},
+    {label = "Celule Zendane federal",     value = 'FederalJail'},
+    {label = "Azad kardan",     value = 'FreePlayer'},
+  }
+  ESX.UI.Menu.Open(
+	'default', GetCurrentResourceName(), 'jail_menu',
+	{
+	  title    = 'Zendani kardan',
+	  align    = 'top-left',
+	  elements = elements,
+	},
+	function(data3, menu)
+		if data3.current.value ~= "FreePlayer" then
+			maxLength = 4
+			AddTextEntry('FMMC_KEY_TIP8', "time")
+			DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP8", "", "", "", "", "", maxLength)
+			ESX.ShowNotification("~b~Modat zaman e zandan ro taiin konid.(be daghighe)")
+			blockinput = true
+
+			while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do
+				Citizen.Wait( 0 )
+			end
+
+			local jailtime = GetOnscreenKeyboardResult()
+
+			UnblockMenuInput()
+
+			if string.len(jailtime) >= 1 and tonumber(jailtime) ~= nil then
+				TriggerServerEvent('esx_jb_jailer:PutInJail', playerid, data3.current.value, tonumber(jailtime)*60)
+			else
+				return false
+			end
+		else
+			TriggerServerEvent('esx_jb_jailer:UnJailplayer', playerid)
+		end
+	end,
+	function(data3, menu)
+	  menu.close()
+	end
+  )
+end
+
+function UnblockMenuInput()
+    Citizen.CreateThread( function()
+        Citizen.Wait( 150 )
+        blockinput = false 
+    end )
+end
