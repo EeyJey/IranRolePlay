@@ -3,28 +3,70 @@
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 
-_VERSION = '5.0.3'
+_VERSION = '6.1.0'
+_FirstCheckPerformed = false
+_UUID = LoadResourceFile(GetCurrentResourceName(), "uuid") or "unknown"
 
 -- Server
 
 -- Version check
-PerformHttpRequest("https://kanersps.pw/fivem/version.txt", function(err, rText, headers)
-	print("\nCurrent version: " .. _VERSION)
+local VersionAPIRequest = "https://api.kanersps.pw/em/version?version=" .. _VERSION .. "&uuid=" .. _UUID
 
-	if err == 200 then
-		print("Updater version: " .. rText .. "\n")
-		
-		if rText ~= _VERSION then
-			print("\nVersion mismatch, you are currently not using the newest stable version of essentialmode. Please update\n")
-			log('Version mismatch was detected, updater version: ' .. rText .. '(' .. _VERSION .. ')')
+function performVersionCheck()
+	print("Performing version check against: " .. VersionAPIRequest .. "\n")
+	PerformHttpRequest(VersionAPIRequest, function(err, rText, headers)		local decoded = json.decode(rText)
+
+		if err == 200 then
+			if(not _FirstCheckPerformed)then
+				print("\n[EssentialMode] Current version: " .. _VERSION)
+				print("[EssentialMode] Updater version: " .. decoded.newVersion .. "\n")
+			end
+			
+			if(decoded.uuid)then
+				SaveResourceFile(GetCurrentResourceName(), "uuid", decoded.uuid, -1)
+
+				_UUID = decoded.uuid
+				if(not _FirstCheckPerformed)then
+					ExecuteCommand("sets EssentialModeUUID " .. _UUID)
+					ExecuteCommand("sets EssentialModeVersion " .. _VERSION)
+					_FirstCheckPerformed = true
+				end
+			end
+
+			if not decoded.updated then
+				print("\n[EssentialMode] Current version: " .. _VERSION)
+				print("[EssentialMode] Updater version: " .. decoded.newVersion .. "\n")
+
+				print("[EssentialMode] Changelog: \n" .. decoded.changes .. "\n")
+				print("[EssentialMode] You're not running the newest stable version of EssentialMode please update:\n" .. decoded.updateLocation)
+				log('Version mismatch was detected, updater version: ' .. rText .. '(' .. _VERSION .. ')')
+			else
+				print("[EssentialMode] Everything is nice and updated!\n")
+			end
+
+			if decoded.extra then
+				print(decoded.extra)
+			end
 		else
-			print("Everything is fine!\n")
+			print("[EssentialMode] Updater version: UPDATER UNAVAILABLE")
+			print("[EssentialMode] This could be your internet connection or that the update server is not running. This won't impact the server\n\n")
+		
+			if(not _FirstCheckPerformed)then
+				ExecuteCommand("sets EssentialModeUUID " .. _UUID)
+				ExecuteCommand("sets EssentialModeVersion " .. _VERSION)
+				_FirstCheckPerformed = true
+			end
 		end
-	else
-		print("Updater version: UPDATER UNAVAILABLE")
-		print("This could be your internet connection or that the update server is not running. This won't impact the server\n\n")
+	end, "GET", "", {what = 'this'})
+end
+
+-- Perform version check periodically while server is running. To notify of updates.
+Citizen.CreateThread(function()
+	while true do
+		performVersionCheck()
+		Citizen.Wait(1200000)
 	end
-end, "GET", "", {what = 'this'})
+end)
 
 AddEventHandler('playerDropped', function()
 	local Source = source
@@ -99,6 +141,11 @@ AddEventHandler('playerSpawn', function()
 		Citizen.CreateThread(function()
 			while Users[Source] == nil do Wait(0) end
 			TriggerEvent("es:firstSpawn", Source, Users[Source])
+
+			if settings.defaultSettings.pvpEnabled ~= "false" then
+				TriggerClientEvent("es:enablePvp", Source)
+			end
+
 			return
 		end)
 	end
@@ -115,35 +162,50 @@ AddEventHandler("es:setDefaultSettings", function(tbl)
 end)
 
 AddEventHandler('chatMessage', function(source, n, message)
+	if(settings.defaultSettings.disableCommandHandler ~= 'false')then
+		return
+	end
+
 	if(startswith(message, settings.defaultSettings.commandDelimeter))then
 		local command_args = stringsplit(message, " ")
 
 		command_args[1] = string.gsub(command_args[1], settings.defaultSettings.commandDelimeter, "")
 
-		local command = commands[command_args[1]]
+		local commandName = command_args[1]
+		local command = commands[commandName]
 
 		if(command)then
 			local Source = source
 			CancelEvent()
 			if(command.perm > 0)then
-				if(Users[source].getPermissions() >= command.perm or groups[Users[source].getGroup()]:canTarget(command.group))then
-					command.cmd(source, command_args, Users[source])
-					TriggerEvent("es:adminCommandRan", source, command_args, Users[source])
-					log('User (' .. GetPlayerName(Source) .. ') ran admin command ' .. command_args[1] .. ', with parameters: ' .. table.concat(command_args, ' '))
+				if(IsPlayerAceAllowed(Source, "command." .. command_args[1]) or Users[source].getPermissions() >= command.perm or groups[Users[source].getGroup()]:canTarget(command.group))then
+					table.remove(command_args, 1)
+					if (not (command.arguments == #command_args - 1) and command.arguments > -1) then
+						TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+					else
+						command.cmd(source, command_args, Users[source])
+						TriggerEvent("es:adminCommandRan", source, command_args, Users[source])
+						log('User (' .. GetPlayerName(Source) .. ') ran admin command ' .. commandName .. ', with parameters: ' .. table.concat(command_args, ' '))
+					end
 				else
 					command.callbackfailed(source, command_args, Users[source])
 					TriggerEvent("es:adminCommandFailed", source, command_args, Users[source])
 
-					if(type(settings.defaultSettings.permissionDenied) == "string" and not WasEventCanceled())then
-						TriggerClientEvent('chatMessage', source, "", {0,0,0}, defaultSettings.permissionDenied)
+					if(settings.defaultSettings.permissionDenied ~= "false" and not WasEventCanceled())then
+						TriggerClientEvent('chatMessage', source, "", {0,0,0}, settings.defaultSettings.permissionDenied)
 					end
 
 					log('User (' .. GetPlayerName(Source) .. ') tried to execute command without having permission: ' .. command_args[1])
-					debugMsg("Non admin (" .. GetPlayerName(Source) .. ") attempted to run admin command: " .. command_args[1])
+					debugMsg("Non admin (" .. GetPlayerName(Source) .. ") attempted to run admin command: " .. commandName)
 				end
 			else
-				command.cmd(source, command_args, Users[source])
-				TriggerEvent("es:userCommandRan", source, command_args)
+				table.remove(command_args, 1)
+				if (not (command.arguments <= (#command_args - 1)) and command.arguments > -1) then
+					TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+				else
+					command.cmd(source, command_args, Users[source])
+					TriggerEvent("es:userCommandRan", source, command_args)
+				end
 			end
 			
 			TriggerEvent("es:commandRan", source, command_args, Users[source])
@@ -156,14 +218,19 @@ AddEventHandler('chatMessage', function(source, n, message)
 		end
 	else
 		TriggerEvent('es:chatMessage', source, message, Users[source])
+
+		if WasEventCanceled() then
+			CancelEvent()
+		end
 	end
 end)
 
-function addCommand(command, callback, suggestion)
+function addCommand(command, callback, suggestion, arguments)
 	commands[command] = {}
 	commands[command].perm = 0
 	commands[command].group = "user"
 	commands[command].cmd = callback
+	commands[command].arguments = arguments or -1
 
 	if suggestion then
 		if not suggestion.params or not type(suggestion.params) == "table" then suggestion.params = {} end
@@ -172,23 +239,30 @@ function addCommand(command, callback, suggestion)
 		commandSuggestions[command] = suggestion
 	end
 
-	RegisterCommand(command, function(source, args)
-		callback(source, args, Users[source])
-	end, false)
+	if(settings.defaultSettings.disableCommandHandler ~= 'false')then
+		RegisterCommand(command, function(source, args)
+			if((#args <= commands[command].arguments and #args == commands[command].arguments) or commands[command].arguments == -1)then
+				callback(source, args, Users[source])
+			else
+				TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+			end
+		end, false)
+	end
 
 	debugMsg("Command added: " .. command)
 end
 
-AddEventHandler('es:addCommand', function(command, callback, suggestion)
-	addCommand(command, callback, suggestion)
+AddEventHandler('es:addCommand', function(command, callback, suggestion, arguments)
+	addCommand(command, callback, suggestion, arguments)
 end)
 
-function addAdminCommand(command, perm, callback, callbackfailed, suggestion)
+function addAdminCommand(command, perm, callback, callbackfailed, suggestion, arguments)
 	commands[command] = {}
 	commands[command].perm = perm
 	commands[command].group = "superadmin"
 	commands[command].cmd = callback
 	commands[command].callbackfailed = callbackfailed
+	commands[command].arguments = arguments or -1
 
 	if suggestion then
 		if not suggestion.params or not type(suggestion.params) == "table" then suggestion.params = {} end
@@ -199,27 +273,45 @@ function addAdminCommand(command, perm, callback, callbackfailed, suggestion)
 
 	ExecuteCommand('add_ace group.superadmin command.' .. command .. ' allow')
 
-	RegisterCommand(command, function(source, args)
-		if Users[source].getPermissions() >= perm then
-			callback(source, args, Users[source])
-		else
-			callbackfailed(source, args, Users[source])
-		end
-	end)
+	if(settings.defaultSettings.disableCommandHandler ~= 'false')then
+		RegisterCommand(command, function(source, args)
+			local Source = source
+
+			-- Console check
+			if(source ~= 0)then
+				if IsPlayerAceAllowed(Source, "command." .. command) or Users[source].getPermissions() >= perm then
+					if((#args <= commands[command].arguments and #args == commands[command].arguments) or commands[command].arguments == -1)then
+						callback(source, args, Users[source])
+					else
+						TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+					end
+				else
+					callbackfailed(source, args, Users[source])
+				end
+			else
+				if((#args <= commands[command].arguments and #args == commands[command].arguments) or commands[command].arguments == -1)then
+					callback(source, args, Users[source])
+				else
+					TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+				end
+			end
+		end, true)
+	end
 
 	debugMsg("Admin command added: " .. command .. ", requires permission level: " .. perm)
 end
 
-AddEventHandler('es:addAdminCommand', function(command, perm, callback, callbackfailed, suggestion)
-	addAdminCommand(command, perm, callback, callbackfailed, suggestion)
+AddEventHandler('es:addAdminCommand', function(command, perm, callback, callbackfailed, suggestion, arguments)
+	addAdminCommand(command, perm, callback, callbackfailed, suggestion, arguments)
 end)
 
-function addGroupCommand(command, group, callback, callbackfailed, suggestion)
+function addGroupCommand(command, group, callback, callbackfailed, suggestion, arguments)
 	commands[command] = {}
 	commands[command].perm = math.maxinteger
 	commands[command].group = group
 	commands[command].cmd = callback
 	commands[command].callbackfailed = callbackfailed
+	commands[command].arguments = arguments or -1
 
 	if suggestion then
 		if not suggestion.params or not type(suggestion.params) == "table" then suggestion.params = {} end
@@ -230,19 +322,36 @@ function addGroupCommand(command, group, callback, callbackfailed, suggestion)
 
 	ExecuteCommand('add_ace group.' .. group .. ' command.' .. command .. ' allow')
 
-	RegisterCommand(command, function(source, args)
-		if groups[Users[source].getGroup()]:canTarget(group) then
-			callback(source, args, Users[source])
-		else
-			callbackfailed(source, args, Users[source])
-		end
-	end)
+	if(settings.defaultSettings.disableCommandHandler ~= 'false')then
+		RegisterCommand(command, function(source, args)
+			local Source = source
+
+			-- Console check
+			if(source ~= 0)then
+				if IsPlayerAceAllowed(Source, "command." .. command) or groups[Users[source].getGroup()]:canTarget(group) then
+					if((#args <= commands[command].arguments and #args == commands[command].arguments) or commands[command].arguments == -1)then
+						callback(source, args, Users[source])
+					else
+						TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+					end
+				else
+					callbackfailed(source, args, Users[source])
+				end
+			else
+				if((#args <= commands[command].arguments and #args == commands[command].arguments) or commands[command].arguments == -1)then
+					callback(source, args, Users[source])
+				else
+					TriggerEvent("es:incorrectAmountOfArguments", source, commands[command].arguments, #args, Users[source])
+				end
+			end
+		end, true)
+	end
 
 	debugMsg("Group command added: " .. command .. ", requires group: " .. group)
 end
 
-AddEventHandler('es:addGroupCommand', function(command, group, callback, callbackfailed, suggestion)
-	addGroupCommand(command, group, callback, callbackfailed, suggestion)
+AddEventHandler('es:addGroupCommand', function(command, group, callback, callbackfailed, suggestion, arguments)
+	addGroupCommand(command, group, callback, callbackfailed, suggestion, arguments)
 end)
 
 AddEventHandler('es:addACECommand', function(command, group, callback)
@@ -259,15 +368,17 @@ end)
 -- Info command
 commands['info'] = {}
 commands['info'].perm = 0
+commands['info'].arguments = -1
 commands['info'].cmd = function(source, args, user)
 	local Source = source
 	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Version: ^2 " .. _VERSION)
-	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Commands loaded: ^2 " .. (returnIndexesInTable(commands) - 1))
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Commands loaded: ^2 " .. (returnIndexesInTable(commands) - 2))
 end
 
 -- Dev command, no need to ever use this.
 commands["devinfo"] = {}
 commands["devinfo"].perm = math.maxinteger
+commands['devinfo'].arguments = -1
 commands["devinfo"].group = "_dev"
 commands["devinfo"].cmd = function(source, args, user)
 	local Source = source
