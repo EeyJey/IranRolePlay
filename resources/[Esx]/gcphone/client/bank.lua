@@ -18,6 +18,12 @@ AddEventHandler('es:displayBank', function(a)
 	TriggerServerEvent('bank:getbank') 
 end)
 
+RegisterNetEvent('es:loadBank')
+AddEventHandler('es:displayBank', function(a)
+	TriggerServerEvent('bank:getbank') 
+end)
+
+
 RegisterNetEvent("es:addedBank")
 AddEventHandler("es:addedBank", function(m, native)
   bank = bank + m

@@ -542,7 +542,7 @@ AddEventHandler('es:playerLoaded',function(source)
         TriggerClientEvent("gcPhone:myPhoneNumber", sourcePlayer, myPhoneNumber)
         TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
         TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
-		TriggerEvent("bank:getbank")
+		TriggerClientEvent("es:loadBank", sourcePlayer)
 		
     end)
 end)
@@ -694,7 +694,7 @@ end
 
 RegisterServerEvent('bank:getbank')
 AddEventHandler('bank:getbank', function()
-	local _source = source
+	local _source = tonumber(source)
 	print("source: ", _source)
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	if xPlayer ~= nil then

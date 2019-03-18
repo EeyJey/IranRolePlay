@@ -4,7 +4,7 @@
 ESX                         = nil
 inMenu                      = true
 local showblips = true
-local atbank = false
+local atbank = true
 local bankMenu = true
 local banks = {
   {name="Bank", id=108, x=150.266, y=-1040.203, z=29.374},
@@ -118,7 +118,7 @@ if bankMenu then
   while true do
     Wait(0)
 	if nearBank() or nearATM() then
-			DisplayHelpText("Appuyez ~INPUT_PICKUP~ accéder à la banque ~b~")
+			DisplayHelpText("Baraye dastresi be ATM ~INPUT_PICKUP~ ro bezanid")
 	
 		if IsControlJustPressed(1, 38) then
 			inMenu = true
