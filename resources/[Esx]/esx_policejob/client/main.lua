@@ -1036,8 +1036,12 @@ function OpenGetWeaponMenu()
     local elements = {}
 
     for i=1, #weapons, 1 do
-      if weapons[i].count > 0 then
-        table.insert(elements, {label = 'x' .. weapons[i].count .. ' ' .. ESX.GetWeaponLabel(weapons[i].name), value = weapons[i].name})
+			if weapons[i].count > 0 then
+				wname = ESX.GetWeaponLabel(weapons[i].name)
+				print("id: ", weapons[i].name)
+				print("count: ",  weapons[i].count)
+				print("name: ",  wname)
+        table.insert(elements, {label = 'x' .. weapons[i].count .. ' ' .. wname, value = weapons[i].name})
       end
     end
 

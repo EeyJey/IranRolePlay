@@ -416,8 +416,10 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 			if self.loadout[i].name == weaponName then
 				weaponLabel = self.loadout[i].label
 
-				for j=1, #self.loadout[i].components, 1 do
-					TriggerClientEvent('esx:removeWeaponComponent', self.source, weaponName, self.loadout[i].components[j])
+				if self.loadout[i].components then 
+					for j=1, #self.loadout[i].components, 1 do
+						TriggerClientEvent('esx:removeWeaponComponent', self.source, weaponName, self.loadout[i].components[j])
+					end
 				end
 
 				table.remove(self.loadout, i)

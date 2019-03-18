@@ -93,78 +93,30 @@ Config.AuthorizedVehicles = {
 
 	recruit = {
 		{
-			model = 'police7',
-			label = 'Ford Cruiser'
-		},
-		{
-			model = 'police8',
-			label = 'Chevrolet Police'
-		},
+			model = 'police2',
+			label = 'Dodge Charger'
+		},	
 	},
 
 	officer = {
-	    {
-			model = 'police7',
-			label = 'Ford Cruiser'
-		},
-		{
-			model = 'police8',
-			label = 'Chevrolet Police'
-		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
-		},
-    	{
-			model = 'police4',
-			label = 'Ford Berline'
 		},	
 	},
 
 	sergeant = {
-	    {
-			model = 'police7',
-			label = 'Ford Cruiser'
-		},
-		{
-			model = 'police8',
-			label = 'Chevrolet Police'
-		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
 		},
-    	{
-			model = 'police4',
-			label = 'Ford Berline'
-		},
 		{
 			model = 'police3',
 			label = 'Ford Interceptor'
-		},
-		{
-			model = 'police6',
-			label = 'Chevrolet Tahoe'
 		},
 	},
 
 	lieutenant = {
-		{
-			model = 'pol718',
-			label = 'Porsche 718'
-		},
-		{
-			model = 'polp1',
-			label = 'McLaren P1'
-		},
-	    {
-			model = 'police7',
-			label = 'Ford Cruiser'
-		},
-		{
-			model = 'police8',
-			label = 'Chevrolet Police'
-		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
@@ -176,30 +128,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'police3',
 			label = 'Ford Interceptor'
-		},
-		{
-			model = 'police6',
-			label = 'Chevrolet Tahoe'
 		},
 	},
 
 	boss = {
-		{
-			model = 'pol718',
-			label = 'Porsche 718'
-		},
-		{
-			model = 'polp1',
-			label = 'McLaren P1'
-		},
-	    {
-			model = 'police7',
-			label = 'Ford Cruiser'
-		},
-		{
-			model = 'police8',
-			label = 'Chevrolet Police'
-		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
@@ -211,10 +143,6 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'police3',
 			label = 'Ford Interceptor'
-		},
-		{
-			model = 'police6',
-			label = 'Chevrolet Tahoe'
 		},
 	},
 }

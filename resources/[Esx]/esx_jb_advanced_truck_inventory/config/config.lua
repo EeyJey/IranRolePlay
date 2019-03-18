@@ -8,7 +8,7 @@ Config.Limit = 25000
 	-- weight == 0 : The item do not affect character inventory weight
 	-- weight > 0 : The item cost place on inventory
 	-- weight < 0 : The item add place on inventory. Smart people will love it.
-Config.DefaultWeight = 0
+Config.DefaultWeight = 1000
 
 
 
@@ -22,6 +22,42 @@ Config.localWeight = {
 	water = 330,
 	WEAPON_COMBATPISTOL = 1000, -- poid poir une munnition
 	black_money = 1, -- poids pour un argent
+	alcool = 1000,
+	alcool_cargo = 5000,
+	alive_chicken = 5000,
+	bandage = 125,
+	cagoule = 500,
+	clip = 100,
+	clothe = 500,
+	coke_pooch = 5000,
+	copper = 2000,
+	croquettes = 100,
+	cutted_wood = 2000,
+	diamond = 500,
+	drill = 2000,
+	energy = 500,
+	essence = 3000,
+	fabric = 500,
+	fish = 1000,
+	flashlight = 250,
+	gold = 2000,
+	golem = 10000,
+	iron = 2000,
+	jewels = 250,
+	medikit = 500,
+	meth_pooch = 5000,
+	menthe = 5000,
+	opium_pooch = 5000,
+	packaged_chicken = 500,
+	packaged_plank = 500,
+	petrol = 2000,
+	petrol_raffin = 2000,
+	slaughtered_chicken = 2500,
+	stone = 2500,
+	viande = 2000,
+	weed = 500,
+	weed_pooch = 2500,
+	wool = 500	
 }
 
 Config.VehicleLimit = {
