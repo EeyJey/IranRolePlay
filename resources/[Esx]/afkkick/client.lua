@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
 			if currentPos == prevPos then
 				if time > 0 then
 					if kickWarning and time == math.ceil(secondsUntilKick / 4) then
-						TriggerEvent("chatMessage", "ATTENTION", {255, 0, 0}, "^1Vous allez être kick dans " .. time .. " secondes car vous êtes afk!")
+						TriggerEvent("chatMessage", "Tavajoh", {255, 0, 0}, "^1Shoma " .. time .. " saniye dige dar soorat afk mandan kick khahi shod!")
 					end
 
 					time = time - 1
