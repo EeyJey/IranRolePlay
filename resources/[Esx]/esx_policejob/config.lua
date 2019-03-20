@@ -144,6 +144,11 @@ Config.AuthorizedVehicles = {
 			model = 'police3',
 			label = 'Ford Interceptor'
 		},
+		{
+			model = 'police5',
+			label = 'Aventadoor'
+		},
+		
 	},
 }
 

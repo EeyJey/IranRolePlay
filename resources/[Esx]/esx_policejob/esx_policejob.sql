@@ -32,7 +32,7 @@ CREATE TABLE `fine_types` (
 );
 
 INSERT INTO `fine_types` (label, amount, category) VALUES
-	('Usage abusif du klaxon',30,0),
+	('Aloodegi soti',30,0),
 	('Franchir une ligne continue',40,0),
 	('Circulation à contresens',250,0),
 	('Demi-tour non autorisé',250,0),
