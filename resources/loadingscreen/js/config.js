@@ -66,25 +66,25 @@ var config =
     */
     loadingMessages:
     [
-        "Welcome to RP server...",
-        "Connecting...",
-        "Connecting...",
-        "Connecting...",
-        "Loading banks locations...",
-        "Loading weeds locations...",
-        "Loading meths locations...",
-        "Loading cars locations...",
-        "Loading legal jobs...",
-        "Loading illegal jobs...",
-        "Loading lester...",
-        "What do you waiting for?...",
-        "Starting engines..."
+        "برای قفل کردن و باز کردن ماشین فقط کافیه دکمه U را بزنید",
+        "برای فعال کردن سیستم کروز کنترل کافیست دکمه ی B را بزنید",
+        "مراقب باشید برای انجام کار های خلاف قانون جریمه نشوید! حداقل جلوی پلیس انجام ندید",
+        "برای بستن کمربند دکمه ی L را بزنید",
+        "آیا میدونستید میتونید پسزمینه ی گوشیتونو عوض کنید؟",
+        "پس زمینه های دیفالت رو میتونید از سایت WALLLIT.ir دانلود کنید.",
+        "در صورت داشتن شکایت میتونید به اداره ی پلیس مراجعه کنید",
+        "میدونستید میتونید اسلحه بدون مجوز بخرید؟ بین خودمون باشه ها",
+        "در صورت داشتن پیشنهاد یا انتقاد خوشحال میشیم با ما در میون بذارید.",
+        "میتونید با زدن دکمه های = و - راهنما بزنید",
+        "مراقب باشید ماشیناتونو دیگران ندزدن",
+        "آیا میدونستید پلیس میتونه شما رو به جرم حتی ایجاد ترافیک جریمه کنه؟",
+        "بازی کنید و کیف کنید."
     ],
  
     /*
         Rotate the loading message every 5000 milliseconds (default value).
     */
-    loadingMessageSpeed: 5 * 600,
+    loadingMessageSpeed: 10 * 600,
  
     /*
         Array of music id's to play in the loadscreen.

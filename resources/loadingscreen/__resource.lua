@@ -8,6 +8,7 @@ files {
     'css/icomoon.css',
     
     'fonts/gravity.otf',
+	'fonts/iran.otf',
     'fonts/icomoon.ttf',
     
     'img/cursor.png',    

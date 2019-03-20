@@ -15,13 +15,13 @@ Config.CarJackingAlert = true
 Config.MeleeAlert = true
 
 -- In seconds
-Config.BlipGunTime = 5
+Config.BlipGunTime = 10
 
 -- Blip radius, in float value!
 Config.BlipGunRadius = 50.0
 
 -- In seconds
-Config.BlipMeleeTime = 7
+Config.BlipMeleeTime = 5
 
 -- Blip radius, in float value!
 Config.BlipMeleeRadius = 50.0

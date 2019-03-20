@@ -1,7 +1,12 @@
 @font-face 
 {
     font-family: gravity;
-    src: url(../fonts/gravity.otf);
+    src: url(../fonts/iran.otf);
+}
+@font-face 
+{
+    font-family: iran;
+    src: url(../fonts/iran.otf);
 }
 
 @keyframes slideright {
@@ -150,6 +155,7 @@ progress::-webkit-progress-value
 
 .loading-text
 {
+	font-family: iran;
     display: inline-block;
 }
 
@@ -158,6 +164,7 @@ progress::-webkit-progress-value
 */
 #message 
 {
+	font-family: iran;
     opacity:1;
     transition: opacity 0.3s; 
 }

@@ -30,6 +30,8 @@ function jailing(Station, JailTime)
 			SetEntityCoords(PlayerPed, spawnloccoords.x,spawnloccoords.y, spawnloccoords.z )
 			cJ = true
 			IsPlayerUnjailed = false
+			SetCurrentPedWeapon(PlayerPed, unarmed, true)
+			SetPedCanSwitchWeapon(PlayerPed, false)
 			while JailTime > 0 and not IsPlayerUnjailed do
 				local remainingjailseconds = JailTime/ 60
 				local jailseconds =  math.floor(JailTime) % 60 
@@ -49,7 +51,7 @@ function jailing(Station, JailTime)
 				end
 				if JailTime % 10 == 0 then
 					if JailTime % 30 == 0 then
-						TriggerEvent('chatMessage', 'SYSTEM', { 0, 0, 0 }, math.floor(jaildays).." jours, "..math.floor(jailhours).." heures,"..math.floor(jailminutes).." minutes, "..math.floor(jailseconds).." secondes avant d'être libéré.")
+						TriggerEvent('chatMessage', 'SYSTEM', { 0, 0, 0 }, math.floor(jaildays).." rooz, "..math.floor(jailhours).." saat,"..math.floor(jailminutes).." daghighe, "..math.floor(jailseconds).." saniye ta azadi.")
 					end
 				end
 				Citizen.Wait(1000)
@@ -64,6 +66,7 @@ function jailing(Station, JailTime)
 			GetBackOriginalClothes()
 			local outsidecoords = {}
 			outsidecoords = SetPlayerSpawnLocationoutsidejail(Station)
+			SetPedCanSwitchWeapon(PlayerPed, true)
 			SetEntityCoords(PlayerPed, outsidecoords.x,outsidecoords.y,outsidecoords.z )
 			cJ = false
 			--SetEntityInvincible(PlayerPed, false)
