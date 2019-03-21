@@ -46,6 +46,19 @@ function OpenShopMenu(zone)
 			max        = item.limit
 		})
 	end
+	
+	table.insert(elements, {
+			label      = "Buy ammo" .. ' - <span style="color: green;">$' .. 1000 .. '</span>',
+			label_real = "ammo",
+			item       = "ammo",
+			price      = 1000,
+
+			-- menu properties
+			value      = 100,
+			type       = 'slider',
+			min        = 100,
+			max        = 100
+		})
 
 	ESX.UI.Menu.CloseAll()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
@@ -62,7 +75,24 @@ function OpenShopMenu(zone)
 			}
 		}, function(data2, menu2)
 			if data2.current.value == 'yes' then
-				TriggerServerEvent('esx_narshop:buyItem', data.current.item, data.current.value, zone)
+				if data.current.item == 'ammo' then
+					ped = GetPlayerPed(-1)
+					weapon = GetSelectedPedWeapon(ped)
+					ammo = GetAmmoInPedWeapon(ped, weapon)
+					local bool, maxAmmo = GetMaxAmmo(ped, weapon)
+					print("max: ", maxAmmo )
+					if ammo + 1 < maxAmmo then
+						ESX.TriggerServerCallback('esx_narshop:buyAmmo', function(success)
+							if success then
+								AddAmmoToPed(ped, weapon, 100)
+							end
+						end)
+					else
+						ESX.ShowNotification('Bishtarin meghdar tir darid')
+					end
+				else
+					TriggerServerEvent('esx_narshop:buyItem', data.current.item, data.current.value, zone)
+				end
 			end
 
 			menu2.close()

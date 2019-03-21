@@ -61,6 +61,23 @@ ESX.RegisterServerCallback('esx_narshop:requestDBItems', function(source, cb)
 	cb(ShopItems)
 end)
 
+ESX.RegisterServerCallback('esx_narshop:buyAmmo', function( source, cb)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+
+	if xPlayer.getMoney() >= 1000 then
+		ped = GetPlayerPed(xPlayer)
+		xPlayer.removeMoney(1000)
+		TriggerClientEvent('esx:showNotification', _source, _U('bought', 100, "ammo", 1000))
+		cb(true)
+	else
+		local missingMoney = price - xPlayer.getMoney()
+		TriggerClientEvent('esx:showNotification', _source, _U('not_enough', missingMoney))
+		cb(false)
+	end
+
+end)
+
 RegisterServerEvent('esx_narshop:buyItem')
 AddEventHandler('esx_narshop:buyItem', function(itemName, amount, zone)
 	local _source = source
