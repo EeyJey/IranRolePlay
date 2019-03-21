@@ -1,35 +1,49 @@
 USE `essentialmode`;
 
 INSERT INTO `addon_account` (name, label, shared) VALUES
-  ('society_cardealer','Autokauppa',1)
+	('society_cardealer','Autokauppa',1)
 ;
 
 INSERT INTO `addon_inventory` (name, label, shared) VALUES
-  ('society_cardealer','Autokauppa',1)
+	('society_cardealer','Autokauppa',1)
 ;
 
 INSERT INTO `jobs` (name, label) VALUES
-  ('cardealer','Autokauppa')
+	('cardealer','Autokauppa')
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
-  ('cardealer',0,'recruit','Harjoittelija',10,'{}','{}'),
-  ('cardealer',1,'novice','Aloittelija',25,'{}','{}'),
-  ('cardealer',2,'experienced','Kokenut',40,'{}','{}'),
-  ('cardealer',3,'boss','Pomo',0,'{}','{}')
+	('cardealer',0,'recruit','Harjoittelija',10,'{}','{}'),
+	('cardealer',1,'novice','Aloittelija',25,'{}','{}'),
+	('cardealer',2,'experienced','Kokenut',40,'{}','{}'),
+	('cardealer',3,'boss','Pomo',0,'{}','{}')
 ;
 
 CREATE TABLE `cardealer_vehicles` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`vehicle` varchar(255) NOT NULL,
 	`price` int(11) NOT NULL,
+
 	PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `vehicle_sold` (
+	`client` VARCHAR(50) NOT NULL,
+	`model` VARCHAR(50) NOT NULL,
+	`plate` VARCHAR(50) NOT NULL,
+	`soldby` VARCHAR(50) NOT NULL,
+	`date` VARCHAR(50) NOT NULL,
+
+	PRIMARY KEY (`plate`)
+);
+
 CREATE TABLE `owned_vehicles` (
-	`owner` varchar(30) DEFAULT NULL,
-	`plate` varchar(12) DEFAULT NULL,
-	`vehicle` longtext DEFAULT NULL,
+	`owner` varchar(22) NOT NULL,
+	`plate` varchar(12) NOT NULL,
+	`vehicle` longtext,
+	`type` VARCHAR(20) NOT NULL DEFAULT 'car',
+	`job` VARCHAR(20) NULL DEFAULT NULL,
+	`stored` TINYINT(1) NOT NULL DEFAULT '0',
 
 	PRIMARY KEY (`plate`)
 );
@@ -40,7 +54,7 @@ CREATE TABLE `rented_vehicles` (
 	`player_name` varchar(255) NOT NULL,
 	`base_price` int(11) NOT NULL,
 	`rent_price` int(11) NOT NULL,
-	`owner` varchar(30) NOT NULL,
+	`owner` varchar(22) NOT NULL,
 
 	PRIMARY KEY (`plate`)
 );
@@ -71,6 +85,7 @@ CREATE TABLE `vehicles` (
 	`model` varchar(60) NOT NULL,
 	`price` int(11) NOT NULL,
 	`category` varchar(60) DEFAULT NULL,
+
 	PRIMARY KEY (`model`)
 );
 
