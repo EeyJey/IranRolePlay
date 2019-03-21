@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 03:25 AM
+-- Generation Time: Mar 22, 2019 at 12:52 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -41,25 +41,26 @@ CREATE TABLE `addon_account` (
 
 INSERT INTO `addon_account` (`id`, `name`, `label`, `shared`) VALUES
 (1, 'caution', 'Caution', 0),
-(2, 'society_cardealer', 'Concessionnaire', 1),
-(3, 'society_ambulance', 'Ambulance', 1),
-(4, 'society_mecano', 'Mécano', 1),
+(2, 'society_cardealer', 'Galery mashin', 1),
+(3, 'society_ambulance', 'Bimarestan', 1),
+(4, 'society_mecano', 'Mekanik', 1),
 (5, 'society_police', 'Police', 1),
-(6, 'society_tabac', 'Tabac', 1),
+(6, 'society_tabac', 'Dokhaniyat', 1),
 (7, 'society_taxi', 'Taxi', 1),
-(8, 'society_unicorn', 'Unicorn', 1),
-(9, 'society_vigne', 'Vigneron', 1),
-(10, 'property_black_money', 'Argent Sale Propriété', 0),
-(11, 'society_realestateagent', 'Agent immobilier', 1),
-(12, 'society_bahama', 'Bahama Mas', 1),
-(13, 'society_avocat', 'Avocat', 1),
-(14, 'society_aircraftdealer', 'Airliner', 1),
-(15, 'society_boatdealer', 'Marina', 1),
+(8, 'society_unicorn', 'Kabare', 1),
+(9, 'society_vigne', 'Takestan', 1),
+(10, 'property_black_money', 'Darayi e pool e siyah', 0),
+(11, 'society_realestateagent', 'Moshaver e amlak', 1),
+(12, 'society_bahama', 'Disco', 1),
+(13, 'society_avocat', 'Dadgostari', 1),
+(14, 'society_aircraftdealer', 'Havapeyma sazi', 1),
+(15, 'society_boatdealer', 'Kashtisazi', 1),
 (16, 'organisation_mafia', 'Mafia', 1),
 (17, 'organisation_gang', 'gang', 1),
 (18, 'organisation_cartel', 'Cartel', 1),
-(19, 'society_biker', 'Biker', 1),
-(20, 'society_securiter', 'Securiter', 1);
+(19, 'society_biker', 'Motorsavara', 1),
+(20, 'society_securiter', 'Security', 1),
+(21, 'society_mafia', 'Mafia', 1);
 
 -- --------------------------------------------------------
 
@@ -79,16 +80,16 @@ CREATE TABLE `addon_account_data` (
 --
 
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
-(1, 'society_cardealer', 0, NULL),
-(2, 'society_ambulance', 491400, NULL),
-(3, 'society_mecano', 5052213, NULL),
-(4, 'society_police', 9999962770, NULL),
+(1, 'society_cardealer', 5505920, NULL),
+(2, 'society_ambulance', 425200, NULL),
+(3, 'society_mecano', 5519713, NULL),
+(4, 'society_police', 10001023770, NULL),
 (5, 'society_tabac', 6438, NULL),
 (6, 'society_taxi', 154530, NULL),
 (7, 'society_unicorn', 10097000, NULL),
 (8, 'society_vigne', 0, NULL),
 (9, 'caution', 0, 'steam:11000010d6c30cb'),
-(10, 'society_realestateagent', 6506, NULL),
+(10, 'society_realestateagent', 4756, NULL),
 (11, 'property_black_money', 0, 'steam:11000010d6c30cb'),
 (12, 'society_bahama', 278090, NULL),
 (13, 'society_avocat', 1000, NULL),
@@ -154,7 +155,7 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 (73, 'caution', 0, 'steam:110000117825a22'),
 (74, 'property_black_money', 0, 'steam:110000135b8dcac'),
 (75, 'caution', 0, 'steam:110000135b8dcac'),
-(76, 'society_mafia', 0, NULL),
+(76, 'society_mafia', 80000, NULL),
 (77, 'society_gang', 0, NULL),
 (78, 'caution', 0, 'steam:11000011b8aadb1'),
 (79, 'property_black_money', 0, 'steam:11000011b8aadb1'),
@@ -354,14 +355,17 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 (274, 'caution', 0, 'steam:1100001167d265e'),
 (275, 'caution', 0, 'steam:1100001197619a3'),
 (276, 'property_black_money', 0, 'steam:1100001197619a3'),
-(277, 'caution', 125, 'steam:1100001045fbd8f'),
+(277, 'caution', 0, 'steam:1100001045fbd8f'),
 (278, 'property_black_money', 0, 'steam:1100001045fbd8f'),
 (279, 'property_black_money', 0, 'steam:11000010a1b83df'),
 (280, 'caution', 0, 'steam:11000010a1b83df'),
 (281, 'caution', 0, 'steam:11000010b3a30a0'),
-(282, 'property_black_money', 0, 'steam:11000010b3a30a0'),
+(282, 'property_black_money', 7352, 'steam:11000010b3a30a0'),
 (283, 'property_black_money', 0, 'steam:11000011685b145'),
-(284, 'caution', 0, 'steam:11000011685b145');
+(284, 'caution', 0, 'steam:11000011685b145'),
+(285, 'caution', 0, 'steam:1100001197354a7'),
+(286, 'property_black_money', 0, 'steam:1100001197354a7'),
+(287, 'property_black_money', 0, 'steam:110000111df570b');
 
 -- --------------------------------------------------------
 
@@ -381,25 +385,26 @@ CREATE TABLE `addon_inventory` (
 --
 
 INSERT INTO `addon_inventory` (`id`, `name`, `label`, `shared`) VALUES
-(1, 'society_cardealer', 'Concesionnaire', 1),
-(2, 'society_ambulance', 'Ambulance', 1),
-(3, 'society_mecano', 'Mécano', 1),
+(1, 'society_cardealer', 'Galery mashin', 1),
+(2, 'society_ambulance', 'Bimarestan', 1),
+(3, 'society_mecano', 'Mekanik', 1),
 (4, 'society_police', 'Police', 1),
-(5, 'society_tabac', 'Tabac', 1),
+(5, 'society_tabac', 'Dokhaniyat', 1),
 (6, 'society_taxi', 'Taxi', 1),
-(7, 'society_unicorn', 'Unicorn', 1),
-(8, 'society_unicorn_fridge', 'Unicorn (frigo)', 1),
-(9, 'society_vigne', 'Vigneron', 1),
-(10, 'property', 'Propriété', 0),
-(11, 'society_bahama', 'Bahama Mas', 1),
-(12, 'society_avocat', 'Avocat', 1),
-(13, 'society_aircraftdealer', 'Airliner', 1),
-(14, 'society_boatdealer', 'Marina', 1),
+(7, 'society_unicorn', 'Kabare', 1),
+(8, 'society_unicorn_fridge', 'Kabare (yakhchal)', 1),
+(9, 'society_vigne', 'Takestan', 1),
+(10, 'property', 'Amlak', 0),
+(11, 'society_bahama', 'Disco', 1),
+(12, 'society_avocat', 'Dadgostari', 1),
+(13, 'society_aircraftdealer', 'Havapeyma sazi', 1),
+(14, 'society_boatdealer', 'Keshti sazi', 1),
 (15, 'organisation_mafia', 'Mafia', 1),
 (16, 'organisation_gang', 'Gang', 1),
 (17, 'organisation_cartel', 'Cartel', 1),
-(18, 'society_biker', 'Biker', 1),
-(19, 'society_securiter', 'Securiter', 1);
+(18, 'society_biker', 'Motorsavara', 1),
+(19, 'society_securiter', 'Security', 1),
+(20, 'society_mafia', 'Mafia', 1);
 
 -- --------------------------------------------------------
 
@@ -438,7 +443,7 @@ INSERT INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `o
 (16, 'property', 'weed', 50, 'steam:110000111b71726'),
 (17, 'property', 'weed_pooch', 34, 'steam:110000111b71726'),
 (18, 'property', 'gitanes', 0, 'steam:110000111b71726'),
-(19, 'society_police', 'wool', 80, NULL),
+(19, 'society_police', 'wool', 69, NULL),
 (20, 'society_tabac', 'tabacbrunsec', 0, NULL),
 (21, 'society_tabac', 'tabacbrun', 0, NULL),
 (22, 'society_tabac', 'water', 0, NULL),
@@ -467,7 +472,7 @@ INSERT INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `o
 (45, 'society_police', 'flashlight', 5, NULL),
 (46, 'society_police', 'clip', 26, NULL),
 (47, 'society_police', 'silencieux', 6, NULL),
-(48, 'society_mecano', 'fixkit', 14, NULL),
+(48, 'society_mecano', 'fixkit', 13, NULL),
 (49, 'society_mecano', 'blowpipe', 10, NULL),
 (50, 'property', 'water', 0, 'steam:11000011c7b5be5'),
 (51, 'property', 'bread', 34, 'steam:11000011c7b5be5'),
@@ -555,14 +560,16 @@ INSERT INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `o
 (133, 'property', 'meth', 0, 'steam:11000011cded001'),
 (134, 'property', 'coke_pooch', 0, 'steam:11000011cded001'),
 (135, 'society_police', 'washed_stone', 7, NULL),
-(136, 'society_police', 'grip', 1, NULL),
+(136, 'society_police', 'grip', 0, NULL),
 (137, 'society_police', 'tequila', 4, NULL),
-(138, 'society_police', 'yusuf', 1, NULL),
+(138, 'society_police', 'yusuf', 0, NULL),
 (139, 'society_police', 'vodka', 4, NULL),
 (140, 'property', 'opium', 0, 'steam:11000011acec85a'),
 (141, 'property', 'meth_pooch', 5, 'steam:11000011acec85a'),
 (142, 'property', 'fixkit', 2, 'steam:11000011acec85a'),
-(143, 'organisation_gang', 'weed_pooch', 10, NULL);
+(143, 'organisation_gang', 'weed_pooch', 10, NULL),
+(144, 'society_mecano', 'clip', 1, NULL),
+(145, 'society_mecano', 'flashlight', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -638,8 +645,8 @@ CREATE TABLE `aircraft_categories` (
 --
 
 INSERT INTO `aircraft_categories` (`name`, `label`) VALUES
-('plane', 'Planes'),
-('heli', 'Helicopters');
+('plane', 'Havapeyma'),
+('heli', 'Helicopter');
 
 -- --------------------------------------------------------
 
@@ -693,7 +700,8 @@ INSERT INTO `billing` (`id`, `identifier`, `sender`, `target_type`, `target`, `l
 (249, 'steam:11000010f3c770c', 'steam:11000011c0b0ace', 'society', 'society_police', 'Amende: Meurte sur agent de l\'état', 300000),
 (257, 'steam:110000110c6f75a', 'steam:11000011c0b0ace', 'society', 'society_police', 'Amende: Port d\'arme illégal', 80000),
 (264, 'steam:11000010f3c770c', 'steam:11000011ad5e46e', 'society', 'society_police', 'Amende: Outrage à agent de police', 30000),
-(265, 'steam:11000010f3c770c', 'steam:11000011ad5e46e', 'society', 'society_police', 'Amende: Menace verbale ou intimidation envers civil', 20000);
+(265, 'steam:11000010f3c770c', 'steam:11000011ad5e46e', 'society', 'society_police', 'Amende: Menace verbale ou intimidation envers civil', 20000),
+(269, 'steam:1100001197619a3', 'steam:11000010b3a30a0', 'society', 'society_mecano', 'Mecanic', 1700000);
 
 -- --------------------------------------------------------
 
@@ -756,7 +764,7 @@ CREATE TABLE `boat_categories` (
 --
 
 INSERT INTO `boat_categories` (`name`, `label`) VALUES
-('boat', 'Boats');
+('boat', 'Ghayegh');
 
 -- --------------------------------------------------------
 
@@ -775,10 +783,7 @@ CREATE TABLE `cardealer_vehicles` (
 --
 
 INSERT INTO `cardealer_vehicles` (`id`, `vehicle`, `price`) VALUES
-(1, 'comet2', 65000),
-(2, 'penumbra', 28000),
-(3, 'bmws', 45000),
-(4, 'scorcher', 280);
+(9, 'glendale', 6500);
 
 -- --------------------------------------------------------
 
@@ -967,7 +972,9 @@ INSERT INTO `characters` (`id`, `identifier`, `firstname`, `lastname`, `dateofbi
 (211, 'steam:11000010a1b83df', 'AAA', 'BBB', '11.11.1111', 'm', '150'),
 (212, 'steam:1100001167d265e', 'MR', 'Farhan', '', 'm', '189'),
 (213, 'steam:11000010b3a30a0', 'Nobody', 'Somebody', '14-7-1374', 'm', '180'),
-(214, 'steam:11000011685b145', 'SAjjad', 'Dsh', '23/10/50', 'm', '184');
+(214, 'steam:11000011685b145', 'SAjjad', 'Dsh', '23/10/50', 'm', '184'),
+(215, 'steam:1100001197354a7', 'Abt1n', 'Kennys', '19/03/2000', 'm', '187'),
+(216, 'steam:110000111df570b', 'No-------', 'U--------', '28-05-199', 'm', '188');
 
 -- --------------------------------------------------------
 
@@ -987,22 +994,23 @@ CREATE TABLE `datastore` (
 --
 
 INSERT INTO `datastore` (`id`, `name`, `label`, `shared`) VALUES
-(1, 'user_ears', 'Ears', 0),
-(2, 'user_glasses', 'Glasses', 0),
-(3, 'user_helmet', 'Helmet', 0),
+(1, 'user_ears', 'Goosh', 0),
+(2, 'user_glasses', 'Eynak', 0),
+(3, 'user_helmet', 'Kolah', 0),
 (4, 'user_mask', 'Mask', 0),
-(5, 'society_ambulance', 'Ambulance', 1),
+(5, 'society_ambulance', 'Bimarestan', 1),
 (6, 'society_police', 'Police', 1),
-(7, 'society_tabac', 'Tabac', 1),
+(7, 'society_tabac', 'Dokhaniyat', 1),
 (8, 'society_taxi', 'Taxi', 1),
-(9, 'society_unicorn', 'Unicorn', 1),
-(10, 'society_vigne', 'Vigneron', 1),
-(11, 'property', 'Propriété', 0),
-(12, 'society_avocat', 'Avocat', 1),
+(9, 'society_unicorn', 'Kabare', 1),
+(10, 'society_vigne', 'Takestan', 1),
+(11, 'property', 'Amlak', 0),
+(12, 'society_avocat', 'Dadgostari', 1),
 (13, 'organisation_mafia', 'Mafia', 1),
 (14, 'organisation_gang', 'Gang', 1),
 (15, 'organisation_cartel', 'Cartel', 1),
-(16, 'society_biker', 'Biker', 1);
+(16, 'society_biker', 'Motorsavara', 1),
+(17, 'society_mafia', 'Mafia', 1);
 
 -- --------------------------------------------------------
 
@@ -1023,7 +1031,7 @@ CREATE TABLE `datastore_data` (
 
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 (1, 'society_ambulance', NULL, '{}'),
-(2, 'society_police', NULL, '{\"weapons\":[{\"count\":37,\"name\":\"WEAPON_NIGHTSTICK\"},{\"count\":33,\"name\":\"WEAPON_COMBATPISTOL\"},{\"count\":37,\"name\":\"WEAPON_ASSAULTSMG\"},{\"count\":24,\"name\":\"WEAPON_STUNGUN\"},{\"count\":1,\"name\":\"WEAPON_PUMPSHOTGUN\"},{\"count\":0,\"name\":\"WEAPON_PISTOL\"},{\"count\":0,\"name\":\"WEAPON_CARBINERIFLE\"},{\"count\":0,\"name\":\"WEAPON_RPG\"},{\"count\":44,\"name\":\"WEAPON_SAWNOFFSHOTGUN\"},{\"count\":0,\"name\":\"WEAPON_BULLPUPSHOTGUN\"},{\"count\":3,\"name\":\"WEAPON_SNIPERRIFLE\"},{\"count\":2,\"name\":\"WEAPON_BAT\"},{\"count\":3,\"name\":\"WEAPON_APPISTOL\"},{\"count\":1,\"name\":\"WEAPON_SMG\"},{\"count\":0,\"name\":\"WEAPON_HEAVYPISTOL\"},{\"count\":0,\"name\":\"WEAPON_REVOLVER\"},{\"count\":0,\"name\":\"WEAPON_KNUCKLE\"},{\"count\":1,\"name\":\"WEAPON_ASSAULTRIFLE\"},{\"count\":0,\"name\":\"WEAPON_FIREEXTINGUISHER\"},{\"count\":0,\"name\":\"WEAPON_SPECIALCARBINE\"},{\"count\":2,\"name\":\"WEAPON_COMPACTRIFLE\"},{\"count\":1,\"name\":\"WEAPON_MG\"},{\"count\":1,\"name\":\"WEAPON_STICKYBOMB\"},{\"count\":1,\"name\":\"WEAPON_VINTAGEPISTOL\"},{\"count\":0,\"name\":\"WEAPON_SMOKEGRENADE\"},{\"count\":0,\"name\":\"WEAPON_KNIFE\"},{\"count\":0,\"name\":\"WEAPON_PIPEBOMB\"},{\"count\":1,\"name\":\"WEAPON_MOLOTOV\"},{\"count\":1,\"name\":\"WEAPON_HAMMER\"},{\"count\":1,\"name\":\"WEAPON_GOLFCLUB\"},{\"count\":1,\"name\":\"WEAPON_CROWBAR\"},{\"count\":0,\"name\":\"WEAPON_PISTOL50\"},{\"count\":0,\"name\":\"WEAPON_SNSPISTOL\"},{\"count\":0,\"name\":\"WEAPON_MUSKET\"},{\"count\":0,\"name\":\"WEAPON_HATCHET\"},{\"count\":0,\"name\":\"WEAPON_MACHETE\"},{\"count\":1,\"name\":\"WEAPON_ADVANCEDRIFLE\"},{\"count\":1,\"name\":\"WEAPON_COMBATMG\"},{\"name\":\"WEAPON_COMBATMG_MK2\",\"count\":1},{\"count\":1,\"name\":\"WEAPON_SMG_MK2\"},{\"count\":1,\"name\":\"WEAPON_COMBATPDW\"},{\"name\":\"WEAPON_SWITCHBLADE\",\"count\":1}]}'),
+(2, 'society_police', NULL, '{\"weapons\":[{\"name\":\"WEAPON_NIGHTSTICK\",\"count\":22},{\"name\":\"WEAPON_COMBATPISTOL\",\"count\":25},{\"name\":\"WEAPON_ASSAULTSMG\",\"count\":34},{\"name\":\"WEAPON_STUNGUN\",\"count\":11},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"count\":1},{\"name\":\"WEAPON_PISTOL\",\"count\":1},{\"name\":\"WEAPON_CARBINERIFLE\",\"count\":0},{\"name\":\"WEAPON_RPG\",\"count\":0},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"count\":41},{\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"count\":0},{\"name\":\"WEAPON_SNIPERRIFLE\",\"count\":0},{\"name\":\"WEAPON_BAT\",\"count\":0},{\"name\":\"WEAPON_APPISTOL\",\"count\":2},{\"name\":\"WEAPON_SMG\",\"count\":0},{\"name\":\"WEAPON_HEAVYPISTOL\",\"count\":0},{\"name\":\"WEAPON_REVOLVER\",\"count\":0},{\"name\":\"WEAPON_KNUCKLE\",\"count\":0},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"count\":0},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"count\":0},{\"name\":\"WEAPON_SPECIALCARBINE\",\"count\":0},{\"name\":\"WEAPON_COMPACTRIFLE\",\"count\":0},{\"name\":\"WEAPON_MG\",\"count\":0},{\"name\":\"WEAPON_STICKYBOMB\",\"count\":0},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"count\":1},{\"name\":\"WEAPON_SMOKEGRENADE\",\"count\":0},{\"name\":\"WEAPON_KNIFE\",\"count\":1},{\"name\":\"WEAPON_PIPEBOMB\",\"count\":0},{\"name\":\"WEAPON_MOLOTOV\",\"count\":0},{\"name\":\"WEAPON_HAMMER\",\"count\":1},{\"name\":\"WEAPON_GOLFCLUB\",\"count\":0},{\"name\":\"WEAPON_CROWBAR\",\"count\":0},{\"name\":\"WEAPON_PISTOL50\",\"count\":0},{\"name\":\"WEAPON_SNSPISTOL\",\"count\":1},{\"name\":\"WEAPON_MUSKET\",\"count\":1},{\"name\":\"WEAPON_HATCHET\",\"count\":0},{\"name\":\"WEAPON_MACHETE\",\"count\":0},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"count\":0},{\"name\":\"WEAPON_COMBATMG\",\"count\":0},{\"name\":\"WEAPON_COMBATMG_MK2\",\"count\":0},{\"name\":\"WEAPON_SMG_MK2\",\"count\":0},{\"name\":\"WEAPON_COMBATPDW\",\"count\":1},{\"name\":\"WEAPON_SWITCHBLADE\",\"count\":0}]}'),
 (3, 'society_tabac', NULL, '{}'),
 (4, 'society_taxi', NULL, '{}'),
 (5, 'society_unicorn', NULL, '{}'),
@@ -1670,8 +1678,8 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 (647, 'user_ears', 'steam:1100001197619a3', '{}'),
 (648, 'user_mask', 'steam:1100001197619a3', '{}'),
 (649, 'user_helmet', 'steam:1100001197619a3', '{}'),
-(650, 'property', 'steam:1100001197619a3', '{}'),
-(651, 'user_mask', 'steam:1100001045fbd8f', '{}'),
+(650, 'property', 'steam:1100001197619a3', '{\"dressing\":[{\"label\":1,\"skin\":{\"lipstick_4\":0,\"chain_2\":0,\"pants_2\":0,\"beard_4\":0,\"tshirt_2\":0,\"hair_1\":47,\"eyebrows_3\":1,\"glasses_1\":0,\"ears_2\":0,\"helmet_1\":-1,\"age_1\":0,\"face\":31,\"torso_2\":0,\"shoes_1\":55,\"pants_1\":31,\"makeup_4\":0,\"hair_2\":0,\"mask_1\":0,\"beard_1\":0,\"helmet_2\":0,\"torso_1\":75,\"arms\":0,\"beard_3\":0,\"glasses_2\":0,\"hair_color_2\":29,\"mask_2\":0,\"bags_1\":0,\"chain_1\":7,\"decals_1\":0,\"sex\":0,\"skin\":12,\"bproof_1\":0,\"makeup_3\":0,\"makeup_1\":7,\"hair_color_1\":3,\"lipstick_1\":1,\"eyebrows_1\":2,\"shoes_2\":5,\"lipstick_2\":0,\"age_2\":0,\"bags_2\":0,\"beard_2\":0,\"eyebrows_4\":0,\"decals_2\":0,\"ears_1\":26,\"lipstick_3\":0,\"bproof_2\":0,\"makeup_2\":5,\"tshirt_1\":2,\"eyebrows_2\":10}}]}'),
+(651, 'user_mask', 'steam:1100001045fbd8f', '{\"skin\":{\"mask_1\":0,\"mask_2\":0},\"hasMask\":true}'),
 (652, 'property', 'steam:1100001045fbd8f', '{}'),
 (653, 'user_helmet', 'steam:1100001045fbd8f', '{}'),
 (654, 'user_ears', 'steam:1100001045fbd8f', '{}'),
@@ -1681,8 +1689,8 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 (658, 'user_glasses', 'steam:11000010a1b83df', '{}'),
 (659, 'property', 'steam:11000010a1b83df', '{}'),
 (660, 'user_mask', 'steam:11000010a1b83df', '{}'),
-(661, 'user_glasses', 'steam:11000010b3a30a0', '{}'),
-(662, 'user_mask', 'steam:11000010b3a30a0', '{}'),
+(661, 'user_glasses', 'steam:11000010b3a30a0', '{\"hasGlasses\":true,\"skin\":{\"glasses_2\":2,\"glasses_1\":0}}'),
+(662, 'user_mask', 'steam:11000010b3a30a0', '{\"skin\":{\"mask_1\":0,\"mask_2\":2},\"hasMask\":true}'),
 (663, 'user_helmet', 'steam:11000010b3a30a0', '{}'),
 (664, 'user_ears', 'steam:11000010b3a30a0', '{}'),
 (665, 'property', 'steam:11000010b3a30a0', '{}'),
@@ -1690,7 +1698,17 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 (667, 'user_ears', 'steam:11000011685b145', '{}'),
 (668, 'property', 'steam:11000011685b145', '{}'),
 (669, 'user_mask', 'steam:11000011685b145', '{}'),
-(670, 'user_helmet', 'steam:11000011685b145', '{}');
+(670, 'user_helmet', 'steam:11000011685b145', '{}'),
+(671, 'user_helmet', 'steam:1100001197354a7', '{}'),
+(672, 'property', 'steam:1100001197354a7', '{}'),
+(673, 'user_glasses', 'steam:1100001197354a7', '{}'),
+(674, 'user_mask', 'steam:1100001197354a7', '{}'),
+(675, 'user_ears', 'steam:1100001197354a7', '{}'),
+(676, 'user_helmet', 'steam:110000111df570b', '{}'),
+(677, 'user_ears', 'steam:110000111df570b', '{}'),
+(678, 'user_glasses', 'steam:110000111df570b', '{}'),
+(679, 'user_mask', 'steam:110000111df570b', '{}'),
+(680, 'property', 'steam:110000111df570b', '{}');
 
 -- --------------------------------------------------------
 
@@ -1710,58 +1728,58 @@ CREATE TABLE `fine_types` (
 --
 
 INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
-(1, 'Usage abusif du klaxon', 2000, 0),
-(2, 'Franchir une ligne continue', 2000, 0),
-(3, 'Circulation à contresens', 5000, 0),
-(4, 'Demi-tour non autorisé', 5000, 0),
+(1, 'Aloodegi soti', 2000, 0),
+(2, 'Oboor az cheraghe ghermez', 2000, 0),
+(3, 'Vorood mamnoo', 5000, 0),
+(4, 'Dor zadan gheyr e mojaz', 5000, 0),
 (5, 'Circulation hors-route', 6000, 0),
-(6, 'Non-respect des distances de sécurité', 5000, 0),
-(7, 'Arrêt dangereux / interdit', 5000, 0),
-(8, 'Stationnement gênant / interdit', 2500, 0),
-(9, 'Non respect  de la priorité à droite', 5000, 0),
-(10, 'Non-respect à un véhicule prioritaire', 7500, 0),
-(11, 'Non-respect d\'un stop', 5000, 0),
-(12, 'Non-respect d\'un feu rouge', 5000, 0),
-(13, 'Dépassement dangereux', 10000, 0),
-(14, 'Véhicule non en état', 15000, 0),
-(15, 'Conduite sans permis', 8000, 0),
-(16, 'Délit de fuite', 25000, 0),
-(17, 'Excès de vitesse < 5 kmh', 2000, 0),
-(18, 'Excès de vitesse 5-15 kmh', 5000, 0),
-(19, 'Excès de vitesse 15-30 kmh', 8000, 0),
-(20, 'Excès de vitesse > 30 kmh', 15000, 0),
-(21, 'Entrave de la circulation', 5000, 1),
-(22, 'Dégradation de la voie publique', 5000, 1),
-(23, 'Trouble à l\'ordre publique', 5000, 1),
-(24, 'Entrave opération de police', 45000, 1),
-(25, 'Insulte envers / entre civils', 20000, 1),
-(26, 'Outrage à agent de police', 30000, 1),
-(27, 'Menace verbale ou intimidation envers civil', 20000, 1),
-(28, 'Menace verbale ou intimidation envers policier', 25000, 1),
-(29, 'Manifestation illégale', 15000, 1),
-(30, 'Tentative de corruption', 80000, 1),
-(31, 'Arme blanche sortie en ville', 5000, 2),
-(32, 'Arme léthale sortie en ville', 15000, 2),
-(33, 'Port d\'arme non autorisé (défaut de license)', 20000, 2),
-(34, 'Port d\'arme illégal', 80000, 2),
-(35, 'Pris en flag lockpick', 25000, 2),
-(36, 'Vol de voiture', 20000, 2),
-(37, 'Vente de drogue', 40000, 2),
-(38, 'Fabriquation de drogue', 30000, 2),
-(39, 'Possession de drogue', 25000, 2),
-(40, 'Prise d\'ôtage civil', 100000, 2),
-(41, 'Prise d\'ôtage agent de l\'état', 200000, 2),
-(42, 'Braquage particulier', 50000, 2),
-(43, 'Braquage magasin', 55000, 2),
-(44, 'Braquage de banque', 70000, 2),
-(45, 'Tir sur civil', 50000, 3),
-(46, 'Tir sur agent de l\'état', 80000, 3),
-(47, 'Tentative de meurtre sur civil', 40000, 3),
-(48, 'Tentative de meurtre sur agent de l\'état', 150000, 3),
-(49, 'Meurtre sur civil', 200000, 3),
-(50, 'Meurte sur agent de l\'état', 300000, 3),
-(51, 'Meurtre involontaire', 100000, 3),
-(52, 'Escroquerie à l\'entreprise', 120000, 2);
+(6, 'Adam tavajo be fasele tooli', 5000, 0),
+(7, 'Tavaghof mamnoo', 5000, 0),
+(8, 'Park e bad', 2500, 0),
+(9, 'Adam tavajoh be hagh e taghadom', 5000, 0),
+(10, 'Adam tavajoh be haghe taghadome mashin haye vizhe', 7500, 0),
+(11, 'Adam tavajoh be tavaghof', 5000, 0),
+(12, 'Adam e tavajoh be alayeme ranandegi', 5000, 0),
+(13, 'Harakat e khatarnak', 10000, 0),
+(14, 'Kharab boodan mashin', 15000, 0),
+(15, 'Ranandegi bedoone govahinam', 8000, 0),
+(16, 'Zadan o dar raftan', 25000, 0),
+(17, 'Sorat e kamtar az 60Km/h', 2000, 0),
+(18, 'Soraat mojaz 60Km/h', 5000, 0),
+(19, 'Soraat mojaz 80Km/h', 8000, 0),
+(20, 'Soraat mojaz 120Km/h', 15000, 0),
+(21, 'Ijad e traffic', 5000, 1),
+(22, 'Bastan e khiyaboon', 5000, 1),
+(23, 'Beham rikhtan e nazm ', 5000, 1),
+(24, 'Bi tavajohi be ekhtar e police', 45000, 1),
+(25, 'Bi ehterami', 20000, 1),
+(26, 'Tohin be mamoor e police', 30000, 1),
+(27, 'Tahdid shahrvandan', 20000, 1),
+(28, 'Tahdid Police', 25000, 1),
+(29, 'Eteraz be ghanoon', 15000, 1),
+(30, 'Ijad e fesad', 80000, 1),
+(31, 'Estefade az selahe sard dar shahr', 5000, 2),
+(32, 'Estefade az selahe garm dar shahr', 15000, 2),
+(33, 'Haml e aslahe bedoon e mojavez', 20000, 2),
+(34, 'Dashtan e aslahe gheyre mojaz', 80000, 2),
+(35, 'Dashtan dar baz kon', 25000, 2),
+(36, 'Dozdi khodro', 20000, 2),
+(37, 'Foroosh e mavad e mokhader', 40000, 2),
+(38, 'Tolid e mavad e mokhader', 30000, 2),
+(39, 'Dashtan e mavad e mokhader', 25000, 2),
+(40, 'Majrooh kardan shahrvand', 100000, 2),
+(41, 'Majrooh kardan e mamoor e ghanoon', 200000, 2),
+(42, 'Dozdi', 50000, 2),
+(43, 'Dozdi az maghaze', 55000, 2),
+(44, 'Dozdi az bank', 70000, 2),
+(45, 'Shelik be shahrvandan', 50000, 3),
+(46, 'Shelik be samte mamoor e ghanoon', 80000, 3),
+(47, 'Eghdam be ghatle shahrvand', 40000, 3),
+(48, 'Eghdam be ghatle mamoor e ghanoon', 150000, 3),
+(49, 'Koshtan e shahrvand', 200000, 3),
+(50, 'Koshtan e mamoor e ghanoon', 300000, 3),
+(51, 'Ghatl e gheyre amd', 100000, 3),
+(52, 'Kolah bardari kari', 120000, 2);
 
 -- --------------------------------------------------------
 
@@ -1781,13 +1799,13 @@ CREATE TABLE `fine_types_biker` (
 --
 
 INSERT INTO `fine_types_biker` (`id`, `label`, `amount`, `category`) VALUES
-(1, 'Raket', 3000, 0),
-(2, 'Raket', 5000, 0),
-(3, 'Raket', 10000, 1),
-(4, 'Raket', 20000, 1),
-(5, 'Raket', 50000, 2),
-(6, 'Raket', 150000, 3),
-(7, 'Raket', 350000, 3);
+(1, 'Akhazi', 3000, 0),
+(2, 'Akhazi', 5000, 0),
+(3, 'Akhazi', 10000, 1),
+(4, 'Akhazi', 20000, 1),
+(5, 'Akhazi', 50000, 2),
+(6, 'Akhazi', 150000, 3),
+(7, 'Akhazi', 350000, 3);
 
 -- --------------------------------------------------------
 
@@ -1807,13 +1825,13 @@ CREATE TABLE `fine_types_gang` (
 --
 
 INSERT INTO `fine_types_gang` (`id`, `label`, `amount`, `category`) VALUES
-(1, 'Raket', 3000, 0),
-(2, 'Raket', 5000, 0),
-(3, 'Raket', 10000, 1),
-(4, 'Raket', 20000, 1),
-(5, 'Raket', 50000, 2),
-(6, 'Raket', 150000, 3),
-(7, 'Raket', 350000, 3);
+(1, 'Akhazi', 3000, 0),
+(2, 'Akhazi', 5000, 0),
+(3, 'Akhazi', 10000, 1),
+(4, 'Akhazi', 20000, 1),
+(5, 'Akhazi', 50000, 2),
+(6, 'Akhazi', 150000, 3),
+(7, 'Akhazi', 350000, 3);
 
 -- --------------------------------------------------------
 
@@ -1833,13 +1851,13 @@ CREATE TABLE `fine_types_mafia` (
 --
 
 INSERT INTO `fine_types_mafia` (`id`, `label`, `amount`, `category`) VALUES
-(1, 'Raket', 3000, 0),
-(2, 'Raket', 5000, 0),
-(3, 'Raket', 10000, 1),
-(4, 'Raket', 20000, 1),
-(5, 'Raket', 50000, 2),
-(6, 'Raket', 150000, 3),
-(7, 'Raket', 350000, 3);
+(1, 'Akhazi', 3000, 0),
+(2, 'Akhazi', 5000, 0),
+(3, 'Akhazi', 10000, 1),
+(4, 'Akhazi', 20000, 1),
+(5, 'Akhazi', 50000, 2),
+(6, 'Akhazi', 150000, 3),
+(7, 'Akhazi', 350000, 3);
 
 -- --------------------------------------------------------
 
@@ -1860,103 +1878,104 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
-('alcool', 'alcool', -1, 0, 1),
-('alcool_cargo', 'Cargaison d\'alcool', -1, 0, 1),
-('alive_chicken', 'Poulet vivant', 20, 0, 1),
-('bandage', 'Bandage', 20, 0, 1),
-('blowpipe', 'Chalumeaux', 10, 0, 1),
-('bolcacahuetes', 'Bol de cacahuètes', 5, 0, 1),
-('bolchips', 'Bol de chips', 5, 0, 1),
-('bolnoixcajou', 'Bol de noix de cajou', 5, 0, 1),
-('bolpistache', 'Bol de pistaches', 5, 0, 1),
-('bread', 'Pain', -1, 0, 1),
-('cagoule', 'Cagoule', -1, 0, 1),
-('carokit', 'Kit carosserie', 3, 0, 1),
-('carotool', 'outils carosserie', 4, 0, 1),
-('clip', 'Chargeur', -1, 0, 1),
-('clothe', 'Vêtement', 40, 0, 1),
-('coke', 'Coke', 50, 0, 1),
-('coke_pooch', 'Pochon de coke', 10, 0, 1),
-('copper', 'Cuivre', 56, 0, 1),
-('croquettes', 'Croquettes', -1, 0, 1),
-('cutted_wood', 'Bois coupé', 20, 0, 1),
-('diamond', 'Diamant', 50, 0, 1),
+('alcool', 'Alkol', 1, 0, 1),
+('alcool_cargo', 'Jabe alkol', 1, 0, 1),
+('alive_chicken', 'Morgh e zende', 20, 0, 1),
+('bandage', 'Chasb e zakhm', 20, 0, 1),
+('blowpipe', 'Mash\'al', 10, 0, 1),
+('bolcacahuetes', 'Kase badam', 5, 0, 1),
+('bolchips', 'Kase chips', 5, 0, 1),
+('bolnoixcajou', 'Kase ajil', 5, 0, 1),
+('bolpistache', 'Kase peste', 5, 0, 1),
+('bread', 'Noon', -1, 0, 1),
+('cagoule', 'Neghab', -1, 0, 1),
+('carokit', 'Kit e badane', 3, 0, 1),
+('carotool', 'Abzar e badane', 4, 0, 1),
+('clip', 'clip', -1, 0, 1),
+('clothe', 'Lebas', 40, 0, 1),
+('coke', 'Kokayin', 50, 0, 1),
+('coke_pooch', 'Baste kokayin', 10, 0, 1),
+('copper', 'Mes', 56, 0, 1),
+('croquettes', 'Koofte', -1, 0, 1),
+('cutted_wood', 'Choob e ghat shode', 20, 0, 1),
+('diamond', 'Almas', 50, 0, 1),
+('drill', 'Dereyl', 1, 0, 1),
 ('drpepper', 'Dr. Pepper', 5, 0, 1),
-('energy', 'Energy Drink', 5, 0, 1),
-('essence', 'Essence', 24, 0, 1),
-('fabric', 'Tissu', 80, 0, 1),
-('fish', 'Poisson', 100, 0, 1),
-('fixkit', 'Kit réparation', 5, 0, 1),
-('fixtool', 'outils réparation', 6, 0, 1),
-('flashlight', 'Lampe', -1, 0, 1),
-('gazbottle', 'bouteille de gaz', 11, 0, 1),
-('gitanes', 'Gitanes', -1, 0, 1),
-('gold', 'Or', 21, 0, 1),
-('golem', 'Golem', 5, 0, 1),
-('grand_cru', 'Grand cru', -1, 0, 1),
-('grapperaisin', 'Grappe de raisin', 5, 0, 1),
-('grip', 'Poignée', -1, 0, 1),
-('ice', 'Glaçon', 5, 0, 1),
+('energy', 'Energy za', 5, 0, 1),
+('essence', 'Esanse', 24, 0, 1),
+('fabric', 'Parche', 80, 0, 1),
+('fish', 'Mahi', 100, 0, 1),
+('fixkit', 'Kit Tamir', 5, 0, 1),
+('fixtool', 'Abzar e tamir', 6, 0, 1),
+('flashlight', 'Cheragh ghove', -1, 0, 1),
+('gazbottle', 'Ghooti gaz', 11, 0, 1),
+('gitanes', 'Sigar', -1, 0, 1),
+('gold', 'Tala', 21, 0, 1),
+('golem', 'Ghool e geli', 5, 0, 1),
+('grand_cru', 'Grand cru(sharab)', -1, 0, 1),
+('grapperaisin', 'Daste angoor', 5, 0, 1),
+('grip', 'grip', -1, 0, 1),
+('ice', 'Yakh', 5, 0, 1),
 ('icetea', 'Ice Tea', 5, 0, 1),
-('iron', 'Fer', 42, 0, 1),
-('jager', 'Jägermeister', 5, 0, 1),
-('jagerbomb', 'Jägerbomb', 5, 0, 1),
-('jagercerbere', 'Jäger Cerbère', 3, 0, 1),
-('jewels', 'Jewels', -1, 0, 1),
-('jusfruit', 'Jus de fruits', 5, 0, 1),
-('jus_raisin', 'Jus de raisin', -1, 0, 1),
-('limonade', 'Limonade', 5, 0, 1),
-('malbora', 'Malbora', -1, 0, 1),
-('martini', 'Martini blanc', 5, 0, 1),
-('medikit', 'Medikit', 5, 0, 1),
-('menthe', 'Feuille de menthe', 10, 0, 1),
-('meth', 'Meth', 50, 0, 1),
-('meth_pooch', 'Pochon de meth', 10, 0, 1),
-('metreshooter', 'Mètre de shooter', 3, 0, 1),
+('iron', 'Ahan', 42, 0, 1),
+('jager', 'Jägermeister(alkol)', 5, 0, 1),
+('jagerbomb', 'Jägerbomb(alkol)', 5, 0, 1),
+('jagercerbere', 'Jäger Cerbère(alkol)', 3, 0, 1),
+('jewels', 'Javaher', -1, 0, 1),
+('jusfruit', 'Ab mive', 5, 0, 1),
+('jus_raisin', 'Ab angoor', -1, 0, 1),
+('limonade', 'Limonad', 5, 0, 1),
+('malbora', 'Sigar bahman', -1, 0, 1),
+('martini', 'Martini blanc(sharab)', 5, 0, 1),
+('medikit', 'Komak haye avaliye', 5, 0, 1),
+('menthe', 'Barg e nana', 10, 0, 1),
+('meth', 'Shishe', 50, 0, 1),
+('meth_pooch', 'Shishe baste bandi shode', 10, 0, 1),
+('metreshooter', 'Mètre de shooter(nooshidani)', 3, 0, 1),
 ('mixapero', 'Mix Apéritif', 3, 0, 1),
-('mojito', 'Mojito', 5, 0, 1),
-('myrte', 'myrte', -1, 0, 1),
-('myrtealcool', 'alcool de myrte', -1, 0, 1),
-('myrte_cargo', 'Cargaison de Myrte', -1, 0, 1),
-('opium', 'Opium', 50, 0, 1),
-('opium_pooch', 'Pochon de opium', 10, 0, 1),
-('packaged_chicken', 'Poulet en barquette', 100, 0, 1),
-('packaged_plank', 'Paquet de planches', 100, 0, 1),
-('petrol', 'Pétrole', 24, 0, 1),
-('petrol_raffin', 'Pétrole Raffiné', 24, 0, 1),
-('raisin', 'Raisin', -1, 0, 1),
+('mojito', 'Mohito', 5, 0, 1),
+('myrte', 'Moord(giyah)', -1, 0, 1),
+('myrtealcool', 'Alkol e moord', -1, 0, 1),
+('myrte_cargo', 'Baste moord', -1, 0, 1),
+('opium', 'Teryak', 50, 0, 1),
+('opium_pooch', 'Baste teryak', 10, 0, 1),
+('packaged_chicken', 'Morgh e baste bandi shode', 100, 0, 1),
+('packaged_plank', 'Baste takhte', 100, 0, 1),
+('petrol', 'Naft', 24, 0, 1),
+('petrol_raffin', 'Naft e palayesh shode', 24, 0, 1),
+('raisin', 'Angoor', -1, 0, 1),
 ('redbull', 'RedBull', -1, 0, 1),
-('redbull_cargo', 'Cargaison de RedBull', -1, 0, 1),
-('rhum', 'Rhum', 5, 0, 1),
-('rhumcoca', 'Rhum-coca', 5, 0, 1),
-('rhumfruit', 'Rhum-jus de fruits', 5, 0, 1),
-('saucisson', 'Saucisson', 5, 0, 1),
-('silencieux', 'Silencieux', -1, 0, 1),
-('slaughtered_chicken', 'Poulet abattu', 20, 0, 1),
+('redbull_cargo', 'Baste redbull', -1, 0, 1),
+('rhum', 'Rhum(nooshidani)', 5, 0, 1),
+('rhumcoca', 'Rhum-coca(nooshidani)', 5, 0, 1),
+('rhumfruit', 'Rhum-jus de fruits(nooshidani)', 5, 0, 1),
+('saucisson', 'Sosis', 5, 0, 1),
+('silencieux', 'Seda khafe kon', -1, 0, 1),
+('slaughtered_chicken', 'Morghe koshte shode', 20, 0, 1),
 ('soda', 'Soda', 5, 0, 1),
-('stone', 'Pierre', 7, 0, 1),
-('tabacblond', 'Tabac Blond', -1, 0, 1),
-('tabacblondsec', 'Tabac Blond Séché', -1, 0, 1),
-('tabacbrun', 'Tabac Brun', -1, 0, 1),
-('tabacbrunsec', 'Tabac Brun Séché', -1, 0, 1),
-('teqpaf', 'Teq\'paf', 5, 0, 1),
-('tequila', 'Tequila', 5, 0, 1),
-('viande', 'Viande', 25, 0, 1),
-('vine', 'Vin', -1, 0, 1),
+('stone', 'Sang', 7, 0, 1),
+('tabacblond', 'Tootoon', -1, 0, 1),
+('tabacblondsec', 'Tootoon e khoshk shode', -1, 0, 1),
+('tabacbrun', 'Tootoon ghahveyi', -1, 0, 1),
+('tabacbrunsec', 'Tootoon ghahveyi khoshk shode', -1, 0, 1),
+('teqpaf', 'Teq\'paf(nooshidani)', 5, 0, 1),
+('tequila', 'Tequila(nooshidani)', 5, 0, 1),
+('viande', 'Goosht', 25, 0, 1),
+('vine', 'Sharab', -1, 0, 1),
 ('vodka', 'Vodka', 5, 0, 1),
-('vodkaenergy', 'Vodka-energy', 5, 0, 1),
-('vodkafruit', 'Vodka-jus de fruits', 5, 0, 1),
+('vodkaenergy', 'Vodka energy', 5, 0, 1),
+('vodkafruit', 'Vodka e mive', 5, 0, 1),
 ('vodkrb', 'Vodka RedBull', -1, 0, 1),
-('washed_stone', 'Pierre Lavée', 7, 0, 1),
-('water', 'Eau', -1, 0, 1),
+('washed_stone', 'Sang e shoste shode', 7, 0, 1),
+('water', 'Ab', -1, 0, 1),
 ('weed', 'Weed', 50, 0, 1),
-('weed_pooch', 'Pochon de weed', 10, 0, 1),
+('weed_pooch', 'Baste weed', 10, 0, 1),
 ('whisky', 'Whisky', 5, 0, 1),
 ('whiskycoc', 'Whisky CorsicaCola', -1, 0, 1),
 ('whiskycoca', 'Whisky-coca', 5, 0, 1),
-('wood', 'Bois', 20, 0, 1),
-('wool', 'Laine', 40, 0, 1),
-('yusuf', 'Skin de luxe', -1, 0, 1);
+('wood', 'Choob', 20, 0, 1),
+('wool', 'Pashm', 40, 0, 1),
+('yusuf', 'Skin talayi aslahe', -1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1993,13 +2012,14 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 ('aircraftdealer', 'Forooshande havapeyma', 1),
 ('ambulance', 'Doctor', 1),
 ('avocat', 'Hoghoogh dan', 1),
-('bahama', 'Bahama', 1),
-('biker', 'Docharkhe savar', 1),
+('bahama', 'Disco', 1),
+('biker', 'Motorsavar', 1),
 ('boatdealer', 'Forooshande ghayegh', 1),
 ('cardealer', 'Forooshande mashin', 1),
 ('fisherman', 'Mahigir', 0),
 ('fueler', 'Palayesh gare naft', 0),
 ('lumberjack', 'Choob bor', 0),
+('mafia', 'Mafia', 1),
 ('mecano', 'Mekanik', 1),
 ('miner', 'Madan kav', 0),
 ('police', 'Police', 1),
@@ -2011,7 +2031,7 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 ('tailor', 'Khayat', 0),
 ('taxi', 'Taxi', 0),
 ('unemployed', 'Biii Kar', 0),
-('unicorn', 'Asb e takshakh?', 1),
+('unicorn', 'Kabare', 1),
 ('vigne', 'Takestan', 1);
 
 -- --------------------------------------------------------
@@ -2036,73 +2056,77 @@ CREATE TABLE `job_grades` (
 --
 
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
-(1, 'unemployed', 0, 'unemployed', 'Unemployed', 200, '{}', '{}'),
-(2, 'lumberjack', 0, 'employee', 'Intérimaire', 0, '{}', '{}'),
-(3, 'fisherman', 0, 'employee', 'Intérimaire', 0, '{}', '{}'),
-(4, 'fueler', 0, 'employee', 'Intérimaire', 0, '{}', '{}'),
-(5, 'reporter', 0, 'employee', 'Intérimaire', 0, '{}', '{}'),
-(6, 'tailor', 0, 'employee', 'Intérimaire', 0, '{\"mask_1\":0,\"arms\":1,\"glasses_1\":0,\"hair_color_2\":4,\"makeup_1\":0,\"face\":19,\"glasses\":0,\"mask_2\":0,\"makeup_3\":0,\"skin\":29,\"helmet_2\":0,\"lipstick_4\":0,\"sex\":0,\"torso_1\":24,\"makeup_2\":0,\"bags_2\":0,\"chain_2\":0,\"ears_1\":-1,\"bags_1\":0,\"bproof_1\":0,\"shoes_2\":0,\"lipstick_2\":0,\"chain_1\":0,\"tshirt_1\":0,\"eyebrows_3\":0,\"pants_2\":0,\"beard_4\":0,\"torso_2\":0,\"beard_2\":6,\"ears_2\":0,\"hair_2\":0,\"shoes_1\":36,\"tshirt_2\":0,\"beard_3\":0,\"hair_1\":2,\"hair_color_1\":0,\"pants_1\":48,\"helmet_1\":-1,\"bproof_2\":0,\"eyebrows_4\":0,\"eyebrows_2\":0,\"decals_1\":0,\"age_2\":0,\"beard_1\":5,\"shoes\":10,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"makeup_4\":0,\"decals_2\":0,\"lipstick_3\":0,\"age_1\":0}', '{\"mask_1\":0,\"arms\":5,\"glasses_1\":5,\"hair_color_2\":4,\"makeup_1\":0,\"face\":19,\"glasses\":0,\"mask_2\":0,\"makeup_3\":0,\"skin\":29,\"helmet_2\":0,\"lipstick_4\":0,\"sex\":1,\"torso_1\":52,\"makeup_2\":0,\"bags_2\":0,\"chain_2\":0,\"ears_1\":-1,\"bags_1\":0,\"bproof_1\":0,\"shoes_2\":1,\"lipstick_2\":0,\"chain_1\":0,\"tshirt_1\":23,\"eyebrows_3\":0,\"pants_2\":0,\"beard_4\":0,\"torso_2\":0,\"beard_2\":6,\"ears_2\":0,\"hair_2\":0,\"shoes_1\":42,\"tshirt_2\":4,\"beard_3\":0,\"hair_1\":2,\"hair_color_1\":0,\"pants_1\":36,\"helmet_1\":-1,\"bproof_2\":0,\"eyebrows_4\":0,\"eyebrows_2\":0,\"decals_1\":0,\"age_2\":0,\"beard_1\":5,\"shoes\":10,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"makeup_4\":0,\"decals_2\":0,\"lipstick_3\":0,\"age_1\":0}'),
-(7, 'miner', 0, 'employee', 'Intérimaire', 0, '{\"tshirt_2\":1,\"ears_1\":8,\"glasses_1\":15,\"torso_2\":0,\"ears_2\":2,\"glasses_2\":3,\"shoes_2\":1,\"pants_1\":75,\"shoes_1\":51,\"bags_1\":0,\"helmet_2\":0,\"pants_2\":7,\"torso_1\":71,\"tshirt_1\":59,\"arms\":2,\"bags_2\":0,\"helmet_1\":0}', '{}'),
-(8, 'slaughterer', 0, 'employee', 'Intérimaire', 0, '{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":67,\"pants_1\":36,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":0,\"torso_1\":56,\"beard_2\":6,\"shoes_1\":12,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":15,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":0,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}', '{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":72,\"pants_1\":45,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":1,\"torso_1\":49,\"beard_2\":6,\"shoes_1\":24,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":9,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":5,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}'),
-(9, 'cardealer', 0, 'recruit', 'Recrue', 10, '{}', '{}'),
-(10, 'cardealer', 1, 'novice', 'Novice', 25, '{}', '{}'),
-(11, 'cardealer', 2, 'experienced', 'Experimente', 40, '{}', '{}'),
-(12, 'cardealer', 3, 'boss', 'Patron', 0, '{}', '{}'),
-(13, 'ambulance', 0, 'ambulance', 'Ambulancier', 250, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
-(14, 'ambulance', 1, 'doctor', 'Medecin', 300, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
-(15, 'ambulance', 2, 'chief_doctor', 'Medecin-chef', 400, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
-(16, 'ambulance', 3, 'boss', 'Chirurgien', 1200, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
-(17, 'mecano', 0, 'recrue', 'Recrue', 500, '{}', '{}'),
-(18, 'mecano', 1, 'novice', 'Novice', 1000, '{}', '{}'),
-(19, 'mecano', 2, 'experimente', 'Experimente', 1500, '{}', '{}'),
-(20, 'mecano', 3, 'chief', 'Chef d\'équipe', 1800, '{}', '{}'),
-(21, 'mecano', 4, 'boss', 'Patron', 2200, '{}', '{}'),
-(22, 'police', 0, 'recruit', 'Recrue', 1000, '{}', '{}'),
-(23, 'police', 1, 'officer', 'Officier', 1400, '{}', '{}'),
-(24, 'police', 2, 'sergeant', 'Sergent', 1600, '{}', '{}'),
-(25, 'police', 3, 'lieutenant', 'Lieutenant', 1800, '{}', '{}'),
-(26, 'police', 4, 'boss', 'Commandant', 3000, '{}', '{}'),
-(27, 'tabac', 0, 'recrue', 'Tabagiste', 1, '{}', '{}'),
-(28, 'tabac', 1, 'gerant', 'Gérant', 1, '{}', '{}'),
-(29, 'tabac', 2, 'boss', 'Patron', 1, '{}', '{}'),
-(30, 'taxi', 0, 'recrue', 'Recrue', 12, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":32,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":0,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":27,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(31, 'taxi', 1, 'novice', 'Novice', 24, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":32,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":0,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":27,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(32, 'taxi', 2, 'experimente', 'Experimente', 36, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(33, 'taxi', 3, 'uber', 'Uber', 48, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(34, 'taxi', 4, 'boss', 'Patron', 0, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":29,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":1,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":4,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(35, 'unicorn', 0, 'barman', 'Barman', 300, '{}', '{}'),
-(36, 'unicorn', 1, 'dancer', 'Danseur', 300, '{}', '{}'),
-(37, 'unicorn', 2, 'viceboss', 'Co-gérant', 500, '{}', '{}'),
-(38, 'unicorn', 3, 'boss', 'Gérant', 600, '{}', '{}'),
-(39, 'vigne', 0, 'recrue', 'Intérimaire', 500, '{\"tshirt_1\":59,\"tshirt_2\":0,\"torso_1\":12,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":1, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
-(40, 'vigne', 1, 'novice', 'Vigneron', 1000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
-(41, 'vigne', 2, 'cdisenior', 'Chef de chai', 2000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
-(42, 'vigne', 3, 'boss', 'Patron', 3000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":15,\"tshirt_2\":0,\"torso_1\":14,\"torso_2\":15,\"shoes_1\":12,\"shoes_2\":0,\"pants_1\":9, \"pants_2\":5, \"arms\":1, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
-(43, 'realestateagent', 0, 'location', 'Location', 200, '{}', '{}'),
-(44, 'realestateagent', 1, 'vendeur', 'Vendeur', 250, '{}', '{}'),
-(45, 'realestateagent', 2, 'gestion', 'Gestion', 350, '{}', '{}'),
-(46, 'realestateagent', 3, 'boss', 'Patron', 500, '{}', '{}'),
-(47, 'bahama', 0, 'recrue', 'Recrue', 1250, '{}', '{}'),
-(48, 'bahama', 1, 'novice', 'Novice', 1400, '{}', '{}'),
-(49, 'bahama', 2, 'experimente', 'Experimente', 1650, '{}', '{}'),
-(50, 'bahama', 3, 'boss', 'Patron', 2000, '{}', '{}'),
-(51, 'avocat', 1, 'chef', 'Associé', 1100, '{}', '{}'),
-(52, 'avocat', 0, 'recrue', 'Employé', 900, '{}', '{}'),
-(53, 'avocat', 2, 'boss', 'Directeur Cabinet', 1100, '{}', '{}'),
-(54, 'aircraftdealer', 0, 'recruit', 'Recruit', 10, '{}', '{}'),
-(55, 'aircraftdealer', 1, 'novice', 'Novice', 25, '{}', '{}'),
-(56, 'aircraftdealer', 2, 'experienced', 'Expert', 40, '{}', '{}'),
-(57, 'aircraftdealer', 3, 'boss', 'Boss', 0, '{}', '{}'),
-(58, 'boatdealer', 0, 'recruit', 'Recrue', 10, '{}', '{}'),
-(59, 'boatdealer', 1, 'novice', 'Novice', 25, '{}', '{}'),
-(60, 'boatdealer', 2, 'experienced', 'Experimente', 40, '{}', '{}'),
-(61, 'boatdealer', 3, 'boss', 'Patron', 0, '{}', '{}'),
-(70, 'biker', 0, 'soldato', 'Ptite-Frappe', 50, '{}', '{}'),
-(71, 'biker', 1, 'capo', 'capo', 70, '{}', '{}'),
-(72, 'biker', 2, 'consigliere', 'Chef-Capo', 100, '{}', '{}'),
-(73, 'biker', 3, 'boss', 'Parrain', 2000, '{}', '{}'),
-(74, 'securiter', 0, 'agents', 'Securiter SHIELD', 1700, '{}', '{}'),
-(75, 'securiter', 1, 'boss', 'Patron', 3000, '{}', '{}');
+(1, 'unemployed', 0, 'unemployed', 'Bi kar', 200, '{}', '{}'),
+(2, 'lumberjack', 0, 'employee', 'Kar amooz', 0, '{}', '{}'),
+(3, 'fisherman', 0, 'employee', 'Kar amooz', 0, '{}', '{}'),
+(4, 'fueler', 0, 'employee', 'Kar amooz', 0, '{}', '{}'),
+(5, 'reporter', 0, 'employee', 'Kar amooz', 0, '{}', '{}'),
+(6, 'tailor', 0, 'employee', 'Kar amooz', 0, '{\"mask_1\":0,\"arms\":1,\"glasses_1\":0,\"hair_color_2\":4,\"makeup_1\":0,\"face\":19,\"glasses\":0,\"mask_2\":0,\"makeup_3\":0,\"skin\":29,\"helmet_2\":0,\"lipstick_4\":0,\"sex\":0,\"torso_1\":24,\"makeup_2\":0,\"bags_2\":0,\"chain_2\":0,\"ears_1\":-1,\"bags_1\":0,\"bproof_1\":0,\"shoes_2\":0,\"lipstick_2\":0,\"chain_1\":0,\"tshirt_1\":0,\"eyebrows_3\":0,\"pants_2\":0,\"beard_4\":0,\"torso_2\":0,\"beard_2\":6,\"ears_2\":0,\"hair_2\":0,\"shoes_1\":36,\"tshirt_2\":0,\"beard_3\":0,\"hair_1\":2,\"hair_color_1\":0,\"pants_1\":48,\"helmet_1\":-1,\"bproof_2\":0,\"eyebrows_4\":0,\"eyebrows_2\":0,\"decals_1\":0,\"age_2\":0,\"beard_1\":5,\"shoes\":10,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"makeup_4\":0,\"decals_2\":0,\"lipstick_3\":0,\"age_1\":0}', '{\"mask_1\":0,\"arms\":5,\"glasses_1\":5,\"hair_color_2\":4,\"makeup_1\":0,\"face\":19,\"glasses\":0,\"mask_2\":0,\"makeup_3\":0,\"skin\":29,\"helmet_2\":0,\"lipstick_4\":0,\"sex\":1,\"torso_1\":52,\"makeup_2\":0,\"bags_2\":0,\"chain_2\":0,\"ears_1\":-1,\"bags_1\":0,\"bproof_1\":0,\"shoes_2\":1,\"lipstick_2\":0,\"chain_1\":0,\"tshirt_1\":23,\"eyebrows_3\":0,\"pants_2\":0,\"beard_4\":0,\"torso_2\":0,\"beard_2\":6,\"ears_2\":0,\"hair_2\":0,\"shoes_1\":42,\"tshirt_2\":4,\"beard_3\":0,\"hair_1\":2,\"hair_color_1\":0,\"pants_1\":36,\"helmet_1\":-1,\"bproof_2\":0,\"eyebrows_4\":0,\"eyebrows_2\":0,\"decals_1\":0,\"age_2\":0,\"beard_1\":5,\"shoes\":10,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"makeup_4\":0,\"decals_2\":0,\"lipstick_3\":0,\"age_1\":0}'),
+(7, 'miner', 0, 'employee', 'Kar amooz', 0, '{\"tshirt_2\":1,\"ears_1\":8,\"glasses_1\":15,\"torso_2\":0,\"ears_2\":2,\"glasses_2\":3,\"shoes_2\":1,\"pants_1\":75,\"shoes_1\":51,\"bags_1\":0,\"helmet_2\":0,\"pants_2\":7,\"torso_1\":71,\"tshirt_1\":59,\"arms\":2,\"bags_2\":0,\"helmet_1\":0}', '{}'),
+(8, 'slaughterer', 0, 'employee', 'Kar amooz', 0, '{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":67,\"pants_1\":36,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":0,\"torso_1\":56,\"beard_2\":6,\"shoes_1\":12,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":15,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":0,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}', '{\"age_1\":0,\"glasses_2\":0,\"beard_1\":5,\"decals_2\":0,\"beard_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"lipstick_2\":0,\"hair_2\":0,\"arms\":72,\"pants_1\":45,\"skin\":29,\"eyebrows_2\":0,\"shoes\":10,\"helmet_1\":-1,\"lipstick_1\":0,\"helmet_2\":0,\"hair_color_1\":0,\"glasses\":0,\"makeup_4\":0,\"makeup_1\":0,\"hair_1\":2,\"bproof_1\":0,\"bags_1\":0,\"mask_1\":0,\"lipstick_3\":0,\"chain_1\":0,\"eyebrows_4\":0,\"sex\":1,\"torso_1\":49,\"beard_2\":6,\"shoes_1\":24,\"decals_1\":0,\"face\":19,\"lipstick_4\":0,\"tshirt_1\":9,\"mask_2\":0,\"age_2\":0,\"eyebrows_3\":0,\"chain_2\":0,\"glasses_1\":5,\"ears_1\":-1,\"bags_2\":0,\"ears_2\":0,\"torso_2\":0,\"bproof_2\":0,\"makeup_2\":0,\"eyebrows_1\":0,\"makeup_3\":0,\"pants_2\":0,\"beard_3\":0,\"hair_color_2\":4}'),
+(9, 'cardealer', 0, 'recruit', 'Kar amooz', 10, '{}', '{}'),
+(10, 'cardealer', 1, 'novice', 'Taze kar', 25, '{}', '{}'),
+(11, 'cardealer', 2, 'experienced', 'Ba tajrobe', 40, '{}', '{}'),
+(12, 'cardealer', 3, 'boss', 'Rais', 0, '{}', '{}'),
+(13, 'ambulance', 0, 'ambulance', 'Ranande', 250, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
+(14, 'ambulance', 1, 'doctor', 'Doctor', 300, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
+(15, 'ambulance', 2, 'chief_doctor', 'Rais doctora', 400, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
+(16, 'ambulance', 3, 'boss', 'Rais', 1200, '{\"tshirt_2\":0,\"hair_color_1\":5,\"glasses_2\":3,\"shoes\":9,\"torso_2\":3,\"hair_color_2\":0,\"pants_1\":24,\"glasses_1\":4,\"hair_1\":2,\"sex\":0,\"decals_2\":0,\"tshirt_1\":15,\"helmet_1\":8,\"helmet_2\":0,\"arms\":92,\"face\":19,\"decals_1\":60,\"torso_1\":13,\"hair_2\":0,\"skin\":34,\"pants_2\":5}', '{\"tshirt_2\":3,\"decals_2\":0,\"glasses\":0,\"hair_1\":2,\"torso_1\":73,\"shoes\":1,\"hair_color_2\":0,\"glasses_1\":19,\"skin\":13,\"face\":6,\"pants_2\":5,\"tshirt_1\":75,\"pants_1\":37,\"helmet_1\":57,\"torso_2\":0,\"arms\":14,\"sex\":1,\"glasses_2\":0,\"decals_1\":0,\"hair_2\":0,\"helmet_2\":0,\"hair_color_1\":0}'),
+(17, 'mecano', 0, 'recrue', 'Kar amooz', 500, '{\"tshirt_1\":57,\"tshirt_2\":0,\"ears_1\":-1,\"glasses_1\":0,\"torso_1\":65,\"torso_2\":3,\"ears_2\":0,\"glasses_2\":0,\"shoes_2\":1,\"pants_1\":38,\"shoes_1\":71,\"bags_1\":0,\"helmet_2\":1,\"pants_2\":3,\"arms\":0,\"bags_2\":0,\"helmet_1\":5}', '{\"tshirt_1\":57,\"tshirt_2\":0,\"ears_1\":-1,\"glasses_1\":0,\"torso_1\":65,\"torso_2\":3,\"ears_2\":0,\"glasses_2\":0,\"shoes_2\":1,\"pants_1\":38,\"shoes_1\":71,\"bags_1\":0,\"helmet_2\":1,\"pants_2\":3,\"arms\":0,\"bags_2\":0,\"helmet_1\":5}'),
+(18, 'mecano', 1, 'novice', 'Taze kar', 1000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":66,\"torso_2\":0,\"pants_1\":39,\"pants_2\":0,\"shoes_1\":71,\"shoes_2\":23,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":0,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}', '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":66,\"torso_2\":0,\"pants_1\":39,\"pants_2\":0,\"shoes_1\":71,\"shoes_2\":23,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":0,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}'),
+(19, 'mecano', 2, 'experimente', 'Ba tajrobe', 1500, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":66,\"torso_2\":0,\"pants_1\":39,\"pants_2\":0,\"shoes_1\":71,\"shoes_2\":23,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":0,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}', '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":66,\"torso_2\":0,\"pants_1\":39,\"pants_2\":0,\"shoes_1\":71,\"shoes_2\":23,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":0,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}'),
+(20, 'mecano', 3, 'chief', 'Rahbar e team', 1800, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":0,\"pants_1\":13,\"pants_2\":0,\"shoes_1\":4,\"shoes_2\":1,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":11,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}', '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":0,\"pants_1\":13,\"pants_2\":0,\"shoes_1\":4,\"shoes_2\":1,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":11,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}'),
+(21, 'mecano', 4, 'boss', 'Rais', 1000, '{\"tshirt_1\":32,\"tshirt_2\":2,\"torso_1\":31,\"torso_2\":0,\"pants_1\":13,\"pants_2\":0,\"shoes_1\":21,\"shoes_2\":0,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":12,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}', '{\"tshirt_1\":32,\"tshirt_2\":2,\"torso_1\":31,\"torso_2\":0,\"pants_1\":13,\"pants_2\":0,\"shoes_1\":21,\"shoes_2\":0,\"helmet_1\":-1,\"helmet_2\":0,\"arms\":12,\"ears_1\":-1,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0,\"bags_1\":0,\"bags_2\":0}'),
+(22, 'police', 0, 'recruit', 'Sarbaz', 1000, '{}', '{}'),
+(23, 'police', 1, 'officer', 'Afsar', 1400, '{}', '{}'),
+(24, 'police', 2, 'sergeant', 'Goroohban', 1600, '{}', '{}'),
+(25, 'police', 3, 'lieutenant', 'Sotvan', 1800, '{}', '{}'),
+(26, 'police', 4, 'boss', 'Rais', 3000, '{}', '{}'),
+(27, 'tabac', 0, 'recrue', 'Kar amooz', 1, '{}', '{}'),
+(28, 'tabac', 1, 'gerant', 'Modir', 1, '{}', '{}'),
+(29, 'tabac', 2, 'boss', 'Rais', 1, '{}', '{}'),
+(30, 'taxi', 0, 'recrue', 'Kar amooz', 12, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":32,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":0,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":27,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
+(31, 'taxi', 1, 'novice', 'Taze kar', 24, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":32,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":0,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":27,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
+(32, 'taxi', 2, 'experimente', 'Ba tajrobe', 36, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
+(33, 'taxi', 3, 'uber', 'Snapp', 48, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
+(34, 'taxi', 4, 'boss', 'Rais', 0, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":29,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":1,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":4,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
+(35, 'unicorn', 0, 'barman', 'Motesadi', 300, '{}', '{}'),
+(36, 'unicorn', 1, 'dancer', 'Raghas', 300, '{}', '{}'),
+(37, 'unicorn', 2, 'viceboss', 'Hamahang konande', 500, '{}', '{}'),
+(38, 'unicorn', 3, 'boss', 'Rais', 600, '{}', '{}'),
+(39, 'vigne', 0, 'recrue', 'Kar amooz', 500, '{\"tshirt_1\":59,\"tshirt_2\":0,\"torso_1\":12,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":1, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
+(40, 'vigne', 1, 'novice', 'Taze kar', 1000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
+(41, 'vigne', 2, 'cdisenior', 'Anbar dar', 2000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":0,\"tshirt_2\":0,\"torso_1\":56,\"torso_2\":0,\"shoes_1\":27,\"shoes_2\":0,\"pants_1\":36, \"pants_2\":0, \"arms\":63, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
+(42, 'vigne', 3, 'boss', 'Rais', 3000, '{\"tshirt_1\":57,\"tshirt_2\":0,\"torso_1\":13,\"torso_2\":5,\"shoes_1\":7,\"shoes_2\":2,\"pants_1\":9, \"pants_2\":7, \"arms\":11, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}', '{\"tshirt_1\":15,\"tshirt_2\":0,\"torso_1\":14,\"torso_2\":15,\"shoes_1\":12,\"shoes_2\":0,\"pants_1\":9, \"pants_2\":5, \"arms\":1, \"helmet_1\":11, \"helmet_2\":0,\"bags_1\":0,\"bags_2\":0,\"ears_1\":0,\"glasses_1\":0,\"ears_2\":0,\"glasses_2\":0}'),
+(43, 'realestateagent', 0, 'location', 'Mobasher', 200, '{}', '{}'),
+(44, 'realestateagent', 1, 'vendeur', 'Forooshande', 250, '{}', '{}'),
+(45, 'realestateagent', 2, 'gestion', 'Modir foroosh', 350, '{}', '{}'),
+(46, 'realestateagent', 3, 'boss', 'Rais', 500, '{}', '{}'),
+(47, 'bahama', 0, 'recrue', 'Kar amooz', 1250, '{}', '{}'),
+(48, 'bahama', 1, 'novice', 'Taze kar', 1400, '{}', '{}'),
+(49, 'bahama', 2, 'experimente', 'Ba tajrobe', 1650, '{}', '{}'),
+(50, 'bahama', 3, 'boss', 'Rais', 2000, '{}', '{}'),
+(51, 'avocat', 1, 'chef', 'Vakil', 1100, '{}', '{}'),
+(52, 'avocat', 0, 'recrue', 'Kar amooz', 900, '{}', '{}'),
+(53, 'avocat', 2, 'boss', 'Rais', 1100, '{}', '{}'),
+(54, 'aircraftdealer', 0, 'recruit', 'Kar amooz', 10, '{}', '{}'),
+(55, 'aircraftdealer', 1, 'novice', 'Taze kar', 25, '{}', '{}'),
+(56, 'aircraftdealer', 2, 'experienced', 'Herfei', 40, '{}', '{}'),
+(57, 'aircraftdealer', 3, 'boss', 'Rais', 0, '{}', '{}'),
+(58, 'boatdealer', 0, 'recruit', 'Kar amooz', 10, '{}', '{}'),
+(59, 'boatdealer', 1, 'novice', 'Taze kar', 25, '{}', '{}'),
+(60, 'boatdealer', 2, 'experienced', 'Herfei', 40, '{}', '{}'),
+(61, 'boatdealer', 3, 'boss', 'Rais', 0, '{}', '{}'),
+(70, 'biker', 0, 'soldato', 'Sarbaz', 50, '{}', '{}'),
+(71, 'biker', 1, 'capo', 'Alcapo', 70, '{}', '{}'),
+(72, 'biker', 2, 'consigliere', 'Modir', 100, '{}', '{}'),
+(73, 'biker', 3, 'boss', 'Rais', 2000, '{}', '{}'),
+(74, 'securiter', 0, 'agents', 'Team amniyat', 1700, '{}', '{}'),
+(75, 'securiter', 1, 'boss', 'Rais', 3000, '{}', '{}'),
+(76, 'mafia', 0, 'soldato', 'sarbaz', 1500, '{}', '{}'),
+(77, 'mafia', 1, 'capo', 'Al capo', 1800, '{}', '{}'),
+(78, 'mafia', 2, 'consigliere', 'daste rast e rais', 2100, '{}', '{}'),
+(79, 'mafia', 3, 'boss', 'Rais e bozorg', 2700, '{}', '{}');
 
 -- --------------------------------------------------------
 
@@ -2120,12 +2144,12 @@ CREATE TABLE `licenses` (
 --
 
 INSERT INTO `licenses` (`type`, `label`) VALUES
-('aircraft', 'Aircraft License'),
-('dmv', 'Code de la route'),
-('drive', 'Permis de conduire'),
-('drive_bike', 'Permis moto'),
-('drive_truck', 'Permis camion'),
-('weapon', 'Permis de port d\'arme');
+('aircraft', 'Mojavez parvaz'),
+('dmv', 'Mojavez ayin name'),
+('drive', 'Mojavez ranandegi'),
+('drive_bike', 'Mojavez motor'),
+('drive_truck', 'Mojavez kamiyoon'),
+('weapon', 'Mojavez aslahe');
 
 -- --------------------------------------------------------
 
@@ -2210,19 +2234,19 @@ CREATE TABLE `org_gradeorg` (
 --
 
 INSERT INTO `org_gradeorg` (`id`, `org_name`, `gradeorg`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
-(1, 'freecity', 0, 'freecity', 'Citoyen', 200, '{}', '{}'),
-(2, 'mafia', 0, 'soldato', 'Ptite-Frappe', 1500, '{}', '{}'),
+(1, 'freecity', 0, 'freecity', 'Azad', 200, '{}', '{}'),
+(2, 'mafia', 0, 'soldato', 'Sarbaz', 1500, '{}', '{}'),
 (3, 'mafia', 1, 'capo', 'Capo', 1800, '{}', '{}'),
 (4, 'mafia', 2, 'consigliere', 'Capo-Chef', 2100, '{}', '{}'),
-(5, 'mafia', 3, 'boss', 'Parrain', 2700, '{}', '{}'),
+(5, 'mafia', 3, 'boss', 'Rais', 2700, '{}', '{}'),
 (6, 'gang', 0, 'soldato', 'Ptite-Frappe', 1500, '{}', '{}'),
 (7, 'gang', 1, 'capo', 'Capo', 1800, '{}', '{}'),
 (8, 'gang', 2, 'consigliere', 'Capo-Chef', 2100, '{}', '{}'),
-(9, 'gang', 3, 'boss', 'Patron', 2700, '{}', '{}'),
+(9, 'gang', 3, 'boss', 'Rais', 2700, '{}', '{}'),
 (10, 'cartel', 0, 'soldato', 'Ptite-Frappe', 1500, '{}', '{}'),
 (11, 'cartel', 1, 'capo', 'Capo', 1800, '{}', '{}'),
 (12, 'cartel', 2, 'consigliere', 'Chef', 2100, '{}', '{}'),
-(13, 'cartel', 3, 'boss', 'Patron', 2700, '{}', '{}');
+(13, 'cartel', 3, 'boss', 'Rais', 2700, '{}', '{}');
 
 -- --------------------------------------------------------
 
@@ -2346,7 +2370,9 @@ INSERT INTO `owned_properties` (`id`, `name`, `price`, `rented`, `owner`) VALUES
 (53, 'HillcrestAvenue2874', 100000, 0, 'steam:1100001325b7a9b'),
 (54, 'Aqua3Apartment', 100000, 0, 'steam:1100001325b7a9b'),
 (55, 'IntegrityWay28', 100000, 0, 'steam:1100001325b7a9b'),
-(56, 'DellPerroHeightst4', 100000, 0, 'steam:1100001325b7a9b');
+(56, 'DellPerroHeightst4', 100000, 0, 'steam:1100001325b7a9b'),
+(57, 'NorthConkerAvenue2044', 5000, 1, 'steam:11000010b3a30a0'),
+(58, 'NorthConkerAvenue2045', 1000000, 1, 'steam:110000114a058a8');
 
 -- --------------------------------------------------------
 
@@ -2355,226 +2381,13 @@ INSERT INTO `owned_properties` (`id`, `name`, `price`, `rented`, `owner`) VALUES
 --
 
 CREATE TABLE `owned_vehicles` (
-  `owner` varchar(30) NOT NULL,
-  `state` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'State of the car',
-  `plate` varchar(12) NOT NULL,
-  `vehicle` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `owned_vehicles`
---
-
-INSERT INTO `owned_vehicles` (`owner`, `state`, `plate`, `vehicle`) VALUES
-('steam:11000010302b529', 1, 'ACP 563', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":942,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1878062887,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":3,\"modEngine\":-1,\"wheelColor\":7,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.445686429739,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":0,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"ACP 563 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":0,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":2}'),
-('steam:11000011acec85a', 1, 'ACZ 998', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":741090084,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"health\":480,\"color2\":49,\"wheels\":6,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.20263761281968,\"modEngineBlock\":-1,\"modXenon\":false,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":50,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modHood\":-1,\"windowTint\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modDial\":-1,\"modTrimA\":-1,\"plate\":\"ACZ 998 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":92}'),
-('steam:11000013613fa78', 1, 'AFY 973', '{\"modPlateHolder\":-1,\"modExhaust\":-1,\"wheels\":0,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modRoof\":-1,\"plate\":\"AFY 973 \",\"modVanityPlate\":-1,\"model\":1553034064,\"modOrnaments\":-1,\"modStruts\":-1,\"modSpoilers\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modArchCover\":-1,\"modXenon\":false,\"modGrille\":-1,\"modSpeakers\":-1,\"modRightFender\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDashboard\":-1,\"modBrakes\":-1,\"modHood\":-1,\"dirtLevel\":6.6382904052734,\"health\":1000,\"modDial\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"neonColor\":[255,0,255],\"modTransmission\":-1,\"modRearBumper\":-1,\"modSmokeEnabled\":1,\"modTrimA\":-1,\"modLivery\":-1,\"color1\":44,\"modTank\":-1,\"modShifterLeavers\":-1,\"modArmor\":-1,\"modSeats\":-1,\"modTrunk\":-1,\"color2\":15,\"modFrame\":-1,\"windowTint\":-1,\"plateIndex\":0,\"modFrontBumper\":-1,\"modAerials\":-1,\"modTurbo\":false,\"modDoorSpeaker\":-1,\"modFender\":-1,\"wheelColor\":156,\"modWindows\":-1,\"modBackWheels\":-1,\"pearlescentColor\":134,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1}'),
-('steam:1100001061d0cb1', 1, 'AGA 965', '{\"plateIndex\":2,\"color1\":29,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":29,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"modTrimB\":-1,\"model\":-1215316954,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"wheels\":0,\"modSuspension\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"modFrontBumper\":-1,\"health\":915,\"pearlescentColor\":35,\"modSpeakers\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"AGA 965 \",\"modLivery\":-1,\"modStruts\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modTrunk\":-1,\"modTransmission\":-1,\"dirtLevel\":9.4230089187622,\"modExhaust\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":0,\"modHood\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modRightFender\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000013491dae7', 1, 'AGU 102', '{\"modArchCover\":-1,\"modAPlate\":-1,\"plateIndex\":0,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modStruts\":-1,\"modGrille\":-1,\"modTransmission\":-1,\"modTrimB\":-1,\"tyreSmokeColor\":[255,255,255],\"modTank\":-1,\"modSuspension\":-1,\"modSideSkirt\":-1,\"modDashboard\":-1,\"pearlescentColor\":5,\"dirtLevel\":0.83384120464324,\"modWindows\":-1,\"color2\":147,\"modPlateHolder\":-1,\"plate\":\"AGU 102 \",\"modRearBumper\":-1,\"modOrnaments\":-1,\"modRightFender\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"modTrimA\":-1,\"model\":-1071380347,\"modTurbo\":false,\"modTrunk\":-1,\"color1\":89,\"health\":992,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modArmor\":-1,\"modFender\":-1,\"modHorns\":-1,\"wheels\":4,\"modHydrolic\":-1,\"modBrakes\":-1,\"modEngine\":1,\"modSeats\":-1,\"modDoorSpeaker\":-1,\"modSpoilers\":-1,\"modFrontBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modFrontWheels\":5,\"modAirFilter\":-1,\"wheelColor\":147,\"windowTint\":-1,\"modLivery\":1,\"modFrame\":-1,\"modVanityPlate\":-1,\"modRoof\":-1,\"modAerials\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modHood\":-1,\"modXenon\":1}'),
-('steam:11000013613fa78', 1, 'AIB 917', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":2,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modHood\":0,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":2,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":40,\"model\":-1848994066,\"neonColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modSpoilers\":4,\"color2\":106,\"wheels\":0,\"modEngine\":3,\"wheelColor\":0,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":7.5697021484375,\"modFender\":-1,\"modEngineBlock\":-1,\"modFrontWheels\":-1,\"modXenon\":1,\"color1\":21,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":1000,\"modDashboard\":-1,\"modArchCover\":-1,\"modSteeringWheel\":-1,\"plate\":\"AIB 917 \",\"modSideSkirt\":2,\"modDial\":-1,\"modVanityPlate\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":2,\"modHydrolic\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":1,\"modFrame\":-1,\"windowTint\":1,\"modBackWheels\":-1,\"pearlescentColor\":134}'),
-('steam:1100001325b7a9b', 1, 'AJB 470', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modFrontWheels\":0,\"modFrame\":-1,\"modRightFender\":-1,\"modTrunk\":-1,\"modHood\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":4,\"modEngineBlock\":-1,\"modXenon\":1,\"pearlescentColor\":111,\"modDashboard\":-1,\"color1\":0,\"modSteeringWheel\":-1,\"dirtLevel\":1.2720011472702,\"modFrontBumper\":-1,\"modSuspension\":3,\"modBrakes\":2,\"plate\":\"AJB 470 \",\"health\":998,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":4,\"modBackWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":111,\"windowTint\":1,\"modStruts\":-1,\"modTrimB\":-1,\"model\":-2064372143,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAirFilter\":-1,\"modDial\":-1,\"modRoof\":-1,\"neonColor\":[255,255,255],\"modRearBumper\":-1,\"modAerials\":-1,\"modOrnaments\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAPlate\":-1,\"wheelColor\":111,\"modSideSkirt\":-1}'),
-('steam:11000011acec85a', 1, 'ALH 159', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"ALH 159 \",\"modDoorSpeaker\":-1,\"health\":998,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"model\":-2098947590,\"modStruts\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"modSpoilers\":-1,\"modSeats\":-1,\"wheelColor\":111,\"modTrimA\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"neonColor\":[255,255,255],\"modTrunk\":-1,\"modSuspension\":3,\"neonEnabled\":[1,1,1,1],\"plateIndex\":0,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modTank\":-1,\"color2\":111,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"windowTint\":1,\"modAirFilter\":-1,\"pearlescentColor\":27,\"modTransmission\":-1,\"dirtLevel\":8.8016748428344,\"modWindows\":-1,\"modHorns\":-1,\"modAPlate\":-1,\"wheels\":7,\"modGrille\":-1,\"color1\":111,\"modTurbo\":false,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":17,\"modArchCover\":-1}'),
-('steam:110000111b71726', 1, 'APS 018', '{\"modSeats\":-1,\"modEngine\":3,\"wheelColor\":156,\"modShifterLeavers\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"modGrille\":-1,\"modTrimB\":-1,\"tyreSmokeColor\":[255,255,255],\"neonColor\":[255,0,255],\"modFender\":-1,\"modFrontWheels\":25,\"neonEnabled\":[false,false,false,false],\"modArmor\":4,\"modFrame\":-1,\"modRoof\":-1,\"plateIndex\":1,\"modLivery\":-1,\"modAirFilter\":-1,\"modXenon\":1,\"color1\":15,\"modBackWheels\":-1,\"modTank\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSpoilers\":-1,\"model\":758895617,\"modHood\":-1,\"modSuspension\":-1,\"modArchCover\":-1,\"color2\":132,\"modWindows\":-1,\"modBrakes\":2,\"modAerials\":-1,\"modDial\":-1,\"modHorns\":-1,\"modSpeakers\":-1,\"modSideSkirt\":0,\"modTurbo\":false,\"wheels\":2,\"modAPlate\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modHydrolic\":-1,\"dirtLevel\":6.08482503891,\"modVanityPlate\":-1,\"windowTint\":1,\"modFrontBumper\":-1,\"modTrimA\":-1,\"health\":970,\"pearlescentColor\":18,\"modTrunk\":-1,\"modSmokeEnabled\":1,\"modPlateHolder\":-1,\"modTransmission\":2,\"plate\":\"APS 018 \",\"modRightFender\":-1,\"modExhaust\":-1,\"modStruts\":-1}'),
-('steam:11000013613fa78', 1, 'APV 177', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1474015055,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"modSpoilers\":-1,\"color2\":32,\"wheels\":6,\"modEngine\":-1,\"wheelColor\":192,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":3.3746674060822,\"modFender\":-1,\"modEngineBlock\":-1,\"modFrontWheels\":-1,\"modXenon\":1,\"color1\":3,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":980,\"modDashboard\":-1,\"modArchCover\":-1,\"modSteeringWheel\":-1,\"plate\":\"APV 177 \",\"modSideSkirt\":-1,\"modDial\":-1,\"modVanityPlate\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modSeats\":-1,\"plateIndex\":4,\"modRearBumper\":-1,\"modFrame\":-1,\"windowTint\":-1,\"modBackWheels\":-1,\"pearlescentColor\":0}'),
-('steam:11000011acec85a', 1, 'AVS 436', '{\"windowTint\":-1,\"modStruts\":-1,\"modFrontWheels\":-1,\"modFender\":-1,\"modLivery\":-1,\"neonColor\":[255,0,255],\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modRightFender\":-1,\"modTank\":-1,\"modTrimA\":-1,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"modTurbo\":false,\"modTransmission\":-1,\"modSmokeEnabled\":false,\"neonEnabled\":[false,false,false,false],\"modSpeakers\":-1,\"modAirFilter\":-1,\"color2\":38,\"modArmor\":-1,\"modDial\":-1,\"modRoof\":-1,\"modHydrolic\":-1,\"wheelColor\":156,\"modBrakes\":-1,\"modArchCover\":-1,\"modAPlate\":-1,\"dirtLevel\":10.00001335144,\"modTrunk\":-1,\"pearlescentColor\":5,\"modPlateHolder\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"wheels\":6,\"modHorns\":-1,\"modRearBumper\":-1,\"plate\":\"AVS 436\",\"modTrimB\":-1,\"modFrame\":-1,\"modOrnaments\":-1,\"health\":1000,\"modHood\":-1,\"plateIndex\":0,\"modAerials\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"color1\":1,\"model\":86520421,\"modSeats\":-1,\"modEngineBlock\":-1,\"modEngine\":-1,\"modSuspension\":-1,\"modExhaust\":-1,\"modSideSkirt\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"modFrontBumper\":-1,\"modGrille\":-1}'),
-('steam:11000011acec85a', 1, 'AXD 383', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-570033273,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"health\":1000,\"color2\":120,\"wheels\":6,\"modEngine\":-1,\"wheelColor\":53,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":6.090868473053,\"modEngineBlock\":-1,\"modXenon\":false,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":49,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modHood\":-1,\"windowTint\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modDial\":-1,\"modTrimA\":-1,\"plate\":\"AXD 383 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":55}'),
-('steam:11000010d6c30cb', 1, 'AYA 595', '{\"modXenon\":false,\"modAPlate\":-1,\"wheelColor\":156,\"modPlateHolder\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"color2\":112,\"modTrimA\":-1,\"neonEnabled\":[false,false,false,false],\"modRearBumper\":-1,\"modHood\":-1,\"modDial\":-1,\"modSideSkirt\":-1,\"tyreSmokeColor\":[255,255,255],\"modExhaust\":-1,\"modDashboard\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"model\":-1639924411,\"modTurbo\":false,\"modOrnaments\":-1,\"health\":837,\"modTank\":-1,\"modVanityPlate\":-1,\"modTransmission\":-1,\"modFrontBumper\":-1,\"dirtLevel\":7.3062229156494,\"modShifterLeavers\":-1,\"modDoorSpeaker\":-1,\"color1\":112,\"neonColor\":[255,0,255],\"modEngine\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modSpoilers\":-1,\"modWindows\":-1,\"plateIndex\":4,\"pearlescentColor\":134,\"windowTint\":-1,\"modAerials\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"wheels\":6,\"modSteeringWheel\":-1,\"modFender\":-1,\"modLivery\":-1,\"modArmor\":-1,\"modTrimB\":-1,\"modGrille\":-1,\"modHydrolic\":-1,\"modRightFender\":-1,\"modSeats\":-1,\"modTrunk\":-1,\"modSpeakers\":-1,\"modArchCover\":-1,\"plate\":\"AYA 595 \",\"modFrontWheels\":-1,\"modSmokeEnabled\":1,\"modStruts\":-1}'),
-('steam:1100001325b7a9b', 1, 'AZC 558', '{\"modArchCover\":0,\"modStruts\":-1,\"modFrontBumper\":10,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":2,\"modSideSkirt\":3,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":2,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":-295689028,\"neonColor\":[255,0,255],\"modEngineBlock\":1,\"modAerials\":0,\"modDial\":-1,\"color2\":27,\"wheels\":0,\"modEngine\":1,\"wheelColor\":158,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":11.95228767395,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1,\"modWindows\":-1,\"color1\":27,\"modTransmission\":-1,\"modRoof\":0,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"windowTint\":1,\"modHood\":8,\"modSteeringWheel\":-1,\"modFender\":2,\"modHorns\":-1,\"modSpoilers\":2,\"health\":992,\"plate\":\"AZC 558 \",\"modFrame\":4,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":2,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":7,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":111}'),
-('steam:110000104cf5aeb', 1, 'BBS 178', '{\"modShifterLeavers\":-1,\"modAerials\":-1,\"modXenon\":false,\"health\":1000,\"dirtLevel\":6.1269435882568,\"modBrakes\":-1,\"neonEnabled\":[false,false,false,false],\"modRightFender\":-1,\"modFrontBumper\":-1,\"modFender\":-1,\"modSideSkirt\":-1,\"wheels\":0,\"neonColor\":[255,0,255],\"wheelColor\":156,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modSpoilers\":-1,\"pearlescentColor\":5,\"modFrame\":-1,\"color1\":2,\"modSeats\":-1,\"modAPlate\":-1,\"modDashboard\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modTurbo\":false,\"modArmor\":-1,\"plate\":\"BBS 178 \",\"modSmokeEnabled\":false,\"modGrille\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":-1122289213,\"color2\":2,\"modHydrolic\":-1,\"modTrimB\":-1,\"modPlateHolder\":-1,\"modSuspension\":-1,\"modRoof\":-1,\"modLivery\":-1,\"windowTint\":-1,\"modAirFilter\":-1,\"modStruts\":-1,\"modSpeakers\":-1,\"plateIndex\":0,\"modOrnaments\":-1,\"modTransmission\":-1,\"modEngineBlock\":-1,\"modWindows\":-1,\"modTank\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modEngine\":-1,\"modHood\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modExhaust\":-1,\"modTrunk\":-1}'),
-('steam:11000010cb4181f', 1, 'BCF 482', '{\"wheels\":7,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":4,\"tyreSmokeColor\":[41,36,33],\"plate\":\"BCF 482 \",\"modOrnaments\":-1,\"neonColor\":[41,36,33],\"modTransmission\":2,\"modAirFilter\":-1,\"modExhaust\":-1,\"color2\":0,\"modAPlate\":-1,\"modSideSkirt\":-1,\"wheelColor\":147,\"modDashboard\":-1,\"modSpoilers\":1,\"modGrille\":-1,\"pearlescentColor\":149,\"modFrontBumper\":0,\"modWindows\":-1,\"modHood\":-1,\"modSuspension\":3,\"modArchCover\":-1,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modTrimB\":-1,\"neonEnabled\":[1,1,1,1],\"modTurbo\":false,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":1000,\"modSteeringWheel\":-1,\"color1\":151,\"dirtLevel\":1.0197150707244,\"modTank\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":1,\"modHorns\":10,\"modRearBumper\":2,\"modPlateHolder\":-1,\"modAerials\":-1,\"modFender\":-1,\"modXenon\":1,\"modBrakes\":2,\"modStruts\":-1,\"plateIndex\":1,\"modEngineBlock\":-1,\"modFrame\":-1,\"modEngine\":3,\"modRoof\":-1,\"model\":-1752116803,\"modVanityPlate\":-1,\"modFrontWheels\":15,\"modTrunk\":-1}'),
-('steam:1100001325b7a9b', 1, 'BEU 948', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"BEU 948 \",\"modDoorSpeaker\":-1,\"modTank\":-1,\"modSeats\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modStruts\":-1,\"modSpeakers\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":209,\"modAPlate\":-1,\"wheelColor\":156,\"modTrimA\":-1,\"model\":117401876,\"modBackWheels\":-1,\"neonColor\":[0,0,255],\"modTrunk\":-1,\"modSuspension\":3,\"neonEnabled\":[1,1,1,1],\"plateIndex\":2,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":2,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"windowTint\":1,\"modVanityPlate\":-1,\"pearlescentColor\":0,\"modWindows\":-1,\"dirtLevel\":1.1705570220948,\"modSpoilers\":-1,\"modHorns\":11,\"modOrnaments\":-1,\"modTransmission\":2,\"modGrille\":-1,\"color1\":12,\"modTurbo\":false,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"modFrontWheels\":-1,\"wheels\":2}'),
-('steam:110000110c6f75a', 1, 'BFL 454', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modOrnaments\":-1,\"modSteeringWheel\":-1,\"modArmor\":4,\"modAirFilter\":-1,\"modHood\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modHydrolic\":-1,\"modRearBumper\":0,\"modSeats\":-1,\"modFrame\":2,\"modEngineBlock\":-1,\"modRightFender\":0,\"pearlescentColor\":0,\"modDashboard\":-1,\"color1\":5,\"modFrontWheels\":-1,\"neonColor\":[255,0,255],\"modFrontBumper\":0,\"modTrunk\":-1,\"modBrakes\":2,\"plate\":\"BFL 454 \",\"health\":999,\"modTrimA\":-1,\"modGrille\":0,\"wheels\":2,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":3,\"color2\":0,\"windowTint\":-1,\"modStruts\":-1,\"modXenon\":1,\"model\":-602287871,\"modArchCover\":0,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":0,\"modAerials\":-1,\"dirtLevel\":0.35981139540672,\"wheelColor\":156,\"modTrimB\":-1,\"modSpoilers\":1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":3,\"modLivery\":-1,\"modSideSkirt\":0}'),
-('steam:1100001325b7a9b', 1, 'BJW 605', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"BJW 605 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modGrille\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":1,\"modArmor\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modStruts\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":0,\"modDashboard\":-1,\"modArchCover\":-1,\"dirtLevel\":7.7354922294616,\"health\":990,\"color2\":25,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"color1\":142,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"wheelColor\":88,\"modHydrolic\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"model\":223258115,\"modHood\":-1,\"pearlescentColor\":81,\"modDial\":-1,\"modBackWheels\":3,\"modBrakes\":-1,\"modFender\":-1,\"modSpeakers\":-1}'),
-('steam:11000010e555ae1', 1, 'BKW 016', '{\"modSpoilers\":-1,\"modExhaust\":-1,\"modEngine\":-1,\"modHood\":-1,\"modRoof\":-1,\"modOrnaments\":-1,\"windowTint\":-1,\"modDashboard\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modBrakes\":-1,\"modLivery\":-1,\"color1\":2,\"model\":-1089039904,\"modSteeringWheel\":-1,\"modWindows\":-1,\"color2\":111,\"modTrunk\":-1,\"modTrimB\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"pearlescentColor\":4,\"modArchCover\":-1,\"modHorns\":-1,\"wheelColor\":156,\"modEngineBlock\":-1,\"modTrimA\":-1,\"modPlateHolder\":-1,\"modDial\":-1,\"neonColor\":[255,0,255],\"wheels\":7,\"modBackWheels\":-1,\"modShifterLeavers\":-1,\"modAerials\":-1,\"modSideSkirt\":-1,\"modSpeakers\":-1,\"modSmokeEnabled\":false,\"modFrame\":-1,\"neonEnabled\":[false,false,false,false],\"modAirFilter\":-1,\"modTank\":-1,\"modArmor\":-1,\"modTransmission\":-1,\"modHydrolic\":-1,\"modAPlate\":-1,\"modXenon\":false,\"plateIndex\":0,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modStruts\":-1,\"modTurbo\":false,\"plate\":\"BKW 016 \",\"health\":555,\"modRearBumper\":-1,\"dirtLevel\":15.0,\"modSuspension\":-1,\"modSeats\":-1}'),
-('steam:1100001325b7a9b', 1, 'BWQ 070', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[0,0,128],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":111,\"modRightFender\":-1,\"neonColor\":[0,0,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"BWQ 070 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":83,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":947,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":6,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":10,\"modEngine\":3,\"color2\":122,\"windowTint\":-1,\"modFrame\":-1,\"modArmor\":4,\"model\":-159126838,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":5.5934891700744,\"wheelColor\":27,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000013613fa78', 1, 'CDB 888', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modXenon\":1,\"modHorns\":-1,\"model\":-188978926,\"neonColor\":[255,0,0],\"modAPlate\":-1,\"health\":693,\"modAerials\":-1,\"color2\":112,\"wheels\":6,\"modEngine\":3,\"wheelColor\":70,\"modArmor\":0,\"modSmokeEnabled\":1,\"dirtLevel\":1.8492232561112,\"modSpoilers\":-1,\"modDashboard\":-1,\"modEngineBlock\":-1,\"modDoorSpeaker\":-1,\"color1\":134,\"modTransmission\":2,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpeakers\":-1,\"modWindows\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"windowTint\":-1,\"modDial\":-1,\"modHood\":-1,\"plate\":\"CDB 888 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":2,\"modBackWheels\":-1,\"modSeats\":-1,\"plateIndex\":2,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":43}'),
-('steam:11000010cb4181f', 1, 'CDF 495', '{\"modTrimA\":-1,\"pearlescentColor\":15,\"modTrunk\":-1,\"modDashboard\":-1,\"color1\":12,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":-1,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":3,\"modTransmission\":2,\"plateIndex\":1,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"model\":934775262,\"modAPlate\":-1,\"neonColor\":[255,0,255],\"modRearBumper\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modRightFender\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":1000,\"modHydrolic\":-1,\"modFender\":-1,\"wheels\":7,\"modSideSkirt\":-1,\"modDoorSpeaker\":-1,\"wheelColor\":156,\"modWindows\":-1,\"modExhaust\":-1,\"plate\":\"CDF 495 \",\"modBackWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"dirtLevel\":2.2179169654846,\"modPlateHolder\":-1,\"modBrakes\":2,\"modAirFilter\":-1,\"modSmokeEnabled\":1,\"modEngine\":3,\"modFrontBumper\":-1,\"color2\":107,\"modHorns\":-1,\"modSeats\":-1,\"modEngineBlock\":-1,\"modAerials\":-1,\"modSpeakers\":-1,\"modTurbo\":false,\"modTrimB\":-1,\"modXenon\":1,\"modTank\":-1,\"modFrame\":-1,\"modArchCover\":-1,\"modStruts\":-1}'),
-('steam:11000011acec85a', 1, 'CLA 815', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"CLA 815 \",\"modDoorSpeaker\":-1,\"health\":999,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"model\":1753414259,\"modStruts\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"modSpoilers\":-1,\"modSeats\":-1,\"wheelColor\":156,\"modTrimA\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modTrunk\":-1,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"plateIndex\":0,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modTank\":-1,\"color2\":11,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":-1,\"windowTint\":-1,\"modAirFilter\":-1,\"pearlescentColor\":111,\"modTransmission\":-1,\"dirtLevel\":3.433453798294,\"modWindows\":-1,\"modHorns\":-1,\"modAPlate\":-1,\"wheels\":6,\"modGrille\":-1,\"color1\":5,\"modTurbo\":false,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":-1,\"modArchCover\":-1}'),
-('steam:11000011cded001', 1, 'CLG 160', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-1372848492,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"color2\":4,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":6.7282972335816,\"modSpoilers\":-1,\"modSpeakers\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"color1\":4,\"modTransmission\":-1,\"modAPlate\":-1,\"tyreSmokeColor\":[255,255,255],\"modShifterLeavers\":-1,\"modArchCover\":-1,\"modDashboard\":-1,\"modBrakes\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modHood\":-1,\"modGrille\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"plate\":\"CLG 160 \",\"modFrame\":-1,\"modTank\":-1,\"modFender\":-1,\"health\":994,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"windowTint\":-1,\"modRoof\":-1,\"pearlescentColor\":111}'),
-('steam:110000109b99f47', 1, 'CLV 335', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modXenon\":false,\"pearlescentColor\":112,\"modBackWheels\":-1,\"color1\":79,\"modSuspension\":-1,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modGrille\":-1,\"neonColor\":[255,0,255],\"modTrimA\":-1,\"modArmor\":-1,\"wheels\":6,\"plate\":\"CLV 335 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":1,\"color2\":112,\"windowTint\":-1,\"modDashboard\":-1,\"modStruts\":-1,\"model\":-188978926,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"health\":556,\"dirtLevel\":14.37078666687,\"modAerials\":-1,\"wheelColor\":70,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000010bb4b9f1', 1, 'CQB 747', '{\"plate\":\"CQB 747 \",\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":6.1373844146728,\"modTrimA\":-1,\"color2\":89,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSideSkirt\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":941800958,\"color1\":89,\"modAPlate\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"modTank\":-1,\"pearlescentColor\":89,\"modSeats\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modArmor\":-1,\"modSuspension\":-1,\"modPlateHolder\":-1,\"modSmokeEnabled\":false,\"plateIndex\":0,\"modFrontWheels\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modRoof\":-1,\"modTurbo\":false,\"wheelColor\":156,\"modWindows\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"health\":1000,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modFender\":-1,\"modRearBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"wheels\":2,\"modFrontBumper\":-1,\"modAerials\":-1}'),
-('steam:110000119ac453f', 1, 'CTH 403', '{\"neonEnabled\":[false,false,false,false],\"modDoorSpeaker\":-1,\"modTurbo\":false,\"modSmokeEnabled\":1,\"modShifterLeavers\":-1,\"modExhaust\":-1,\"modSideSkirt\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modTransmission\":2,\"modStruts\":-1,\"neonColor\":[255,0,255],\"modTrunk\":-1,\"wheels\":7,\"modTrimA\":-1,\"modAirFilter\":-1,\"modSuspension\":3,\"color1\":12,\"modOrnaments\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modWindows\":-1,\"health\":962,\"windowTint\":1,\"modArmor\":4,\"modTank\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modLivery\":-1,\"modAerials\":-1,\"modBrakes\":2,\"dirtLevel\":1.3747988939286,\"modFrontWheels\":-1,\"modGrille\":-1,\"modAPlate\":-1,\"modRoof\":-1,\"color2\":3,\"modVanityPlate\":-1,\"wheelColor\":156,\"modPlateHolder\":-1,\"model\":1813965170,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"plateIndex\":0,\"plate\":\"CTH 403 \",\"modDial\":-1,\"modFrame\":-1,\"modRearBumper\":-1,\"modEngine\":3,\"modRightFender\":-1,\"pearlescentColor\":23,\"tyreSmokeColor\":[255,255,255],\"modHood\":-1,\"modDashboard\":-1,\"modXenon\":false,\"modHydrolic\":-1,\"modSpeakers\":-1}'),
-('steam:11000013491dae7', 1, 'DGW 792', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":4,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modXenon\":false,\"modArmor\":-1,\"neonColor\":[255,0,255],\"modHood\":-1,\"modGrille\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":0,\"modDashboard\":-1,\"color1\":0,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modBackWheels\":-1,\"health\":0,\"modTrimA\":-1,\"modSuspension\":-1,\"wheels\":6,\"plate\":\"DGW 792 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":1,\"color2\":0,\"windowTint\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"model\":333512375,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":9.4695835113526,\"modAirFilter\":-1,\"wheelColor\":0,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000011acec85a', 1, 'DIX 929', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-255678177,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"health\":940,\"color2\":0,\"wheels\":6,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":11.720561027526,\"modEngineBlock\":-1,\"modXenon\":false,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":0,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modHood\":-1,\"windowTint\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modDial\":-1,\"modTrimA\":-1,\"plate\":\"DIX 929 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":18}'),
-('steam:11000011c0b0ace', 1, 'DJO 611', '{\"modSmokeEnabled\":false,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":4,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modTurbo\":false,\"modRightFender\":-1,\"wheelColor\":32,\"modHood\":-1,\"modDashboard\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"modSeats\":-1,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modXenon\":false,\"modGrille\":-1,\"modBackWheels\":-1,\"color1\":32,\"modAerials\":-1,\"pearlescentColor\":0,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"plate\":\"DJO 611 \",\"health\":914,\"modTrimA\":-1,\"modFrame\":-1,\"wheels\":7,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":240,\"windowTint\":-1,\"modArmor\":-1,\"modSteeringWheel\":-1,\"model\":-750481609,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":4.2989926338196,\"modTrimB\":-1,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000010dd9c7d6', 1, 'DNP 445', '{\"modShifterLeavers\":-1,\"modAerials\":-1,\"modXenon\":1,\"health\":991,\"dirtLevel\":13.067447662354,\"modBrakes\":2,\"neonEnabled\":[1,1,1,1],\"windowTint\":1,\"modFrontBumper\":-1,\"modBackWheels\":-1,\"modSideSkirt\":-1,\"wheels\":0,\"neonColor\":[255,255,255],\"wheelColor\":132,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modSpoilers\":-1,\"pearlescentColor\":132,\"modTransmission\":2,\"color1\":132,\"modSeats\":-1,\"modAPlate\":-1,\"modDashboard\":-1,\"plateIndex\":1,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modTurbo\":false,\"modArmor\":4,\"plate\":\"DNP 445 \",\"modTrimA\":-1,\"modHorns\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":-1029368191,\"color2\":134,\"modHydrolic\":-1,\"modTrimB\":-1,\"modPlateHolder\":-1,\"modSuspension\":3,\"modGrille\":-1,\"modLivery\":-1,\"modEngine\":3,\"modHood\":-1,\"modOrnaments\":-1,\"modSpeakers\":-1,\"modFender\":-1,\"modRightFender\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modWindows\":-1,\"modTank\":-1,\"modFrame\":-1,\"modSmokeEnabled\":1,\"modArchCover\":-1,\"modRoof\":-1,\"modAirFilter\":-1,\"modExhaust\":-1,\"modStruts\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:11000010bb4b9f1', 1, 'DON 204', '{\"plate\":\"DON 204 \",\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":7.4215235710144,\"modTrimA\":-1,\"color2\":5,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSideSkirt\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":-777172681,\"color1\":32,\"modAPlate\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"modTank\":-1,\"pearlescentColor\":36,\"modSeats\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modArmor\":-1,\"modSuspension\":-1,\"modPlateHolder\":-1,\"modSmokeEnabled\":1,\"plateIndex\":0,\"modFrontWheels\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modRoof\":-1,\"modTurbo\":false,\"wheelColor\":111,\"modWindows\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"health\":958,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modFender\":-1,\"modRearBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"wheels\":0,\"modFrontBumper\":-1,\"modAerials\":-1}'),
-('steam:11000013634c728', 1, 'DQM 791', '{\"modSideSkirt\":-1,\"modXenon\":false,\"modLivery\":-1,\"modRearBumper\":-1,\"modSmokeEnabled\":false,\"modTurbo\":false,\"modDial\":-1,\"modStruts\":-1,\"modTrunk\":-1,\"modArmor\":-1,\"modHydrolic\":-1,\"modAPlate\":-1,\"modEngine\":-1,\"modBackWheels\":-1,\"modExhaust\":-1,\"wheelColor\":27,\"modVanityPlate\":-1,\"modHorns\":-1,\"modTransmission\":-1,\"plate\":\"DQM 791\",\"modFrontBumper\":-1,\"wheels\":6,\"health\":1000,\"modSeats\":-1,\"modFrontWheels\":-1,\"modSuspension\":-1,\"modTank\":-1,\"neonColor\":[255,0,255],\"modSpeakers\":-1,\"pearlescentColor\":111,\"modDashboard\":-1,\"neonEnabled\":[false,false,false,false],\"modRoof\":-1,\"modPlateHolder\":-1,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"dirtLevel\":5.000015258789,\"modEngineBlock\":-1,\"modRightFender\":-1,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modFrame\":-1,\"modSteeringWheel\":-1,\"modDoorSpeaker\":-1,\"color2\":1,\"tyreSmokeColor\":[255,255,255],\"color1\":6,\"modAerials\":-1,\"modTrimB\":-1,\"modBrakes\":-1,\"modHood\":-1,\"windowTint\":-1,\"modGrille\":-1,\"model\":-1670998136,\"modFender\":-1,\"modOrnaments\":-1,\"modArchCover\":-1,\"modWindows\":-1,\"plateIndex\":0}'),
-('steam:11000013613fa78', 1, 'DVY 125', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modXenon\":1,\"modHorns\":-1,\"model\":-1549019518,\"neonColor\":[153,0,153],\"modAPlate\":-1,\"health\":1000,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"modGrille\":-1,\"modSpoilers\":-1,\"color2\":145,\"modEngineBlock\":-1,\"modBrakes\":-1,\"color1\":15,\"modTransmission\":-1,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modFender\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modArchCover\":-1,\"modSteeringWheel\":-1,\"modSpeakers\":-1,\"modHood\":-1,\"modDial\":-1,\"modDoorSpeaker\":-1,\"plate\":\"DVY 125 \",\"modFrame\":-1,\"modTank\":-1,\"modSeats\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"plateIndex\":2,\"modRearBumper\":-1,\"dirtLevel\":0.44328665733338,\"modHydrolic\":-1,\"modRoof\":-1,\"pearlescentColor\":145}'),
-('steam:11000011acec85a', 1, 'EGP 290', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":1458362510,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"health\":971,\"modAerials\":-1,\"color2\":0,\"wheels\":5,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":false,\"dirtLevel\":3.3761553764344,\"modSideSkirt\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modFender\":-1,\"color1\":64,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modVanityPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"windowTint\":-1,\"modDial\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modSpeakers\":-1,\"modSpoilers\":-1,\"modBrakes\":-1,\"plate\":\"EGP 290 \",\"modFrame\":-1,\"modTank\":-1,\"modRoof\":-1,\"modEngineBlock\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modHorns\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":0}'),
-('steam:11000010d6c30cb', 1, 'EGY 607', '{\"modPlateHolder\":-1,\"modAerials\":-1,\"modTransmission\":-1,\"neonEnabled\":[false,false,false,false],\"modTrimA\":-1,\"modWindows\":-1,\"windowTint\":-1,\"modShifterLeavers\":-1,\"plate\":\"EGY 607\",\"modArmor\":-1,\"modSeats\":-1,\"model\":-566387422,\"dirtLevel\":3.0000030994416,\"modSideSkirt\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"modSmokeEnabled\":false,\"modTrunk\":-1,\"plateIndex\":0,\"color1\":34,\"modFrontWheels\":-1,\"modFrontBumper\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modVanityPlate\":-1,\"modTurbo\":false,\"wheels\":0,\"modRightFender\":-1,\"modFender\":-1,\"color2\":34,\"modSuspension\":-1,\"modAPlate\":-1,\"modHood\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"modXenon\":false,\"modOrnaments\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modBrakes\":-1,\"modEngine\":-1,\"modFrame\":-1,\"modSpoilers\":-1,\"modHydrolic\":-1,\"wheelColor\":109,\"modDial\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"health\":1000,\"modDoorSpeaker\":-1,\"modStruts\":-1,\"pearlescentColor\":36,\"modTrimB\":-1,\"modTank\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"tyreSmokeColor\":[255,255,255]}'),
-('steam:11000010d6c30cb', 1, 'EME 833', '{\"color2\":15,\"modVanityPlate\":-1,\"pearlescentColor\":134,\"modStruts\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modArchCover\":-1,\"modXenon\":1,\"modEngine\":3,\"modArmor\":-1,\"modTransmission\":2,\"modTrunk\":-1,\"tyreSmokeColor\":[255,255,255],\"modOrnaments\":-1,\"color1\":15,\"modHorns\":41,\"wheels\":1,\"modExhaust\":-1,\"model\":1871995513,\"modTank\":-1,\"modWindows\":-1,\"neonEnabled\":[1,1,1,1],\"modSideSkirt\":6,\"modSpoilers\":7,\"plateIndex\":1,\"modFrontBumper\":8,\"modShifterLeavers\":-1,\"modSteeringWheel\":-1,\"modSmokeEnabled\":1,\"modDashboard\":-1,\"modLivery\":1,\"modSpeakers\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modPlateHolder\":-1,\"windowTint\":1,\"modGrille\":1,\"modSuspension\":3,\"modHydrolic\":-1,\"modHood\":4,\"health\":1000,\"modRearBumper\":0,\"modBrakes\":2,\"modAPlate\":-1,\"modRoof\":-1,\"dirtLevel\":0.086196199059486,\"neonColor\":[0,150,255],\"modAerials\":-1,\"modBackWheels\":-1,\"modFrontWheels\":-1,\"plate\":\"EME 833 \",\"modDoorSpeaker\":-1,\"wheelColor\":12,\"modFrame\":1,\"modRightFender\":-1,\"modAirFilter\":-1,\"modTrimB\":-1,\"modEngineBlock\":-1,\"modDial\":-1}'),
-('steam:11000011acec85a', 1, 'EOA 510', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":0,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":723973206,\"neonColor\":[255,255,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modRoof\":-1,\"color2\":12,\"wheels\":2,\"modEngine\":3,\"wheelColor\":12,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":4.829011440277,\"health\":976,\"modTrimA\":-1,\"modFrontWheels\":10,\"modWindows\":-1,\"color1\":12,\"modTransmission\":2,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modBrakes\":2,\"windowTint\":1,\"modSpoilers\":0,\"modSteeringWheel\":-1,\"modDashboard\":-1,\"modHood\":4,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"EOA 510 \",\"modFrame\":0,\"modTank\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modBackWheels\":-1,\"plateIndex\":1,\"modRearBumper\":-1,\"modSeats\":-1,\"modHydrolic\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":12}'),
-('steam:110000113248a42', 1, 'EPA 803', '{\"modXenon\":false,\"modAPlate\":-1,\"wheelColor\":156,\"modSeats\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"tyreSmokeColor\":[255,255,255],\"modTrimA\":-1,\"neonEnabled\":[false,false,false,false],\"modRearBumper\":-1,\"modHood\":-1,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"color2\":107,\"modDial\":-1,\"modDashboard\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"modTrunk\":-1,\"modTurbo\":false,\"modArmor\":-1,\"health\":724,\"modTank\":-1,\"modVanityPlate\":-1,\"model\":934775262,\"color1\":15,\"modExhaust\":-1,\"modShifterLeavers\":-1,\"modTransmission\":0,\"modArchCover\":-1,\"neonColor\":[255,0,255],\"modEngine\":3,\"modEngineBlock\":-1,\"modHydrolic\":-1,\"modSpoilers\":-1,\"modWindows\":-1,\"plateIndex\":0,\"pearlescentColor\":15,\"windowTint\":-1,\"modAerials\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"dirtLevel\":10.93570613861,\"modSteeringWheel\":-1,\"modFender\":-1,\"modLivery\":-1,\"wheels\":7,\"modTrimB\":-1,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"modRightFender\":-1,\"modSuspension\":-1,\"modFrontBumper\":-1,\"modGrille\":-1,\"modFrontWheels\":-1,\"plate\":\"EPA 803 \",\"modOrnaments\":-1,\"modSmokeEnabled\":1,\"modStruts\":-1}'),
-('steam:110000111593e00', 1, 'ETG 925', '{\"plate\":\"ETG 925 \",\"modTrimA\":-1,\"modTransmission\":-1,\"modXenon\":false,\"model\":333512375,\"wheels\":6,\"wheelColor\":0,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modEngine\":1,\"modTurbo\":false,\"modStruts\":-1,\"modSideSkirt\":-1,\"health\":451,\"modRightFender\":-1,\"modVanityPlate\":-1,\"modGrille\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"color1\":0,\"modSeats\":-1,\"modBrakes\":-1,\"modSuspension\":-1,\"plateIndex\":4,\"modTank\":-1,\"modRoof\":-1,\"modPlateHolder\":-1,\"pearlescentColor\":0,\"modLivery\":-1,\"modFender\":-1,\"modAerials\":-1,\"modAPlate\":-1,\"modHydrolic\":-1,\"modHood\":-1,\"modShifterLeavers\":-1,\"neonColor\":[255,0,255],\"modSpoilers\":-1,\"color2\":0,\"modOrnaments\":-1,\"modTrunk\":-1,\"modSmokeEnabled\":1,\"modDashboard\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"modFrame\":-1,\"tyreSmokeColor\":[255,255,255],\"modDial\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modExhaust\":-1,\"modTrimB\":-1,\"neonEnabled\":[false,false,false,false],\"modFrontBumper\":-1,\"modBackWheels\":-1,\"modRearBumper\":-1,\"modSteeringWheel\":-1,\"dirtLevel\":14.048811912536}');
-INSERT INTO `owned_vehicles` (`owner`, `state`, `plate`, `vehicle`) VALUES
-('steam:110000109b99f47', 1, 'EZE 346', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modXenon\":false,\"pearlescentColor\":2,\"modBackWheels\":-1,\"color1\":0,\"modSuspension\":-1,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modGrille\":-1,\"neonColor\":[255,0,255],\"modTrimA\":-1,\"modArmor\":-1,\"wheels\":3,\"plate\":\"EZE 346 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":0,\"windowTint\":-1,\"modDashboard\":-1,\"modStruts\":-1,\"model\":1878062887,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"health\":962,\"dirtLevel\":1.7089861631394,\"modAerials\":-1,\"wheelColor\":7,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:1100001325b7a9b', 1, 'FBI 645', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":-1961627517,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modDial\":-1,\"color2\":12,\"wheels\":0,\"modEngine\":3,\"wheelColor\":156,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":0.12885892391204,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1,\"modWindows\":-1,\"color1\":12,\"modTransmission\":2,\"modRoof\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"windowTint\":1,\"modHood\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modHorns\":-1,\"modSpoilers\":-1,\"health\":1000,\"plate\":\"FBI 645 \",\"modFrame\":-1,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":2,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":111}'),
-('steam:1100001179c3bb7', 1, 'FBM 120', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"FBM 120 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modDashboard\":-1,\"modSteeringWheel\":-1,\"wheels\":0,\"modArmor\":-1,\"modXenon\":false,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modFrontWheels\":-1,\"model\":-1549019518,\"plateIndex\":0,\"modDoorSpeaker\":-1,\"pearlescentColor\":12,\"dirtLevel\":13.81674861908,\"health\":517,\"color2\":16,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"modStruts\":-1,\"tyreSmokeColor\":[255,255,255],\"color1\":15,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"modGrille\":-1,\"modSeats\":-1,\"modDial\":-1,\"modLivery\":-1,\"modTrimB\":-1,\"wheelColor\":156,\"modSpeakers\":-1,\"modArchCover\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modHood\":-1,\"modHydrolic\":-1}'),
-('steam:11000011555ac07', 1, 'FEY 816', '{\"wheels\":1,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"modDashboard\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modTransmission\":-1,\"modAirFilter\":-1,\"modExhaust\":-1,\"modTurbo\":false,\"modAPlate\":-1,\"modSideSkirt\":-1,\"plate\":\"FEY 816 \",\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":0,\"neonEnabled\":[false,false,false,false],\"modWindows\":-1,\"modHood\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"color2\":0,\"modRightFender\":-1,\"modTrimB\":-1,\"modTank\":-1,\"modEngine\":-1,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":926,\"modHorns\":-1,\"color1\":125,\"dirtLevel\":13.714908599854,\"modBrakes\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modAerials\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modStruts\":-1,\"plateIndex\":0,\"modRoof\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"wheelColor\":0,\"model\":972671128,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:1100001061d0cb1', 1, 'FIF 854', '{\"plateIndex\":0,\"model\":2046572318,\"pearlescentColor\":134,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modRearBumper\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modVanityPlate\":-1,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"color1\":8,\"modPlateHolder\":-1,\"modFrame\":-1,\"modDashboard\":-1,\"color2\":8,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modTrimB\":-1,\"modLivery\":-1,\"health\":998,\"wheels\":0,\"modAirFilter\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"FIF 854 \",\"modHood\":-1,\"modFender\":-1,\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modRightFender\":-1,\"modTransmission\":-1,\"modFrontBumper\":-1,\"modExhaust\":-1,\"modBackWheels\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":156,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modArchCover\":-1,\"modHorns\":-1,\"modBrakes\":-1,\"modStruts\":-1,\"modSideSkirt\":-1,\"dirtLevel\":9.8689374923706,\"modGrille\":-1,\"modHydrolic\":-1}'),
-('steam:11000013613fa78', 1, 'FLL 782', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":2,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":1165853178,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modBrakes\":2,\"modAerials\":-1,\"color2\":3,\"wheels\":7,\"modEngine\":3,\"wheelColor\":5,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":11.309580802918,\"modXenon\":1,\"modEngineBlock\":-1,\"modFender\":-1,\"modFrontWheels\":-1,\"color1\":15,\"modTransmission\":2,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modHydrolic\":-1,\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modRoof\":-1,\"modVanityPlate\":-1,\"modSteeringWheel\":-1,\"health\":711,\"plate\":\"FLL 782 \",\"modDial\":-1,\"modSideSkirt\":-1,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"modArchCover\":-1,\"modGrille\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modHorns\":8,\"windowTint\":1,\"modSeats\":-1,\"pearlescentColor\":135}'),
-('steam:11000010d6c30cb', 1, 'FXB 176', '{\"modXenon\":false,\"modAPlate\":-1,\"wheelColor\":156,\"modPlateHolder\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"color2\":29,\"modTrimA\":-1,\"neonEnabled\":[false,false,false,false],\"modRearBumper\":-1,\"modHood\":-1,\"modDial\":-1,\"modSideSkirt\":-1,\"tyreSmokeColor\":[255,255,255],\"modExhaust\":-1,\"modDashboard\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"model\":-1549019518,\"modTurbo\":false,\"modOrnaments\":-1,\"health\":999,\"modTank\":-1,\"modVanityPlate\":-1,\"modTransmission\":-1,\"modFrontBumper\":-1,\"dirtLevel\":0.19824354350566,\"modShifterLeavers\":-1,\"modDoorSpeaker\":-1,\"color1\":43,\"neonColor\":[255,0,255],\"modEngine\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modSpoilers\":-1,\"modWindows\":-1,\"plateIndex\":1,\"pearlescentColor\":37,\"windowTint\":-1,\"modAerials\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"wheels\":0,\"modSteeringWheel\":-1,\"modFender\":-1,\"modLivery\":-1,\"modArmor\":-1,\"modTrimB\":-1,\"modGrille\":-1,\"modHydrolic\":-1,\"modRightFender\":-1,\"modSeats\":-1,\"modTrunk\":-1,\"modSpeakers\":-1,\"modArchCover\":-1,\"plate\":\"FXB 176 \",\"modFrontWheels\":-1,\"modSmokeEnabled\":false,\"modStruts\":-1}'),
-('steam:110000113248a42', 1, 'FYA 331', '{\"neonColor\":[255,0,255],\"modTank\":-1,\"neonEnabled\":[false,false,false,false],\"modEngineBlock\":-1,\"wheelColor\":156,\"color2\":0,\"modTrunk\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":6,\"plateIndex\":4,\"dirtLevel\":0.79299002885818,\"model\":-497997000,\"modFrontWheels\":-1,\"modXenon\":false,\"modOrnaments\":-1,\"windowTint\":1,\"modSmokeEnabled\":1,\"modLivery\":-1,\"modSeats\":-1,\"modDashboard\":-1,\"modRearBumper\":-1,\"modStruts\":-1,\"modBrakes\":-1,\"plate\":\"FYA 331 \",\"modHood\":-1,\"modSideSkirt\":-1,\"modTransmission\":2,\"wheels\":0,\"modTurbo\":false,\"modSpeakers\":-1,\"modPlateHolder\":-1,\"modFrontBumper\":-1,\"modAPlate\":-1,\"modTrimA\":-1,\"modExhaust\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"modSpoilers\":-1,\"health\":893,\"modHydrolic\":-1,\"modArmor\":-1,\"modRightFender\":-1,\"modArchCover\":-1,\"modShifterLeavers\":-1,\"modTrimB\":-1,\"modHorns\":-1,\"modRoof\":-1,\"color1\":131,\"modAerials\":-1,\"modFrame\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"modEngine\":3,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modBackWheels\":-1,\"modSuspension\":-1,\"modDial\":-1,\"modAirFilter\":-1}'),
-('steam:11000010719503b', 1, 'GBB 584', '{\"neonColor\":[255,0,255],\"modTank\":-1,\"neonEnabled\":[false,false,false,false],\"modEngineBlock\":-1,\"wheelColor\":112,\"tyreSmokeColor\":[255,255,255],\"modSuspension\":-1,\"modSeats\":-1,\"pearlescentColor\":5,\"plateIndex\":0,\"dirtLevel\":3.9471731185914,\"modRightFender\":-1,\"modFender\":-1,\"modXenon\":false,\"modOrnaments\":-1,\"windowTint\":-1,\"modSmokeEnabled\":1,\"modBackWheels\":-1,\"modTrimB\":-1,\"modDashboard\":-1,\"modRearBumper\":-1,\"modStruts\":-1,\"modBrakes\":-1,\"plate\":\"GBB 584 \",\"modHood\":-1,\"modVanityPlate\":-1,\"modTransmission\":-1,\"wheels\":5,\"modTurbo\":false,\"modSpeakers\":-1,\"modPlateHolder\":-1,\"modFrontBumper\":-1,\"modAPlate\":-1,\"modTrimA\":-1,\"modExhaust\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"modSpoilers\":-1,\"health\":981,\"modHydrolic\":-1,\"modArmor\":-1,\"color2\":4,\"modArchCover\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modHorns\":-1,\"modRoof\":-1,\"color1\":0,\"modAirFilter\":-1,\"modFrame\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"modEngine\":-1,\"modDial\":-1,\"modTrunk\":-1,\"modLivery\":-1,\"modAerials\":-1,\"model\":1549126457,\"modFrontWheels\":-1}'),
-('steam:11000011cded001', 1, 'GCH 740', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1813965170,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"color2\":73,\"wheels\":7,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":6.1765513420104,\"modSpoilers\":-1,\"modSpeakers\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"color1\":73,\"modTransmission\":-1,\"modAPlate\":-1,\"tyreSmokeColor\":[255,255,255],\"modShifterLeavers\":-1,\"modArchCover\":-1,\"modDashboard\":-1,\"modBrakes\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modHood\":-1,\"modGrille\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"plate\":\"GCH 740 \",\"modFrame\":-1,\"modTank\":-1,\"modFender\":-1,\"health\":1000,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"windowTint\":-1,\"modRoof\":-1,\"pearlescentColor\":74}'),
-('steam:110000117053659', 1, 'GCO 914', '{\"modTurbo\":false,\"tyreSmokeColor\":[255,255,255],\"modTrimA\":-1,\"wheelColor\":176,\"model\":2047166283,\"modSpoilers\":-1,\"modArchCover\":-1,\"modTrimB\":-1,\"modHydrolic\":-1,\"modTransmission\":-1,\"health\":1000,\"modSteeringWheel\":-1,\"modDoorSpeaker\":-1,\"modFrontBumper\":-1,\"modAPlate\":-1,\"modSmokeEnabled\":false,\"modHood\":-1,\"modAirFilter\":-1,\"modTank\":-1,\"modAerials\":-1,\"modRoof\":-1,\"modWindows\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"plate\":\"GCO 914\",\"modEngine\":-1,\"plateIndex\":4,\"color1\":32,\"modRightFender\":-1,\"modFrontWheels\":-1,\"modRearBumper\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"modTrunk\":-1,\"modArmor\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modPlateHolder\":-1,\"modLivery\":-1,\"neonEnabled\":[false,false,false,false],\"dirtLevel\":14.000008583068,\"wheels\":6,\"modBackWheels\":-1,\"color2\":32,\"modHorns\":-1,\"modSpeakers\":-1,\"neonColor\":[255,0,255],\"modDial\":-1,\"pearlescentColor\":0,\"modSuspension\":-1,\"modExhaust\":-1,\"modGrille\":-1,\"modSideSkirt\":-1,\"modStruts\":-1,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"windowTint\":-1,\"modFender\":-1,\"modEngineBlock\":-1}'),
-('steam:11000010f3c770c', 1, 'GEN 861', '{\"modBrakes\":-1,\"modXenon\":false,\"modTrimA\":-1,\"modRearBumper\":-1,\"modRoof\":-1,\"modTurbo\":false,\"modDial\":-1,\"modStruts\":-1,\"modTrunk\":-1,\"plate\":\"GEN 861\",\"modHorns\":-1,\"modGrille\":-1,\"modSideSkirt\":-1,\"modBackWheels\":-1,\"modShifterLeavers\":-1,\"wheelColor\":0,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"modTransmission\":-1,\"modEngine\":-1,\"modLivery\":-1,\"wheels\":0,\"health\":1000,\"modAirFilter\":-1,\"modFrontWheels\":-1,\"modSuspension\":-1,\"modTank\":-1,\"neonColor\":[255,0,255],\"modExhaust\":-1,\"dirtLevel\":4.0000081062316,\"modDashboard\":-1,\"neonEnabled\":[false,false,false,false],\"model\":-1215316954,\"modPlateHolder\":-1,\"modEngineBlock\":-1,\"pearlescentColor\":35,\"modOrnaments\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modHydrolic\":-1,\"modSpoilers\":-1,\"modFrame\":-1,\"modSteeringWheel\":-1,\"modAerials\":-1,\"color2\":29,\"tyreSmokeColor\":[255,255,255],\"modSmokeEnabled\":false,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"modHood\":-1,\"windowTint\":-1,\"plateIndex\":0,\"modSpeakers\":-1,\"modFender\":-1,\"color1\":29,\"modArchCover\":-1,\"modArmor\":-1,\"modWindows\":-1}'),
-('steam:11000010ed15b6b', 1, 'GHD 955', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[41,36,33],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"GHD 955 \",\"modDoorSpeaker\":-1,\"modTank\":-1,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"modStruts\":-1,\"modTransmission\":2,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":1000,\"modAPlate\":-1,\"wheelColor\":12,\"modTrimA\":-1,\"windowTint\":1,\"modBackWheels\":-1,\"model\":934775262,\"neonColor\":[255,0,255],\"modSuspension\":3,\"modTrunk\":-1,\"plateIndex\":1,\"modTrimB\":-1,\"modShifterLeavers\":-1,\"neonEnabled\":[false,false,false,false],\"color2\":44,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"modOrnaments\":-1,\"modAirFilter\":-1,\"pearlescentColor\":2,\"modSpeakers\":-1,\"dirtLevel\":1.2066226005554,\"modArchCover\":-1,\"modHorns\":-1,\"modWindows\":-1,\"wheels\":7,\"modGrille\":-1,\"color1\":147,\"modSteeringWheel\":-1,\"modTurbo\":false,\"modSpoilers\":-1,\"modSeats\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1}'),
-('steam:11000013613fa78', 1, 'GJQ 127', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":900,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":40,\"model\":934775262,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modSeats\":-1,\"modAerials\":-1,\"color2\":107,\"wheels\":7,\"modEngine\":3,\"wheelColor\":156,\"modArmor\":0,\"modSmokeEnabled\":1,\"dirtLevel\":7.8586902618408,\"modSuspension\":3,\"modVanityPlate\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"color1\":131,\"modTransmission\":2,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"windowTint\":1,\"modSteeringWheel\":-1,\"plate\":\"GJQ 127 \",\"modArchCover\":-1,\"modSpoilers\":-1,\"modDashboard\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"modTank\":-1,\"modFender\":-1,\"modBrakes\":2,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modXenon\":1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":80}'),
-('steam:11000010dd9c7d6', 1, 'GOW 412', '{\"modTrimA\":-1,\"pearlescentColor\":6,\"modTrunk\":-1,\"modTrimB\":-1,\"color1\":132,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":0,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":3,\"modTransmission\":2,\"plateIndex\":1,\"modFender\":-1,\"modVanityPlate\":-1,\"model\":-1752116803,\"modAPlate\":-1,\"neonColor\":[255,255,255],\"modRoof\":-1,\"modArchCover\":-1,\"modRearBumper\":0,\"modFrontWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modSpoilers\":1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":742,\"modPlateHolder\":-1,\"modDashboard\":-1,\"modTurbo\":false,\"modSideSkirt\":0,\"modDoorSpeaker\":-1,\"wheelColor\":0,\"modWindows\":-1,\"wheels\":0,\"plate\":\"GOW 412 \",\"modBackWheels\":-1,\"modOrnaments\":-1,\"dirtLevel\":3.8288702964782,\"modSmokeEnabled\":1,\"modBrakes\":2,\"modAirFilter\":-1,\"color2\":0,\"modEngine\":3,\"modFrontBumper\":0,\"modEngineBlock\":-1,\"modHorns\":3,\"modHydrolic\":-1,\"modSeats\":-1,\"modXenon\":1,\"modSpeakers\":-1,\"tyreSmokeColor\":[0,245,255],\"modExhaust\":-1,\"modRightFender\":-1,\"modTank\":-1,\"modFrame\":-1,\"modAerials\":-1,\"modStruts\":-1}'),
-('steam:11000011c0b0ace', 1, 'GPO 491', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modTurbo\":false,\"modRightFender\":-1,\"wheelColor\":156,\"modHood\":-1,\"modDashboard\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"modSeats\":-1,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modXenon\":false,\"modGrille\":-1,\"modBackWheels\":-1,\"color1\":15,\"modAerials\":-1,\"pearlescentColor\":15,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"plate\":\"GPO 491 \",\"health\":981,\"modTrimA\":-1,\"modFrame\":-1,\"wheels\":7,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":107,\"windowTint\":-1,\"modArmor\":-1,\"modSteeringWheel\":-1,\"model\":934775262,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":6.2699103355408,\"modTrimB\":-1,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000010d6c30cb', 1, 'GPR 296', '{\"modFrame\":-1,\"modEngine\":-1,\"modRearBumper\":-1,\"windowTint\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modSideSkirt\":-1,\"health\":977,\"pearlescentColor\":111,\"modTransmission\":-1,\"modEngineBlock\":-1,\"modAPlate\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"dirtLevel\":4.195601940155,\"modTrimB\":-1,\"modDial\":-1,\"modStruts\":-1,\"modArchCover\":-1,\"modPlateHolder\":-1,\"modHood\":-1,\"neonColor\":[255,0,255],\"modArmor\":-1,\"modTank\":-1,\"modHydrolic\":-1,\"modExhaust\":-1,\"modBrakes\":-1,\"modFrontBumper\":-1,\"modDashboard\":-1,\"modHorns\":-1,\"tyreSmokeColor\":[255,255,255],\"color1\":111,\"plate\":\"GPR 296 \",\"modSeats\":-1,\"modTrunk\":-1,\"model\":-845961253,\"modSmokeEnabled\":1,\"modTurbo\":false,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modVanityPlate\":-1,\"modGrille\":-1,\"modRightFender\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"modOrnaments\":-1,\"color2\":111,\"modTrimA\":-1,\"modBackWheels\":-1,\"wheelColor\":156,\"wheels\":3,\"modXenon\":false,\"modSpoilers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"plateIndex\":0,\"modDoorSpeaker\":-1,\"modAerials\":-1}'),
-('steam:11000010302b529', 1, 'GSG 381', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":999,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1553034064,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.3544103205204,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":8,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"GSG 381 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":8,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":134}'),
-('steam:11000011acec85a', 1, 'GTJ 706', '{\"modArchCover\":0,\"modStruts\":11,\"modFrontBumper\":8,\"modTrimB\":1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":1,\"modSideSkirt\":3,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":4,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":2,\"modHorns\":-1,\"model\":-295689028,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":1,\"health\":978,\"color2\":34,\"wheels\":0,\"modEngine\":1,\"wheelColor\":158,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":5.8455376625062,\"modEngineBlock\":1,\"modXenon\":1,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":120,\"modTransmission\":-1,\"modWindows\":1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":2,\"modShifterLeavers\":-1,\"modHood\":8,\"windowTint\":1,\"modFender\":5,\"modSteeringWheel\":9,\"modGrille\":-1,\"modDashboard\":3,\"modDial\":2,\"modTrimA\":0,\"plate\":\"GTJ 706 \",\"modRoof\":3,\"modTank\":-1,\"modBrakes\":2,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":0,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":4,\"pearlescentColor\":70}'),
-('steam:11000010d819702', 1, 'GXY 220', '{\"wheels\":1,\"modBrakes\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modSteeringWheel\":-1,\"modEngine\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"tyreSmokeColor\":[255,255,255],\"modAirFilter\":-1,\"modExhaust\":-1,\"color2\":0,\"modDashboard\":-1,\"modSideSkirt\":-1,\"plate\":\"GXY 220 \",\"modTurbo\":false,\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":5,\"modFrontBumper\":-1,\"modWindows\":-1,\"modHood\":-1,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"modShifterLeavers\":-1,\"modTank\":-1,\"modTrimB\":-1,\"color1\":26,\"modAPlate\":-1,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":996,\"wheelColor\":156,\"modHorns\":-1,\"dirtLevel\":6.137755393982,\"modRoof\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":false,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modAerials\":-1,\"modFender\":-1,\"modXenon\":false,\"modHydrolic\":-1,\"modTransmission\":-1,\"plateIndex\":3,\"modEngineBlock\":-1,\"modStruts\":-1,\"modDial\":-1,\"modRightFender\":-1,\"model\":1162065741,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:11000013491dae7', 1, 'HFD 347', '{\"modSmokeEnabled\":1,\"modExhaust\":0,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modRearBumper\":1,\"modXenon\":false,\"modArmor\":-1,\"neonColor\":[255,0,255],\"modHood\":1,\"modGrille\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":42,\"modDashboard\":-1,\"color1\":38,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modFrontBumper\":2,\"modTrunk\":-1,\"modBrakes\":2,\"modBackWheels\":-1,\"health\":0,\"modTrimA\":-1,\"modSuspension\":-1,\"wheels\":7,\"plate\":\"HFD 347 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":3,\"color2\":4,\"windowTint\":1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"model\":-142942670,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":6.1571063995362,\"modAirFilter\":-1,\"wheelColor\":156,\"modSpoilers\":3,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":0}'),
-('steam:11000011b8aadb1', 1, 'HLP 763', '{\"tyreSmokeColor\":[255,255,255],\"color2\":0,\"wheels\":6,\"modFrontWheels\":-1,\"modDial\":-1,\"model\":333512375,\"modHood\":-1,\"modFrame\":-1,\"pearlescentColor\":0,\"modArmor\":-1,\"modAerials\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"dirtLevel\":12.81643295288,\"modRoof\":-1,\"windowTint\":-1,\"modTank\":-1,\"modBrakes\":-1,\"neonEnabled\":[false,false,false,false],\"health\":945,\"modSuspension\":-1,\"modEngine\":1,\"modVanityPlate\":-1,\"modLivery\":-1,\"modTrunk\":-1,\"modSpoilers\":-1,\"modBackWheels\":-1,\"modRearBumper\":-1,\"modSideSkirt\":-1,\"modArchCover\":-1,\"neonColor\":[255,0,255],\"modRightFender\":-1,\"modSteeringWheel\":-1,\"modSeats\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modGrille\":-1,\"modStruts\":-1,\"modDashboard\":-1,\"wheelColor\":0,\"plateIndex\":4,\"modOrnaments\":-1,\"modAPlate\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"modPlateHolder\":-1,\"modHydrolic\":-1,\"plate\":\"HLP 763 \",\"modTrimB\":-1,\"modFender\":-1,\"modEngineBlock\":-1,\"modXenon\":false,\"modTrimA\":-1,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"color1\":0,\"modTransmission\":-1}'),
-('steam:110000118c34052', 1, 'HNV 284', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modTrimB\":-1,\"neonColor\":[50,255,155],\"modRightFender\":-1,\"modArmor\":4,\"modHood\":-1,\"dirtLevel\":5.42635679245,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"HNV 284 \",\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"pearlescentColor\":156,\"modDashboard\":-1,\"color1\":111,\"modLivery\":-1,\"modFrontWheels\":32,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":990,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":7,\"modBackWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":111,\"windowTint\":1,\"modSuspension\":2,\"modStruts\":-1,\"model\":1165853178,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modSteeringWheel\":-1,\"modRearBumper\":-1,\"modAerials\":-1,\"modOrnaments\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"wheelColor\":5,\"modSideSkirt\":-1}'),
-('steam:1100001061d0cb1', 1, 'HNW 744', '{\"plateIndex\":0,\"color1\":8,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":8,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"modTrimB\":-1,\"model\":1553034064,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"wheels\":0,\"modSuspension\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"modFrontBumper\":-1,\"health\":1000,\"pearlescentColor\":134,\"modSpeakers\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"HNW 744 \",\"modLivery\":-1,\"modStruts\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modTrunk\":-1,\"modTransmission\":-1,\"dirtLevel\":4.6143307685852,\"modExhaust\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":156,\"modHood\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modRightFender\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:1100001325b7a9b', 1, 'HQM 582', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[0,0,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":5,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"HQM 582 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":83,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":920,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":6,\"modOrnaments\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":37,\"modEngine\":3,\"color2\":132,\"windowTint\":2,\"modFrame\":-1,\"modArmor\":4,\"model\":86520421,\"modArchCover\":-1,\"modFrontWheels\":9,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":7.212637424469,\"wheelColor\":107,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000011acec85a', 1, 'HVM 332', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-188978926,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"health\":909,\"color2\":112,\"wheels\":6,\"modEngine\":1,\"wheelColor\":70,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":14.407216072082,\"modEngineBlock\":-1,\"modXenon\":false,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":112,\"modTransmission\":-1,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modHood\":-1,\"windowTint\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modDial\":-1,\"modTrimA\":-1,\"plate\":\"HVM 332 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":1,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":112}'),
-('steam:11000010e81d760', 1, 'HZN 982', '{\"plate\":\"HZN 982 \",\"modTrimA\":-1,\"modTransmission\":-1,\"modXenon\":false,\"model\":-188978926,\"wheels\":6,\"wheelColor\":70,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"modArchCover\":-1,\"modEngine\":-1,\"modTurbo\":false,\"modStruts\":-1,\"modRearBumper\":-1,\"modAerials\":-1,\"modRightFender\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modGrille\":-1,\"color1\":112,\"modFrontWheels\":-1,\"modHydrolic\":-1,\"modSuspension\":-1,\"plateIndex\":1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"pearlescentColor\":112,\"modLivery\":-1,\"modFender\":-1,\"modSmokeEnabled\":false,\"modAPlate\":-1,\"modDial\":-1,\"modHood\":-1,\"modShifterLeavers\":-1,\"health\":968,\"modSpoilers\":-1,\"color2\":112,\"modTrimB\":-1,\"modTrunk\":-1,\"modFrame\":-1,\"modDashboard\":-1,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modSeats\":-1,\"modVanityPlate\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modExhaust\":-1,\"modBrakes\":-1,\"neonEnabled\":[false,false,false,false],\"modFrontBumper\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modSteeringWheel\":-1,\"dirtLevel\":13.204672813416}'),
-('steam:1100001061d0cb1', 1, 'HZV 000', '{\"modBackWheels\":-1,\"modHydrolic\":-1,\"modRightFender\":-1,\"dirtLevel\":3.000007390976,\"modFender\":-1,\"modStruts\":-1,\"modTransmission\":-1,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSpoilers\":-1,\"modTrimB\":-1,\"modTurbo\":false,\"color1\":29,\"modHood\":-1,\"modExhaust\":-1,\"modShifterLeavers\":-1,\"modHorns\":-1,\"modArmor\":-1,\"modSeats\":-1,\"model\":1131912276,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"modAerials\":-1,\"modLivery\":-1,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modFrame\":-1,\"wheelColor\":156,\"color2\":0,\"neonEnabled\":[false,false,false,false],\"modDial\":-1,\"windowTint\":-1,\"modSideSkirt\":-1,\"pearlescentColor\":38,\"modBrakes\":-1,\"modWindows\":-1,\"modGrille\":-1,\"modAPlate\":-1,\"modFrontWheels\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"modRoof\":-1,\"health\":1000,\"modSmokeEnabled\":false,\"modTank\":-1,\"plateIndex\":4,\"plate\":\"HZV 000\",\"modOrnaments\":-1,\"modSpeakers\":-1,\"modTrimA\":-1,\"wheels\":6,\"modPlateHolder\":-1,\"tyreSmokeColor\":[255,255,255],\"modTrunk\":-1,\"modSteeringWheel\":-1,\"modXenon\":false}'),
-('steam:11000013493c4b7', 1, 'IIE 797', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modTurbo\":false,\"modDashboard\":-1,\"modArmor\":-1,\"modXenon\":false,\"modHood\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"IIE 797 \",\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":120,\"modBackWheels\":3,\"color1\":142,\"modRearBumper\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modSteeringWheel\":-1,\"health\":19,\"modTrimA\":-1,\"modSuspension\":-1,\"wheels\":1,\"modGrille\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":25,\"windowTint\":-1,\"modStruts\":-1,\"neonColor\":[255,0,255],\"model\":-1361687965,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAirFilter\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":10.007187843322,\"modAPlate\":-1,\"wheelColor\":88,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000131d556ee', 1, 'IKU 131', '{\"model\":1813965170,\"modRoof\":-1,\"modSpeakers\":-1,\"wheels\":7,\"modHorns\":-1,\"modDial\":-1,\"modWindows\":-1,\"modSteeringWheel\":-1,\"color1\":13,\"modLivery\":-1,\"modDashboard\":-1,\"neonColor\":[255,0,255],\"plateIndex\":0,\"modPlateHolder\":-1,\"modOrnaments\":-1,\"modEngineBlock\":-1,\"modFrame\":-1,\"neonEnabled\":[false,false,false,false],\"modDoorSpeaker\":-1,\"tyreSmokeColor\":[255,255,255],\"modGrille\":-1,\"modSmokeEnabled\":1,\"modArchCover\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"modEngine\":1,\"modFrontWheels\":-1,\"modTrunk\":-1,\"wheelColor\":156,\"modExhaust\":-1,\"modTransmission\":-1,\"modBackWheels\":-1,\"modAerials\":-1,\"color2\":2,\"modFrontBumper\":-1,\"modBrakes\":-1,\"modRightFender\":-1,\"health\":1000,\"plate\":\"IKU 131 \",\"modSuspension\":-1,\"windowTint\":1,\"modSeats\":-1,\"modSideSkirt\":-1,\"modRearBumper\":-1,\"modAirFilter\":-1,\"modTank\":-1,\"modXenon\":false,\"modArmor\":-1,\"modTrimA\":-1,\"modTurbo\":false,\"modSpoilers\":-1,\"modHood\":-1,\"modShifterLeavers\":-1,\"modAPlate\":-1,\"modFender\":-1,\"dirtLevel\":7.3320503234864,\"modTrimB\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":136}'),
-('steam:11000010f3c770c', 1, 'ILR 090', '{\"modBrakes\":-1,\"modXenon\":false,\"modTrimA\":-1,\"modRearBumper\":-1,\"modRoof\":-1,\"modTurbo\":false,\"modDial\":-1,\"modStruts\":-1,\"modTrunk\":-1,\"plate\":\"ILR 090\",\"modHorns\":-1,\"modGrille\":-1,\"modSideSkirt\":-1,\"modBackWheels\":-1,\"modShifterLeavers\":-1,\"wheelColor\":156,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"modTransmission\":-1,\"modEngine\":-1,\"modLivery\":-1,\"wheels\":6,\"health\":1000,\"modAirFilter\":-1,\"modFrontWheels\":-1,\"modSuspension\":-1,\"modTank\":-1,\"neonColor\":[255,0,255],\"modExhaust\":-1,\"dirtLevel\":14.000014305114,\"modDashboard\":-1,\"neonEnabled\":[false,false,false,false],\"model\":-1523428744,\"modPlateHolder\":-1,\"modEngineBlock\":-1,\"pearlescentColor\":38,\"modOrnaments\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modHydrolic\":-1,\"modSpoilers\":-1,\"modFrame\":-1,\"modSteeringWheel\":-1,\"modAerials\":-1,\"color2\":5,\"tyreSmokeColor\":[255,255,255],\"modSmokeEnabled\":false,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"modHood\":-1,\"windowTint\":-1,\"plateIndex\":0,\"modSpeakers\":-1,\"modFender\":-1,\"color1\":33,\"modArchCover\":-1,\"modArmor\":-1,\"modWindows\":-1}'),
-('steam:11000010c9bdcd9', 1, 'INI 463', '{\"modTrimA\":-1,\"pearlescentColor\":156,\"modTrunk\":-1,\"modTrimB\":-1,\"color1\":111,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":0,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":3,\"modTransmission\":2,\"plateIndex\":0,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"model\":-1485523546,\"modAPlate\":-1,\"modPlateHolder\":-1,\"modSeats\":-1,\"modArchCover\":-1,\"modRearBumper\":0,\"modFrontWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modGrille\":-1,\"modRoof\":-1,\"modShifterLeavers\":-1,\"health\":1000,\"modSideSkirt\":1,\"modBackWheels\":-1,\"wheels\":0,\"modRightFender\":-1,\"modDoorSpeaker\":-1,\"wheelColor\":156,\"modWindows\":-1,\"color2\":0,\"plate\":\"INI 463 \",\"modSmokeEnabled\":1,\"modEngineBlock\":-1,\"dirtLevel\":0.2746234536171,\"modHydrolic\":-1,\"modBrakes\":2,\"modAirFilter\":-1,\"neonColor\":[41,36,33],\"modEngine\":3,\"modFrontBumper\":2,\"modFender\":-1,\"modHorns\":-1,\"modDashboard\":-1,\"modAerials\":-1,\"modTurbo\":false,\"modSpeakers\":-1,\"tyreSmokeColor\":[41,36,33],\"modExhaust\":1,\"modXenon\":1,\"modTank\":-1,\"modFrame\":-1,\"modSpoilers\":2,\"modStruts\":-1}'),
-('steam:110000118c34052', 1, 'INK 720', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modTrimB\":-1,\"neonColor\":[255,0,255],\"modRightFender\":-1,\"modArmor\":-1,\"modHood\":-1,\"dirtLevel\":1.0731282234192,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"INK 720 \",\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"pearlescentColor\":0,\"modDashboard\":-1,\"color1\":192,\"modLivery\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modTurbo\":false,\"health\":1000,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":6,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":224,\"windowTint\":1,\"modSuspension\":-1,\"modStruts\":-1,\"model\":1474015055,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modSteeringWheel\":-1,\"modRearBumper\":-1,\"modAerials\":-1,\"modOrnaments\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"wheelColor\":16,\"modSideSkirt\":-1}'),
-('steam:11000010cb4181f', 1, 'IVI 975', '{\"modTrimA\":-1,\"pearlescentColor\":13,\"modTrunk\":-1,\"modDashboard\":-1,\"color1\":128,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":-1,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":4,\"modTransmission\":2,\"plateIndex\":1,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"model\":-2107990196,\"modAPlate\":-1,\"neonColor\":[255,0,255],\"modRearBumper\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":6,\"neonEnabled\":[false,false,false,false],\"modRightFender\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":961,\"modHydrolic\":-1,\"modFender\":-1,\"wheels\":1,\"modSideSkirt\":-1,\"modDoorSpeaker\":-1,\"wheelColor\":128,\"modWindows\":-1,\"modExhaust\":0,\"plate\":\"IVI 975 \",\"modBackWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"dirtLevel\":3.4581608772278,\"modPlateHolder\":-1,\"modBrakes\":2,\"modAirFilter\":-1,\"modSmokeEnabled\":1,\"modEngine\":3,\"modFrontBumper\":-1,\"color2\":120,\"modHorns\":-1,\"modSeats\":-1,\"modEngineBlock\":-1,\"modAerials\":-1,\"modSpeakers\":-1,\"modTurbo\":false,\"modTrimB\":-1,\"modXenon\":1,\"modTank\":-1,\"modFrame\":-1,\"modArchCover\":-1,\"modStruts\":-1}'),
-('steam:11000011acec85a', 1, 'JCX 084', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":633712403,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"windowTint\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":158,\"modArmor\":-1,\"modSmokeEnabled\":false,\"dirtLevel\":8.1723432540894,\"modEngineBlock\":-1,\"modDial\":-1,\"modFrontWheels\":-1,\"modWindows\":-1,\"color1\":64,\"modTransmission\":-1,\"modDashboard\":-1,\"tyreSmokeColor\":[255,255,255],\"modFender\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"plate\":\"JCX 084 \",\"modArchCover\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modBrakes\":-1,\"modSpoilers\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"health\":999,\"modBackWheels\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"color2\":64,\"modHydrolic\":-1,\"modRoof\":-1,\"pearlescentColor\":70}'),
-('steam:11000011acec85a', 1, 'JDE 708', '{\"plateIndex\":3,\"model\":-1237253773,\"pearlescentColor\":111,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":6,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modEngineBlock\":-1,\"modBrakes\":-1,\"modSpeakers\":-1,\"modDial\":-1,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modHood\":-1,\"modPlateHolder\":-1,\"modFrame\":-1,\"modDashboard\":-1,\"color1\":6,\"modSuspension\":-1,\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modRearBumper\":-1,\"health\":961,\"modAirFilter\":-1,\"modLivery\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"plate\":\"JDE 708 \",\"wheels\":4,\"modRightFender\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modTrunk\":-1,\"modTransmission\":-1,\"dirtLevel\":13.96228313446,\"modTrimB\":-1,\"modBackWheels\":-1,\"modStruts\":-1,\"windowTint\":-1,\"wheelColor\":156,\"modFrontBumper\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modEngine\":-1,\"modHorns\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000011c7b5be5', 1, 'JDI 803', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"JDI 803 \",\"modDoorSpeaker\":-1,\"health\":0,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modTransmission\":-1,\"modSpoilers\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"plateIndex\":4,\"modAPlate\":-1,\"wheelColor\":0,\"modTrimA\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modSeats\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":70,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":-1,\"windowTint\":-1,\"neonColor\":[255,0,255],\"pearlescentColor\":74,\"modLivery\":-1,\"dirtLevel\":2.7513513565064,\"modWindows\":-1,\"modHorns\":-1,\"modFrame\":-1,\"wheels\":0,\"modGrille\":-1,\"color1\":70,\"modTank\":-1,\"model\":-662904049,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1}'),
-('steam:11000011c0b0ace', 1, 'JDR 202', '{\"modTrunk\":-1,\"modSpeakers\":-1,\"windowTint\":-1,\"dirtLevel\":3.0000002384186,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modSeats\":-1,\"wheels\":4,\"modHood\":-1,\"modRightFender\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"wheelColor\":156,\"modTrimB\":-1,\"tyreSmokeColor\":[255,255,255],\"modRoof\":-1,\"color2\":0,\"modSpoilers\":-1,\"modArmor\":-1,\"pearlescentColor\":55,\"modWindows\":-1,\"plate\":\"JDR 202\",\"modEngine\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modOrnaments\":-1,\"modFrame\":-1,\"health\":1000,\"model\":-440768424,\"plateIndex\":0,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"color1\":49,\"modTurbo\":false,\"neonColor\":[255,0,255],\"modGrille\":-1,\"modStruts\":-1,\"modAPlate\":-1,\"modDoorSpeaker\":-1,\"modTransmission\":-1,\"modFrontWheels\":-1,\"modTank\":-1,\"modDial\":-1,\"modExhaust\":-1,\"modXenon\":false,\"modFender\":-1,\"modSideSkirt\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modDashboard\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"modLivery\":-1,\"modEngineBlock\":-1,\"modFrontBumper\":-1,\"modTrimA\":-1,\"modShifterLeavers\":-1,\"neonEnabled\":[false,false,false,false]}'),
-('steam:110000111b71726', 1, 'JEF 915', '{\"wheels\":6,\"modBrakes\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"tyreSmokeColor\":[255,255,255],\"modRightFender\":-1,\"modExhaust\":-1,\"modDashboard\":-1,\"modAPlate\":-1,\"modSideSkirt\":-1,\"wheelColor\":64,\"color2\":32,\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":0,\"modTank\":-1,\"modWindows\":-1,\"modHood\":-1,\"modAerials\":-1,\"modFrontBumper\":-1,\"modStruts\":-1,\"modSuspension\":-1,\"modTrimB\":-1,\"plate\":\"JEF 915 \",\"modEngine\":-1,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":862,\"modRoof\":-1,\"color1\":32,\"dirtLevel\":5.8705892562866,\"neonEnabled\":[false,false,false,false],\"modDial\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modShifterLeavers\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modXenon\":false,\"modAirFilter\":-1,\"modArchCover\":-1,\"plateIndex\":4,\"modEngineBlock\":-1,\"modHorns\":-1,\"modFrame\":-1,\"modTransmission\":-1,\"model\":2047166283,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:110000111b71726', 1, 'JND 889', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":-1,\"modRearBumper\":-1,\"model\":-1639924411,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"JND 889 \",\"modDoorSpeaker\":-1,\"health\":308,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"modArchCover\":-1,\"plateIndex\":4,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"modTransmission\":-1,\"modSeats\":-1,\"wheelColor\":156,\"modTrimA\":-1,\"modBackWheels\":-1,\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modTank\":-1,\"modSuspension\":-1,\"modAirFilter\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modFrame\":-1,\"color2\":112,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":-1,\"windowTint\":-1,\"modAPlate\":-1,\"pearlescentColor\":134,\"modSpeakers\":-1,\"dirtLevel\":10.859155654908,\"modWindows\":-1,\"modHorns\":-1,\"modSpoilers\":-1,\"wheels\":6,\"modGrille\":-1,\"color1\":112,\"neonColor\":[255,0,255],\"modHood\":-1,\"modTrimB\":-1,\"modOrnaments\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1}'),
-('steam:1100001179c3bb7', 1, 'JOD 531', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"JOD 531 \",\"modSpoilers\":0,\"modWindows\":-1,\"modFrontWheels\":42,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modTrimB\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":1,\"modSteeringWheel\":-1,\"wheels\":0,\"modArmor\":4,\"color1\":22,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modExhaust\":0,\"modDoorSpeaker\":-1,\"plateIndex\":0,\"modSideSkirt\":-1,\"neonEnabled\":[false,false,false,false],\"dirtLevel\":15.0,\"health\":0,\"color2\":33,\"modPlateHolder\":-1,\"model\":-566387422,\"modEngine\":3,\"modStruts\":-1,\"modSuspension\":3,\"modEngineBlock\":-1,\"tyreSmokeColor\":[255,255,255],\"wheelColor\":120,\"modRearBumper\":-1,\"modTransmission\":2,\"modSmokeEnabled\":1,\"modTurbo\":false,\"modDashboard\":-1,\"modSeats\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modHydrolic\":-1,\"modGrille\":-1,\"modSpeakers\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"modBrakes\":2,\"pearlescentColor\":112,\"modHood\":0}');
-INSERT INTO `owned_vehicles` (`owner`, `state`, `plate`, `vehicle`) VALUES
-('steam:11000010302b529', 1, 'JOF 556', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":1000,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-346924611,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":3,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.11329090595246,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":2,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"JOF 556 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":2,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":7}'),
-('steam:11000011230bca7', 1, 'JYR 348', '{\"modXenon\":false,\"plate\":\"JYR 348 \",\"modEngine\":-1,\"pearlescentColor\":12,\"modArchCover\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modTrimA\":-1,\"modRoof\":-1,\"modVanityPlate\":-1,\"modTransmission\":-1,\"modTrunk\":-1,\"modTurbo\":false,\"modFrontBumper\":-1,\"plateIndex\":4,\"modArmor\":-1,\"modFender\":-1,\"color2\":70,\"modTrimB\":-1,\"modOrnaments\":-1,\"modDoorSpeaker\":-1,\"modSpoilers\":-1,\"modSuspension\":-1,\"modAerials\":-1,\"modExhaust\":-1,\"modLivery\":-1,\"color1\":0,\"modShifterLeavers\":-1,\"tyreSmokeColor\":[255,255,255],\"modHorns\":-1,\"modDial\":-1,\"modEngineBlock\":-1,\"modPlateHolder\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"neonColor\":[255,0,255],\"neonEnabled\":[false,false,false,false],\"modRearBumper\":-1,\"modRightFender\":-1,\"modGrille\":-1,\"modAPlate\":-1,\"modFrame\":-1,\"dirtLevel\":12.048502922058,\"modFrontWheels\":-1,\"wheelColor\":0,\"modHood\":-1,\"modBackWheels\":-1,\"health\":991,\"modDashboard\":-1,\"modSeats\":-1,\"modBrakes\":-1,\"wheels\":0,\"modAirFilter\":-1,\"model\":-662904049,\"modSideSkirt\":-1,\"modSmokeEnabled\":1,\"modWindows\":-1,\"modSteeringWheel\":-1,\"windowTint\":4}'),
-('steam:110000111b71726', 1, 'JYT 350', '{\"tyreSmokeColor\":[255,255,255],\"color2\":0,\"wheels\":6,\"modFrontWheels\":-1,\"modDial\":-1,\"model\":333512375,\"modHood\":-1,\"wheelColor\":0,\"pearlescentColor\":0,\"modAPlate\":-1,\"modAerials\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"dirtLevel\":0.070757307112216,\"modRoof\":-1,\"windowTint\":-1,\"modTank\":-1,\"modDashboard\":-1,\"neonEnabled\":[false,false,false,false],\"health\":955,\"modSuspension\":3,\"modBackWheels\":-1,\"modStruts\":-1,\"modRearBumper\":-1,\"modTrunk\":-1,\"modSpoilers\":-1,\"modTrimA\":-1,\"modArchCover\":-1,\"modSideSkirt\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modSmokeEnabled\":1,\"modSteeringWheel\":-1,\"modSeats\":-1,\"modTurbo\":false,\"modRightFender\":-1,\"modGrille\":-1,\"modArmor\":4,\"modDoorSpeaker\":-1,\"modEngine\":3,\"plateIndex\":4,\"modWindows\":-1,\"modVanityPlate\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"modPlateHolder\":-1,\"modLivery\":-1,\"plate\":\"JYT 350 \",\"modTrimB\":-1,\"modFender\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modBrakes\":2,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"color1\":0,\"modTransmission\":2}'),
-('steam:1100001325b7a9b', 1, 'KPE 252', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":7,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":-295689028,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modDial\":-1,\"color2\":64,\"wheels\":0,\"modEngine\":1,\"wheelColor\":158,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":1.5443049669266,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1,\"modWindows\":-1,\"color1\":83,\"modTransmission\":-1,\"modRoof\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"windowTint\":1,\"modHood\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modHorns\":-1,\"modSpoilers\":2,\"health\":994,\"plate\":\"KPE 252 \",\"modFrame\":-1,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":2,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":70}'),
-('steam:110000117d510a6', 1, 'KRJ 775', '{\"modSideSkirt\":-1,\"dirtLevel\":9.9496030807496,\"modHorns\":-1,\"modGrille\":-1,\"modTurbo\":false,\"modTank\":-1,\"modSpoilers\":-1,\"modAPlate\":-1,\"plateIndex\":0,\"modDashboard\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"wheels\":0,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modSeats\":-1,\"modHood\":-1,\"modTransmission\":-1,\"modShifterLeavers\":-1,\"modStruts\":-1,\"modSmokeEnabled\":1,\"color2\":0,\"pearlescentColor\":156,\"modExhaust\":-1,\"modBrakes\":-1,\"windowTint\":-1,\"modHydrolic\":-1,\"modSpeakers\":-1,\"modSuspension\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modTrimA\":-1,\"health\":876,\"modTrunk\":-1,\"tyreSmokeColor\":[255,255,255],\"plate\":\"KRJ 775 \",\"modWindows\":-1,\"wheelColor\":156,\"model\":-1485523546,\"modPlateHolder\":-1,\"modFender\":-1,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modSteeringWheel\":-1,\"color1\":0,\"neonEnabled\":[false,false,false,false],\"modDoorSpeaker\":-1,\"modBackWheels\":-1,\"modRoof\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"modFrontWheels\":-1,\"modAerials\":-1,\"modEngine\":-1,\"modAirFilter\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modFrame\":-1,\"modArmor\":-1}'),
-('steam:11000011c0b0ace', 1, 'KSP 039', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"modSteeringWheel\":-1,\"modArmor\":-1,\"pearlescentColor\":5,\"modHood\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"modSeats\":-1,\"modXenon\":1,\"modEngineBlock\":-1,\"modRearBumper\":-1,\"modGrille\":-1,\"modBackWheels\":-1,\"color1\":59,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modAPlate\":-1,\"health\":986,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":4,\"plate\":\"KSP 039 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":3,\"color2\":0,\"windowTint\":-1,\"modAirFilter\":-1,\"modDashboard\":-1,\"model\":101905590,\"modArchCover\":-1,\"modFrontWheels\":1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.2770828306675,\"modOrnaments\":-1,\"wheelColor\":3,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000111b71726', 1, 'LDZ 943', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"LDZ 943 \",\"modDoorSpeaker\":-1,\"model\":2046572318,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"modStruts\":-1,\"modOrnaments\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":516,\"modSeats\":-1,\"wheelColor\":156,\"modTrimA\":-1,\"windowTint\":1,\"modFrame\":-1,\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":3,\"neonColor\":[255,0,255],\"plateIndex\":0,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":8,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":1,\"modBackWheels\":-1,\"modTank\":-1,\"pearlescentColor\":134,\"modWindows\":-1,\"dirtLevel\":6.1548676490784,\"modSpoilers\":-1,\"modHorns\":-1,\"modAPlate\":-1,\"modTransmission\":2,\"modGrille\":-1,\"color1\":12,\"modArchCover\":-1,\"modTrimB\":-1,\"modSpeakers\":-1,\"wheels\":0,\"modFrontWheels\":-1,\"modFrontBumper\":-1}'),
-('steam:110000118c34052', 1, 'LFD 659', '{\"modSmokeEnabled\":1,\"modExhaust\":0,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modTrimB\":-1,\"neonColor\":[50,255,155],\"modRightFender\":-1,\"modArmor\":4,\"modHood\":-1,\"dirtLevel\":12.571594238282,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"LFD 659 \",\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"pearlescentColor\":4,\"modDashboard\":-1,\"color1\":111,\"modLivery\":-1,\"modFrontWheels\":14,\"modFrontBumper\":0,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":992,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":0,\"modBackWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":111,\"windowTint\":1,\"modSuspension\":3,\"modStruts\":-1,\"model\":886934177,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modSteeringWheel\":-1,\"modRearBumper\":0,\"modAerials\":-1,\"modOrnaments\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"wheelColor\":0,\"modSideSkirt\":0}'),
-('steam:110000119ac453f', 1, 'LFN 676', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modXenon\":false,\"modRearBumper\":-1,\"modArmor\":-1,\"modLivery\":-1,\"modHood\":-1,\"modGrille\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":156,\"modDashboard\":-1,\"color1\":2,\"modAerials\":-1,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"modBrakes\":-1,\"modBackWheels\":-1,\"health\":827,\"modTrimA\":-1,\"modFrame\":-1,\"wheels\":7,\"plate\":\"LFN 676 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":3,\"windowTint\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"model\":1165853178,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modTrunk\":-1,\"dirtLevel\":5.9368166923522,\"modAPlate\":-1,\"modFrontWheels\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"wheelColor\":5,\"modSideSkirt\":-1}'),
-('steam:11000011c0b0ace', 1, 'LNW 367', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":3,\"modVanityPlate\":-1,\"modRearBumper\":2,\"pearlescentColor\":35,\"modArmor\":-1,\"modSteeringWheel\":-1,\"modHood\":1,\"modSuspension\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"modXenon\":false,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":12,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modOrnaments\":-1,\"health\":0,\"modTrimA\":-1,\"modBackWheels\":-1,\"wheels\":0,\"plate\":\"LNW 367 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":1,\"color2\":29,\"windowTint\":1,\"wheelColor\":0,\"modStruts\":-1,\"model\":-1215316954,\"modArchCover\":-1,\"modFrame\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":15.0,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000011555ac07', 1, 'LUM 921', '{\"wheels\":1,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"modDashboard\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modTransmission\":-1,\"modAirFilter\":-1,\"modExhaust\":-1,\"modTurbo\":false,\"modAPlate\":-1,\"modSideSkirt\":-1,\"plate\":\"LUM 921 \",\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":120,\"neonEnabled\":[false,false,false,false],\"modWindows\":-1,\"modHood\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"color2\":25,\"modRightFender\":-1,\"modTrimB\":-1,\"modTank\":-1,\"modEngine\":-1,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":999,\"modHorns\":-1,\"color1\":142,\"dirtLevel\":7.1168456077576,\"modBrakes\":-1,\"modFrame\":-1,\"modBackWheels\":3,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modAerials\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modStruts\":-1,\"plateIndex\":0,\"modRoof\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"wheelColor\":88,\"model\":-1361687965,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:1100001167d265e', 1, 'LVD 897', '{\"modRoof\":-1,\"modShifterLeavers\":-1,\"plateIndex\":0,\"modArchCover\":-1,\"modVanityPlate\":-1,\"modSmokeEnabled\":false,\"modHorns\":-1,\"modSuspension\":-1,\"modSeats\":-1,\"pearlescentColor\":5,\"modTrimA\":-1,\"dirtLevel\":12.157391548157,\"modGrille\":-1,\"modHood\":-1,\"modFrontBumper\":-1,\"modSpoilers\":-1,\"modDashboard\":-1,\"modTransmission\":-1,\"modHydrolic\":-1,\"modEngine\":-1,\"modSideSkirt\":-1,\"modTank\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modOrnaments\":-1,\"modBrakes\":-1,\"modRearBumper\":-1,\"neonEnabled\":[false,false,false,false],\"windowTint\":-1,\"modXenon\":false,\"modExhaust\":-1,\"modAerials\":-1,\"modAirFilter\":-1,\"color1\":5,\"modStruts\":-1,\"modBackWheels\":-1,\"modDoorSpeaker\":-1,\"health\":972,\"wheels\":7,\"modRightFender\":-1,\"plate\":\"LVD 897 \",\"tyreSmokeColor\":[255,255,255],\"modTrunk\":-1,\"modAPlate\":-1,\"wheelColor\":6,\"modDial\":-1,\"modFrame\":-1,\"model\":2067820283,\"modWindows\":-1,\"modSpeakers\":-1,\"modPlateHolder\":-1,\"modArmor\":-1,\"modFender\":-1,\"modLivery\":-1,\"modEngineBlock\":-1,\"modTurbo\":false,\"modSteeringWheel\":-1,\"color2\":0,\"neonColor\":[255,0,255]}'),
-('steam:110000119ac453f', 1, 'LWH 151', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"LWH 151 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":0,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":1,\"modSteeringWheel\":-1,\"wheels\":4,\"modArmor\":4,\"modTrimB\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modTransmission\":2,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"modSeats\":-1,\"pearlescentColor\":0,\"dirtLevel\":1.53542137146,\"health\":999,\"color2\":111,\"modPlateHolder\":-1,\"modFrontWheels\":-1,\"modEngine\":3,\"neonEnabled\":[1,1,1,1],\"modSuspension\":3,\"modTurbo\":false,\"tyreSmokeColor\":[255,255,255],\"modStruts\":-1,\"modRearBumper\":-1,\"color1\":12,\"modSmokeEnabled\":1,\"wheelColor\":153,\"modExhaust\":-1,\"modHydrolic\":-1,\"modDial\":-1,\"modLivery\":-1,\"model\":-2064372143,\"modGrille\":-1,\"modSpeakers\":-1,\"neonColor\":[0,150,255],\"modBackWheels\":-1,\"modBrakes\":2,\"modDashboard\":-1,\"modHood\":-1}'),
-('steam:1100001061d0cb1', 1, 'LWI 115', '{\"plateIndex\":0,\"model\":1165853178,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modAerials\":-1,\"color2\":3,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modRearBumper\":-1,\"pearlescentColor\":156,\"modDial\":-1,\"modEngineBlock\":-1,\"modTrimB\":-1,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"modArchCover\":-1,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modSpeakers\":-1,\"modSteeringWheel\":-1,\"health\":1000,\"modAirFilter\":-1,\"color1\":2,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"LWI 115 \",\"modLivery\":-1,\"modFender\":-1,\"modHood\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modStruts\":-1,\"modTransmission\":-1,\"modFrontBumper\":-1,\"modExhaust\":-1,\"wheels\":7,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":5,\"modRightFender\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modTrunk\":-1,\"modHorns\":-1,\"modBrakes\":-1,\"dirtLevel\":3.1593661308288,\"modSideSkirt\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000011172f5d0', 1, 'MHM 740', '{\"tyreSmokeColor\":[255,255,255],\"color2\":105,\"wheels\":6,\"modFrontWheels\":-1,\"modDial\":-1,\"model\":1856720760,\"modHood\":-1,\"wheelColor\":0,\"pearlescentColor\":225,\"modOrnaments\":-1,\"modRightFender\":-1,\"modSmokeEnabled\":1,\"modTrimA\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"dirtLevel\":9.7255821228028,\"modRoof\":-1,\"windowTint\":1,\"modTank\":-1,\"modAerials\":-1,\"neonEnabled\":[false,false,false,false],\"health\":1000,\"modSuspension\":-1,\"modFrame\":-1,\"modStruts\":-1,\"modRearBumper\":-1,\"modTrunk\":-1,\"modSpoilers\":-1,\"modBackWheels\":-1,\"modArchCover\":-1,\"modBrakes\":-1,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"modSeats\":-1,\"modTurbo\":1,\"modHydrolic\":-1,\"modGrille\":-1,\"modArmor\":-1,\"modDoorSpeaker\":-1,\"modVanityPlate\":-1,\"plateIndex\":3,\"modWindows\":-1,\"modDashboard\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"modPlateHolder\":-1,\"modEngineBlock\":-1,\"plate\":\"MHM 740 \",\"modTrimB\":-1,\"modFender\":-1,\"modEngine\":-1,\"modXenon\":1,\"modSideSkirt\":-1,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"color1\":65,\"modTransmission\":-1}'),
-('steam:1100001325b7a9b', 1, 'MOX 843', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":134,\"modRightFender\":-1,\"neonColor\":[255,255,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"MOX 843 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":70,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":952,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":0,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":8,\"windowTint\":1,\"modFrame\":-1,\"modArmor\":4,\"model\":2046572318,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.24344812333584,\"wheelColor\":156,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":0,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000011555ac07', 1, 'MQL 979', '{\"wheels\":1,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"modDashboard\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modTransmission\":-1,\"modAirFilter\":-1,\"modExhaust\":-1,\"modTurbo\":false,\"modAPlate\":-1,\"modSideSkirt\":-1,\"plate\":\"MQL 979 \",\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":134,\"neonEnabled\":[false,false,false,false],\"modWindows\":-1,\"modHood\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"color2\":12,\"modRightFender\":-1,\"modTrimB\":-1,\"modTank\":-1,\"modEngine\":-1,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":997,\"modHorns\":-1,\"color1\":12,\"dirtLevel\":5.2533354759216,\"modBrakes\":-1,\"modFrame\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modAerials\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modStruts\":-1,\"plateIndex\":4,\"modRoof\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"wheelColor\":156,\"model\":723973206,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:1100001325b7a9b', 1, 'MVB 827', '{\"plateIndex\":4,\"modTrimB\":-1,\"color1\":32,\"modEngineBlock\":-1,\"modStruts\":-1,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modSmokeEnabled\":1,\"modShifterLeavers\":-1,\"tyreSmokeColor\":[255,255,255],\"modHorns\":-1,\"modTransmission\":-1,\"plate\":\"MVB 827 \",\"neonColor\":[255,0,255],\"health\":961,\"modFrontWheels\":-1,\"modBrakes\":-1,\"modBackWheels\":-1,\"modRightFender\":-1,\"modAPlate\":-1,\"modSpoilers\":-1,\"modSeats\":-1,\"modWindows\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modGrille\":-1,\"windowTint\":-1,\"modAirFilter\":-1,\"modExhaust\":-1,\"modTank\":-1,\"modFrontBumper\":-1,\"modOrnaments\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"modRoof\":-1,\"modPlateHolder\":-1,\"modAerials\":-1,\"modEngine\":-1,\"modSteeringWheel\":-1,\"modSideSkirt\":-1,\"modTrunk\":-1,\"dirtLevel\":0.15760891139508,\"modDoorSpeaker\":-1,\"modLivery\":-1,\"modXenon\":false,\"modTrimA\":-1,\"modFrame\":-1,\"modArmor\":-1,\"modHood\":-1,\"wheelColor\":224,\"modFender\":-1,\"wheels\":6,\"modSpeakers\":-1,\"modTurbo\":false,\"model\":2047166283,\"modDial\":-1,\"color2\":32,\"modHydrolic\":-1,\"pearlescentColor\":0}'),
-('steam:1100001179c3bb7', 1, 'MYC 324', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":0,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"MYC 324 \",\"modDoorSpeaker\":-1,\"modTank\":-1,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":1,\"modArmor\":4,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"modStruts\":-1,\"model\":-1790546981,\"modEngineBlock\":3,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":949,\"modSeats\":-1,\"wheelColor\":119,\"modTrimA\":-1,\"modAPlate\":-1,\"modSpoilers\":-1,\"modBackWheels\":-1,\"modTrunk\":-1,\"modSuspension\":-1,\"neonEnabled\":[1,1,1,1],\"plateIndex\":0,\"modTrimB\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":2,\"color2\":112,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"windowTint\":1,\"modOrnaments\":-1,\"pearlescentColor\":112,\"neonColor\":[255,255,255],\"dirtLevel\":2.006973028183,\"modWindows\":-1,\"modHorns\":-1,\"modSteeringWheel\":-1,\"modTransmission\":2,\"modGrille\":-1,\"color1\":145,\"modTurbo\":false,\"modFrontBumper\":-1,\"modSpeakers\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"wheels\":1}'),
-('steam:1100001325b7a9b', 1, 'NBI 998', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":156,\"modRightFender\":-1,\"neonColor\":[153,0,153],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"NBI 998 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":132,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":995,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":7,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":10,\"modEngine\":3,\"color2\":70,\"windowTint\":1,\"modFrame\":-1,\"modArmor\":4,\"model\":1165853178,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.52657741308212,\"wheelColor\":5,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":2,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:1100001152f0a24', 1, 'NDP 562', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"NDP 562 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":-1,\"modTransmission\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modHydrolic\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"wheelColor\":144,\"modArchCover\":-1,\"dirtLevel\":11.363889694214,\"health\":866,\"color2\":32,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"modDashboard\":-1,\"tyreSmokeColor\":[255,255,255],\"modEngineBlock\":-1,\"modRearBumper\":-1,\"color1\":32,\"modSmokeEnabled\":false,\"modTurbo\":false,\"wheels\":6,\"modSeats\":-1,\"modDial\":-1,\"modLivery\":-1,\"model\":2047166283,\"modGrille\":-1,\"modSpeakers\":-1,\"modTrimB\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"pearlescentColor\":0,\"modHood\":-1}'),
-('steam:11000011acec85a', 1, 'NEQ 445', '{\"modSmokeEnabled\":1,\"modExhaust\":0,\"modFender\":-1,\"tyreSmokeColor\":[41,36,33],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"pearlescentColor\":7,\"windowTint\":1,\"modArmor\":4,\"modBackWheels\":-1,\"modHood\":-1,\"modFrame\":0,\"modWindows\":-1,\"modHydrolic\":-1,\"modDoorSpeaker\":-1,\"modSeats\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"wheelColor\":156,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":12,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modFrontBumper\":0,\"modTrunk\":-1,\"modBrakes\":2,\"plate\":\"NEQ 445 \",\"health\":985,\"modTrimA\":-1,\"modAirFilter\":-1,\"wheels\":7,\"modSuspension\":3,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":12,\"modTurbo\":false,\"neonColor\":[255,255,255],\"modAerials\":-1,\"model\":-1372848492,\"modArchCover\":-1,\"modFrontWheels\":18,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modOrnaments\":-1,\"dirtLevel\":10.311126708984,\"modXenon\":1,\"modTrimB\":-1,\"modSpoilers\":1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modRearBumper\":-1,\"modLivery\":-1,\"modSideSkirt\":4}'),
-('steam:1100001353fe56e', 1, 'NFF 367', '{\"windowTint\":-1,\"modSideSkirt\":-1,\"plateIndex\":0,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modSuspension\":-1,\"modExhaust\":-1,\"modTurbo\":false,\"modHood\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"modBrakes\":-1,\"modFrame\":-1,\"modSmokeEnabled\":false,\"modXenon\":false,\"modPlateHolder\":-1,\"dirtLevel\":11.00001335144,\"modSeats\":-1,\"modArchCover\":-1,\"health\":1000,\"modFrontWheels\":-1,\"pearlescentColor\":5,\"modAirFilter\":-1,\"wheels\":6,\"neonColor\":[255,0,255],\"modTank\":-1,\"modDial\":-1,\"color1\":1,\"modFrontBumper\":-1,\"modDashboard\":-1,\"modStruts\":-1,\"tyreSmokeColor\":[255,255,255],\"modLivery\":-1,\"modTrimB\":-1,\"color2\":38,\"modDoorSpeaker\":-1,\"modEngine\":-1,\"modOrnaments\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modBackWheels\":-1,\"modSpeakers\":-1,\"plate\":\"NFF 367\",\"modAPlate\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modTrimA\":-1,\"modTransmission\":-1,\"modRightFender\":-1,\"modHorns\":-1,\"modEngineBlock\":-1,\"modVanityPlate\":-1,\"modShifterLeavers\":-1,\"model\":86520421,\"modTrunk\":-1,\"modRoof\":-1,\"wheelColor\":156,\"modGrille\":-1,\"modRearBumper\":-1}'),
-('steam:11000010302b529', 1, 'NFY 492', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":1000,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":934775262,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":7,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.10580245405436,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":15,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"NFY 492 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":107,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":15}'),
-('steam:11000010d6c30cb', 1, 'NHF 426', '{\"modTransmission\":2,\"modDoorSpeaker\":-1,\"modSeats\":-1,\"modRearBumper\":-1,\"modSideSkirt\":-1,\"modTrimB\":-1,\"modSteeringWheel\":-1,\"modTrimA\":-1,\"health\":997,\"model\":15219735,\"color1\":51,\"modWindows\":-1,\"modTurbo\":false,\"modPlateHolder\":-1,\"modExhaust\":0,\"modLivery\":4,\"modDashboard\":-1,\"modXenon\":false,\"modRightFender\":-1,\"modAPlate\":-1,\"pearlescentColor\":67,\"modEngine\":3,\"modVanityPlate\":-1,\"tyreSmokeColor\":[255,255,255],\"modFrontBumper\":4,\"modHorns\":41,\"modSuspension\":3,\"modBackWheels\":-1,\"modHood\":-1,\"modAerials\":-1,\"dirtLevel\":0.3124993443489,\"modOrnaments\":-1,\"modSpoilers\":-1,\"modAirFilter\":-1,\"modFender\":-1,\"modTank\":-1,\"modFrame\":-1,\"windowTint\":1,\"modSmokeEnabled\":1,\"modEngineBlock\":-1,\"neonEnabled\":[1,1,1,1],\"neonColor\":[0,255,0],\"modArchCover\":-1,\"modFrontWheels\":23,\"modTrunk\":-1,\"modShifterLeavers\":-1,\"modDial\":-1,\"plate\":\"NHF 426 \",\"modGrille\":-1,\"modArmor\":4,\"plateIndex\":1,\"modRoof\":-1,\"modBrakes\":2,\"modStruts\":-1,\"color2\":120,\"wheels\":2,\"modHydrolic\":-1,\"wheelColor\":118,\"modSpeakers\":-1}'),
-('steam:11000010302b529', 1, 'NKJ 470', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":999,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1813965170,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":7,\"modEngine\":-1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.10617101937532,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":2,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"NKJ 470 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":2,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":7}'),
-('steam:11000010cb4181f', 1, 'NOF 238', '{\"wheels\":6,\"modHydrolic\":-1,\"modLivery\":-1,\"modSeats\":-1,\"modArmor\":4,\"tyreSmokeColor\":[255,255,255],\"plate\":\"NOF 238 \",\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modTransmission\":2,\"modAirFilter\":-1,\"modExhaust\":-1,\"color2\":0,\"modAPlate\":-1,\"modSideSkirt\":-1,\"wheelColor\":0,\"modDashboard\":-1,\"modSpoilers\":-1,\"modGrille\":-1,\"pearlescentColor\":0,\"modFrontBumper\":-1,\"modWindows\":-1,\"modHood\":-1,\"modSuspension\":3,\"modArchCover\":-1,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modTrimB\":-1,\"neonEnabled\":[false,false,false,false],\"modTurbo\":false,\"modTrimA\":-1,\"modSpeakers\":-1,\"health\":985,\"modSteeringWheel\":-1,\"color1\":0,\"dirtLevel\":1.2045602798462,\"modTank\":-1,\"modDial\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modHorns\":-1,\"modRearBumper\":-1,\"modPlateHolder\":-1,\"modAerials\":-1,\"modFender\":-1,\"modXenon\":false,\"modBrakes\":2,\"modStruts\":-1,\"plateIndex\":4,\"modEngineBlock\":-1,\"modFrame\":-1,\"modEngine\":3,\"modRoof\":-1,\"model\":333512375,\"modVanityPlate\":-1,\"modFrontWheels\":-1,\"modTrunk\":-1}'),
-('steam:110000119ac453f', 1, 'NPU 717', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":4,\"modVanityPlate\":-1,\"modXenon\":false,\"modRearBumper\":-1,\"modArmor\":-1,\"modLivery\":-1,\"modHood\":-1,\"modGrille\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"neonColor\":[0,0,255],\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":0,\"modDashboard\":-1,\"color1\":32,\"modAerials\":-1,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modSuspension\":-1,\"modBrakes\":-1,\"modBackWheels\":-1,\"health\":0,\"modTrimA\":-1,\"modFrame\":-1,\"wheels\":6,\"plate\":\"NPU 717 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":32,\"windowTint\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"model\":2047166283,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modTrunk\":-1,\"dirtLevel\":12.71593284607,\"modAPlate\":-1,\"modFrontWheels\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"wheelColor\":32,\"modSideSkirt\":-1}'),
-('steam:11000010d6c30cb', 1, 'NQQ 266', '{\"plateIndex\":4,\"color1\":32,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modAerials\":-1,\"color2\":240,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modSteeringWheel\":-1,\"model\":-750481609,\"modDial\":-1,\"modEngineBlock\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"wheelColor\":32,\"modPlateHolder\":-1,\"modFrame\":-1,\"modDashboard\":-1,\"modTrunk\":-1,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modSpeakers\":-1,\"modArchCover\":-1,\"health\":988,\"modFender\":-1,\"modAirFilter\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"NQQ 266 \",\"modLivery\":-1,\"pearlescentColor\":0,\"wheels\":7,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modFrontBumper\":-1,\"modExhaust\":-1,\"dirtLevel\":6.1398983001708,\"modFrontWheels\":-1,\"windowTint\":-1,\"modHood\":-1,\"modSpoilers\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modBrakes\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"modStruts\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000010d6c30cb', 1, 'NTV 074', '{\"modAerials\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":9.1544275283814,\"modTrimA\":-1,\"color2\":0,\"modStruts\":-1,\"modArchCover\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modArmor\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"color1\":4,\"health\":998,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"neonColor\":[255,0,255],\"modTank\":-1,\"modSeats\":-1,\"modDial\":-1,\"wheelColor\":156,\"modFrontBumper\":-1,\"plateIndex\":0,\"modPlateHolder\":-1,\"model\":330661258,\"modSuspension\":-1,\"modFrontWheels\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modFender\":-1,\"modRoof\":-1,\"modTurbo\":false,\"modSmokeEnabled\":1,\"modAPlate\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modHood\":-1,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"pearlescentColor\":111,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modExhaust\":-1,\"wheels\":0,\"plate\":\"NTV 074 \",\"modSideSkirt\":-1}'),
-('steam:11000010302b529', 1, 'NYP 030', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":981,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1165853178,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":7,\"modEngine\":-1,\"wheelColor\":5,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.10644865781068,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":2,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"NYP 030 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":3,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":156}'),
-('steam:1100001061d0cb1', 1, 'OBJ 229', '{\"plateIndex\":0,\"color1\":2,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":2,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modStruts\":-1,\"modBrakes\":-1,\"modSpeakers\":-1,\"model\":1813965170,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"modAirFilter\":-1,\"modDashboard\":-1,\"modArchCover\":-1,\"modSuspension\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"modDial\":-1,\"health\":982,\"modEngineBlock\":-1,\"modFender\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"OBJ 229 \",\"pearlescentColor\":7,\"modTrimB\":-1,\"modLivery\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"wheels\":7,\"modTransmission\":-1,\"modFrontBumper\":-1,\"modExhaust\":-1,\"modHood\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":156,\"modRearBumper\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modVanityPlate\":-1,\"modHorns\":-1,\"modRightFender\":-1,\"modTrunk\":-1,\"modSideSkirt\":-1,\"dirtLevel\":6.6640338897706,\"modGrille\":-1,\"modHydrolic\":-1}'),
-('steam:110000119ac453f', 1, 'OBK 110', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"OBK 110 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"wheelColor\":156,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":-1,\"modTransmission\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"plateIndex\":0,\"modDial\":-1,\"neonEnabled\":[false,false,false,false],\"dirtLevel\":9.4425573349,\"health\":1000,\"color2\":12,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modEngine\":-1,\"modTurbo\":false,\"modSuspension\":-1,\"modEngineBlock\":-1,\"tyreSmokeColor\":[255,255,255],\"modGrille\":-1,\"modRearBumper\":-1,\"color1\":12,\"modSmokeEnabled\":1,\"wheels\":7,\"model\":-193462702,\"modHydrolic\":-1,\"modFender\":-1,\"modLivery\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"modSpeakers\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"pearlescentColor\":0,\"modHood\":-1}'),
-('steam:11000010dd9c7d6', 1, 'OFC 472', '{\"modDashboard\":-1,\"modRoof\":-1,\"modBrakes\":-1,\"modAerials\":-1,\"wheels\":6,\"modEngine\":-1,\"modFrame\":-1,\"pearlescentColor\":0,\"tyreSmokeColor\":[255,255,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"modTransmission\":-1,\"modFender\":-1,\"modVanityPlate\":-1,\"model\":333512375,\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"modSuspension\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"wheelColor\":0,\"modTank\":-1,\"modHorns\":-1,\"modHydrolic\":-1,\"modSeats\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modGrille\":-1,\"modSpeakers\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"windowTint\":-1,\"modPlateHolder\":-1,\"dirtLevel\":6.3212761878968,\"neonEnabled\":[false,false,false,false],\"modDial\":-1,\"modRearBumper\":-1,\"modTrimA\":-1,\"modAirFilter\":-1,\"plate\":\"OFC 472 \",\"modAPlate\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modTrunk\":-1,\"modArmor\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"health\":0,\"modExhaust\":-1,\"color1\":0,\"modShifterLeavers\":-1,\"modStruts\":-1,\"color2\":0,\"modArchCover\":-1}'),
-('steam:110000119ac453f', 1, 'OHN 938', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"OHN 938 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":6,\"modArmor\":-1,\"modGrille\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modFrontWheels\":-1,\"plateIndex\":4,\"modTrimB\":-1,\"model\":333512375,\"dirtLevel\":11.052305221558,\"health\":85,\"color2\":0,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"modStruts\":-1,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"modDial\":-1,\"modHydrolic\":-1,\"pearlescentColor\":0,\"modLivery\":-1,\"modDashboard\":-1,\"wheelColor\":0,\"modSpeakers\":-1,\"color1\":0,\"modBackWheels\":-1,\"modBrakes\":-1,\"modArchCover\":-1,\"modHood\":-1}'),
-('steam:11000010d6c30cb', 1, 'OJB 149', '{\"modAerials\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":0.22951813042164,\"modTrimA\":-1,\"color2\":0,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"plate\":\"OJB 149 \",\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modFender\":-1,\"modArmor\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":-1590337689,\"color1\":3,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modTank\":-1,\"pearlescentColor\":18,\"modShifterLeavers\":-1,\"modSeats\":-1,\"modDial\":-1,\"windowTint\":-1,\"plateIndex\":0,\"modHorns\":-1,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modSmokeEnabled\":1,\"modFrontWheels\":-1,\"modXenon\":false,\"modAPlate\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modFrontBumper\":-1,\"modTurbo\":false,\"wheelColor\":156,\"modRoof\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modDashboard\":-1,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modHood\":-1,\"modRearBumper\":-1,\"modLivery\":-1,\"modExhaust\":-1,\"health\":1000,\"modSpeakers\":-1,\"wheels\":4}'),
-('steam:110000116a28200', 1, 'PDG 106', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"PDG 106 \",\"modDoorSpeaker\":-1,\"health\":703,\"modSeats\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"plateIndex\":4,\"modTransmission\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":false,\"modBrakes\":-1,\"modArchCover\":-1,\"modAPlate\":-1,\"wheelColor\":80,\"modTrimA\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modTank\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":-1,\"windowTint\":-1,\"modOrnaments\":-1,\"pearlescentColor\":0,\"modVanityPlate\":-1,\"dirtLevel\":9.0479536056518,\"modWindows\":-1,\"modHorns\":-1,\"modFrame\":-1,\"wheels\":6,\"modGrille\":-1,\"color1\":32,\"model\":2047166283,\"color2\":32,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":-1,\"modFrontBumper\":-1}'),
-('steam:11000010ede2397', 1, 'PEG 450', '{\"modStruts\":-1,\"modHorns\":-1,\"modEngine\":3,\"modArchCover\":-1,\"modTrimA\":-1,\"modBrakes\":2,\"modArmor\":4,\"modRightFender\":-1,\"plate\":\"PEG 450 \",\"modWindows\":-1,\"modAirFilter\":-1,\"modExhaust\":2,\"modHydrolic\":-1,\"modSideSkirt\":-1,\"pearlescentColor\":134,\"modVanityPlate\":-1,\"modSeats\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modDoorSpeaker\":-1,\"modFender\":-1,\"plateIndex\":3,\"neonEnabled\":[1,1,1,1],\"modTrimB\":-1,\"windowTint\":1,\"modAPlate\":-1,\"modEngineBlock\":-1,\"health\":986,\"modRearBumper\":-1,\"dirtLevel\":11.68270111084,\"modLivery\":-1,\"wheels\":1,\"color1\":119,\"modSpoilers\":0,\"modTurbo\":false,\"modAerials\":-1,\"tyreSmokeColor\":[255,255,255],\"modSpeakers\":-1,\"modGrille\":-1,\"modSmokeEnabled\":1,\"modOrnaments\":-1,\"modDashboard\":-1,\"neonColor\":[50,255,155],\"modSuspension\":2,\"modTank\":-1,\"modTrunk\":-1,\"modBackWheels\":-1,\"modFrontBumper\":0,\"modTransmission\":2,\"modHood\":0,\"model\":784565758,\"modDial\":-1,\"modPlateHolder\":-1,\"modXenon\":1,\"color2\":119,\"modRoof\":-1,\"modFrontWheels\":-1,\"modFrame\":0,\"wheelColor\":156}'),
-('steam:11000011ad5e46e', 1, 'PIO 377', '{\"modSmokeEnabled\":false,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":8.3819007873536,\"modArmor\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"wheelColor\":156,\"modWindows\":-1,\"modHydrolic\":-1,\"modAirFilter\":-1,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":5,\"modDashboard\":-1,\"color1\":1,\"neonColor\":[255,0,255],\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"plate\":\"PIO 377 \",\"health\":1000,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":6,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":38,\"windowTint\":-1,\"modTrimB\":-1,\"modSuspension\":-1,\"model\":390201602,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modTurbo\":false,\"modRearBumper\":-1,\"modAerials\":-1,\"modXenon\":false,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:1100001325b7a9b', 1, 'PSV 219', '{\"modSeats\":-1,\"modEngine\":3,\"wheelColor\":156,\"modShifterLeavers\":-1,\"modWindows\":-1,\"modDashboard\":-1,\"modGrille\":-1,\"modTrimB\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modAerials\":-1,\"plateIndex\":0,\"modEngineBlock\":-1,\"modArmor\":-1,\"modFrame\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modLivery\":-1,\"modSpeakers\":-1,\"modXenon\":false,\"color1\":15,\"modTank\":-1,\"modTrimA\":-1,\"color2\":0,\"modBackWheels\":-1,\"modRightFender\":-1,\"model\":-255678177,\"modHood\":-1,\"modSuspension\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modOrnaments\":-1,\"modExhaust\":-1,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modHorns\":-1,\"modBrakes\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modRoof\":-1,\"modAirFilter\":-1,\"modRearBumper\":-1,\"modAPlate\":-1,\"modHydrolic\":-1,\"dirtLevel\":1.2422267198562,\"modVanityPlate\":-1,\"windowTint\":-1,\"modFrontBumper\":-1,\"wheels\":6,\"health\":973,\"pearlescentColor\":18,\"neonColor\":[255,0,255],\"modSmokeEnabled\":1,\"tyreSmokeColor\":[255,255,255],\"modTransmission\":-1,\"plate\":\"PSV 219 \",\"modTrunk\":-1,\"modSpoilers\":-1,\"modStruts\":-1}'),
-('steam:1100001325b7a9b', 1, 'PUI 480', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[0,150,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":73,\"modRightFender\":-1,\"neonColor\":[0,255,0],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"PUI 480 \",\"modSeats\":-1,\"modSteeringWheel\":0,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":141,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":555,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":7,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":10,\"modEngine\":3,\"color2\":111,\"windowTint\":1,\"modFrame\":-1,\"modArmor\":4,\"model\":-204311418,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.25674757361412,\"wheelColor\":0,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":0,\"modLivery\":-1,\"modSideSkirt\":-1}');
-INSERT INTO `owned_vehicles` (`owner`, `state`, `plate`, `vehicle`) VALUES
-('steam:11000010cb4181f', 1, 'QDR 944', '{\"modAerials\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"modRoof\":0,\"modTrimA\":-1,\"color2\":40,\"modStruts\":-1,\"modArchCover\":-1,\"modLivery\":-1,\"modSteeringWheel\":-1,\"modArmor\":4,\"modSpoilers\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modShifterLeavers\":-1,\"windowTint\":1,\"tyreSmokeColor\":[255,255,255],\"model\":-1829802492,\"color1\":149,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modTank\":-1,\"pearlescentColor\":29,\"modHorns\":10,\"modSeats\":-1,\"modDial\":-1,\"plate\":\"QDR 944 \",\"modHood\":-1,\"dirtLevel\":5.0955038070678,\"modPlateHolder\":-1,\"modFrontBumper\":4,\"plateIndex\":1,\"modFrontWheels\":15,\"modXenon\":1,\"modAPlate\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modSuspension\":3,\"modWindows\":-1,\"modTurbo\":false,\"wheelColor\":15,\"modSpeakers\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"health\":929,\"modTrimB\":-1,\"modEngine\":3,\"modTransmission\":2,\"modSmokeEnabled\":1,\"modRearBumper\":0,\"modFender\":-1,\"modExhaust\":2,\"wheels\":7,\"modDashboard\":-1,\"neonColor\":[0,0,128]}'),
-('steam:11000013613fa78', 1, 'QPX 924', '{\"modTrunk\":-1,\"modSpeakers\":-1,\"wheels\":6,\"dirtLevel\":6.0000138282776,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modHood\":-1,\"color1\":112,\"modAPlate\":-1,\"modPlateHolder\":-1,\"modArchCover\":-1,\"modHydrolic\":-1,\"modFrontWheels\":-1,\"modArmor\":-1,\"tyreSmokeColor\":[255,255,255],\"modRoof\":-1,\"color2\":112,\"modSpoilers\":-1,\"modRightFender\":-1,\"modSeats\":-1,\"modWindows\":-1,\"plate\":\"QPX 924\",\"modEngine\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modOrnaments\":-1,\"modTank\":-1,\"modBrakes\":-1,\"windowTint\":-1,\"plateIndex\":4,\"modExhaust\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modShifterLeavers\":-1,\"modTurbo\":false,\"neonColor\":[255,0,255],\"modGrille\":-1,\"modStruts\":-1,\"model\":-1639924411,\"modDoorSpeaker\":-1,\"modTransmission\":-1,\"modXenon\":false,\"wheelColor\":156,\"modDial\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modFrame\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"modAerials\":-1,\"modTrimA\":-1,\"modLivery\":-1,\"modTrimB\":-1,\"modFrontBumper\":-1,\"pearlescentColor\":134,\"modEngineBlock\":-1,\"health\":1000}'),
-('steam:1100001173d36f1', 1, 'QWP 925', '{\"windowTint\":-1,\"modSideSkirt\":-1,\"pearlescentColor\":111,\"modDoorSpeaker\":-1,\"color1\":4,\"modSuspension\":-1,\"modExhaust\":-1,\"modTurbo\":false,\"modEngineBlock\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modFender\":-1,\"modSmokeEnabled\":false,\"modXenon\":false,\"dirtLevel\":7.0000033378602,\"color2\":4,\"modSeats\":-1,\"modWindows\":-1,\"health\":1000,\"modFrontWheels\":-1,\"modSteeringWheel\":-1,\"modRoof\":-1,\"wheels\":5,\"neonColor\":[255,0,255],\"modTank\":-1,\"modDial\":-1,\"modAerials\":-1,\"modFrontBumper\":-1,\"modStruts\":-1,\"plateIndex\":0,\"tyreSmokeColor\":[255,255,255],\"modLivery\":-1,\"modTrimB\":-1,\"modFrame\":-1,\"modHood\":-1,\"modArchCover\":-1,\"modOrnaments\":-1,\"modEngine\":-1,\"modVanityPlate\":-1,\"modAirFilter\":-1,\"modSpeakers\":-1,\"plate\":\"QWP 925\",\"neonEnabled\":[false,false,false,false],\"modArmor\":-1,\"modAPlate\":-1,\"modTrimA\":-1,\"modTransmission\":-1,\"modRightFender\":-1,\"modHorns\":-1,\"modPlateHolder\":-1,\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modDashboard\":-1,\"modTrunk\":-1,\"model\":-1809822327,\"wheelColor\":156,\"modGrille\":-1,\"modRearBumper\":-1}'),
-('steam:11000011acec85a', 1, 'QWX 681', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":1878062887,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modRoof\":-1,\"color2\":0,\"wheels\":3,\"modEngine\":1,\"wheelColor\":7,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":6.907919883728,\"health\":997,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modWindows\":-1,\"color1\":0,\"modTransmission\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modBrakes\":-1,\"windowTint\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modDashboard\":-1,\"modHood\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"QWX 681 \",\"modFrame\":-1,\"modTank\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSeats\":-1,\"modHydrolic\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":2}'),
-('steam:1100001167d265e', 1, 'QZM 244', '{\"modAirFilter\":-1,\"modAPlate\":-1,\"modHood\":-1,\"modGrille\":-1,\"modDial\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"neonEnabled\":[false,false,false,false],\"modFender\":-1,\"dirtLevel\":12.273861885071,\"modXenon\":false,\"health\":990,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modArchCover\":-1,\"modDashboard\":-1,\"modFrontBumper\":-1,\"modShifterLeavers\":-1,\"wheelColor\":156,\"modFrame\":-1,\"modTank\":-1,\"modBrakes\":-1,\"pearlescentColor\":111,\"modSmokeEnabled\":false,\"modSpeakers\":-1,\"modRoof\":-1,\"plateIndex\":1,\"modStruts\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modEngine\":-1,\"windowTint\":-1,\"modFrontWheels\":-1,\"modTurbo\":false,\"modHorns\":-1,\"modTransmission\":-1,\"modTrimA\":-1,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modOrnaments\":-1,\"modTrimB\":-1,\"modRearBumper\":-1,\"modHydrolic\":-1,\"model\":-14495224,\"modArmor\":-1,\"color2\":0,\"plate\":\"QZM 244 \",\"wheels\":2,\"modTrunk\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"modSuspension\":-1,\"modExhaust\":-1,\"modEngineBlock\":-1,\"color1\":6,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modLivery\":-1,\"modRightFender\":-1}'),
-('steam:1100001061d0cb1', 1, 'RBP 523', '{\"plateIndex\":3,\"color1\":112,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":112,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modAerials\":-1,\"modEngineBlock\":-1,\"modDial\":-1,\"modTrimB\":-1,\"model\":-188978926,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"wheels\":6,\"modSuspension\":-1,\"modSmokeEnabled\":false,\"modBrakes\":-1,\"modFrontBumper\":-1,\"health\":1000,\"pearlescentColor\":112,\"modSpeakers\":-1,\"modArmor\":-1,\"modEngine\":-1,\"plate\":\"RBP 523 \",\"modLivery\":-1,\"modStruts\":-1,\"modFender\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modTrunk\":-1,\"modTransmission\":-1,\"dirtLevel\":9.1347045898438,\"modExhaust\":-1,\"modArchCover\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":70,\"modHood\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modRightFender\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000010302b529', 1, 'RFP 835', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":1000,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-1029368191,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":0,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.12593537569046,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":134,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"RFP 835 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":134,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":4,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":0}'),
-('steam:110000110c6f75a', 1, 'RND 984', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":0,\"modVanityPlate\":-1,\"modTrimB\":-1,\"modFrontWheels\":-1,\"modArmor\":-1,\"wheelColor\":156,\"modHood\":-1,\"modAPlate\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":0,\"modDashboard\":-1,\"color1\":12,\"modRearBumper\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modSuspension\":-1,\"health\":755,\"modTrimA\":-1,\"modXenon\":false,\"wheels\":5,\"modGrille\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":0,\"windowTint\":-1,\"plate\":\"RND 984 \",\"modTurbo\":false,\"model\":1458362510,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modAirFilter\":-1,\"modDial\":-1,\"modRoof\":-1,\"modSteeringWheel\":-1,\"dirtLevel\":12.373116493226,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000111b71726', 1, 'RPD 256', '{\"modRightFender\":2,\"modTurbo\":false,\"modExhaust\":0,\"modRearBumper\":1,\"model\":-440768424,\"tyreSmokeColor\":[255,0,0],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"RPD 256 \",\"modDoorSpeaker\":-1,\"health\":810,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":5,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":1,\"modArchCover\":-1,\"plateIndex\":0,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"modTransmission\":2,\"modSeats\":-1,\"wheelColor\":156,\"modTrimA\":-1,\"modBackWheels\":-1,\"modTrunk\":-1,\"neonEnabled\":[false,false,false,false],\"modTank\":-1,\"modSuspension\":-1,\"modAirFilter\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modFrame\":0,\"color2\":40,\"modPlateHolder\":-1,\"modSideSkirt\":0,\"modEngine\":3,\"windowTint\":-1,\"modAPlate\":-1,\"pearlescentColor\":27,\"modSpeakers\":-1,\"dirtLevel\":10.819602012634,\"modWindows\":-1,\"modHorns\":-1,\"modSpoilers\":1,\"wheels\":4,\"modGrille\":0,\"color1\":12,\"neonColor\":[255,0,255],\"modHood\":-1,\"modTrimB\":-1,\"modOrnaments\":-1,\"modFrontWheels\":15,\"modFrontBumper\":5}'),
-('steam:1100001167d265e', 0, 'RQP 359', '{\"modDashboard\":-1,\"wheels\":0,\"modSpoilers\":-1,\"modVanityPlate\":-1,\"modRoof\":-1,\"modAPlate\":-1,\"modSuspension\":-1,\"modSeats\":-1,\"modDoorSpeaker\":-1,\"modArchCover\":-1,\"tyreSmokeColor\":[255,255,255],\"modXenon\":false,\"modSideSkirt\":-1,\"modWindows\":-1,\"modBackWheels\":-1,\"model\":-566387422,\"modTurbo\":false,\"modStruts\":-1,\"modTransmission\":-1,\"modRearBumper\":-1,\"modAirFilter\":-1,\"modTrimA\":-1,\"color1\":33,\"modEngineBlock\":-1,\"modTrunk\":-1,\"dirtLevel\":5.0000700950623,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"modRightFender\":-1,\"plate\":\"RQP 359\",\"modExhaust\":-1,\"modSmokeEnabled\":false,\"color2\":33,\"modHydrolic\":-1,\"health\":1000,\"modSpeakers\":-1,\"plateIndex\":0,\"modArmor\":-1,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modTank\":-1,\"modEngine\":-1,\"pearlescentColor\":27,\"modOrnaments\":-1,\"modFrontWheels\":-1,\"modGrille\":-1,\"modDial\":-1,\"modLivery\":-1,\"windowTint\":-1,\"modFender\":-1,\"modHood\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"modSteeringWheel\":-1,\"modFrame\":-1,\"wheelColor\":106,\"modPlateHolder\":-1,\"modTrimB\":-1,\"neonEnabled\":[false,false,false,false]}'),
-('steam:11000013613fa78', 1, 'RTF 539', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"RTF 539 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":45,\"modTrimA\":-1,\"modDial\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modTrimB\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":1,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":3,\"neonEnabled\":[1,1,1,1],\"model\":1813965170,\"dirtLevel\":0.29472568631172,\"health\":1000,\"color2\":3,\"modPlateHolder\":-1,\"modFrontWheels\":-1,\"modEngine\":1,\"color1\":15,\"modSuspension\":-1,\"modTurbo\":false,\"tyreSmokeColor\":[255,255,255],\"modSideSkirt\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modSeats\":-1,\"wheels\":7,\"modHydrolic\":-1,\"modDashboard\":-1,\"modLivery\":-1,\"wheelColor\":156,\"neonColor\":[153,0,153],\"modSpeakers\":-1,\"pearlescentColor\":135,\"modBackWheels\":-1,\"modBrakes\":-1,\"modFender\":-1,\"modHood\":-1}'),
-('steam:11000011c0b0ace', 1, 'SCS 209', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":4,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modTurbo\":false,\"modRightFender\":-1,\"wheelColor\":16,\"modHood\":-1,\"modDashboard\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"modSeats\":-1,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modXenon\":false,\"modGrille\":-1,\"modBackWheels\":-1,\"color1\":192,\"modAerials\":-1,\"pearlescentColor\":0,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"plate\":\"SCS 209 \",\"health\":439,\"modTrimA\":-1,\"modFrame\":-1,\"wheels\":6,\"modSuspension\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":224,\"windowTint\":-1,\"modArmor\":-1,\"modSteeringWheel\":-1,\"model\":1474015055,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":9.8584051132202,\"modTrimB\":-1,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000010302b529', 1, 'SGC 057', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":1000,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-1215316954,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modTrimA\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":-1,\"wheelColor\":0,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":1.1630178689956,\"modSideSkirt\":-1,\"modSpoilers\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"color1\":29,\"modTransmission\":-1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"modSteeringWheel\":-1,\"modBackWheels\":-1,\"modFender\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"SGC 057 \",\"modFrame\":-1,\"modTank\":-1,\"color2\":29,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modXenon\":false,\"pearlescentColor\":35}'),
-('steam:110000119ac453f', 1, 'SGP 797', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"SGP 797 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"wheelColor\":156,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":false,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":4,\"modTransmission\":2,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"plateIndex\":2,\"modDial\":-1,\"neonEnabled\":[false,false,false,false],\"dirtLevel\":0.27422419190406,\"health\":886,\"color2\":70,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modEngine\":3,\"modTurbo\":false,\"modSuspension\":3,\"modEngineBlock\":-1,\"tyreSmokeColor\":[255,255,255],\"modGrille\":-1,\"modRearBumper\":-1,\"color1\":70,\"modSmokeEnabled\":1,\"wheels\":2,\"model\":117401876,\"modHydrolic\":-1,\"modFender\":-1,\"modLivery\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"modSpeakers\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"modBrakes\":2,\"pearlescentColor\":0,\"modHood\":-1}'),
-('steam:11000013634c728', 1, 'SOU 484', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":40,\"model\":934775262,\"neonColor\":[255,0,0],\"modAPlate\":-1,\"modAerials\":-1,\"modTrimB\":-1,\"color2\":107,\"wheels\":7,\"modEngine\":3,\"wheelColor\":156,\"modArmor\":0,\"modSmokeEnabled\":1,\"modGrille\":-1,\"modSpoilers\":-1,\"modEngineBlock\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"color1\":28,\"modTransmission\":2,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,255],\"windowTint\":1,\"modShifterLeavers\":-1,\"modFrame\":-1,\"modSpeakers\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modBrakes\":2,\"modHood\":-1,\"modDial\":-1,\"dirtLevel\":4.1905808448792,\"plate\":\"SOU 484 \",\"modRoof\":-1,\"modTank\":-1,\"health\":156,\"modDashboard\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modXenon\":1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":132}'),
-('steam:11000011ad5e46e', 1, 'SOX 831', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"SOX 831 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":20,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modDashboard\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":1,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":4,\"modGrille\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"plateIndex\":4,\"neonEnabled\":[1,1,1,1],\"modArchCover\":-1,\"dirtLevel\":0.11134449392558,\"health\":999,\"color2\":111,\"modPlateHolder\":-1,\"neonColor\":[255,255,255],\"modEngine\":3,\"modEngineBlock\":-1,\"modSuspension\":3,\"modDial\":-1,\"tyreSmokeColor\":[255,255,255],\"modTransmission\":2,\"modRearBumper\":-1,\"color1\":111,\"modSmokeEnabled\":1,\"modTurbo\":false,\"wheels\":3,\"modSeats\":-1,\"modHydrolic\":-1,\"modLivery\":-1,\"wheelColor\":156,\"model\":-1961627517,\"modSpeakers\":-1,\"modAirFilter\":-1,\"modBackWheels\":-1,\"modBrakes\":2,\"pearlescentColor\":111,\"modHood\":-1}'),
-('steam:110000132daf29b', 1, 'SPR 318', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"SPR 318 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"wheelColor\":111,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"neonColor\":[255,0,255],\"modRoof\":-1,\"windowTint\":-1,\"model\":-893578776,\"modSteeringWheel\":-1,\"wheels\":6,\"modArmor\":-1,\"modXenon\":false,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDial\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":0,\"neonEnabled\":[false,false,false,false],\"modGrille\":-1,\"dirtLevel\":8.589108467102,\"health\":937,\"color2\":18,\"modPlateHolder\":-1,\"modEngineBlock\":-1,\"modEngine\":-1,\"modStruts\":-1,\"modSuspension\":-1,\"modSeats\":-1,\"tyreSmokeColor\":[255,255,255],\"color1\":6,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modTurbo\":false,\"modHydrolic\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"modFender\":-1,\"modDashboard\":-1,\"modSpeakers\":-1,\"pearlescentColor\":111,\"modBackWheels\":-1,\"modBrakes\":-1,\"modAirFilter\":-1,\"modHood\":-1}'),
-('steam:11000010bb4b9f1', 1, 'SRG 377', '{\"plate\":\"SRG 377 \",\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":0.27513015270234,\"modTrimA\":-1,\"color2\":0,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSideSkirt\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":736902334,\"color1\":33,\"modAPlate\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"modTank\":-1,\"pearlescentColor\":38,\"modSeats\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modArmor\":-1,\"modSuspension\":-1,\"modPlateHolder\":-1,\"modSmokeEnabled\":1,\"plateIndex\":0,\"modFrontWheels\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modRoof\":-1,\"modTurbo\":false,\"wheelColor\":156,\"modWindows\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"health\":997,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modFender\":-1,\"modRearBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"wheels\":0,\"modFrontBumper\":-1,\"modAerials\":-1}'),
-('steam:11000011acec85a', 1, 'SUA 252', '{\"modTrimA\":-1,\"pearlescentColor\":81,\"modTrunk\":-1,\"modTrimB\":-1,\"color1\":38,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":1,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":0,\"modTransmission\":2,\"plateIndex\":1,\"modFender\":-1,\"modVanityPlate\":-1,\"model\":-2095439403,\"modAPlate\":-1,\"modPlateHolder\":-1,\"dirtLevel\":2.8319702148438,\"modSpoilers\":1,\"modAerials\":-1,\"modFrontWheels\":6,\"neonEnabled\":[1,1,1,1],\"tyreSmokeColor\":[41,36,33],\"modGrille\":0,\"modShifterLeavers\":-1,\"health\":981,\"modSideSkirt\":0,\"modWindows\":-1,\"wheels\":2,\"modBrakes\":2,\"modDoorSpeaker\":-1,\"wheelColor\":12,\"modBackWheels\":-1,\"modRoof\":-1,\"plate\":\"SUA 252 \",\"modRightFender\":-1,\"modOrnaments\":-1,\"modExhaust\":0,\"color2\":2,\"modSmokeEnabled\":1,\"modAirFilter\":-1,\"modEngineBlock\":-1,\"modEngine\":3,\"modFrontBumper\":1,\"modHydrolic\":-1,\"modHorns\":1,\"neonColor\":[255,165,0],\"modDashboard\":-1,\"modSeats\":-1,\"modSpeakers\":-1,\"modTurbo\":false,\"modArchCover\":-1,\"modXenon\":false,\"modTank\":-1,\"modFrame\":-1,\"modRearBumper\":-1,\"modStruts\":-1}'),
-('steam:11000011ad5e46e', 1, 'SVC 455', '{\"modSeats\":-1,\"modEngine\":3,\"wheelColor\":156,\"modShifterLeavers\":-1,\"modRoof\":-1,\"modDashboard\":-1,\"modGrille\":-1,\"modTrimB\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"wheels\":7,\"plateIndex\":4,\"modEngineBlock\":-1,\"modArmor\":-1,\"modExhaust\":-1,\"tyreSmokeColor\":[255,255,255],\"modFender\":-1,\"modLivery\":-1,\"modDoorSpeaker\":-1,\"modXenon\":1,\"color1\":111,\"modSpeakers\":-1,\"modTank\":-1,\"color2\":111,\"modBackWheels\":-1,\"modSpoilers\":-1,\"model\":934775262,\"modHood\":-1,\"modSuspension\":3,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modOrnaments\":-1,\"health\":988,\"windowTint\":1,\"modDial\":-1,\"modHorns\":-1,\"neonColor\":[255,255,255],\"modSideSkirt\":-1,\"modTurbo\":false,\"modRightFender\":-1,\"modAirFilter\":-1,\"modAPlate\":-1,\"modTrimA\":-1,\"modHydrolic\":-1,\"dirtLevel\":0.78926879167556,\"modVanityPlate\":-1,\"modBrakes\":2,\"modFrontBumper\":-1,\"modWindows\":-1,\"modTrunk\":-1,\"pearlescentColor\":15,\"modFrame\":-1,\"modSmokeEnabled\":1,\"modAerials\":-1,\"modTransmission\":2,\"plate\":\"SVC 455 \",\"modSteeringWheel\":-1,\"modRearBumper\":-1,\"modStruts\":-1}'),
-('steam:11000010c789c31', 1, 'TDR 050', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"TDR 050 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modDial\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modDashboard\":-1,\"modRoof\":-1,\"windowTint\":-1,\"neonEnabled\":[false,false,false,false],\"modSteeringWheel\":-1,\"wheels\":7,\"modArmor\":-1,\"modXenon\":false,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"neonColor\":[255,0,255],\"modDoorSpeaker\":-1,\"plateIndex\":0,\"modTrimB\":-1,\"color1\":3,\"dirtLevel\":8.2296571731568,\"health\":976,\"color2\":3,\"modPlateHolder\":-1,\"modStruts\":-1,\"modEngine\":1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modArchCover\":-1,\"tyreSmokeColor\":[255,255,255],\"modTurbo\":false,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modHydrolic\":-1,\"modGrille\":-1,\"modSeats\":-1,\"wheelColor\":156,\"modLivery\":-1,\"model\":234062309,\"modFender\":-1,\"modSpeakers\":-1,\"pearlescentColor\":5,\"modBackWheels\":-1,\"modBrakes\":-1,\"modHood\":-1,\"modAirFilter\":-1}'),
-('steam:110000111a58cab', 1, 'TLX 460', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"TLX 460 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"wheelColor\":156,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modTrimB\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":0,\"modArmor\":-1,\"modGrille\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modSideSkirt\":-1,\"plateIndex\":2,\"modFender\":-1,\"neonColor\":[255,0,255],\"dirtLevel\":0.034328412264586,\"health\":930,\"color2\":31,\"modPlateHolder\":-1,\"model\":-910466076,\"modEngine\":1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"color1\":21,\"tyreSmokeColor\":[255,255,255],\"modStruts\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modFrontWheels\":-1,\"modDashboard\":-1,\"modSeats\":-1,\"modTurbo\":false,\"modLivery\":-1,\"modDial\":-1,\"pearlescentColor\":55,\"modSpeakers\":-1,\"modArchCover\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modHydrolic\":-1,\"modHood\":-1}'),
-('steam:11000010e555ae1', 1, 'TSH 168', '{\"health\":1000,\"modSeats\":-1,\"pearlescentColor\":0,\"modAirFilter\":-1,\"modVanityPlate\":-1,\"modXenon\":false,\"modDashboard\":-1,\"modPlateHolder\":-1,\"modTrimA\":-1,\"model\":333512375,\"modDial\":-1,\"modBrakes\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modStruts\":-1,\"modLivery\":-1,\"modSpeakers\":-1,\"modSpoilers\":-1,\"modArchCover\":-1,\"dirtLevel\":11.000032424926,\"modEngineBlock\":-1,\"modRearBumper\":-1,\"modHorns\":-1,\"modRightFender\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modGrille\":-1,\"modSmokeEnabled\":false,\"modShifterLeavers\":-1,\"plate\":\"TSH 168\",\"windowTint\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modEngine\":-1,\"modDoorSpeaker\":-1,\"modTurbo\":false,\"wheels\":6,\"modAerials\":-1,\"modHydrolic\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modSideSkirt\":-1,\"neonEnabled\":[false,false,false,false],\"tyreSmokeColor\":[255,255,255],\"modHood\":-1,\"modFender\":-1,\"wheelColor\":0,\"color2\":0,\"modOrnaments\":-1,\"modRoof\":-1,\"modSuspension\":-1,\"modSteeringWheel\":-1,\"modTrunk\":-1,\"modTransmission\":-1,\"color1\":0,\"modTank\":-1,\"plateIndex\":4,\"modExhaust\":-1,\"modFrame\":-1}'),
-('steam:11000011b8aadb1', 1, 'TTG 812', '{\"tyreSmokeColor\":[255,255,255],\"color2\":145,\"wheels\":1,\"modFrontWheels\":-1,\"modDial\":-1,\"model\":-1790546981,\"modHood\":-1,\"modFrame\":-1,\"pearlescentColor\":131,\"modArmor\":-1,\"modAerials\":-1,\"modSmokeEnabled\":1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"dirtLevel\":0.26628342270852,\"modRoof\":-1,\"windowTint\":1,\"modTank\":-1,\"modBrakes\":-1,\"neonEnabled\":[false,false,false,false],\"health\":1000,\"modSuspension\":-1,\"modEngine\":1,\"modVanityPlate\":-1,\"modLivery\":-1,\"modTrunk\":1,\"modSpoilers\":-1,\"modBackWheels\":-1,\"modRearBumper\":-1,\"modSideSkirt\":-1,\"modArchCover\":-1,\"neonColor\":[255,0,255],\"modRightFender\":-1,\"modSteeringWheel\":-1,\"modSeats\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modGrille\":-1,\"modStruts\":-1,\"modDashboard\":-1,\"wheelColor\":145,\"plateIndex\":1,\"modOrnaments\":-1,\"modAPlate\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"modPlateHolder\":-1,\"modHydrolic\":-1,\"plate\":\"TTG 812 \",\"modTrimB\":-1,\"modFender\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modTrimA\":-1,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"color1\":145,\"modTransmission\":-1}'),
-('steam:11000011ad5e46e', 1, 'TWM 328', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":1,\"modSideSkirt\":1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":1000,\"modTrunk\":-1,\"modXenon\":1,\"modDashboard\":-1,\"model\":-1485523546,\"neonColor\":[255,255,255],\"modAPlate\":-1,\"modDoorSpeaker\":-1,\"modAerials\":-1,\"color2\":111,\"wheels\":7,\"modEngine\":3,\"wheelColor\":156,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":0.17759077250958,\"modHood\":0,\"modEngineBlock\":-1,\"modFrontWheels\":17,\"modWindows\":-1,\"color1\":111,\"modTransmission\":2,\"modBackWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modShifterLeavers\":-1,\"modArchCover\":-1,\"modFender\":-1,\"windowTint\":1,\"plate\":\"TWM 328 \",\"modSteeringWheel\":-1,\"modDial\":-1,\"modGrille\":-1,\"modSpoilers\":0,\"modHorns\":-1,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"modBrakes\":2,\"modRoof\":-1,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":0,\"modSuspension\":3,\"modHydrolic\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":111}'),
-('steam:11000010ede2397', 1, 'TWP 345', '{\"windowTint\":1,\"modRightFender\":-1,\"modSeats\":-1,\"modAPlate\":-1,\"model\":934775262,\"modLivery\":-1,\"modEngineBlock\":-1,\"modSpeakers\":-1,\"plate\":\"TWP 345 \",\"modFrontWheels\":38,\"modPlateHolder\":-1,\"wheels\":7,\"modFrame\":-1,\"modArmor\":4,\"modAerials\":-1,\"neonColor\":[0,0,255],\"modSpoilers\":-1,\"wheelColor\":21,\"modAirFilter\":-1,\"dirtLevel\":2.1849036216736,\"modRearBumper\":-1,\"plateIndex\":1,\"modFender\":-1,\"modTank\":-1,\"modDoorSpeaker\":-1,\"modSmokeEnabled\":1,\"color2\":107,\"modBackWheels\":-1,\"modRoof\":-1,\"neonEnabled\":[1,1,1,1],\"modSuspension\":3,\"modDashboard\":-1,\"modTrunk\":-1,\"modShifterLeavers\":-1,\"modStruts\":-1,\"modHorns\":-1,\"modBrakes\":2,\"modTransmission\":2,\"color1\":12,\"tyreSmokeColor\":[255,255,255],\"modExhaust\":-1,\"modOrnaments\":-1,\"modTrimB\":-1,\"health\":996,\"modEngine\":3,\"modWindows\":-1,\"modTurbo\":false,\"pearlescentColor\":15,\"modGrille\":-1,\"modArchCover\":-1,\"modVanityPlate\":-1,\"modDial\":-1,\"modSteeringWheel\":-1,\"modXenon\":1,\"modTrimA\":-1,\"modHydrolic\":-1,\"modHood\":-1,\"modFrontBumper\":-1,\"modSideSkirt\":-1}'),
-('steam:110000113248a42', 1, 'UBH 269', '{\"modArchCover\":-1,\"modAPlate\":-1,\"plateIndex\":0,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modStruts\":-1,\"modGrille\":-1,\"modTransmission\":-1,\"modTrunk\":-1,\"tyreSmokeColor\":[255,255,255],\"modTank\":-1,\"modSuspension\":-1,\"modFender\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"dirtLevel\":5.6047296524048,\"modWindows\":-1,\"color2\":0,\"modPlateHolder\":-1,\"modAerials\":-1,\"modRearBumper\":-1,\"modOrnaments\":-1,\"modRightFender\":-1,\"modExhaust\":-1,\"modTrimA\":-1,\"modDial\":-1,\"model\":1458362510,\"pearlescentColor\":0,\"modHorns\":-1,\"plate\":\"UBH 269 \",\"modSideSkirt\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modSeats\":-1,\"modSpoilers\":-1,\"neonEnabled\":[false,false,false,false],\"wheels\":5,\"modHydrolic\":-1,\"modBrakes\":-1,\"modEngine\":-1,\"modTurbo\":false,\"neonColor\":[255,0,255],\"wheelColor\":156,\"modFrontBumper\":-1,\"modAirFilter\":-1,\"modFrontWheels\":-1,\"modDashboard\":-1,\"modRoof\":-1,\"modArmor\":-1,\"modLivery\":-1,\"modFrame\":-1,\"health\":983,\"windowTint\":-1,\"color1\":64,\"modSpeakers\":-1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"modHood\":-1,\"modXenon\":false}'),
-('steam:110000111b71726', 1, 'UHS 438', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":0,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"UHS 438 \",\"modDoorSpeaker\":-1,\"wheels\":0,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modLivery\":-1,\"modRoof\":-1,\"modStruts\":-1,\"modSeats\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":972,\"modAPlate\":-1,\"wheelColor\":0,\"modTrimA\":-1,\"modFrontBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modSuspension\":4,\"modTrunk\":-1,\"plateIndex\":0,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":120,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"windowTint\":1,\"modArchCover\":-1,\"pearlescentColor\":13,\"modOrnaments\":-1,\"dirtLevel\":2.641128540039,\"modSpoilers\":-1,\"modHorns\":-1,\"modWindows\":-1,\"modTransmission\":2,\"modGrille\":-1,\"color1\":12,\"modFrame\":-1,\"model\":-2107990196,\"modTrimB\":-1,\"modTank\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1}'),
-('steam:110000111b71726', 1, 'UJS 085', '{\"modAerials\":-1,\"model\":1131912276,\"modVanityPlate\":-1,\"dirtLevel\":7.7920227050782,\"modTrimA\":-1,\"color2\":0,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modArmor\":-1,\"plate\":\"UJS 085 \",\"modFender\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modWindows\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"plateIndex\":4,\"color1\":7,\"modBrakes\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"modSmokeEnabled\":1,\"pearlescentColor\":111,\"modSeats\":-1,\"modDial\":-1,\"modHood\":-1,\"modGrille\":-1,\"modTank\":-1,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modXenon\":false,\"modAPlate\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modShifterLeavers\":-1,\"modTurbo\":false,\"wheelColor\":156,\"modRoof\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modSpeakers\":-1,\"modSideSkirt\":-1,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modLivery\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"modExhaust\":-1,\"wheels\":6,\"modFrame\":-1,\"health\":1000}'),
-('steam:11000011acec85a', 1, 'UOJ 181', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":86520421,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"windowTint\":-1,\"modVanityPlate\":-1,\"wheels\":6,\"modEngine\":1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":6.438639163971,\"modEngineBlock\":-1,\"modDial\":-1,\"modFrontWheels\":-1,\"modWindows\":-1,\"color1\":1,\"modTransmission\":-1,\"modDashboard\":-1,\"tyreSmokeColor\":[255,255,255],\"modFender\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"plate\":\"UOJ 181 \",\"modArchCover\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modBrakes\":-1,\"modSpoilers\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"health\":660,\"modBackWheels\":-1,\"modSeats\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"color2\":38,\"modHydrolic\":-1,\"modRoof\":-1,\"pearlescentColor\":5}'),
-('steam:11000010d6c30cb', 1, 'UQM 561', '{\"modDoorSpeaker\":-1,\"dirtLevel\":9.3852109909058,\"wheels\":0,\"plate\":\"UQM 561 \",\"modArmor\":4,\"modBackWheels\":-1,\"modHood\":-1,\"modSteeringWheel\":-1,\"neonEnabled\":[false,false,false,false],\"model\":2046572318,\"pearlescentColor\":35,\"modTrunk\":-1,\"modGrille\":-1,\"modHydrolic\":-1,\"modStruts\":-1,\"modArchCover\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"modSeats\":-1,\"modShifterLeavers\":-1,\"modRoof\":-1,\"modTank\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modSmokeEnabled\":1,\"color2\":43,\"modPlateHolder\":-1,\"modEngine\":3,\"modOrnaments\":-1,\"modExhaust\":-1,\"modFrame\":-1,\"modDial\":-1,\"modTransmission\":2,\"modFrontBumper\":-1,\"modSideSkirt\":-1,\"modEngineBlock\":-1,\"modRearBumper\":-1,\"plateIndex\":1,\"modRightFender\":-1,\"modVanityPlate\":-1,\"health\":1000,\"modDashboard\":-1,\"wheelColor\":156,\"modSpeakers\":-1,\"modXenon\":1,\"modAerials\":-1,\"color1\":43,\"modSpoilers\":-1,\"windowTint\":1,\"modBrakes\":2,\"modTurbo\":false,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"neonColor\":[255,0,255]}'),
-('steam:11000011c0b0ace', 1, 'USM 374', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"health\":791,\"modTrunk\":-1,\"modXenon\":false,\"modDashboard\":-1,\"model\":1813965170,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"modVanityPlate\":-1,\"color2\":2,\"wheels\":7,\"modEngine\":1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.01424385048449,\"modSpoilers\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modFrontWheels\":-1,\"color1\":2,\"modTransmission\":-1,\"modSteeringWheel\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modBackWheels\":-1,\"modHood\":-1,\"windowTint\":-1,\"modHorns\":-1,\"modShifterLeavers\":-1,\"plate\":\"USM 374 \",\"modFender\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":-1,\"modRoof\":-1,\"modHydrolic\":-1,\"modDoorSpeaker\":-1,\"pearlescentColor\":7}'),
-('steam:11000010bb4b9f1', 1, 'UWB 543', '{\"plate\":\"UWB 543 \",\"modGrille\":-1,\"modVanityPlate\":-1,\"dirtLevel\":6.3155388832092,\"modTrimA\":-1,\"color2\":132,\"modStruts\":-1,\"modArchCover\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"modDashboard\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSideSkirt\":-1,\"windowTint\":-1,\"tyreSmokeColor\":[255,255,255],\"model\":11251904,\"color1\":132,\"modAPlate\":-1,\"modAirFilter\":-1,\"modHydrolic\":-1,\"modHorns\":-1,\"modTank\":-1,\"pearlescentColor\":132,\"modSeats\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modArmor\":-1,\"modSuspension\":-1,\"modPlateHolder\":-1,\"modSmokeEnabled\":false,\"plateIndex\":0,\"modFrontWheels\":-1,\"modXenon\":false,\"modShifterLeavers\":-1,\"modRightFender\":-1,\"modBackWheels\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modRoof\":-1,\"modTurbo\":false,\"wheelColor\":156,\"modWindows\":-1,\"modEngineBlock\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"health\":992,\"modTrimB\":-1,\"modEngine\":-1,\"modTransmission\":-1,\"modFender\":-1,\"modRearBumper\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"wheels\":6,\"modFrontBumper\":-1,\"modAerials\":-1}'),
-('steam:11000013613fa78', 1, 'UWY 055', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modXenon\":1,\"modHorns\":44,\"model\":-1834414294,\"neonColor\":[255,165,0],\"modAPlate\":-1,\"health\":930,\"modAerials\":-1,\"modVanityPlate\":-1,\"wheels\":0,\"modEngine\":3,\"wheelColor\":252,\"modArmor\":4,\"modSmokeEnabled\":1,\"modGrille\":-1,\"modSpoilers\":-1,\"color2\":0,\"modEngineBlock\":-1,\"modBrakes\":2,\"color1\":15,\"modTransmission\":2,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modWindows\":-1,\"modFender\":-1,\"modShifterLeavers\":-1,\"windowTint\":1,\"modArchCover\":-1,\"modSteeringWheel\":-1,\"modSpeakers\":-1,\"modHood\":-1,\"modDial\":-1,\"modDoorSpeaker\":-1,\"plate\":\"UWY 055 \",\"modFrame\":-1,\"modTank\":-1,\"modSeats\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"dirtLevel\":1.5620385408402,\"modHydrolic\":-1,\"modRoof\":-1,\"pearlescentColor\":156}'),
-('steam:11000010dd9c7d6', 1, 'UXA 250', '{\"modShifterLeavers\":-1,\"modAerials\":-1,\"modXenon\":1,\"health\":995,\"dirtLevel\":9.091462135315,\"modBrakes\":2,\"neonEnabled\":[1,1,1,1],\"windowTint\":1,\"modFrontBumper\":1,\"modBackWheels\":-1,\"modSideSkirt\":-1,\"wheels\":1,\"neonColor\":[255,0,0],\"wheelColor\":88,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modSpoilers\":0,\"pearlescentColor\":81,\"modTransmission\":2,\"color1\":132,\"modSeats\":-1,\"modAPlate\":-1,\"modDashboard\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modTurbo\":false,\"modArmor\":4,\"plate\":\"UXA 250 \",\"modTrimA\":9,\"modHorns\":45,\"tyreSmokeColor\":[255,0,0],\"model\":223258115,\"color2\":132,\"modHydrolic\":1,\"modTrimB\":-1,\"modPlateHolder\":12,\"modSuspension\":3,\"modGrille\":-1,\"modLivery\":6,\"modEngine\":3,\"modHood\":3,\"modOrnaments\":31,\"modSpeakers\":-1,\"modFender\":-1,\"modRightFender\":-1,\"modSteeringWheel\":14,\"modEngineBlock\":0,\"modWindows\":-1,\"modTank\":-1,\"modFrame\":0,\"modSmokeEnabled\":1,\"modArchCover\":-1,\"modRoof\":-1,\"modAirFilter\":1,\"modExhaust\":1,\"modStruts\":-1,\"modFrontWheels\":-1,\"modTrunk\":2}'),
-('steam:11000010bb4b9f1', 1, 'UYM 483', '{\"tyreSmokeColor\":[255,255,255],\"color2\":0,\"modEngine\":1,\"modFrontWheels\":-1,\"modDial\":-1,\"model\":-1485523546,\"modHood\":-1,\"wheelColor\":156,\"pearlescentColor\":156,\"modAPlate\":-1,\"modRightFender\":-1,\"modHydrolic\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"dirtLevel\":7.774296760559,\"modDashboard\":-1,\"modEngineBlock\":-1,\"modTank\":-1,\"modRoof\":-1,\"neonEnabled\":[false,false,false,false],\"health\":972,\"modWindows\":-1,\"modAerials\":-1,\"modSuspension\":-1,\"modArmor\":-1,\"modTrunk\":-1,\"modSpoilers\":-1,\"modBackWheels\":-1,\"modSmokeEnabled\":1,\"modSideSkirt\":-1,\"modRearBumper\":-1,\"modArchCover\":-1,\"wheels\":0,\"modSteeringWheel\":-1,\"modSeats\":-1,\"modTurbo\":false,\"neonColor\":[255,0,255],\"modGrille\":-1,\"modStruts\":-1,\"windowTint\":-1,\"modLivery\":-1,\"plateIndex\":0,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"modHorns\":-1,\"modAirFilter\":-1,\"modPlateHolder\":-1,\"modBrakes\":-1,\"plate\":\"UYM 483 \",\"modTrimB\":-1,\"modFender\":-1,\"modTrimA\":-1,\"modXenon\":false,\"modFrame\":-1,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"color1\":0,\"modTransmission\":-1}'),
-('society:police', 1, 'VCG 707', '{\"modBackWheels\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"dirtLevel\":7.0000071525574,\"modFender\":-1,\"modStruts\":-1,\"modTransmission\":-1,\"modAirFilter\":-1,\"modSuspension\":-1,\"modSteeringWheel\":-1,\"modEngine\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modSmokeEnabled\":false,\"modTurbo\":false,\"color1\":92,\"neonEnabled\":[false,false,false,false],\"modFrame\":-1,\"modShifterLeavers\":-1,\"modHorns\":-1,\"color2\":111,\"modSeats\":-1,\"model\":-186537451,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modTank\":-1,\"modFrontBumper\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"modArmor\":-1,\"wheelColor\":156,\"health\":1000,\"modTrimB\":-1,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modSideSkirt\":-1,\"modWindows\":-1,\"modRearBumper\":-1,\"pearlescentColor\":3,\"modHood\":-1,\"modBrakes\":-1,\"modExhaust\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modDashboard\":-1,\"modLivery\":-1,\"plateIndex\":0,\"plate\":\"VCG 707\",\"modOrnaments\":-1,\"modSpeakers\":-1,\"modTrimA\":-1,\"wheels\":6,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modTrunk\":-1,\"modSpoilers\":-1,\"modXenon\":false}'),
-('steam:1100001061d0cb1', 1, 'VFG 232', '{\"plateIndex\":3,\"color1\":2,\"pearlescentColor\":7,\"modOrnaments\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"color2\":2,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modEngine\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"modVanityPlate\":-1,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modTurbo\":false,\"modStruts\":-1,\"modPlateHolder\":-1,\"modFrame\":-1,\"modDashboard\":-1,\"modEngineBlock\":-1,\"modSuspension\":-1,\"modSmokeEnabled\":1,\"modSpoilers\":-1,\"model\":-346924611,\"health\":1000,\"modFender\":-1,\"modAirFilter\":-1,\"modArmor\":-1,\"modArchCover\":-1,\"plate\":\"VFG 232 \",\"modRearBumper\":-1,\"modLivery\":-1,\"modAerials\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"wheels\":3,\"modTransmission\":-1,\"modFrontBumper\":-1,\"modExhaust\":-1,\"modBackWheels\":-1,\"modFrontWheels\":-1,\"windowTint\":-1,\"wheelColor\":156,\"modTrunk\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":7.2789068222046,\"modSideSkirt\":-1,\"modHood\":-1,\"modGrille\":-1,\"modHydrolic\":-1}'),
-('steam:11000011acec85a', 1, 'VHS 280', '{\"modArchCover\":0,\"modStruts\":-1,\"modFrontBumper\":4,\"modTrimB\":0,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":3,\"modSideSkirt\":1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":7,\"modLivery\":7,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":1,\"modHorns\":0,\"model\":-295689028,\"neonColor\":[255,0,255],\"modEngineBlock\":2,\"modAerials\":0,\"modRoof\":0,\"color2\":111,\"wheels\":2,\"modEngine\":1,\"wheelColor\":135,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.20709925889968,\"health\":693,\"modTrimA\":0,\"modFrontWheels\":11,\"modWindows\":-1,\"color1\":111,\"modTransmission\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,0,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modBrakes\":2,\"windowTint\":1,\"modSpoilers\":0,\"modSteeringWheel\":14,\"modDashboard\":3,\"modHood\":8,\"modDial\":2,\"modGrille\":-1,\"plate\":\"VHS 280 \",\"modFrame\":4,\"modTank\":-1,\"modXenon\":1,\"modSpeakers\":-1,\"modBackWheels\":-1,\"plateIndex\":1,\"modRearBumper\":3,\"modSeats\":-1,\"modHydrolic\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":70}'),
-('steam:11000011ad5e46e', 1, 'VJJ 443', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"VJJ 443 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"wheelColor\":0,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":0,\"modArmor\":-1,\"model\":-662904049,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"modFrontWheels\":-1,\"modGrille\":-1,\"dirtLevel\":4.3904194831848,\"health\":998,\"color2\":111,\"modPlateHolder\":-1,\"modExhaust\":-1,\"modEngine\":-1,\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"neonColor\":[255,0,255],\"tyreSmokeColor\":[255,255,255],\"color1\":111,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modStruts\":-1,\"modDashboard\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modLivery\":-1,\"modDial\":-1,\"modFender\":-1,\"modHood\":-1,\"modTrimB\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"pearlescentColor\":74,\"modSeats\":-1}'),
-('steam:110000117d510a6', 1, 'VMX 237', '{\"modSideSkirt\":-1,\"dirtLevel\":6.2661952972412,\"modHorns\":-1,\"modGrille\":-1,\"modTurbo\":false,\"modTank\":-1,\"modSpoilers\":-1,\"modAPlate\":-1,\"plateIndex\":4,\"modDashboard\":-1,\"modOrnaments\":-1,\"modXenon\":false,\"wheels\":6,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modSeats\":-1,\"modHood\":-1,\"modTransmission\":-1,\"modShifterLeavers\":-1,\"modStruts\":-1,\"modSmokeEnabled\":1,\"color2\":0,\"pearlescentColor\":0,\"modExhaust\":-1,\"modBrakes\":-1,\"windowTint\":-1,\"modHydrolic\":-1,\"modSpeakers\":-1,\"modSuspension\":-1,\"neonColor\":[255,0,255],\"modLivery\":-1,\"modTrimA\":-1,\"health\":270,\"modTrunk\":-1,\"tyreSmokeColor\":[255,255,255],\"plate\":\"VMX 237 \",\"modWindows\":-1,\"wheelColor\":0,\"model\":333512375,\"modPlateHolder\":-1,\"modFender\":-1,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modSteeringWheel\":-1,\"color1\":0,\"neonEnabled\":[false,false,false,false],\"modDoorSpeaker\":-1,\"modBackWheels\":-1,\"modRoof\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"modFrontWheels\":-1,\"modAerials\":-1,\"modEngine\":-1,\"modAirFilter\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modFrame\":-1,\"modArmor\":-1}');
-INSERT INTO `owned_vehicles` (`owner`, `state`, `plate`, `vehicle`) VALUES
-('steam:1100001325b7a9b', 1, 'VSK 892', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[0,0,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":4,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"VSK 892 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":83,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":730,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":6,\"modOrnaments\":-1,\"neonEnabled\":[false,false,false,false],\"modHorns\":10,\"modEngine\":3,\"color2\":132,\"windowTint\":2,\"modFrame\":-1,\"modArmor\":4,\"model\":-1606187161,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":5.8925552368164,\"wheelColor\":132,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000013613fa78', 1, 'VTJ 939', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":38,\"model\":1813965170,\"neonColor\":[255,255,0],\"modAPlate\":-1,\"modAerials\":-1,\"modSpoilers\":-1,\"color2\":4,\"wheels\":7,\"modEngine\":3,\"wheelColor\":156,\"modArmor\":4,\"modSmokeEnabled\":1,\"dirtLevel\":7.8686599731446,\"modFender\":-1,\"modEngineBlock\":-1,\"modFrontWheels\":-1,\"modXenon\":1,\"color1\":15,\"modTransmission\":2,\"modWindows\":-1,\"tyreSmokeColor\":[255,255,0],\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":1000,\"modDashboard\":-1,\"modArchCover\":-1,\"modSteeringWheel\":-1,\"plate\":\"VTJ 939 \",\"modSideSkirt\":-1,\"modDial\":-1,\"modVanityPlate\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":2,\"modHydrolic\":-1,\"modSeats\":-1,\"plateIndex\":3,\"modRearBumper\":-1,\"modFrame\":-1,\"windowTint\":1,\"modBackWheels\":-1,\"pearlescentColor\":89}'),
-('steam:11000010cb4181f', 1, 'VTM 822', '{\"modTrimA\":-1,\"pearlescentColor\":158,\"modTrunk\":-1,\"modTrimB\":-1,\"modSpeakers\":-1,\"modSteeringWheel\":-1,\"modLivery\":-1,\"tyreSmokeColor\":[0,0,128],\"modDial\":-1,\"modArmor\":-1,\"windowTint\":1,\"modSuspension\":4,\"modTransmission\":2,\"plateIndex\":1,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"model\":-204311418,\"modAPlate\":-1,\"neonColor\":[255,0,255],\"modBackWheels\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modRearBumper\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":967,\"modSmokeEnabled\":1,\"modAerials\":-1,\"wheels\":7,\"modSideSkirt\":0,\"modDoorSpeaker\":-1,\"wheelColor\":0,\"modWindows\":-1,\"modPlateHolder\":-1,\"plate\":\"VTM 822 \",\"modHydrolic\":-1,\"modDashboard\":-1,\"modExhaust\":-1,\"modSeats\":-1,\"modBrakes\":2,\"modAirFilter\":-1,\"color2\":73,\"modEngine\":3,\"modFrontBumper\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modFender\":0,\"modXenon\":1,\"modTurbo\":false,\"color1\":23,\"modSpoilers\":0,\"dirtLevel\":4.3804035186768,\"modRightFender\":-1,\"modTank\":-1,\"modFrame\":-1,\"modHood\":-1,\"modStruts\":-1}'),
-('steam:11000011c7b5be5', 1, 'VTU 342', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":-1,\"modRearBumper\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,0],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"VTU 342 \",\"modDoorSpeaker\":-1,\"health\":979,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modTransmission\":2,\"modSpoilers\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"plateIndex\":1,\"modAPlate\":-1,\"wheelColor\":39,\"modTrimA\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"modTrunk\":-1,\"neonEnabled\":[1,1,1,1],\"modSuspension\":3,\"modSeats\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":39,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":3,\"windowTint\":1,\"neonColor\":[255,0,0],\"pearlescentColor\":2,\"modLivery\":-1,\"dirtLevel\":1.5367068052292,\"modWindows\":-1,\"modHorns\":0,\"modFrame\":-1,\"wheels\":0,\"modGrille\":-1,\"color1\":39,\"modTank\":-1,\"model\":683047626,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":5,\"modFrontBumper\":-1}'),
-('steam:11000010dd9c7d6', 1, 'VTZ 072', '{\"modTrimA\":-1,\"pearlescentColor\":132,\"modTrunk\":-1,\"modTrimB\":-1,\"color1\":132,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":-1,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":3,\"modTransmission\":2,\"plateIndex\":1,\"modFender\":-1,\"modVanityPlate\":-1,\"model\":1813965170,\"modAPlate\":-1,\"neonColor\":[255,255,255],\"modRoof\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"modFrontWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modSpoilers\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":958,\"modPlateHolder\":-1,\"modDashboard\":-1,\"modTurbo\":false,\"modSideSkirt\":-1,\"modDoorSpeaker\":-1,\"wheelColor\":156,\"modWindows\":-1,\"wheels\":7,\"plate\":\"VTZ 072 \",\"modBackWheels\":-1,\"modOrnaments\":-1,\"dirtLevel\":0.60124969482422,\"modSmokeEnabled\":1,\"modBrakes\":2,\"modAirFilter\":-1,\"color2\":132,\"modEngine\":3,\"modFrontBumper\":-1,\"modEngineBlock\":-1,\"modHorns\":42,\"modHydrolic\":-1,\"modSeats\":-1,\"modXenon\":1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modExhaust\":-1,\"modRightFender\":-1,\"modTank\":-1,\"modFrame\":-1,\"modAerials\":-1,\"modStruts\":-1}'),
-('steam:1100001325b7a9b', 1, 'VVK 985', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"VVK 985 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modGrille\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":6,\"modArmor\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modStruts\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"modDashboard\":-1,\"modArchCover\":-1,\"dirtLevel\":0.76293361186982,\"health\":855,\"color2\":0,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"color1\":0,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"wheelColor\":0,\"modHydrolic\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"model\":333512375,\"modHood\":-1,\"pearlescentColor\":0,\"modDial\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modFender\":-1,\"modSpeakers\":-1}'),
-('steam:1100001128ff308', 1, 'VWK 849', '{\"windowTint\":-1,\"modStruts\":-1,\"modFrontWheels\":-1,\"modFender\":-1,\"modLivery\":-1,\"dirtLevel\":6.0000138282776,\"tyreSmokeColor\":[255,255,255],\"modShifterLeavers\":-1,\"modRightFender\":-1,\"pearlescentColor\":38,\"modTank\":-1,\"modGrille\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"wheels\":6,\"modSmokeEnabled\":false,\"neonEnabled\":[false,false,false,false],\"modFrame\":-1,\"modAirFilter\":-1,\"modEngine\":-1,\"modTurbo\":false,\"modDial\":-1,\"modFrontBumper\":-1,\"modHydrolic\":-1,\"wheelColor\":156,\"modBrakes\":-1,\"modArchCover\":-1,\"modAPlate\":-1,\"modRoof\":-1,\"modTrunk\":-1,\"color1\":33,\"modSpeakers\":-1,\"modXenon\":false,\"modSpoilers\":-1,\"neonColor\":[255,0,255],\"modHorns\":-1,\"modRearBumper\":-1,\"plate\":\"VWK 849\",\"modTrimB\":-1,\"modVanityPlate\":-1,\"model\":-1523428744,\"health\":1000,\"modHood\":-1,\"modTransmission\":-1,\"modAerials\":-1,\"modSteeringWheel\":-1,\"modWindows\":-1,\"plateIndex\":0,\"color2\":5,\"modSeats\":-1,\"modEngineBlock\":-1,\"modOrnaments\":-1,\"modSuspension\":-1,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"modTrimA\":-1,\"modArmor\":-1}'),
-('steam:110000131d556ee', 1, 'VZP 104', '{\"color2\":0,\"modVanityPlate\":-1,\"pearlescentColor\":0,\"modStruts\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modArchCover\":-1,\"modXenon\":false,\"modEngine\":3,\"modArmor\":4,\"modTransmission\":2,\"modTrunk\":-1,\"tyreSmokeColor\":[255,255,255],\"modOrnaments\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":-1,\"modSpeakers\":-1,\"modRearBumper\":-1,\"model\":333512375,\"modTank\":-1,\"modSideSkirt\":-1,\"color1\":0,\"modAPlate\":-1,\"modSpoilers\":-1,\"plateIndex\":4,\"modRightFender\":-1,\"modShifterLeavers\":-1,\"modSteeringWheel\":-1,\"modSmokeEnabled\":1,\"neonEnabled\":[false,false,false,false],\"modLivery\":-1,\"plate\":\"VZP 104 \",\"modFrontWheels\":-1,\"modSeats\":-1,\"modPlateHolder\":-1,\"windowTint\":-1,\"modGrille\":-1,\"modSuspension\":3,\"modHydrolic\":-1,\"modDashboard\":-1,\"health\":434,\"modHood\":-1,\"modBrakes\":2,\"modFrontBumper\":-1,\"modRoof\":-1,\"dirtLevel\":6.8214192390442,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modBackWheels\":-1,\"modWindows\":-1,\"modTurbo\":false,\"modHorns\":-1,\"wheelColor\":0,\"modFrame\":-1,\"wheels\":6,\"modAirFilter\":-1,\"modTrimB\":-1,\"modEngineBlock\":-1,\"modDial\":-1}'),
-('steam:11000011c0b0ace', 1, 'WLW 186', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-1639924411,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modAPlate\":-1,\"modVanityPlate\":-1,\"wheels\":6,\"modEngine\":1,\"wheelColor\":156,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.5482040643692,\"modTrimB\":-1,\"modArchCover\":-1,\"modDial\":-1,\"modWindows\":-1,\"color1\":112,\"modTransmission\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modShifterLeavers\":-1,\"modXenon\":false,\"modRoof\":-1,\"modFender\":-1,\"modGrille\":-1,\"modSteeringWheel\":-1,\"color2\":112,\"windowTint\":-1,\"modSpoilers\":-1,\"modBrakes\":-1,\"plate\":\"WLW 186 \",\"modFrame\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"health\":56,\"modSeats\":-1,\"plateIndex\":4,\"modRearBumper\":-1,\"modDashboard\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":134}'),
-('steam:1100001325b7a9b', 1, 'WPY 305', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":15,\"modRightFender\":-1,\"neonColor\":[255,255,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"WPY 305 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":12,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":984,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":0,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":-1,\"modEngine\":3,\"color2\":12,\"windowTint\":1,\"modFrame\":-1,\"modArmor\":-1,\"model\":934775262,\"modArchCover\":-1,\"modFrontWheels\":15,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.4974670112133,\"wheelColor\":111,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":3,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000111593e00', 1, 'WQC 532', '{\"plate\":\"WQC 532 \",\"modTrimA\":-1,\"modTransmission\":-1,\"modXenon\":false,\"model\":934775262,\"modTrimB\":-1,\"wheelColor\":156,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"modArchCover\":-1,\"modEngine\":1,\"modTurbo\":false,\"modStruts\":-1,\"windowTint\":-1,\"modAerials\":-1,\"modRightFender\":-1,\"modHydrolic\":-1,\"modDial\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modGrille\":-1,\"color1\":15,\"plateIndex\":0,\"modRoof\":-1,\"modSuspension\":-1,\"modFrontWheels\":-1,\"modTank\":-1,\"wheels\":7,\"modPlateHolder\":-1,\"pearlescentColor\":15,\"modLivery\":-1,\"modFender\":-1,\"modSmokeEnabled\":1,\"modAPlate\":-1,\"health\":640,\"modHood\":-1,\"modShifterLeavers\":-1,\"modFrame\":-1,\"modSpoilers\":-1,\"color2\":107,\"modBrakes\":-1,\"modTrunk\":-1,\"modOrnaments\":-1,\"modDashboard\":-1,\"modSeats\":-1,\"modEngineBlock\":-1,\"tyreSmokeColor\":[255,255,255],\"neonColor\":[255,0,255],\"modSideSkirt\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modExhaust\":-1,\"modVanityPlate\":-1,\"neonEnabled\":[false,false,false,false],\"modFrontBumper\":-1,\"modBackWheels\":-1,\"modRearBumper\":-1,\"modSteeringWheel\":-1,\"dirtLevel\":15.0}'),
-('steam:110000111b71726', 1, 'WRC 789', '{\"modSeats\":-1,\"modEngine\":3,\"wheelColor\":128,\"modShifterLeavers\":-1,\"modRearBumper\":-1,\"modDashboard\":-1,\"modGrille\":-1,\"modTrimB\":-1,\"tyreSmokeColor\":[255,255,255],\"neonColor\":[255,0,255],\"modFender\":-1,\"modFrontWheels\":6,\"neonEnabled\":[false,false,false,false],\"modArmor\":4,\"modFrame\":0,\"modRoof\":1,\"plateIndex\":2,\"modLivery\":-1,\"modAirFilter\":-1,\"modXenon\":1,\"color1\":128,\"modBackWheels\":-1,\"modTank\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1,\"modSpoilers\":0,\"model\":-349601129,\"modHood\":-1,\"modSuspension\":-1,\"modArchCover\":-1,\"color2\":12,\"modWindows\":-1,\"modBrakes\":2,\"modAerials\":-1,\"modDial\":-1,\"modHorns\":-1,\"modSpeakers\":-1,\"modSideSkirt\":0,\"modTurbo\":false,\"wheels\":1,\"modAPlate\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modHydrolic\":-1,\"dirtLevel\":0.59740698337554,\"modVanityPlate\":-1,\"windowTint\":-1,\"modFrontBumper\":-1,\"modTrimA\":-1,\"health\":999,\"pearlescentColor\":111,\"modTrunk\":-1,\"modSmokeEnabled\":1,\"modPlateHolder\":-1,\"modTransmission\":2,\"plate\":\"WRC 789 \",\"modRightFender\":-1,\"modExhaust\":2,\"modStruts\":-1}'),
-('steam:1100001325b7a9b', 1, 'WSA 786', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modBackWheels\":-1,\"pearlescentColor\":134,\"modRightFender\":-1,\"neonColor\":[0,0,255],\"modHood\":-1,\"modDoorSpeaker\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"plate\":\"WSA 786 \",\"modSeats\":-1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modXenon\":1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":111,\"modRearBumper\":-1,\"modAPlate\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modTurbo\":false,\"health\":978,\"modTrimA\":-1,\"modStruts\":-1,\"wheels\":0,\"modOrnaments\":-1,\"neonEnabled\":[1,1,1,1],\"modHorns\":10,\"modEngine\":3,\"color2\":132,\"windowTint\":2,\"modFrame\":-1,\"modArmor\":4,\"model\":2046572318,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAerials\":-1,\"dirtLevel\":0.45480379462242,\"wheelColor\":156,\"modAirFilter\":-1,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modSuspension\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:1100001325b7a9b', 1, 'WUC 525', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"WUC 525 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modGrille\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":7,\"modArmor\":4,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modStruts\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":3,\"modDashboard\":-1,\"modArchCover\":-1,\"dirtLevel\":4.873342037201,\"health\":493,\"color2\":2,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":3,\"neonColor\":[255,0,255],\"modSuspension\":3,\"color1\":12,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":2,\"modSmokeEnabled\":1,\"modTurbo\":false,\"wheelColor\":156,\"modHydrolic\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"model\":1813965170,\"modHood\":-1,\"pearlescentColor\":7,\"modDial\":-1,\"modBackWheels\":-1,\"modBrakes\":2,\"modFender\":-1,\"modSpeakers\":-1}'),
-('society:police', 1, 'WVQ 037', '{\"modFender\":-1,\"color2\":2,\"modTank\":-1,\"modRoof\":-1,\"modArchCover\":-1,\"modOrnaments\":-1,\"modDoorSpeaker\":-1,\"modLivery\":-1,\"model\":-377465520,\"modFrontBumper\":-1,\"modAPlate\":-1,\"modAirFilter\":-1,\"plate\":\"WVQ 037\",\"wheels\":0,\"modPlateHolder\":-1,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modSideSkirt\":-1,\"modSmokeEnabled\":false,\"tyreSmokeColor\":[255,255,255],\"modSpoilers\":-1,\"neonEnabled\":[false,false,false,false],\"modTrunk\":-1,\"modVanityPlate\":-1,\"modFrame\":-1,\"modTurbo\":false,\"modTransmission\":-1,\"plateIndex\":0,\"modDashboard\":-1,\"modHorns\":-1,\"modXenon\":false,\"modHydrolic\":-1,\"modRearBumper\":-1,\"neonColor\":[255,0,255],\"windowTint\":-1,\"modDial\":-1,\"modGrille\":-1,\"modRightFender\":-1,\"modSeats\":-1,\"modArmor\":-1,\"modSuspension\":-1,\"health\":1000,\"modBrakes\":-1,\"modEngine\":-1,\"wheelColor\":156,\"color1\":2,\"modShifterLeavers\":-1,\"modExhaust\":-1,\"pearlescentColor\":3,\"modHood\":-1,\"modAerials\":-1,\"dirtLevel\":5.0000286102294,\"modBackWheels\":-1,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1,\"modTrimB\":-1,\"modWindows\":-1,\"modEngineBlock\":-1}'),
-('steam:110000119ac453f', 1, 'XDW 010', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"XDW 010 \",\"modSpoilers\":0,\"modWindows\":-1,\"modFrontWheels\":-1,\"modHorns\":45,\"modTrimA\":-1,\"wheelColor\":88,\"modFrame\":0,\"modTrunk\":4,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modArchCover\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":1,\"modXenon\":1,\"modSteeringWheel\":-1,\"modStruts\":-1,\"modArmor\":4,\"modTransmission\":2,\"modRightFender\":-1,\"modFrontBumper\":2,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modExhaust\":2,\"plateIndex\":2,\"modDial\":-1,\"neonEnabled\":[1,1,1,1],\"dirtLevel\":4.9098310470582,\"health\":932,\"color2\":25,\"modPlateHolder\":6,\"neonColor\":[0,0,255],\"modEngine\":3,\"modTurbo\":false,\"modSuspension\":0,\"modEngineBlock\":3,\"tyreSmokeColor\":[0,0,255],\"modGrille\":-1,\"modRearBumper\":-1,\"color1\":70,\"modSmokeEnabled\":1,\"wheels\":1,\"model\":223258115,\"modHydrolic\":-1,\"modFender\":-1,\"modLivery\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"modSpeakers\":-1,\"modDashboard\":-1,\"modBackWheels\":-1,\"modBrakes\":2,\"pearlescentColor\":132,\"modHood\":3}'),
-('steam:1100001325b7a9b', 1, 'XFH 251', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"XFH 251 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modGrille\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":6,\"modArmor\":-1,\"modFrontWheels\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modStruts\":-1,\"modDoorSpeaker\":-1,\"plateIndex\":4,\"modDashboard\":-1,\"modArchCover\":-1,\"dirtLevel\":0.07132226973772,\"health\":1000,\"color2\":224,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"color1\":192,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"wheelColor\":224,\"modHydrolic\":-1,\"modTrimB\":-1,\"modLivery\":-1,\"model\":1474015055,\"modHood\":-1,\"pearlescentColor\":0,\"modDial\":-1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modFender\":-1,\"modSpeakers\":-1}'),
-('steam:11000011c0b0ace', 1, 'XSF 128', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":3,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"pearlescentColor\":70,\"modArmor\":-1,\"modSteeringWheel\":-1,\"modHood\":-1,\"modSuspension\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modTurbo\":false,\"modSeats\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"modXenon\":false,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":73,\"modFrontWheels\":-1,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modOrnaments\":-1,\"health\":998,\"modTrimA\":-1,\"modBackWheels\":-1,\"wheels\":0,\"plate\":\"XSF 128 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":5,\"windowTint\":-1,\"wheelColor\":122,\"modStruts\":-1,\"model\":-910466076,\"modArchCover\":-1,\"modFrame\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modDoorSpeaker\":-1,\"dirtLevel\":6.3351292610168,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:11000011acec85a', 1, 'XTK 443', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-1215316954,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"health\":838,\"color2\":111,\"wheels\":0,\"modEngine\":1,\"wheelColor\":0,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":9.6312685012818,\"modEngineBlock\":-1,\"modXenon\":false,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"color1\":12,\"modTransmission\":2,\"modWindows\":-1,\"tyreSmokeColor\":[153,0,153],\"modSpoilers\":-1,\"modShifterLeavers\":-1,\"modHood\":-1,\"windowTint\":-1,\"modFender\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modDial\":-1,\"modTrimA\":-1,\"plate\":\"XTK 443 \",\"modRoof\":-1,\"modTank\":-1,\"modBrakes\":2,\"modSeats\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSpeakers\":-1,\"modHydrolic\":-1,\"modFrame\":-1,\"pearlescentColor\":81}'),
-('steam:11000011acec85a', 1, 'XTX 755', '{\"modTrimA\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modHood\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":333512375,\"neonColor\":[255,0,255],\"modAPlate\":-1,\"modAerials\":-1,\"windowTint\":-1,\"modVanityPlate\":-1,\"wheels\":6,\"modEngine\":1,\"wheelColor\":0,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":13.869178771972,\"modEngineBlock\":-1,\"modDial\":-1,\"modFrontWheels\":-1,\"modWindows\":-1,\"color1\":0,\"modTransmission\":-1,\"modDashboard\":-1,\"tyreSmokeColor\":[255,255,255],\"modFender\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"plate\":\"XTX 755 \",\"modArchCover\":-1,\"modSteeringWheel\":-1,\"modGrille\":-1,\"modBrakes\":-1,\"modSpoilers\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modFrame\":-1,\"modTank\":-1,\"health\":584,\"modBackWheels\":-1,\"modSeats\":-1,\"plateIndex\":4,\"modRearBumper\":-1,\"color2\":0,\"modHydrolic\":-1,\"modRoof\":-1,\"pearlescentColor\":0}'),
-('steam:110000108f366a1', 1, 'XXE 593', '{\"modFrame\":-1,\"modTrimB\":-1,\"modRearBumper\":-1,\"windowTint\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"modSideSkirt\":-1,\"health\":1000,\"pearlescentColor\":88,\"modTransmission\":-1,\"modEngineBlock\":-1,\"modAPlate\":-1,\"modSpeakers\":-1,\"modRoof\":-1,\"color2\":88,\"modLivery\":-1,\"modDial\":-1,\"modAerials\":-1,\"modPlateHolder\":-1,\"modFender\":-1,\"modRightFender\":-1,\"neonColor\":[255,0,255],\"modExhaust\":-1,\"modTank\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modBrakes\":-1,\"modFrontBumper\":-1,\"modDashboard\":-1,\"modArchCover\":-1,\"tyreSmokeColor\":[255,255,255],\"color1\":88,\"modHood\":-1,\"modSeats\":-1,\"neonEnabled\":[false,false,false,false],\"model\":1672195559,\"modSmokeEnabled\":false,\"modTurbo\":false,\"modStruts\":-1,\"plate\":\"XXE 593 \",\"modTrunk\":-1,\"modGrille\":-1,\"modHorns\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"modOrnaments\":-1,\"modTrimA\":-1,\"dirtLevel\":6.1651263237,\"modBackWheels\":-1,\"wheelColor\":156,\"wheels\":6,\"modXenon\":false,\"modSpoilers\":-1,\"modSuspension\":-1,\"modVanityPlate\":-1,\"modSteeringWheel\":-1,\"plateIndex\":3,\"modDoorSpeaker\":-1,\"modEngine\":-1}'),
-('society:ambulance', 1, 'XYE 419', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modTrunk\":-1,\"model\":2047166283,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"XYE 419 \",\"modDoorSpeaker\":-1,\"health\":1000,\"modSeats\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":false,\"modBrakes\":-1,\"plateIndex\":4,\"modAPlate\":-1,\"wheelColor\":128,\"modTrimA\":-1,\"modBackWheels\":-1,\"neonEnabled\":[false,false,false,false],\"modTank\":-1,\"modAirFilter\":-1,\"modSuspension\":-1,\"modTransmission\":-1,\"modStruts\":-1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"windowTint\":-1,\"color2\":32,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":-1,\"modOrnaments\":-1,\"modWindows\":-1,\"pearlescentColor\":0,\"neonColor\":[255,0,255],\"dirtLevel\":10.13579750061,\"modFrontBumper\":-1,\"modHorns\":-1,\"modTurbo\":false,\"wheels\":6,\"modGrille\":-1,\"color1\":32,\"modSpoilers\":-1,\"modSpeakers\":-1,\"modHood\":-1,\"modTrimB\":-1,\"modFrontWheels\":-1,\"modLivery\":-1}'),
-('steam:11000011acec85a', 1, 'YAA 644', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modHorns\":-1,\"model\":-121446169,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modRoof\":-1,\"color2\":0,\"wheels\":3,\"modEngine\":-1,\"wheelColor\":112,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":11.660574913024,\"health\":1000,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modWindows\":-1,\"color1\":1,\"modTransmission\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modBrakes\":-1,\"windowTint\":-1,\"modSpoilers\":-1,\"modSteeringWheel\":-1,\"modDashboard\":-1,\"modHood\":-1,\"modDial\":-1,\"modGrille\":-1,\"plate\":\"YAA 644 \",\"modFrame\":-1,\"modTank\":-1,\"modXenon\":false,\"modSpeakers\":-1,\"modBackWheels\":-1,\"plateIndex\":0,\"modRearBumper\":-1,\"modSeats\":-1,\"modHydrolic\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":18}'),
-('steam:11000010dd9c7d6', 1, 'YBX 040', '{\"modTrimA\":-1,\"pearlescentColor\":132,\"modTrunk\":-1,\"modTrimB\":-1,\"color1\":132,\"modSteeringWheel\":-1,\"modLivery\":-1,\"modHood\":-1,\"modDial\":-1,\"modArmor\":4,\"windowTint\":1,\"modSuspension\":2,\"modTransmission\":2,\"plateIndex\":0,\"modFender\":-1,\"modVanityPlate\":-1,\"model\":1165853178,\"modAPlate\":-1,\"neonColor\":[255,255,255],\"modRoof\":-1,\"modArchCover\":-1,\"modRearBumper\":-1,\"modFrontWheels\":-1,\"neonEnabled\":[1,1,1,1],\"modSpoilers\":-1,\"modGrille\":-1,\"modShifterLeavers\":-1,\"health\":968,\"modPlateHolder\":-1,\"modDashboard\":-1,\"modTurbo\":false,\"modSideSkirt\":-1,\"modDoorSpeaker\":-1,\"wheelColor\":5,\"modWindows\":-1,\"wheels\":7,\"plate\":\"YBX 040 \",\"modBackWheels\":-1,\"modOrnaments\":-1,\"dirtLevel\":9.1553478240966,\"modSmokeEnabled\":1,\"modBrakes\":2,\"modAirFilter\":-1,\"color2\":3,\"modEngine\":3,\"modFrontBumper\":-1,\"modEngineBlock\":-1,\"modHorns\":39,\"modHydrolic\":-1,\"modSeats\":-1,\"modXenon\":1,\"modSpeakers\":-1,\"tyreSmokeColor\":[255,255,255],\"modExhaust\":-1,\"modRightFender\":-1,\"modTank\":-1,\"modFrame\":-1,\"modAerials\":-1,\"modStruts\":-1}'),
-('steam:1100001325b7a9b', 1, 'YCO 367', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":0,\"modTrimB\":-1,\"modRightFender\":0,\"modPlateHolder\":-1,\"neonEnabled\":[1,1,1,1],\"modExhaust\":-1,\"modSideSkirt\":3,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":-1432034260,\"neonColor\":[0,255,0],\"modEngineBlock\":-1,\"modAerials\":-1,\"modDial\":-1,\"color2\":142,\"wheels\":0,\"modEngine\":3,\"wheelColor\":111,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":0.087131075561046,\"modTrimA\":-1,\"modFrontWheels\":2,\"modSpeakers\":-1,\"modWindows\":-1,\"color1\":142,\"modTransmission\":2,\"modRoof\":0,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":1,\"windowTint\":1,\"modHood\":4,\"modSteeringWheel\":-1,\"modFender\":-1,\"modHorns\":-1,\"modSpoilers\":0,\"health\":993,\"plate\":\"YCO 367 \",\"modFrame\":0,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":2,\"modSeats\":-1,\"plateIndex\":1,\"modRearBumper\":1,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":88}'),
-('steam:1100001167d265e', 0, 'YDD 087', '{\"modDashboard\":-1,\"wheels\":7,\"modSpoilers\":-1,\"modVanityPlate\":-1,\"modRoof\":-1,\"modAPlate\":-1,\"modSuspension\":-1,\"modSeats\":-1,\"modDoorSpeaker\":-1,\"modArchCover\":-1,\"tyreSmokeColor\":[255,255,255],\"modXenon\":false,\"modSideSkirt\":-1,\"modWindows\":-1,\"modBackWheels\":-1,\"model\":2123327359,\"modTurbo\":false,\"modStruts\":-1,\"modTransmission\":-1,\"modRearBumper\":-1,\"modAirFilter\":-1,\"modTrimA\":-1,\"color1\":5,\"modEngineBlock\":-1,\"modTrunk\":-1,\"dirtLevel\":7.0000400543213,\"modShifterLeavers\":-1,\"modFrontBumper\":-1,\"modRightFender\":-1,\"plate\":\"YDD 087\",\"modExhaust\":-1,\"modSmokeEnabled\":false,\"color2\":9,\"modHydrolic\":-1,\"health\":1000,\"modSpeakers\":-1,\"plateIndex\":0,\"modArmor\":-1,\"neonColor\":[255,0,255],\"modAerials\":-1,\"modTank\":-1,\"modEngine\":-1,\"pearlescentColor\":5,\"modOrnaments\":-1,\"modFrontWheels\":-1,\"modGrille\":-1,\"modDial\":-1,\"modLivery\":-1,\"windowTint\":-1,\"modFender\":-1,\"modHood\":-1,\"modBrakes\":-1,\"modHorns\":-1,\"modSteeringWheel\":-1,\"modFrame\":-1,\"wheelColor\":0,\"modPlateHolder\":-1,\"modTrimB\":-1,\"neonEnabled\":[false,false,false,false]}'),
-('steam:1100001179c3bb7', 1, 'YEI 395', '{\"modArmor\":4,\"modExhaust\":-1,\"modAirFilter\":-1,\"wheels\":7,\"modSideSkirt\":-1,\"color2\":145,\"modBrakes\":2,\"color1\":145,\"modFrontWheels\":2,\"modRightFender\":-1,\"modHood\":-1,\"modDial\":-1,\"modOrnaments\":-1,\"modTrunk\":-1,\"modWindows\":-1,\"modTrimB\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"dirtLevel\":12.57441329956,\"modArchCover\":-1,\"plate\":\"YEI 395 \",\"model\":-685276541,\"modTransmission\":2,\"neonEnabled\":[false,false,false,false],\"health\":886,\"neonColor\":[255,0,255],\"modRoof\":-1,\"tyreSmokeColor\":[255,255,255],\"modDoorSpeaker\":-1,\"modStruts\":-1,\"modXenon\":1,\"modVanityPlate\":-1,\"windowTint\":1,\"modHorns\":-1,\"modShifterLeavers\":-1,\"modEngine\":3,\"modFrame\":-1,\"modSpeakers\":-1,\"modAPlate\":-1,\"modEngineBlock\":-1,\"modFender\":-1,\"modLivery\":-1,\"modDashboard\":-1,\"modTrimA\":-1,\"modTurbo\":false,\"modPlateHolder\":-1,\"modAerials\":-1,\"modSpoilers\":-1,\"modRearBumper\":-1,\"wheelColor\":0,\"modSmokeEnabled\":1,\"modSeats\":-1,\"modGrille\":-1,\"modFrontBumper\":-1,\"plateIndex\":0,\"modSuspension\":3,\"modTank\":-1,\"pearlescentColor\":111,\"modSteeringWheel\":-1}'),
-('steam:110000110c6f75a', 1, 'YLI 710', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,255,255],\"modPlateHolder\":-1,\"plateIndex\":4,\"modVanityPlate\":-1,\"modTurbo\":false,\"pearlescentColor\":0,\"modArmor\":-1,\"modDoorSpeaker\":-1,\"modHood\":-1,\"modOrnaments\":-1,\"modWindows\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"modSeats\":-1,\"modRightFender\":-1,\"modEngineBlock\":-1,\"modRearBumper\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"color1\":32,\"wheelColor\":160,\"modAirFilter\":-1,\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":-1,\"modStruts\":-1,\"health\":0,\"modTrimA\":-1,\"modBackWheels\":-1,\"wheels\":6,\"plate\":\"YLI 710 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":-1,\"color2\":32,\"windowTint\":-1,\"neonColor\":[255,0,255],\"modSteeringWheel\":-1,\"model\":2047166283,\"modArchCover\":-1,\"modFrontWheels\":-1,\"modAPlate\":-1,\"modDial\":-1,\"modRoof\":-1,\"modFrame\":-1,\"dirtLevel\":3.99605178833,\"modSuspension\":-1,\"modTrimB\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000119ac453f', 1, 'YLM 919', '{\"modAPlate\":-1,\"dirtLevel\":9.6234788894654,\"color2\":8,\"plate\":\"YLM 919 \",\"modArmor\":4,\"modBackWheels\":-1,\"modHood\":-1,\"color1\":132,\"modBrakes\":2,\"model\":2046572318,\"modWindows\":-1,\"modArchCover\":-1,\"modGrille\":-1,\"modDashboard\":-1,\"modSpeakers\":-1,\"wheels\":7,\"modTrimA\":-1,\"modFender\":-1,\"modTurbo\":false,\"modStruts\":-1,\"modSideSkirt\":-1,\"modTransmission\":2,\"modRoof\":-1,\"modHydrolic\":-1,\"modLivery\":-1,\"modSuspension\":3,\"modSeats\":-1,\"modTrimB\":-1,\"modPlateHolder\":-1,\"modEngine\":3,\"modXenon\":false,\"modExhaust\":-1,\"modFrame\":-1,\"modDial\":-1,\"modTrunk\":-1,\"modFrontBumper\":-1,\"modSteeringWheel\":-1,\"modSpoilers\":-1,\"modRearBumper\":-1,\"plateIndex\":0,\"modRightFender\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,255,255],\"modHorns\":-1,\"modOrnaments\":-1,\"modVanityPlate\":-1,\"pearlescentColor\":134,\"modAerials\":-1,\"health\":329,\"modShifterLeavers\":-1,\"windowTint\":1,\"modDoorSpeaker\":-1,\"modSmokeEnabled\":1,\"modFrontWheels\":10,\"modEngineBlock\":-1,\"wheelColor\":132,\"neonEnabled\":[false,false,false,false],\"modAirFilter\":-1,\"neonColor\":[255,0,255]}'),
-('steam:11000011acec85a', 1, 'YMV 240', '{\"modHydrolic\":-1,\"modTank\":-1,\"modDial\":-1,\"modSmokeEnabled\":false,\"plate\":\"YMV 240\",\"modLivery\":-1,\"modSideSkirt\":-1,\"modAirFilter\":-1,\"neonEnabled\":[false,false,false,false],\"modSteeringWheel\":-1,\"modTrimB\":-1,\"modSeats\":-1,\"dirtLevel\":5.0000076293946,\"modRoof\":-1,\"modSpeakers\":-1,\"plateIndex\":4,\"modRightFender\":-1,\"modVanityPlate\":-1,\"modTransmission\":-1,\"modWindows\":-1,\"model\":1131912276,\"modAerials\":-1,\"modBrakes\":-1,\"wheelColor\":156,\"modEngine\":-1,\"modBackWheels\":-1,\"modSpoilers\":-1,\"pearlescentColor\":38,\"modAPlate\":-1,\"modExhaust\":-1,\"modHorns\":-1,\"modSuspension\":-1,\"color2\":0,\"modFender\":-1,\"modRearBumper\":-1,\"modShifterLeavers\":-1,\"modStruts\":-1,\"modHood\":-1,\"modTurbo\":false,\"tyreSmokeColor\":[255,255,255],\"modDashboard\":-1,\"color1\":29,\"modArchCover\":-1,\"modTrunk\":-1,\"modArmor\":-1,\"modGrille\":-1,\"windowTint\":-1,\"modOrnaments\":-1,\"modEngineBlock\":-1,\"modTrimA\":-1,\"neonColor\":[255,0,255],\"modFrontWheels\":-1,\"health\":1000,\"modFrontBumper\":-1,\"modXenon\":false,\"wheels\":6,\"modPlateHolder\":-1,\"modFrame\":-1,\"modDoorSpeaker\":-1}'),
-('steam:11000011c0b0ace', 1, 'YNG 641', '{\"modBackWheels\":-1,\"modHydrolic\":-1,\"modAerials\":-1,\"dirtLevel\":4.0000076293946,\"modFender\":-1,\"modStruts\":-1,\"modTransmission\":-1,\"modAirFilter\":-1,\"modSuspension\":-1,\"modSteeringWheel\":-1,\"modEngine\":-1,\"modAPlate\":-1,\"modRightFender\":-1,\"modSmokeEnabled\":false,\"modTurbo\":false,\"color1\":92,\"neonEnabled\":[false,false,false,false],\"modFrame\":-1,\"modShifterLeavers\":-1,\"modHorns\":-1,\"color2\":111,\"modSeats\":-1,\"model\":-186537451,\"modDoorSpeaker\":-1,\"modDial\":-1,\"modTank\":-1,\"modFrontBumper\":-1,\"modGrille\":-1,\"modVanityPlate\":-1,\"modArmor\":-1,\"wheelColor\":156,\"health\":1000,\"modTrimB\":-1,\"modFrontWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"modSideSkirt\":-1,\"modWindows\":-1,\"modRearBumper\":-1,\"pearlescentColor\":3,\"modHood\":-1,\"modBrakes\":-1,\"modExhaust\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modDashboard\":-1,\"modLivery\":-1,\"plateIndex\":0,\"plate\":\"YNG 641\",\"modOrnaments\":-1,\"modSpeakers\":-1,\"modTrimA\":-1,\"wheels\":6,\"modPlateHolder\":-1,\"neonColor\":[255,0,255],\"modTrunk\":-1,\"modSpoilers\":-1,\"modXenon\":false}'),
-('steam:11000010d6c30cb', 1, 'ZBH 502', '{\"modSmokeEnabled\":1,\"modExhaust\":-1,\"modFender\":-1,\"tyreSmokeColor\":[255,0,0],\"modPlateHolder\":-1,\"plateIndex\":1,\"modVanityPlate\":-1,\"modRearBumper\":-1,\"modStruts\":-1,\"modArmor\":4,\"modAerials\":-1,\"modHood\":-1,\"modTurbo\":false,\"modWindows\":-1,\"modHydrolic\":-1,\"modAPlate\":-1,\"modSeats\":-1,\"modFrame\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"pearlescentColor\":70,\"modBackWheels\":-1,\"color1\":43,\"modFrontWheels\":-1,\"neonColor\":[255,0,255],\"modFrontBumper\":-1,\"modTrunk\":-1,\"modBrakes\":2,\"modDashboard\":-1,\"health\":878,\"modTrimA\":-1,\"modGrille\":-1,\"wheels\":0,\"plate\":\"ZBH 502 \",\"neonEnabled\":[false,false,false,false],\"modHorns\":-1,\"modEngine\":3,\"color2\":43,\"windowTint\":1,\"modXenon\":false,\"modSteeringWheel\":-1,\"model\":-910466076,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modTrimB\":-1,\"modDial\":-1,\"modRoof\":-1,\"modAirFilter\":-1,\"dirtLevel\":2.2685372829438,\"wheelColor\":12,\"modSuspension\":3,\"modSpoilers\":-1,\"modTransmission\":2,\"modTank\":-1,\"modSpeakers\":-1,\"modShifterLeavers\":-1,\"modOrnaments\":-1,\"modLivery\":-1,\"modSideSkirt\":-1}'),
-('steam:110000111593e00', 1, 'ZEE 091', '{\"plate\":\"ZEE 091 \",\"modTrimA\":-1,\"modTransmission\":-1,\"modXenon\":false,\"model\":1165853178,\"wheels\":7,\"wheelColor\":5,\"modSpeakers\":-1,\"modDoorSpeaker\":-1,\"windowTint\":-1,\"modEngine\":1,\"modTurbo\":false,\"modStruts\":-1,\"modSideSkirt\":-1,\"health\":530,\"modRightFender\":-1,\"modVanityPlate\":-1,\"modGrille\":-1,\"modArmor\":-1,\"modWindows\":-1,\"modFrontWheels\":-1,\"color1\":12,\"modSeats\":-1,\"modBrakes\":-1,\"modSuspension\":-1,\"plateIndex\":0,\"modTank\":-1,\"modRoof\":-1,\"modPlateHolder\":-1,\"pearlescentColor\":81,\"modLivery\":-1,\"modFender\":-1,\"modAerials\":-1,\"modAPlate\":-1,\"modHydrolic\":-1,\"modHood\":-1,\"modShifterLeavers\":-1,\"neonColor\":[255,0,255],\"modSpoilers\":-1,\"color2\":12,\"modOrnaments\":-1,\"modTrunk\":-1,\"modSmokeEnabled\":1,\"modDashboard\":-1,\"modArchCover\":-1,\"modEngineBlock\":-1,\"modFrame\":-1,\"tyreSmokeColor\":[255,255,255],\"modDial\":-1,\"modAirFilter\":-1,\"modHorns\":-1,\"modExhaust\":-1,\"modTrimB\":-1,\"neonEnabled\":[false,false,false,false],\"modFrontBumper\":-1,\"modBackWheels\":-1,\"modRearBumper\":-1,\"modSteeringWheel\":-1,\"dirtLevel\":1.999007821083}'),
-('steam:110000116a28200', 1, 'ZFT 524', '{\"modRightFender\":-1,\"modFrame\":-1,\"modExhaust\":-1,\"modTrunk\":-1,\"modHood\":-1,\"tyreSmokeColor\":[255,255,255],\"modAerials\":-1,\"modXenon\":false,\"plate\":\"ZFT 524 \",\"modDoorSpeaker\":-1,\"health\":767,\"modVanityPlate\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":-1,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modSpoilers\":-1,\"modTransmission\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"modRearBumper\":-1,\"modAPlate\":-1,\"wheelColor\":0,\"modTrimA\":-1,\"modBackWheels\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"neonEnabled\":[false,false,false,false],\"modSuspension\":-1,\"modTank\":-1,\"plateIndex\":4,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"modAirFilter\":-1,\"color2\":0,\"modPlateHolder\":-1,\"modSideSkirt\":-1,\"modEngine\":1,\"windowTint\":-1,\"model\":333512375,\"pearlescentColor\":0,\"modWindows\":-1,\"dirtLevel\":8.338677406311,\"modSeats\":-1,\"modHorns\":-1,\"modFrontBumper\":-1,\"wheels\":6,\"modGrille\":-1,\"color1\":158,\"modTurbo\":false,\"modStruts\":-1,\"modSpeakers\":-1,\"modTrimB\":-1,\"modFrontWheels\":-1,\"modLivery\":-1}'),
-('steam:1100001325b7a9b', 1, 'ZFX 161', '{\"modBrakes\":-1,\"modXenon\":false,\"modLivery\":-1,\"modRearBumper\":-1,\"modRoof\":-1,\"modTurbo\":false,\"modFrontBumper\":-1,\"modStruts\":-1,\"modTrunk\":-1,\"modDial\":-1,\"plate\":\"ZFX 161\",\"plateIndex\":4,\"modSideSkirt\":-1,\"modBackWheels\":-1,\"tyreSmokeColor\":[255,255,255],\"wheelColor\":0,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modTransmission\":-1,\"modEngine\":-1,\"modSmokeEnabled\":false,\"wheels\":0,\"health\":1000,\"modShifterLeavers\":-1,\"modFrontWheels\":-1,\"modSuspension\":-1,\"modTank\":-1,\"neonColor\":[255,0,255],\"modExhaust\":-1,\"pearlescentColor\":6,\"modDashboard\":-1,\"neonEnabled\":[false,false,false,false],\"modSeats\":-1,\"modPlateHolder\":-1,\"modAirFilter\":-1,\"modSpeakers\":-1,\"modHorns\":-1,\"modEngineBlock\":-1,\"modRightFender\":-1,\"modAPlate\":-1,\"modSpoilers\":-1,\"modFrame\":-1,\"modSteeringWheel\":-1,\"modAerials\":-1,\"color2\":0,\"modWindows\":-1,\"modTrimA\":-1,\"dirtLevel\":7.0000057220458,\"modTrimB\":-1,\"model\":-1752116803,\"modHood\":-1,\"windowTint\":-1,\"modGrille\":-1,\"modArmor\":-1,\"modFender\":-1,\"color1\":64,\"modArchCover\":-1,\"modDoorSpeaker\":-1,\"modOrnaments\":-1}'),
-('steam:1100001325b7a9b', 1, 'ZGR 580', '{\"modArchCover\":-1,\"modStruts\":-1,\"modFrontBumper\":-1,\"modTrimB\":-1,\"modRightFender\":-1,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modExhaust\":-1,\"modSideSkirt\":-1,\"modTurbo\":false,\"modOrnaments\":-1,\"modAirFilter\":-1,\"modLivery\":-1,\"modSuspension\":-1,\"modTrunk\":-1,\"modDoorSpeaker\":-1,\"modDashboard\":-1,\"model\":-750481609,\"neonColor\":[255,0,255],\"modEngineBlock\":-1,\"modAerials\":-1,\"modDial\":-1,\"color2\":111,\"wheels\":7,\"modEngine\":-1,\"wheelColor\":224,\"modArmor\":-1,\"modSmokeEnabled\":1,\"dirtLevel\":3.5619468688964,\"modTrimA\":-1,\"modFrontWheels\":-1,\"modSpeakers\":-1,\"modWindows\":-1,\"color1\":32,\"modTransmission\":-1,\"modRoof\":-1,\"tyreSmokeColor\":[255,255,255],\"modAPlate\":-1,\"modShifterLeavers\":-1,\"modXenon\":false,\"windowTint\":-1,\"modHood\":-1,\"modSteeringWheel\":-1,\"modFender\":-1,\"modHorns\":-1,\"modSpoilers\":-1,\"health\":764,\"plate\":\"ZGR 580 \",\"modFrame\":-1,\"modTank\":-1,\"modGrille\":-1,\"modBrakes\":-1,\"modSeats\":-1,\"plateIndex\":4,\"modRearBumper\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1,\"modBackWheels\":-1,\"pearlescentColor\":0}'),
-('steam:11000010ed15b6b', 1, 'ZKI 974', '{\"modStruts\":-1,\"modHorns\":-1,\"modEngine\":3,\"modArchCover\":-1,\"modTrimA\":-1,\"modBrakes\":2,\"modArmor\":-1,\"modDial\":-1,\"color2\":0,\"plateIndex\":4,\"modAirFilter\":-1,\"modShifterLeavers\":-1,\"modHydrolic\":-1,\"modOrnaments\":-1,\"pearlescentColor\":6,\"modSideSkirt\":-1,\"modTank\":-1,\"modSteeringWheel\":-1,\"modRightFender\":-1,\"modDoorSpeaker\":-1,\"modFender\":-1,\"model\":-497997000,\"neonEnabled\":[false,false,false,false],\"modVanityPlate\":-1,\"modAPlate\":-1,\"modEngineBlock\":-1,\"modWindows\":-1,\"modDashboard\":-1,\"health\":953,\"windowTint\":1,\"modLivery\":-1,\"modSuspension\":-1,\"color1\":12,\"modSpoilers\":-1,\"modTurbo\":false,\"modAerials\":-1,\"tyreSmokeColor\":[41,36,33],\"modSpeakers\":-1,\"modGrille\":-1,\"modSmokeEnabled\":1,\"plate\":\"ZKI 974 \",\"modRearBumper\":-1,\"modSeats\":-1,\"wheels\":0,\"modFrame\":-1,\"modTrunk\":-1,\"modBackWheels\":-1,\"modFrontBumper\":-1,\"modTransmission\":-1,\"modHood\":-1,\"neonColor\":[255,0,255],\"modExhaust\":-1,\"modPlateHolder\":-1,\"dirtLevel\":1.0469819307328,\"modTrimB\":-1,\"modRoof\":-1,\"modFrontWheels\":-1,\"modXenon\":false,\"wheelColor\":156}'),
-('steam:1100001325b7a9b', 1, 'ZNO 773', '{\"modRightFender\":-1,\"modTurbo\":false,\"modExhaust\":1,\"modRearBumper\":-1,\"modTank\":-1,\"tyreSmokeColor\":[41,36,33],\"modAerials\":-1,\"modXenon\":1,\"plate\":\"ZNO 773 \",\"modDoorSpeaker\":-1,\"model\":-1372848492,\"modSeats\":-1,\"modDashboard\":-1,\"modFender\":-1,\"modHydrolic\":-1,\"modArmor\":4,\"modDial\":-1,\"modArchCover\":-1,\"modRoof\":-1,\"modStruts\":-1,\"modVanityPlate\":-1,\"modEngineBlock\":-1,\"modSmokeEnabled\":1,\"modBrakes\":2,\"health\":938,\"modAPlate\":-1,\"wheelColor\":12,\"modTrimA\":-1,\"modFrame\":0,\"modBackWheels\":-1,\"modOrnaments\":-1,\"neonColor\":[255,0,255],\"modSuspension\":3,\"modTrunk\":-1,\"plateIndex\":1,\"modSteeringWheel\":-1,\"modShifterLeavers\":-1,\"neonEnabled\":[false,false,false,false],\"color2\":12,\"modPlateHolder\":-1,\"modSideSkirt\":2,\"modEngine\":3,\"windowTint\":1,\"modAirFilter\":-1,\"pearlescentColor\":111,\"modLivery\":-1,\"dirtLevel\":3.4706122875214,\"modSpoilers\":3,\"modHorns\":-1,\"modWindows\":-1,\"wheels\":3,\"modGrille\":-1,\"color1\":12,\"modTransmission\":2,\"modHood\":-1,\"modTrimB\":-1,\"modSpeakers\":-1,\"modFrontWheels\":1,\"modFrontBumper\":2}'),
-('steam:110000119ac453f', 1, 'ZQG 377', '{\"modOrnaments\":-1,\"modAPlate\":-1,\"plate\":\"ZQG 377 \",\"modSpoilers\":-1,\"modWindows\":-1,\"modEngineBlock\":-1,\"modHorns\":-1,\"modTrimA\":-1,\"modFender\":-1,\"modFrame\":-1,\"modTrunk\":-1,\"modTank\":-1,\"modShifterLeavers\":-1,\"modSideSkirt\":-1,\"modVanityPlate\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"modRoof\":-1,\"windowTint\":-1,\"modXenon\":false,\"modSteeringWheel\":-1,\"wheels\":6,\"modArmor\":-1,\"modGrille\":-1,\"modRightFender\":-1,\"modFrontBumper\":-1,\"modAerials\":-1,\"modDoorSpeaker\":-1,\"modFrontWheels\":-1,\"plateIndex\":0,\"modTrimB\":-1,\"model\":86520421,\"dirtLevel\":1.1415424346924,\"health\":577,\"color2\":38,\"modPlateHolder\":-1,\"neonEnabled\":[false,false,false,false],\"modEngine\":-1,\"neonColor\":[255,0,255],\"modSuspension\":-1,\"modStruts\":-1,\"tyreSmokeColor\":[255,255,255],\"modSeats\":-1,\"modRearBumper\":-1,\"modTransmission\":-1,\"modSmokeEnabled\":1,\"modTurbo\":false,\"modDial\":-1,\"modHydrolic\":-1,\"pearlescentColor\":5,\"modLivery\":-1,\"modDashboard\":-1,\"wheelColor\":156,\"modSpeakers\":-1,\"color1\":1,\"modBackWheels\":-1,\"modBrakes\":-1,\"modArchCover\":-1,\"modHood\":-1}'),
-('steam:11000013613fa78', 1, 'ZSO 716', '{\"plateIndex\":0,\"color1\":15,\"modBackWheels\":-1,\"modTrunk\":-1,\"modXenon\":1,\"modSteeringWheel\":-1,\"modEngineBlock\":-1,\"modShifterLeavers\":-1,\"modTrimA\":-1,\"modTank\":-1,\"tyreSmokeColor\":[255,0,0],\"modAPlate\":-1,\"modAerials\":-1,\"modLivery\":-1,\"modDial\":-1,\"modSpeakers\":-1,\"model\":-1848994066,\"modSpoilers\":4,\"neonColor\":[255,0,0],\"modTurbo\":false,\"modFrame\":-1,\"modPlateHolder\":-1,\"color2\":28,\"modDashboard\":-1,\"modGrille\":-1,\"modSuspension\":2,\"modSmokeEnabled\":1,\"modAirFilter\":-1,\"modRearBumper\":1,\"health\":1000,\"pearlescentColor\":28,\"modTrimB\":-1,\"modArmor\":4,\"modEngine\":3,\"plate\":\"ZSO 716 \",\"modFender\":-1,\"modHood\":0,\"modDoorSpeaker\":-1,\"neonEnabled\":[1,1,1,1],\"modSeats\":-1,\"wheels\":0,\"modTransmission\":-1,\"modFrontBumper\":2,\"modExhaust\":-1,\"modOrnaments\":-1,\"modStruts\":-1,\"windowTint\":1,\"wheelColor\":28,\"modArchCover\":-1,\"modWindows\":-1,\"modRoof\":-1,\"modRightFender\":-1,\"modHorns\":40,\"modBrakes\":2,\"dirtLevel\":0.66432166099548,\"modSideSkirt\":2,\"modFrontWheels\":-1,\"modVanityPlate\":-1,\"modHydrolic\":-1}'),
-('steam:11000013491dae7', 1, 'ZWJ 983', '{\"modSideSkirt\":-1,\"dirtLevel\":8.427264213562,\"modHorns\":-1,\"modGrille\":-1,\"plate\":\"ZWJ 983 \",\"modTank\":-1,\"modSpoilers\":-1,\"modAPlate\":-1,\"plateIndex\":3,\"modDashboard\":-1,\"modOrnaments\":-1,\"pearlescentColor\":111,\"wheels\":0,\"modTrimB\":-1,\"modFrontBumper\":-1,\"modSeats\":-1,\"modHood\":-1,\"modTransmission\":-1,\"modShifterLeavers\":-1,\"modStruts\":-1,\"modExhaust\":-1,\"modAirFilter\":-1,\"color2\":4,\"modSmokeEnabled\":1,\"modBrakes\":-1,\"windowTint\":-1,\"modHydrolic\":-1,\"modSpeakers\":-1,\"modSuspension\":-1,\"neonColor\":[255,0,255],\"modFender\":-1,\"modPlateHolder\":-1,\"health\":976,\"modTrunk\":-1,\"modLivery\":-1,\"modRearBumper\":-1,\"modBackWheels\":-1,\"wheelColor\":156,\"modEngineBlock\":-1,\"neonEnabled\":[false,false,false,false],\"modWindows\":-1,\"model\":-1372848492,\"modXenon\":false,\"modSteeringWheel\":-1,\"color1\":4,\"modVanityPlate\":-1,\"modDoorSpeaker\":-1,\"modTrimA\":-1,\"modRoof\":-1,\"modRightFender\":-1,\"modDial\":-1,\"modTurbo\":false,\"modAerials\":-1,\"modEngine\":1,\"tyreSmokeColor\":[255,255,255],\"modFrontWheels\":-1,\"modArchCover\":-1,\"modFrame\":-1,\"modArmor\":-1}');
+  `owner` varchar(22) COLLATE utf8_persian_ci NOT NULL,
+  `plate` varchar(12) COLLATE utf8_persian_ci NOT NULL,
+  `vehicle` longtext COLLATE utf8_persian_ci,
+  `type` varchar(20) COLLATE utf8_persian_ci NOT NULL DEFAULT 'car',
+  `job` varchar(20) COLLATE utf8_persian_ci DEFAULT NULL,
+  `stored` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 -- --------------------------------------------------------
 
@@ -2594,7 +2407,7 @@ CREATE TABLE `phone_app_chat` (
 --
 
 INSERT INTO `phone_app_chat` (`id`, `channel`, `message`, `time`) VALUES
-(28, 'cartel', 'bonjour tout le monde', '2018-11-18 17:00:57');
+(28, 'cartel', 'Salam be hame', '2018-11-18 17:00:57');
 
 -- --------------------------------------------------------
 
@@ -2817,7 +2630,23 @@ INSERT INTO `phone_calls` (`id`, `owner`, `num`, `incoming`, `time`, `accepts`) 
 (343, '562-3039', '873-7104', 1, '2019-03-13 22:07:18', 0),
 (344, '562-3039', '440-5316', 1, '2019-03-13 22:07:47', 0),
 (345, '531-3502', '771-1741', 1, '2019-03-14 23:18:35', 0),
-(346, '771-1741', '531-3502', 0, '2019-03-14 23:18:35', 0);
+(346, '771-1741', '531-3502', 0, '2019-03-14 23:18:35', 0),
+(347, '562-3039', '440-5316', 1, '2019-03-15 05:22:39', 0),
+(348, '771-1741', '531-3502', 1, '2019-03-15 05:39:22', 0),
+(349, '531-3502', '771-1741', 0, '2019-03-15 05:39:22', 0),
+(350, '531-3502', '771-1741', 0, '2019-03-15 05:40:32', 1),
+(351, '771-1741', '531-3502', 1, '2019-03-15 05:40:32', 1),
+(352, '906-8228', '021-1111', 1, '2019-03-16 11:18:26', 1),
+(353, '021-1111', '906-8228', 0, '2019-03-16 11:18:26', 1),
+(354, '771-1741', '555-0142', 1, '2019-03-16 13:53:29', 0),
+(355, '827-5849', '906-8228', 1, '2019-03-16 14:01:00', 1),
+(356, '906-8228', '827-5849', 0, '2019-03-16 14:01:00', 1),
+(357, '827-5849', '021-1111', 0, '2019-03-16 17:24:42', 0),
+(358, '021-1111', '827-5849', 1, '2019-03-16 17:24:42', 0),
+(359, '827-5849', '021-1111', 0, '2019-03-16 17:24:53', 1),
+(360, '021-1111', '827-5849', 1, '2019-03-16 17:24:53', 1),
+(361, '906-8228', '8275849', 1, '2019-03-20 06:04:36', 0),
+(362, '113-0914', '718-2503', 1, '2019-03-21 04:26:47', 0);
 
 -- --------------------------------------------------------
 
@@ -2840,6 +2669,275 @@ CREATE TABLE `phone_messages` (
 --
 
 INSERT INTO `phone_messages` (`id`, `transmitter`, `receiver`, `message`, `time`, `isRead`, `owner`) VALUES
+(4613, 'ambulance', '113-0914', 'GPS: 3.6623697280884, -1127.8010253906', '2019-03-21 04:48:57', 0, 0),
+(4612, 'ambulance', '113-0914', 'GPS: 3.6623697280884, -1127.8010253906', '2019-03-21 04:48:57', 0, 0),
+(4611, 'ambulance', '113-0914', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-21 04:48:57', 0, 0),
+(4610, 'ambulance', '113-0914', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-21 04:48:57', 0, 0),
+(4609, 'ambulance', '113-0914', 'GPS: 403.77407836914, -1006.7990722656', '2019-03-21 04:31:08', 0, 0),
+(4608, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:31:08', 0, 0),
+(4607, 'ambulance', '113-0914', 'GPS: 403.77407836914, -1006.7990722656', '2019-03-21 04:31:08', 0, 0),
+(4606, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:31:08', 0, 0),
+(4605, 'ambulance', '113-0914', 'GPS: 408.34188842773, -931.84344482422', '2019-03-21 04:25:10', 1, 0),
+(4604, 'ambulance', '113-0914', 'GPS: 408.34188842773, -931.84344482422', '2019-03-21 04:25:10', 1, 0),
+(4603, 'ambulance', '113-0914', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-21 04:25:10', 1, 0),
+(4602, 'ambulance', '113-0914', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-21 04:25:10', 1, 0),
+(4601, 'ambulance', '113-0914', 'GPS: 407.55130004883, -969.54797363281', '2019-03-21 04:24:54', 1, 0),
+(4600, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 04:24:54', 1, 0),
+(4599, 'ambulance', '113-0914', 'GPS: 407.55130004883, -969.54797363281', '2019-03-21 04:24:54', 1, 0),
+(4598, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 04:24:54', 1, 0),
+(4597, 'ambulance', '113-0914', 'GPS: -264.47235107422, -1201.8953857422', '2019-03-21 04:17:13', 1, 0),
+(4596, 'ambulance', '113-0914', 'GPS: -264.47235107422, -1201.8953857422', '2019-03-21 04:17:13', 1, 0),
+(4595, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:17:13', 1, 0),
+(4594, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:17:13', 1, 0),
+(4593, 'ambulance', '113-0914', 'GPS: 220.98551940918, -984.03729248047', '2019-03-21 04:08:07', 1, 0),
+(4592, 'ambulance', '113-0914', 'GPS: 220.98551940918, -984.03729248047', '2019-03-21 04:08:07', 1, 0),
+(4591, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 04:08:07', 1, 0),
+(4590, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 04:08:07', 1, 0),
+(4589, 'ambulance', '113-0914', 'GPS: 254.05484008789, -1366.2137451172', '2019-03-21 04:01:44', 1, 0),
+(4588, 'ambulance', '113-0914', 'GPS: 254.05484008789, -1366.2137451172', '2019-03-21 04:01:44', 1, 0),
+(4587, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:01:44', 1, 0),
+(4586, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:01:44', 1, 0),
+(4585, 'ambulance', '113-0914', 'GPS: 302.21627807617, -1447.0798339844', '2019-03-21 04:01:34', 1, 0),
+(4584, 'ambulance', '113-0914', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-21 04:01:34', 1, 0),
+(4583, 'ambulance', '113-0914', 'GPS: 302.21627807617, -1447.0798339844', '2019-03-21 04:01:34', 1, 0),
+(4582, 'ambulance', '113-0914', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-21 04:01:34', 1, 0),
+(4581, 'ambulance', '113-0914', 'GPS: 248.6217956543, -1365.9290771484', '2019-03-21 04:00:37', 1, 0),
+(4580, 'ambulance', '113-0914', 'GPS: 248.6217956543, -1365.9290771484', '2019-03-21 04:00:37', 1, 0),
+(4579, 'ambulance', '113-0914', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-21 04:00:37', 1, 0),
+(4578, 'ambulance', '113-0914', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-21 04:00:37', 1, 0),
+(4577, 'ambulance', '113-0914', 'GPS: 253.88470458984, -1366.1833496094', '2019-03-21 04:00:22', 1, 0),
+(4576, 'ambulance', '113-0914', 'GPS: 253.88470458984, -1366.1833496094', '2019-03-21 04:00:22', 1, 0),
+(4575, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:00:22', 1, 0),
+(4574, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 04:00:22', 1, 0),
+(4573, 'ambulance', '113-0914', 'GPS: 254.93980407715, -1365.2664794922', '2019-03-21 03:59:17', 1, 0),
+(4572, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 03:59:17', 1, 0),
+(4571, 'ambulance', '113-0914', 'GPS: 254.93980407715, -1365.2664794922', '2019-03-21 03:59:17', 1, 0),
+(4570, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 03:59:17', 1, 0),
+(4569, 'ambulance', '113-0914', 'GPS: 255.25425720215, -1374.9132080078', '2019-03-21 03:59:00', 1, 0),
+(4568, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 03:59:00', 1, 0),
+(4567, 'ambulance', '113-0914', 'GPS: 255.25425720215, -1374.9132080078', '2019-03-21 03:59:00', 1, 0),
+(4566, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 03:59:00', 1, 0),
+(4565, 'ambulance', '113-0914', 'GPS: 254.65853881836, -1369.4475097656', '2019-03-21 03:57:11', 1, 0),
+(4564, 'ambulance', '113-0914', 'GPS: 254.65853881836, -1369.4475097656', '2019-03-21 03:57:11', 1, 0),
+(4563, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 03:57:11', 1, 0),
+(4562, 'ambulance', '113-0914', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-21 03:57:11', 1, 0),
+(4561, 'ambulance', '113-0914', 'GPS: 230.98277282715, -1367.1264648438', '2019-03-21 03:55:57', 1, 0),
+(4560, 'ambulance', '113-0914', 'GPS: 230.98277282715, -1367.1264648438', '2019-03-21 03:55:57', 1, 0),
+(4559, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 03:55:57', 1, 0),
+(4557, '562-3039', '906-8228', 'GPS: -111.4102935791, -223.70288085938', '2019-03-20 23:47:33', 1, 1),
+(4558, 'ambulance', '113-0914', 'De #113-0914 : Medical attention required: unconscious citizen!', '2019-03-21 03:55:57', 1, 0),
+(4556, '906-8228', '562-3039', 'GPS: -111.4102935791, -223.70288085938', '2019-03-20 23:47:33', 1, 0),
+(4555, '531-3502', '562-3039', 'GPS: -2962.013671875, 389.6237487793', '2019-03-20 06:06:44', 1, 1),
+(4554, '562-3039', '531-3502', 'GPS: -2962.013671875, 389.6237487793', '2019-03-20 06:06:44', 0, 0),
+(4553, '531-3502', '562-3039', 'GPS: -2953.0388183594, 391.9892578125', '2019-03-20 06:05:43', 1, 1),
+(4552, '562-3039', '531-3502', 'GPS: -2953.0388183594, 391.9892578125', '2019-03-20 06:05:43', 1, 0),
+(4551, '827-5849', '906-8228', 'sdas', '2019-03-20 06:05:25', 1, 1),
+(4550, '906-8228', '827-5849', 'sdas', '2019-03-20 06:05:25', 0, 0),
+(4549, '906-8228', '562-3039', 'GPS: -411.30087280273, 5843.7958984375', '2019-03-20 04:54:06', 1, 1),
+(4548, '562-3039', '906-8228', 'GPS: -411.30087280273, 5843.7958984375', '2019-03-20 04:54:06', 1, 0),
+(4547, '906-8228', '562-3039', 'GPS: 2.8106906414032, -333.65463256836', '2019-03-20 04:04:18', 1, 1),
+(4546, '562-3039', '906-8228', 'GPS: 2.8106906414032, -333.65463256836', '2019-03-20 04:04:18', 1, 0),
+(4545, 'ambulance', '531-3502', 'GPS: 299.88250732422, -1060.1716308594', '2019-03-18 01:48:49', 0, 0),
+(4544, 'ambulance', '531-3502', 'GPS: 299.88250732422, -1060.1716308594', '2019-03-18 01:48:49', 0, 0),
+(4543, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:48:49', 0, 0),
+(4542, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:48:49', 0, 0),
+(4541, 'ambulance', '531-3502', 'GPS: 295.42343139648, -1066.8034667969', '2019-03-18 01:47:53', 0, 0),
+(4540, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:53', 0, 0),
+(4539, 'ambulance', '531-3502', 'GPS: 295.42343139648, -1066.8034667969', '2019-03-18 01:47:53', 0, 0),
+(4538, 'ambulance', '531-3502', 'GPS: 295.42343139648, -1066.8034667969', '2019-03-18 01:47:53', 0, 0),
+(4537, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:53', 0, 0),
+(4536, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:53', 0, 0),
+(4535, 'ambulance', '531-3502', 'GPS: 295.42343139648, -1066.8034667969', '2019-03-18 01:47:53', 0, 0),
+(4534, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:53', 0, 0),
+(4533, 'ambulance', '531-3502', 'GPS: 309.24533081055, -1070.9304199219', '2019-03-18 01:47:45', 0, 0),
+(4532, 'ambulance', '531-3502', 'GPS: 309.24533081055, -1070.9304199219', '2019-03-18 01:47:45', 0, 0),
+(4531, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:45', 0, 0),
+(4530, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:47:45', 0, 0),
+(4529, 'ambulance', '531-3502', 'GPS: 316.1955871582, -1073.8541259766', '2019-03-18 01:46:42', 0, 0),
+(4528, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:46:42', 0, 0),
+(4527, 'ambulance', '531-3502', 'GPS: 316.1955871582, -1073.8541259766', '2019-03-18 01:46:42', 0, 0),
+(4526, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:46:42', 0, 0),
+(4525, 'ambulance', '531-3502', 'GPS: 297.49337768555, -1045.4708251953', '2019-03-18 01:46:31', 0, 0),
+(4524, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:46:31', 0, 0),
+(4523, 'ambulance', '531-3502', 'GPS: 297.49337768555, -1045.4708251953', '2019-03-18 01:46:31', 0, 0),
+(4522, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:46:31', 0, 0),
+(4521, 'ambulance', '531-3502', 'GPS: 457.7282409668, -998.42181396484', '2019-03-18 01:45:21', 0, 0),
+(4520, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:45:21', 0, 0),
+(4519, 'ambulance', '531-3502', 'GPS: 457.7282409668, -998.42181396484', '2019-03-18 01:45:21', 0, 0),
+(4518, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:45:21', 0, 0),
+(4517, 'ambulance', '531-3502', 'GPS: 465.13244628906, -998.32769775391', '2019-03-18 01:45:02', 0, 0),
+(4516, 'ambulance', '531-3502', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-18 01:45:01', 0, 0),
+(4515, 'ambulance', '531-3502', 'GPS: 465.13244628906, -998.32769775391', '2019-03-18 01:45:01', 0, 0),
+(4514, 'ambulance', '531-3502', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-18 01:45:01', 0, 0),
+(4513, 'ambulance', '531-3502', 'GPS: 464.31423950195, -994.65277099609', '2019-03-18 01:44:45', 0, 0),
+(4512, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:44:45', 0, 0),
+(4511, 'ambulance', '531-3502', 'GPS: 464.31423950195, -994.65277099609', '2019-03-18 01:44:45', 0, 0),
+(4510, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:44:45', 0, 0),
+(4509, 'ambulance', '531-3502', 'GPS: 457.35708618164, -997.8720703125', '2019-03-18 01:44:01', 0, 0),
+(4508, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:44:01', 0, 0),
+(4507, 'ambulance', '531-3502', 'GPS: 457.35708618164, -997.8720703125', '2019-03-18 01:44:01', 0, 0),
+(4506, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:44:01', 0, 0),
+(4505, 'ambulance', '531-3502', 'GPS: 457.00387573242, -997.41674804688', '2019-03-18 01:42:52', 0, 0),
+(4504, 'ambulance', '531-3502', 'GPS: 457.00387573242, -997.41674804688', '2019-03-18 01:42:52', 0, 0),
+(4503, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:42:52', 0, 0),
+(4502, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:42:52', 0, 0),
+(4501, 'ambulance', '531-3502', 'GPS: 334.13189697266, -1390.1577148438', '2019-03-18 01:39:46', 0, 0),
+(4500, 'ambulance', '531-3502', 'GPS: 334.13189697266, -1390.1577148438', '2019-03-18 01:39:46', 0, 0),
+(4499, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:39:46', 0, 0),
+(4498, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:39:46', 0, 0),
+(4497, 'ambulance', '531-3502', 'GPS: 288.38290405273, -1412.4653320313', '2019-03-18 01:38:54', 0, 0),
+(4496, 'ambulance', '531-3502', 'GPS: 288.38290405273, -1412.4653320313', '2019-03-18 01:38:54', 0, 0),
+(4495, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:38:53', 0, 0),
+(4493, 'ambulance', '531-3502', 'GPS: 288.67385864258, -1411.6431884766', '2019-03-18 01:38:47', 0, 0),
+(4494, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:38:53', 0, 0),
+(4491, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:38:47', 0, 0),
+(4492, 'ambulance', '531-3502', 'GPS: 288.67385864258, -1411.6431884766', '2019-03-18 01:38:47', 0, 0),
+(4490, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:38:47', 0, 0),
+(4489, 'ambulance', '531-3502', 'GPS: 296.02856445313, -1399.0745849609', '2019-03-18 01:36:53', 0, 0),
+(4488, 'ambulance', '531-3502', 'GPS: 296.02856445313, -1399.0745849609', '2019-03-18 01:36:53', 0, 0),
+(4487, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:53', 0, 0),
+(4486, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:53', 0, 0),
+(4485, 'ambulance', '531-3502', 'GPS: 299.41528320313, -1394.1218261719', '2019-03-18 01:36:37', 0, 0),
+(4484, 'ambulance', '531-3502', 'GPS: 299.41528320313, -1394.1218261719', '2019-03-18 01:36:37', 0, 0),
+(4483, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:37', 0, 0),
+(4482, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:37', 0, 0),
+(4481, 'ambulance', '531-3502', 'GPS: 300.74295043945, -1398.3189697266', '2019-03-18 01:36:28', 0, 0),
+(4480, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:28', 0, 0),
+(4479, 'ambulance', '531-3502', 'GPS: 300.74295043945, -1398.3189697266', '2019-03-18 01:36:28', 0, 0),
+(4478, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:36:28', 0, 0),
+(4477, 'ambulance', '531-3502', 'GPS: 385.55825805664, -857.31396484375', '2019-03-18 01:35:56', 0, 0),
+(4476, 'ambulance', '531-3502', 'GPS: 385.55825805664, -857.31396484375', '2019-03-18 01:35:56', 0, 0),
+(4475, 'ambulance', '531-3502', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-18 01:35:56', 0, 0),
+(4474, 'ambulance', '531-3502', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-18 01:35:56', 0, 0),
+(4473, 'ambulance', '531-3502', 'GPS: 406.59332275391, -882.5908203125', '2019-03-18 01:33:48', 0, 0),
+(4472, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:33:48', 0, 0),
+(4471, 'ambulance', '531-3502', 'GPS: 406.59332275391, -882.5908203125', '2019-03-18 01:33:48', 0, 0),
+(4470, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:33:48', 0, 0),
+(4469, 'ambulance', '531-3502', 'GPS: -191.66987609863, -1300.3854980469', '2019-03-18 01:31:03', 0, 0),
+(4468, 'ambulance', '531-3502', 'GPS: -191.66987609863, -1300.3854980469', '2019-03-18 01:31:03', 0, 0),
+(4467, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:31:03', 0, 0),
+(4466, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:31:03', 0, 0),
+(4465, 'ambulance', '531-3502', 'GPS: -208.17010498047, -1319.4368896484', '2019-03-18 01:28:11', 0, 0),
+(4464, 'ambulance', '531-3502', 'GPS: -208.17010498047, -1319.4368896484', '2019-03-18 01:28:11', 0, 0),
+(4463, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:28:11', 0, 0),
+(4462, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-18 01:28:11', 0, 0),
+(4461, 'ambulance', '531-3502', 'GPS: -212.5772857666, -1327.8458251953', '2019-03-18 01:27:56', 0, 0),
+(4460, 'ambulance', '531-3502', 'GPS: -212.5772857666, -1327.8458251953', '2019-03-18 01:27:56', 0, 0),
+(4459, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:27:56', 0, 0),
+(4458, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:27:56', 0, 0),
+(4457, 'ambulance', '531-3502', 'GPS: -210.34941101074, -1329.7774658203', '2019-03-18 01:27:54', 0, 0),
+(4456, 'ambulance', '531-3502', 'GPS: -210.34941101074, -1329.7774658203', '2019-03-18 01:27:54', 0, 0),
+(4455, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:27:54', 0, 0),
+(4454, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:27:54', 0, 0),
+(4453, 'ambulance', '531-3502', 'GPS: -258.68927001953, -1296.3463134766', '2019-03-18 01:25:05', 0, 0),
+(4452, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:25:05', 0, 0),
+(4451, 'ambulance', '531-3502', 'GPS: -258.68927001953, -1296.3463134766', '2019-03-18 01:25:05', 0, 0),
+(4450, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:25:05', 0, 0),
+(4449, 'ambulance', '531-3502', 'GPS: 413.45928955078, -975.93530273438', '2019-03-18 01:09:16', 0, 0),
+(4448, 'ambulance', '531-3502', 'GPS: 413.45928955078, -975.93530273438', '2019-03-18 01:09:16', 0, 0),
+(4447, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:09:16', 0, 0),
+(4446, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:09:16', 0, 0),
+(4445, 'ambulance', '531-3502', 'GPS: 316.12762451172, -271.22973632813', '2019-03-18 01:05:47', 0, 0),
+(4444, 'ambulance', '531-3502', 'GPS: 316.12762451172, -271.22973632813', '2019-03-18 01:05:47', 0, 0),
+(4443, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:47', 0, 0),
+(4442, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:47', 0, 0),
+(4441, 'ambulance', '531-3502', 'GPS: 316.12734985352, -271.23358154297', '2019-03-18 01:05:47', 0, 0),
+(4440, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:47', 0, 0),
+(4439, 'ambulance', '531-3502', 'GPS: 316.12734985352, -271.23358154297', '2019-03-18 01:05:47', 0, 0),
+(4438, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:47', 0, 0),
+(4437, 'ambulance', '531-3502', 'GPS: 314.19555664063, -267.99566650391', '2019-03-18 01:05:35', 0, 0),
+(4436, 'ambulance', '531-3502', 'GPS: 314.19555664063, -267.99566650391', '2019-03-18 01:05:35', 0, 0),
+(4435, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:35', 0, 0),
+(4434, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:35', 0, 0),
+(4433, 'ambulance', '531-3502', 'GPS: 261.50448608398, -225.85029602051', '2019-03-18 01:05:03', 0, 0),
+(4432, 'ambulance', '531-3502', 'GPS: 261.50448608398, -225.85029602051', '2019-03-18 01:05:03', 0, 0),
+(4431, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:03', 0, 0),
+(4430, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:05:03', 0, 0),
+(4429, 'ambulance', '531-3502', 'GPS: -124.56313323975, -900.93957519531', '2019-03-18 01:00:37', 0, 0),
+(4428, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:00:37', 0, 0),
+(4427, 'ambulance', '531-3502', 'GPS: -124.56313323975, -900.93957519531', '2019-03-18 01:00:37', 0, 0),
+(4426, 'ambulance', '531-3502', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-18 01:00:37', 0, 0),
+(4425, 'taxi', '906-8228', 'GPS: -139.63047790527, -898.60546875', '2019-03-18 00:59:26', 1, 0),
+(4424, 'taxi', '906-8228', 'De #827-5849 : salam', '2019-03-18 00:59:26', 1, 0),
+(4423, 'ambulance', '531-3502', 'GPS: -66.288803100586, -1760.1213378906', '2019-03-17 19:22:42', 0, 0),
+(4422, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 19:22:42', 0, 0),
+(4421, 'ambulance', '531-3502', 'GPS: -66.288803100586, -1760.1213378906', '2019-03-17 19:22:42', 0, 0),
+(4420, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 19:22:42', 0, 0),
+(4419, 'ambulance', '531-3502', 'GPS: 304.51467895508, -1480.2135009766', '2019-03-17 19:16:36', 0, 0),
+(4418, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 19:16:36', 0, 0),
+(4417, 'ambulance', '531-3502', 'GPS: 304.51467895508, -1480.2135009766', '2019-03-17 19:16:36', 0, 0),
+(4416, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 19:16:36', 0, 0),
+(4415, 'ambulance', '531-3502', 'GPS: 1613.1394042969, 2544.1184082031', '2019-03-17 18:59:08', 0, 0),
+(4414, 'ambulance', '531-3502', 'GPS: 1613.1394042969, 2544.1184082031', '2019-03-17 18:59:08', 0, 0),
+(4413, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 18:59:08', 0, 0),
+(4412, 'ambulance', '531-3502', 'De #531-3502 : Medical attention required: unconscious citizen!', '2019-03-17 18:59:07', 0, 0),
+(4411, 'mecano', '771-1741', 'GPS: -961.21264648438, -205.51640319824', '2019-03-16 21:21:38', 1, 0),
+(4409, 'ambulance', '531-3502', 'GPS: -204.94473266602, -1327.6772460938', '2019-03-16 21:15:41', 0, 0),
+(4408, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 21:15:41', 0, 0),
+(4407, 'ambulance', '531-3502', 'GPS: -204.94473266602, -1327.6772460938', '2019-03-16 21:15:41', 0, 0),
+(4406, 'ambulance', '531-3502', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 21:15:41', 0, 0),
+(4405, 'ambulance', '531-3502', 'GPS: 230.81948852539, -1028.4572753906', '2019-03-16 21:12:09', 1, 0),
+(4404, 'ambulance', '531-3502', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-16 21:12:09', 1, 0),
+(4403, 'ambulance', '531-3502', 'GPS: 230.81948852539, -1028.4572753906', '2019-03-16 21:12:09', 1, 0),
+(4402, 'ambulance', '531-3502', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-16 21:12:09', 1, 0),
+(4401, 'mecano', '827-5849', 'GPS: -278.59735107422, -1118.8641357422', '2019-03-16 20:49:04', 1, 0),
+(4400, 'mecano', '827-5849', 'De #906-8228 : Komak', '2019-03-16 20:49:04', 1, 0),
+(4399, 'mecano', '771-1741', 'GPS: -278.59735107422, -1118.8641357422', '2019-03-16 20:49:04', 1, 0),
+(4398, 'mecano', '771-1741', 'De #906-8228 : Komak', '2019-03-16 20:49:04', 1, 0),
+(4397, 'mecano', '021-1111', 'GPS: 1092.2731933594, -185.35543823242', '2019-03-16 17:45:44', 0, 0),
+(4396, 'mecano', '021-1111', 'De #021-1111 : help', '2019-03-16 17:45:44', 0, 0),
+(4395, 'mecano', '827-5849', 'GPS: 1092.2731933594, -185.35543823242', '2019-03-16 17:45:44', 1, 0),
+(4394, 'mecano', '827-5849', 'De #021-1111 : help', '2019-03-16 17:45:44', 1, 0),
+(4393, 'ambulance', '906-8228', 'GPS: 461.30511474609, -993.03082275391', '2019-03-16 12:37:27', 1, 0),
+(4392, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:37:27', 1, 0),
+(4391, 'ambulance', '906-8228', 'GPS: 461.30511474609, -993.03082275391', '2019-03-16 12:37:27', 1, 0),
+(4390, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:37:27', 1, 0),
+(4389, 'ambulance', '906-8228', 'GPS: 411.12548828125, -996.74322509766', '2019-03-16 12:33:20', 1, 0),
+(4388, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:33:20', 1, 0),
+(4387, 'ambulance', '906-8228', 'GPS: 411.12548828125, -996.74322509766', '2019-03-16 12:33:20', 1, 0),
+(4386, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:33:20', 1, 0),
+(4385, 'ambulance', '906-8228', 'GPS: 410.58245849609, -993.48876953125', '2019-03-16 12:32:14', 1, 0),
+(4384, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:32:14', 1, 0),
+(4383, 'ambulance', '906-8228', 'GPS: 410.58245849609, -993.48876953125', '2019-03-16 12:32:14', 1, 0),
+(4382, 'ambulance', '906-8228', 'De #771-1741 : Medical attention required: unconscious citizen!', '2019-03-16 12:32:14', 1, 0),
+(4381, 'ambulance', '906-8228', 'GPS: -296.86563110352, -1150.6784667969', '2019-03-16 12:28:58', 1, 0),
+(4380, 'ambulance', '906-8228', 'GPS: -296.86563110352, -1150.6784667969', '2019-03-16 12:28:58', 1, 0),
+(4379, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:28:58', 1, 0),
+(4378, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:28:58', 1, 0),
+(4377, 'ambulance', '906-8228', 'GPS: -243.1597442627, -1078.0612792969', '2019-03-16 12:23:11', 1, 0),
+(4376, 'ambulance', '906-8228', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-16 12:23:11', 1, 0),
+(4375, 'ambulance', '906-8228', 'GPS: -243.1597442627, -1078.0612792969', '2019-03-16 12:23:11', 1, 0),
+(4374, 'ambulance', '906-8228', 'De #562-3039 : Medical attention required: unconscious citizen!', '2019-03-16 12:23:11', 1, 0),
+(4373, 'ambulance', '906-8228', 'GPS: -210.13479614258, -1330.0242919922', '2019-03-16 12:22:27', 1, 0),
+(4372, 'ambulance', '906-8228', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-16 12:22:27', 1, 0),
+(4371, 'ambulance', '906-8228', 'GPS: -210.13479614258, -1330.0242919922', '2019-03-16 12:22:27', 1, 0),
+(4370, 'ambulance', '906-8228', 'De #906-8228 : Medical attention required: unconscious citizen!', '2019-03-16 12:22:27', 1, 0),
+(4369, 'ambulance', '906-8228', 'GPS: -214.37565612793, -1329.2596435547', '2019-03-16 12:17:16', 1, 0),
+(4368, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:17:16', 1, 0),
+(4367, 'ambulance', '906-8228', 'GPS: -214.37565612793, -1329.2596435547', '2019-03-16 12:17:16', 1, 0),
+(4366, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:17:16', 1, 0),
+(4365, 'ambulance', '906-8228', 'GPS: -214.37565612793, -1329.2596435547', '2019-03-16 12:16:59', 1, 0),
+(4364, 'ambulance', '906-8228', 'GPS: -214.37565612793, -1329.2596435547', '2019-03-16 12:16:59', 1, 0),
+(4363, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:16:59', 1, 0),
+(4362, 'ambulance', '906-8228', 'De #827-5849 : Medical attention required: unconscious citizen!', '2019-03-16 12:16:59', 1, 0),
+(4361, 'mecano', '021-1111', 'GPS: 406.6474609375, -915.4189453125', '2019-03-16 12:10:46', 1, 0),
+(4360, 'mecano', '021-1111', 'De #827-5849 : salam', '2019-03-16 12:10:46', 1, 0),
+(4359, 'mecano', '021-1111', 'GPS: 2944.0178222656, 4584.2983398438', '2019-03-16 12:10:44', 1, 0),
+(4358, 'mecano', '021-1111', 'De #906-8228 : Hi', '2019-03-16 12:10:44', 1, 0),
+(4357, 'mecano', '021-1111', 'GPS: -213.81507873535, -1326.5788574219', '2019-03-16 11:22:51', 1, 0),
+(4356, 'mecano', '021-1111', 'De #906-8228 : Biya', '2019-03-16 11:22:51', 1, 0),
+(4355, 'mecano', '021-1111', 'GPS: 339.1076965332, -1313.0628662109', '2019-03-16 11:14:01', 1, 0),
+(4354, 'mecano', '021-1111', 'De #906-8228 : Biya', '2019-03-16 11:14:01', 1, 0),
+(4353, 'ambulance', '906-8228', 'GPS: 337.97592163086, -1311.1557617188', '2019-03-16 11:12:40', 1, 0),
+(4352, 'ambulance', '906-8228', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 11:12:40', 1, 0),
+(4351, 'ambulance', '906-8228', 'GPS: 337.97592163086, -1311.1557617188', '2019-03-16 11:12:40', 1, 0),
+(4350, 'ambulance', '906-8228', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 11:12:40', 1, 0),
+(4349, 'ambulance', '906-8228', 'GPS: 345.59436035156, -1311.8892822266', '2019-03-16 10:42:09', 1, 0),
+(4348, 'ambulance', '906-8228', 'GPS: 345.59436035156, -1311.8892822266', '2019-03-16 10:42:09', 1, 0),
+(4347, 'ambulance', '906-8228', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 10:42:09', 1, 0),
+(4346, 'ambulance', '906-8228', 'De #021-1111 : Medical attention required: unconscious citizen!', '2019-03-16 10:42:09', 1, 0),
+(4345, 'ambulance', '906-8228', 'GPS: -74.27220916748, -1090.58984375', '2019-03-16 10:25:41', 1, 0),
+(4344, 'ambulance', '906-8228', 'De #906-8228 : as', '2019-03-16 10:25:40', 1, 0),
 (4343, '5313502', '771-1741', 'AAA', '2019-03-14 23:19:40', 1, 1),
 (4342, '531-3502', '771-1741', 'Salam', '2019-03-14 23:18:05', 1, 1),
 (4341, '771-1741', '531-3502', 'Salam', '2019-03-14 23:18:05', 1, 0),
@@ -2989,7 +3087,12 @@ INSERT INTO `phone_users_contacts` (`id`, `identifier`, `number`, `display`) VAL
 (136, 'steam:11000010f3c770c', '113-0914', 'Koba'),
 (139, 'steam:11000011cded001', '127-1117', 'Mahonne'),
 (140, 'steam:1100001045fbd8f', '771-1741', 'Mammad'),
-(141, 'steam:11000010a1b83df', '5313502', 'Parsa');
+(141, 'steam:11000010a1b83df', '5313502', 'Parsa'),
+(142, 'steam:11000010a1b83df', '911', 'Medic'),
+(143, 'steam:11000010a1b83df', '555-0142', 'Nouveau Contact'),
+(144, 'steam:11000010b3a30a0', '906-8228', 'vidar'),
+(145, 'steam:110000114a058a8', '8275849', 'Amir'),
+(146, 'steam:11000010b3a30a0', '531-3502', 'parsa');
 
 -- --------------------------------------------------------
 
@@ -3126,11 +3229,13 @@ INSERT INTO `playerstattoos` (`id`, `identifier`, `tattoos`) VALUES
 (121, 'steam:110000115a29e25', '[]'),
 (122, 'steam:110000114a058a8', '[]'),
 (123, 'steam:1100001167d265e', '[]'),
-(124, 'steam:1100001197619a3', '[]'),
-(125, 'steam:1100001045fbd8f', '[]'),
+(124, 'steam:1100001197619a3', '[{\"collection\":\"mpbusiness_overlays\",\"texture\":6},{\"texture\":35,\"collection\":\"mphipster_overlays\"}]'),
+(125, 'steam:1100001045fbd8f', '[{\"collection\":\"mphipster_overlays\",\"texture\":49},{\"collection\":\"mphipster_overlays\",\"texture\":49},{\"collection\":\"mphipster_overlays\",\"texture\":24}]'),
 (126, 'steam:11000010a1b83df', '[]'),
-(127, 'steam:11000010b3a30a0', '[]'),
-(128, 'steam:11000011685b145', '[]');
+(127, 'steam:11000010b3a30a0', '[{\"texture\":10,\"collection\":\"mpbeach_overlays\"},{\"texture\":4,\"collection\":\"mpbeach_overlays\"},{\"texture\":3,\"collection\":\"mpbeach_overlays\"},{\"texture\":2,\"collection\":\"mpbeach_overlays\"},{\"texture\":1,\"collection\":\"mpbeach_overlays\"},{\"texture\":5,\"collectio'),
+(128, 'steam:11000011685b145', '[]'),
+(129, 'steam:1100001197354a7', '[]'),
+(130, 'steam:110000111df570b', '[]');
 
 -- --------------------------------------------------------
 
@@ -3248,6 +3353,13 @@ CREATE TABLE `rented_vehicles` (
   `owner` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `rented_vehicles`
+--
+
+INSERT INTO `rented_vehicles` (`vehicle`, `plate`, `player_name`, `base_price`, `rent_price`, `owner`) VALUES
+('MGT', 'RENTMKCF', 'Nobody', 3000000, 10000, 'steam:11000010b3a30a0');
+
 -- --------------------------------------------------------
 
 --
@@ -3296,7 +3408,8 @@ INSERT INTO `shops2` (`id`, `store`, `item`, `price`) VALUES
 (2, 'narekshop', 'grip', 500),
 (3, 'narekshop', 'flashlight', 500),
 (4, 'narekshop', 'silencieux', 250),
-(5, 'narekshop', 'clip', 250);
+(5, 'narekshop', 'clip', 250),
+(6, 'narekshop', 'drill', 50000);
 
 -- --------------------------------------------------------
 
@@ -3342,14 +3455,7 @@ INSERT INTO `truck_inventory` (`id`, `item`, `count`, `plate`, `name`, `itemt`, 
 (141, 'WEAPON_STICKYBOMB', 25, 'BFL 454 ', 'Bombe collante', 'item_weapon', '1'),
 (142, 'WEAPON_SNIPERRIFLE', 250, 'BFL 454 ', 'Fusil de sniper', 'item_weapon', '1'),
 (143, 'WEAPON_SAWNOFFSHOTGUN', 25, 'BFL 454 ', 'Carabine à canon scié', 'item_weapon', '1'),
-(144, 'WEAPON_ADVANCEDRIFLE', 250, 'BFL 454 ', 'Fusil avancé', 'item_weapon', '1'),
-(145, 'croquettes', 0, '87HSO948', 'Croquettes', 'item_standard', '0'),
-(146, 'croquettes', 1, '88BDI801', 'Croquettes', 'item_standard', '0'),
-(147, 'stone', 21, '09JLL035', 'Pierre', 'item_standard', '0'),
-(158, 'croquettes', 1, '41TCA448', 'Croquettes', 'item_standard', '0'),
-(159, 'fish', 273, 'WORK552 ', 'Poisson', 'item_standard', '0'),
-(193, 'stone', 0, '01LYG188', 'Pierre', 'item_standard', '0'),
-(195, 'washed_stone', 7, '01LYG188', 'Pierre Lavée', 'item_standard', '0');
+(144, 'WEAPON_ADVANCEDRIFLE', 250, 'BFL 454 ', 'Fusil avancé', 'item_weapon', '1');
 
 -- --------------------------------------------------------
 
@@ -3378,24 +3484,27 @@ CREATE TABLE `users` (
   `sex` varchar(10) COLLATE utf8mb4_bin DEFAULT '',
   `height` varchar(5) COLLATE utf8mb4_bin DEFAULT '',
   `status` longtext COLLATE utf8mb4_bin,
-  `isDead` bit(1) DEFAULT b'0',
+  `isDead` tinyint(1) DEFAULT '0',
   `phone_number` varchar(10) COLLATE utf8mb4_bin DEFAULT NULL,
   `last_property` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `animal` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL
+  `animal` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `is_dead` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `org`, `org_gradeorg`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `status`, `isDead`, `phone_number`, `last_property`, `animal`) VALUES
-('steam:1100001045fbd8f', 'license:608b506bd937d8dd6803110fcbc06f94e52b9a13', 9007, 'Parsa✰', '{\"makeup_2\":0,\"age_1\":0,\"sex\":0,\"eyebrows_1\":0,\"eyebrows_2\":0,\"makeup_3\":0,\"age_2\":0,\"ears_2\":0,\"torso_2\":0,\"chain_2\":0,\"glasses_1\":0,\"lipstick_2\":0,\"glasses_2\":0,\"lipstick_3\":0,\"mask_2\":0,\"beard_2\":0,\"helmet_1\":-1,\"bproof_2\":0,\"beard_4\":0,\"decals_1\":0,\"decals_2\":0,\"chain_1\":0,\"ears_1\":-1,\"shoes_1\":7,\"arms\":0,\"bags_1\":0,\"hair_2\":0,\"shoes_2\":0,\"torso_1\":0,\"beard_1\":0,\"mask_1\":58,\"hair_1\":57,\"bproof_1\":0,\"face\":0,\"lipstick_4\":0,\"pants_2\":0,\"eyebrows_4\":0,\"beard_3\":0,\"tshirt_2\":0,\"pants_1\":5,\"lipstick_1\":0,\"tshirt_1\":0,\"eyebrows_3\":0,\"hair_color_1\":1,\"skin\":0,\"bags_2\":0,\"hair_color_2\":0,\"makeup_4\":0,\"makeup_1\":0,\"helmet_2\":0}', 'miner', 0, 'freecity', 0, '[]', '{\"y\":1834.1177978516,\"z\":101.14407348633,\"x\":2343.0893554688}', 0, 0, 'user', 'Parsa', 'Ghyasi', '1994-02-07', 'm', '185', '[{\"name\":\"hunger\",\"percent\":27.9,\"val\":279000},{\"name\":\"thirst\",\"percent\":43.425,\"val\":434250},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', b'1', '531-3502', NULL, NULL),
-('steam:11000010a1b83df', 'license:e62d81faaf5ea41b8be3677d26585b342f426b4c', 1208, 'MaMadLord', '{\"makeup_2\":0,\"age_1\":0,\"sex\":1,\"eyebrows_1\":0,\"eyebrows_2\":0,\"mask_2\":0,\"age_2\":0,\"ears_2\":0,\"torso_2\":0,\"chain_2\":0,\"glasses_1\":0,\"lipstick_2\":0,\"glasses_2\":0,\"lipstick_3\":0,\"arms\":0,\"beard_2\":0,\"helmet_1\":-1,\"bproof_2\":0,\"beard_4\":0,\"decals_1\":0,\"torso_1\":0,\"beard_3\":0,\"ears_1\":-1,\"shoes_1\":0,\"mask_1\":0,\"bags_1\":0,\"hair_2\":0,\"decals_2\":0,\"hair_1\":0,\"lipstick_1\":0,\"eyebrows_3\":0,\"skin\":0,\"bproof_1\":0,\"face\":0,\"hair_color_2\":0,\"pants_2\":0,\"eyebrows_4\":0,\"shoes_2\":0,\"tshirt_2\":0,\"pants_1\":0,\"makeup_3\":0,\"tshirt_1\":0,\"lipstick_4\":0,\"hair_color_1\":0,\"chain_1\":0,\"bags_2\":0,\"makeup_1\":0,\"makeup_4\":0,\"beard_1\":0,\"helmet_2\":0}', 'miner', 0, 'freecity', 0, '[]', '{\"y\":-1393.2796630859,\"z\":30.474060058594,\"x\":239.28242492676}', 7600, 0, 'user', 'AAA', 'BBB', '11.11.1111', 'm', '150', '[{\"name\":\"hunger\",\"percent\":38.2,\"val\":382000},{\"name\":\"thirst\",\"percent\":41.15,\"val\":411500},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', b'0', '771-1741', NULL, NULL),
-('steam:11000010b3a30a0', 'license:eda9a39ff948770ed1171c7836a68f0489ded17e', 1666, 'Nobody', '{\"skin\":12,\"lipstick_2\":0,\"shoes_1\":1,\"hair_color_2\":0,\"hair_2\":0,\"makeup_1\":0,\"ears_1\":-1,\"age_1\":0,\"lipstick_3\":0,\"mask_2\":2,\"eyebrows_3\":1,\"eyebrows_4\":1,\"pants_1\":1,\"pants_2\":0,\"beard_3\":0,\"decals_1\":0,\"helmet_2\":0,\"eyebrows_2\":1,\"helmet_1\":-1,\"makeup_3\":0,\"mask_1\":68,\"hair_color_1\":26,\"bproof_1\":3,\"lipstick_1\":0,\"arms\":0,\"age_2\":0,\"sex\":0,\"chain_1\":0,\"ears_2\":0,\"eyebrows_1\":1,\"tshirt_1\":4,\"torso_1\":4,\"bags_2\":0,\"chain_2\":0,\"torso_2\":3,\"makeup_4\":0,\"tshirt_2\":0,\"bproof_2\":1,\"makeup_2\":0,\"decals_2\":0,\"beard_1\":0,\"beard_2\":0,\"hair_1\":33,\"glasses_1\":5,\"face\":0,\"lipstick_4\":0,\"bags_1\":0,\"glasses_2\":2,\"beard_4\":0,\"shoes_2\":7}', 'miner', 0, 'freecity', 0, '[]', '{\"y\":6409.5463867188,\"z\":31.745195388794,\"x\":1688.4400634766}', 6000, 0, 'user', 'Nobody', 'Somebody', '14-7-1374', 'm', '180', '[{\"name\":\"hunger\",\"percent\":78.35,\"val\":783500},{\"name\":\"thirst\",\"percent\":26.2625,\"val\":262625},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', b'0', '562-3039', NULL, NULL),
-('steam:110000114a058a8', 'license:c359a4ebd956cdfd97bdedf6d1b47565d7f1ae31', 1750, 'Vidat', '{\"makeup_2\":0,\"age_1\":0,\"sex\":0,\"eyebrows_1\":0,\"eyebrows_2\":0,\"mask_2\":0,\"age_2\":0,\"ears_2\":0,\"torso_2\":2,\"chain_2\":0,\"glasses_1\":0,\"lipstick_2\":0,\"glasses_2\":0,\"lipstick_3\":0,\"arms\":0,\"beard_2\":0,\"helmet_1\":-1,\"decals_2\":0,\"beard_4\":0,\"decals_1\":0,\"makeup_3\":0,\"makeup_1\":0,\"ears_1\":-1,\"shoes_1\":3,\"hair_1\":11,\"bags_1\":0,\"hair_2\":5,\"chain_1\":0,\"lipstick_1\":0,\"bproof_2\":0,\"skin\":0,\"beard_3\":0,\"bproof_1\":0,\"face\":10,\"hair_color_2\":0,\"pants_2\":0,\"eyebrows_4\":0,\"mask_1\":0,\"tshirt_2\":2,\"pants_1\":10,\"beard_1\":0,\"tshirt_1\":6,\"lipstick_4\":0,\"hair_color_1\":7,\"shoes_2\":0,\"bags_2\":0,\"torso_1\":7,\"makeup_4\":0,\"eyebrows_3\":0,\"helmet_2\":0}', 'taxi', 0, 'freecity', 0, '[]', '{\"y\":-561.97229003906,\"z\":38.51407623291,\"x\":-76.285911560059}', 5224, 4, 'superadmin', 'Vidat', 'Boz', '24-12-94', 'm', '181', '[{\"val\":460500,\"name\":\"hunger\",\"percent\":46.05},{\"val\":595375,\"name\":\"thirst\",\"percent\":59.5375},{\"val\":0,\"name\":\"drunk\",\"percent\":0.0}]', b'0', '906-8228', NULL, NULL),
-('steam:1100001167d265e', 'license:29b5cf81ce7ab787bc709e147300a0aa04806c62', 19860500, 'Shepesh', '{\"skin\":0,\"tshirt_2\":0,\"shoes_1\":0,\"hair_color_2\":0,\"hair_2\":0,\"makeup_1\":0,\"ears_1\":-1,\"age_1\":0,\"lipstick_3\":0,\"mask_2\":0,\"eyebrows_3\":0,\"eyebrows_4\":0,\"pants_1\":0,\"pants_2\":0,\"beard_3\":0,\"decals_1\":0,\"helmet_2\":0,\"helmet_1\":-1,\"lipstick_4\":0,\"makeup_3\":0,\"bags_1\":0,\"hair_1\":0,\"bproof_1\":0,\"lipstick_1\":0,\"arms\":0,\"ears_2\":0,\"eyebrows_2\":0,\"chain_1\":0,\"eyebrows_1\":0,\"makeup_2\":0,\"mask_1\":0,\"torso_1\":0,\"bags_2\":0,\"chain_2\":0,\"lipstick_2\":0,\"makeup_4\":0,\"hair_color_1\":0,\"bproof_2\":0,\"tshirt_1\":0,\"torso_2\":0,\"beard_1\":0,\"decals_2\":0,\"beard_2\":0,\"glasses_1\":0,\"face\":0,\"age_2\":0,\"shoes_2\":0,\"glasses_2\":0,\"beard_4\":0,\"sex\":0}', 'fisherman', 0, 'freecity', 0, '[]', '{\"y\":-790.96276855469,\"z\":30.63879776001,\"x\":229.97816467285}', 9120000, 0, 'user', 'MR', 'Farhan', '', 'm', '189', '[{\"name\":\"hunger\",\"percent\":38.91,\"val\":389100},{\"name\":\"thirst\",\"percent\":41.6825,\"val\":416825},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', b'0', '021-1111', NULL, NULL),
-('steam:11000011685b145', 'license:4068b4760e59796bb3aba041f5e0202e5fe29e0d', 2000, 'Yaakuzaa', '{\"skin\":0,\"lipstick_2\":0,\"hair_color_1\":0,\"hair_color_2\":0,\"hair_2\":0,\"makeup_1\":0,\"ears_1\":-1,\"age_1\":0,\"lipstick_3\":0,\"mask_2\":0,\"eyebrows_3\":0,\"eyebrows_4\":0,\"pants_1\":0,\"pants_2\":0,\"beard_3\":0,\"decals_1\":0,\"helmet_2\":0,\"glasses_1\":0,\"helmet_1\":-1,\"makeup_3\":0,\"bags_1\":0,\"bags_2\":0,\"bproof_1\":0,\"lipstick_1\":0,\"arms\":0,\"shoes_1\":0,\"makeup_2\":0,\"chain_1\":0,\"ears_2\":0,\"tshirt_2\":0,\"eyebrows_2\":0,\"torso_1\":0,\"age_2\":0,\"chain_2\":0,\"tshirt_1\":0,\"makeup_4\":0,\"lipstick_4\":0,\"bproof_2\":0,\"sex\":0,\"torso_2\":0,\"beard_1\":0,\"mask_1\":0,\"beard_2\":0,\"shoes_2\":0,\"face\":0,\"hair_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"beard_4\":0,\"decals_2\":0}', 'unemployed', 0, 'freecity', 0, '[]', '{\"z\":14.727857589722,\"y\":-2145.7734375,\"x\":314.95916748047}', 5000, 0, 'user', 'SAjjad', 'Dsh', '23/10/50', 'm', '184', '[{\"percent\":95.76,\"name\":\"hunger\",\"val\":957600},{\"percent\":96.82,\"name\":\"thirst\",\"val\":968200},{\"percent\":0.0,\"name\":\"drunk\",\"val\":0}]', b'0', '113-0914', NULL, NULL),
-('steam:1100001197619a3', 'license:007e99bd2ac120690061f5013c7ac37acc590003', 1600, 'amirvv13', '{\"makeup_2\":0,\"age_1\":0,\"sex\":0,\"hair_color_2\":0,\"eyebrows_2\":0,\"mask_2\":0,\"age_2\":0,\"ears_2\":0,\"torso_2\":0,\"chain_2\":0,\"lipstick_1\":0,\"lipstick_2\":0,\"glasses_2\":0,\"lipstick_3\":0,\"makeup_1\":0,\"beard_2\":0,\"helmet_1\":-1,\"bproof_2\":0,\"beard_4\":0,\"beard_3\":0,\"decals_1\":0,\"beard_1\":0,\"ears_1\":-1,\"shoes_1\":0,\"hair_1\":31,\"bags_1\":0,\"hair_2\":0,\"arms\":0,\"decals_2\":0,\"makeup_3\":0,\"shoes_2\":0,\"lipstick_4\":0,\"bproof_1\":0,\"face\":31,\"glasses_1\":0,\"pants_2\":0,\"eyebrows_4\":0,\"mask_1\":0,\"tshirt_2\":0,\"pants_1\":0,\"eyebrows_1\":0,\"tshirt_1\":0,\"eyebrows_3\":0,\"hair_color_1\":0,\"skin\":12,\"bags_2\":0,\"chain_1\":0,\"makeup_4\":0,\"torso_1\":0,\"helmet_2\":0}', 'miner', 0, 'freecity', 0, '[]', '{\"y\":1835.1960449219,\"z\":101.8578414917,\"x\":2336.8977050781}', 4800, 0, 'user', 'Amir', 'V13', '09/03/98', 'm', '180', '[{\"name\":\"hunger\",\"percent\":42.62,\"val\":426200},{\"name\":\"thirst\",\"percent\":44.465,\"val\":444650},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', b'1', '827-5849', NULL, NULL);
+INSERT INTO `users` (`identifier`, `license`, `money`, `name`, `skin`, `job`, `job_grade`, `org`, `org_gradeorg`, `loadout`, `position`, `bank`, `permission_level`, `group`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `status`, `isDead`, `phone_number`, `last_property`, `animal`, `is_dead`) VALUES
+('steam:1100001045fbd8f', 'license:608b506bd937d8dd6803110fcbc06f94e52b9a13', 88422650, 'Parsa✰', '{\"sex\":0,\"lipstick_3\":0,\"hair_1\":21,\"mask_1\":0,\"arms\":0,\"beard_1\":10,\"beard_3\":4,\"bags_2\":0,\"tshirt_1\":3,\"hair_color_1\":3,\"age_2\":0,\"makeup_3\":0,\"hair_2\":0,\"shoes_2\":0,\"bproof_1\":0,\"helmet_1\":-1,\"lipstick_1\":0,\"eyebrows_4\":0,\"decals_2\":0,\"tshirt_2\":0,\"face\":0,\"torso_1\":72,\"ears_1\":20,\"glasses_2\":5,\"lipstick_2\":0,\"chain_1\":0,\"mask_2\":0,\"bags_1\":0,\"makeup_4\":0,\"eyebrows_3\":0,\"ears_2\":0,\"beard_2\":10,\"torso_2\":2,\"lipstick_4\":0,\"makeup_1\":0,\"eyebrows_1\":12,\"glasses_1\":5,\"helmet_2\":0,\"hair_color_2\":0,\"decals_1\":0,\"beard_4\":0,\"makeup_2\":0,\"eyebrows_2\":5,\"chain_2\":0,\"shoes_1\":10,\"age_1\":0,\"skin\":0,\"pants_2\":0,\"pants_1\":10,\"bproof_2\":0}', 'unemployed', 0, 'freecity', 0, '[{\"label\":\"Knife\",\"ammo\":0,\"name\":\"WEAPON_KNIFE\"},{\"label\":\"Nightstick\",\"ammo\":0,\"name\":\"WEAPON_NIGHTSTICK\"},{\"label\":\"Hammer\",\"ammo\":0,\"name\":\"WEAPON_HAMMER\"},{\"label\":\"Bat\",\"ammo\":0,\"name\":\"WEAPON_BAT\"},{\"label\":\"Golf club\",\"ammo\":0,\"name\":\"WEAPON_GOLFCLUB\"},{\"label\":\"Crow bar\",\"ammo\":0,\"name\":\"WEAPON_CROWBAR\"},{\"label\":\"Pistol\",\"ammo\":250,\"name\":\"WEAPON_PISTOL\"},{\"label\":\"Pistol .50\",\"ammo\":250,\"name\":\"WEAPON_PISTOL50\"},{\"label\":\"Heavy revolver\",\"ammo\":250,\"name\":\"WEAPON_REVOLVER\"},{\"label\":\"Sns pistol\",\"ammo\":250,\"name\":\"WEAPON_SNSPISTOL\"},{\"label\":\"Heavy pistol\",\"ammo\":250,\"name\":\"WEAPON_HEAVYPISTOL\"},{\"label\":\"Vintage pistol\",\"ammo\":250,\"name\":\"WEAPON_VINTAGEPISTOL\"},{\"label\":\"Micro SMG\",\"ammo\":26,\"name\":\"WEAPON_MICROSMG\"},{\"label\":\"Pump shotgun\",\"ammo\":250,\"name\":\"WEAPON_PUMPSHOTGUN\"},{\"label\":\"Assault rifle\",\"ammo\":220,\"name\":\"WEAPON_ASSAULTRIFLE\"},{\"label\":\"Special carbine\",\"ammo\":220,\"name\":\"WEAPON_SPECIALCARBINE\"},{\"label\":\"Sniper rifle\",\"ammo\":42,\"name\":\"WEAPON_SNIPERRIFLE\"},{\"label\":\"Grenade\",\"ammo\":25,\"name\":\"WEAPON_GRENADE\"},{\"label\":\"Smoke grenade\",\"ammo\":25,\"name\":\"WEAPON_SMOKEGRENADE\"},{\"label\":\"Bz gas\",\"ammo\":25,\"name\":\"WEAPON_BZGAS\"},{\"label\":\"Fire extinguisher\",\"ammo\":42,\"name\":\"WEAPON_FIREEXTINGUISHER\"},{\"label\":\"Ball\",\"ammo\":1,\"name\":\"WEAPON_BALL\"},{\"label\":\"Firework\",\"ammo\":20,\"name\":\"WEAPON_FIREWORK\"},{\"label\":\"Musket\",\"ammo\":250,\"name\":\"WEAPON_MUSKET\"},{\"label\":\"Taser\",\"ammo\":42,\"name\":\"WEAPON_STUNGUN\"},{\"label\":\"Knuckledusters\",\"ammo\":0,\"name\":\"WEAPON_KNUCKLE\"},{\"label\":\"Hatchet\",\"ammo\":0,\"name\":\"WEAPON_HATCHET\"},{\"label\":\"Machete\",\"ammo\":0,\"name\":\"WEAPON_MACHETE\"},{\"label\":\"Flashlight\",\"ammo\":0,\"name\":\"WEAPON_FLASHLIGHT\"}]', '{\"x\":-1.7,\"z\":27.5,\"y\":-1136.8}', 31400, 0, 'user', 'Parsa', 'Ghyasi', '1994-02-07', 'm', '185', '[{\"name\":\"hunger\",\"percent\":40.91,\"val\":409100},{\"name\":\"thirst\",\"percent\":43.1825,\"val\":431825},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '531-3502', NULL, NULL, 0),
+('steam:11000010a1b83df', 'license:e62d81faaf5ea41b8be3677d26585b342f426b4c', 487549, 'MaMadLord', '{\"pants_1\":37,\"hair_color_2\":0,\"beard_4\":0,\"makeup_1\":0,\"helmet_1\":1,\"beard_3\":0,\"bproof_1\":0,\"lipstick_3\":0,\"pants_2\":2,\"chain_2\":2,\"chain_1\":2,\"ears_1\":2,\"lipstick_1\":0,\"makeup_2\":0,\"shoes_2\":0,\"eyebrows_1\":0,\"tshirt_2\":2,\"torso_2\":1,\"glasses_1\":5,\"makeup_3\":0,\"tshirt_1\":45,\"beard_1\":0,\"face\":0,\"bags_1\":0,\"glasses_2\":2,\"eyebrows_4\":0,\"bproof_2\":0,\"hair_2\":0,\"skin\":0,\"helmet_2\":2,\"bags_2\":0,\"hair_1\":0,\"makeup_4\":0,\"torso_1\":52,\"age_1\":0,\"ears_2\":0,\"lipstick_4\":0,\"age_2\":0,\"lipstick_2\":0,\"eyebrows_3\":0,\"decals_2\":3,\"beard_2\":0,\"mask_2\":0,\"arms\":47,\"eyebrows_2\":0,\"sex\":1,\"decals_1\":8,\"shoes_1\":28,\"mask_1\":0,\"hair_color_1\":0}', 'unemployed', 0, 'freecity', 0, '[{\"ammo\":0,\"label\":\"Matraque\",\"name\":\"WEAPON_NIGHTSTICK\"},{\"ammo\":250,\"label\":\"Pistolet de combat\",\"name\":\"WEAPON_COMBATPISTOL\"},{\"ammo\":250,\"label\":\"Smg d\'assaut\",\"name\":\"WEAPON_ASSAULTSMG\"},{\"ammo\":250,\"label\":\"Carabine à canon scié\",\"name\":\"WEAPON_SAWNOFFSHOTGUN\"},{\"ammo\":0,\"label\":\"Fusil de sniper\",\"name\":\"WEAPON_SNIPERRIFLE\"},{\"ammo\":250,\"label\":\"Tazer\",\"name\":\"WEAPON_STUNGUN\"}]', '{\"x\":312.7,\"z\":31.9,\"y\":-1377.5}', 45411, 0, 'user', 'AAA', 'BBB', '11.11.1111', 'm', '150', '[{\"name\":\"hunger\",\"val\":498500,\"percent\":49.85},{\"name\":\"thirst\",\"val\":498875,\"percent\":49.8875},{\"name\":\"drunk\",\"val\":0,\"percent\":0.0}]', 0, '771-1741', NULL, NULL, 0),
+('steam:11000010b3a30a0', 'license:eda9a39ff948770ed1171c7836a68f0489ded17e', 94266176, 'Nobody', '{\"lipstick_4\":0,\"chain_2\":0,\"lipstick_1\":0,\"skin\":12,\"beard_4\":0,\"pants_1\":1,\"bproof_2\":1,\"makeup_4\":0,\"bags_2\":0,\"beard_3\":63,\"arms\":0,\"lipstick_3\":0,\"tshirt_2\":2,\"eyebrows_1\":4,\"makeup_3\":0,\"eyebrows_4\":9,\"chain_1\":0,\"decals_1\":0,\"pants_2\":13,\"mask_2\":2,\"bags_1\":0,\"hair_1\":68,\"face\":0,\"mask_1\":0,\"beard_1\":12,\"torso_1\":4,\"ears_1\":1,\"shoes_1\":1,\"makeup_2\":0,\"makeup_1\":0,\"tshirt_1\":4,\"helmet_2\":0,\"lipstick_2\":0,\"bproof_1\":3,\"age_2\":0,\"hair_color_2\":0,\"sex\":0,\"torso_2\":2,\"ears_2\":5,\"eyebrows_2\":5,\"glasses_1\":0,\"eyebrows_3\":20,\"hair_color_1\":63,\"age_1\":0,\"hair_2\":0,\"shoes_2\":7,\"helmet_1\":-1,\"decals_2\":0,\"glasses_2\":2,\"beard_2\":10}', 'mecano', 4, 'freecity', 0, '[{\"name\":\"WEAPON_KNIFE\",\"ammo\":0,\"label\":\"Knife\"},{\"name\":\"WEAPON_NIGHTSTICK\",\"ammo\":0,\"label\":\"Nightstick\"},{\"name\":\"WEAPON_HAMMER\",\"ammo\":0,\"label\":\"Hammer\"},{\"name\":\"WEAPON_BAT\",\"ammo\":0,\"label\":\"Bat\"},{\"name\":\"WEAPON_GOLFCLUB\",\"ammo\":0,\"label\":\"Golf club\"},{\"name\":\"WEAPON_CROWBAR\",\"ammo\":0,\"label\":\"Crow bar\"},{\"name\":\"WEAPON_PISTOL\",\"ammo\":0,\"label\":\"Pistol\"},{\"name\":\"WEAPON_PISTOL50\",\"ammo\":0,\"label\":\"Pistol .50\"},{\"name\":\"WEAPON_SNSPISTOL\",\"ammo\":0,\"label\":\"Sns pistol\"},{\"name\":\"WEAPON_HEAVYPISTOL\",\"ammo\":0,\"label\":\"Heavy pistol\"},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"ammo\":0,\"label\":\"Vintage pistol\"},{\"name\":\"WEAPON_MICROSMG\",\"ammo\":0,\"label\":\"Micro SMG\"},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"ammo\":66,\"label\":\"Pump shotgun\"},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"ammo\":104,\"label\":\"Assault rifle\"},{\"name\":\"WEAPON_SPECIALCARBINE\",\"ammo\":104,\"label\":\"Special carbine\"},{\"name\":\"WEAPON_SNIPERRIFLE\",\"ammo\":80,\"label\":\"Sniper rifle\"},{\"name\":\"WEAPON_GRENADE\",\"ammo\":14,\"label\":\"Grenade\"},{\"name\":\"WEAPON_SMOKEGRENADE\",\"ammo\":25,\"label\":\"Smoke grenade\"},{\"name\":\"WEAPON_BZGAS\",\"ammo\":25,\"label\":\"Bz gas\"},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"ammo\":0,\"label\":\"Fire extinguisher\"},{\"name\":\"WEAPON_BALL\",\"ammo\":1,\"label\":\"Ball\"},{\"name\":\"WEAPON_FIREWORK\",\"ammo\":0,\"label\":\"Firework\"},{\"name\":\"WEAPON_STUNGUN\",\"ammo\":84,\"label\":\"Taser\"},{\"name\":\"WEAPON_KNUCKLE\",\"ammo\":0,\"label\":\"Knuckledusters\"},{\"name\":\"WEAPON_HATCHET\",\"ammo\":0,\"label\":\"Hatchet\"},{\"name\":\"WEAPON_MACHETE\",\"ammo\":0,\"label\":\"Machete\"},{\"name\":\"WEAPON_FLASHLIGHT\",\"ammo\":0,\"label\":\"Flashlight\"}]', '{\"x\":-80.7,\"z\":25.5,\"y\":-1098.4}', 2052030, 0, 'user', 'Nobody', 'Somebody', '14-7-1374', 'm', '180', '[{\"name\":\"hunger\",\"percent\":41.21,\"val\":412100},{\"name\":\"thirst\",\"percent\":43.4075,\"val\":434075},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '562-3039', NULL, NULL, 1),
+('steam:110000111df570b', 'license:6b6457b6bde02a9f5c8e2fb8739b264572d272da', 2000, 'Heavens', '{\"pants_1\":0,\"hair_color_2\":0,\"beard_4\":0,\"makeup_1\":0,\"helmet_1\":-1,\"beard_3\":0,\"bproof_1\":0,\"lipstick_3\":0,\"pants_2\":0,\"chain_2\":0,\"chain_1\":0,\"eyebrows_4\":0,\"lipstick_1\":0,\"makeup_2\":0,\"shoes_2\":0,\"eyebrows_1\":0,\"tshirt_2\":0,\"face\":0,\"glasses_1\":0,\"makeup_3\":0,\"tshirt_1\":0,\"arms\":0,\"torso_2\":0,\"bproof_2\":0,\"lipstick_2\":0,\"age_2\":0,\"glasses_2\":0,\"age_1\":0,\"skin\":0,\"eyebrows_3\":0,\"bags_2\":0,\"beard_2\":0,\"makeup_4\":0,\"hair_2\":0,\"ears_1\":-1,\"ears_2\":0,\"lipstick_4\":0,\"torso_1\":0,\"bags_1\":0,\"mask_1\":0,\"decals_2\":0,\"helmet_2\":0,\"hair_1\":0,\"hair_color_1\":0,\"eyebrows_2\":0,\"sex\":0,\"decals_1\":0,\"shoes_1\":0,\"beard_1\":0,\"mask_2\":0}', 'unemployed', 0, 'freecity', 0, '[]', '{\"z\":21.4,\"x\":-1044.7,\"y\":-2749.1}', 5000, 0, 'user', 'No-------', 'U--------', '28-05-199', 'm', '188', '[{\"name\":\"hunger\",\"percent\":99.02,\"val\":990200},{\"name\":\"thirst\",\"percent\":99.265,\"val\":992650},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '427-1473', NULL, NULL, 0),
+('steam:110000114a058a8', 'license:c359a4ebd956cdfd97bdedf6d1b47565d7f1ae31', 84799910, 'Vidat', '{\"makeup_2\":0,\"age_1\":0,\"sex\":0,\"eyebrows_1\":0,\"eyebrows_2\":0,\"mask_2\":0,\"age_2\":0,\"ears_2\":0,\"torso_2\":2,\"chain_2\":0,\"glasses_1\":0,\"lipstick_2\":0,\"glasses_2\":0,\"lipstick_3\":0,\"arms\":0,\"beard_2\":0,\"helmet_1\":-1,\"decals_2\":0,\"beard_4\":0,\"decals_1\":0,\"makeup_3\":0,\"makeup_1\":0,\"ears_1\":-1,\"shoes_1\":3,\"hair_1\":11,\"bags_1\":0,\"hair_2\":5,\"chain_1\":0,\"lipstick_1\":0,\"bproof_2\":0,\"skin\":0,\"beard_3\":0,\"bproof_1\":0,\"face\":10,\"hair_color_2\":0,\"pants_2\":0,\"eyebrows_4\":0,\"mask_1\":0,\"tshirt_2\":2,\"pants_1\":10,\"beard_1\":0,\"tshirt_1\":6,\"lipstick_4\":0,\"hair_color_1\":7,\"shoes_2\":0,\"bags_2\":0,\"torso_1\":7,\"makeup_4\":0,\"eyebrows_3\":0,\"helmet_2\":0}', 'police', 4, 'freecity', 0, '[{\"label\":\"Nightstick\",\"ammo\":0,\"name\":\"WEAPON_NIGHTSTICK\"},{\"label\":\"Combat pistol\",\"ammo\":191,\"name\":\"WEAPON_COMBATPISTOL\"},{\"label\":\"AP pistol\",\"ammo\":191,\"name\":\"WEAPON_APPISTOL\"},{\"label\":\"Pistol .50\",\"ammo\":191,\"name\":\"WEAPON_PISTOL50\"},{\"label\":\"Assault SMG\",\"ammo\":26,\"name\":\"WEAPON_ASSAULTSMG\"},{\"label\":\"Compact rifle\",\"ammo\":195,\"name\":\"WEAPON_COMPACTRIFLE\"},{\"label\":\"Fire extinguisher\",\"ammo\":84,\"name\":\"WEAPON_FIREEXTINGUISHER\"},{\"label\":\"Firework\",\"ammo\":0,\"name\":\"WEAPON_FIREWORK\"},{\"label\":\"Taser\",\"ammo\":250,\"name\":\"WEAPON_STUNGUN\"}]', '{\"x\":198.8,\"z\":29.4,\"y\":-1037.7}', 100123300, 4, 'superadmin', 'Vidat', 'Boz', '24-12-94', 'm', '181', '[{\"name\":\"hunger\",\"percent\":42.17,\"val\":421700},{\"name\":\"thirst\",\"percent\":44.1275,\"val\":441275},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '906-8228', NULL, NULL, 0),
+('steam:1100001167d265e', 'license:29b5cf81ce7ab787bc709e147300a0aa04806c62', 665036, 'Farhan', '{\"skin\":0,\"tshirt_2\":0,\"shoes_1\":0,\"hair_color_2\":0,\"hair_2\":0,\"makeup_1\":0,\"ears_1\":-1,\"age_1\":0,\"lipstick_3\":0,\"mask_2\":0,\"eyebrows_3\":0,\"eyebrows_4\":0,\"pants_1\":0,\"pants_2\":0,\"beard_3\":0,\"decals_1\":0,\"helmet_2\":0,\"helmet_1\":-1,\"lipstick_4\":0,\"makeup_3\":0,\"bags_1\":0,\"hair_1\":0,\"bproof_1\":0,\"lipstick_1\":0,\"arms\":0,\"ears_2\":0,\"eyebrows_2\":0,\"chain_1\":0,\"eyebrows_1\":0,\"makeup_2\":0,\"mask_1\":0,\"torso_1\":0,\"bags_2\":0,\"chain_2\":0,\"lipstick_2\":0,\"makeup_4\":0,\"hair_color_1\":0,\"bproof_2\":0,\"tshirt_1\":0,\"torso_2\":0,\"beard_1\":0,\"decals_2\":0,\"beard_2\":0,\"glasses_1\":0,\"face\":0,\"age_2\":0,\"shoes_2\":0,\"glasses_2\":0,\"beard_4\":0,\"sex\":0}', 'unemployed', 0, 'freecity', 0, '[{\"name\":\"WEAPON_PISTOL\",\"ammo\":250,\"label\":\"Pistol\"},{\"name\":\"WEAPON_COMBATPISTOL\",\"ammo\":250,\"label\":\"Combat pistol\"},{\"name\":\"WEAPON_MICROSMG\",\"ammo\":250,\"label\":\"Micro SMG\"},{\"name\":\"WEAPON_SMG\",\"ammo\":250,\"label\":\"SMG\"},{\"name\":\"WEAPON_ASSAULTSMG\",\"ammo\":250,\"label\":\"Assault SMG\"},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"ammo\":1,\"label\":\"Pump shotgun\"},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"ammo\":199,\"label\":\"Assault rifle\"},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"ammo\":199,\"label\":\"Advanced rifle\"},{\"name\":\"WEAPON_SPECIALCARBINE\",\"ammo\":199,\"label\":\"Special carbine\"},{\"name\":\"WEAPON_SNIPERRIFLE\",\"ammo\":39,\"label\":\"Sniper rifle\"},{\"name\":\"WEAPON_STUNGUN\",\"ammo\":42,\"label\":\"Taser\"}]', '{\"x\":2550.0,\"z\":20.8,\"y\":1674.1}', 92109, 0, 'user', 'MR', 'Farhan', '', 'm', '189', '[{\"name\":\"hunger\",\"percent\":18.83,\"val\":188300},{\"name\":\"thirst\",\"percent\":26.6225,\"val\":266225},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 1, '021-1111', NULL, NULL, 0),
+('steam:11000011685b145', 'license:4068b4760e59796bb3aba041f5e0202e5fe29e0d', 4061950, 'Yaakuzaa', '{\"skin\":0,\"lipstick_2\":0,\"hair_color_1\":0,\"hair_color_2\":0,\"hair_2\":0,\"makeup_1\":0,\"ears_1\":-1,\"age_1\":0,\"lipstick_3\":0,\"mask_2\":0,\"eyebrows_3\":0,\"eyebrows_4\":0,\"pants_1\":0,\"pants_2\":0,\"beard_3\":0,\"decals_1\":0,\"helmet_2\":0,\"glasses_1\":0,\"helmet_1\":-1,\"makeup_3\":0,\"bags_1\":0,\"bags_2\":0,\"bproof_1\":0,\"lipstick_1\":0,\"arms\":0,\"shoes_1\":0,\"makeup_2\":0,\"chain_1\":0,\"ears_2\":0,\"tshirt_2\":0,\"eyebrows_2\":0,\"torso_1\":0,\"age_2\":0,\"chain_2\":0,\"tshirt_1\":0,\"makeup_4\":0,\"lipstick_4\":0,\"bproof_2\":0,\"sex\":0,\"torso_2\":0,\"beard_1\":0,\"mask_1\":0,\"beard_2\":0,\"shoes_2\":0,\"face\":0,\"hair_1\":0,\"eyebrows_1\":0,\"glasses_2\":0,\"beard_4\":0,\"decals_2\":0}', 'ambulance', 2, 'freecity', 0, '[{\"label\":\"Nightstick\",\"ammo\":0,\"name\":\"WEAPON_NIGHTSTICK\"},{\"label\":\"Special carbine\",\"ammo\":0,\"name\":\"WEAPON_SPECIALCARBINE\"},{\"label\":\"Sniper rifle\",\"ammo\":0,\"name\":\"WEAPON_SNIPERRIFLE\"},{\"label\":\"Ball\",\"ammo\":0,\"name\":\"WEAPON_BALL\"},{\"label\":\"Machete\",\"ammo\":0,\"name\":\"WEAPON_MACHETE\"},{\"label\":\"Flashlight\",\"ammo\":0,\"name\":\"WEAPON_FLASHLIGHT\"}]', '{\"x\":-47.6,\"z\":26.7,\"y\":-1097.2}', 11000, 0, 'user', 'SAjjad', 'Dsh', '23/10/50', 'm', '184', '[{\"name\":\"hunger\",\"percent\":32.91,\"val\":329100},{\"name\":\"thirst\",\"percent\":37.1825,\"val\":371825},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '113-0914', NULL, NULL, 0),
+('steam:1100001197354a7', 'license:c7ec0925e74a6574b3372ef06027809800613d9b', 2000, 'Abtin-', NULL, 'unemployed', 0, 'freecity', 0, '[]', '{\"x\":-397.0,\"y\":-1827.4,\"z\":20.8}', 5200, 0, 'user', 'Abt1n', 'Kennys', '19/03/2000', 'm', '187', '[{\"percent\":96.14,\"name\":\"hunger\",\"val\":961400},{\"percent\":97.105,\"name\":\"thirst\",\"val\":971050},{\"percent\":0.0,\"name\":\"drunk\",\"val\":0}]', 0, '873-7104', NULL, NULL, 0),
+('steam:1100001197619a3', 'license:007e99bd2ac120690061f5013c7ac37acc590003', 97704650, 'amirvv13', '{\"lipstick_4\":0,\"glasses_1\":0,\"decals_2\":0,\"beard_2\":0,\"torso_1\":75,\"lipstick_2\":0,\"eyebrows_3\":1,\"bags_1\":0,\"skin\":12,\"hair_1\":47,\"lipstick_3\":0,\"eyebrows_2\":10,\"bproof_1\":0,\"age_2\":0,\"helmet_1\":-1,\"shoes_2\":5,\"eyebrows_1\":2,\"shoes_1\":55,\"bproof_2\":0,\"mask_1\":0,\"pants_2\":0,\"chain_1\":7,\"age_1\":0,\"makeup_1\":7,\"hair_color_1\":3,\"face\":31,\"hair_color_2\":29,\"beard_4\":0,\"makeup_4\":0,\"makeup_3\":0,\"helmet_2\":0,\"pants_1\":31,\"mask_2\":0,\"glasses_2\":0,\"torso_2\":0,\"hair_2\":0,\"bags_2\":0,\"makeup_2\":5,\"ears_2\":0,\"ears_1\":26,\"eyebrows_4\":0,\"lipstick_1\":1,\"sex\":0,\"arms\":0,\"chain_2\":0,\"beard_1\":0,\"tshirt_2\":0,\"decals_1\":0,\"tshirt_1\":2,\"beard_3\":0}', 'police', 3, 'freecity', 0, '[{\"name\":\"WEAPON_KNIFE\",\"ammo\":0,\"label\":\"Knife\"},{\"name\":\"WEAPON_NIGHTSTICK\",\"ammo\":0,\"label\":\"Nightstick\"},{\"name\":\"WEAPON_HAMMER\",\"ammo\":0,\"label\":\"Hammer\"},{\"name\":\"WEAPON_BAT\",\"ammo\":0,\"label\":\"Bat\"},{\"name\":\"WEAPON_GOLFCLUB\",\"ammo\":0,\"label\":\"Golf club\"},{\"name\":\"WEAPON_CROWBAR\",\"ammo\":0,\"label\":\"Crow bar\"},{\"name\":\"WEAPON_PISTOL\",\"ammo\":250,\"label\":\"Pistol\"},{\"name\":\"WEAPON_COMBATPISTOL\",\"ammo\":250,\"label\":\"Combat pistol\"},{\"name\":\"WEAPON_PISTOL50\",\"ammo\":250,\"label\":\"Pistol .50\"},{\"name\":\"WEAPON_REVOLVER\",\"ammo\":250,\"label\":\"Heavy revolver\"},{\"name\":\"WEAPON_SNSPISTOL\",\"ammo\":250,\"label\":\"Sns pistol\"},{\"name\":\"WEAPON_HEAVYPISTOL\",\"ammo\":250,\"label\":\"Heavy pistol\"},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"ammo\":250,\"label\":\"Vintage pistol\"},{\"name\":\"WEAPON_MICROSMG\",\"ammo\":250,\"label\":\"Micro SMG\"},{\"name\":\"WEAPON_ASSAULTSMG\",\"ammo\":250,\"label\":\"Assault SMG\"},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"ammo\":250,\"label\":\"Pump shotgun\"},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"ammo\":250,\"label\":\"Sawed off shotgun\"},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"ammo\":223,\"label\":\"Assault rifle\"},{\"name\":\"WEAPON_CARBINERIFLE\",\"ammo\":223,\"label\":\"Carbine rifle\"},{\"name\":\"WEAPON_SPECIALCARBINE\",\"ammo\":223,\"label\":\"Special carbine\"},{\"name\":\"WEAPON_COMPACTRIFLE\",\"ammo\":223,\"label\":\"Compact rifle\"},{\"name\":\"WEAPON_SNIPERRIFLE\",\"ammo\":250,\"label\":\"Sniper rifle\"},{\"name\":\"WEAPON_GRENADE\",\"ammo\":25,\"label\":\"Grenade\"},{\"name\":\"WEAPON_SMOKEGRENADE\",\"ammo\":25,\"label\":\"Smoke grenade\"},{\"name\":\"WEAPON_BZGAS\",\"ammo\":25,\"label\":\"Bz gas\"},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"ammo\":84,\"label\":\"Fire extinguisher\"},{\"name\":\"WEAPON_BALL\",\"ammo\":1,\"label\":\"Ball\"},{\"name\":\"WEAPON_FIREWORK\",\"ammo\":20,\"label\":\"Firework\"},{\"name\":\"WEAPON_MUSKET\",\"ammo\":250,\"label\":\"Musket\"},{\"name\":\"WEAPON_STUNGUN\",\"ammo\":250,\"label\":\"Taser\"},{\"name\":\"WEAPON_KNUCKLE\",\"ammo\":0,\"label\":\"Knuckledusters\"},{\"name\":\"WEAPON_HATCHET\",\"ammo\":0,\"label\":\"Hatchet\"},{\"name\":\"WEAPON_MACHETE\",\"ammo\":0,\"label\":\"Machete\"}]', '{\"x\":437.1,\"z\":28.4,\"y\":-1018.3}', 100036000, 0, 'user', 'Amir', 'V13', '09/03/98', 'm', '180', '[{\"name\":\"hunger\",\"percent\":49.0,\"val\":490000},{\"name\":\"thirst\",\"percent\":49.25,\"val\":492500},{\"name\":\"drunk\",\"percent\":0.0,\"val\":0}]', 0, '827-5849', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -3416,12 +3525,14 @@ CREATE TABLE `user_accounts` (
 
 INSERT INTO `user_accounts` (`id`, `identifier`, `name`, `money`) VALUES
 (1, 'steam:1100001197619a3', 'black_money', 0),
-(2, 'steam:1100001045fbd8f', 'black_money', 0),
-(3, 'steam:110000114a058a8', 'black_money', 0),
+(2, 'steam:1100001045fbd8f', 'black_money', 25562),
+(3, 'steam:110000114a058a8', 'black_money', 3616),
 (4, 'steam:11000010a1b83df', 'black_money', 0),
 (5, 'steam:1100001167d265e', 'black_money', 0),
-(6, 'steam:11000010b3a30a0', 'black_money', 0),
-(7, 'steam:11000011685b145', 'black_money', 0);
+(6, 'steam:11000010b3a30a0', 'black_money', 15874),
+(7, 'steam:11000011685b145', 'black_money', 0),
+(8, 'steam:1100001197354a7', 'black_money', 0),
+(9, 'steam:110000111df570b', 'black_money', 0);
 
 -- --------------------------------------------------------
 
@@ -3454,7 +3565,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (11, 'steam:1100001197619a3', 'coke', 0),
 (12, 'steam:1100001197619a3', 'bolcacahuetes', 0),
 (13, 'steam:1100001197619a3', 'opium_pooch', 0),
-(14, 'steam:1100001197619a3', 'yusuf', 0),
+(14, 'steam:1100001197619a3', 'yusuf', 11),
 (15, 'steam:1100001197619a3', 'malbora', 0),
 (16, 'steam:1100001197619a3', 'fixkit', 0),
 (17, 'steam:1100001197619a3', 'jus_raisin', 0),
@@ -3473,13 +3584,13 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (30, 'steam:1100001197619a3', 'whiskycoc', 0),
 (31, 'steam:1100001197619a3', 'weed_pooch', 0),
 (32, 'steam:1100001197619a3', 'mixapero', 0),
-(33, 'steam:1100001197619a3', 'wool', 0),
+(33, 'steam:1100001197619a3', 'wool', 11),
 (34, 'steam:1100001197619a3', 'whiskycoca', 0),
 (35, 'steam:1100001197619a3', 'ice', 0),
 (36, 'steam:1100001197619a3', 'myrte_cargo', 0),
 (37, 'steam:1100001197619a3', 'fixtool', 0),
 (38, 'steam:1100001197619a3', 'weed', 0),
-(39, 'steam:1100001197619a3', 'water', 10),
+(39, 'steam:1100001197619a3', 'water', 7),
 (40, 'steam:1100001197619a3', 'opium', 0),
 (41, 'steam:1100001197619a3', 'vodkafruit', 0),
 (42, 'steam:1100001197619a3', 'washed_stone', 0),
@@ -3487,7 +3598,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (44, 'steam:1100001197619a3', 'tabacbrunsec', 0),
 (45, 'steam:1100001197619a3', 'petrol_raffin', 0),
 (46, 'steam:1100001197619a3', 'vodkaenergy', 0),
-(47, 'steam:1100001197619a3', 'clip', 0),
+(47, 'steam:1100001197619a3', 'clip', 10),
 (48, 'steam:1100001197619a3', 'vine', 0),
 (49, 'steam:1100001197619a3', 'fabric', 0),
 (50, 'steam:1100001197619a3', 'silencieux', 0),
@@ -3513,7 +3624,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (70, 'steam:1100001197619a3', 'redbull_cargo', 0),
 (71, 'steam:1100001197619a3', 'copper', 0),
 (72, 'steam:1100001197619a3', 'redbull', 0),
-(73, 'steam:1100001197619a3', 'grip', 0),
+(73, 'steam:1100001197619a3', 'grip', 1),
 (74, 'steam:1100001197619a3', 'alcool', 0),
 (75, 'steam:1100001197619a3', 'rhumfruit', 0),
 (76, 'steam:1100001197619a3', 'menthe', 0),
@@ -3530,7 +3641,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (87, 'steam:1100001197619a3', 'golem', 0),
 (88, 'steam:1100001197619a3', 'whisky', 0),
 (89, 'steam:1100001197619a3', 'energy', 0),
-(90, 'steam:1100001197619a3', 'flashlight', 0),
+(90, 'steam:1100001197619a3', 'flashlight', 2),
 (91, 'steam:1100001197619a3', 'meth', 0),
 (92, 'steam:1100001197619a3', 'alcool_cargo', 0),
 (93, 'steam:1100001197619a3', 'jewels', 0),
@@ -3538,7 +3649,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (95, 'steam:1100001197619a3', 'icetea', 0),
 (96, 'steam:1100001197619a3', 'jusfruit', 0),
 (97, 'steam:1100001197619a3', 'clothe', 0),
-(98, 'steam:1100001045fbd8f', 'bandage', 0),
+(98, 'steam:1100001045fbd8f', 'bandage', 20),
 (99, 'steam:1100001045fbd8f', 'jagerbomb', 0),
 (100, 'steam:1100001045fbd8f', 'vodka', 0),
 (101, 'steam:1100001045fbd8f', 'myrte', 0),
@@ -3548,7 +3659,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (105, 'steam:1100001045fbd8f', 'gitanes', 0),
 (106, 'steam:1100001045fbd8f', 'gold', 0),
 (107, 'steam:1100001045fbd8f', 'limonade', 0),
-(108, 'steam:1100001045fbd8f', 'yusuf', 0),
+(108, 'steam:1100001045fbd8f', 'yusuf', 3),
 (109, 'steam:1100001045fbd8f', 'bolcacahuetes', 0),
 (110, 'steam:1100001045fbd8f', 'malbora', 0),
 (111, 'steam:1100001045fbd8f', 'opium_pooch', 0),
@@ -3576,18 +3687,18 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (133, 'steam:1100001045fbd8f', 'ice', 0),
 (134, 'steam:1100001045fbd8f', 'weed', 0),
 (135, 'steam:1100001045fbd8f', 'washed_stone', 7),
-(136, 'steam:1100001045fbd8f', 'water', 8),
+(136, 'steam:1100001045fbd8f', 'water', 9),
 (137, 'steam:1100001045fbd8f', 'myrte_cargo', 0),
 (138, 'steam:1100001045fbd8f', 'vodkrb', 0),
 (139, 'steam:1100001045fbd8f', 'petrol_raffin', 0),
 (140, 'steam:1100001045fbd8f', 'vodkafruit', 0),
 (141, 'steam:1100001045fbd8f', 'tabacbrunsec', 0),
 (142, 'steam:1100001045fbd8f', 'opium', 0),
-(143, 'steam:1100001045fbd8f', 'clip', 0),
+(143, 'steam:1100001045fbd8f', 'clip', 3),
 (144, 'steam:1100001045fbd8f', 'vine', 0),
 (145, 'steam:1100001045fbd8f', 'fabric', 0),
 (146, 'steam:1100001045fbd8f', 'vodkaenergy', 0),
-(147, 'steam:1100001045fbd8f', 'silencieux', 0),
+(147, 'steam:1100001045fbd8f', 'silencieux', 3),
 (148, 'steam:1100001045fbd8f', 'mojito', 0),
 (149, 'steam:1100001045fbd8f', 'viande', 0),
 (150, 'steam:1100001045fbd8f', 'drpepper', 0),
@@ -3606,10 +3717,10 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (163, 'steam:1100001045fbd8f', 'cutted_wood', 0),
 (164, 'steam:1100001045fbd8f', 'redbull_cargo', 0),
 (165, 'steam:1100001045fbd8f', 'rhum', 0),
-(166, 'steam:1100001045fbd8f', 'bread', 8),
+(166, 'steam:1100001045fbd8f', 'bread', 0),
 (167, 'steam:1100001045fbd8f', 'jager', 0),
 (168, 'steam:1100001045fbd8f', 'copper', 0),
-(169, 'steam:1100001045fbd8f', 'grip', 0),
+(169, 'steam:1100001045fbd8f', 'grip', 3),
 (170, 'steam:1100001045fbd8f', 'alcool', 0),
 (171, 'steam:1100001045fbd8f', 'redbull', 0),
 (172, 'steam:1100001045fbd8f', 'rhumfruit', 0),
@@ -3630,12 +3741,12 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (187, 'steam:1100001045fbd8f', 'jewels', 0),
 (188, 'steam:1100001045fbd8f', 'meth', 0),
 (189, 'steam:1100001045fbd8f', 'essence', 0),
-(190, 'steam:1100001045fbd8f', 'flashlight', 0),
+(190, 'steam:1100001045fbd8f', 'flashlight', 4),
 (191, 'steam:1100001045fbd8f', 'alcool_cargo', 0),
 (192, 'steam:1100001045fbd8f', 'clothe', 0),
 (193, 'steam:1100001045fbd8f', 'icetea', 0),
 (194, 'steam:1100001045fbd8f', 'jusfruit', 0),
-(195, 'steam:110000114a058a8', 'myrte', 0),
+(195, 'steam:110000114a058a8', 'myrte', -1),
 (196, 'steam:110000114a058a8', 'bandage', 0),
 (197, 'steam:110000114a058a8', 'vodka', 0),
 (198, 'steam:110000114a058a8', 'jagerbomb', 0),
@@ -3645,7 +3756,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (202, 'steam:110000114a058a8', 'gitanes', 0),
 (203, 'steam:110000114a058a8', 'limonade', 0),
 (204, 'steam:110000114a058a8', 'myrtealcool', 0),
-(205, 'steam:110000114a058a8', 'yusuf', 0),
+(205, 'steam:110000114a058a8', 'yusuf', 1),
 (206, 'steam:110000114a058a8', 'bolcacahuetes', 0),
 (207, 'steam:110000114a058a8', 'coke', 0),
 (208, 'steam:110000114a058a8', 'malbora', 0),
@@ -3683,7 +3794,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (240, 'steam:110000114a058a8', 'clip', 0),
 (241, 'steam:110000114a058a8', 'fabric', 0),
 (242, 'steam:110000114a058a8', 'vodkaenergy', 0),
-(243, 'steam:110000114a058a8', 'silencieux', 0),
+(243, 'steam:110000114a058a8', 'silencieux', 3),
 (244, 'steam:110000114a058a8', 'vine', 0),
 (245, 'steam:110000114a058a8', 'diamond', 0),
 (246, 'steam:110000114a058a8', 'viande', 0),
@@ -3702,13 +3813,13 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (259, 'steam:110000114a058a8', 'tequila', 0),
 (260, 'steam:110000114a058a8', 'cutted_wood', 0),
 (261, 'steam:110000114a058a8', 'rhum', 0),
-(262, 'steam:110000114a058a8', 'bread', 0),
+(262, 'steam:110000114a058a8', 'bread', 6),
 (263, 'steam:110000114a058a8', 'redbull_cargo', 0),
 (264, 'steam:110000114a058a8', 'jager', 0),
-(265, 'steam:110000114a058a8', 'redbull', 0),
+(265, 'steam:110000114a058a8', 'redbull', -1),
 (266, 'steam:110000114a058a8', 'rhumfruit', 0),
-(267, 'steam:110000114a058a8', 'alcool', 0),
-(268, 'steam:110000114a058a8', 'grip', 0),
+(267, 'steam:110000114a058a8', 'alcool', -2),
+(268, 'steam:110000114a058a8', 'grip', 1),
 (269, 'steam:110000114a058a8', 'copper', 0),
 (270, 'steam:110000114a058a8', 'bolpistache', 0),
 (271, 'steam:110000114a058a8', 'grapperaisin', 0),
@@ -3721,7 +3832,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (278, 'steam:110000114a058a8', 'golem', 0),
 (279, 'steam:110000114a058a8', 'meth_pooch', 0),
 (280, 'steam:110000114a058a8', 'carokit', 0),
-(281, 'steam:110000114a058a8', 'jewels', 0),
+(281, 'steam:110000114a058a8', 'jewels', 2),
 (282, 'steam:110000114a058a8', 'whisky', 0),
 (283, 'steam:110000114a058a8', 'energy', 0),
 (284, 'steam:110000114a058a8', 'iron', 0),
@@ -3742,7 +3853,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (299, 'steam:11000010a1b83df', 'wood', 0),
 (300, 'steam:11000010a1b83df', 'gitanes', 0),
 (301, 'steam:11000010a1b83df', 'myrtealcool', 0),
-(302, 'steam:11000010a1b83df', 'yusuf', 0),
+(302, 'steam:11000010a1b83df', 'yusuf', 2),
 (303, 'steam:11000010a1b83df', 'bolcacahuetes', 0),
 (304, 'steam:11000010a1b83df', 'coke', 0),
 (305, 'steam:11000010a1b83df', 'opium_pooch', 0),
@@ -3845,7 +3956,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (402, 'steam:1100001167d265e', 'opium', 0),
 (403, 'steam:1100001167d265e', 'bolchips', 0),
 (404, 'steam:1100001167d265e', 'cutted_wood', 0),
-(405, 'steam:1100001167d265e', 'gazbottle', 0),
+(405, 'steam:1100001167d265e', 'gazbottle', 4),
 (406, 'steam:1100001167d265e', 'fixtool', 0),
 (407, 'steam:1100001167d265e', 'grip', 2),
 (408, 'steam:1100001167d265e', 'iron', 0),
@@ -3857,17 +3968,17 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (414, 'steam:1100001167d265e', 'whiskycoca', 0),
 (415, 'steam:1100001167d265e', 'bolnoixcajou', 0),
 (416, 'steam:1100001167d265e', 'wool', 0),
-(417, 'steam:1100001167d265e', 'yusuf', 7),
+(417, 'steam:1100001167d265e', 'yusuf', 8),
 (418, 'steam:1100001167d265e', 'martini', 0),
 (419, 'steam:1100001167d265e', 'weed', 0),
 (420, 'steam:1100001167d265e', 'gold', 0),
 (421, 'steam:1100001167d265e', 'whiskycoc', 0),
-(422, 'steam:1100001167d265e', 'flashlight', 1),
+(422, 'steam:1100001167d265e', 'flashlight', 0),
 (423, 'steam:1100001167d265e', 'icetea', 0),
 (424, 'steam:1100001167d265e', 'teqpaf', 0),
-(425, 'steam:1100001167d265e', 'water', 0),
+(425, 'steam:1100001167d265e', 'water', 7),
 (426, 'steam:1100001167d265e', 'tabacbrunsec', 0),
-(427, 'steam:1100001167d265e', 'bread', 0),
+(427, 'steam:1100001167d265e', 'bread', 1),
 (428, 'steam:1100001167d265e', 'meth_pooch', 0),
 (429, 'steam:1100001167d265e', 'fixkit', 0),
 (430, 'steam:1100001167d265e', 'vodkaenergy', 0),
@@ -3888,7 +3999,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (445, 'steam:1100001167d265e', 'fabric', 0),
 (446, 'steam:1100001167d265e', 'slaughtered_chicken', 0),
 (447, 'steam:1100001167d265e', 'rhumcoca', 0),
-(448, 'steam:1100001167d265e', 'clip', 1),
+(448, 'steam:1100001167d265e', 'clip', 0),
 (449, 'steam:1100001167d265e', 'petrol_raffin', 0),
 (450, 'steam:1100001167d265e', 'golem', 0),
 (451, 'steam:1100001167d265e', 'rhum', 0),
@@ -3911,14 +4022,14 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (468, 'steam:1100001167d265e', 'alive_chicken', 0),
 (469, 'steam:1100001167d265e', 'myrte', 0),
 (470, 'steam:1100001167d265e', 'vodkafruit', 0),
-(471, 'steam:1100001167d265e', 'carotool', 0),
+(471, 'steam:1100001167d265e', 'carotool', 4),
 (472, 'steam:1100001167d265e', 'coke_pooch', 0),
 (473, 'steam:1100001167d265e', 'myrtealcool', 0),
 (474, 'steam:1100001167d265e', 'grand_cru', 0),
 (475, 'steam:1100001167d265e', 'bolpistache', 0),
 (476, 'steam:1100001167d265e', 'gitanes', 0),
 (477, 'steam:1100001167d265e', 'energy', 0),
-(478, 'steam:1100001167d265e', 'croquettes', 10),
+(478, 'steam:1100001167d265e', 'croquettes', 11),
 (479, 'steam:1100001167d265e', 'malbora', 0),
 (480, 'steam:1100001167d265e', 'mojito', 0),
 (481, 'steam:1100001167d265e', 'medikit', 0),
@@ -3953,17 +4064,17 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (510, 'steam:11000010b3a30a0', 'wool', 0),
 (511, 'steam:11000010b3a30a0', 'bolnoixcajou', 0),
 (512, 'steam:11000010b3a30a0', 'whiskycoca', 0),
-(513, 'steam:11000010b3a30a0', 'yusuf', 0),
+(513, 'steam:11000010b3a30a0', 'yusuf', 2),
 (514, 'steam:11000010b3a30a0', 'wood', 0),
 (515, 'steam:11000010b3a30a0', 'whiskycoc', 0),
 (516, 'steam:11000010b3a30a0', 'martini', 0),
 (517, 'steam:11000010b3a30a0', 'weed', 0),
 (518, 'steam:11000010b3a30a0', 'gold', 0),
 (519, 'steam:11000010b3a30a0', 'flashlight', 0),
-(520, 'steam:11000010b3a30a0', 'bread', 7),
+(520, 'steam:11000010b3a30a0', 'bread', 10),
 (521, 'steam:11000010b3a30a0', 'tabacbrunsec', 0),
 (522, 'steam:11000010b3a30a0', 'icetea', 0),
-(523, 'steam:11000010b3a30a0', 'water', 0),
+(523, 'steam:11000010b3a30a0', 'water', 3),
 (524, 'steam:11000010b3a30a0', 'teqpaf', 0),
 (525, 'steam:11000010b3a30a0', 'tabacblondsec', 0),
 (526, 'steam:11000010b3a30a0', 'tequila', 0),
@@ -3984,9 +4095,9 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (541, 'steam:11000010b3a30a0', 'fabric', 0),
 (542, 'steam:11000010b3a30a0', 'menthe', 0),
 (543, 'steam:11000010b3a30a0', 'rhumcoca', 0),
-(544, 'steam:11000010b3a30a0', 'clip', 0),
+(544, 'steam:11000010b3a30a0', 'clip', 1),
 (545, 'steam:11000010b3a30a0', 'rhum', 0),
-(546, 'steam:11000010b3a30a0', 'silencieux', 0),
+(546, 'steam:11000010b3a30a0', 'silencieux', 1),
 (547, 'steam:11000010b3a30a0', 'petrol_raffin', 0),
 (548, 'steam:11000010b3a30a0', 'golem', 0),
 (549, 'steam:11000010b3a30a0', 'metreshooter', 0),
@@ -4036,7 +4147,7 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (593, 'steam:11000011685b145', 'saucisson', 0),
 (594, 'steam:11000011685b145', 'opium', 0),
 (595, 'steam:11000011685b145', 'jusfruit', 0),
-(596, 'steam:11000011685b145', 'grip', 0),
+(596, 'steam:11000011685b145', 'grip', 1),
 (597, 'steam:11000011685b145', 'bolchips', 0),
 (598, 'steam:11000011685b145', 'alcool_cargo', 0),
 (599, 'steam:11000011685b145', 'gazbottle', 0),
@@ -4048,14 +4159,14 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (605, 'steam:11000011685b145', 'meth', 0),
 (606, 'steam:11000011685b145', 'whisky', 0),
 (607, 'steam:11000011685b145', 'wool', 0),
-(608, 'steam:11000011685b145', 'yusuf', 0),
+(608, 'steam:11000011685b145', 'yusuf', 1),
 (609, 'steam:11000011685b145', 'martini', 0),
 (610, 'steam:11000011685b145', 'bolnoixcajou', 0),
 (611, 'steam:11000011685b145', 'wood', 0),
 (612, 'steam:11000011685b145', 'whiskycoca', 0),
 (613, 'steam:11000011685b145', 'whiskycoc', 0),
 (614, 'steam:11000011685b145', 'tabacbrunsec', 0),
-(615, 'steam:11000011685b145', 'flashlight', 0),
+(615, 'steam:11000011685b145', 'flashlight', 1),
 (616, 'steam:11000011685b145', 'bread', 0),
 (617, 'steam:11000011685b145', 'weed', 0),
 (618, 'steam:11000011685b145', 'gold', 0),
@@ -4080,8 +4191,8 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (637, 'steam:11000011685b145', 'bolcacahuetes', 0),
 (638, 'steam:11000011685b145', 'slaughtered_chicken', 0),
 (639, 'steam:11000011685b145', 'menthe', 0),
-(640, 'steam:11000011685b145', 'clip', 0),
-(641, 'steam:11000011685b145', 'silencieux', 0),
+(640, 'steam:11000011685b145', 'clip', 1),
+(641, 'steam:11000011685b145', 'silencieux', 1),
 (642, 'steam:11000011685b145', 'rhum', 0),
 (643, 'steam:11000011685b145', 'rhumcoca', 0),
 (644, 'steam:11000011685b145', 'golem', 0),
@@ -4114,12 +4225,212 @@ INSERT INTO `user_inventory` (`id`, `identifier`, `item`, `count`) VALUES
 (671, 'steam:11000011685b145', 'malbora', 0),
 (672, 'steam:11000011685b145', 'gitanes', 0),
 (673, 'steam:11000011685b145', 'mojito', 0),
-(674, 'steam:11000011685b145', 'bandage', 0),
+(674, 'steam:11000011685b145', 'bandage', 20),
 (675, 'steam:11000011685b145', 'limonade', 0),
 (676, 'steam:11000011685b145', 'croquettes', 0),
-(677, 'steam:11000011685b145', 'medikit', 0),
+(677, 'steam:11000011685b145', 'medikit', 1),
 (678, 'steam:11000011685b145', 'carokit', 0),
-(679, 'steam:11000011685b145', 'clothe', 0);
+(679, 'steam:11000011685b145', 'clothe', 0),
+(680, 'steam:1100001197354a7', 'malbora', 0),
+(681, 'steam:1100001197354a7', 'bolnoixcajou', 0),
+(682, 'steam:1100001197354a7', 'martini', 0),
+(683, 'steam:1100001197354a7', 'tabacbrun', 0),
+(684, 'steam:1100001197354a7', 'carokit', 0),
+(685, 'steam:1100001197354a7', 'petrol_raffin', 0),
+(686, 'steam:1100001197354a7', 'cutted_wood', 0),
+(687, 'steam:1100001197354a7', 'coke_pooch', 0),
+(688, 'steam:1100001197354a7', 'limonade', 0),
+(689, 'steam:1100001197354a7', 'tabacbrunsec', 0),
+(690, 'steam:1100001197354a7', 'meth', 0),
+(691, 'steam:1100001197354a7', 'fixtool', 0),
+(692, 'steam:1100001197354a7', 'vodkafruit', 0),
+(693, 'steam:1100001197354a7', 'blowpipe', 0),
+(694, 'steam:1100001197354a7', 'gold', 0),
+(695, 'steam:1100001197354a7', 'gitanes', 0),
+(696, 'steam:1100001197354a7', 'jewels', 0),
+(697, 'steam:1100001197354a7', 'myrte', 0),
+(698, 'steam:1100001197354a7', 'coke', 0),
+(699, 'steam:1100001197354a7', 'redbull_cargo', 0),
+(700, 'steam:1100001197354a7', 'drpepper', 0),
+(701, 'steam:1100001197354a7', 'carotool', 0),
+(702, 'steam:1100001197354a7', 'rhumfruit', 0),
+(703, 'steam:1100001197354a7', 'wool', 0),
+(704, 'steam:1100001197354a7', 'alcool_cargo', 0),
+(705, 'steam:1100001197354a7', 'alive_chicken', 0),
+(706, 'steam:1100001197354a7', 'cagoule', 0),
+(707, 'steam:1100001197354a7', 'petrol', 0),
+(708, 'steam:1100001197354a7', 'iron', 0),
+(709, 'steam:1100001197354a7', 'gazbottle', 0),
+(710, 'steam:1100001197354a7', 'raisin', 0),
+(711, 'steam:1100001197354a7', 'alcool', 0),
+(712, 'steam:1100001197354a7', 'bread', 0),
+(713, 'steam:1100001197354a7', 'wood', 0),
+(714, 'steam:1100001197354a7', 'jagercerbere', 0),
+(715, 'steam:1100001197354a7', 'soda', 0),
+(716, 'steam:1100001197354a7', 'clothe', 0),
+(717, 'steam:1100001197354a7', 'rhum', 0),
+(718, 'steam:1100001197354a7', 'mojito', 0),
+(719, 'steam:1100001197354a7', 'bandage', 0),
+(720, 'steam:1100001197354a7', 'bolpistache', 0),
+(721, 'steam:1100001197354a7', 'jus_raisin', 0),
+(722, 'steam:1100001197354a7', 'tequila', 0),
+(723, 'steam:1100001197354a7', 'croquettes', 0),
+(724, 'steam:1100001197354a7', 'weed_pooch', 0),
+(725, 'steam:1100001197354a7', 'packaged_chicken', 0),
+(726, 'steam:1100001197354a7', 'fish', 0),
+(727, 'steam:1100001197354a7', 'silencieux', 0),
+(728, 'steam:1100001197354a7', 'fabric', 0),
+(729, 'steam:1100001197354a7', 'metreshooter', 0),
+(730, 'steam:1100001197354a7', 'vodkaenergy', 0),
+(731, 'steam:1100001197354a7', 'yusuf', 0),
+(732, 'steam:1100001197354a7', 'whiskycoca', 0),
+(733, 'steam:1100001197354a7', 'golem', 0),
+(734, 'steam:1100001197354a7', 'packaged_plank', 0),
+(735, 'steam:1100001197354a7', 'essence', 0),
+(736, 'steam:1100001197354a7', 'slaughtered_chicken', 0),
+(737, 'steam:1100001197354a7', 'jagerbomb', 0),
+(738, 'steam:1100001197354a7', 'jusfruit', 0),
+(739, 'steam:1100001197354a7', 'whisky', 0),
+(740, 'steam:1100001197354a7', 'weed', 0),
+(741, 'steam:1100001197354a7', 'grapperaisin', 0),
+(742, 'steam:1100001197354a7', 'whiskycoc', 0),
+(743, 'steam:1100001197354a7', 'copper', 0),
+(744, 'steam:1100001197354a7', 'meth_pooch', 0),
+(745, 'steam:1100001197354a7', 'vodkrb', 0),
+(746, 'steam:1100001197354a7', 'bolchips', 0),
+(747, 'steam:1100001197354a7', 'rhumcoca', 0),
+(748, 'steam:1100001197354a7', 'opium', 0),
+(749, 'steam:1100001197354a7', 'viande', 0),
+(750, 'steam:1100001197354a7', 'vodka', 0),
+(751, 'steam:1100001197354a7', 'grand_cru', 0),
+(752, 'steam:1100001197354a7', 'vine', 0),
+(753, 'steam:1100001197354a7', 'tabacblondsec', 0),
+(754, 'steam:1100001197354a7', 'teqpaf', 0),
+(755, 'steam:1100001197354a7', 'saucisson', 0),
+(756, 'steam:1100001197354a7', 'tabacblond', 0),
+(757, 'steam:1100001197354a7', 'myrte_cargo', 0),
+(758, 'steam:1100001197354a7', 'diamond', 0),
+(759, 'steam:1100001197354a7', 'stone', 0),
+(760, 'steam:1100001197354a7', 'washed_stone', 0),
+(761, 'steam:1100001197354a7', 'icetea', 0),
+(762, 'steam:1100001197354a7', 'myrtealcool', 0),
+(763, 'steam:1100001197354a7', 'bolcacahuetes', 0),
+(764, 'steam:1100001197354a7', 'grip', 0),
+(765, 'steam:1100001197354a7', 'opium_pooch', 0),
+(766, 'steam:1100001197354a7', 'fixkit', 0),
+(767, 'steam:1100001197354a7', 'clip', 0),
+(768, 'steam:1100001197354a7', 'menthe', 0),
+(769, 'steam:1100001197354a7', 'mixapero', 0),
+(770, 'steam:1100001197354a7', 'flashlight', 0),
+(771, 'steam:1100001197354a7', 'water', 0),
+(772, 'steam:1100001197354a7', 'redbull', 0),
+(773, 'steam:1100001197354a7', 'jager', 0),
+(774, 'steam:1100001197354a7', 'ice', 0),
+(775, 'steam:1100001197354a7', 'energy', 0),
+(776, 'steam:1100001197354a7', 'medikit', 0),
+(777, 'steam:110000111df570b', 'yusuf', 0),
+(778, 'steam:110000111df570b', 'packaged_plank', 0),
+(779, 'steam:110000111df570b', 'weed_pooch', 0),
+(780, 'steam:110000111df570b', 'tabacbrunsec', 0),
+(781, 'steam:110000111df570b', 'grand_cru', 0),
+(782, 'steam:110000111df570b', 'rhum', 0),
+(783, 'steam:110000111df570b', 'fixkit', 0),
+(784, 'steam:110000111df570b', 'raisin', 0),
+(785, 'steam:110000111df570b', 'myrte', 0),
+(786, 'steam:110000111df570b', 'alcool_cargo', 0),
+(787, 'steam:110000111df570b', 'cagoule', 0),
+(788, 'steam:110000111df570b', 'golem', 0),
+(789, 'steam:110000111df570b', 'essence', 0),
+(790, 'steam:110000111df570b', 'jus_raisin', 0),
+(791, 'steam:110000111df570b', 'gold', 0),
+(792, 'steam:110000111df570b', 'iron', 0),
+(793, 'steam:110000111df570b', 'tabacblond', 0),
+(794, 'steam:110000111df570b', 'fixtool', 0),
+(795, 'steam:110000111df570b', 'bread', 0),
+(796, 'steam:110000111df570b', 'gazbottle', 0),
+(797, 'steam:110000111df570b', 'stone', 0),
+(798, 'steam:110000111df570b', 'metreshooter', 0),
+(799, 'steam:110000111df570b', 'coke_pooch', 0),
+(800, 'steam:110000111df570b', 'diamond', 0),
+(801, 'steam:110000111df570b', 'tabacbrun', 0),
+(802, 'steam:110000111df570b', 'mojito', 0),
+(803, 'steam:110000111df570b', 'slaughtered_chicken', 0),
+(804, 'steam:110000111df570b', 'flashlight', 0),
+(805, 'steam:110000111df570b', 'jusfruit', 0),
+(806, 'steam:110000111df570b', 'whiskycoc', 0),
+(807, 'steam:110000111df570b', 'wool', 0),
+(808, 'steam:110000111df570b', 'jagercerbere', 0),
+(809, 'steam:110000111df570b', 'icetea', 0),
+(810, 'steam:110000111df570b', 'carokit', 0),
+(811, 'steam:110000111df570b', 'wood', 0),
+(812, 'steam:110000111df570b', 'jagerbomb', 0),
+(813, 'steam:110000111df570b', 'rhumcoca', 0),
+(814, 'steam:110000111df570b', 'coke', 0),
+(815, 'steam:110000111df570b', 'whiskycoca', 0),
+(816, 'steam:110000111df570b', 'tabacblondsec', 0),
+(817, 'steam:110000111df570b', 'vodkafruit', 0),
+(818, 'steam:110000111df570b', 'vodkrb', 0),
+(819, 'steam:110000111df570b', 'water', 0),
+(820, 'steam:110000111df570b', 'vodkaenergy', 0),
+(821, 'steam:110000111df570b', 'washed_stone', 0),
+(822, 'steam:110000111df570b', 'packaged_chicken', 0),
+(823, 'steam:110000111df570b', 'alcool', 0),
+(824, 'steam:110000111df570b', 'vodka', 0),
+(825, 'steam:110000111df570b', 'vine', 0),
+(826, 'steam:110000111df570b', 'petrol', 0),
+(827, 'steam:110000111df570b', 'viande', 0),
+(828, 'steam:110000111df570b', 'bolnoixcajou', 0),
+(829, 'steam:110000111df570b', 'cutted_wood', 0),
+(830, 'steam:110000111df570b', 'medikit', 0),
+(831, 'steam:110000111df570b', 'alive_chicken', 0),
+(832, 'steam:110000111df570b', 'weed', 0),
+(833, 'steam:110000111df570b', 'clothe', 0),
+(834, 'steam:110000111df570b', 'tequila', 0),
+(835, 'steam:110000111df570b', 'teqpaf', 0),
+(836, 'steam:110000111df570b', 'martini', 0),
+(837, 'steam:110000111df570b', 'clip', 0),
+(838, 'steam:110000111df570b', 'bolcacahuetes', 0),
+(839, 'steam:110000111df570b', 'energy', 0),
+(840, 'steam:110000111df570b', 'rhumfruit', 0),
+(841, 'steam:110000111df570b', 'soda', 0),
+(842, 'steam:110000111df570b', 'limonade', 0),
+(843, 'steam:110000111df570b', 'drpepper', 0),
+(844, 'steam:110000111df570b', 'redbull', 0),
+(845, 'steam:110000111df570b', 'petrol_raffin', 0),
+(846, 'steam:110000111df570b', 'redbull_cargo', 0),
+(847, 'steam:110000111df570b', 'fabric', 0),
+(848, 'steam:110000111df570b', 'grapperaisin', 0),
+(849, 'steam:110000111df570b', 'bandage', 0),
+(850, 'steam:110000111df570b', 'meth_pooch', 0),
+(851, 'steam:110000111df570b', 'whisky', 0),
+(852, 'steam:110000111df570b', 'blowpipe', 0),
+(853, 'steam:110000111df570b', 'bolpistache', 0),
+(854, 'steam:110000111df570b', 'opium_pooch', 0),
+(855, 'steam:110000111df570b', 'opium', 0),
+(856, 'steam:110000111df570b', 'grip', 0),
+(857, 'steam:110000111df570b', 'carotool', 0),
+(858, 'steam:110000111df570b', 'myrte_cargo', 0),
+(859, 'steam:110000111df570b', 'ice', 0),
+(860, 'steam:110000111df570b', 'meth', 0),
+(861, 'steam:110000111df570b', 'myrtealcool', 0),
+(862, 'steam:110000111df570b', 'menthe', 0),
+(863, 'steam:110000111df570b', 'jager', 0),
+(864, 'steam:110000111df570b', 'jewels', 0),
+(865, 'steam:110000111df570b', 'copper', 0),
+(866, 'steam:110000111df570b', 'bolchips', 0),
+(867, 'steam:110000111df570b', 'fish', 0),
+(868, 'steam:110000111df570b', 'saucisson', 0),
+(869, 'steam:110000111df570b', 'mixapero', 0),
+(870, 'steam:110000111df570b', 'croquettes', 0),
+(871, 'steam:110000111df570b', 'malbora', 0),
+(872, 'steam:110000111df570b', 'gitanes', 0),
+(873, 'steam:110000111df570b', 'silencieux', 0),
+(874, 'steam:110000114a058a8', 'drill', 1),
+(875, 'steam:11000010b3a30a0', 'drill', 1),
+(876, 'steam:1100001167d265e', 'drill', 0),
+(877, 'steam:11000011685b145', 'drill', 1),
+(878, 'steam:1100001197619a3', 'drill', 0),
+(879, 'steam:1100001045fbd8f', 'drill', 1);
 
 -- --------------------------------------------------------
 
@@ -4139,7 +4450,14 @@ CREATE TABLE `user_licenses` (
 
 INSERT INTO `user_licenses` (`id`, `type`, `owner`) VALUES
 (1, 'dmv', 'steam:11000010a1b83df'),
-(2, 'weapon', 'steam:1100001167d265e');
+(2, 'weapon', 'steam:1100001167d265e'),
+(5, 'drive', 'steam:11000010a1b83df'),
+(6, 'weapon', 'steam:11000010a1b83df'),
+(7, 'weapon', 'steam:11000010b3a30a0'),
+(9, 'weapon', 'steam:1100001197619a3'),
+(10, 'weapon', 'steam:110000114a058a8'),
+(11, 'weapon', 'steam:1100001045fbd8f'),
+(12, 'weapon', 'steam:11000011685b145');
 
 -- --------------------------------------------------------
 
@@ -4159,16 +4477,9 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
-('16CHALLENGER', '16CHALLENGER', 275000, 'import'),
-('450crf', '450crf', 42000, 'motomod'),
-('750li', '750li', 800000, 'import'),
-('911TURBOS', '911TURBOS', 1400000, 'import'),
-('A45', 'a45', 160000, 'import'),
 ('Adder', 'adder', 900000, 'super'),
-('aeroxr', 'aeroxr', 26000, 'motomod'),
 ('Akuma', 'AKUMA', 7500, 'motorcycles'),
 ('Alpha', 'alpha', 60000, 'sports'),
-('ap2', 'ap2', 240000, 'import'),
 ('Ardent', 'ardent', 1150000, 'sportsclassics'),
 ('Asea', 'asea', 5500, 'sedans'),
 ('Autarch', 'autarch', 1955000, 'super'),
@@ -4188,14 +4499,10 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Blazer', 'blazer', 6500, 'offroad'),
 ('Blazer Sport', 'blazer4', 8500, 'offroad'),
 ('Blista', 'blista', 8000, 'compacts'),
-('BMM', 'BMM', 420000, 'import'),
-('M3E92', 'bmwm3e92', 400000, 'import'),
-('bmws', 'bmws', 45000, 'motomod'),
 ('BMX (velo)', 'bmx', 160, 'motorcycles'),
 ('Bobcat XL', 'bobcatxl', 32000, 'vans'),
 ('Brawler', 'brawler', 45000, 'offroad'),
 ('Brioso R/A', 'brioso', 18000, 'compacts'),
-('BRZ', 'brz', 242000, 'import'),
 ('Btype', 'btype', 62000, 'sportsclassics'),
 ('Btype Hotroad', 'btype2', 155000, 'sportsclassics'),
 ('Btype Luxe', 'btype3', 85000, 'sportsclassics'),
@@ -4205,7 +4512,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Buffalo S', 'buffalo2', 20000, 'sports'),
 ('Bullet', 'bullet', 90000, 'super'),
 ('Burrito', 'burrito3', 19000, 'vans'),
-('C63', 'c63', 375000, 'import'),
 ('Camper', 'camper', 42000, 'vans'),
 ('Carbonizzare', 'carbonizzare', 75000, 'sports'),
 ('Carbon RS', 'carbonrs', 18000, 'motorcycles'),
@@ -4236,13 +4542,11 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Bubsta 6x6', 'dubsta3', 120000, 'offroad'),
 ('Dukes', 'dukes', 28000, 'muscle'),
 ('Dune Buggy', 'dune', 8000, 'offroad'),
-('E63', 'e63amg', 375000, 'import'),
 ('Elegy', 'elegy2', 38500, 'sports'),
 ('Emperor', 'emperor', 8500, 'sedans'),
 ('Enduro', 'enduro', 5500, 'motorcycles'),
 ('Entity XF', 'entityxf', 425000, 'super'),
 ('Esskey', 'esskey', 4200, 'motorcycles'),
-('EVO10', 'EVO10', 170000, 'import'),
 ('Exemplar', 'exemplar', 32000, 'coupes'),
 ('F620', 'f620', 40000, 'coupes'),
 ('Faction', 'faction', 20000, 'muscle'),
@@ -4267,7 +4571,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Grabger', 'granger', 50000, 'suvs'),
 ('Gresley', 'gresley', 47500, 'suvs'),
 ('GT 500', 'gt500', 785000, 'sportsclassics'),
-('GTR17', 'gtr', 462000, 'import'),
 ('Guardian', 'guardian', 45000, 'offroad'),
 ('Hakuchou', 'hakuchou', 31000, 'motorcycles'),
 ('Hakuchou Sport', 'hakuchou2', 55000, 'motorcycles'),
@@ -4287,11 +4590,10 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Kamacho', 'kamacho', 345000, 'offroad'),
 ('Khamelion', 'khamelion', 38000, 'sports'),
 ('Kuruma', 'kuruma', 30000, 'sports'),
-('kx450f', 'kx450f', 19200, 'motomod'),
 ('Landstalker', 'landstalker', 35000, 'suvs'),
 ('RE-7B', 'le7b', 325000, 'super'),
-('LP770', 'lp770', 4350000, 'import'),
 ('Lynx', 'lynx', 40000, 'sports'),
+('BMW m6', 'm6f13', 5000000, 'motomod'),
 ('Mamba', 'mamba', 70000, 'sports'),
 ('Manana', 'manana', 12800, 'sportsclassics'),
 ('Manchez', 'manchez', 5300, 'motorcycles'),
@@ -4299,11 +4601,8 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Massacro(Racecar)', 'massacro2', 130000, 'sports'),
 ('Mesa', 'mesa', 16000, 'suvs'),
 ('Mesa Trail', 'mesa3', 40000, 'suvs'),
-('MGT', 'MGT', 340000, 'import'),
-('MI8', 'MI8', 460000, 'import'),
+('Mustang GT', 'MGT', 3000000, 'motomod'),
 ('Minivan', 'minivan', 13000, 'vans'),
-('Golf 3', 'mk3', 120000, 'import'),
-('BRABUS', 'MLBRABUS', 230000, 'import'),
 ('Monroe', 'monroe', 55000, 'sportsclassics'),
 ('Moonbeam', 'moonbeam', 18000, 'vans'),
 ('Moonbeam Rider', 'moonbeam2', 35000, 'vans'),
@@ -4330,9 +4629,6 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Premier', 'premier', 8000, 'sedans'),
 ('Primo Custom', 'primo2', 14000, 'sedans'),
 ('X80 Proto', 'prototipo', 2500000, 'super'),
-('Yamaha R1', 'r1', 45000, 'motomod'),
-('r6', 'r6', 35000, 'motomod'),
-('R8', 'r8prior', 450000, 'import'),
 ('Radius', 'radi', 29000, 'suvs'),
 ('raiden', 'raiden', 1375000, 'sports'),
 ('Rapid GT', 'rapidgt', 35000, 'sports'),
@@ -4344,11 +4640,7 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Retinue', 'retinue', 615000, 'sportsclassics'),
 ('Revolter', 'revolter', 1610000, 'sports'),
 ('riata', 'riata', 380000, 'offroad'),
-('BMW M4', 'rmodm4gts', 420000, 'import'),
 ('Rocoto', 'rocoto', 45000, 'suvs'),
-('rs3', 'rs3', 185000, 'import'),
-('rs7', 'rs7', 310000, 'import'),
-('RT70 (collection)', 'RT70', 2400000, 'import'),
 ('Ruffian', 'ruffian', 6800, 'motorcycles'),
 ('Rumpo', 'rumpo', 15000, 'vans'),
 ('Rumpo Trail', 'rumpo3', 19500, 'vans'),
@@ -4437,10 +4729,9 @@ CREATE TABLE `vehicle_categories` (
 
 INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 ('compacts', 'Compacts'),
-('coupes', 'Coupés'),
-('import', 'Voiture Moddés'),
-('motomod', 'Moto Moddés'),
-('motorcycles', 'Motos'),
+('coupes', 'Coupes'),
+('motomod', 'Mods'),
+('motorcycles', 'Motor'),
 ('muscle', 'Muscle'),
 ('offroad', 'Off Road'),
 ('sedans', 'Sedans'),
@@ -4458,45 +4749,44 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 
 CREATE TABLE `weashops` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `item` varchar(255) NOT NULL,
+  `zone` varchar(255) COLLATE utf8_persian_ci NOT NULL,
+  `item` varchar(255) COLLATE utf8_persian_ci NOT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `weashops`
 --
 
-INSERT INTO `weashops` (`id`, `name`, `item`, `price`) VALUES
-(7, 'BlackWeashop', 'WEAPON_COMBATPISTOL', 25000),
-(8, 'BlackWeashop', 'WEAPON_STUNGUN', 5000),
-(9, 'BlackWeashop', 'WEAPON_SAWNOFFSHOTGUN', 60000),
-(10, 'BlackWeashop', 'WEAPON_MICROSMG', 70000),
-(11, 'BlackWeashop', 'WEAPON_HEAVYSHOTGUN', 120000),
-(12, 'BlackWeashop', 'WEAPON_COMPACTRIFLE', 110000),
-(13, 'BlackWeashop', 'WEAPON_ASSAULTRIFLE', 250000),
-(14, 'BlackWeashop', 'WEAPON_SPECIALCARBINE', 190000),
-(15, 'BlackWeashop', 'WEAPON_SMG', 60000),
-(16, 'BlackWeashop', 'WEAPON_MG', 60000),
-(17, 'BlackWeashop', 'WEAPON_COMBATPDW', 65000),
-(18, 'BlackWeashop', 'WEAPON_MARKSMANRIFLE', 70000),
-(19, 'BlackWeashop', 'WEAPON_GUSENBERG', 100000),
-(24, 'GunShop', 'WEAPON_BAT', 1500),
-(25, 'GunShop', 'WEAPON_KNUCKLE', 1500),
-(26, 'GunShop', 'WEAPON_GOLFCLUB', 3700),
-(28, 'GunShop', 'WEAPON_VINTAGEPISTOL', 10000),
-(30, 'GunShop', 'WEAPON_PISTOL50', 25000),
-(31, 'GunShop', 'WEAPON_REVOLVER', 18000),
-(173, 'GunShop', 'WEAPON_FLASHLIGHT', 1000),
-(176, 'GunShop', 'WEAPON_HATCHET', 3500),
-(180, 'GunShop', 'WEAPON_CROWBAR', 1500),
-(181, 'GunShop', 'WEAPON_HAMMER', 1500),
-(182, 'GunShop', 'WEAPON_KNIFE', 1000),
-(196, 'GunShop', 'WEAPON_MACHETE', 1500),
-(202, 'GunShop', 'WEAPON_SNSPISTOL', 30000),
-(205, 'GunShop', 'WEAPON_HEAVYPISTOL', 35000),
-(207, 'GunShop', 'WEAPON_MUSKET', 50000),
-(216, 'GunShop', 'WEAPON_PISTOL', 6500);
+INSERT INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
+(1, 'GunShop', 'WEAPON_PISTOL', 5000),
+(2, 'BlackWeashop', 'WEAPON_PISTOL', 8000),
+(5, 'GunShop', 'WEAPON_MACHETE', 2000),
+(6, 'BlackWeashop', 'WEAPON_MACHETE', 3000),
+(7, 'GunShop', 'WEAPON_NIGHTSTICK', 800),
+(8, 'BlackWeashop', 'WEAPON_NIGHTSTICK', 1200),
+(9, 'GunShop', 'WEAPON_BAT', 1000),
+(10, 'BlackWeashop', 'WEAPON_BAT', 1500),
+(11, 'GunShop', 'WEAPON_STUNGUN', 500),
+(12, 'BlackWeashop', 'WEAPON_STUNGUN', 700),
+(13, 'GunShop', 'WEAPON_MICROSMG', 14000),
+(14, 'BlackWeashop', 'WEAPON_MICROSMG', 17000),
+(15, 'GunShop', 'WEAPON_PUMPSHOTGUN', 34000),
+(16, 'BlackWeashop', 'WEAPON_PUMPSHOTGUN', 45000),
+(17, 'GunShop', 'WEAPON_ASSAULTRIFLE', 70000),
+(18, 'BlackWeashop', 'WEAPON_ASSAULTRIFLE', 90000),
+(19, 'GunShop', 'WEAPON_SPECIALCARBINE', 15000),
+(20, 'BlackWeashop', 'WEAPON_SPECIALCARBINE', 16500),
+(23, 'GunShop', 'WEAPON_FIREWORK', 180000),
+(24, 'BlackWeashop', 'WEAPON_FIREWORK', 210000),
+(31, 'GunShop', 'WEAPON_BALL', 500),
+(32, 'BlackWeashop', 'WEAPON_BALL', 500),
+(35, 'BlackWeashop', 'WEAPON_APPISTOL', 20000),
+(36, 'BlackWeashop', 'WEAPON_CARBINERIFLE', 120000),
+(38, 'BlackWeashop', 'WEAPON_MINIGUN', 700000),
+(39, 'BlackWeashop', 'WEAPON_RAILGUN', 2500000),
+(41, 'GunShop', 'WEAPON_FLASHLIGHT', 1000),
+(42, 'BlackWeashop', 'WEAPON_FLASHLIGHT', 1500);
 
 --
 -- Indexes for dumped tables
@@ -4620,7 +4910,8 @@ ALTER TABLE `fine_types_mafia`
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
-  ADD PRIMARY KEY (`name`);
+  ADD PRIMARY KEY (`name`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `jail`
@@ -4817,25 +5108,25 @@ ALTER TABLE `weashops`
 -- AUTO_INCREMENT for table `addon_account`
 --
 ALTER TABLE `addon_account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `addon_account_data`
 --
 ALTER TABLE `addon_account_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
 
 --
 -- AUTO_INCREMENT for table `addon_inventory`
 --
 ALTER TABLE `addon_inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `addon_inventory_items`
 --
 ALTER TABLE `addon_inventory_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `aircraftdealer_aircrafts`
@@ -4847,7 +5138,7 @@ ALTER TABLE `aircraftdealer_aircrafts`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
 
 --
 -- AUTO_INCREMENT for table `boatdealer_boats`
@@ -4859,25 +5150,25 @@ ALTER TABLE `boatdealer_boats`
 -- AUTO_INCREMENT for table `cardealer_vehicles`
 --
 ALTER TABLE `cardealer_vehicles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `characters`
 --
 ALTER TABLE `characters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT for table `datastore`
 --
 ALTER TABLE `datastore`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `datastore_data`
 --
 ALTER TABLE `datastore_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=671;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=681;
 
 --
 -- AUTO_INCREMENT for table `fine_types`
@@ -4907,7 +5198,7 @@ ALTER TABLE `fine_types_mafia`
 -- AUTO_INCREMENT for table `job_grades`
 --
 ALTER TABLE `job_grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `organisation_moneywash`
@@ -4925,7 +5216,7 @@ ALTER TABLE `org_gradeorg`
 -- AUTO_INCREMENT for table `owned_properties`
 --
 ALTER TABLE `owned_properties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `phone_app_chat`
@@ -4937,25 +5228,25 @@ ALTER TABLE `phone_app_chat`
 -- AUTO_INCREMENT for table `phone_calls`
 --
 ALTER TABLE `phone_calls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=363;
 
 --
 -- AUTO_INCREMENT for table `phone_messages`
 --
 ALTER TABLE `phone_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4344;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4614;
 
 --
 -- AUTO_INCREMENT for table `phone_users_contacts`
 --
 ALTER TABLE `phone_users_contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `playerstattoos`
 --
 ALTER TABLE `playerstattoos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `properties`
@@ -4973,7 +5264,7 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT for table `shops2`
 --
 ALTER TABLE `shops2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `society_moneywash`
@@ -4985,31 +5276,31 @@ ALTER TABLE `society_moneywash`
 -- AUTO_INCREMENT for table `truck_inventory`
 --
 ALTER TABLE `truck_inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `user_accounts`
 --
 ALTER TABLE `user_accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user_inventory`
 --
 ALTER TABLE `user_inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=680;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=880;
 
 --
 -- AUTO_INCREMENT for table `user_licenses`
 --
 ALTER TABLE `user_licenses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `weashops`
 --
 ALTER TABLE `weashops`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
