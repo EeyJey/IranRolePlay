@@ -18,7 +18,6 @@ html {
     font-family: 'Pricedown';
     font-size: 25px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.33);
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
@@ -26,12 +25,18 @@ html {
     /* border-radius: 10px 10px 10px 10px; */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: left;
-    top: 0;
-    left: 40%;
+	top: 0;
+	left:50%;
 }
 #hud > div{
+	position: relative;
 	display: inline-block;
-	margin-left: 10px;
+	padding:10px;
+	padding-left:15px;
+	padding-right:15px;
+	margin:-3px;
+	left:-50%;
+    background-color: rgba(0, 0, 0, 0.33);
 }
 
 #inventory_notifications {
