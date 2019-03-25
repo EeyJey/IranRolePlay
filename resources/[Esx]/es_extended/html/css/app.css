@@ -12,21 +12,26 @@ html {
 	overflow: hidden;
 }
 
+/* TODO: fix the middleness problem */
 #hud {
 	position: absolute;
     font-family: 'Pricedown';
     font-size: 25px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.33);
-    padding-left: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 0px 10px 10px 0px;
+    /* border-radius: 10px 10px 10px 10px; */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: left;
-    bottom: 300px;
-    left: 0;
+    top: 0;
+    left: 40%;
+}
+#hud > div{
+	display: inline-block;
+	margin-left: 10px;
 }
 
 #inventory_notifications {
