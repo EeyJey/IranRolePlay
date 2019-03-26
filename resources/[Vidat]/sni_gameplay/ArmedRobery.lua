@@ -24,5 +24,5 @@ end
 if(haveWeapon)then
 	TriggerServerEvent('esx_holdup:rob', k)
 else
-	ESX.ShowNotification("You must be armed to start the robbery!") -- Here for changed your notification
+	ESX.ShowNotification("Bara ye dozdi bayad aslahe dashte bashid!") -- Here for changed your notification
 end
