@@ -1,7 +1,7 @@
-DensityMultiplier = 0.45
+DensityMultiplier = 0.1
 Citizen.CreateThread(function()
 	while true do
-	    Citizen.Wait(0)
+	    Citizen.Wait(1)
 	    SetVehicleDensityMultiplierThisFrame(DensityMultiplier)
 	    SetPedDensityMultiplierThisFrame(DensityMultiplier)
 	    SetRandomVehicleDensityMultiplierThisFrame(DensityMultiplier)
