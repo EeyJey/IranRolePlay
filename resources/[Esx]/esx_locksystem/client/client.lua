@@ -92,9 +92,7 @@ function doLockSystemToggleLocks()
 			local hasKey = false
 			local myID = GetPlayerServerId(PlayerId())
 			TriggerServerEvent("esx_locksystem:haveKeys", myID, newVehPlate)
-			print("plate", localVehPlateTest)
 			ESX.TriggerServerCallback('esx_locksystem:requestPlayerCars', function(isOwnedVehicle)
-				print("owned:", isOwnedVehicle)
 				if isOwnedVehicle then
 							if(time > timer)then
 								if(IsPedInAnyVehicle(ply, true))then
@@ -248,7 +246,6 @@ if(Config.disableCar_NPC)then
             if DoesEntityExist(GetVehiclePedIsTryingToEnter(PlayerPedId(ped))) then
                 local veh = GetVehiclePedIsTryingToEnter(PlayerPedId(ped))
                 local lock = GetVehicleDoorLockStatus(veh)
-				print("lock", lock)
                 if lock == 7 then
                     SetVehicleDoorsLocked(veh, 2)
                 end
