@@ -32,14 +32,6 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 	
-    while true do
-        Wait(0)
-
-        -- If the defined key is pressed
-        if(IsControlJustPressed(1, 42))then
-			doLockSystemToggleLocks()
-        end
-    end
 end)
 
 Citizen.CreateThread(function()
