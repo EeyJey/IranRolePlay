@@ -2053,6 +2053,74 @@ if IsControlPressed(0,  Keys['F6']) and PlayerData.job ~= nil and PlayerData.job
 	GUI.Time = GetGameTimer()
 end
 
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
+function ToggleVehicleLock()
+	local xPlayer = ESX.GetPlayerData()
+	if has_value("police", xPlayer.job.name) then
+		
+	end
+	local playerPed = PlayerPedId()
+	local coords = GetEntityCoords(playerPed)
+	local vehicle
+
+	if IsPedInAnyVehicle(playerPed, false) then
+		vehicle = GetVehiclePedIsIn(playerPed, false)
+	else
+		vehicle = GetClosestVehicle(coords, 8.0, 0, 70)
+	end
+	local plate = GetVehicleNumberPlateText(vehicle)
+	plate = string.gsub(plate, " ", "")
+	print("plate:", plate)
+	if not DoesEntityExist(vehicle) then
+		return
+	end
+	
+	for i=1, #myPlate, 1 do
+		print("plate2:", myPlate[i])
+		if myPlate[i] == plate then
+			
+			local lockStatus = GetVehicleDoorLockStatus(vehicle)
+			
+			if lockStatus == 1 then -- unlocked
+				SetVehicleDoorsLocked(vehicle, 2)
+				PlayVehicleDoorCloseSound(vehicle, 1)
+
+				TriggerEvent('chat:addMessage', { args = { _U('message_title'), _U('message_locked') } })
+			elseif lockStatus == 2 then -- locked
+				SetVehicleDoorsLocked(vehicle, 1)
+				PlayVehicleDoorOpenSound(vehicle, 0)
+
+				TriggerEvent('chat:addMessage', { args = { _U('message_title'), _U('message_unlocked') } })
+			end
+		end
+	end
+end
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(10)
+
+		if IsControlJustReleased(0, Keys['U']) and IsInputDisabled(0) then
+			ToggleVehicleLock()
+			Citizen.Wait(300)
+	
+		-- D-pad down on controllers works, too!
+		elseif IsControlJustReleased(0, 173) and not IsInputDisabled(0) then
+			ToggleVehicleLock()
+			Citizen.Wait(300)
+		end
+	end
+end)
+
 ---------------------------------------------------------------------------------------------------------
 --NB : gestion des menu
 ---------------------------------------------------------------------------------------------------------

@@ -112,4 +112,8 @@ Locales['en'] = {
   ['dd_clothing']               = 'clothing',
   ['dd_makeclothing']           = 'press ~INPUT_PICKUP~ to retrieve clothing.',
   ['dd_deliver_clothes']        = 'press ~INPUT_PICKUP~ to deliver the clothes.',
+  
+  ['message_title'] 			= '^3Vehicle lock',
+  ['message_locked']  			= 'locked',
+  ['message_unlocked'] 			= 'unlocked',
   }
