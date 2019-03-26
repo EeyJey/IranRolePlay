@@ -8,25 +8,10 @@
 
 ## Download & Installation
 
-### Using [fvm](https://github.com/qlaffont/fvm-installer)
-```
-fvm install --save --folder=esx esx-org/esx_identity
-```
-
-### Using Git
-```
-cd resources
-git clone https://github.com/ESX-Org/esx_identity [esx]/esx_identity
-```
-
-### Manually
-- Download https://github.com/ESX-Org/esx_identity/archive/master.zip
-- Put it in the `[esx]` directory
-
 ## Installation
 - Import `esx_identity.sql` in your database
 - Add this to your `server.cfg`:
-
+- Note: the sql now only uses the users table
 ```
 start esx_identity
 ```
@@ -37,19 +22,29 @@ start esx_identity
 ### Commands
 ```
 /register
-/charlist
-/charselect
+/char
 /chardel
 ```
 
-# Legal
-### License
-esx_identity - rp characters
+## Notes
 
-Copyright (C) 2015-2018 Jérémie N'gadi
+* This script is REQUIRED for the new ESX AIOMenu.
 
-This program Is free software: you can redistribute it And/Or modify it under the terms Of the GNU General Public License As published by the Free Software Foundation, either version 3 Of the License, Or (at your option) any later version.
+* If you have any sources for esx_aiomenu that date before this update was released, then you may use them following the licenses of the old script. For help with ESX AIOMenu or the new version of ESX Identity, please join the discord via this link: https://discord.gg/3ECcWxn
 
-This program Is distributed In the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty Of MERCHANTABILITY Or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License For more details.
+## Credits
 
-You should have received a copy Of the GNU General Public License along with this program. If Not, see http://www.gnu.org/licenses/.
+* Special thanks to Cosharek For Help In The Creation Of The UI Design.
+* Special thanks to Alphakush and CMD.Telhada for help with initial testing.
+
+## Licensing
+
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License
+
+* Attribution — You must give appropriate credit. If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+
+* NonCommercial — You may not use the material for commercial purposes. A commercial use is one primarily intended for commercial advantage or monetary compensation.
+
+* NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material. Merely changing the format never creates a derivative.
+
+Copyright 2017-2018, David Miles, All rights reserved.

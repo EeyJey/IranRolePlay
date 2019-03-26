@@ -42,6 +42,22 @@ Citizen.CreateThread(function()
     end
 end)
 
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(10)
+
+		if IsControlJustReleased(0, 303) and IsInputDisabled(0) then
+			doLockSystemToggleLocks()
+			Citizen.Wait(300)
+	
+		-- D-pad down on controllers works, too!
+		elseif IsControlJustReleased(0, 173) and not IsInputDisabled(0) then
+			doLockSystemToggleLocks()
+			Citizen.Wait(300)
+		end
+	end
+end)
+
 function doLockSystemToggleLocks()
 	-- Init player infos
 	local ply = GetPlayerPed(-1)
@@ -76,24 +92,27 @@ function doLockSystemToggleLocks()
 			local hasKey = false
 			local myID = GetPlayerServerId(PlayerId())
 			TriggerServerEvent("esx_locksystem:haveKeys", myID, newVehPlate)
-			if isTheCarOwner then
+			print("plate", localVehPlateTest)
+			ESX.TriggerServerCallback('esx_locksystem:requestPlayerCars', function(isOwnedVehicle)
+				print("owned:", isOwnedVehicle)
+				if isOwnedVehicle then
 							if(time > timer)then
 								if(IsPedInAnyVehicle(ply, true))then
-									if localVehLockStatus <= 2 then
-										SetVehicleDoorsLocked(localVehId, 4)
-										SetVehicleDoorsLockedForAllPlayers(localVehId, 1)
+									if localVehLockStatus < 2 then
+										SetVehicleDoorsLocked(localVehId, 2)
+										-- SetVehicleDoorsLockedForAllPlayers(localVehId, 1)
 										TriggerEvent("esx_locksystem:notify", _U("vehicle_locked"))
 										TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 10, "lock", 0.5)
 										time = 0
-									elseif localVehLockStatus > 2 then
+									elseif localVehLockStatus >= 2 then
 										SetVehicleDoorsLocked(localVehId, 1)
-										SetVehicleDoorsLockedForAllPlayers(localVehId, false)
+										-- SetVehicleDoorsLockedForAllPlayers(localVehId, false)
 										TriggerEvent("esx_locksystem:notify", _U("vehicle_unlocked"))
 										TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 10, "unlock", 0.5)
 										time = 0
 									end
 								else
-									if localVehLockStatus <= 2 then
+									if localVehLockStatus < 2 then
 									
 										local lib = "anim@mp_player_intmenu@key_fob@"
 										local anim = "fob_click"
@@ -103,12 +122,12 @@ function doLockSystemToggleLocks()
 										end)
 
 										Wait(250)
-										SetVehicleDoorsLocked(localVehId, 4)
+										SetVehicleDoorsLocked(localVehId, 2)
 										SetVehicleDoorsLockedForAllPlayers(localVehId, 1)
 										TriggerEvent("esx_locksystem:notify", _U("vehicle_locked"))
 										TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 10, "lock2", 0.5)
 										time = 0
-									elseif localVehLockStatus > 2 then
+									elseif localVehLockStatus >= 2 then
 									
 										local lib = "anim@mp_player_intmenu@key_fob@"
 										local anim = "fob_click"
@@ -183,6 +202,10 @@ function doLockSystemToggleLocks()
 					end
 				end
 			end
+
+			end, localVehPlateTest)
+			
+			
 		else
 			TriggerEvent("esx_locksystem:notify", _U("could_not_find_plate"))
 		end
@@ -208,7 +231,7 @@ Citizen.CreateThread(function()
         if DoesEntityExist(GetVehiclePedIsTryingToEnter(PlayerPedId(ped))) then
         	local veh = GetVehiclePedIsTryingToEnter(PlayerPedId(ped))
 	        local lock = GetVehicleDoorLockStatus(veh)
-	        if lock == 4 then
+	        if lock == 2 then
 	        	ClearPedTasks(ped)
 	        end
         end
@@ -225,6 +248,7 @@ if(Config.disableCar_NPC)then
             if DoesEntityExist(GetVehiclePedIsTryingToEnter(PlayerPedId(ped))) then
                 local veh = GetVehiclePedIsTryingToEnter(PlayerPedId(ped))
                 local lock = GetVehicleDoorLockStatus(veh)
+				print("lock", lock)
                 if lock == 7 then
                     SetVehicleDoorsLocked(veh, 2)
                 end

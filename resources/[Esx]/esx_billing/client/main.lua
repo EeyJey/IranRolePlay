@@ -76,26 +76,3 @@ end)
 AddEventHandler('playerSpawned', function(spawn)
 	isDead = false
 end)
-
---Key controls
-Citizen.CreateThread(function()
-	while true do
-
-  	Wait(0)
-
-  	if IsControlPressed(0, Keys["F7"]) and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'billing') and (GetGameTimer() - GUI.Time) > 150 then
-  		ShowBillsMenu()
-	  	GUI.Time  = GetGameTimer()
-    end
-
-  end
-end)
-
----------------------------------------------------------------------------------------------------------
---NB : gestion des menu
----------------------------------------------------------------------------------------------------------
-
-RegisterNetEvent('NB:openMenuFactures')
-AddEventHandler('NB:openMenuFactures', function()
-  	ShowBillsMenu()
-end)
