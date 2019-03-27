@@ -55,9 +55,9 @@ Citizen.CreateThread(function()
 		
 		-- Pistol
 		
-		if IsPedShooting(ped) then 
-			SetWeaponDamageMultiplier(ped, 0.5)
-		end
+		-- if IsPedShooting(ped) then 
+			-- SetWeaponDamageMultiplier(ped, 0.5)
+		-- end
 		
 		if weapon == GetHashKey("WEAPON_STUNGUN") then
 			if IsPedShooting(ped) then
