@@ -79,10 +79,8 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 				Banks[robb].lastrobbed = os.time()
 				robbers[source] = robb
 				local savedSource = source
-				SetTimeout(60000, function()
-					print("1", 1)
+				SetTimeout(360000, function()
 					if(robbers[savedSource])then
-						print("2", 2)
 						rob = false
 						TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, job)
 						if(xPlayer)then

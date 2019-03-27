@@ -37,7 +37,7 @@ RegisterNetEvent('esx_holdupbank:currentlyrobbing')
 AddEventHandler('esx_holdupbank:currentlyrobbing', function(robb)
 	holdingup = true
 	bank = robb
-	secondsRemaining = 60
+	secondsRemaining = 360
 end)
 
 RegisterNetEvent('esx_holdupbank:killblip')
@@ -71,6 +71,7 @@ AddEventHandler('esx_holdupbank:robberycomplete', function(robb)
 	bank = ""
 	secondsRemaining = 0
 	incircle = false
+	ClearPedTasks(GetPlayerPed(-1))
 end)
 
 Citizen.CreateThread(function()
