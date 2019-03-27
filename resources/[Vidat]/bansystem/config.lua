@@ -1,7 +1,7 @@
 Config                   = {}
 
 --GENERAL
-Config.Lang              = 'fr' --Set lang (fr-en)
+Config.Lang              = 'en' --Set lang (fr-en)
 Config.permission        = "admin" --Permission need to use FiveM-BanSql commands (mod-admin-superadmin)
 
 
