@@ -57,52 +57,52 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 
 		if rob == false then
 		   
-			if drill and xPlayer.getInventoryItem('drill').count >= 1 then
-				if (cops >= Config.NumberOfCopsRequired) then
-					xPlayer.removeInventoryItem('drill', 1)
-					rob = true
-					for i=1, #xPlayers, 1 do
-						local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-						if xPlayer.job.name == 'police' then
-								TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog') .. bank.nameofbank)
-								TriggerClientEvent('esx_holdupbank:setblip', xPlayers[i], Banks[robb].position)
-						end
+		  if xPlayer.getInventoryItem('drill').count >= 1 then
+		     xPlayer.removeInventoryItem('drill', 1)
+
+			if(cops >= Config.NumberOfCopsRequired)then
+
+				rob = true
+				for i=1, #xPlayers, 1 do
+					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+					if xPlayer.job.name == 'police' then
+							TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog') .. bank.nameofbank)
+							TriggerClientEvent('esx_holdupbank:setblip', xPlayers[i], Banks[robb].position)
 					end
+				end
 
-					TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. bank.nameofbank .. _U('do_not_move'))
-					TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
-					TriggerClientEvent('esx:showNotification', source, _U('hold_pos'))
-					TriggerClientEvent('esx_borrmaskin:startDrill', source)
-					TriggerClientEvent('esx_holdupbank:currentlyrobbing', source, robb)
-					Banks[robb].lastrobbed = os.time()
-					robbers[source] = robb
-					local savedSource = source
-					SetTimeout(600000, function()
+				TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. bank.nameofbank .. _U('do_not_move'))
+				TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
+				TriggerClientEvent('esx:showNotification', source, _U('hold_pos'))
+				TriggerClientEvent('esx_borrmaskin:startDrill', source)
+				TriggerClientEvent('esx_holdupbank:currentlyrobbing', source, robb)
+				Banks[robb].lastrobbed = os.time()
+				robbers[source] = robb
+				local savedSource = source
+				SetTimeout(60000, function()
+					print("1", 1)
+					if(robbers[savedSource])then
+						print("2", 2)
+						rob = false
+						TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, job)
+						if(xPlayer)then
 
-						if(robbers[savedSource])then
-
-							rob = false
-							TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, job)
-							if(xPlayer)then
-
-								xPlayer.addAccountMoney('black_money', bank.reward)
-								local xPlayers = ESX.GetPlayers()
-								for i=1, #xPlayers, 1 do
-									local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-									if xPlayer.job.name == 'police' then
-											TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at') .. bank.nameofbank)
-											TriggerClientEvent('esx_holdupbank:killblip', xPlayers[i])
-									end
+							xPlayer.addAccountMoney('black_money', bank.reward)
+							local xPlayers = ESX.GetPlayers()
+							for i=1, #xPlayers, 1 do
+								local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+								if xPlayer.job.name == 'police' then
+										TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at') .. bank.nameofbank)
+										TriggerClientEvent('esx_holdupbank:killblip', xPlayers[i])
 								end
 							end
 						end
-					end)
-				else
-					TriggerClientEvent('esx:showNotification', source, _U('min_two_police') .. Config.NumberOfCopsRequired)
-				end
+					end
+				end)
 			else
-				TriggerClientEvent('esx:showNotification', source, _U('baray dozdi be derail niyaz darid'))
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police') .. Config.NumberOfCopsRequired)
 			end
+		end
 		else
 			TriggerClientEvent('esx:showNotification', source, _U('robbery_already'))
 		end
