@@ -148,6 +148,10 @@ Config.AuthorizedVehicles = {
 			model = 'police5',
 			label = 'Aventadoor'
 		},
+		{
+			model = 'polgs350',
+			label = 'Lexus'
+		},
 		
 	},
 }
