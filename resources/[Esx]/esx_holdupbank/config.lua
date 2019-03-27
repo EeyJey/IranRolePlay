@@ -11,13 +11,13 @@ Banks = {
 	},
 	["fleeca2"] = {
 		position = { ['x'] = -2957.6674804688, ['y'] = 481.45776367188, ['z'] = 15.697026252747 },
-		reward = math.random(15000,25000),
+		reward = math.random(15000,150000),
 		nameofbank = "Fleeca Bank (Highway)",
 		lastrobbed = 0
 	},
 	["blainecounty"] = {
 		position = { ['x'] = -107.06505584717, ['y'] = 6474.8012695313, ['z'] = 31.62670135498 },
-		reward = math.random(15000,25000),
+		reward = math.random(15000,150000),
 		nameofbank = "Blaine County Savings",
 		lastrobbed = 0
 	},
