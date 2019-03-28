@@ -3,7 +3,7 @@ Config.MarkerType   = 1
 Config.DrawDistance = 100.0
 Config.ZoneSize     = {x = 5.0, y = 5.0, z = 3.0}
 --Config.MarkerColor  = {r = 100, g = 204, b = 100}
-Config.ShowBlips   = false  --markers visible on the map? (false to hide the markers on the map)
+Config.ShowBlips   = true  --markers visible on the map? (false to hide the markers on the map)
 
 Config.RequiredCopsCoke  = 1
 Config.RequiredCopsMeth  = 1
