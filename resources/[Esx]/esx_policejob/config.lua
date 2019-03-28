@@ -47,7 +47,7 @@ Config.PoliceStations = {
 		},
 
 		Armories = {
-			{ x = 451.699, y = -980.356, z = 29.689 },
+			{ x = 459.76, y = -981.11, z = 29.689 },
 		},
 
 		Vehicles = {
