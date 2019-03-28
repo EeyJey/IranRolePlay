@@ -28,7 +28,7 @@ AddEventHandler("esx_walkie:stopActionB", function()
 			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 
 			if xPlayer.job.name ~= nil and xPlayer.job.name == "police" then
-				TriggerClientEvent("esx_walkie:stopAnim", xPlayer.source) -- Client Event auf Animatonen start
+				-- TriggerClientEvent("esx_walkie:stopAnim", xPlayer.source) -- Client Event auf Animatonen start
 				TriggerClientEvent("esx_walkie:stopActionB", xPlayer.source) -- Client Event auf Aktionen start
 
 			end
