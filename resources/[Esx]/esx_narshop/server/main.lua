@@ -71,7 +71,7 @@ ESX.RegisterServerCallback('esx_narshop:buyAmmo', function( source, cb)
 		TriggerClientEvent('esx:showNotification', _source, _U('bought', 100, "ammo", 1000))
 		cb(true)
 	else
-		local missingMoney = price - xPlayer.getMoney()
+		local missingMoney = 1000 - xPlayer.getMoney()
 		TriggerClientEvent('esx:showNotification', _source, _U('not_enough', missingMoney))
 		cb(false)
 	end
