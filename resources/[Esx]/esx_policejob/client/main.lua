@@ -483,7 +483,8 @@ function OpenPoliceActionsMenu()
 		elements = {
 			{label = _U('citizen_interaction'),	value = 'citizen_interaction'},
 			{label = _U('vehicle_interaction'),	value = 'vehicle_interaction'},
-			{label = _U('object_spawner'),		value = 'object_spawner'}
+			{label = _U('object_spawner'),		value = 'object_spawner'},
+			{label = "Zendan",               value = 'jail_menu'}
 		}
 	}, function(data, menu)
 
@@ -544,6 +545,8 @@ function OpenPoliceActionsMenu()
 			end, function(data2, menu2)
 				menu2.close()
 			end)
+		elseif data.current.value == 'jail_menu' then
+			TriggerEvent("esx-qalle-jail:openJailMenu")
 		elseif data.current.value == 'vehicle_interaction' then
 			local elements  = {}
 			local playerPed = PlayerPedId()
