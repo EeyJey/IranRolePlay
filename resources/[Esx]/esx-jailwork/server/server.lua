@@ -25,13 +25,13 @@ RegisterCommand("jail", function(src, args, raw)
 					end)
 				end
 			else
-				TriggerClientEvent("esx:showNotification", src, "This time is invalid!")
+				TriggerClientEvent("esx:showNotification", src, "Zaman na motabar!")
 			end
 		else
-			TriggerClientEvent("esx:showNotification", src, "This ID is not online!")
+			TriggerClientEvent("esx:showNotification", src, "In shakhs online nist!")
 		end
 	else
-		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
+		TriggerClientEvent("esx:showNotification", src, "Shoma police nistid!")
 	end
 end)
 
@@ -46,10 +46,10 @@ RegisterCommand("unjail", function(src, args)
 		if GetPlayerName(jailPlayer) ~= nil then
 			UnJail(jailPlayer)
 		else
-			TriggerClientEvent("esx:showNotification", src, "This ID is not online!")
+			TriggerClientEvent("esx:showNotification", src, "In shakhs online nist!")
 		end
 	else
-		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
+		TriggerClientEvent("esx:showNotification", src, "Shoma police nistid!")
 	end
 end)
 
@@ -61,10 +61,10 @@ AddEventHandler("esx-qalle-jail:jailPlayer", function(targetSrc, jailTime, jailR
 	JailPlayer(targetSrc, jailTime)
 
 	GetRPName(targetSrc, function(Firstname, Lastname)
-		TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. jailReason }, color = { 249, 166, 0 } })
+		TriggerClientEvent('chat:addMessage', -1, { args = { "Police",  Firstname .. " " .. Lastname .. " zendeni shod be dalil e: " .. jailReason }, color = { 249, 166, 0 } })
 	end)
 
-	TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Jailed for " .. jailTime .. " minutes!")
+	TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " baraye  " .. jailTime .. " daghighe zendani shod!")
 end)
 
 RegisterServerEvent("esx-qalle-jail:unJailPlayer")
@@ -84,7 +84,7 @@ AddEventHandler("esx-qalle-jail:unJailPlayer", function(targetIdentifier)
 		)
 	end
 
-	TriggerClientEvent("esx:showNotification", src, xPlayer.name .. " Unjailed!")
+	TriggerClientEvent("esx:showNotification", src, xPlayer.name .. " Azad shod!")
 end)
 
 RegisterServerEvent("esx-qalle-jail:updateJailTime")
@@ -102,7 +102,7 @@ AddEventHandler("esx-qalle-jail:prisonWorkReward", function()
 
 	xPlayer.addMoney(math.random(13, 21))
 
-	TriggerClientEvent("esx:showNotification", src, "Thanks, here you have som cash for food!")
+	TriggerClientEvent("esx:showNotification", src, "Mamnoon ye kam pool bara ghaza gereftid")
 end)
 
 function JailPlayer(jailPlayer, jailTime)

@@ -3,7 +3,7 @@ RegisterCommand("jailmenu", function(source, args)
 	if PlayerData.job.name == "police" then
 		OpenJailMenu()
 	else
-		ESX.ShowNotification("You are not an officer!")
+		ESX.ShowNotification("Shoma police nistid!")
 	end
 end)
 
@@ -154,7 +154,7 @@ function TeleportPlayer(pos)
 			if action == "Boiling Broke" or action == "Security" then
 
 				if PlayerData.job.name ~= "police" then
-					ESX.ShowNotification("You don't have an key to go here!")
+					ESX.ShowNotification("Kilid nadarid!")
 					return
 				end
 			end

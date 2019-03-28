@@ -75,7 +75,7 @@ function JailLogin()
 	local JailPosition = Config.JailPositions["Cell"]
 	SetEntityCoords(PlayerPedId(), JailPosition["x"], JailPosition["y"], JailPosition["z"] - 1)
 
-	ESX.ShowNotification("Last time you went to sleep you were jailed, because of that you are now put back!")
+	ESX.ShowNotification("Akharin bar ke DC kardid too zendan boodid, bara hamin be zendan bazgashtid!")
 
 	InJail()
 end
@@ -89,7 +89,7 @@ function UnJail()
 		TriggerEvent('skinchanger:loadSkin', skin)
 	end)
 
-	ESX.ShowNotification("You are released, stay calm outside! Good LucK!")
+	ESX.ShowNotification("Az zendan azad shodid, dige khata nakonid")
 end
 
 function InJail()
@@ -102,7 +102,7 @@ function InJail()
 
 			jailTime = jailTime - 1
 
-			ESX.ShowNotification("You have " .. jailTime .. " minutes left in jail!")
+			ESX.ShowNotification("Az zaman e zendan e shoma " .. jailTime .. " baghi mande!")
 
 			TriggerServerEvent("esx-qalle-jail:updateJailTime", jailTime)
 
@@ -154,7 +154,7 @@ function InJail()
 							if v["state"] then
 								PackPackage(posId)
 							else
-								ESX.ShowNotification("You've already taken this package!")
+								ESX.ShowNotification("Shoma ghablan in package ro borde boodid")
 							end
 
 						end
@@ -191,7 +191,7 @@ function LoadTeleporters()
 
 					sleepThread = 5
 
-					ESX.Game.Utils.DrawText3D(v, "[E] Open Door", 0.4)
+					ESX.Game.Utils.DrawText3D(v, "[E] baraye baz kardan e dar", 0.4)
 
 					if DistanceCheck <= 1.0 then
 						if IsControlJustPressed(0, 38) then
@@ -300,7 +300,7 @@ function OpenJailMenu()
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'jail_prison_menu',
 		{
-			title    = "Prison Menu",
+			title    = "Menu ye zendan",
 			align    = 'center',
 			elements = {
 				{ label = "Jail Closest Person", value = "jail_closest_player" },
@@ -318,7 +318,7 @@ function OpenJailMenu()
 			ESX.UI.Menu.Open(
           		'dialog', GetCurrentResourceName(), 'jail_choose_time_menu',
           		{
-            		title = "Jail Time (minutes)"
+            		title = "Zaman e zendan(be daghighe)"
           		},
           	function(data2, menu2)
 
@@ -332,26 +332,26 @@ function OpenJailMenu()
               		local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
               		if closestPlayer == -1 or closestDistance > 3.0 then
-                		ESX.ShowNotification("No players nearby!")
+                		ESX.ShowNotification("Hich kas nazdik nist!")
 					else
 						ESX.UI.Menu.Open(
 							'dialog', GetCurrentResourceName(), 'jail_choose_reason_menu',
 							{
-							  title = "Jail Reason"
+							  title = "Dalil zendan"
 							},
 						function(data3, menu3)
 		  
 						  	local reason = data3.value
 		  
 						  	if reason == nil then
-								ESX.ShowNotification("You need to put something here!")
+								ESX.ShowNotification("Bayad dalil bezarid")
 						  	else
 								menu3.close()
 		  
 								local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 		  
 								if closestPlayer == -1 or closestDistance > 3.0 then
-								  	ESX.ShowNotification("No players nearby!")
+								  	ESX.ShowNotification("Kasi nazdik nist!")
 								else
 								  	TriggerServerEvent("esx-qalle-jail:jailPlayer", GetPlayerServerId(closestPlayer), jailTime, reason)
 								end
@@ -375,18 +375,18 @@ function OpenJailMenu()
 			ESX.TriggerServerCallback("esx-qalle-jail:retrieveJailedPlayers", function(playerArray)
 
 				if #playerArray == 0 then
-					ESX.ShowNotification("Your jail is empty!")
+					ESX.ShowNotification("Zendan e shoma khalist")
 					return
 				end
 
 				for i = 1, #playerArray, 1 do
-					table.insert(elements, {label = "Prisoner: " .. playerArray[i].name .. " | Jail Time: " .. playerArray[i].jailTime .. " minutes", value = playerArray[i].identifier })
+					table.insert(elements, {label = "Zendani: " .. playerArray[i].name .. " | Zaman e zendan: " .. playerArray[i].jailTime .. " daghighe", value = playerArray[i].identifier })
 				end
 
 				ESX.UI.Menu.Open(
 					'default', GetCurrentResourceName(), 'jail_unjail_menu',
 					{
-						title = "Unjail Player",
+						title = "Azad kardan az zendan",
 						align = "center",
 						elements = elements
 					},
