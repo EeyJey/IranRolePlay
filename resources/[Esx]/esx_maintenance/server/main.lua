@@ -23,7 +23,7 @@ AddEventHandler('playerConnecting', function(peerName, setKickReason)
                 print('Dropping Connection for: [' .. peerName ..']      ')
                 print('-----------------ESX MAINTENANCE SYSTEM-----------')
                 
-				setKickReason('The server is under maintenance, please come back later!')
+				setKickReason('Server dar daste sakht mibashad, Badan moraje e konid!')
 				CancelEvent()
 			end
 		end
