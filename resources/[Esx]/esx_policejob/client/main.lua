@@ -1595,8 +1595,12 @@ Citizen.CreateThread(function()
 			DisableControlAction(2, Keys['F1'], true) -- Disable phone
 			DisableControlAction(2, Keys['F2'], true) -- Inventory
 			DisableControlAction(2, Keys['F3'], true) -- Animations
+			DisableControlAction(2, Keys['F4'], true)
+			DisableControlAction(2, Keys['F5'], true)
+			DisableControlAction(2, Keys['F6'], true)
 			DisableControlAction(2, Keys['V'], true) -- Disable changing view
 			DisableControlAction(2, Keys['P'], true) -- Disable pause screen
+			DisableControlAction(2, Keys['F'], true)
 			DisableControlAction(2, 59, true) -- Disable steering in vehicle
 			DisableControlAction(2, Keys['LEFTCTRL'], true) -- Disable going stealth
 			DisableControlAction(0, 47, true)  -- Disable weapon
