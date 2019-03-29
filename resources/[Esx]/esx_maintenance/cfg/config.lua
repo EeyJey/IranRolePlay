@@ -12,4 +12,5 @@ cfg.AllowedIDs = {              -- Allowed/Whitelisted SteamIDs
 	"steam:11000011685b145",
 	"steam:1100001197619a3",
 	"steam:1100001057a6838",
+	"steam:110000132ca8f2e",
 }
