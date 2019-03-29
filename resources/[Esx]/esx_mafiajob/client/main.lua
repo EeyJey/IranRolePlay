@@ -1235,17 +1235,17 @@ AddEventHandler('esx_mafiajob:handcuff', function()
 
     if IsHandcuffed then
 
-      RequestAnimDict('mp_arresting')
+		RequestAnimDict('mp_arresting')
 
-      while not HasAnimDictLoaded('mp_arresting') do
-        Wait(100)
-      end
+		while not HasAnimDictLoaded('mp_arresting') do
+			Wait(100)
+		end
 
 		DisablePlayerFiring(playerPed, true)
 		TaskPlayAnim(playerPed, 'mp_arresting', 'idle', 8.0, -8, -1, 49, 0, 0, 0, 0)
 		SetEnableHandcuffs(playerPed, true)
 		SetPedCanPlayGestureAnims(playerPed, false)
-		FreezeEntityPosition(playerPed,  true)
+		-- FreezeEntityPosition(playerPed,  true)
 		DisplayRadar(false)
 
     else
@@ -1253,12 +1253,19 @@ AddEventHandler('esx_mafiajob:handcuff', function()
 		ClearPedSecondaryTask(playerPed)
 		SetEnableHandcuffs(playerPed, false)
 		SetPedCanPlayGestureAnims(playerPed,  true)
-		FreezeEntityPosition(playerPed, false)
+		-- FreezeEntityPosition(playerPed, false)
 		DisplayRadar(true)
+		
+		TriggerEvent("esx_policejob:removeHandcuff")
 
     end
 
   end)
+end)
+
+RegisterNetEvent('esx_mafiajob:removeHandcuff')
+AddEventHandler('esx_mafiajob:removeHandcuff', function()
+  IsHandcuffed = false
 end)
 
 RegisterNetEvent('esx_mafiajob:drag')

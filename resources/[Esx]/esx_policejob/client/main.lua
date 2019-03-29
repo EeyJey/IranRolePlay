@@ -1439,7 +1439,7 @@ AddEventHandler('esx_policejob:handcuff', function()
 			DisablePlayerFiring(playerPed, true)
 			SetCurrentPedWeapon(playerPed, GetHashKey('WEAPON_UNARMED'), true) -- unarm player
 			SetPedCanPlayGestureAnims(playerPed, false)
-			FreezeEntityPosition(playerPed, true)
+			-- FreezeEntityPosition(playerPed, true)
 			DisplayRadar(false)
 
 			if Config.EnableHandcuffTimer then
@@ -1461,11 +1461,19 @@ AddEventHandler('esx_policejob:handcuff', function()
 			SetEnableHandcuffs(playerPed, false)
 			DisablePlayerFiring(playerPed, false)
 			SetPedCanPlayGestureAnims(playerPed, true)
-			FreezeEntityPosition(playerPed, false)
+			-- FreezeEntityPosition(playerPed, false)
 			DisplayRadar(true)
+			
+			TriggerEvent("esx_mafiajob:removeHandcuff")
+			
 		end
 	end)
 
+end)
+
+RegisterNetEvent('esx_policejob:removeHandcuff')
+AddEventHandler('esx_policejob:removeHandcuff', function()
+  IsHandcuffed = false
 end)
 
 RegisterNetEvent('esx_policejob:unrestrain')
@@ -1600,7 +1608,6 @@ Citizen.CreateThread(function()
 			DisableControlAction(2, Keys['F6'], true)
 			DisableControlAction(2, Keys['V'], true) -- Disable changing view
 			DisableControlAction(2, Keys['P'], true) -- Disable pause screen
-			DisableControlAction(2, Keys['F'], true)
 			DisableControlAction(2, 59, true) -- Disable steering in vehicle
 			DisableControlAction(2, Keys['LEFTCTRL'], true) -- Disable going stealth
 			DisableControlAction(0, 47, true)  -- Disable weapon
@@ -1612,6 +1619,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(0, 143, true) -- Disable melee
 			DisableControlAction(0, 75, true)  -- Disable exit vehicle
 			DisableControlAction(27, 75, true) -- Disable exit vehicle
+			DisableControlAction(0, Keys['Q'], true)
 		else
 			Citizen.Wait(500)
 		end
