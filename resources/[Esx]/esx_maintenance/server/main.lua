@@ -24,6 +24,7 @@ AddEventHandler('playerConnecting', function(peerName, setKickReason)
 		end
     end
 	if not isAllowed then
+		print('id:', getPlayerFromId(source))
 		print('^1-----------------ESX MAINTENANCE SYSTEM-----------')
 		print('Dropping Connection for: [' .. peerName ..']      ')
 		print('-----------------ESX MAINTENANCE SYSTEM-----------^7')
