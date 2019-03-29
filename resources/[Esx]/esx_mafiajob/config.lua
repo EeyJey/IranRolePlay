@@ -17,7 +17,7 @@ Config.MafiaStations = {
   Mafia = {
 
     Blip = {
---      Pos     = { x = 425.130, y = -979.558, z = 30.711 },
+      Pos     = { x = 425.130, y = -979.558, z = 30.711 },
       Sprite  = 60,
       Display = 4,
       Scale   = 1.2,
