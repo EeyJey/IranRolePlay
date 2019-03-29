@@ -18,8 +18,6 @@ AddEventHandler('playerConnecting', function(peerName, setKickReason)
     local numIds = GetNumPlayerIdentifiers(source)
 	local isAllowed = false
 	for i,allowedID in ipairs(cfg.AllowedIDs) do
-		print("1", getPlayerFromId(source))
-		print("2", allowedID)
 		if cfg.isOnMaintenance and getPlayerFromId(source) == allowedID then
 			isAllowed = true
 			break
@@ -34,7 +32,7 @@ AddEventHandler('playerConnecting', function(peerName, setKickReason)
 		CancelEvent()
 	else
 		print('^2-----------------ESX MAINTENANCE SYSTEM-----------')
-		print('Dropping Connection for: [' .. peerName ..']      ')
+		print('Let him/her to connect: [' .. peerName ..']      ')
 		print('-----------------ESX MAINTENANCE SYSTEM-----------^7')
 	end
 end)
