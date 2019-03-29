@@ -35,17 +35,9 @@ Config.MafiaStations = {
       { name = 'WEAPON_FIREEXTINGUISHER', price = 1200 },
       { name = 'WEAPON_FLAREGUN',         price = 6000 },
       { name = 'GADGET_PARACHUTE',        price = 3000 },
-      { name = 'WEAPON_STICKYBOMB',       price = 200000 },
-      { name = 'WEAPON_SNIPERRIFLE',      price = 2200000 },
-      { name = 'WEAPON_FIREWORK',         price = 30000 },
-      { name = 'WEAPON_GRENADE',          price = 180000 },
-      { name = 'WEAPON_BZGAS',            price = 120000 },
-      { name = 'WEAPON_SMOKEGRENADE',     price = 100000 },
+      { name = 'WEAPON_STICKYBOMB',       price = 5000000 },
       { name = 'WEAPON_APPISTOL',         price = 70000 },
       { name = 'WEAPON_CARBINERIFLE',     price = 1100000 },
-      { name = 'WEAPON_HEAVYSNIPER',      price = 2000000 },
-      { name = 'WEAPON_MINIGUN',          price = 700000 },
-      { name = 'WEAPON_RAILGUN',          price = 2500000 },
     },
 
 	  AuthorizedVehicles = {

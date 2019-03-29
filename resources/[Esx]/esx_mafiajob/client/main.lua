@@ -240,11 +240,6 @@ function OpenVehicleSpawnerMenu(station, partNum)
 
     local elements = {}
 
-    if Config.EnablePlayerManagement and PlayerData.job ~= nil and
-      (PlayerData.job.grade_name == 'boss') then
-      table.insert(elements, {label = 'Kuruma', value = 'kuruma2'})
-    end
-
     for i=1, #Config.MafiaStations[station].AuthorizedVehicles, 1 do
       local vehicle = Config.MafiaStations[station].AuthorizedVehicles[i]
       table.insert(elements, {label = vehicle.label, value = vehicle.name})
@@ -351,10 +346,10 @@ function OpenMafiaActionsMenu()
               {label = _U('id_card'),       value = 'identity_card'},
               {label = _U('search'),        value = 'body_search'},
               {label = _U('handcuff'),    value = 'handcuff'},
-              --{label = _U('drag'),      value = 'drag'},
+              {label = _U('drag'),      value = 'drag'},
               {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
               {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
-              --{label = _U('fine'),            value = 'fine'}
+              {label = _U('fine'),            value = 'fine'}
             },
           },
           function(data2, menu2)
@@ -1246,17 +1241,20 @@ AddEventHandler('esx_mafiajob:handcuff', function()
         Wait(100)
       end
 
-      TaskPlayAnim(playerPed, 'mp_arresting', 'idle', 8.0, -8, -1, 49, 0, 0, 0, 0)
-      SetEnableHandcuffs(playerPed, true)
-      SetPedCanPlayGestureAnims(playerPed, false)
-      FreezeEntityPosition(playerPed,  true)
+		DisablePlayerFiring(playerPed, true)
+		TaskPlayAnim(playerPed, 'mp_arresting', 'idle', 8.0, -8, -1, 49, 0, 0, 0, 0)
+		SetEnableHandcuffs(playerPed, true)
+		SetPedCanPlayGestureAnims(playerPed, false)
+		FreezeEntityPosition(playerPed,  true)
+		DisplayRadar(false)
 
     else
-
-      ClearPedSecondaryTask(playerPed)
-      SetEnableHandcuffs(playerPed, false)
-      SetPedCanPlayGestureAnims(playerPed,  true)
-      FreezeEntityPosition(playerPed, false)
+		DisablePlayerFiring(playerPed, false)
+		ClearPedSecondaryTask(playerPed)
+		SetEnableHandcuffs(playerPed, false)
+		SetPedCanPlayGestureAnims(playerPed,  true)
+		FreezeEntityPosition(playerPed, false)
+		DisplayRadar(true)
 
     end
 
@@ -1333,9 +1331,38 @@ Citizen.CreateThread(function()
   while true do
     Wait(0)
     if IsHandcuffed then
-      DisableControlAction(0, 142, true) -- MeleeAttackAlternate
-      DisableControlAction(0, 30,  true) -- MoveLeftRight
-      DisableControlAction(0, 31,  true) -- MoveUpDown
+		DisableControlAction(2, 1, true) -- Disable pan
+		DisableControlAction(2, 2, true) -- Disable tilt
+		DisableControlAction(2, 24, true) -- Attack
+		DisableControlAction(2, 257, true) -- Attack 2
+		DisableControlAction(2, 25, true) -- Aim
+		DisableControlAction(2, 263, true) -- Melee Attack 1
+		DisableControlAction(2, Keys['R'], true) -- Reload
+		DisableControlAction(2, Keys['TOP'], true) -- Open phone (not needed?)
+		DisableControlAction(2, Keys['SPACE'], true) -- Jump
+		DisableControlAction(2, Keys['Q'], true) -- Cover
+		DisableControlAction(2, Keys['TAB'], true) -- Select Weapon
+		DisableControlAction(2, Keys['F'], true) -- Also 'enter'?
+		DisableControlAction(2, Keys['F1'], true) -- Disable phone
+		DisableControlAction(2, Keys['F2'], true) -- Inventory
+		DisableControlAction(2, Keys['F3'], true) -- Animations
+		DisableControlAction(2, Keys['F4'], true)
+		DisableControlAction(2, Keys['F5'], true)
+		DisableControlAction(2, Keys['F6'], true)
+		DisableControlAction(2, Keys['V'], true) -- Disable changing view
+		DisableControlAction(2, Keys['P'], true) -- Disable pause screen
+		DisableControlAction(2, Keys['F'], true)
+		DisableControlAction(2, 59, true) -- Disable steering in vehicle
+		DisableControlAction(2, Keys['LEFTCTRL'], true) -- Disable going stealth
+		DisableControlAction(0, 47, true)  -- Disable weapon
+		DisableControlAction(0, 264, true) -- Disable melee
+		DisableControlAction(0, 257, true) -- Disable melee
+		DisableControlAction(0, 140, true) -- Disable melee
+		DisableControlAction(0, 141, true) -- Disable melee
+		DisableControlAction(0, 142, true) -- Disable melee
+		DisableControlAction(0, 143, true) -- Disable melee
+		DisableControlAction(0, 75, true)  -- Disable exit vehicle
+		DisableControlAction(27, 75, true) -- Disable exit vehicle
     end
   end
 end)
