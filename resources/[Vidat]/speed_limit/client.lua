@@ -35,10 +35,10 @@ Citizen.CreateThread(function()
         SetEntityMaxSpeed(vehicle, cruise)
         if useMph then
 			cruise = math.floor(cruise * 2.23694 + 0.5)
-			showHelpNotification("Speed limiter set to "..cruise.." mph. ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ to disable.", 0)
+			showHelpNotification("Speed limiter set to "..cruise.." mph.", 0)
         else
 			cruise = math.floor(cruise * 3.6 + 0.5)
-			showHelpNotification("Speed limiter set to "..cruise.." km/h. ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ to disable.", 0)
+			showHelpNotification("Speed limiter set to "..cruise.." km/h.", 0)
         end
       end
     else
