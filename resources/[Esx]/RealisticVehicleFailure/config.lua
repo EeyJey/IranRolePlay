@@ -42,7 +42,7 @@ cfg = {
 	sundayDriverAcceleratorCurve = 7.5,			-- The response curve to apply to the accelerator. Range 0.0 to 10.0. Higher values enables easier slow driving, meaning more pressure on the throttle is required to accelerate forward. Does nothing for keyboard drivers
 	sundayDriverBrakeCurve = 5.0,				-- The response curve to apply to the Brake. Range 0.0 to 10.0. Higher values enables easier braking, meaning more pressure on the throttle is required to brake hard. Does nothing for keyboard drivers
 
-	displayBlips = false,						-- Show blips for mechanics locations
+	displayBlips = true,						-- Show blips for mechanics locations
 
 	compatibilityMode = false,					-- prevents other scripts from modifying the fuel tank health to avoid random engine failure with BVA 2.01 (Downside is it disabled explosion prevention)
 
@@ -203,7 +203,7 @@ repairCfg = {
 	noFixMessageCount = 6
 }
 
-RepairEveryoneWhitelisted = true
+RepairEveryoneWhitelisted = false
 RepairWhitelist =
 {
 	"steam:123456789012345",
