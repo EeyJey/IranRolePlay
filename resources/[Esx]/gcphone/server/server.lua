@@ -5,11 +5,11 @@
 
 math.randomseed(os.time()) 
 
---- Pour les numero du style XXX-XXXX
+--- Pour les numero du style 0919XXXXXXX
 function getPhoneRandomNumber()
     local numBase0 = math.random(100,999)
     local numBase1 = math.random(0,9999)
-    local num = string.format("%03d-%04d", numBase0, numBase1 )
+    local num = string.format("0919%03d%04d", numBase0, numBase1 )
 	return num
 end
 
