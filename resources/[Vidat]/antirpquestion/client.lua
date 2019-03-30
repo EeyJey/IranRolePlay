@@ -49,7 +49,6 @@ end)
 -- Callbacks pages opening
 
 RegisterNUICallback('question', function(data, cb)
-	print("here", 1)
   SendNUIMessage({openSection = "question"})
   cb('ok')
 end)

@@ -7,7 +7,7 @@ $(document).ready(function(){
   var cursorY = documentHeight / 2;
 
   //question variables
-  var questionNumber = 6;
+  var questionNumber = 1;
   var userAnswer = [];
   var goodAnswer = [];
   var questionUsed = [];
