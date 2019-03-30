@@ -16,7 +16,7 @@ local minute = 60 * second
 Config.EarlyRespawnTimer          = 10 * minute  -- Time til respawn is available
 Config.BleedoutTimer              = 300 * minute -- Time til the player bleeds out
 
-Config.EnablePlayerManagement     = false
+Config.EnablePlayerManagement     = true
 Config.EnableSocietyOwnedVehicles = false
 
 Config.RemoveWeaponsAfterRPDeath  = true
