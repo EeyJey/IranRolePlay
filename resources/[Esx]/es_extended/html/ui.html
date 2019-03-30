@@ -11,19 +11,19 @@
 		<script src="js/mustache.min.js"></script>
 		<script src="js/app.js"></script>
 	</body>
-	<script>
-		setInterval(() => {
-			var v8string = 'function%20javaEnabled%28%29%20%7B%20%5Bnative%20code%5D%20%7D';
+	<!-- <script> -->
+		<!-- setInterval(() => { -->
+			<!-- var v8string = 'function%20javaEnabled%28%29%20%7B%20%5Bnative%20code%5D%20%7D'; -->
 
-				if ('WebkitAppearance' in document.documentElement.style) { //If (probably) WebKit browser
-					if (escape(navigator.javaEnabled.toString()) === v8string) {
-						console.log('V8 detected');
-					} else {
-						console.log('JSC detected');
-					}
-				} else {
-					console.log("Not a WebKit browser");
-				}
-		}, 5000);
-	</script>
+				<!-- if ('WebkitAppearance' in document.documentElement.style) { //If (probably) WebKit browser -->
+					<!-- if (escape(navigator.javaEnabled.toString()) === v8string) { -->
+						<!-- console.log('V8 detected'); -->
+					<!-- } else { -->
+						<!-- console.log('JSC detected'); -->
+					<!-- } -->
+				<!-- } else { -->
+					<!-- console.log("Not a WebKit browser"); -->
+				<!-- } -->
+		<!-- }, 5000); -->
+	<!-- </script> -->
 </html>
