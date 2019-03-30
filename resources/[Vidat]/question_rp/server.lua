@@ -28,19 +28,20 @@ AddEventHandler("antirpquestion:didQuestion", function()
             TriggerClientEvent('antirpquestion:notMade',source)
         end
 		
-	MySQL.Async.fetchAll(
-    "SELECT * FROM users WHERE identifier = '@username'",{['@username'] = player.identifier},
-    function (data)
-		BanListHistory = {}
+		MySQL.Async.fetchAll(
+		"SELECT * FROM users WHERE identifier = '@username'",{['@username'] = player.identifier},
+		function (data)
+			BanListHistory = {}
 
-		for i=1, #data, 1 do
-			local result = data[i].question_rp
-			print("result", result)
-			local questionMade = result[1].question_rp
-			if (questionMade == "false") then
-				TriggerClientEvent('antirpquestion:notMade',source)
-			end
-		end	
-    end)
+			for i=1, #data, 1 do
+				local result = data[i].question_rp
+				print("result", result)
+				local questionMade = result[1].question_rp
+				if (questionMade == "false") then
+					TriggerClientEvent('antirpquestion:notMade',source)
+				end
+			end	
+		end)
+	end)
 end)
 
