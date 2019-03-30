@@ -12,13 +12,11 @@ end)
 
 RegisterServerEvent("antirpquestion:success")
 AddEventHandler("antirpquestion:success", function()
-	TriggerEvent("es:getPlayerFromId", source, function(player)
-		MySQL.Async.execute(
-			"UPDATE users SET question_rp='made' WHERE identifier = '@username'", { ['@username'] = player.identifier},
-				function ()
-			end)
-		MySQL:executeQuery("UPDATE users SET question_rp='made' WHERE identifier = '@username'", { ['@username'] = player.identifier})
-	end)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	MySQL.Async.execute(
+		"UPDATE users SET question_rp='made' WHERE `identifier`=@identifier;", {identifier = xPlayer.identifier}, function()
+		end)
 end)
 
 --[[ ***** SPAWN ***** ]]
