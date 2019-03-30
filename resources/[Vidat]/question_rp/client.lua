@@ -48,20 +48,21 @@ end)
 -- ***************** NUI Callback Methods
 -- Callbacks pages opening
 
-RegisterNUICallback('question', function(data, cb)
+RegisterNUICallback('antirpquestion:question', function(data, cb)
+	print("here", 1)
   SendNUIMessage({openSection = "question"})
   cb('ok')
 end)
 
 -- Callback actions triggering server events
-RegisterNUICallback('close', function(data, cb)
+RegisterNUICallback('antirpquestion:close', function(data, cb)
   -- if question success
   closeGui()
   TriggerServerEvent('antirpquestion:success')
   cb('ok')
 end)
 
-RegisterNUICallback('kick', function(data, cb)
+RegisterNUICallback('antirpquestion:kick', function(data, cb)
   closeGui()
   TriggerServerEvent('antirpquestion:kick')
   cb('ok')
