@@ -2079,6 +2079,7 @@ end
 
 function ToggleVehicleLock()
 	local xPlayer = ESX.GetPlayerData()
+	print("job:", xPlayer.job.name)
 	if has_value("police", xPlayer.job.name) then
 		
 	end
@@ -2093,7 +2094,6 @@ function ToggleVehicleLock()
 	end
 	local plate = GetVehicleNumberPlateText(vehicle)
 	plate = string.gsub(plate, " ", "")
-	print("plate:", plate)
 	if not DoesEntityExist(vehicle) then
 		return
 	end
