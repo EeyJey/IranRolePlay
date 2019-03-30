@@ -85,14 +85,15 @@ local function isPedDrivingAVehicle()
 end
 
 local function IsNearMechanic()
-	local ped = GetPlayerPed(-1)
-	local pedLocation = GetEntityCoords(ped, 0)
-	for _, item in pairs(repairCfg.mechanics) do
-		local distance = GetDistanceBetweenCoords(item.x, item.y, item.z,  pedLocation["x"], pedLocation["y"], pedLocation["z"], true)
-		if distance <= item.r then
-			return true
-		end
-	end
+	-- local ped = GetPlayerPed(-1)
+	-- local pedLocation = GetEntityCoords(ped, 0)
+	-- for _, item in pairs(repairCfg.mechanics) do
+		-- local distance = GetDistanceBetweenCoords(item.x, item.y, item.z,  pedLocation["x"], pedLocation["y"], pedLocation["z"], true)
+		-- if distance <= item.r then
+			-- return true
+		-- end
+	-- end
+	return false
 end
 
 local function fscale(inputValue, originalMin, originalMax, newBegin, newEnd, curve)
