@@ -40,8 +40,7 @@ AddEventHandler("antirpquestion:didQuestion", function()
 			if (questionMade == "false") then
 				TriggerClientEvent('antirpquestion:notMade',source)
 			end
-		end
-	)	
+		end	
     end)
 end)
 
