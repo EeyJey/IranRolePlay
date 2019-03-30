@@ -7,13 +7,13 @@ $(document).ready(function(){
   var cursorY = documentHeight / 2;
 
   //question variables
-  var questionNumber = 1;
+  var questionNumber = 6;
   var userAnswer = [];
   var goodAnswer = [];
   var questionUsed = [];
-  var nbQuestionToAnswer = 10; // don't forget to change the progress bar max value in html
-  var nbAnswerNeeded = 8; // out of nbQuestionToAnswer
-  var nbPossibleQuestions = 15; //number of questions in database questions.js
+  var nbQuestionToAnswer = 6; // don't forget to change the progress bar max value in html
+  var nbAnswerNeeded = 6; // out of nbQuestionToAnswer
+  var nbPossibleQuestions = 6; //number of questions in database questions.js
 
   function getRandomQuestion() {
     var continuer = true;

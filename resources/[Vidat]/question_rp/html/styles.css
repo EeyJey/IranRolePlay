@@ -1,3 +1,11 @@
+@font-face 
+{
+    font-family: iran;
+    src: url(iran.otf);
+}
+body{
+	font-family: iran;
+}
 html {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
