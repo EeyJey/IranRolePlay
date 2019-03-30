@@ -203,7 +203,7 @@ repairCfg = {
 	noFixMessageCount = 6
 }
 
-RepairEveryoneWhitelisted = false
+RepairEveryoneWhitelisted = true
 RepairWhitelist =
 {
 	"steam:123456789012345",
