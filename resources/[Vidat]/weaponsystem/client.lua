@@ -54,9 +54,9 @@ Citizen.CreateThread(function()
 		-- Shakycam
 		
 		-- Pistol
-		SetPlayerMeleeWeaponDamageModifier(ped, 0.5)
+		SetPlayerMeleeWeaponDamageModifier(ped, 0.1)
 		if IsPedShooting(ped) then 
-			SetPlayerWeaponDamageModifier(ped, 05)
+			SetPlayerWeaponDamageModifier(ped, 0.1)
 		end
 		
 		if weapon == GetHashKey("WEAPON_STUNGUN") then
