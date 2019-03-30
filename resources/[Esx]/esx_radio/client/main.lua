@@ -115,14 +115,16 @@ end)
 
 RegisterNetEvent('esx_walkie:playSoundWithinDistanceClient')
 AddEventHandler('esx_walkie:playSoundWithinDistanceClient', function(playerNetId, maxDistance, soundFile, soundVolume)
-    local lCoords = GetEntityCoords(GetPlayerPed(-1))
-    local eCoords = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(playerNetId)))
-    local distIs  = Vdist(lCoords.x, lCoords.y, lCoords.z, eCoords.x, eCoords.y, eCoords.z)
-    if(distIs <= maxDistance) then
-        SendNUIMessage({
-            transactionType     = 'playSound',
-            transactionFile     = soundFile,
-            transactionVolume   = soundVolume
-        })
-    end
+	if PlayerData.job.name == 'police' then
+		local lCoords = GetEntityCoords(GetPlayerPed(-1))
+		local eCoords = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(playerNetId)))
+		local distIs  = Vdist(lCoords.x, lCoords.y, lCoords.z, eCoords.x, eCoords.y, eCoords.z)
+		if(distIs <= maxDistance) then
+			SendNUIMessage({
+				transactionType     = 'playSound',
+				transactionFile     = soundFile,
+				transactionVolume   = soundVolume
+			})
+		end
+	end
 end)
