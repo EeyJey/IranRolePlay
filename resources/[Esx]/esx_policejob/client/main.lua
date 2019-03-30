@@ -2099,7 +2099,6 @@ function ToggleVehicleLock()
 	end
 	
 	for i=1, #myPlate, 1 do
-		print("plate2:", myPlate[i])
 		if myPlate[i] == plate then
 			
 			local lockStatus = GetVehicleDoorLockStatus(vehicle)
