@@ -4,6 +4,7 @@ local questionOpen = false
 
 -- ***************** Spawning
 AddEventHandler('playerSpawned', function(spawn)
+  print("1","1")
 	TriggerServerEvent('antirpquestion:didQuestion')
 end)
 
