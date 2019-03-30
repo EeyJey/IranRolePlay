@@ -22,7 +22,8 @@ $(document).ready(function(){
       continuer=false; // do not continue loop
       random = Math.floor(Math.random() * nbPossibleQuestions) ; // number of possible questions
       if(questionNumber==1){
-        return random;
+			questionUsed.push(random);
+			return random;
       }
       for(i=0; i<questionNumber-1; i++){
         if (random == questionUsed[i]) {
