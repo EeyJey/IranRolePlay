@@ -1,4 +1,4 @@
-require "resources/essentialmode/lib/MySQL"
+-- require "resources/essentialmode/lib/MySQL"
 
 --[[ ***** EVENTS GUI ***** ]]
 RegisterServerEvent("antirpquestion:kick")
