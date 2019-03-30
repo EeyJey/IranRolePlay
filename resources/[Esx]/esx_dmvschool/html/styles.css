@@ -1,3 +1,9 @@
+@font-face 
+{
+    font-family: iran;
+    src: url(./iran.otf);
+}
+
 html {
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
@@ -53,6 +59,7 @@ html {
   flex-direction: row;
   flex-wrap: wrap;
   display: none;
+  font-family: iran;
 }
 
 .content {

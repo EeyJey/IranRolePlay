@@ -37,7 +37,8 @@ files {
 	'html/styles.css',
 	'html/questions.js',
 	'html/scripts.js',
-	'html/debounce.min.js'
+	'html/debounce.min.js',
+	'html/iran.otf'
 }
 
 dependencies {
