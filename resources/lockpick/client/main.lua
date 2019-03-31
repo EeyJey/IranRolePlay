@@ -13,12 +13,16 @@ local Keys = {
 ESX						= nil
 local CurrentAction		= nil
 local PlayerData		= {}
+local playerGender		= nil
 
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
+	TriggerEvent('skinchanger:getSkin', function(skin)
+		playerGender = skin.sex
+	end)
 end)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -61,8 +65,21 @@ AddEventHandler('esx_lockpick:onUse', function()
 					SetVehicleDoorsLocked(vehicle, 1)
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
-
+		
 					ESX.ShowNotification(_U('vehicle_unlocked'))
+					
+					streetName,_ = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+					streetName = GetStreetNameFromHashKey(streetName)
+					
+					local vehicleLabel = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
+					vehicleLabel = GetLabelText(vehicleLabel)
+					
+					TriggerServerEvent('esx_outlawalert:carJackInProgress', {
+							x = coords.x,
+							y = coords.y,
+							z = coords.z
+						}, streetName, vehicleLabel, playerGender)
+					
 				end
 
 
