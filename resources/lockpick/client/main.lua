@@ -54,7 +54,7 @@ AddEventHandler('esx_lockpick:onUse', function()
 			Citizen.CreateThread(function()
 				ThreadID = GetIdOfThisThread()
 				CurrentAction = 'lockpick'
-				rand = math.random(10, Config.LickTime)
+				rand = math.random(10, Config.LockTime)
 				Citizen.Wait(rand * 1000)
 
 				if CurrentAction ~= nil then
