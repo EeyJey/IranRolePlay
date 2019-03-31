@@ -16,7 +16,7 @@ AddEventHandler('esx_skin:save', function(skin)
 		['@created']       = true,
 		['@identifier'] = xPlayer.identifier
 	})
-	TriggerEvent('antirpquestion:didQuestion')
+	TriggerEvent('antirpquestion:didQuestion2', source)
 	
 end)
 
