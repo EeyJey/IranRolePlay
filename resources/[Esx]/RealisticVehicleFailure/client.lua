@@ -189,7 +189,7 @@ AddEventHandler('iens:repair', function()
 				SetVehiclePetrolTankHealth(vehicle, 750.0)
 				healthEngineLast=cfg.cascadingFailureThreshold +5
 				healthPetrolTankLast=750.0
-					SetVehicleEngineOn(vehicle, true, false )
+				SetVehicleEngineOn(vehicle, true, false )
 				SetVehicleOilLevel(vehicle,(GetVehicleOilLevel(vehicle)/3)-0.5)
 				notification("~g~" .. repairCfg.fixMessages[fixMessagePos] .. ", now get to a mechanic!")
 				fixMessagePos = fixMessagePos + 1

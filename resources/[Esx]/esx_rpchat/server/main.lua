@@ -43,7 +43,7 @@ end
 
   TriggerEvent('es:addCommand', 'twt', function(source, args, user)
   	TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. GetPlayerName(source) .. "", {30, 144, 255}, table.concat(args, " "))
-  end, {help = 'Faire une Annonce'})
+  end, {help = 'Send a tweet'})
 
 function stringsplit(inputstr, sep)
 	if sep == nil then

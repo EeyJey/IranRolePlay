@@ -68,27 +68,29 @@
   end)
   
   function Start(ped)
-	  checking = true
+	  checking = true	  
   
 	  while checking do
 		  Citizen.Wait(5)
-  
-		  local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), GetEntityCoords(ped))
-  
-		  local x,y,z = table.unpack(GetEntityCoords(ped))
-  
-		  if distance < 2.0 then
-			  DrawText3D(x,y,z, 'Press [~g~E~s~] to manage individual', 0.4)
-			  
-			  if IsControlPressed(0, 38) then
-				  OpenDeathMenu(ped)
+			job = ESX.GetPlayerData().job.name
+			if job ~= nil and job == 'ambulance' then 
+			  local distance = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), GetEntityCoords(ped))
+	  
+			  local x,y,z = table.unpack(GetEntityCoords(ped))
+			
+			  if distance < 2.0 then
+				  DrawText3D(x,y,z, 'Baraye baresi elate marg [~g~E~s~] ra bezanid', 0.4)
+				  
+				  if IsControlPressed(0, 38) then
+					  OpenDeathMenu(ped)
+				  end
 			  end
-		  end
-  
-		  if distance > 7.5 or not IsPedDeadOrDying(ped) then
-			  checking = false
-		  end
-  
+	  
+			  if distance > 7.5 or not IsPedDeadOrDying(ped) then
+				  checking = false
+			  end
+			end
+
 	end
   
 end
@@ -110,14 +112,14 @@ end
   
 	  local elements   = {}
   
-	  table.insert(elements, {label = 'Try to identify deathcause', value = 'deathcause'})
-	  table.insert(elements, {label = 'Try to identify where the damage occured', value = 'damage'})
+	  table.insert(elements, {label = 'Barresie elate marg', value = 'deathcause'})
+	  table.insert(elements, {label = 'Barresi akharin makani ke zarbe khorde', value = 'damage'})
   
   
 	  ESX.UI.Menu.Open(
 		  'default', GetCurrentResourceName(), 'dead_citizen',
 		  {
-			  title    = 'Choose Option',
+			  title    = 'Gozine ra entekhab konid',
 			  align    = 'top-right',
 			  elements = elements,
 		  },
@@ -136,7 +138,7 @@ end
 					Notification(x,y,z)
 				
 			  else
-				  Notify('Where the damage occured could not get identified')
+				  Notify('Makane akharin zarbe moshakhas nist')
 			  end
 		  end
   
