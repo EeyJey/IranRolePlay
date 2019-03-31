@@ -265,7 +265,7 @@ function OpenPropertyMenu(property)
 	else
 		if not Config.EnablePlayerManagement then
 			table.insert(elements, {label = _U('buy'), value = 'buy'})
-			table.insert(elements, {label = _U('rent'), value = 'rent'})
+			-- table.insert(elements, {label = _U('rent'), value = 'rent'})
 		end
 
 		table.insert(elements, {label = _U('visit'), value = 'visit'})
