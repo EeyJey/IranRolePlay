@@ -1906,7 +1906,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
                 if (this.time < 0) return ". . .";
                 var t = Math.floor(this.time / 60),
                     e = this.time % 60;
-                return e < 10 && (e = "0" + e), t + ":" + e
+                return e < 11 && (e = "0" + e), t + ":" + e
             }
         }),
         mounted: function() {
@@ -2819,7 +2819,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
         methods: {
             onSelect: function(t) {
                 var e = this; - 1 === t.num ? this.$phoneAPI.getReponseText({
-                    limit: 10
+                    limit: 11
                 }).then(function(t) {
                     var n = t.text.trim();
                     "" !== n && e.$router.push({
@@ -4205,7 +4205,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
                 attrs: {
                     "data-type": "text",
                     "data-model": "number",
-                    "data-maxlength": "10"
+                    "data-maxlength": "11"
                 }
             }, [n("input", {
                 directives: [{
