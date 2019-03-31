@@ -11,6 +11,13 @@ AddEventHandler('esx_skin:save', function(skin)
 		['@skin']       = json.encode(skin),
 		['@identifier'] = xPlayer.identifier
 	})
+	MySQL.Async.execute('UPDATE users SET `created` = @created WHERE identifier = @identifier',
+	{
+		['@created']       = true,
+		['@identifier'] = xPlayer.identifier
+	})
+	TriggerEvent('antirpquestion:didQuestion')
+	
 end)
 
 RegisterServerEvent('esx_skin:responseSaveSkin')

@@ -13,6 +13,15 @@ AddEventHandler('antirpquestion:notMade', function()
 	questionOpen = true
 end)
 
+RegisterNetEvent('antirpquestion:notMade2')
+AddEventHandler('antirpquestion:notMade2', function()
+	Citizen.CreateThread(function()
+		Citizen.Wait(600000)
+		openGui()
+		questionOpen = true
+	end)
+end)
+
 -- ***************** Open Gui and Focus NUI
 function openGui()
   SetNuiFocus(true)

@@ -28,7 +28,9 @@ AddEventHandler("antirpquestion:didQuestion", function()
 		for i=1, #users, 1 do
 			local questionMade = users[i].question_rp
 			if (questionMade == "false") then
-				TriggerClientEvent('antirpquestion:notMade',_source)
+				if users[i].created then
+					TriggerClientEvent('antirpquestion:notMade',_source)
+				end
 			end
 		end	
 	end)
