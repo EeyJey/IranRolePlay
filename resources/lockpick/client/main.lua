@@ -49,7 +49,7 @@ AddEventHandler('esx_lockpick:onUse', function()
 			if Config.IgnoreAbort then
 				TriggerServerEvent('esx_lockpick:removeKit')
 			end
-			TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_AA_SMOKE", 0, true)
+			TaskStartScenarioInPlace(playerPed, "PROP_HUMAN_PARKING_METER", 0, true)
 
 			Citizen.CreateThread(function()
 				ThreadID = GetIdOfThisThread()
