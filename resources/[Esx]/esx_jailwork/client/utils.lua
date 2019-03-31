@@ -151,7 +151,7 @@ function TeleportPlayer(pos)
 			local action = data.current.value
 			local position = Config.Teleports[action]
 
-			if action == "Boiling Broke" or action == "Security" then
+			if action == "Security" then
 
 				if PlayerData.job.name ~= "police" then
 					ESX.ShowNotification("Kilid nadarid!")
