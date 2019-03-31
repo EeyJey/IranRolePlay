@@ -1,19 +1,12 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+resource_manifest_version '12cf980d-50d0-4c16-96a2-40150fe572eb'
 
-description 'ESX Voice Controller'
-
-version '1.1.0'
-ui_page 'ui.html'
-
+ui_page 'html/ui.html'
 files {
-	'ui.html',
+	'html/ui.html',
+	'html/pricedown.ttf',
+	--'html/mic.png',
+	'html/styles.css',
+	'html/scripts.js',
 }
-client_scripts {
-	'@es_extended/locale.lua',
-	'locales/en.lua',
-	'locales/fi.lua',
-	'locales/pl.lua',
-	'locales/sv.lua',
-	'config.lua',
-	'client/main.lua'
-}
+
+client_script "client.lua"

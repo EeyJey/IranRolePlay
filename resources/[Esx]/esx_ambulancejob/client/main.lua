@@ -89,6 +89,8 @@ Citizen.CreateThread(function()
 			EnableControlAction(0, 177, true)
 			EnableControlAction(0, 200, true)
 			EnableControlAction(0, 249, true)
+			EnableControlAction(0, 202, true)
+			EnableControlAction(0, 322, true)
 		else
 			Citizen.Wait(500)
 		end
