@@ -59,7 +59,7 @@ end)
 
 RegisterNetEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(newJailTime)
-
+	print("jailed", "1")
 	TriggerEvent("esx_policejob:removeHandcuffFull")
 
 	jailTime = newJailTime

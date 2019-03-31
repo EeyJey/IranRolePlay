@@ -1478,6 +1478,9 @@ end)
 
 RegisterNetEvent('esx_policejob:removeHandcuffFull')
 AddEventHandler('esx_policejob:removeHandcuffFull', function()
+
+	print("jailed", "2")
+	
 	if Config.EnableHandcuffTimer and HandcuffTimer.Active then
 		ESX.ClearTimeout(HandcuffTimer.Task)
 	end
