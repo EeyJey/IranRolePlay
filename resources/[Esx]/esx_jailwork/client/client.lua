@@ -59,8 +59,10 @@ end)
 
 RegisterNetEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(newJailTime)
-	jailTime = newJailTime
 
+	TriggerEvent("esx_policejob:removeHandcuffFull")
+
+	jailTime = newJailTime
 	Cutscene()
 end)
 
