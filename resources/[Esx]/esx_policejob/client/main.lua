@@ -1464,7 +1464,7 @@ AddEventHandler('esx_policejob:handcuff', function()
 			FreezeEntityPosition(playerPed, false)
 			DisplayRadar(true)
 			
-			TriggerEvent("esx_mafiajob:removeHandcuff")
+			TriggerEvent("esx_policejob:removeHandcuff")
 			
 		end
 	end)
@@ -1482,6 +1482,8 @@ AddEventHandler('esx_policejob:removeHandcuffFull', function()
 	print("jailed", "2")
 	local playerPed = PlayerPedId()
 	
+	IsHandcuffed = false
+	
 	if Config.EnableHandcuffTimer and HandcuffTimer.Active then
 		ESX.ClearTimeout(HandcuffTimer.Task)
 	end
@@ -1493,7 +1495,7 @@ AddEventHandler('esx_policejob:removeHandcuffFull', function()
 	FreezeEntityPosition(playerPed, false)
 	DisplayRadar(true)
 	
-	TriggerEvent("esx_mafiajob:removeHandcuff")
+	TriggerEvent("esx_policejob:removeHandcuff")
 end)
 
 RegisterNetEvent('esx_policejob:unrestrain')
