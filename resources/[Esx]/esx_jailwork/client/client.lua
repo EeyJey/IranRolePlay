@@ -99,7 +99,7 @@ function InJail()
 	Citizen.CreateThread(function()
 
 		while jailTime > 0 do
-
+			DisableControlAction(2, Keys['F1'], true)
 			jailTime = jailTime - 1
 
 			ESX.ShowNotification("Az zaman e zendan e shoma " .. jailTime .. " baghi mande!")
