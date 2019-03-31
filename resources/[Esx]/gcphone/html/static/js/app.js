@@ -1381,7 +1381,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
             volume: parseFloat(window.localStorage.gc_volume) || 1,
             config: {
                 reseau: "USA Mobile",
-                useFormatNumberFrance: !1,
+                useFormatNumberFrance: 1,
                 apps: [],
                 themeColor: "#2A56C6",
                 colors: ["#2A56C6"]
@@ -2094,7 +2094,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
             numeroFormat: function() {
                 if (!0 === this.useFormatNumberFrance) return this.numero;
                 var t = this.numero.startsWith("#") ? 4 : 3;
-                return this.numero.length > t ? this.numero.slice(0, t) + "-" + this.numero.slice(t) : this.numero
+                return this.numero
             }
         }),
         created: function() {
