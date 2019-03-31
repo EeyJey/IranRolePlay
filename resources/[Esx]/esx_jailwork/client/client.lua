@@ -59,7 +59,6 @@ end)
 
 RegisterNetEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(newJailTime)
-	print("jailed", "1")
 	TriggerEvent("esx_policejob:removeHandcuffFull")
 
 	jailTime = newJailTime
@@ -101,7 +100,7 @@ function InJail()
 	Citizen.CreateThread(function()
 
 		while jailTime > 0 do
-			DisableControlAction(2, Keys['F1'], true)
+			
 			jailTime = jailTime - 1
 
 			ESX.ShowNotification("Az zaman e zendan e shoma " .. jailTime .. " baghi mande!")
@@ -169,12 +168,27 @@ function InJail()
 
 			Citizen.Wait(sleepThread)
 
-		end
+		end 
 	end)
 
 	--Prison Work--
 
 end
+
+Citizen.CreateThread(function()
+	
+	while true do
+		
+		if jailTime > 0 then
+			DisableControlAction(2, Keys['F1'], true)
+			Citizen.Wait(0)
+		else
+			Citizen.Wait(1000)
+		end
+	
+	end
+
+end)
 
 function LoadTeleporters()
 	Citizen.CreateThread(function()
