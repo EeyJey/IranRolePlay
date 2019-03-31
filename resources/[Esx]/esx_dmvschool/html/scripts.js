@@ -38,7 +38,7 @@ function openQuestionnaire() {
 	$(".questionnaire-container").css("display", "block");
 	var randomQuestion = getRandomQuestion();
 
-	$("#questionNumero").html("Question: " + questionNumber);
+	$("#questionNumero").html("سوال: " + questionNumber);
 	$("#question").html(tableauQuestion[randomQuestion].question);
 	$(".answerA").html(tableauQuestion[randomQuestion].propositionA);
 	$(".answerB").html(tableauQuestion[randomQuestion].propositionB);
