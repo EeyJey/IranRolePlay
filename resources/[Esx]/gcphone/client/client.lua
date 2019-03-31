@@ -43,7 +43,7 @@ end)
 --====================================================================================
 function startFixeCall (fixeNumber)
   local number = ''
-  DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 10)
+  DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 11)
   while (UpdateOnscreenKeyboard() == 0) do
     DisableAllControlActions(0);
     Wait(0);
