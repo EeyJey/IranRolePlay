@@ -7,6 +7,22 @@ local red = 255
 local green = 255
 local blue = 255
 
+ESX = nil
+isadmin = false
+
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+	TriggerServerEvent('ioh:checkadmin')
+end)
+
+RegisterNetEvent('ioh:isAdmin')
+AddEventHandler('ioh:isAdmin', function()
+	isAdmin = true
+end)
+
 function DrawText3D(x,y,z, text) 
     local onScreen,_x,_y=World3dToScreen2d(x,y,z)
     local px,py,pz=table.unpack(GetGameplayCamCoords())
@@ -35,34 +51,20 @@ end
 
 Citizen.CreateThread(function()
     while true do
-        for i=0,99 do
-            N_0x31698aa80e0223f8(i)
-        end
-        for id = 0, 31 do
-            if  ((NetworkIsPlayerActive( id )) and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) then
-                ped = GetPlayerPed( id )
-                blip = GetBlipFromEntity( ped ) 
- 
-                x1, y1, z1 = table.unpack( GetEntityCoords( GetPlayerPed( -1 ), true ) )
-                x2, y2, z2 = table.unpack( GetEntityCoords( GetPlayerPed( id ), true ) )
-                distance = math.floor(GetDistanceBetweenCoords(x1,  y1,  z1,  x2,  y2,  z2,  true))
+		if (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
+			for i=0,99 do
+				N_0x31698aa80e0223f8(i)
+			end
+			for id = 0, 31 do
+				if  ((NetworkIsPlayerActive( id )) and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) then
+					ped = GetPlayerPed( id )
+					blip = GetBlipFromEntity( ped ) 
+	 
+					x1, y1, z1 = table.unpack( GetEntityCoords( GetPlayerPed( -1 ), true ) )
+					x2, y2, z2 = table.unpack( GetEntityCoords( GetPlayerPed( id ), true ) )
+					distance = math.floor(GetDistanceBetweenCoords(x1,  y1,  z1,  x2,  y2,  z2,  true))
 
-                if(ignorePlayerNameDistance) then
-					if NetworkIsPlayerTalking(id) then
-						red = 0
-						green = 0
-						blue = 255
-						DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-					else
-						red = 255
-						green = 255
-						blue = 255
-						DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-					end
-                end
-
-                if ((distance < playerNamesDist)) then
-                    if not (ignorePlayerNameDistance) then
+					if(ignorePlayerNameDistance) then
 						if NetworkIsPlayerTalking(id) then
 							red = 0
 							green = 0
@@ -74,10 +76,28 @@ Citizen.CreateThread(function()
 							blue = 255
 							DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
 						end
-                    end
-                end  
-            end
-        end
+					end
+
+					if ((distance < playerNamesDist)) then
+						if not (ignorePlayerNameDistance) then
+							if NetworkIsPlayerTalking(id) then
+								red = 0
+								green = 0
+								blue = 255
+								DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
+							else
+								red = 255
+								green = 255
+								blue = 255
+								DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
+							end
+						end
+					end  
+				end
+			end
+		else
+			Citizen.Wait(1000)
+		end
         Citizen.Wait(0)
     end
 end)
