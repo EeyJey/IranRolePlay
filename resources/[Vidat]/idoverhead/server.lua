@@ -1,5 +1,5 @@
 RegisterServerEvent('ioh:checkadmin')
-AddEventHandler('ioh:checkadmin', function(source)
+AddEventHandler('ioh:checkadmin', function()
 	local _source = source
 	TriggerEvent('es:getPlayerFromId', _source, function(user)
 		print("group", user.getGroup())
