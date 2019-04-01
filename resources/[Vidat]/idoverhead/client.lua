@@ -51,6 +51,7 @@ end
 
 Citizen.CreateThread(function()
     while true do
+		PlayerData = ESX.GetPlayerData()
 		if (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
 			for i=0,99 do
 				N_0x31698aa80e0223f8(i)
