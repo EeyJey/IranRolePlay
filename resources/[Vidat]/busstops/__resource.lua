@@ -1,4 +1,4 @@
 resource_manifest_version "44febabe-d386-4d18-afbe-5e627f4af937"
 
-data_file 'DLC_ITYP_REQUEST' 'stream/prop_busstop_05+hifr'
-data_file 'DLC_ITYP_REQUEST' 'stream/prop_busstop_04+hifr'
+-- data_file 'DLC_ITYP_REQUEST' 'stream/prop_busstop_05+hifr.ytd'
+-- data_file 'DLC_ITYP_REQUEST' 'stream/prop_busstop_04+hifr.ytd'
