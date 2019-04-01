@@ -9,13 +9,16 @@ local blue = 255
 
 ESX = nil
 isadmin = false
+disableForPlayers = false
 
 Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+	if disableForPlayers then
+		while ESX == nil do
+			TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+			Citizen.Wait(0)
+		end
+		TriggerServerEvent('ioh:checkadmin')
 	end
-	TriggerServerEvent('ioh:checkadmin')
 end)
 
 RegisterNetEvent('ioh:isAdmin')
@@ -52,15 +55,18 @@ end
 
 Citizen.CreateThread(function()
     while true do
-		if ESX == nil then
-			while ESX == nil do
-				TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-				Citizen.Wait(0)
+		local PlayerData = nil
+		if disableForPlayers then 
+			if ESX == nil then
+				while ESX == nil do
+					TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+					Citizen.Wait(0)
+				end
+				TriggerServerEvent('ioh:checkadmin')
 			end
-			TriggerServerEvent('ioh:checkadmin')
+			PlayerData = ESX.GetPlayerData()
 		end
-		local PlayerData = ESX.GetPlayerData()
-		if (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
+		if PlayerData == nil or (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
 			for i=0,99 do
 				N_0x31698aa80e0223f8(i)
 			end
