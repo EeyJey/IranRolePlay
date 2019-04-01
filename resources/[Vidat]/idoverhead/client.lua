@@ -7,8 +7,8 @@ local red = 255
 local green = 255
 local blue = 255
 
-local ESX = nil
-local isadmin = false
+ESX = nil
+isadmin = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
