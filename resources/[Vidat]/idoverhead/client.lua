@@ -52,6 +52,10 @@ end
 
 Citizen.CreateThread(function()
     while true do
+		while ESX == nil do
+			TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+			Citizen.Wait(0)
+		end
 		local PlayerData = ESX.GetPlayerData()
 		print("job", PlayerData.job.name)
 		if (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
