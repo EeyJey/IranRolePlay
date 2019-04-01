@@ -7,8 +7,8 @@ local red = 255
 local green = 255
 local blue = 255
 
-ESX = nil
-isadmin = false
+local ESX = nil
+local isadmin = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -20,6 +20,7 @@ end)
 
 RegisterNetEvent('ioh:isAdmin')
 AddEventHandler('ioh:isAdmin', function()
+	print("admin","true")
 	isAdmin = true
 end)
 
@@ -51,7 +52,8 @@ end
 
 Citizen.CreateThread(function()
     while true do
-		PlayerData = ESX.GetPlayerData()
+		local PlayerData = ESX.GetPlayerData()
+		print("job", PlayerData.job.name)
 		if (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
 			for i=0,99 do
 				N_0x31698aa80e0223f8(i)
