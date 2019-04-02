@@ -34,12 +34,12 @@ Config.PoliceStations = {
 
 		-- https://wiki.rage.mp/index.php?title=Weapons
 		AuthorizedWeapons = {
-			{ name = 'WEAPON_NIGHTSTICK',       price = 5000 },
-			{ name = 'WEAPON_COMBATPISTOL',     price = 5000 },
-			{ name = 'WEAPON_ASSAULTSMG',       price = 5000 },
+			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
+			{ name = 'WEAPON_COMBATPISTOL',     price = 1000 },
+			{ name = 'WEAPON_ASSAULTSMG',       price = 2500 },
 			{ name = 'WEAPON_SAWNOFFSHOTGUN',      price = 5000 },
-			{ name = 'WEAPON_STUNGUN',          price = 5000 },
-			{ name = 'WEAPON_CARBINERIFLE',          price = 5000 },
+			{ name = 'WEAPON_STUNGUN',          price = 500 },
+			{ name = 'WEAPON_CARBINERIFLE',          price = 10000},
 		},
 
 		Cloakrooms = {
@@ -103,6 +103,10 @@ Config.AuthorizedVehicles = {
 			model = 'police2',
 			label = 'Dodge Charger'
 		},	
+		{
+			model = 'police3',
+			label = 'Ford Interceptor'
+		},
 	},
 
 	sergeant = {
@@ -113,6 +117,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'police3',
 			label = 'Ford Interceptor'
+		},
+		{
+			model = 'police4',
+			label = 'Ford Berline'
 		},
 	},
 
