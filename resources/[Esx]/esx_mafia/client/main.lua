@@ -1272,24 +1272,24 @@ AddEventHandler('esx_mafiajob:hasEnteredMarker', function(station, part, partNum
     CurrentActionData = {station = station, partNum = partNum}
   end
 
-  if part == 'HelicopterSpawner' then
+  -- if part == 'HelicopterSpawner' then
 
-    local helicopters = Config.MafiaStations[station].Helicopters
+    -- local helicopters = Config.MafiaStations[station].Helicopters
 
-    if not IsAnyVehicleNearPoint(helicopters[partNum].SpawnPoint.x, helicopters[partNum].SpawnPoint.y, helicopters[partNum].SpawnPoint.z,  3.0) then
+    -- if not IsAnyVehicleNearPoint(helicopters[partNum].SpawnPoint.x, helicopters[partNum].SpawnPoint.y, helicopters[partNum].SpawnPoint.z,  3.0) then
 
-      ESX.Game.SpawnVehicle('maverick', {
-        x = helicopters[partNum].SpawnPoint.x,
-        y = helicopters[partNum].SpawnPoint.y,
-        z = helicopters[partNum].SpawnPoint.z
-      }, helicopters[partNum].Heading, function(vehicle)
-        SetVehicleModKit(vehicle, 0)
-        SetVehicleLivery(vehicle, 0)
-      end)
+      -- ESX.Game.SpawnVehicle('maverick', {
+        -- x = helicopters[partNum].SpawnPoint.x,
+        -- y = helicopters[partNum].SpawnPoint.y,
+        -- z = helicopters[partNum].SpawnPoint.z
+      -- }, helicopters[partNum].Heading, function(vehicle)
+        -- SetVehicleModKit(vehicle, 0)
+        -- SetVehicleLivery(vehicle, 0)
+      -- end)
 
-    end
+    -- end
 
-  end
+  -- end
 
   if part == 'VehicleDeleter' then
 
@@ -1599,23 +1599,23 @@ Citizen.CreateThread(function()
 
         end
 
-        for i=1, #v.Helicopters, 1 do
+        -- for i=1, #v.Helicopters, 1 do
 
-          if GetDistanceBetweenCoords(coords,  v.Helicopters[i].Spawner.x,  v.Helicopters[i].Spawner.y,  v.Helicopters[i].Spawner.z,  true) < Config.MarkerSize.x then
-            isInMarker     = true
-            currentStation = k
-            currentPart    = 'HelicopterSpawner'
-            currentPartNum = i
-          end
+          -- if GetDistanceBetweenCoords(coords,  v.Helicopters[i].Spawner.x,  v.Helicopters[i].Spawner.y,  v.Helicopters[i].Spawner.z,  true) < Config.MarkerSize.x then
+            -- isInMarker     = true
+            -- currentStation = k
+            -- currentPart    = 'HelicopterSpawner'
+            -- currentPartNum = i
+          -- end
 
-          if GetDistanceBetweenCoords(coords,  v.Helicopters[i].SpawnPoint.x,  v.Helicopters[i].SpawnPoint.y,  v.Helicopters[i].SpawnPoint.z,  true) < Config.MarkerSize.x then
-            isInMarker     = true
-            currentStation = k
-            currentPart    = 'HelicopterSpawnPoint'
-            currentPartNum = i
-          end
+          -- if GetDistanceBetweenCoords(coords,  v.Helicopters[i].SpawnPoint.x,  v.Helicopters[i].SpawnPoint.y,  v.Helicopters[i].SpawnPoint.z,  true) < Config.MarkerSize.x then
+            -- isInMarker     = true
+            -- currentStation = k
+            -- currentPart    = 'HelicopterSpawnPoint'
+            -- currentPartNum = i
+          -- end
 
-        end
+        -- end
 
         for i=1, #v.VehicleDeleters, 1 do
           if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.MarkerSize.x then
