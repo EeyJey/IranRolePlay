@@ -29,6 +29,17 @@ local UI = {
 
 }
 
+Citizen.CreateThread(function()
+	if currentdistancevoice == 0 then
+		NetworkSetTalkerProximity(defaultdistance) -- 5 metres
+	elseif currentdistancevoice == 1 then
+		NetworkSetTalkerProximity(highdistance) -- 12 metres
+	elseif currentdistancevoice == 2 then
+		NetworkSetTalkerProximity(lowdistance) -- 1 metres
+	end
+end)
+
+
 AddEventHandler('onClientMapStart', function()
 	if currentdistancevoice == 0 then
 		NetworkSetTalkerProximity(defaultdistance) -- 5 metres
