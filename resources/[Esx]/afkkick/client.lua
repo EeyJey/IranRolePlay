@@ -1,7 +1,7 @@
 -- CONFIG --
 
 -- AFK Kick Time Limit (in seconds)
-secondsUntilKick = 1200
+secondsUntilKick = 600
 
 -- Warn players if 3/4 of the Time Limit ran up
 kickWarning = true
