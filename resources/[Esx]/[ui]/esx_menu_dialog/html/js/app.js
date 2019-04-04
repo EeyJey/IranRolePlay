@@ -1,7 +1,7 @@
 (function(){
 
 	let MenuTpl =
-		'<div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
+		'<div id="anticheat"><div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
 			'<div class="head"><span>{{title}}</span></div>' +
 			'<div class="text"><span>{{title}}</span></div>' +			
 				'{{#isDefault}}<input type="text" name="value" id="inputText"/>{{/isDefault}}' +
@@ -9,7 +9,7 @@
 				'<button type="button" name="submit">Envoyer</button>' +
 				'<button type="button" name="cancel">Annuler</button>'
 			'</div>' +
-		'</div>'
+		'</div></div>'
 	;
 
 	window.ESX_MENU       = {};
@@ -51,6 +51,7 @@
 			if (key.which == 27) { // Escape key
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
 			} else if (key.which == 13) { // Enter key
+				$('#anticheat').hide()
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
 			}
 		};
@@ -134,6 +135,7 @@
 	}
 
 	ESX_MENU.submit = function(namespace, name, data) {
+		$('#anticheat').hide();
 		$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
 	}
 
