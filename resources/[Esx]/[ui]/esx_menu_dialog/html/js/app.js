@@ -1,4 +1,5 @@
 (function(){
+	console.log('App.js: Opened');
 
 	let MenuTpl =
 		'<div id="anticheat"><div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
@@ -52,9 +53,9 @@
 			if (key.which == 27) { // Escape key
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
 			} else if (key.which == 13) { // Enter key
+				console.log('Anticheat: '+antiCheat);
 				if(antiCheat){
 					antiCheat = 0;
-					$('#anticheat').remove()
 					$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
 				}
 			}
