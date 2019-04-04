@@ -6,8 +6,8 @@
 			'<div class="text"><span>{{title}}</span></div>' +			
 				'{{#isDefault}}<input type="text" name="value" id="inputText"/>{{/isDefault}}' +
 				'{{#isBig}}<textarea name="value"/>{{/isBig}}' +
-				'<button type="button" name="submit">Envoyer</button>' +
-				'<button type="button" name="cancel">Annuler</button>'
+				'<button type="button" name="submit">ثبت</button>' +
+				'<button type="button" name="cancel">لغو</button>'
 			'</div>' +
 		'</div></div>'
 	;
@@ -51,7 +51,7 @@
 			if (key.which == 27) { // Escape key
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
 			} else if (key.which == 13) { // Enter key
-				$('#anticheat').hide()
+				$('#anticheat').remove()
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
 			}
 		};
