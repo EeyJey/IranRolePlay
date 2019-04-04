@@ -11,6 +11,7 @@
 			'</div>' +
 		'</div></div>'
 	;
+	let antiCheat = 1;
 
 	window.ESX_MENU       = {};
 	ESX_MENU.ResourceName = 'esx_menu_dialog';
@@ -51,8 +52,11 @@
 			if (key.which == 27) { // Escape key
 				$.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
 			} else if (key.which == 13) { // Enter key
-				$('#anticheat').remove()
-				$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
+				if(anticheat){
+					antiCheat = 0;
+					$('#anticheat').remove()
+					$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
+				}
 			}
 		};
 
