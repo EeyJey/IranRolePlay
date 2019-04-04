@@ -12,7 +12,7 @@
 			'</div>' +
 		'</div></div>'
 	;
-	var antiCheat = 1;
+	
 
 	window.ESX_MENU       = {};
 	ESX_MENU.ResourceName = 'esx_menu_dialog';
@@ -21,7 +21,9 @@
 	ESX_MENU.pos          = {};
 
 	ESX_MENU.open = function(namespace, name, data) {
-
+		
+		let antiCheat = 1;
+		
 		if(typeof ESX_MENU.opened[namespace] == 'undefined')
 			ESX_MENU.opened[namespace] = {};
 
