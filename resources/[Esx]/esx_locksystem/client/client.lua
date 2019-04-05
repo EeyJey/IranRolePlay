@@ -56,6 +56,7 @@ function doLockSystemToggleLocks()
 	local pos = GetEntityCoords(ply)
 	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 70)
 	isInside = false
+	print("vehicle", vehicle)
 	
 	-- Retrieve the local ID of the targeted vehicle
 	if(IsPedInAnyVehicle(ply, true))then
@@ -77,6 +78,7 @@ function doLockSystemToggleLocks()
 	-- Get targeted vehicle infos
 	if(localVehId and localVehId ~= 0)then
 		local localVehPlateTest = GetVehicleNumberPlateText(localVehId)
+		print("plate", localVehPlateTest)
 		if localVehPlateTest ~= nil then
 			local localVehPlate = string.lower(localVehPlateTest)
 			local newVehPlate = string.gsub(tostring(localVehPlate), "%s", "")
