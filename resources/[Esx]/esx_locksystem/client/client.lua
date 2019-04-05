@@ -54,7 +54,7 @@ function doLockSystemToggleLocks()
 	-- Init player infos
 	local ply = GetPlayerPed(-1)
 	local pos = GetEntityCoords(ply)
-	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 20503)
+	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 100359)
 	isInside = false
 	print("vehicle", vehicle)
 	
