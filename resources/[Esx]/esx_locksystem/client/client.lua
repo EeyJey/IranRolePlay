@@ -56,7 +56,7 @@ function doLockSystemToggleLocks()
 	local pos = GetEntityCoords(ply)
 	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 71)
 	isInside = false
-	if not vehicle then
+	if vehicle == 0 then
 		vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 12294)
 	end
 	
