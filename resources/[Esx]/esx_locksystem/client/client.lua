@@ -54,9 +54,11 @@ function doLockSystemToggleLocks()
 	-- Init player infos
 	local ply = GetPlayerPed(-1)
 	local pos = GetEntityCoords(ply)
-	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 16384)
+	local vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 71)
 	isInside = false
-	print("vehicle", vehicle)
+	if not vehicle then
+		vehicle = GetClosestVehicle(pos['x'], pos['y'], pos['z'], 5.001, 0, 12294)
+	end
 	
 	-- Retrieve the local ID of the targeted vehicle
 	if(IsPedInAnyVehicle(ply, true))then
@@ -78,7 +80,6 @@ function doLockSystemToggleLocks()
 	-- Get targeted vehicle infos
 	if(localVehId and localVehId ~= 0)then
 		local localVehPlateTest = GetVehicleNumberPlateText(localVehId)
-		print("plate", localVehPlateTest)
 		if localVehPlateTest ~= nil then
 			local localVehPlate = string.lower(localVehPlateTest)
 			local newVehPlate = string.gsub(tostring(localVehPlate), "%s", "")
