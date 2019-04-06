@@ -8,9 +8,12 @@
 --------------------------------------------------------------------------------------------------------------
 -- Place your own coords here!
 local zones = {
-	{ ['x'] = 1847.916015625, ['y'] = 3675.8190917968, ['z'] = 33.767009735108},
-	{ ['x'] = -1688.43811035156, ['y'] = -1073.62536621094, ['z'] = 13.1521873474121 },
-	{ ['x'] = -2195.1352539063, ['y'] = 4288.7290039063, ['z'] = 49.173923492432 }
+	{ ['x'] = 439.21, ['y'] = -993.43, ['z'] = 29.59},
+	{ ['x'] = 245.66, ['y'] = -1372.26, ['z'] = 28.59 },
+	{ ['x'] = 338.82, ['y'] = -1423.0, ['z'] = 29.53 },
+	{ ['x'] = -30.62, ['y'] = -1094.55, ['z'] = 25.33 },
+	{ ['x'] = -272.19, ['y'] = -955.23, ['z'] = 30.16 },
+	{ ['x'] = -1046.06, ['y'] = -2751.74, ['z'] = 20.33 }
 }
 
 local notifIn = false
@@ -36,7 +39,7 @@ Citizen.CreateThread(function()
 		SetBlipColour(szBlip, 2)  --Change the blip color: https://gtaforums.com/topic/864881-all-blip-color-ids-pictured/
 		SetBlipSprite(szBlip, 398) -- Change the blip itself: https://marekkraus.sk/gtav/blips/list.html
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("SAFE ZONE") -- What it will say when you hover over the blip on your map.
+		AddTextComponentString("Mantagh e Amn") -- What it will say when you hover over the blip on your map.
 		EndTextCommandSetBlipName(szBlip)
 	end
 end)
@@ -63,7 +66,11 @@ Citizen.CreateThread(function()
 				closestZone = i
 			end
 		end
-		Citizen.Wait(15000)
+		if minDistance > 150 then
+			Citizen.Wait(15000)
+		else
+			Citizen.Wait(500)
+		end
 	end
 end)
 
@@ -84,13 +91,13 @@ Citizen.CreateThread(function()
 		local x,y,z = table.unpack(GetEntityCoords(player, true))
 		local dist = Vdist(zones[closestZone].x, zones[closestZone].y, zones[closestZone].z, x, y, z)
 	
-		if dist <= 50.0 then  ------------------------------------------------------------------------------ Here you can change the RADIUS of the Safe Zone. Remember, whatever you put here will DOUBLE because 
+		if dist <= 60.0 then  ------------------------------------------------------------------------------ Here you can change the RADIUS of the Safe Zone. Remember, whatever you put here will DOUBLE because 
 			if not notifIn then																			  -- it is a sphere. So 50 will actually result in a diameter of 100. I assume it is meters. No clue to be honest.
 				NetworkSetFriendlyFireOption(false)
 				ClearPlayerWantedLevel(PlayerId())
 				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true)
 				TriggerEvent("pNotify:SendNotification",{
-					text = "<b style='color:#1E90FF'>You are in a SafeZone</b>",
+					text = "<b style='color:#1E90FF' dir='rtl'>وارد مننطقه امن شدید</b>",
 					type = "success",
 					timeout = (3000),
 					layout = "bottomcenter",
@@ -103,7 +110,7 @@ Citizen.CreateThread(function()
 			if not notifOut then
 				NetworkSetFriendlyFireOption(true)
 				TriggerEvent("pNotify:SendNotification",{
-					text = "<b style='color:#1E90FF'>You are in NO LONGER a SafeZone</b>",
+					text = "<b style='color:#1E90FF' dir='rtl'>از منطقه امن خارج شدید</b>",
 					type = "error",
 					timeout = (3000),
 					layout = "bottomcenter",
@@ -120,7 +127,7 @@ Citizen.CreateThread(function()
 			if IsDisabledControlJustPressed(2, 37) then --if Tab is pressed, send error message
 				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true) -- if tab is pressed it will set them to unarmed (this is to cover the vehicle glitch until I sort that all out)
 				TriggerEvent("pNotify:SendNotification",{
-					text = "<b style='color:#1E90FF'>You can not use weapons in a Safe Zone</b>",
+					text = "<b style='color:#1E90FF' dir='rtl'>اجازه استفاده از اسلحه را در منطقه امن ندارید</b>",
 					type = "error",
 					timeout = (3000),
 					layout = "bottomcenter",
@@ -130,7 +137,7 @@ Citizen.CreateThread(function()
 			if IsDisabledControlJustPressed(0, 106) then --if LeftClick is pressed, send error message
 				SetCurrentPedWeapon(player,GetHashKey("WEAPON_UNARMED"),true) -- If they click it will set them to unarmed
 				TriggerEvent("pNotify:SendNotification",{
-					text = "<b style='color:#1E90FF'>You can not do that in a Safe Zone</b>",
+					text = "<b style='color:#1E90FF'>اجازه این کار را در منطقه امن ندارید</b>",
 					type = "error",
 					timeout = (3000),
 					layout = "bottomcenter",
@@ -139,9 +146,9 @@ Citizen.CreateThread(function()
 			end
 		end
 		-- Comment out lines 142 - 145 if you dont want a marker.
-	 	if DoesEntityExist(player) then	      --The -1.0001 will place it on the ground flush		-- SIZING CIRCLE |  x    y    z | R   G    B   alpha| *more alpha more transparent*
-	 		DrawMarker(1, zones[closestZone].x, zones[closestZone].y, zones[closestZone].z-1.0001, 0, 0, 0, 0, 0, 0, 100.0, 100.0, 2.0, 13, 232, 255, 155, 0, 0, 2, 0, 0, 0, 0) -- heres what all these numbers are. Honestly you dont really need to mess with any other than what isnt 0.
-	 		--DrawMarker(type, float posX, float posY, float posZ, float dirX, float dirY, float dirZ, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, int red, int green, int blue, int alpha, BOOL bobUpAndDown, BOOL faceCamera, int p19(LEAVE AS 2), BOOL rotate, char* textureDict, char* textureName, BOOL drawOnEnts)
-	 	end
+	 	-- if DoesEntityExist(player) then	      --The -1.0001 will place it on the ground flush		-- SIZING CIRCLE |  x    y    z | R   G    B   alpha| *more alpha more transparent*
+	 		-- DrawMarker(1, zones[closestZone].x, zones[closestZone].y, zones[closestZone].z-1.0001, 0, 0, 0, 0, 0, 0, 100.0, 100.0, 2.0, 13, 232, 255, 155, 0, 0, 2, 0, 0, 0, 0) -- heres what all these numbers are. Honestly you dont really need to mess with any other than what isnt 0.
+	 		-- DrawMarker(type, float posX, float posY, float posZ, float dirX, float dirY, float dirZ, float rotX, float rotY, float rotZ, float scaleX, float scaleY, float scaleZ, int red, int green, int blue, int alpha, BOOL bobUpAndDown, BOOL faceCamera, int p19(LEAVE AS 2), BOOL rotate, char* textureDict, char* textureName, BOOL drawOnEnts)
+	 	-- end
 	end
 end)

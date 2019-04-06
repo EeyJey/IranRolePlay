@@ -13,5 +13,6 @@ files {
     "html/noty.js",
     "html/noty.css",
     "html/themes.css",
-    "html/sound-example.wav"
+    "html/sound-example.wav",
+	"html/iran.otf"
 }
