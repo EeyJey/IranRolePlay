@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
 		
 		-- Disable reticle
 		
-		ManageReticle()
+		-- ManageReticle()
 		
 		-- Disable melee while aiming (may be not working)
 		
