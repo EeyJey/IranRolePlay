@@ -17,7 +17,7 @@ Citizen.CreateThread(function()
     while true
         do
             -- 1.
-        SetVehicleDensityMultiplierThisFrame(0.3)
+        SetVehicleDensityMultiplierThisFrame(0.1)
         --SetPedDensityMultiplierThisFrame(0.2)
         --SetRandomVehicleDensityMultiplierThisFrame(1.0)
         --SetParkedVehicleDensityMultiplierThisFrame(1.0)
@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
         --SetGarbageTrucks(0)
         --SetRandomBoats(0)
         --SetRandomBus(0)
-        Citizen.Wait(1)
+        Citizen.Wait(0)
     end
  
 end)
