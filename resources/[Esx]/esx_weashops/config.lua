@@ -8,7 +8,7 @@ Config.Type          = 1
 Config.Locale        = 'en'
 
 Config.LicenseEnable = true -- only turn this on if you are using esx_license
-Config.LicensePrice  = 50000
+Config.LicensePrice  = 15000
 
 Config.Zones = {
 
