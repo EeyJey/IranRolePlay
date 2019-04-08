@@ -41,6 +41,16 @@ end
       TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
   end)
 
+  TriggerEvent('es:addCommand', 'b', function(source, args, user)
+		local name = getIdentity(source)
+		TriggerClientEvent("sendProximityMessageOOC", -1, source, name.identifier, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
+		local name = getIdentity(source)
+		TriggerClientEvent("sendProximityMessageOOC", -1, source, name.identifier, table.concat(args, " "))
+	end)
+
   TriggerEvent('es:addCommand', 'twt', function(source, args, user)
   	TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. GetPlayerName(source) .. "", {30, 144, 255}, table.concat(args, " "))
   end, {help = 'Send a tweet'})

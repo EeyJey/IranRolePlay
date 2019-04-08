@@ -36,3 +36,14 @@ AddEventHandler('sendProximityMessageDo', function(id, name, message)
     TriggerEvent('chatMessage', "", {255, 0, 0}, message  .."  (( " .. name .. " )) ")
   end
 end)
+
+RegisterNetEvent('sendProximityMessageOOC')
+AddEventHandler('sendProximityMessageOOC', function(id, name, message)
+  local myId = PlayerId()
+  local pid = GetPlayerFromServerId(id)
+  -- if pid == myId then
+  --   TriggerEvent('chatMessage', "", {0, 0, 0},  name .." ".. message)
+  -- elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
+    TriggerEvent('chatMessage', "", {255, 255, 255}, "OOC: " .. message  .."  (( " .. name .. " )) ")
+  -- end
+end)
