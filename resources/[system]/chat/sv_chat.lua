@@ -35,11 +35,11 @@ end)
 
 -- player join messages
 AddEventHandler('playerConnecting', function()
-    TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' Vared shod.')
+   -- TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' Vared shod.')
 end)
 
 AddEventHandler('playerDropped', function(reason)
-    TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' Kharej shod.')
+  --  TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' Kharej shod.')
 end)
 
 RegisterCommand('say', function(source, args, rawCommand)
