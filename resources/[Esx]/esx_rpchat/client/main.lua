@@ -31,8 +31,8 @@ AddEventHandler('sendProximityMessageDo', function(id, name, message)
   local myId = PlayerId()
   local pid = GetPlayerFromServerId(id)
   if pid == myId then
-    TriggerEvent('chatMessage', "", {255, 0, 0}, name .."  " .. message)
+    TriggerEvent('chatMessage', "", {255, 0, 0}, message  .."  (( " .. name .. " )) ")
   elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
-    TriggerEvent('chatMessage', "", {255, 0, 0}, name .."  " .. message)
+    TriggerEvent('chatMessage', "", {255, 0, 0}, message  .."  (( " .. name .. " )) ")
   end
 end)
