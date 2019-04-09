@@ -5,7 +5,8 @@ Config = {}
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
     ["steam:110000114a058a8"] = 85,
-	["steam:11000010a1b83df"] = 85,
+    ["steam:11000010a1b83df"] = 85,
+    ["steam:11000010934a428"] = 85,
     ["ip:127.0.0.0"] = 85
 }
 
