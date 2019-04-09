@@ -44,17 +44,16 @@ end
 	end)
 
 	TriggerEvent('es:addCommand', 'twt', function(source, args, user)
-		local _source = source
-		local xPlayer = ESX.GetPlayerFromId(_source)
+		local xPlayer = ESX.GetPlayerFromId(source)
 		if xPlayer.getMoney() >= 1000 then
 			xPlayer.removeMoney(1000)
-			TriggerEvent("pNotify:SendNotification", {text = "مالیات توییت 1000$ کم شد", type = "success", timeout = 1400, layout = "bottomCenter"})
+			TriggerClientEvent("pNotify:SendNotification", source, {text = "مالیات توییت 1000$ کم شد", type = "success", timeout = 3000, layout = "bottomCenter"})
 			local name = getIdentity(source)
 			TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. name.lastname .. "", {30, 144, 255}, table.concat(args, " "))
-			end, {help = 'Send a tweet [Faqat tabliq job]'})
 		else
-			TriggerEvent("pNotify:SendNotification", {text = "پول کافی برای توییت ندارید، هزینه 1000$ ناقابل", type = "error", timeout = 1400, layout = "bottomCenter"})
+			TriggerClientEvent("pNotify:SendNotification", source, {text = "پول کافی برای توییت ندارید، هزینه 1000$ ناقابل", type = "error", timeout = 3000, layout = "bottomCenter"})
 		end
+	end, {help = 'Send a tweet [Faqat tabliq job]'})
 
 	TriggerEvent('es:addCommand', 'b', function(source, args, user)
 		-- local name = getIdentity(source)
