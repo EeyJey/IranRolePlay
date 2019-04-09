@@ -47,13 +47,13 @@ end
 	end, {help = 'Send a tweet [Faqat tabliq job]'})
 
 	TriggerEvent('es:addCommand', 'b', function(source, args, user)
-		local name = getIdentity(source)
-		TriggerClientEvent('chatMessage', -1, "OOC: " .. name.lastname .. "", {200, 200, 200}, table.concat(args, " "))
+		-- local name = getIdentity(source)
+		TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
 	end, {help = 'Out Of Character message'})
 
 	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
-		local name = getIdentity(source)
-		TriggerClientEvent('chatMessage', -1, "OOC: " .. name.lastname .. "", {200, 200, 200}, table.concat(args, " "))
+		-- local name = getIdentity(source)
+		TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
 	end, {help = 'Out Of Character message'})
 
 function stringsplit(inputstr, sep)
