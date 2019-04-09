@@ -42,22 +42,24 @@ end)
 
 function AddPlayerToScoreboard(xPlayer, update)
 	local playerId = xPlayer.source
+	
+	if tonumber(GetPlayerPing(playerId)) > 0 then
+		connectedPlayers[playerId] = {}
+		connectedPlayers[playerId].ping = GetPlayerPing(playerId)
+		connectedPlayers[playerId].id = playerId
+		connectedPlayers[playerId].name = xPlayer.getName()
+		connectedPlayers[playerId].job = xPlayer.job.name
 
-	connectedPlayers[playerId] = {}
-	connectedPlayers[playerId].ping = GetPlayerPing(playerId)
-	connectedPlayers[playerId].id = playerId
-	connectedPlayers[playerId].name = xPlayer.getName()
-	connectedPlayers[playerId].job = xPlayer.job.name
+		if update then
+			TriggerClientEvent('esx_scoreboard:updateConnectedPlayers', -1, connectedPlayers)
+		end
 
-	if update then
-		TriggerClientEvent('esx_scoreboard:updateConnectedPlayers', -1, connectedPlayers)
-	end
-
-	if xPlayer.player.getGroup() == 'user' then
-		Citizen.CreateThread(function()
-			Citizen.Wait(3000)
-			TriggerClientEvent('esx_scoreboard:toggleID', playerId, false)
-		end)
+		if xPlayer.player.getGroup() == 'user' then
+			Citizen.CreateThread(function()
+				Citizen.Wait(3000)
+				TriggerClientEvent('esx_scoreboard:toggleID', playerId, false)
+			end)
+		end
 	end
 end
 
