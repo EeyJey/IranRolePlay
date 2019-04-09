@@ -23,37 +23,38 @@ function getIdentity(source)
 	end
 end
 
-  AddEventHandler('chatMessage', function(source, name, message)
-      if string.sub(message, 1, string.len("/")) ~= "/" then
-          local name = getIdentity(source)
+	AddEventHandler('chatMessage', function(source, name, message)
+			if string.sub(message, 1, string.len("/")) ~= "/" then
+					local name = getIdentity(source)
 		TriggerClientEvent("sendProximityMessage", -1, source, name.firstname, message)
-      end
-      CancelEvent()
-  end)
-
-  TriggerEvent('es:addCommand', 'me', function(source, args, user)
-      local name = getIdentity(source)
-      TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, table.concat(args, " "))
-  end)
-
-  TriggerEvent('es:addCommand', 'do', function(source, args, user)
-      local name = getIdentity(source)
-      TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
-  end)
-
-  TriggerEvent('es:addCommand', 'b', function(source, args, user)
-		local name = getIdentity(source)
-		TriggerClientEvent("sendProximityMessageOOC", -1, source, name.identifier, table.concat(args, " "))
+			end
+			CancelEvent()
 	end)
+
+	TriggerEvent('es:addCommand', 'me', function(source, args, user)
+			local name = getIdentity(source)
+			TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'do', function(source, args, user)
+			local name = getIdentity(source)
+			TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'twt', function(source, args, user)
+		local name = getIdentity(source)
+		TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. name.lastname .. "", {30, 144, 255}, table.concat(args, " "))
+	end, {help = 'Send a tweet [Faqat tabliq job]'})
+
+	TriggerEvent('es:addCommand', 'b', function(source, args, user)
+		local name = getIdentity(source)
+		TriggerClientEvent('chatMessage', -1, "OOC: " .. name.lastname .. "", {200, 200, 200}, table.concat(args, " "))
+	end, {help = 'Out Of Character message'})
 
 	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
 		local name = getIdentity(source)
-		TriggerClientEvent("sendProximityMessageOOC", -1, source, name.identifier, table.concat(args, " "))
-	end)
-
-  TriggerEvent('es:addCommand', 'twt', function(source, args, user)
-  	TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. GetPlayerName(source) .. "", {30, 144, 255}, table.concat(args, " "))
-  end, {help = 'Send a tweet'})
+		TriggerClientEvent('chatMessage', -1, "OOC: " .. name.lastname .. "", {200, 200, 200}, table.concat(args, " "))
+	end, {help = 'Out Of Character message'})
 
 function stringsplit(inputstr, sep)
 	if sep == nil then
