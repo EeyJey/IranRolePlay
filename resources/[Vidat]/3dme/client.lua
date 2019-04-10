@@ -1,5 +1,6 @@
 -- Settings
 local color = { r = 200, g = 200, b = 200, alpha = 255 } -- Color of the text 
+local colorText = {	r = 250, g = 175, b = 214}
 local font = 0 -- Font of the text
 local time = 7000 -- Duration of the display of the text : 1000ms = 1sec
 local background = {
@@ -38,7 +39,7 @@ function Display(mePlayer, text, offset)
         local dist = Vdist2(coordsMe, coords)
         if dist < 2500 then
             TriggerEvent('chat:addMessage', {
-                color = { color.r, color.g, color.b },
+                color = { colorText.r, colorText.g, colorText.b },
                 multiline = true,
                 args = { text}
             })
