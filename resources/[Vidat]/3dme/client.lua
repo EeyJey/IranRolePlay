@@ -18,7 +18,7 @@ RegisterCommand('me', function(source, args)
     for i = 1,#args do
         text = text .. ' ' .. args[i]
     end
-    text = text .. '    '
+    text = text .. '     '
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
@@ -76,7 +76,7 @@ function DrawText3D(x,y,z, text)
 
         -- Formalize the text
         SetTextColour(color.r, color.g, color.b, color.alpha)
-        SetTextScale(0.0*scale, 0.55*scale)
+        SetTextScale(0.0*scale, 0.40*scale)
         SetTextFont(font)
         SetTextProportional(1)
         SetTextCentre(true)
