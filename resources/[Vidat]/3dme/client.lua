@@ -14,11 +14,11 @@ local nbrDisplaying = 1
 
 
 RegisterCommand('me', function(source, args)
-    local text = ' --' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local text = '     ' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
         text = text .. ' ' .. args[i]
     end
-    text = text .. ' --'
+    text = text .. '    '
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
@@ -58,7 +58,7 @@ function Display(mePlayer, text, offset)
             local coords = GetEntityCoords(PlayerPedId(), false)
             local dist = Vdist2(coordsMe, coords)
             if dist < 2500 then
-                DrawText3D(coordsMe['x'], coordsMe['y'], coordsMe['z']+offset, text)
+                DrawText3D(coordsMe['x'], coordsMe['y'], coordsMe['z'], text)
             end
         end
         nbrDisplaying = nbrDisplaying - 1
