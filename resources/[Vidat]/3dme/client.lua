@@ -14,11 +14,11 @@ local nbrDisplaying = 1
 
 
 RegisterCommand('me', function(source, args)
-    local text = '     ' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
         text = text .. ' ' .. args[i]
     end
-    text = text .. '     '
+    text = text .. ''
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
@@ -96,7 +96,7 @@ function DrawText3D(x,y,z, text)
         EndTextCommandDisplayText(_x, _y)
 
         if background.enable then
-            DrawRect(_x, _y+scale/45, width, height, background.color.r, background.color.g, background.color.b , background.color.alpha)
+            DrawRect(_x, _y+scale/55, width, height, background.color.r, background.color.g, background.color.b , background.color.alpha)
         end
     end
 end
