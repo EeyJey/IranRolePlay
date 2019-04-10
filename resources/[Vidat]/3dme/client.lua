@@ -12,32 +12,13 @@ local dropShadow = false
 -- Don't touch
 local nbrDisplaying = 1
 
-function getIdentity(source)
-	local identifier = GetPlayerIdentifiers(source)[1]
-	local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE identifier = @identifier", {['@identifier'] = identifier})
-	if result[1] ~= nil then
-		local identity = result[1]
-
-		return {
-			identifier = identity['identifier'],
-			firstname = identity['firstname'],
-			lastname = identity['lastname'],
-			dateofbirth = identity['dateofbirth'],
-			sex = identity['sex'],
-			height = identity['height']
-		}
-	else
-		return nil
-	end
-end
 
 RegisterCommand('me', function(source, args)
-    local pname = getIdentity(source)
-    local text = pname.firstname ..' ' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local text = ' --' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
         text = text .. ' ' .. args[i]
     end
-    text = text .. ' '
+    text = text .. ' --'
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
