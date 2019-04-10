@@ -33,10 +33,10 @@ end
 			CancelEvent()
 	end)
 
-	TriggerEvent('es:addCommand', 'me', function(source, args, user)
-			local name = getIdentity(source)
-			TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, table.concat(args, " "))
-	end)
+	-- TriggerEvent('es:addCommand', 'me', function(source, args, user)
+	-- 		local name = getIdentity(source)
+	-- 		TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, table.concat(args, " "))
+	-- end)
 
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)
 			local name = getIdentity(source)

@@ -1,10 +1,10 @@
 -- Settings
-local color = { r = 220, g = 220, b = 220, alpha = 255 } -- Color of the text 
+local color = { r = 200, g = 200, b = 200, alpha = 255 } -- Color of the text 
 local font = 0 -- Font of the text
 local time = 7000 -- Duration of the display of the text : 1000ms = 1sec
 local background = {
-    enable = false,
-    color = { r = 35, g = 35, b = 35, alpha = 200 },
+    enable = true,
+    color = { r = 0, g = 0, b = 0, alpha = 220 },
 }
 local chatMessage = true
 local dropShadow = false
@@ -12,12 +12,32 @@ local dropShadow = false
 -- Don't touch
 local nbrDisplaying = 1
 
+function getIdentity(source)
+	local identifier = GetPlayerIdentifiers(source)[1]
+	local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE identifier = @identifier", {['@identifier'] = identifier})
+	if result[1] ~= nil then
+		local identity = result[1]
+
+		return {
+			identifier = identity['identifier'],
+			firstname = identity['firstname'],
+			lastname = identity['lastname'],
+			dateofbirth = identity['dateofbirth'],
+			sex = identity['sex'],
+			height = identity['height']
+		}
+	else
+		return nil
+	end
+end
+
 RegisterCommand('me', function(source, args)
-    local text = '* the person' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local pname = getIdentity(source)
+    local text = pname.firstname ..' ' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
         text = text .. ' ' .. args[i]
     end
-    text = text .. ' *'
+    text = text .. ' '
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
