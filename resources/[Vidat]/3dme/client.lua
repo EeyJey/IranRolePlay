@@ -16,7 +16,7 @@ local nbrDisplaying = 1
 RegisterCommand('me', function(source, args)
     local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
-        text = text .. '' .. args[i]
+        text = text .. ' ' .. args[i]
     end
     text = text .. ''
     TriggerServerEvent('3dme:shareDisplay', text)
