@@ -33,10 +33,15 @@ end
 			CancelEvent()
 	end)
 
-	-- TriggerEvent('es:addCommand', 'me', function(source, args, user)
-	-- 		local name = getIdentity(source)
-	-- 		TriggerClientEvent("sendProximityMessageMe", -1, source, name.firstname, table.concat(args, " "))
-	-- end)
+	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
+		local name =  GetPlayerName(source)
+			TriggerClientEvent("sendProximityMessageMe", -1, source, "OOC | " .. name, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'b', function(source, args, user)
+		local name =  GetPlayerName(source)
+		TriggerClientEvent("sendProximityMessageMe", -1, source, "OOC | " .. name, table.concat(args, " "))
+	end)
 
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)
 			local name = getIdentity(source)
@@ -55,15 +60,15 @@ end
 		end
 	end, {help = 'Send a tweet [Faqat tabliq job]'})
 
-	TriggerEvent('es:addCommand', 'b', function(source, args, user)
-		-- local name = getIdentity(source)
-		TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
-	end, {help = 'Out Of Character message'})
+	-- TriggerEvent('es:addCommand', 'b', function(source, args, user)
+	-- 	-- local name = getIdentity(source)
+	-- 	TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
+	-- end, {help = 'Out Of Character message'})
 
-	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
-		-- local name = getIdentity(source)
-		TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
-	end, {help = 'Out Of Character message'})
+	-- TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
+	-- 	-- local name = getIdentity(source)
+	-- 	TriggerClientEvent('chatMessage', -1, "OOC | " .. GetPlayerName(source) .. ": ", {200, 200, 200}, table.concat(args, " "))
+	-- end, {help = 'Out Of Character message'})
 
 function stringsplit(inputstr, sep)
 	if sep == nil then
