@@ -1,8 +1,24 @@
 local logEnabled = true
 
+
+function getIdentity(source)
+	local identifier = GetPlayerIdentifiers(source)[1]
+	local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE identifier = @identifier", {['@identifier'] = identifier})
+	if result[1] ~= nil then
+		local identity = result[1]
+
+		return {
+			firstname = identity['firstname'],
+		}
+	else
+		return nil
+	end
+end
+
 RegisterServerEvent('3dme:shareDisplay')
 AddEventHandler('3dme:shareDisplay', function(text)
-	TriggerClientEvent('3dme:triggerDisplay', -1, text, source)
+	local name = getIdentity(source).firstname
+	TriggerClientEvent('3dme:triggerDisplay', -1, text, source,name)
 	if logEnabled then
 		setLog(text, source)
 	end

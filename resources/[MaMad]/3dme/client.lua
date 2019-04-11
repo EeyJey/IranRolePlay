@@ -24,14 +24,13 @@ RegisterCommand('me', function(source, args)
 end)
 
 RegisterNetEvent('3dme:triggerDisplay')
-AddEventHandler('3dme:triggerDisplay', function(text, source)
+AddEventHandler('3dme:triggerDisplay', function(text, source,name)
     local offset = 1 + (nbrDisplaying*0.14)
-    Display(GetPlayerFromServerId(source), text, offset)
+    Display(GetPlayerFromServerId(source), text, offset,name)
 end)
 
-function Display(mePlayer, text, offset)
+function Display(mePlayer, text, offset,name)
     local displaying = true
-
     -- Chat message
     if chatMessage then
         local coordsMe = GetEntityCoords(GetPlayerPed(mePlayer), false)
@@ -41,7 +40,7 @@ function Display(mePlayer, text, offset)
             TriggerEvent('chat:addMessage', {
                 color = { colorText.r, colorText.g, colorText.b },
                 multiline = true,
-                args = { text}
+                args = { name..": "..text}
             })
         end
     end

@@ -44,8 +44,8 @@ end
 	end)
 
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)
-			local name = getIdentity(source)
-			TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
+		local name = getIdentity(source)
+		TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
 	end)
 
 	TriggerEvent('es:addCommand', 'twt', function(source, args, user)
