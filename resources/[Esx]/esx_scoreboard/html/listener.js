@@ -78,6 +78,7 @@ $(function () {
 
 function applyPingColor() {
 	$('#playerlist tr').each(function () {
+		var fatherTr = $(this)
 		$(this).find('td:nth-child(3)').each(function () {
 			var ping = $(this).html();
 			var color = 'green';
@@ -86,6 +87,8 @@ function applyPingColor() {
 				color = 'orange';
 			} else if (ping >= 80) {
 				color = 'red';
+			} else if (ping <2){
+				fatherTr.remove();
 			}
 
 			$(this).css('color', color);
