@@ -22,15 +22,19 @@ end
 TriggerEvent('es:addCommand', 'tas', function(source, args, user)
 	local lngth = tablelength(args)
 	if(lngth ~= 1) then
-		TriggerEvent('tas:error', source, "/tas <tedad>")
+		TriggerEvent('tas:error', source, "/tas (tedad)")
 		return
 	end
+	-- if(~is_int(args[1])) then
+	-- 	return
+	-- end
+
 	local count = tonumber(args[1])
 	if( count >= 5) then
 		TriggerEvent('tas:error', source, "kheyli ziad shod")
 		return
 	end
-
+	
 	local name = getIdentity(source)
 
 	local text = math.random(1,6)
@@ -38,6 +42,8 @@ TriggerEvent('es:addCommand', 'tas', function(source, args, user)
         text = text .. ', ' .. math.random(1,6)
 	end
 		TriggerClientEvent("sendRollThatShit", -1, source, "^1Tas(^3" ..name.firstname.. "^1)", text)
+	TriggerEvent('InteractSound_SV:PlayWithinDistance', 10, 'shake', 1.0,0)
+	TriggerEvent('InteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1500)
 end)
 
 AddEventHandler('tas:error', function(source, message)
