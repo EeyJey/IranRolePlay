@@ -68,6 +68,7 @@ end)
 ------
 RegisterNetEvent('LIFE_CL:Sound:PlayWithinDistance')
 AddEventHandler('LIFE_CL:Sound:PlayWithinDistance', function(playerNetId, maxDistance, soundFile, soundVolume, mwait)
+	Citizen.Wait(mwait)
     local lCoords = GetEntityCoords(GetPlayerPed(-1))
     local eCoords = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(playerNetId)))
     local distIs  = Vdist(lCoords.x, lCoords.y, lCoords.z, eCoords.x, eCoords.y, eCoords.z)

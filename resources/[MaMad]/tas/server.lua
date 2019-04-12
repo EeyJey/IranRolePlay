@@ -42,9 +42,7 @@ TriggerEvent('es:addCommand', 'tas', function(source, args, user)
 	for i = 2,count do
         text = text .. ', ' .. math.random(1,6)
 	end
-	TriggerClientEvent("sendRollThatShit", -1, source, "^1Tas(^3" ..name.firstname.. "^1)", text)
-	TriggerEvent('InteractSound_SV:PlayWithinDistance', 10, 'shake', 1.0,0)
-	TriggerEvent('InteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1500)
+	TriggerClientEvent("sendRollThatShit", source, "^1Tas(^3" ..name.firstname.. "^1)", text)
 end)
 
 AddEventHandler('tas:error', function(source, message)
