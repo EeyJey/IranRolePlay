@@ -3,7 +3,7 @@ AddEventHandler('sendRollThatShit', function(name, message)
 	RequestAnimDict('mp_player_int_upperwank')
 	
 	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 10, 'shake', 1.0,0)
-	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1000)
+	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1200)
 	
 	local playerPed = GetPlayerPed(-1)
 
@@ -19,7 +19,7 @@ AddEventHandler('sendRollThatShit', function(name, message)
 	local pid = GetPlayerFromServerId(id)
 	if pid == myId then
 		TriggerEvent('chatMessage', name, {150, 150, 250}, message)
-	elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 10 then
+	elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
 		TriggerEvent('chatMessage', name, {150, 150, 250},  message)
 	end
 	
