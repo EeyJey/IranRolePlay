@@ -1,4 +1,4 @@
-local logEnabled = true
+local logEnabled = false
 
 
 function getIdentity(source)
