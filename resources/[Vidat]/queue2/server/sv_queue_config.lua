@@ -8,12 +8,13 @@ Config.Priority = {
     ["steam:11000010a1b83df"] = 100, -- MaMad Admin
     ["steam:11000010934a428"] = 85, -- Quiet^ Admin
     ["steam:11000010b6e4e2c"] = 85, -- NoName Admin
-    ["steam:110000107a78e07"] = 85, -- Arash- Admin
+    ["steam:110000107a78e07"] = 50, -- Arash- Mod (admin vali ziad jeddi nagir)
     ["steam:11000010f0a6439"] = 75, -- Peyman- Rais medic
     ["steam:110000112ca6e2f"] = 50, -- hooman :| dahanamo gaiidi :|
-    ["steam:1100001196679b9"] = 50, --zartosht
-    ["steam:110000111ca680b"] = 50, --Bigezmoge
-    -- ["steam:11000011a3f0a06"] = 85, --game_over
+    ["steam:1100001196679b9"] = 50, --zartosht streamer
+    ["steam:110000111ca680b"] = 50, --Bigezmoge streamer
+    ["steam:11000011ae643c7"] = 50, --amberat streamer good RP and funny guy
+    -- ["steam:11000011a3f0a06"] = 50, --game_over streamer
     ["ip:127.0.0.0"] = 85
 }
 
