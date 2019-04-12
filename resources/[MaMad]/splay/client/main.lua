@@ -75,6 +75,8 @@ AddEventHandler('LIFE_CL:Sound:PlayWithinDistance', function(playerNetId, maxDis
     print("myId: "..myId)
     print("pid: "..pid)
     print("Dist: "..dist)
+    print("playerNetId: "..playerNetId)
+
     if pid == myId then
         -- Citizen.Wait(mwait)
 
