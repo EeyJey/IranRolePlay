@@ -10,7 +10,7 @@ Config.Priority = {
     ["steam:11000010b6e4e2c"] = 85,
     ["steam:1100001196679b9"] = 85, --zartosht
     ["steam:110000111ca680b"] = 85, --Bigezmoge
-    ["steam:11000011a3f0a06"] = 85, --game_over
+    -- ["steam:11000011a3f0a06"] = 85, --game_over
     ["ip:127.0.0.0"] = 85
 }
 

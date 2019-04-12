@@ -2,8 +2,6 @@ RegisterNetEvent('sendRollThatShit')
 AddEventHandler('sendRollThatShit', function(id, name, message)
 	-- RequestAnimDict('mp_player_int_upperwank')
 	local myPed = PlayerPedId(id)
-	print("myPed: "..myPed)
-	print("iddd: "..id)
 
 	-- local animation = 'mp_player_int_wank_01_enter'
 	-- local animation2 = 'mp_player_int_wank_01_exit'
