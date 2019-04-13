@@ -73,7 +73,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('delete_vehicle')})
 
-TriggerEvent('es:addGroupCommand', 'dv', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dv', 'mod', function(source, args, user)
 	TriggerClientEvent('esx:deleteVehicle', source)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })

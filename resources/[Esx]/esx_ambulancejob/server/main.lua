@@ -237,7 +237,7 @@ AddEventHandler('esx_ambulancejob:giveItem', function(itemName)
 	end
 end)
 
-TriggerEvent('es:addGroupCommand', 'revive', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'revive', 'mod', function(source, args, user)
 	if args[1] ~= nil then
 		if GetPlayerName(tonumber(args[1])) ~= nil then
 			print(('esx_ambulancejob: %s used admin revive'):format(GetPlayerIdentifiers(source)[1]))
