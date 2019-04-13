@@ -17,15 +17,14 @@ AddEventHandler('sendRollThatShit', function()
 	TaskPlayAnim(playerPed, 'mp_player_int_upperwank', animation, 8.0, -8, -1, flags, 0, 0, 0, 0)
 	Citizen.Wait(timeAnim1)
 	TaskPlayAnim(playerPed, 'mp_player_int_upperwank', animation2, 8.0, -8, -1, flags, 0, 0, 0, 0)
-	Citizen.Wait(timeAnim2)
-	Citizen.Wait(timeFinalWait)
-	local myId = PlayerId()
-	local pid = GetPlayerFromServerId(id)
 	
 end)
 
 RegisterNetEvent('sendTasMessage')
 AddEventHandler('sendTasMessage', function(name, message)
+	print("boz", "boz")
+	local myId = PlayerId()
+	local pid = GetPlayerFromServerId(id)
 	Citizen.Wait(timeAnim1 + timeAnim2 + timeFinalWait)
 	if pid == myId then
 		TriggerEvent('chatMessage', name, {150, 150, 250}, message)
