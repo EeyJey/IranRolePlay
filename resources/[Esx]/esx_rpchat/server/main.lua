@@ -48,17 +48,17 @@ end
 		TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
 	end)
 
-	TriggerEvent('es:addCommand', 'twt', function(source, args, user)
+	TriggerEvent('es:addCommand', 'tabligh', function(source, args, user)
 		local xPlayer = ESX.GetPlayerFromId(source)
 		if xPlayer.getMoney() >= 1000 then
 			xPlayer.removeMoney(1000)
 			TriggerClientEvent("pNotify:SendNotification", source, {text = "مالیات توییت 1000$ کم شد", type = "success", timeout = 3000, layout = "bottomCenter"})
 			local name = getIdentity(source)
-			TriggerClientEvent('chatMessage', -1, "[Twitter] @" .. name.lastname .. "", {30, 144, 255}, table.concat(args, " "))
+			TriggerClientEvent('chatMessage', -1, "[Tablighat] @" .. name.lastname .. "", {30, 144, 255}, table.concat(args, " "))
 		else
 			TriggerClientEvent("pNotify:SendNotification", source, {text = "پول کافی برای توییت ندارید، هزینه 1000$ ناقابل", type = "error", timeout = 3000, layout = "bottomCenter"})
 		end
-	end, {help = 'Send a tweet [Faqat tabliq job]'})
+	end, {help = 'ye tablighat befres [Faqat tabliq job]'})
 
 	-- TriggerEvent('es:addCommand', 'b', function(source, args, user)
 	-- 	-- local name = getIdentity(source)
