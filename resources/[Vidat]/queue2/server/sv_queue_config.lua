@@ -14,6 +14,7 @@ Config.Priority = {
     ["steam:1100001196679b9"] = 50, --zartosht streamer
     ["steam:110000111ca680b"] = 50, --Bigezmoge streamer
     ["steam:11000011ae643c7"] = 50, --amberat streamer good RP and funny guy
+    ["steam:11000010b421c27"] = 50, --AmoBig streamer
     -- ["steam:11000011a3f0a06"] = 50, --game_over streamer
     ["ip:127.0.0.0"] = 85
 }
