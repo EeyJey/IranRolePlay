@@ -43,7 +43,7 @@ TriggerEvent('es:addCommand', 'tas', function(source, args, user)
         text = text .. ', ' .. math.random(1,6)
 	end
 	TriggerClientEvent("sendRollThatShit", source)
-	TriggerClientEvent("sendTasMessage", source, "^1Tas(^3" ..name.firstname.. "^1)", text)
+	TriggerClientEvent("sendTasMessage", -1, source, "^1Tas(^3" ..name.firstname.. "^1)", text)
 end)
 
 AddEventHandler('tas:error', function(source, message)

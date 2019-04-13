@@ -21,7 +21,7 @@ AddEventHandler('sendRollThatShit', function()
 end)
 
 RegisterNetEvent('sendTasMessage')
-AddEventHandler('sendTasMessage', function(name, message)
+AddEventHandler('sendTasMessage', function(id, name, message)
 	print("boz", "boz")
 	local myId = PlayerId()
 	local pid = GetPlayerFromServerId(id)
