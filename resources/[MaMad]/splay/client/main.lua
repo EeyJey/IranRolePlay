@@ -8,7 +8,12 @@
 -- a specific range from the entity to which the sound has been created.
 ------
 
+
 local standardVolumeOutput = 1.0;
+
+local function isempty(s)
+    return s == nil or s == ''
+end
 
 ------
 -- RegisterNetEvent LIFE_CL:Sound:PlayOnOne
@@ -68,6 +73,9 @@ end)
 ------
 RegisterNetEvent('LIFE_CL:Sound:PlayWithinDistance')
 AddEventHandler('LIFE_CL:Sound:PlayWithinDistance', function(playerNetId, maxDistance, soundFile, soundVolume, mwait)
+    if isempty(mwait) then
+        mwait = 0
+    end
 	Citizen.Wait(mwait)
     local lCoords = GetEntityCoords(GetPlayerPed(-1))
     local eCoords = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(playerNetId)))

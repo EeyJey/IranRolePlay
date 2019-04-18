@@ -6,8 +6,8 @@ RegisterNetEvent('sendRollThatShit')
 AddEventHandler('sendRollThatShit', function()
 	RequestAnimDict('mp_player_int_upperwank')
 	
-	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 10, 'shake', 1.0,0)
-	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1200)
+	TriggerServerEvent('MyInteractSound_SV:PlayWithinDistance', 10, 'shake', 1.0,0)
+	TriggerServerEvent('MyInteractSound_SV:PlayWithinDistance', 10, 'drop', 1.0,1200)
 	
 	local playerPed = GetPlayerPed(-1)
 
