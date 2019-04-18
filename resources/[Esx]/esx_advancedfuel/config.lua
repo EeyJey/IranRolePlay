@@ -44,7 +44,7 @@ settings["fr"] = {
 
 
 showBar = false
-showText = true
+showText = false
 
 
 hud_form = 1 -- 1 : Vertical | 2 = Horizontal

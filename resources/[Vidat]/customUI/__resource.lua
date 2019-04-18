@@ -48,7 +48,7 @@ files {
 	'html/img/jobs/unemployed.png',
 	-- Vehicle Images
 	--'html/img/vehicle/damage.png',
-	--'html/img/vehicle/gas.png',
+	'html/img/vehicle/gas.png',
 	--'html/img/vehicle/speed.png',
 	--'html/img/vehicle/locked.png',
 	--'html/img/vehicle/unlocked.png',
@@ -59,6 +59,10 @@ files {
 	'html/img/speaker1.png',
 	'html/img/speaker2.png',
 	'html/img/speaker3.png',
-	'html/img/backpack.png'
+	'html/img/backpack.png',
+	'html/img/health.png',
+	'html/img/stamina.png',
+	'html/img/breath.png'
+	
 
 }

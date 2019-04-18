@@ -12,7 +12,8 @@ local Keys = {
 
 ESX = nil
 local isTalking = false
---local inVehicle = false
+local inVehicle = false
+local PlayerData = {}
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -28,23 +29,23 @@ end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer) 
-	local data = xPlayer
-	local accounts = data.accounts
-	for k,v in pairs(accounts) do
-		local account = v
-		if account.name == "bank" then
-			SendNUIMessage({action = "setValue", key = "bankmoney", value = "$"..account.money})
-		elseif account.name == "black_money" then
-			SendNUIMessage({action = "setValue", key = "dirtymoney", value = "$"..account.money})
-		end
-	end
+	PlayerData = ESX.GetPlayerData()
+	local accounts = PlayerData.accounts
+	-- for k,v in pairs(accounts) do
+		-- local account = v
+		-- if account.name == "bank" then
+			-- SendNUIMessage({action = "setValue", key = "bankmoney", value = "$"..account.money})
+		-- elseif account.name == "black_money" then
+			-- SendNUIMessage({action = "setValue", key = "dirtymoney", value = "$"..account.money})
+		-- end
+	-- end
 
 	-- Job
-	local job = data.job
+	local job = PlayerData.job
 	SendNUIMessage({action = "setValue", key = "job", value = job.label.." - "..job.grade_label, icon = job.name})
 
 	-- Money
-	SendNUIMessage({action = "setValue", key = "money", value = "$"..data.money})
+	SendNUIMessage({action = "setValue", key = "money", value = "$"..PlayerData.money})
 end)
 
 Citizen.CreateThread(function()
@@ -63,34 +64,56 @@ Citizen.CreateThread(function()
 				SendNUIMessage({action = "setTalking", value = false})
 			end
 		end
+		
+		local ped = GetPlayerPed(-1)
+		local pedhealth = GetEntityHealth(ped)
+		local healthpcn = 0
+		if pedhealth < 100 then
+			healthpcn = 0
+		else
+			pedhealth = pedhealth - 100
+			healthpcn = pedhealth
+		end
+		staminapcn = GetPlayerSprintStaminaRemaining(PlayerId())
+		staminapcn = staminapcn - 100
+		if staminapcn < 0 then
+			staminapcn = staminapcn * (-1)
+		end
+		
+		SendNUIMessage({action = "updateHealth", health = healthpcn})
+		SendNUIMessage({action = "updateStamina", stamina = staminapcn})
+		SendNUIMessage({action = "updateBreath", breath = GetPlayerUnderwaterTimeRemaining(PlayerId())})
 
-		--[[if inVehicle == false then
+		if inVehicle == false then
 			if IsPedInAnyVehicle(GetPlayerPed(-1)) and GetPedInVehicleSeat(GetVehiclePedIsIn(GetPlayerPed(-1)), -1) == GetPlayerPed(-1) then
 				inVehicle = true
 				SendNUIMessage({action = "toggleCar", show = true})
 			end
 		else
 			if IsPedInAnyVehicle(GetPlayerPed(-1)) and GetPedInVehicleSeat(GetVehiclePedIsIn(GetPlayerPed(-1)), -1) == GetPlayerPed(-1) then
-				local essence = exports.esx_AdvancedFuel:getFuel()
-				local percent = (essence/0.142)*100
-				SendNUIMessage({action = "updateCarStatus", status = {{name = "gas", percent = percent}}})
+				vehicle = GetVehiclePedIsIn(GetPlayerPed(-1))
+				FuelLevel = GetVehicleFuelLevel(vehicle)
+				MaxFuelLevel = Citizen.InvokeNative(0x642FC12F, vehicle, "CHandlingData", "fPetrolTankVolume", Citizen.ReturnResultAnyway(), Citizen.ResultAsFloat())
+				print("fuel",FuelLevel)
+				local fuelpercent = (FuelLevel*100/MaxFuelLevel)
+				SendNUIMessage({action = "updateCarStatus", status = {{name = "gas", percent = fuelpercent}}})
 			else
 				inVehicle = false
 				SendNUIMessage({action = "toggleCar", show = false})
 			end
-		end]]--
+		end
 	end
 end)
 
 -- Voice
 
 local prox = 26.0 -- Sets the Default Voice Distance
-local allowProximityChange = false -- Set to True to allow Changing Voice Distance | False to not allow Changing Voice Distance
+local allowProximityChange = true -- Set to True to allow Changing Voice Distance | False to not allow Changing Voice Distance
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		if IsControlJustPressed(1, 243) and allowProximityChange then
+		if IsControlJustPressed(1, Keys["H"]) and allowProximityChange then
 			local vprox
 			if prox <= 2.0 then
 				prox = 10.0
@@ -104,10 +127,6 @@ Citizen.CreateThread(function()
 			end
 			NetworkSetTalkerProximity(prox)
 			SendNUIMessage({action = "setProximity", value = vprox})
-		end
-		if IsControlPressed(1, 243) then
-			local posPlayer = GetEntityCoords(GetPlayerPed(-1))
-			DrawMarker(1, posPlayer.x, posPlayer.y, posPlayer.z - 1, 0, 0, 0, 0, 0, 0, prox * 2, prox * 2, 0.8001, 0, 75, 255, 165, 0,0, 0,0)
 		end
 	end
 end)
@@ -141,8 +160,12 @@ AddEventHandler('esx_customui:updateStatus', function(status)
 	SendNUIMessage({action = "updateStatus", status = status})
 end)
 
-RegisterNetEvent('esx_customui:updateWeight')
-AddEventHandler('esx_customui:updateWeight', function(weight)
-	weightprc = (weight/8000)*100
-	SendNUIMessage({action = "updateWeight", weight = weightprc})
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+        -- Not sure which one is needed so you can choose/test which of these is the one you need.
+        HideHudComponentThisFrame(3) -- SP Cash display 
+        HideHudComponentThisFrame(4)  -- MP Cash display
+        HideHudComponentThisFrame(13) -- Cash changes
+    end
 end)
