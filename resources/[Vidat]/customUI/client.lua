@@ -94,7 +94,6 @@ Citizen.CreateThread(function()
 				vehicle = GetVehiclePedIsIn(GetPlayerPed(-1))
 				FuelLevel = GetVehicleFuelLevel(vehicle)
 				MaxFuelLevel = Citizen.InvokeNative(0x642FC12F, vehicle, "CHandlingData", "fPetrolTankVolume", Citizen.ReturnResultAnyway(), Citizen.ResultAsFloat())
-				print("fuel",FuelLevel)
 				local fuelpercent = (FuelLevel*100/MaxFuelLevel)
 				SendNUIMessage({action = "updateCarStatus", status = {{name = "gas", percent = fuelpercent}}})
 			else
