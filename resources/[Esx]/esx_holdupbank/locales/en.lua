@@ -18,6 +18,6 @@ Locales['en'] = {
 	['robbery_complete'] = '~r~ Robbery complete.~s~ ~h~ Run! ',
 	['robbery_complete_at'] = '~r~ Robbery complete at: ~b~',
 	['min_two_police'] = 'Number of policemen needed: ',
-	['robbery_already'] = '~r~A robbery is already in progress.',
+	['robbery_already'] = '~r~A robbery is already in progress 3.',
 
 }

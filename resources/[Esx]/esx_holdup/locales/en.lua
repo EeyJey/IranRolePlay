@@ -11,6 +11,6 @@ Locales['en'] = {
 	['robbery_cancelled'] = 'the robbery has been cancelled!',
 	['robbery_cancelled_at'] = '~r~The robbery at ~b~%s~s~ has been cancelled!',
 	['min_police'] = 'there must be at least ~b~%s cops~s~ in town to rob.',
-	['robbery_already'] = '~r~A robbery is already in progress.',
+	['robbery_already'] = '~r~A robbery is already in progress 2.',
 	['no_threat'] = 'you do not pose a threat to the store',
 }
