@@ -60,6 +60,10 @@ body
     opacity:0;
     transition: opacity 1s; 
 }
+.icons {
+	margin:25px;
+	position:absolute;
+}
 .slideright {
     animation-name: slideright;
     animation-duration: 3.2s;
