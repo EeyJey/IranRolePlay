@@ -2,6 +2,12 @@
 var rgbStart = [139,195,74]
 var rgbEnd = [183,28,28]
 
+var rgbStart2 = [183,28,28]
+var rgbEnd2 = [139,195,74]
+
+var rgbStart3 = [0,191,255]
+var rgbEnd3 = [0,191,255]
+
 $(function(){
 	window.addEventListener('message', function(event) {
 		if (event.data.action == "setValue"){
@@ -25,25 +31,37 @@ $(function(){
 			}
 		} else if (event.data.action == "toggleCar"){
 			if (event.data.show){
-				//$('.carStats').show();
+				$('#gas').show();
 			} else{
-				//$('.carStats').hide();
+				$('#gas').hide();
 			}
 		}else if (event.data.action == "updateCarStatus"){
 			updateCarStatus(event.data.status)
-		/*}else if (event.data.action == "updateWeight"){
-			updateWeight(event.data.weight)*/
+		}else if (event.data.action == "updateHealth"){
+			updateHealth(event.data.health)
+		}else if (event.data.action == "updateStamina"){
+			updateStamina(event.data.stamina)
+		}else if (event.data.action == "updateBreath"){
+			updateBreath(event.data.breath)
 		}
 	});
 
 });
 
-function updateWeight(weight){
-
-
-	var bgcolor = colourGradient(weight/100, rgbEnd, rgbStart)
-	$('#weight .bg').css('height', weight+'%')
-	$('#weight .bg').css('background-color', 'rgb(' + bgcolor[0] +','+ bgcolor[1] +','+ bgcolor[2] +')')
+function updateHealth(health){
+	var bgcolor = colourGradient(health/100, rgbEnd, rgbStart)
+	$('#health .bg').css('height', health + '%')
+	$('#health .bg').css('background-color', 'rgb(' + bgcolor[0] +','+ bgcolor[1] +','+ bgcolor[2] +')')
+}
+function updateStamina(stamina){
+	var bgcolor = colourGradient(stamina/100, rgbEnd2, rgbStart2)
+	$('#stamina .bg').css('height', stamina + '%')
+	$('#stamina .bg').css('background-color', 'rgb(' + bgcolor[0] +','+ bgcolor[1] +','+ bgcolor[2] +')')
+}
+function updateBreath(breath){
+	var bgcolor = colourGradient(breath/10, rgbEnd3, rgbStart3)
+	$('#breath .bg').css('height', breath*10 + '%')
+	$('#breath .bg').css('background-color', 'rgb(' + bgcolor[0] +','+ bgcolor[1] +','+ bgcolor[2] +')')
 }
 
 function updateCarStatus(status){
