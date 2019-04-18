@@ -4,11 +4,11 @@ Config = {}
 -- a lot of the steamid converting websites are broken rn and give you the wrong steamid. I use https://steamid.xyz/ with no problems.
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
-    ["steam:110000114a058a8"] = 100, -- Vidat Admin
-    ["steam:11000010a1b83df"] = 100, -- MaMad Admin
+    -- ["steam:110000114a058a8"] = 100, -- Vidat Admin
+    ["steam:110000107a78e07"] = 100, -- Arash- Owner
+    ["steam:11000010a1b83df"] = 100, -- MaMad Owner
     ["steam:11000010934a428"] = 85, -- Quiet^ Admin
     ["steam:11000010b6e4e2c"] = 85, -- NoName Admin
-    ["steam:110000107a78e07"] = 50, -- Arash- Mod (admin vali ziad jeddi nagir)
     ["steam:11000010f0a6439"] = 75, -- Peyman- Rais medic
     ["steam:110000112ca6e2f"] = 50, -- hooman :| dahanamo gaiidi :|
     ["steam:1100001196679b9"] = 50, --zartosht streamer

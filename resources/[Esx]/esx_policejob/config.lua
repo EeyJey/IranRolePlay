@@ -190,7 +190,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		},
 		female = {
-			['tshirt_1'] = 36,  ['tshirt_2'] = 1,
+			['tshirt_1'] = 35,  ['tshirt_2'] = 1,
 			['torso_1'] = 48,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 44,

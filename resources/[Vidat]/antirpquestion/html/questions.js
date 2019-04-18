@@ -87,7 +87,6 @@ var tableauQuestion = [
                 propositionD : "محدودیت دزدی نداریم",
                 reponse : "D"
         },
-
         {
                 question : "شما داخل درگیری با پلیس مجروح شده اید و دوست دارید بمیرید و اسپاون کنید چه می کنید؟",
                 propositionA : "اسپاون می کنید",
@@ -118,6 +117,6 @@ var tableauQuestion = [
                 propositionB : "اگر در رول پلی آنجا قوانین زیر پا گذاشته شده بود بله ",
                 propositionC : "با اجازه از شخصی که باهاش رول پلی می کنیم می توانیم",
                 propositionD : "هیچ وقت این اجازه را نداریم",
-                reponse : "D"
+                reponse : "C"
         },
 ]
