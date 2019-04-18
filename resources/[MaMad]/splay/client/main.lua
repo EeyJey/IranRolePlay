@@ -85,7 +85,7 @@ AddEventHandler('LIFE_CL:Sound:PlayWithinDistance', function(playerNetId, maxDis
         SendNUIMessage({
             transactionType     = 'playSound',
             transactionFile     = soundFile,
-            transactionVolume   = soundVolume
+            transactionVolume   = sv
         })
     end
 end)
