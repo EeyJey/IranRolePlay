@@ -60,9 +60,9 @@ AddEventHandler('esx_status:load', function(status)
 				update = true,
 				status = GetStatusData()
 			})
-
+	
+		TriggerEvent('esx_customui:updateStatus', GetStatusData(true))
 	    Citizen.Wait(Config.TickTime)
-
 	  end
 	end)
 

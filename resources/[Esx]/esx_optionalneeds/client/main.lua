@@ -90,9 +90,9 @@ AddEventHandler('esx_status:loaded', function(status)
   TriggerEvent('esx_status:registerStatus', 'drunk', 0, '#8F15A5', 
     function(status)
       if status.val > 0 then
-        return true
+        return false -- Set to true to show if you drink | false to always hide
       else
-        return false
+        return false -- Set to true to always show | false to hide if 0
       end
     end,
     function(status)
