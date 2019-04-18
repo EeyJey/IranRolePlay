@@ -5,17 +5,17 @@ Config = {}
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
     -- ["steam:110000114a058a8"] = 100, -- Vidat Admin
-    ["steam:110000107a78e07"] = 100, -- Arash- Owner
-    ["steam:11000010a1b83df"] = 100, -- MaMad Owner
-    ["steam:110000118eae7af"] = 99, -- hooman :| dahanamo gaiidi :|
-    ["steam:11000010934a428"] = 85, -- Quiet^ Admin
-    ["steam:11000010b6e4e2c"] = 85, -- NoName Admin
-    ["steam:11000010f0a6439"] = 75, -- Peyman- Rais medic
-    ["steam:1100001196679b9"] = 50, --zartosht streamer
-    ["steam:110000111ca680b"] = 50, --Bigezmoge streamer
-    ["steam:11000011ae643c7"] = 50, --amberat streamer good RP and funny guy
-    ["steam:11000010b421c27"] = 50, --AmoBig streamer
-    ["steam:11000011a3f0a06"] = 50, --game_over streamer
+    ["steam:110000107a78e07"] = 50, -- Arash- Owner
+    ["steam:11000010a1b83df"] = 50, -- MaMad Owner
+    ["steam:110000118eae7af"] = 60, -- hooman :| dahanamo gaiidi :|
+    ["steam:11000010934a428"] = 60, -- Quiet^ Admin
+    ["steam:11000010b6e4e2c"] = 60, -- NoName Admin
+    ["steam:11000010f0a6439"] = 70, -- Peyman- Rais medic
+    ["steam:1100001196679b9"] = 70, --zartosht streamer
+    ["steam:110000111ca680b"] = 70, --Bigezmoge streamer
+    ["steam:11000011ae643c7"] = 70, --amberat streamer good RP and funny guy
+    ["steam:11000010b421c27"] = 70, --AmoBig streamer
+    ["steam:11000011a3f0a06"] = 70, --game_over streamer
     ["ip:127.0.0.0"] = 85
 }
 
@@ -38,13 +38,13 @@ Config.ConnectTimeOut = 600
 Config.QueueTimeOut = 90
 
 -- will give players temporary priority when they disconnect and when they start loading in
-Config.EnableGrace = false
+Config.EnableGrace = true
 
 -- how much priority power grace time will give
 Config.GracePower = 5
 
 -- how long grace time lasts in seconds
-Config.GraceTime = 480
+Config.GraceTime = 180
 
 -- on resource start, players can join the queue but will not let them join for __ milliseconds
 -- this will let the queue settle and lets other resources finish initializing
