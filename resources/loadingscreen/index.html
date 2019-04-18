@@ -6,8 +6,11 @@
         <link type ="text/css" rel ="stylesheet" href ="css/index.css"/>
         <link type ="text/css" rel ="stylesheet" href ="css/colors.css"/>
     </head>
-
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <body>
+        <audio class="audio" controls autoplay style="display:none;">
+        <source src="http://dl.mytehmovies.com/94/tehmusic/97/7/fr/Tyga%20Feat%20Game%20-%20Switch%20Lanes%28128%29.mp3" type="audio/ogg" />
+        </audio>
         <img id="background"/>
         <img id="background2"/>
 
@@ -20,15 +23,14 @@
             <input type="range" min="1" max="100" id="volumeSlider">
         </div>
         
-        <img id="logo"/>
+        <img id="logo"/ style="padding: 50px;">
 
         <div class="content-container">
             <span>
-                <p id="message" class="loading-text" dir="rtl">Connexion au serveur en cours... &#x1f40c; &#x1f528;</p>
-                <p class="loading-text stick-to-right"><span id="progress-bar-value">0</span>%</p>
+                <p id="message" class="loading-text" dir="rtl">Connection to server proceses . . . &#x1f40c; &#x1f528;</p>
+                <p class="loading-text stick-to-right"><span id="progress-bar-value" style="display:none;">0</span></p>
             </span>
-        </div>
-          
+        </div>    
         <div class="content-container">
             <progress id="pb0" class="hide" min="0" max="100" value="0"></progress>
             <progress id="pb1" class="hide" min="0" max="100" value="0"></progress>
@@ -36,12 +38,22 @@
             <progress id="pb3" class="hide" min="0" max="100" value="0"></progress>
             <progress id="pb4" class="hide" min="0" max="100" value="0"></progress>          
         </div> 
+        
+        <div class="content-container" style="margin-top: 60px;position: absolute;width: 100%;">
+            <span>
+                <p dir="rtl" style="font-size: 30px;color:#af9ac4;">Iran RolePlay Discord: <font style="color: #1480c8;">https://discord.gg/SmUGDG</font> </p>
+            </span>
+        </div> 
 
         <ul id="log"></ul>    
 
         <div id="player"></div>
     </body>
-
+    <script>
+        $(document).ready(function(){
+            $('.audio').prop("volume", 0.2);
+        });
+    </script>
     <script src="js/synn.js"></script>    
     <script src="js/config.js"></script>
     <script src="js/logger.js"></script>    
