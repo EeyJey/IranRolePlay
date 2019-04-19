@@ -5,19 +5,19 @@ Config = {}
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
     -- ["steam:110000114a058a8"] = 100, -- Vidat Admin
-    ["steam:110000107a78e07"] = 50, -- Arash- Owner
-    ["steam:11000010a1b83df"] = 50, -- MaMad Owner
-    ["steam:110000118eae7af"] = 60, -- hooman :| dahanamo gaiidi :|
-    ["steam:11000010934a428"] = 60, -- Quiet^ Admin
-    ["steam:11000010b6e4e2c"] = 60, -- NoName Admin
+    ["steam:110000107a78e07"] = 100, -- Arash- Owner
+    ["steam:11000010a1b83df"] = 100, -- MaMad Owner
+    ["steam:110000118eae7af"] = 80, -- hooman :| dahanamo gaiidi :|
+    ["steam:11000010934a428"] = 80, -- Quiet^ Admin
+    ["steam:11000010b6e4e2c"] = 80, -- NoName Admin
     ["steam:11000010f0a6439"] = 70, -- Peyman- Admin
+    ["steam:11000011783a55b"] = 70, -- Arman Mekanik
     ["steam:110000115e0be8a"] = 70, -- MehdiJokerPir- Rais medic
     ["steam:1100001196679b9"] = 70, --zartosht streamer
     ["steam:110000111ca680b"] = 70, --Bigezmoge streamer
     ["steam:11000011ae643c7"] = 70, --amberat streamer good RP and funny guy
     ["steam:11000010b421c27"] = 70, --AmoBig streamer
-    ["steam:11000011a3f0a06"] = 70, --game_over streamer
-    ["steam:11000010b7a7c7d"] = 70, --saeed_slash Mechanic
+    --["steam:11000011a3f0a06"] = 70, --game_over streamer
     ["ip:127.0.0.0"] = 85
 }
 
