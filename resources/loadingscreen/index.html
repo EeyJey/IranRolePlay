@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 </head>
 <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 <body>
     <audio class="audio" controls autoplay style="display:none;">
         <source src="http://dl.mytehmovies.com/94/tehmusic/97/7/fr/Tyga%20Feat%20Game%20-%20Switch%20Lanes%28128%29.mp3" type="audio/ogg" />
@@ -71,7 +70,7 @@
         if(playing == true){
         $('.audio').prop("volume", 0.0);
         playing = false;
-        }else(playing == false){
+        }else{
         $('.audio').prop("volume", 0.2)
         playing = true;
         }
@@ -87,6 +86,7 @@
 	volume = $('.audio').prop("volume") - 0.1;
 	if(volume <0){
         volume = 0;
+        playing = false;
     }
     $('.audio').prop("volume", volume); 
     });
