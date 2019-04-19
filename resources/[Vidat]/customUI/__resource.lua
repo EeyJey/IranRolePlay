@@ -46,6 +46,7 @@ files {
 	'html/img/jobs/trucker.png',
 	'html/img/jobs/taxi.png',
 	'html/img/jobs/unemployed.png',
+	'html/img/jobs/mafia.png',
 	-- Vehicle Images
 	--'html/img/vehicle/damage.png',
 	'html/img/vehicle/gas.png',
