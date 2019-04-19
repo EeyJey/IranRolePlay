@@ -10,12 +10,14 @@ Config.Priority = {
     ["steam:110000118eae7af"] = 60, -- hooman :| dahanamo gaiidi :|
     ["steam:11000010934a428"] = 60, -- Quiet^ Admin
     ["steam:11000010b6e4e2c"] = 60, -- NoName Admin
-    ["steam:11000010f0a6439"] = 70, -- Peyman- Rais medic
+    ["steam:11000010f0a6439"] = 70, -- Peyman- Admin
+    ["steam:110000115e0be8a"] = 70, -- MehdiJokerPir- Rais medic
     ["steam:1100001196679b9"] = 70, --zartosht streamer
     ["steam:110000111ca680b"] = 70, --Bigezmoge streamer
     ["steam:11000011ae643c7"] = 70, --amberat streamer good RP and funny guy
     ["steam:11000010b421c27"] = 70, --AmoBig streamer
     ["steam:11000011a3f0a06"] = 70, --game_over streamer
+    ["steam:11000010b7a7c7d"] = 70, --saeed_slash Mechanic
     ["ip:127.0.0.0"] = 85
 }
 
