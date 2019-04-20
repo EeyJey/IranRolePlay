@@ -39,9 +39,9 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 
 		local bank = Banks[robb]
 
-		if (os.time() - bank.lastrobbed) < 43200 and bank.lastrobbed ~= 0 then
+		if (os.time() - bank.lastrobbed) < 7200 and bank.lastrobbed ~= 0 then
 
-			TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. (2 - (os.time() - bank.lastrobbed)) .. _U('seconds'))
+			TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. math.floor((7200 - (os.time() - bank.lastrobbed))/60) .. _U('minute'))
 			return
 		end
 
@@ -56,12 +56,15 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 
 
 		if rob == false then
-		   
+		xPlayer = ESX.GetPlayerFromId(source) 
+		if xPlayer.job.name == 'police' then
+			TriggerClientEvent('esx:showNotification', source, _U('cant_robb'))
+			return
+		end
 		  if xPlayer.getInventoryItem('drill').count >= 1 then
-		     xPlayer.removeInventoryItem('drill', 1)
 
 			if(cops >= Config.NumberOfCopsRequired)then
-
+			 xPlayer.removeInventoryItem('drill', 1)
 				rob = true
 				for i=1, #xPlayers, 1 do
 					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
@@ -100,6 +103,8 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 			else
 				TriggerClientEvent('esx:showNotification', source, _U('min_two_police') .. Config.NumberOfCopsRequired)
 			end
+		else
+			TriggerClientEvent('esx:showNotification', source, _U('drill'))
 		end
 		else
 			TriggerClientEvent('esx:showNotification', source, _U('robbery_already'))
