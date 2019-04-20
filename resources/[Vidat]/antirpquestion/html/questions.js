@@ -118,5 +118,5 @@ var tableauQuestion = [
                 propositionC : "با اجازه از شخصی که باهاش رول پلی می کنیم می توانیم",
                 propositionD : "هیچ وقت این اجازه را نداریم",
                 reponse : "C"
-        },
+        }
 ]
