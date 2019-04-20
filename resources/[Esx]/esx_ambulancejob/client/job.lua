@@ -374,6 +374,9 @@ Citizen.CreateThread(function()
 				elseif CurrentAction == 'Helicopters' then
 					OpenHelicopterSpawnerMenu(CurrentActionData.hospital, CurrentActionData.partNum)
 				elseif CurrentAction == 'FastTravelsPrompt' then
+					print("----------------------------- start -----------------------------\n")
+					print_r(ESX.PlayerData)
+					print("----------------------------- end -----------------------------\n")
 					FastTravel(CurrentActionData.to, CurrentActionData.heading)
 				end
 
