@@ -9,6 +9,7 @@ local Keys = {
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
+ESX.SetPlayerData('jailed',false)
 
 ESX = nil
 
@@ -60,6 +61,7 @@ end)
 RegisterNetEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(newJailTime)
 	TriggerEvent("esx_policejob:removeHandcuffFull")
+	ESX.SetPlayerData('jailed',true)
 
 	jailTime = newJailTime
 	Cutscene()
@@ -68,6 +70,7 @@ end)
 RegisterNetEvent("esx-qalle-jail:unJailPlayer")
 AddEventHandler("esx-qalle-jail:unJailPlayer", function()
 	jailTime = 0
+	ESX.SetPlayerData('jailed',false)
 
 	UnJail()
 end)

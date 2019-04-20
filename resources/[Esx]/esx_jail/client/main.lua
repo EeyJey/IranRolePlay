@@ -42,7 +42,6 @@ AddEventHandler('esx_jail:jail', function(jailTime)
 			
 			ESX.Game.Teleport(playerPed, JailLocation)
 			IsJailed = true
-			ESX.SetPlayerData('jailed',true)
 			unjail = false
 			while JailTime > 0 and not unjail do
 				playerPed = PlayerPedId()
