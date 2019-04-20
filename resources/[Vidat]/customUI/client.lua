@@ -14,6 +14,7 @@ ESX = nil
 local isTalking = false
 local inVehicle = false
 local PlayerData = {}
+local preHealth = 200
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -67,6 +68,11 @@ Citizen.CreateThread(function()
 		
 		local ped = GetPlayerPed(-1)
 		local pedhealth = GetEntityHealth(ped)
+		if pedhealth < preHealth then
+			TriggerEvent("sendLossHealth")
+			preHealth = pedhealth
+		end
+
 		local healthpcn = 0
 		if pedhealth < 100 then
 			healthpcn = 0
@@ -80,7 +86,10 @@ Citizen.CreateThread(function()
 			staminapcn = staminapcn * (-1)
 		end
 		
+		local armor100 = GetPedArmour(ped)
+		
 		SendNUIMessage({action = "updateHealth", health = healthpcn})
+		SendNUIMessage({action = "updateArmor", armor = armor100})
 		SendNUIMessage({action = "updateStamina", stamina = staminapcn})
 		SendNUIMessage({action = "updateBreath", breath = GetPlayerUnderwaterTimeRemaining(PlayerId())})
 
@@ -103,6 +112,24 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+RegisterNetEvent('sendLossHealth')
+AddEventHandler('sendLossHealth', function()
+	Citizen.CreateThread(function()
+		SendNUIMessage({action = "toggleHealthLoss", show = true})
+		Wait(500)
+		SendNUIMessage({action = "toggleHealthLoss", show = false})
+	end)
+end)
+
+-- RegisterNetEvent('sendGainHealth')
+-- AddEventHandler('sendGainHealth', function()
+	-- Citizen.CreateThread(function()
+		-- SendNUIMessage({action = "toggleHealthGain", show = true})
+		-- Wait(500)
+		-- SendNUIMessage({action = "toggleHealthGain", show = false})
+	-- end)
+-- end)
 
 -- Voice
 
