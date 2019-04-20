@@ -99,7 +99,7 @@ function setValue(key, value){
 }
 
 function setJobIcon(value){
-	$('#job img').attr('src', 'img/jobs/'+value+'.png')
+	$('#job .icon img').attr('src', 'img/jobs/'+value+'.png')
 }
 
 function updateStatus(status){
