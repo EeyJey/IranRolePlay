@@ -98,7 +98,7 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
-	
+	print(ESX.GetPlayerData().jailed)
 	if ESX.GetPlayerData().jailed == 1 then
 		TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
 

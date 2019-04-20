@@ -76,7 +76,6 @@ end)
 RegisterNetEvent("esx-qalle-jail:unJailPlayer")
 AddEventHandler("esx-qalle-jail:unJailPlayer", function()
 	jailTime = 0
-	ESX.SetPlayerData('jailed',0)
 
 	UnJail()
 end)
@@ -94,6 +93,7 @@ function UnJail()
 	InJail()
 
 	ESX.Game.Teleport(PlayerPedId(), Config.Teleports["Boiling Broke"])
+	ESX.SetPlayerData('jailed',0)
 
 	ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
 		TriggerEvent('skinchanger:loadSkin', skin)
