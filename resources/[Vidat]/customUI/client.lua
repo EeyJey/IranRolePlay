@@ -80,7 +80,10 @@ Citizen.CreateThread(function()
 			staminapcn = staminapcn * (-1)
 		end
 		
+		local armor100 = GetPedArmour(ped)
+		
 		SendNUIMessage({action = "updateHealth", health = healthpcn})
+		SendNUIMessage({action = "updateArmor", armor = armor100})
 		SendNUIMessage({action = "updateStamina", stamina = staminapcn})
 		SendNUIMessage({action = "updateBreath", breath = GetPlayerUnderwaterTimeRemaining(PlayerId())})
 
