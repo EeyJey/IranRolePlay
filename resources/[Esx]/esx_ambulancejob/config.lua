@@ -4,7 +4,7 @@ Config.DrawDistance               = 100.0
 
 Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 
-Config.ReviveReward               = 5000  -- revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 1500  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = true -- disable if you're using fivem-ipl or other IPL loaders
 
@@ -13,7 +13,7 @@ Config.Locale                     = 'en'
 local second = 1000
 local minute = 60 * second
 
-Config.EarlyRespawnTimer          = 0.2 * minute  -- Time til respawn is available
+Config.EarlyRespawnTimer          = 6 * minute  -- Time til respawn is available
 Config.BleedoutTimer              = 300 * minute -- Time til the player bleeds out
 
 Config.EnablePlayerManagement     = true
@@ -28,6 +28,7 @@ Config.EarlyRespawnFine           = false
 Config.EarlyRespawnFineAmount     = 5000
 
 Config.RespawnPoint = { coords = vector3(341.0, -1397.3, 32.5), heading = 48.5 }
+Config.RespawnPointJailed = { coords = vector3(1641.64, 2571.08, 45.56), heading = 48.5 }
 
 Config.Hospitals = {
 

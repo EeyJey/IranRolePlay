@@ -1,7 +1,7 @@
 Config = {
 	Locale = 'en',
 	DrawDistance = 100,
-	Price = 15000,
+	Price = 7000,
 	DamageMultiplier = 5,
 	PropertyGarages = true, -- Enabling allows use of Property Garages if you own a property at location.
 	BlipInfos = {
