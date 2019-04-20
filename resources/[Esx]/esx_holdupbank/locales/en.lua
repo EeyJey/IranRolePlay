@@ -15,10 +15,10 @@ Locales['en'] = {
 	['do_not_move'] = ', Drill Ro Vel Nakonid!',
 	['alarm_triggered'] = 'Ajire Dozdi Fa\'al Shod',
 	['hold_pos'] = '6 Daqiqe Be Kareton Edame Bedid, Sepas Pool Ro Daryaft Konid',
-	['robbery_complete'] = '~r~ Robbery Anjam Shod.~s~ ~h~ Run! ',
-	['robbery_complete_at'] = '~r~ Robbery Kamel Mishavad Dar: ~b~',
+	['robbery_complete'] = '~r~Robbery Anjam Shod.~s~ ~h~ Run! ',
+	['robbery_complete_at'] = '~r~Robbery Kamel Mishavad Dar: ~b~',
 	['min_two_police'] = 'Tedade Police Haye Morede Niyaz Baraye Robb: ',
-	['robbery_already'] = '~r~A Robbery Qablan Shoro Shode.',
+	['robbery_already'] = '~r~Robbery Qablan Shoro Shode.',
 	['drill'] = 'Shoma Hade Aghal Be Yek Drill Niyazmandid.',
 	['cant_robb'] = 'Police Ha Nemitavanand Bank Ro Robb Konand.'
 	
