@@ -63,7 +63,10 @@ files {
 	'html/img/backpack.png',
 	'html/img/health.png',
 	'html/img/stamina.png',
-	'html/img/breath.png'
+	'html/img/breath.png',
+	'html/img/armor.png',
+	'html/img/hungera.png',
+	'html/img/thirst.png',
 	
 
 }
