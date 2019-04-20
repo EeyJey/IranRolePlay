@@ -106,6 +106,7 @@ function OnPlayerDeath()
 			z = Config.RespawnPointJailed.coords.z
 		}
 		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
+		return
 	end 
 
 	IsDead = true
