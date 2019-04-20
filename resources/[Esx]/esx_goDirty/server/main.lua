@@ -3,12 +3,13 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
  RegisterServerEvent('esx_godirtyjob:pay')
   AddEventHandler('esx_godirtyjob:pay', function(amount)
+	amount = amount*3
  	local _source = source
  	local xPlayer = ESX.GetPlayerFromId(_source)
  	if xPlayer ~= nil and amount > 1 then
  		local money = xPlayer.getAccount('black_money').money
  		if money > amount or money == amount then
- 			xPlayer.addMoney(tonumber(amount)) -- Add Clean Money
+ 			xPlayer.addMoney(tonumber(amount/2)) -- Add Clean Money
  			xPlayer.removeAccountMoney('black_money', amount) -- Removes Dirty Money
  			TriggerClientEvent('esx:showNotification', _source, "You have ~g~cleaned: $" ..amount)
  		else
