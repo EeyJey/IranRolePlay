@@ -71,11 +71,8 @@ Citizen.CreateThread(function()
 		if pedhealth < preHealth then
 			TriggerEvent("sendLossHealth")
 			preHealth = pedhealth
-		-- elseif pedhealth > preHealth then
-			-- TriggerEvent("sendGainHealth")
-			-- preHealth = pedhealth
 		end
-		
+
 		local healthpcn = 0
 		if pedhealth < 100 then
 			healthpcn = 0

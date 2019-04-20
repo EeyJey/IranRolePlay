@@ -63,6 +63,7 @@ $(function(){
 });
 
 function updateHealth(health){
+	
 	var bgcolor = colourGradient(health/100, rgbEnd5, rgbStart5)
 	$('#health .bg').css('height', health + '%')
 	$('#health .bg').css('background-color', 'rgb(' + bgcolor[0] +','+ bgcolor[1] +','+ bgcolor[2] +')')
@@ -105,6 +106,16 @@ function updateStatus(status){
 	var hunger = status[0]
 	var thirst = status[1]
 	var drunk = status[2]
+	if(hunger.percent < 10){
+		$('#hungera').show();
+	}else{
+		$('#hungera').hide();
+	}
+	if(thirst.percent < 10){
+		$('#thirst').show();
+	}else{
+		$('#thirst').hide();
+	}
 	$('#hunger .bg').css('height', hunger.percent+'%')
 	$('#water .bg').css('height', thirst.percent+'%')
 	$('#drunk .bg').css('height', drunk.percent+'%');
