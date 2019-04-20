@@ -100,11 +100,14 @@ end)
 function OnPlayerDeath()
 	
 	if ESX.GetPlayerData().jailed == 1 then
+		TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
+
 		local formattedCoords	= {
 			x = Config.RespawnPointJailed.coords.x,
 			y = Config.RespawnPointJailed.coords.y,
 			z = Config.RespawnPointJailed.coords.z
 		}
+
 		ESX.SetPlayerData('lastPosition', formattedCoords)
 		ESX.SetPlayerData('loadout', {})
 		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
