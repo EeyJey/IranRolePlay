@@ -28,7 +28,7 @@ Config.EarlyRespawnFine           = false
 Config.EarlyRespawnFineAmount     = 5000
 
 Config.RespawnPoint = { coords = vector3(341.0, -1397.3, 32.5), heading = 48.5 }
-Config.RespawnPointJailed = { coords = vector3(1641.64, 2571.08, 45.56), heading = 48.5 }
+Config.RespawnPointJailed = { coords = vector3(1799, 2483, -122), heading = 300}
 
 Config.Hospitals = {
 

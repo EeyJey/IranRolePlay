@@ -98,6 +98,16 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
+	
+	if ESX.GetPlayerData().jailed == 1 then
+		local formattedCoords	= {
+			x = Config.RespawnPointJailed.coords.x,
+			y = Config.RespawnPointJailed.coords.y,
+			z = Config.RespawnPointJailed.coords.z
+		}
+		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
+	end 
+
 	IsDead = true
 	ESX.UI.Menu.CloseAll()
 	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
@@ -279,7 +289,7 @@ function StartDeathTimer()
 			if not Config.EarlyRespawnFine then
 				text = text .. _U('respawn_bleedout_prompt')
 
-				if IsControlPressed(0, Keys['E']) and timeHeld > 60 then
+				if IsControlPressed(0, Keys['E']) and timeHeld > 60  then
 					RemoveItemsAfterRPDeath()
 					break
 				end
@@ -323,24 +333,13 @@ function RemoveItemsAfterRPDeath()
 		end
 
 		ESX.TriggerServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function()
-			local formattedCoords
-			print('----------'..ESX.PlayerData.jailed)
-			if ESX.PlayerData.jailed then
-				formattedCoords	= {
-					x = Config.RespawnPointJailed.coords.x,
-					y = Config.RespawnPointJailed.coords.y,
-					z = Config.RespawnPointJailed.coords.z
-				}
-			else
-				formattedCoords	= {
-					x = Config.RespawnPoint.coords.x,
-					y = Config.RespawnPoint.coords.y,
-					z = Config.RespawnPoint.coords.z
-				}
-			end 
+			local formattedCoords	= {
+				x = Config.RespawnPoint.coords.x,
+				y = Config.RespawnPoint.coords.y,
+				z = Config.RespawnPoint.coords.z
+			}
 			ESX.SetPlayerData('lastPosition', formattedCoords)
 			ESX.SetPlayerData('loadout', {})
-
 			TriggerServerEvent('esx:updateLastPosition', formattedCoords)
 			RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPoint.heading)
 
