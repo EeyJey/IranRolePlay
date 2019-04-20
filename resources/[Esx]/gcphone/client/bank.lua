@@ -3,7 +3,7 @@
 --====================================================================================
 
 
---      Appeller SendNUIMessage({event = 'updateBankbalance', banking = xxxx})
+--      Appeller SendNUIMessage({event = 'updateBank', banking = xxxx})
 --      à la connection & à chaque changement du compte
 
 
@@ -13,37 +13,38 @@
 local bank = 0
 RegisterNetEvent('es:displayBank')
 AddEventHandler('es:displayBank', function(a)
-  print('BANK ', a)
-	SendNUIMessage({event = 'updateBankbalance', banking = a})
+	bank = a
+	SendNUIMessage({event = 'updateBank', banking = a})
 	TriggerServerEvent('bank:getbank') 
 end)
 
-RegisterNetEvent('es:loadBank')
-AddEventHandler('es:displayBank', function(a)
-	TriggerServerEvent('bank:getbank') 
+RegisterNetEvent('gcPhone:loadBank')
+AddEventHandler('gcPhone:loadBank', function(a)
+	bank = a
+	SendNUIMessage({event = 'updateBank', banking = bank})
 end)
 
 
 RegisterNetEvent("es:addedBank")
 AddEventHandler("es:addedBank", function(m, native)
   bank = bank + m
-  SendNUIMessage({event = 'updateBankbalance', banking = a})
+  SendNUIMessage({event = 'updateBank', banking = bank})
 end)
 
 RegisterNetEvent("es:removedBank")
 AddEventHandler("es:removedBank", function(m, native, current)
   bank = bank - m
-  SendNUIMessage({event = 'updateBankbalance', banking = a})
+  SendNUIMessage({event = 'updateBank', banking = bank})
 end)
 
 RegisterNetEvent('banking:updateBalance')
 AddEventHandler('banking:updateBalance', function(bank)
-    SendNUIMessage({event = 'updateBankbalance', banking = bank})
+    SendNUIMessage({event = 'updateBank', banking = bank})
 end)
 
 RegisterNetEvent('esx:setAccountMoney')
 AddEventHandler('esx:setAccountMoney', function(account)
   if account.name == 'bank' then
-    SendNUIMessage({event = 'updateBankbalance', banking = account.money})
+    SendNUIMessage({event = 'updateBank', banking = account.money})
   end 
 end)

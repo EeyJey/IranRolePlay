@@ -1,3 +1,6 @@
+ESX              = nil
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
 --====================================================================================
 -- #Author: Jonathan D @Gannon
 -- #Version 2.0
@@ -536,13 +539,14 @@ end)
 --  OnLoad
 --====================================================================================
 AddEventHandler('es:playerLoaded',function(source)
+	local _source = source
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
     getOrGeneratePhoneNumber(sourcePlayer, identifier, function (myPhoneNumber)
         TriggerClientEvent("gcPhone:myPhoneNumber", sourcePlayer, myPhoneNumber)
         TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
         TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
-		TriggerClientEvent("es:loadBank", sourcePlayer)
+		TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
 		
     end)
 end)
@@ -550,6 +554,7 @@ end)
 -- Just For reload
 RegisterServerEvent('gcPhone:allUpdate')
 AddEventHandler('gcPhone:allUpdate', function()
+	local _source = source
     local sourcePlayer = tonumber(source)
     local identifier = getPlayerID(source)
     local num = getNumberPhone(identifier)
@@ -557,6 +562,7 @@ AddEventHandler('gcPhone:allUpdate', function()
     TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
     TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
     TriggerClientEvent('gcPhone:getBourse', sourcePlayer, getBourse())
+	TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
     sendHistoriqueCall(sourcePlayer, num)
 end)
 
@@ -686,20 +692,8 @@ function onRejectFixePhone(source, infoCall, rtcAnswer)
     
 end
 
-local function getBankFromUser(id_user)
-	local xPlayer = ESX.GetPlayerFromId(id_user)
+function getBankFromUser(playerSource)
+	local xPlayer = ESX.GetPlayerFromId(playerSource)
 	local account = xPlayer.getAccount('bank')
 	return account.money
 end
-
-RegisterServerEvent('bank:getbank')
-AddEventHandler('bank:getbank', function()
-	local _source = tonumber(source)
-	print("source: ", _source)
-	local xPlayer = ESX.GetPlayerFromId(_source)
-	if xPlayer ~= nil then
-		local bank = getBankFromUser(_source)
-		print("bank: ", bank)
-		TriggerClientEvent("banking:updateBalance", _source, bank)
-	end
-end)

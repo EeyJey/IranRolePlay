@@ -535,7 +535,7 @@ webpackJsonp([0], [, , , , , , function(t, e, n) {
                     m.a.commit("SET_APPELS_HISTORIQUE", t.historique)
                 }
             }, {
-                key: "updateBankbalance",
+                key: "onupdateBank",
                 value: function(t) {
                     m.a.commit("SET_BANK_AMONT", t.banking)
                 }
