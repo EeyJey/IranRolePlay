@@ -41,6 +41,12 @@ $(function(){
 			} else{
 				$('#gas').hide();
 			}
+		}else if (event.data.action == "toggleHealthLoss"){
+			if (event.data.show){
+				$('#health').css('box-shadow', '0 0 10px 0 rgba(255,0,0,1)');
+			} else{
+				$('#health').css('box-shadow', '0 0 0 0');
+			}
 		}else if (event.data.action == "updateCarStatus"){
 			updateCarStatus(event.data.status)
 		}else if (event.data.action == "updateHealth"){
