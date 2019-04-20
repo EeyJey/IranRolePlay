@@ -42,6 +42,7 @@ AddEventHandler('esx_jail:jail', function(jailTime)
 			
 			ESX.Game.Teleport(playerPed, JailLocation)
 			IsJailed = true
+			ESX.SetPlayerData('jailed',true)
 			unjail = false
 			while JailTime > 0 and not unjail do
 				playerPed = PlayerPedId()
@@ -70,6 +71,7 @@ AddEventHandler('esx_jail:jail', function(jailTime)
 			TriggerServerEvent('esx_jail:unjailTime', -1)
 			ESX.Game.Teleport(playerPed, Config.JailBlip)
 			IsJailed = false
+			ESX.SetPlayerData('jailed',false)
 
 			-- Change back the user skin
 			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)

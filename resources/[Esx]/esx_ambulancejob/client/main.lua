@@ -323,12 +323,21 @@ function RemoveItemsAfterRPDeath()
 		end
 
 		ESX.TriggerServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function()
-			local formattedCoords = {
-				x = Config.RespawnPoint.coords.x,
-				y = Config.RespawnPoint.coords.y,
-				z = Config.RespawnPoint.coords.z
-			}
-
+			local formattedCoords
+			print('----------'..ESX.PlayerData.jailed)
+			if ESX.PlayerData.jailed then
+				formattedCoords	= {
+					x = Config.RespawnPointJailed.coords.x,
+					y = Config.RespawnPointJailed.coords.y,
+					z = Config.RespawnPointJailed.coords.z
+				}
+			else
+				formattedCoords	= {
+					x = Config.RespawnPoint.coords.x,
+					y = Config.RespawnPoint.coords.y,
+					z = Config.RespawnPoint.coords.z
+				}
+			end 
 			ESX.SetPlayerData('lastPosition', formattedCoords)
 			ESX.SetPlayerData('loadout', {})
 
