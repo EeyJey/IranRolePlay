@@ -107,12 +107,13 @@ function OnPlayerDeath()
 			y = Config.RespawnPointJailed.coords.y,
 			z = Config.RespawnPointJailed.coords.z
 		}
+		ESX.UI.Menu.CloseAll()
 
 		ESX.SetPlayerData('lastPosition', formattedCoords)
 		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
 		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
 
-		StopScreenEffect('DeathFailOut')
+	StartScreenEffect('DeathFailOut', 0, false)
 		return
 	end 
 
