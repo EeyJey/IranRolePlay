@@ -613,11 +613,18 @@ TriggerEvent('es:addGroupCommand', 'sw', "mod", function(source, args, user)
 		if(tonumber(args[1]) and GetPlayerName(tonumber(args[1])))then
 			local player = tonumber(args[1])
 
+			local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
+			local argnum = #args-1;
+			for i = 2, argnum do
+				text = text .. ' ' .. args[i]
+			end
+			text = text .. ''
+			
 			-- User permission check
 			TriggerEvent("es:getPlayerFromId", player, function(target)
 				if(target)then
-					TriggerClientEvent('chat:addMessage', player, { args = {"^1Admin", args[2]} })--"You have been teleported to by ^2" .. GetPlayerName(source)} })
-					TriggerClientEvent('chat:addMessage', source, { args = {"^1Admin", args[2]} })--"Teleported to player ^2" .. GetPlayerName(player) .. ""} })
+					TriggerClientEvent('chat:addMessage', player, { args = {"^1Admin", text })--"You have been teleported to by ^2" .. GetPlayerName(source)} })
+					TriggerClientEvent('chat:addMessage', source, { args = {"^1Admin", text })--"Teleported to player ^2" .. GetPlayerName(player) .. ""} })
 				end
 			end)
 		else
