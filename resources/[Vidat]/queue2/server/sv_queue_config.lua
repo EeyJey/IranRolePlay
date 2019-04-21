@@ -9,6 +9,7 @@ Config.Priority = {
     ["steam:11000011783a55b"] = 85, -- Arman Mekanik
     ["steam:11000010a1b83df"] = 85, -- MaMad Owner
     ["steam:110000111fc352b"] = 85, -- AJ Owner
+    ["steam:11000010494a934"] = 80, -- Obi Vika
     ["steam:110000118eae7af"] = 80, -- hooman :| dahanamo gaiidi :|
     ["steam:11000010934a428"] = 80, -- Quiet^ Admin
     ["steam:11000010b6e4e2c"] = 80, -- NoName Admin
