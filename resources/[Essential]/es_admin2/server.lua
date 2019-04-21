@@ -611,14 +611,6 @@ end, {help = "Slap a user", params = {{name = "userid", help = "The ID of the pl
 TriggerEvent('es:addGroupCommand', 'sw', "mod", function(source, args, user)
 	if args[1] then
 		if(tonumber(args[1]) and GetPlayerName(tonumber(args[1])))then
-			local player = tonumber(args[1])
-
-			local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
-			local argnum = #args-1;
-			for i = 2, argnum do
-				text = text .. ' ' .. args[i]
-			end
-			text = text .. ''
 			
 			-- User permission check
 			TriggerEvent("es:getPlayerFromId", player, function(target)
