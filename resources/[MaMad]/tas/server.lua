@@ -48,14 +48,6 @@ end)
 
 
 TriggerEvent('es:addCommand', 'tasfake', function(source, args, user)
-	local lngth = tablelength(args)
-	if(lngth ~= 1) then
-		TriggerEvent('tas:error', source, "/tas (tedad)")
-		return
-	end
-	
-	
-	
 	local name = getIdentity(source)
 
 	local text = table.concat(args,", ",2)
