@@ -47,14 +47,6 @@ TriggerEvent('es:addCommand', 'tas', function(source, args, user)
 end)
 
 
-TriggerEvent('es:addCommand', 'tasfake', function(source, args, user)
-	local name = getIdentity(source)
-
-	local text = table.concat(args,", ",2)
-	
-	TriggerClientEvent("sendRollThatShit", source)
-	TriggerClientEvent("sendTasMessage", -1, source, "^1Tas(^3" ..name.firstname.. "^1)", text)
-end)
 
 AddEventHandler('tas:error', function(source, message)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1Tas', message } } )
