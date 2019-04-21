@@ -13,11 +13,11 @@ m.suffix = '^6.'
 -- You can make as many messages as you want.
 -- You can use ^0-^9 in your messages to change text color.
 m.messages = {   
-    'Discord: https://discord.gg/2wvydG',
-    'Baraye tabligh karetoon az /tabligh (jaye /twt) estefade konid',
+    'Discord: https://discord.gg/vyK2WY2',
     'Pasgahe Police, Bimarestan, Zendan NCZ hastand, yani nabayad dar anha khalaf kard.',
-    'Be server Iran Role Play khosh amadid',
+    'Be server ^1Iran ^7Role ^2Play khosh amadid',
     'Hatman baraye report player ha az aks/film estefade konid',
+    'Baraye didane ID player ha az "G" estefade konid',
 }
 
 -- Player identifiers on this list will not receive any messages.
