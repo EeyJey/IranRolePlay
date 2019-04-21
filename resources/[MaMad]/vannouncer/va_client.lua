@@ -15,7 +15,7 @@ m.suffix = '^6.'
 m.messages = {   
     'Discord: https://discord.gg/vyK2WY2',
     'Pasgahe Police, Bimarestan, Zendan NCZ hastand, yani nabayad dar anha khalaf kard.',
-    'Be server ^1Iran ^7Role ^2Play khosh amadid',
+    'Be server ^1Iran ^7Role ^2Play ^6khosh amadid',
     'Hatman baraye report player ha az aks/film estefade konid',
     'Baraye didane ID player ha az "G" estefade konid',
 }

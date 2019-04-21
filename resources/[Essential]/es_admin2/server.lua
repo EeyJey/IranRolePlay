@@ -607,6 +607,29 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
 end, {help = "Slap a user", params = {{name = "userid", help = "The ID of the player"}}})
 
+-- SW
+TriggerEvent('es:addGroupCommand', 'sw', "mod", function(source, args, user)
+	if args[1] then
+		if(tonumber(args[1]) and GetPlayerName(tonumber(args[1])))then
+			local player = tonumber(args[1])
+
+			-- User permission check
+			TriggerEvent("es:getPlayerFromId", player, function(target)
+				if(target)then
+					TriggerClientEvent('chat:addMessage', player, { args = {"^1Admin", args[2]} })--"You have been teleported to by ^2" .. GetPlayerName(source)} })
+					TriggerClientEvent('chat:addMessage', source, { args = {"^1Admin", args[2]} })--"Teleported to player ^2" .. GetPlayerName(player) .. ""} })
+				end
+			end)
+		else
+			TriggerClientEvent('chat:addMessage', source, { args = {"^1System", "Incorrect player ID"}})
+		end
+	else
+		TriggerClientEvent('chat:addMessage', source, { args = {"^1System", "Incorrect player ID"}})
+	end
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
+end, {help = "Whisper to a user secretly", params = {{name = "userid", help = "The ID of the player"},{name = "message", help="Message"}}})
+
 -- Goto
 TriggerEvent('es:addGroupCommand', 'goto', "mod", function(source, args, user)
 	if args[1] then
