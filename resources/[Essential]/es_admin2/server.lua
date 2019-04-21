@@ -612,7 +612,7 @@ TriggerEvent('es:addGroupCommand', 'sw', "mod", function(source, args, user)
 	if args[1] then
 		if(tonumber(args[1]) and GetPlayerName(tonumber(args[1])))then
 			local player = tonumber(args[1])
-			table.remove(x, 1)
+			table.remove(args, 1)
 			local text = table.concat( args, " " )
 
 			-- User permission check
