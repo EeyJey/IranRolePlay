@@ -4,6 +4,19 @@ local Vehicles = nil
 local VehOwner = nil
 local owner = nil
 
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
+
 RegisterServerEvent('esx_lscustommeca:checkPlayer')
 AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
 	local platee = plate
@@ -12,8 +25,8 @@ AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
 		local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "@plate"', {
 			['@plate'] = platee
 		})
-		testRes = table.concat(result,", ")
-		print("resault: " .. testRes)
+		print("resault: ")
+		dump(result)
 		owner = result[1].owner
 
 	end
