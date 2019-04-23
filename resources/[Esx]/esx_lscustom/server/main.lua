@@ -17,18 +17,12 @@ function dump(o)
 	end
  end
 
-RegisterServerEvent('esx_lscustommeca:checkPlayer')
-AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
-	local platee = plate
+ TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
+	local plate = table.concat(args," ",1,2)
+	print(plate)
 	if owner == nil then
-		print('aaaaaaaaaaaaaaa '.. platee)
-		local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "@plate"', {
-			['@plate'] = platee
-		})
-		print("resault: ")
-		dump(result)
+		local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. plate ..'"', {})
 		owner = result[1].owner
-
 	end
 	print("My Owner is:" .. owner)
 	local xPlayers = ESX.GetPlayers()
@@ -37,13 +31,47 @@ AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
 	for i=1, #xPlayers, 1 do
 		player = xPlayers[i]
 
-		local identifier = GetPlayerIdentifiers(player)
-		print("My Owner sql Identifier is:" .. identifier)
-		if owner == identifier then
+		local tmpIdent = GetPlayerIdentifiers(player)[1]
+		print(dump(tmpIdent))
+		print("My Owner sql Identifier is:" .. tmpIdent)
+		if VehOwner == nil then
+			print("shit")
+		end
+	
+		if owner == tmpIdent then
 			VehOwner = ESX.GetPlayerFromId(player)
+			print(dump(VehOwner))
 			break
 		end
 	end
+end)
+
+
+
+
+RegisterServerEvent('esx_lscustommeca:checkPlayer')
+AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
+	-- local platee = plate
+	-- if owner == nil then
+	-- 	local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. plate ..'"', {})
+	-- 	owner = result[1].owner
+	-- end
+	-- print("My Owner is:" .. owner)
+	-- local xPlayers = ESX.GetPlayers()
+	-- local player
+
+	-- for i=1, #xPlayers, 1 do
+	-- 	player = xPlayers[i]
+
+	-- 	local tmpIdent = GetPlayerIdentifiers(player)
+	-- 	print(dump(tmpIdent))
+	-- 	print("My Owner sql Identifier is:" .. tmpIdent)
+	-- 	if owner == tmpIdent then
+	-- 		VehOwner = ESX.GetPlayerFromId(player)
+	-- 		break
+	-- 	end
+	-- end
+	-- print(dump(tmpIdent))
 end)
 RegisterServerEvent('esx_lscustommeca:buyMod')
 AddEventHandler('esx_lscustommeca:buyMod', function(price)
