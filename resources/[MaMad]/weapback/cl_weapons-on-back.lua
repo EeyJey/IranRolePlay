@@ -41,9 +41,9 @@ local SETTINGS = {
 }
 
 local attached_weapons = {}
+local attachOneOnly = true
 
 Citizen.CreateThread(function()
-    local attachOneOnly = true
   while true do
       local me = GetPlayerPed(-1)
       CheckForAttach()
