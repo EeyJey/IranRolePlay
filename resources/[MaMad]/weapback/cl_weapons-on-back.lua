@@ -12,37 +12,38 @@ local SETTINGS = {
     y_rotation = 165.0,
     z_rotation = 0.0,
     compatable_weapon_hashes = {
-        -- melee:
-        --["prop_golf_iron_01"] = 1141786504, -- positioning still needs work
-        ["w_me_bat"] = -1786099057,
-        ["prop_ld_jerrycan_01"] = 883325847,
+         -- ["w_sg_sawnoff"] = 2017895192 don't show, maybe too small?
+        -- launchers:
+        ["w_lr_firework"] = 2138347493
+        -- sniper rifles:
+        ["w_sr_sniperrifle"] = 100416529,
         -- assault rifles:
         ["w_ar_carbinerifle"] = -2084633992,
         ["w_ar_assaultrifle"] = -1074790547,
         ["w_ar_specialcarbine"] = -1063057011,
         ["w_ar_bullpuprifle"] = 2132975508,
         ["w_ar_advancedrifle"] = -1357824103,
-        -- sub machine guns:
-        ["w_sb_microsmg"] = 324215364,
-        ["w_sb_assaultsmg"] = -270015777,
-        ["w_sb_smg"] = 736523883,
-        ["w_sb_gusenberg"] = 1627465347,
-        -- sniper rifles:
-        ["w_sr_sniperrifle"] = 100416529,
         -- shotguns:
         ["w_sg_assaultshotgun"] = -494615257,
         ["w_sg_bullpupshotgun"] = -1654528753,
         ["w_sg_pumpshotgun"] = 487013001,
         ["w_ar_musket"] = -1466123874,
-        -- ["w_sg_sawnoff"] = 2017895192 don't show, maybe too small?
-        -- launchers:
-        ["w_lr_firework"] = 2138347493
+         -- sub machine guns:
+         ["w_sb_microsmg"] = 324215364,
+         ["w_sb_assaultsmg"] = -270015777,
+         ["w_sb_smg"] = 736523883,
+         ["w_sb_gusenberg"] = 1627465347,
+        -- melee:
+        --["prop_golf_iron_01"] = 1141786504, -- positioning still needs work
+        ["w_me_bat"] = -1786099057,
+        ["prop_ld_jerrycan_01"] = 883325847,
     }
 }
 
 local attached_weapons = {}
 
 Citizen.CreateThread(function()
+    local attachOneOnly = true
   while true do
       local me = GetPlayerPed(-1)
       ---------------------------------------
@@ -50,7 +51,8 @@ Citizen.CreateThread(function()
       ---------------------------------------
       for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
           if HasPedGotWeapon(me, wep_hash, false) then
-              if not attached_weapons[wep_name] then
+              if not attached_weapons[wep_name] and attachOneOnly then
+                    attachOneOnly = false
                   AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
               end
           end
@@ -62,6 +64,7 @@ Citizen.CreateThread(function()
           -- equipped? delete it from back:
           if GetSelectedPedWeapon(me) ==  attached_object.hash or not HasPedGotWeapon(me, attached_object.hash, false) then -- equipped or not in weapon wheel
             DeleteObject(attached_object.handle)
+            attachOneOnly = true
             attached_weapons[name] = nil
           end
       end
