@@ -14,7 +14,7 @@ local SETTINGS = {
     compatable_weapon_hashes = {
          -- ["w_sg_sawnoff"] = 2017895192 don't show, maybe too small?
         -- launchers:
-        ["w_lr_firework"] = 2138347493
+        ["w_lr_firework"] = 2138347493,
         -- sniper rifles:
         ["w_sr_sniperrifle"] = 100416529,
         -- assault rifles:
@@ -36,7 +36,7 @@ local SETTINGS = {
         -- melee:
         --["prop_golf_iron_01"] = 1141786504, -- positioning still needs work
         ["w_me_bat"] = -1786099057,
-        ["prop_ld_jerrycan_01"] = 883325847,
+        ["prop_ld_jerrycan_01"] = 883325847
     }
 }
 
