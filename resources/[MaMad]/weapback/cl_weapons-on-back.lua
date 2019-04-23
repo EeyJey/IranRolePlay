@@ -32,55 +32,41 @@ local SETTINGS = {
          ["w_sb_microsmg"] = 324215364,
          ["w_sb_assaultsmg"] = -270015777,
          ["w_sb_smg"] = 736523883,
-         ["w_sb_gusenberg"] = 1627465347,
-        -- melee:
-        --["prop_golf_iron_01"] = 1141786504, -- positioning still needs work
-        ["w_me_bat"] = -1786099057,
-        ["prop_ld_jerrycan_01"] = 883325847
+         ["w_sb_gusenberg"] = 1627465347
     }
 }
 
 local attached_weapons = {}
-local attachOneOnly = true
 
 Citizen.CreateThread(function()
+    local attachOneOnly = true
   while true do
       local me = GetPlayerPed(-1)
-      CheckForAttach()
-      CheckForDetach()
-      CheckForAttach()
-
-  Wait(0)
-  end
-end)
-
-function CheckForAttach()
-    ---------------------------------------
+      ---------------------------------------
       -- attach if player has large weapon --
       ---------------------------------------
       for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
-        if HasPedGotWeapon(me, wep_hash, false) then
-            if not attached_weapons[wep_name] and attachOneOnly then
-                  attachOneOnly = false
-                AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
-            end
-        end
-    end
-end
-
-function CheckForDetach()
-    --------------------------------------------
+          if HasPedGotWeapon(me, wep_hash, false) then
+              if not attached_weapons[wep_name] and attachOneOnly then
+                    attachOneOnly = false
+                  AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
+              end
+          end
+      end
+      --------------------------------------------
       -- remove from back if equipped / dropped --
       --------------------------------------------
       for name, attached_object in pairs(attached_weapons) do
-        -- equipped? delete it from back:
-        if GetSelectedPedWeapon(me) ==  attached_object.hash or not HasPedGotWeapon(me, attached_object.hash, false) then -- equipped or not in weapon wheel
-          DeleteObject(attached_object.handle)
-          attachOneOnly = true
-          attached_weapons[name] = nil
-        end
-    end
-end
+          -- equipped? delete it from back:
+          if GetSelectedPedWeapon(me) ==  attached_object.hash or not HasPedGotWeapon(me, attached_object.hash, false) then -- equipped or not in weapon wheel
+            DeleteObject(attached_object.handle)
+            attachOneOnly = true
+            attached_weapons[name] = nil
+          end
+      end
+  Wait(0)
+  end
+end)
 
 function AttachWeapon(attachModel,modelHash,boneNumber,x,y,z,xR,yR,zR, isMelee)
 	local bone = GetPedBoneIndex(GetPlayerPed(-1), boneNumber)
