@@ -50,7 +50,7 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 		'default', GetCurrentResourceName(), menuname,
 		{
 			title = menutitle,
-			align = 'top-left',
+			align = 'top-right',
 			elements = elems
 		},
 		function(data, menu) -- on validate
@@ -399,8 +399,11 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not lsMenuIsShowed and isInLSMarker then				
 				lsMenuIsShowed = true
-
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
+				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
+				plate = vehicleProps.plate
+				Citizen.Trace("car: " .. plate)
+				TriggerServerEvent('esx_lscustommeca:checkPlayer', plate)
 				FreezeEntityPosition(vehicle, true)
 
 				myCar = ESX.Game.GetVehicleProperties(vehicle)

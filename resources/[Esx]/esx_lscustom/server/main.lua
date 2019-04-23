@@ -1,7 +1,34 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local Vehicles = nil
+local VehOwner = nil
+local owner = nil
 
+RegisterServerEvent('esx_lscustommeca:checkPlayer')
+AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
+	local platee = plate
+	if(owner == nil) then
+		MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "@plate"', {
+			['@plate'] = platee
+		}, function(result)
+		owner = result[1]['owner']
+		end)
+	end
+	print("My Owner is:" .. owner)
+	local xPlayers = ESX.GetPlayers()
+	local player
+
+	for i=1, #xPlayers, 1 do
+		player = xPlayers[i]
+
+		local identifier = GetPlayerIdentifiers(player)
+		print("My Owner sql Identifier is:" .. identifier)
+		if owner == identifier then
+			VehOwner = ESX.GetPlayerFromId(player)
+			break
+		end
+	end
+end)
 RegisterServerEvent('esx_lscustommeca:buyMod')
 AddEventHandler('esx_lscustommeca:buyMod', function(price)
     local _source = source

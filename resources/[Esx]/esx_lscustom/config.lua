@@ -13,14 +13,14 @@ Config.Zones = {
         Hint  = _U('press_custom')
     },
 
-    ls2 = {
-        Pos   = { x = -165.0757, y = -1304.6994, z = 31.2077},
-        Size  = {x = 3.0, y = 3.0, z = 0.2},
-        Color = {r = 204, g = 204, b = 0},
-        Marker= 1,
-        Name  = "Los Santos Customs",
-        Hint  = _U('press_custom')
-    },
+    -- ls2 = {
+    --     Pos   = { x = -165.0757, y = -1304.6994, z = 31.2077},
+    --     Size  = {x = 3.0, y = 3.0, z = 0.2},
+    --     Color = {r = 204, g = 204, b = 0},
+    --     Marker= 1,
+    --     Name  = "Los Santos Customs",
+    --     Hint  = _U('press_custom')
+    -- },
 --     ls2 = {
 --		Pos   = { x = -1155.536, y = -2007.183, z = 12.744},
 --		Size  = {x = 3.0, y = 3.0, z = 0.2},

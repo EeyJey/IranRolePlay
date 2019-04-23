@@ -1,7 +1,7 @@
 ------------------ change this -------------------
 
 admins = {
-    'steam:110000105959047',
+    'steam:110000111fc352b',
     --'license:1234975143578921327',
 }
 
@@ -9,7 +9,7 @@ admins = {
 DynamicWeather = true
 
 --------------------------------------------------
-debugprint = false -- don't touch this unless you know what you're doing or you're being asked by Vespura to turn this on.
+debugprint = true -- don't touch this unless you know what you're doing or you're being asked by Vespura to turn this on.
 --------------------------------------------------
 
 
