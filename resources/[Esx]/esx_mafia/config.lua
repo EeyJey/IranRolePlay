@@ -34,11 +34,12 @@ Config.MafiaStations = {
     },
 
 	  AuthorizedVehicles = {
-		  { name = 'schafter3',  label = 'Shahrvandi' },
-		  { name = 'sandking',   label = '4X4' },
-		  { name = 'patriot2',   label = 'Patriot' },
-		  { name = 'burrito3',   label = 'Fourgonnette' },
-		  { name = 'mesa',       label = 'Tout-Terrain' },
+      { name = 'schafter3',  label = 'Schafter' },
+		  { name = 'contender',  label = 'Contender' },
+      { name = 'patriot',   label = 'Patriot' },
+		  { name = 'patriot2',   label = 'patriot limo' },
+		  { name = 'burrito3',   label = 'Van' },
+		  { name = 'mesa',       label = 'jeep' },
 	  },
 
     Cloakrooms = {
