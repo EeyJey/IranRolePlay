@@ -1,5 +1,6 @@
 ##############Ignore All#############
 /*
+resources/\[MaMad\]/spideything/config.lua
 ##########Except these files#########
 !.gitignore
 !server.zip

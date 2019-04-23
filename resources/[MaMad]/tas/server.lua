@@ -46,6 +46,8 @@ TriggerEvent('es:addCommand', 'tas', function(source, args, user)
 	TriggerClientEvent("sendTasMessage", -1, source, "^1Tas(^3" ..name.firstname.. "^1)", text)
 end)
 
+
+
 AddEventHandler('tas:error', function(source, message)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1Tas', message } } )
 end)
