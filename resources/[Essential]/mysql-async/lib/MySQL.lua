@@ -43,6 +43,19 @@ function MySQL.Sync.execute(query, params)
     return exports['mysql-async']:mysql_sync_execute(query, safeParameters(params))
 end
 
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
+
 ---
 -- Execute a query and fetch all results in an sync way
 --
@@ -59,7 +72,7 @@ function MySQL.Sync.fetchAll(query, params)
     end
     if params ~= nil then
         print("Params:")
-        print(table.concat(params,", "))
+        print(dump(params))
     end
     print("--------------")
     return exports['mysql-async']:mysql_sync_fetch_all(query, safeParameters(params))
