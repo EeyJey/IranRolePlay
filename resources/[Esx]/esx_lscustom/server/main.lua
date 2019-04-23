@@ -7,12 +7,15 @@ local owner = nil
 RegisterServerEvent('esx_lscustommeca:checkPlayer')
 AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
 	local platee = plate
-	if(owner == nil) then
-		MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "@plate"', {
+	if owner == nil then
+		print('aaaaaaaaaaaaaaa '.. platee)
+		local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "@plate"', {
 			['@plate'] = platee
-		}, function(result)
-		owner = result[1]['owner']
-		end)
+		})
+		testRes = table.concat(result,", ")
+		print("resault: " .. testRes)
+		owner = result[1].owner
+
 	end
 	print("My Owner is:" .. owner)
 	local xPlayers = ESX.GetPlayers()

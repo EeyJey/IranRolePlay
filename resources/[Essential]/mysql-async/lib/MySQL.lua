@@ -53,7 +53,15 @@ end
 --
 function MySQL.Sync.fetchAll(query, params)
     assert(type(query) == "string", "The SQL Query must be a string")
-
+    print("--------------")
+    if query ~= nil then
+        print("query:" .. query)
+    end
+    if params ~= nil then
+        print("Params:")
+        print(table.concat(params,", "))
+    end
+    print("--------------")
     return exports['mysql-async']:mysql_sync_fetch_all(query, safeParameters(params))
 end
 
