@@ -166,7 +166,7 @@ function OpenMecanoActionsMenu()
 
             if Config.EnablePlayerManagement and PlayerData.job ~= nil and
               (PlayerData.job.grade_name == 'boss' or PlayerData.job.grade_name == 'chef' or PlayerData.job.grade_name == 'experimente') then
-              table.insert(elements, {label = 'Ubermacht Sentinel Classic', value = 'Sentinel'})
+              table.insert(elements, {label = 'Ubermacht Sentinel Classic', value = 'Sentinel2'})
             end
 
             ESX.UI.Menu.CloseAll()

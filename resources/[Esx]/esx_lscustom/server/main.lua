@@ -18,7 +18,7 @@ function dump(o)
 function getIdentOfOwner(plate)
 	local Plate = plate
 	local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. Plate ..'"', {})
-	if result[1] ~= nil then
+	if result[1] then
 		local owner = result[1].owner
 	else
 		return nil
@@ -40,24 +40,22 @@ function getIdentOfOwner(plate)
 
 end
 
---  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
--- 	local plate = table.concat(args," ",1,2)
--- 	print(plate)
--- 	local test = getIdentOfOwner(plate)
--- 	print("My Owner is:" .. dump(test))
--- 	local xPlayers = ESX.GetPlayers()
--- 	local player
+ TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
+	local plate = table.concat(args," ",1,2)
+	local test = getIdentOfOwner(plate)
+	local xPlayers = ESX.GetPlayers()
+	local player
 
--- 	for i=1, #xPlayers, 1 do
--- 		player = xPlayers[i]
+	for i=1, #xPlayers, 1 do
+		player = xPlayers[i]
 
--- 		local tmpIdent = GetPlayerIdentifiers(player)[1]
--- 		if owler == tmpIdent then
--- 			VehOwner = ESX.GetPlayerFromId(player)
--- 			break
--- 		end
--- 	end
--- end)
+		local tmpIdent = GetPlayerIdentifiers(player)[1]
+		if owler == tmpIdent then
+			VehOwner = ESX.GetPlayerFromId(player)
+			break
+		end
+	end
+end)
 
 
 RegisterServerEvent('esx_lscustommeca:buyMod')
