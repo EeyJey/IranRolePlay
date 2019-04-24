@@ -72,7 +72,6 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 	TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mecano', function(account)
 		societyAccount = account
 	end)
-	dump(buyer)
 	if buyer then
 		price = tonumber(price)
 		
