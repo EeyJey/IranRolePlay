@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
 					Citizen.Wait(100)
 				end
 
-				if handsup  then
+				if handsup then
 					handsup = false
 					ClearPedSecondaryTask(playerPed)
 					TriggerServerEvent('esx_thief:update', handsup)
@@ -41,10 +41,11 @@ Citizen.CreateThread(function()
 					TriggerServerEvent('esx_thief:update', handsup)
 				end
 
-				if IsEntityDead(playerPed) then
-					TriggerServerEvent('esx_thief:update', true)
-				end 
 			end
 		end
+		
+		if IsEntityDead(playerPed) then
+			TriggerServerEvent('esx_thief:update', true)
+		end 
 	end
 end)

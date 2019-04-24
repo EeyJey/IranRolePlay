@@ -78,6 +78,19 @@ function OpenStealMenu(target, target_id)
 			end
 		end
 
+		if Config.EnableWeapons then
+            table.insert(elements, {label = '=== ' .. _U('gun_label') .. ' ===', value = nil})
+
+            for i=1, #data.weapons, 1 do
+                table.insert(elements, {
+                    label    = ESX.GetWeaponLabel(data.weapons[i].name) .. ' x' .. data.weapons[i].ammo,
+                    value    = data.weapons[i].name,
+                    type     = 'item_weapon',
+                    amount   = data.weapons[i].ammo
+                })
+            end
+        end
+
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'steal_inventory', {
 			title  = _U('target_inventory'),
 			elements = elements,
