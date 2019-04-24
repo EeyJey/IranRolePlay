@@ -20,34 +20,26 @@ function getIdentOfOwner(plate)
 	local owner
 	if result[1] then
 		owner = result[1].owner
-		print("We Got The Owner from SQL" .. dump(owner))
 	else
 		return nil
 	end
-		print("Thee sql owner still here" .. dump(owner))
 	local xPlayers = ESX.GetPlayers()
 	local player = nil
 
 	for i=1, #xPlayers, 1 do
 		player = xPlayers[i]
 		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		print(i .. "player id: " .. dump(tmpIdent))
-		print(i .. " owner id: " .. dump(owner))
 		if owner == tmpIdent then
 			local vehOwner = ESX.GetPlayerFromId(player)
-			print("Function work Correctly" .. dump(vehOwner))
 			return vehOwner
-		else
-			return nil
 		end
 	end
+	return nil
 end
 
  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
 	local plate = table.concat(args," ",1,2)
-	print(plate)
 	local test = getIdentOfOwner(plate)
-	print("My Owner is:" .. dump(test))
 	local xPlayers = ESX.GetPlayers()
 	local player
 
@@ -55,8 +47,6 @@ end
 		player = xPlayers[i]
 
 		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		print(dump(tmpIdent))
-		print("My Owner sql Identifier is:" .. tmpIdent)
 
 		if test == tmpIdent then
 			VehOwner = ESX.GetPlayerFromId(player)
@@ -69,7 +59,6 @@ end)
 RegisterServerEvent('esx_lscustommeca:buyMod')
 AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 	local buyer = getIdentOfOwner(plate)
-	print("buyer is: " .. dump(buyer))
 	local _source = source
 	local osaMechanic = ESX.GetPlayerFromId(_source)
 	local societyAccount = nil
