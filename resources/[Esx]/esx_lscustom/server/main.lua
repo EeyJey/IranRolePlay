@@ -1,7 +1,6 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local Vehicles = nil
-local owler = nil
 function dump(o)
 	if type(o) == 'table' then
 	   local s = '{ '
@@ -18,8 +17,9 @@ function dump(o)
 function getIdentOfOwner(plate)
 	local Plate = plate
 	local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. Plate ..'"', {})
+	local owner
 	if result[1] then
-		local owner = result[1].owner
+		owner = result[1].owner
 	else
 		return nil
 	end
@@ -32,12 +32,9 @@ function getIdentOfOwner(plate)
 		if owner == tmpIdent then
 			local vehOwner = ESX.GetPlayerFromId(player)
 			return vehOwner
-		else
-			return nil
 		end
-	
 	end
-
+	return nil
 end
 
  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
@@ -50,7 +47,8 @@ end
 		player = xPlayers[i]
 
 		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		if owler == tmpIdent then
+
+		if test == tmpIdent then
 			VehOwner = ESX.GetPlayerFromId(player)
 			break
 		end
@@ -67,8 +65,7 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 	TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mecano', function(account)
 		societyAccount = account
 	end)
-	dump(buyer)
-	if buyer ~= nil then
+	if buyer then
 		price = tonumber(price)
 		
 		if price < buyer.getMoney() then
