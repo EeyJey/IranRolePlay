@@ -1,19 +1,18 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local Vehicles = nil
-local owler = nil
-function dump(o)
-	if type(o) == 'table' then
-	   local s = '{ '
-	   for k,v in pairs(o) do
-		  if type(k) ~= 'number' then k = '"'..k..'"' end
-		  s = s .. '['..k..'] = ' .. dump(v) .. ','
-	   end
-	   return s .. '} '
-	else
-	   return tostring(o)
-	end
- end
+-- function dump(o)
+-- 	if type(o) == 'table' then
+-- 	   local s = '{ '
+-- 	   for k,v in pairs(o) do
+-- 		  if type(k) ~= 'number' then k = '"'..k..'"' end
+-- 		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+-- 	   end
+-- 	   return s .. '} '
+-- 	else
+-- 	   return tostring(o)
+-- 	end
+--  end
 
 function getIdentOfOwner(plate)
 	local Plate = plate
@@ -40,22 +39,22 @@ function getIdentOfOwner(plate)
 
 end
 
- TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
-	local plate = table.concat(args," ",1,2)
-	local test = getIdentOfOwner(plate)
-	local xPlayers = ESX.GetPlayers()
-	local player
+--  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
+-- 	local plate = table.concat(args," ",1,2)
+-- 	local test = getIdentOfOwner(plate)
+-- 	local xPlayers = ESX.GetPlayers()
+-- 	local player
 
-	for i=1, #xPlayers, 1 do
-		player = xPlayers[i]
+-- 	for i=1, #xPlayers, 1 do
+-- 		player = xPlayers[i]
 
-		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		if owler == tmpIdent then
-			VehOwner = ESX.GetPlayerFromId(player)
-			break
-		end
-	end
-end)
+-- 		local tmpIdent = GetPlayerIdentifiers(player)[1]
+-- 		if test == tmpIdent then
+-- 			VehOwner = ESX.GetPlayerFromId(player)
+-- 			break
+-- 		end
+-- 	end
+-- end)
 
 
 RegisterServerEvent('esx_lscustommeca:buyMod')
@@ -67,8 +66,7 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 	TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mecano', function(account)
 		societyAccount = account
 	end)
-	dump(buyer)
-	if buyer ~= nil then
+	if buyer then
 		price = tonumber(price)
 		
 		if price < buyer.getMoney() then
