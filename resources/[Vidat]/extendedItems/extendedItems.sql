@@ -10,7 +10,6 @@ INSERT INTO `shops` (store, item, price) VALUES
 	('TwentyFourSeven','orange',10),
 	('TwentyFourSeven','donut',30),
 	('TwentyFourSeven','soda',10),
-	('TwentyFourSeven','soda',10),
 	('TwentyFourSeven','jusfruit',20),
 	('TwentyFourSeven','energy',500),
 	('TwentyFourSeven','croquettes',250),
