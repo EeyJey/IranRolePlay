@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
 
 		local ped = PlayerPedId()
 
-		if IsControlJustPressed(0, Keys['-']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
+		if IsControlJustPressed(0, Keys['Z']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
 			local target, distance = ESX.Game.GetClosestPlayer()
 
 			if target ~= -1 and distance ~= -1 and distance <= 2.0 then
@@ -153,7 +153,7 @@ Citizen.CreateThread(function()
 						ESX.ShowNotification(err)
 					end
 				end)
-			elseif distance < 20 and distance > 2.0 then
+			elseif distance < 20 and distance > 1.5 then
 				ESX.ShowNotification(_U('too_far'))
 			else
 				ESX.ShowNotification(_U('no_players_nearby'))
