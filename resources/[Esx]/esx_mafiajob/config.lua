@@ -25,29 +25,23 @@ Config.MafiaStations = {
     },
 
     AuthorizedWeapons = {
-      { name = 'WEAPON_NIGHTSTICK',       price = 1000 },
-      { name = 'WEAPON_COMBATPISTOL',     price = 10000 },
-      { name = 'WEAPON_ASSAULTSMG',       price = 30000 },
-      { name = 'WEAPON_ASSAULTRIFLE',     price = 40000 },
-      { name = 'WEAPON_PUMPSHOTGUN',      price = 38000 },
-      { name = 'WEAPON_STUNGUN',          price = 1500 },
-      { name = 'WEAPON_FLASHLIGHT',       price = 500 },
-      { name = 'WEAPON_FIREEXTINGUISHER', price = 1000 },
-      { name = 'WEAPON_FLAREGUN',         price = 500 },
-      { name = 'GADGET_PARACHUTE',        price = 3000 },
-      { name = 'WEAPON_STICKYBOMB',       price = 5000000 },
-      { name = 'WEAPON_APPISTOL',         price = 30000 },
-      { name = 'WEAPON_CARBINERIFLE',     price = 320000 },
+        { name = 'WEAPON_PISTOL',     price = 7500 },
+        { name = 'WEAPON_SNSPISTOL',     price = 8000 },
+        { name = 'weapon_combatpistol',     price = 9500 },
+        { name = 'weapon_heavypistol',     price = 10000 },
+        { name = 'weapon_pistol50',     price = 10500 },
+        { name = 'WEAPON_ASSAULTRIFLE',     price = 90000 }
     },
 
-	  AuthorizedVehicles = {
-		  { name = 'schafter3',  label = 'Véhicule Civil' },
-		  { name = 'sandking',   label = '4X4' },
-		  { name = 'mule3',      label = 'Camion de Transport' },
-		  { name = 'guardian',   label = 'Grand 4x4' },
-		  { name = 'burrito3',   label = 'Fourgonnette' },
-		  { name = 'mesa',       label = 'Tout-Terrain' },
-	  },
+    AuthorizedVehicles = {
+      { name = 'schafter3',  label = 'Schafter' },
+      { name = 'contender',  label = 'Contender' },
+      { name = 'patriot',   label = 'Patriot' },
+      { name = 'patriot2',   label = 'patriot limo' },
+      { name = 'burrito3',   label = 'Van' },
+      { name = 'mesa',       label = 'jeep' },
+    },
+
 
     Cloakrooms = {
       { x = 9.283, y = 528.914, z = 169.635 },
