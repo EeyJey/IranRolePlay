@@ -17,6 +17,11 @@ function dump(o)
 	end
  end
 
+
+ -- TODO: Amir hatman bekhoon
+ -- FIXME: Amir in Ideaii ke dari ke mikhay player ro rooye VehOwner add koni bug dare
+ -- Age in harkato bezani dige nemishe 2 ta mechanic ham zaman Custom konan ye mashino
+ -- Pas bas bishtar fek kard ... 
  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
 	local plate = table.concat(args," ",1,2)
 	print(plate)
