@@ -23,7 +23,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 
 		if canHandsUp then
-			if IsControlJustReleased(0, Keys['X']) then
+			if IsControlJustReleased(0, Keys["~"]) then
 				local playerPed = PlayerPedId()
 
 				RequestAnimDict('random@mugging3')
