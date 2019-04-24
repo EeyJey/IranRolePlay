@@ -27,5 +27,4 @@ INSERT INTO `shops` (store, item, price) VALUES
 	('LTDgasoline','energy',450),
 	('LTDgasoline','jusfruit',15),
 	('LTDgasoline','croquettes',250)
-	
 ;
