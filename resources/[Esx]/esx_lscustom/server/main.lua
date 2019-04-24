@@ -20,17 +20,19 @@ function getIdentOfOwner(plate)
 	local owner
 	if result[1] then
 		owner = result[1].owner
-		print("We Got Ther Owner from SQL" .. dump(owner))
+		print("We Got The Owner from SQL" .. dump(owner))
 	else
 		return nil
 	end
-		print("Thee sql owner still here")
+		print("Thee sql owner still here" .. dump(owner))
 	local xPlayers = ESX.GetPlayers()
 	local player = nil
 
 	for i=1, #xPlayers, 1 do
 		player = xPlayers[i]
 		local tmpIdent = GetPlayerIdentifiers(player)[1]
+		print(i .. "player id: " .. dump(tmpIdent))
+		print(i .. " owner id: " .. dump(owner))
 		if owner == tmpIdent then
 			local vehOwner = ESX.GetPlayerFromId(player)
 			print("Function work Correctly" .. dump(vehOwner))
