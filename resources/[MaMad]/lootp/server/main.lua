@@ -78,6 +78,17 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 		end
 
 	end
+
+	if itemType == 'item_weapon' then
+		-- print("Item_weapon")
+		if amount == nil then amount = 0 end
+			targetXPlayer.removeWeapon(itemName, amount)
+			sourceXPlayer.addWeapon(itemName, amount)
+	
+			TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
+			TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
+	end
+
 end)
 
 RegisterServerEvent('esx_thief:update')
