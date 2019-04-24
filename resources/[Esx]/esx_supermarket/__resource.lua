@@ -13,6 +13,11 @@ files {
 	
 	'html/img/bread.png',
 	'html/img/fixkit.png',
+	'html/img/soda.png',
+	'html/img/banana.png',
+	'html/img/orange.png',
+	'html/img/donut.png',
+	'html/img/fixkit.png',
 	'html/img/energy.png',
 	'html/img/jusfruit.png',
 	'html/img/close.png',
