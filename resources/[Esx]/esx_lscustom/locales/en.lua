@@ -3,8 +3,11 @@ Locales['en'] = {
 	['by_default'] = 'default',
 	['installed'] = 'installed',
 	['already_own'] = 'you already own: ~b~',
-	['not_enough_money'] = 'The vehicle owner do not have enough money!',
-	['purchased'] = 'purchased!',
+	['not_enough_money_buyer'] = '~b~Baraye Eteqa\'e Mashin Shoma Be Andaze Kafi Pool Nadarid, ~r~',
+	['not_enough_money_mechanic'] = '~b~Sahebe Mashin Be Andaze Kafi Pool Nadarad!',
+	['purchasedBuyer'] = '~b~Mashine Shoma Erteqa Peyda Kard Va Az Shoma, ~r~',
+	['purchasedMechanic'] = '~b~Mashin Erteqa Peyda Kard!',
+	['stolencar'] = '~r~Ehtemalan In Mashin Dozdi Ast, Be Police Etela Dahid!',
 	['press_custom'] = 'press ~INPUT_PICKUP~ to personalize your vehicle.',
 	['level'] = 'level ',
 -- Paint Colors

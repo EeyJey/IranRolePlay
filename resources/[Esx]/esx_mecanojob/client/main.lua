@@ -100,9 +100,7 @@ function OpenMecanoActionsMenu()
   local elements = {
     {label = _U('vehicle_list'),   value = 'vehicle_list'},
     {label = _U('work_wear'),      value = 'cloakroom'},
-    {label = _U('civ_wear'),       value = 'cloakroom2'},
-    {label = _U('deposit_stock'),  value = 'put_stock'},
-    {label = _U('withdraw_stock'), value = 'get_stock'}
+    {label = _U('civ_wear'),       value = 'cloakroom2'}
   }
   if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss' then
     table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
@@ -168,7 +166,7 @@ function OpenMecanoActionsMenu()
 
             if Config.EnablePlayerManagement and PlayerData.job ~= nil and
               (PlayerData.job.grade_name == 'boss' or PlayerData.job.grade_name == 'chef' or PlayerData.job.grade_name == 'experimente') then
-              table.insert(elements, {label = 'SlamVan', value = 'slamvan3'})
+              table.insert(elements, {label = 'Ubermacht Sentinel Classic', value = 'Sentinel'})
             end
 
             ESX.UI.Menu.CloseAll()
@@ -233,14 +231,6 @@ function OpenMecanoActionsMenu()
             TriggerEvent('skinchanger:loadSkin', skin)
 
         end)
-      end
-
-      if data.current.value == 'put_stock' then
-        OpenPutStocksMenu()
-      end
-
-      if data.current.value == 'get_stock' then
-        OpenGetStocksMenu()
       end
 
       if data.current.value == 'boss_actions' then
@@ -651,125 +641,6 @@ function OpenMobileMecanoActionsMenu()
   )
 end
 
-function OpenGetStocksMenu()
-  ESX.TriggerServerCallback('esx_mecanojob:getStockItems', function(items)
-    local elements = {}
-
-    for i=1, #items, 1 do
-      table.insert(elements, {label = 'x' .. items[i].count .. ' ' .. items[i].label, value = items[i].name})
-    end
-
-    ESX.UI.Menu.Open(
-      'default', GetCurrentResourceName(), 'stocks_menu',
-      {
-        title    = _U('mechanic_stock'),
-        align    = 'top-left',
-        elements = elements
-      },
-      function(data, menu)
-
-        local itemName = data.current.value
-
-        ESX.UI.Menu.Open(
-          'dialog', GetCurrentResourceName(), 'stocks_menu_get_item_count',
-          {
-            title = _U('quantity')
-          },
-          function(data2, menu2)
-
-            local count = tonumber(data2.value)
-
-            if count == nil then
-              ESX.ShowNotification(_U('invalid_quantity'))
-            else
-              menu2.close()
-              menu.close()
-              TriggerServerEvent('esx_mecanojob:getStockItem', itemName, count)
-
-              Citizen.Wait(1000)
-              OpenGetStocksMenu()
-            end
-
-          end,
-          function(data2, menu2)
-            menu2.close()
-          end
-        )
-
-      end,
-      function(data, menu)
-        menu.close()
-      end
-    )
-
-  end)
-
-end
-
-function OpenPutStocksMenu()
-
-ESX.TriggerServerCallback('esx_mecanojob:getPlayerInventory', function(inventory)
-
-    local elements = {}
-
-    for i=1, #inventory.items, 1 do
-
-      local item = inventory.items[i]
-
-      if item.count > 0 then
-        table.insert(elements, {label = item.label .. ' x' .. item.count, type = 'item_standard', value = item.name})
-      end
-
-    end
-
-    ESX.UI.Menu.Open(
-      'default', GetCurrentResourceName(), 'stocks_menu',
-      {
-        title    = _U('inventory'),
-        align    = 'top-left',
-        elements = elements
-      },
-      function(data, menu)
-
-        local itemName = data.current.value
-
-        ESX.UI.Menu.Open(
-          'dialog', GetCurrentResourceName(), 'stocks_menu_put_item_count',
-          {
-            title = _U('quantity')
-          },
-          function(data2, menu2)
-
-            local count = tonumber(data2.value)
-
-            if count == nil then
-              ESX.ShowNotification(_U('invalid_quantity'))
-            else
-              menu2.close()
-              menu.close()
-              TriggerServerEvent('esx_mecanojob:putStockItems', itemName, count)
-
-              Citizen.Wait(1000)
-              OpenPutStocksMenu()
-            end
-
-          end,
-          function(data2, menu2)
-            menu2.close()
-          end
-        )
-
-      end,
-      function(data, menu)
-        menu.close()
-      end
-    )
-
-  end)
-
-end
-
-
 RegisterNetEvent('esx_mecanojob:onHijack')
 AddEventHandler('esx_mecanojob:onHijack', function()
   local playerPed = GetPlayerPed(-1)
@@ -1162,7 +1033,7 @@ Citizen.CreateThread(function()
                 if
                   GetEntityModel(vehicle) == GetHashKey('flatbed')   or
                   GetEntityModel(vehicle) == GetHashKey('towtruck2') or
-                  GetEntityModel(vehicle) == GetHashKey('slamvan3')
+                  GetEntityModel(vehicle) == GetHashKey('Sentinel')
                 then
                   TriggerServerEvent('esx_service:disableService', 'mecano')
                 end

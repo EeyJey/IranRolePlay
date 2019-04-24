@@ -1,9 +1,7 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local Vehicles = nil
-local VehOwner = nil
-local owner = nil
-
+local owler = nil
 function dump(o)
 	if type(o) == 'table' then
 	   local s = '{ '
@@ -17,95 +15,82 @@ function dump(o)
 	end
  end
 
-
- -- TODO: Amir hatman bekhoon
- -- FIXME: Amir in Ideaii ke dari ke mikhay player ro rooye VehOwner add koni bug dare
- -- Age in harkato bezani dige nemishe 2 ta mechanic ham zaman Custom konan ye mashino
- -- Pas bas bishtar fek kard ... 
- TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
-	local plate = table.concat(args," ",1,2)
-	print(plate)
-	if owner == nil then
-		local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. plate ..'"', {})
-		owner = result[1].owner
+function getIdentOfOwner(plate)
+	local Plate = plate
+	local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. Plate ..'"', {})
+	if result[1] ~= nil then
+		local owner = result[1].owner
+	else
+		return nil
 	end
-	print("My Owner is:" .. owner)
 	local xPlayers = ESX.GetPlayers()
-	local player
+	local player = nil
 
 	for i=1, #xPlayers, 1 do
 		player = xPlayers[i]
-
 		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		print(dump(tmpIdent))
-		print("My Owner sql Identifier is:" .. tmpIdent)
-		if VehOwner == nil then
-			print("shit")
+		if owner == tmpIdent then
+			local vehOwner = ESX.GetPlayerFromId(player)
+			return vehOwner
+		else
+			return nil
 		end
 	
-		if owner == tmpIdent then
-			VehOwner = ESX.GetPlayerFromId(player)
-			print(dump(VehOwner))
-			break
-		end
 	end
-end)
+
+end
+
+--  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
+-- 	local plate = table.concat(args," ",1,2)
+-- 	print(plate)
+-- 	local test = getIdentOfOwner(plate)
+-- 	print("My Owner is:" .. dump(test))
+-- 	local xPlayers = ESX.GetPlayers()
+-- 	local player
+
+-- 	for i=1, #xPlayers, 1 do
+-- 		player = xPlayers[i]
+
+-- 		local tmpIdent = GetPlayerIdentifiers(player)[1]
+-- 		if owler == tmpIdent then
+-- 			VehOwner = ESX.GetPlayerFromId(player)
+-- 			break
+-- 		end
+-- 	end
+-- end)
 
 
-
-
-RegisterServerEvent('esx_lscustommeca:checkPlayer')
-AddEventHandler('esx_lscustommeca:checkPlayer', function(plate)
-	-- local platee = plate
-	-- if owner == nil then
-	-- 	local result = MySQL.Sync.fetchAll('SELECT * FROM `owned_vehicles` WHERE `plate` = "'.. plate ..'"', {})
-	-- 	owner = result[1].owner
-	-- end
-	-- print("My Owner is:" .. owner)
-	-- local xPlayers = ESX.GetPlayers()
-	-- local player
-
-	-- for i=1, #xPlayers, 1 do
-	-- 	player = xPlayers[i]
-
-	-- 	local tmpIdent = GetPlayerIdentifiers(player)
-	-- 	print(dump(tmpIdent))
-	-- 	print("My Owner sql Identifier is:" .. tmpIdent)
-	-- 	if owner == tmpIdent then
-	-- 		VehOwner = ESX.GetPlayerFromId(player)
-	-- 		break
-	-- 	end
-	-- end
-	-- print(dump(tmpIdent))
-end)
 RegisterServerEvent('esx_lscustommeca:buyMod')
-AddEventHandler('esx_lscustommeca:buyMod', function(price)
-    local _source = source
-    local xPlayer = ESX.GetPlayerFromId(_source)
-    price = tonumber(price)
-
-    if  Config.IsMecanoJobOnly == true then
-        local societyAccount = nil
-        TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mecano', function(account)
-            societyAccount = account
-        end)
-        if price < societyAccount.money then
-            TriggerClientEvent('esx_lscustommeca:installMod', _source)
-            TriggerClientEvent('esx:showNotification', _source, _U('purchased'))
-        else
-            TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
-            TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money'))
-        end
-
-    else
-        if price < xPlayer.getMoney() then
-            TriggerClientEvent('esx_lscustommeca:installMod', _source)
-            TriggerClientEvent('esx:showNotification', _source, _U('purchased'))
-        else
-            TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
-            TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money'))
-        end
-    end
+AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
+	local buyer = getIdentOfOwner(plate)
+	local _source = source
+	local osaMechanic = ESX.GetPlayerFromId(_source)
+	local societyAccount = nil
+	TriggerEvent('esx_addonaccount:getSharedAccount', 'society_mecano', function(account)
+		societyAccount = account
+	end)
+	dump(buyer)
+	if buyer ~= nil then
+		price = tonumber(price)
+		
+		if price < buyer.getMoney() then
+			TriggerClientEvent('esx_lscustommeca:installMod', _source)
+			buyer.removeMoney(price)
+			TriggerClientEvent('esx:showNotification', buyer, _U('purchasedBuyer') .. price .. ' ~b~ Kam Shod!')
+			if buyer ~= _source then
+				TriggerClientEvent('esx:showNotification', _source, _U('purchasedMechanic'))
+			end
+			societyAccount.addMoney(price)
+		else
+			TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
+			TriggerClientEvent('esx:showNotification', buyer, _U('not_enough_money_buyer') .. price .. ' ~b~Niyaz Ast~')
+			if buyer ~= _source then
+				TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money_mechanic'))
+			end
+		end
+	else
+		TriggerClientEvent('esx:showNotification', _source, _U('stolencar'))
+	end
 end)
 
 RegisterServerEvent('esx_lscustommeca:refreshOwnedVehicle')

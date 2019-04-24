@@ -61,6 +61,8 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 			local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)			
 			local found = false
 			for k,v in pairs(Config.Menus) do
+				local vehOpt = ESX.Game.GetVehicleProperties(vehicle)
+				local plate = vehOpt.plate
 				if k == data.current.modType or isRimMod then
 					if data.current.label == _U('by_default') or string.match(data.current.label, _U('installed')) then
 						ESX.ShowNotification(_U('already_own') .. data.current.label)
@@ -77,13 +79,13 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 
 						if isRimMod then
 							price = math.floor(vehiclePrice * data.current.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price)
+							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
 						elseif v.modType == 11 or v.modType == 12 or v.modType == 13 or v.modType == 15 or v.modType == 16 or v.modType == 17 then
 							price = math.floor(vehiclePrice * v.price[data.current.modNum + 1] / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price)
+							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
 						else
 							price = math.floor(vehiclePrice * v.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price)
+							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
 						end
 
 					end
@@ -399,11 +401,8 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not lsMenuIsShowed and isInLSMarker then				
 				lsMenuIsShowed = true
+
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
-				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
-				plate = vehicleProps.plate
-				Citizen.Trace("car: " .. plate)
-				TriggerServerEvent('esx_lscustommeca:checkPlayer', plate)
 				FreezeEntityPosition(vehicle, true)
 
 				myCar = ESX.Game.GetVehicleProperties(vehicle)
