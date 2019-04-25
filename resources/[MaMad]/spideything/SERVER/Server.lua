@@ -141,6 +141,7 @@ end)
 --Event to actually send Messages to Discord
 RegisterServerEvent('DiscordBot:ToDiscord')
 AddEventHandler('DiscordBot:ToDiscord', function(WebHook, Name, Message, Image, External, Source, TTS)
+	print(WebHook .. " " .. Name)
 	if Message == nil or Message == '' then
 		return nil
 	end
