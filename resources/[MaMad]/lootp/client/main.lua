@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
 			if target ~= -1 and distance ~= -1 and distance <= 2.0 then
 				local target_id = GetPlayerServerId(target)
 				local closestPlayerPed = GetPlayerPed(target)
-				if IsPedDeadOrDying(target, 1) then
+				if IsPedDeadOrDying(closestPlayerPed,1) then
 					OpenStealMenu(target, target_id)
 				else				
 					IsAbleToSteal(target_id, function(err)
