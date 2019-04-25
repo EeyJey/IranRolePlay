@@ -428,7 +428,7 @@ function OpenPersonnelMenu()
 										elements = {
 											{label = 'Pêcheur',  value = 'menuperso_actions_Travail_pecheur'},
 											{label = 'Agriculteur',     value = 'menuperso_actions_Travail_agriculteur'},
-											{label = 'Dépanneur',     value = 'menuperso_actions_Travail_depanneur'},
+											-- {label = 'Dépanneur',     value = 'menuperso_actions_Travail_depanneur'},
 											{label = 'Prendre des notes',  value = 'menuperso_actions_Travail_prendredesnotes'},
 											{label = 'Inspecter',  value = 'menuperso_actions_Travail_inspecter'},
 										},
@@ -443,9 +443,9 @@ function OpenPersonnelMenu()
 											animsActionScenario({anim = "world_human_gardener_plant" })
 										end
 
-										if data3.current.value == 'menuperso_actions_Travail_depanneur' then
-											animsActionScenario({anim = "world_human_vehicle_mechanic" })
-										end
+										-- if data3.current.value == 'menuperso_actions_Travail_depanneur' then
+										-- 	animsActionScenario({anim = "world_human_vehicle_mechanic" })
+										-- end
 
 										if data3.current.value == 'menuperso_actions_Travail_prendredesnotes' then
 											animsActionScenario({anim = "WORLD_HUMAN_CLIPBOARD" })
