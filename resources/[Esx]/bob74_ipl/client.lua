@@ -224,15 +224,15 @@ Citizen.CreateThread(function()
 				-- RequestIpl("ex_sm_13_office_03c")	-- Power Broker Polished
 				
 			-- Maze Bank West
-				-- RequestIpl("ex_sm_15_office_02b")	-- Executive Rich
-				-- RequestIpl("ex_sm_15_office_02c")	-- Executive Cool
-				-- RequestIpl("ex_sm_15_office_02a")	-- Executive Contrast
-				-- RequestIpl("ex_sm_15_office_01a")	-- Old Spice Warm
-				-- RequestIpl("ex_sm_15_office_01b")	-- Old Spice Classical
-				-- RequestIpl("ex_sm_15_office_01c")	-- Old Spice Vintage
-				-- RequestIpl("ex_sm_15_office_03a")	-- Power Broker Ice
-				-- RequestIpl("ex_sm_15_office_03b")	-- Power Broker Convservative
-				-- RequestIpl("ex_sm_15_office_03c")	-- Power Broker Polished
+				RequestIpl("ex_sm_15_office_02b")	-- Executive Rich
+				RequestIpl("ex_sm_15_office_02c")	-- Executive Cool
+				RequestIpl("ex_sm_15_office_02a")	-- Executive Contrast
+				RequestIpl("ex_sm_15_office_01a")	-- Old Spice Warm
+				RequestIpl("ex_sm_15_office_01b")	-- Old Spice Classical
+				RequestIpl("ex_sm_15_office_01c")	-- Old Spice Vintage
+				RequestIpl("ex_sm_15_office_03a")	-- Power Broker Ice
+				RequestIpl("ex_sm_15_office_03b")	-- Power Broker Convservative
+				RequestIpl("ex_sm_15_office_03c")	-- Power Broker Polished
 
 		-- Biker
 			-- RequestIpl("bkr_biker_interior_placement_interior_0_biker_dlc_int_01_milo")
