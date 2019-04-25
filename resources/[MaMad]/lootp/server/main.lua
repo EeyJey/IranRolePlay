@@ -97,6 +97,10 @@ AddEventHandler('esx_thief:update', function(bool)
 	Users[_source] = {value = bool, time = os.time()}
 end)
 
+TriggerEvent('es:addCommand', 'getthelist', function(source, args, user)
+	print(GLOBAL.dump(Users))
+end)
+
 RegisterServerEvent('esx_thief:getValue')
 AddEventHandler('esx_thief:getValue', function(targetSID)
 	local _source = source
