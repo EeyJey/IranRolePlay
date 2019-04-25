@@ -42,6 +42,8 @@ Citizen.CreateThread(function()
 				end
 
 			end
-		end
+		else	IsEntityDead(playerPed) then
+			TriggerServerEvent('esx_thief:update', true)
+		end 
 	end
 end)
