@@ -45,6 +45,7 @@ Citizen.CreateThread(function()
 		end
 		
 		if IsEntityDead(playerPed) then
+			print("you are fucking dead ".. playerPed)
 			TriggerServerEvent('esx_thief:update', true)
 		end 
 	end
