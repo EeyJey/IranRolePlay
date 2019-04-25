@@ -14,7 +14,7 @@ local dropShadow = false
 local nbrDisplaying = 1
 
 
-RegisterCommand('me', function(source, args)
+TriggerEvent('es:addCommand', 'me', function(source, args, user)
     local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
     for i = 1,#args do
         text = text .. ' ' .. args[i]
