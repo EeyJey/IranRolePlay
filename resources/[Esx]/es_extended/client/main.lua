@@ -103,6 +103,7 @@ AddEventHandler('playerSpawned', function()
 
 	TriggerEvent('esx:restoreLoadout') -- restore loadout
 
+
 	LoadoutLoaded = true
 	PlayerSpawned = true
 	isDead = false
@@ -175,16 +176,16 @@ AddEventHandler('skinchanger:modelLoaded', function()
 end)
 
 AddEventHandler('esx:restoreLoadout', function()
-	local playerPed = PlayerPedId()
+	-- local playerPed = PlayerPedId()
 
-	RemoveAllPedWeapons(playerPed, true)
+	-- RemoveAllPedWeapons(playerPed, true)
 
-	for i=1, #ESX.PlayerData.loadout, 1 do
-		local weaponHash = GetHashKey(ESX.PlayerData.loadout[i].name)
-		GiveWeaponToPed(playerPed, weaponHash, ESX.PlayerData.loadout[i].ammo, false, false)
-	end
+	-- for i=1, #ESX.PlayerData.loadout, 1 do
+	-- 	local weaponHash = GetHashKey(ESX.PlayerData.loadout[i].name)
+	-- 	GiveWeaponToPed(playerPed, weaponHash, ESX.PlayerData.loadout[i].ammo, false, false)
+	-- end
 
-	LoadoutLoaded = true
+	-- LoadoutLoaded = true
 end)
 
 RegisterNetEvent('esx:setAccountMoney')
