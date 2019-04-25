@@ -15,18 +15,13 @@ local nbrDisplaying = 1
 
 
 RegisterCommand('me', function(source, args)
-    local text = '' -- edit here if you want to change the language : EN: the person / FR: la personne
-    for i = 1,#args do
-        text = text .. ' ' .. args[i]
-    end
-    text = text .. ''
-    TriggerServerEvent('3dme:shareDisplay', text)
+    TriggerServerEvent('3dme:shareDisplay', table.concat(args," "))
 end)
 
 RegisterNetEvent('3dme:triggerDisplay')
 AddEventHandler('3dme:triggerDisplay', function(text, source,name)
     local offset = 1 + (nbrDisplaying*0.14)
-    Display(GetPlayerFromServerId(source), text, offset,name)
+    Display(GetPlayerFromServerId(source), text, offset,"("..source..")"..name)
 end)
 
 function Display(mePlayer, text, offset,name)
@@ -40,7 +35,7 @@ function Display(mePlayer, text, offset,name)
             TriggerEvent('chat:addMessage', {
                 color = { colorText.r, colorText.g, colorText.b },
                 multiline = true,
-                args = { name..": "..text}
+                args = { name.." "..text}
             })
         end
     end

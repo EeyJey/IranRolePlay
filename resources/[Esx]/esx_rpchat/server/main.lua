@@ -32,8 +32,6 @@ end
 			end
 			CancelEvent()
 	end)
-	TriggerEvent('es:addCommand', 'me', function(source, args, user)
-	end)
 	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
 		local name =  GetPlayerName(source)
 			TriggerClientEvent("sendProximityMessageMe", -1, source, "OOC | " .. name, table.concat(args, " "))
