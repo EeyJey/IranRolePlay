@@ -155,17 +155,20 @@ Citizen.CreateThread(function()
 
 		if IsControlJustPressed(0, Keys['Z']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
 			local target, distance = ESX.Game.GetClosestPlayer()
-
+			
 			if target ~= -1 and distance ~= -1 and distance <= 2.0 then
 				local target_id = GetPlayerServerId(target)
-				
-				IsAbleToSteal(target_id, function(err)
-					if(not err)then
-						OpenStealMenu(target, target_id)
-					else
-						ESX.ShowNotification(err)
-					end
-				end)
+				if IsPedDeadOrDying(target, 1) then
+					OpenStealMenu(target, target_id)
+				else				
+					IsAbleToSteal(target_id, function(err)
+						if(not err)then
+							OpenStealMenu(target, target_id)
+						else
+							ESX.ShowNotification(err)
+						end
+					end)
+				end
 			elseif distance < 20 and distance > 1.5 then
 				ESX.ShowNotification(_U('too_far'))
 			else
