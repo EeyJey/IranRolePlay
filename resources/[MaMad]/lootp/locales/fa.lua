@@ -15,6 +15,6 @@ Locales['fa'] = {
   ['you_stole']           = 'To az taraf',
   ['from_your_target']    = 'dozdidi',
   ['someone_stole']       = 'Yeki dozdi kard azat',
-  ['invalid_quantity']    = 'Invalid quantity',
-  ['gun_label']    = 'Invalid quantity',
+  ['invalid_quantity']    = 'Tedade eshtebah',
+  ['gun_label']           = 'Aslahe',
 }
