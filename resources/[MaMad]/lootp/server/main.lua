@@ -91,6 +91,19 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 
 end)
 
+ function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. GLOBAL.Dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
+
 RegisterServerEvent('esx_thief:update')
 AddEventHandler('esx_thief:update', function(bool)
 	local _source = source
@@ -98,7 +111,7 @@ AddEventHandler('esx_thief:update', function(bool)
 end)
 
 TriggerEvent('es:addCommand', 'getthelist', function(source, args, user)
-	print(GLOBAL.dump(Users))
+	print(dump(Users))
 end)
 
 RegisterServerEvent('esx_thief:getValue')
