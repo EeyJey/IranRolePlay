@@ -6,8 +6,8 @@
 local SETTINGS = {
     back_bone = 24816,
     x = 0.275,
-    y = -0.45,
-    z = -0.02,
+    y = -0.15,
+    z = -0.22,
     x_rotation = 0.0,
     y_rotation = 165.0,
     z_rotation = 0.0,
