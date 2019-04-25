@@ -146,7 +146,7 @@ local function Craft(source)
 			else   
                 xPlayer.removeInventoryItem('jewels', 20)
                 Citizen.Wait(4000)
-				xPlayer.addMoney(4000)
+				xPlayer.addMoney(12000)
 				
 				Craft(source)
 			end

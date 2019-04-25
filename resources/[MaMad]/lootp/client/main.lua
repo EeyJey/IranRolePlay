@@ -78,6 +78,19 @@ function OpenStealMenu(target, target_id)
 			end
 		end
 
+		if Config.EnableWeapons then
+            table.insert(elements, {label = '=== ' .. _U('gun_label') .. ' ===', value = nil})
+
+            for i=1, #data.weapons, 1 do
+                table.insert(elements, {
+                    label    = ESX.GetWeaponLabel(data.weapons[i].name) .. ' x' .. data.weapons[i].ammo,
+                    value    = data.weapons[i].name,
+                    type     = 'item_weapon',
+                    amount   = data.weapons[i].ammo
+                })
+            end
+        end
+
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'steal_inventory', {
 			title  = _U('target_inventory'),
 			elements = elements,
@@ -140,20 +153,24 @@ Citizen.CreateThread(function()
 
 		local ped = PlayerPedId()
 
-		if IsControlJustPressed(0, Keys['G']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
+		if IsControlJustPressed(0, Keys['Z']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
 			local target, distance = ESX.Game.GetClosestPlayer()
-
+			
 			if target ~= -1 and distance ~= -1 and distance <= 2.0 then
 				local target_id = GetPlayerServerId(target)
-				
-				IsAbleToSteal(target_id, function(err)
-					if(not err)then
-						OpenStealMenu(target, target_id)
-					else
-						ESX.ShowNotification(err)
-					end
-				end)
-			elseif distance < 20 and distance > 2.0 then
+				local closestPlayerPed = GetPlayerPed(target)
+				if IsPedDeadOrDying(closestPlayerPed,1) then
+					OpenStealMenu(target, target_id)
+				else				
+					IsAbleToSteal(target_id, function(err)
+						if(not err)then
+							OpenStealMenu(target, target_id)
+						else
+							ESX.ShowNotification(err)
+						end
+					end)
+				end
+			elseif distance < 20 and distance > 1.5 then
 				ESX.ShowNotification(_U('too_far'))
 			else
 				ESX.ShowNotification(_U('no_players_nearby'))

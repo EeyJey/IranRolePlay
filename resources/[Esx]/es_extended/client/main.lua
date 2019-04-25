@@ -103,6 +103,7 @@ AddEventHandler('playerSpawned', function()
 
 	TriggerEvent('esx:restoreLoadout') -- restore loadout
 
+
 	LoadoutLoaded = true
 	PlayerSpawned = true
 	isDead = false

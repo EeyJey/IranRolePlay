@@ -16,9 +16,10 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 
 	local data = {
 		name = GetPlayerName(target),
-		inventory = xPlayer.inventory,
-		accounts = xPlayer.accounts,
-		money = xPlayer.getMoney()
+		inventory 	= xPlayer.inventory,
+		accounts 	= xPlayer.accounts,
+		money 		= xPlayer.getMoney(),
+		weapons		= xPlayer.loadout
 	}
 
 	cb(data)
@@ -77,12 +78,40 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 		end
 
 	end
+
+	if itemType == 'item_weapon' then
+		-- print("Item_weapon")
+		if amount == nil then amount = 0 end
+			targetXPlayer.removeWeapon(itemName, amount)
+			sourceXPlayer.addWeapon(itemName, amount)
+	
+			TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
+			TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
+	end
+
 end)
+
+ function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
 
 RegisterServerEvent('esx_thief:update')
 AddEventHandler('esx_thief:update', function(bool)
 	local _source = source
 	Users[_source] = {value = bool, time = os.time()}
+end)
+
+TriggerEvent('es:addCommand', 'getthelist', function(source, args, user)
+	print(dump(Users))
 end)
 
 RegisterServerEvent('esx_thief:getValue')
