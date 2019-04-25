@@ -88,7 +88,7 @@ function OpenBossMenu(society, close, options)
 	if not isBoss then
 		return
 	end
-
+	
 	local defaultOptions = {
 		withdraw  = false,
 		deposit   = false,

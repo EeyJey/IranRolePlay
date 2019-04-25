@@ -1,18 +1,18 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 local Vehicles = nil
-function dump(o)
-	if type(o) == 'table' then
-	   local s = '{ '
-	   for k,v in pairs(o) do
-		  if type(k) ~= 'number' then k = '"'..k..'"' end
-		  s = s .. '['..k..'] = ' .. dump(v) .. ','
-	   end
-	   return s .. '} '
-	else
-	   return tostring(o)
-	end
- end
+-- function dump(o)
+-- 	if type(o) == 'table' then
+-- 	   local s = '{ '
+-- 	   for k,v in pairs(o) do
+-- 		  if type(k) ~= 'number' then k = '"'..k..'"' end
+-- 		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+-- 	   end
+-- 	   return s .. '} '
+-- 	else
+-- 	   return tostring(o)
+-- 	end
+--  end
 
 function getIdentOfOwner(plate)
 	local Plate = plate
@@ -25,40 +25,42 @@ function getIdentOfOwner(plate)
 	end
 	local xPlayers = ESX.GetPlayers()
 	local player = nil
-
-	for i=1, #xPlayers, 1 do
-		player = xPlayers[i]
-		local tmpIdent = GetPlayerIdentifiers(player)[1]
-		if owner == tmpIdent then
-			local vehOwner = ESX.GetPlayerFromId(player)
-			return vehOwner
+	if xPlayers then
+		for i=1, #xPlayers, 1 do
+			player = xPlayers[i]
+			local tmpIdent = GetPlayerIdentifiers(player)[1]
+			if owner == tmpIdent then
+				return player
+			end
 		end
 	end
 	return nil
 end
 
- TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
-	local plate = table.concat(args," ",1,2)
-	local test = getIdentOfOwner(plate)
-	local xPlayers = ESX.GetPlayers()
-	local player
+--  TriggerEvent('es:addCommand', 'wplate', function(source, args, user)
+-- 	local plate = table.concat(args," ",1,2)
+-- 	local test = getIdentOfOwner(plate)
+-- 	local xPlayers = ESX.GetPlayers()
+-- 	local player
 
-	for i=1, #xPlayers, 1 do
-		player = xPlayers[i]
+-- 	for i=1, #xPlayers, 1 do
+-- 		player = xPlayers[i]
 
-		local tmpIdent = GetPlayerIdentifiers(player)[1]
+-- 		local tmpIdent = GetPlayerIdentifiers(player)[1]
 
-		if test == tmpIdent then
-			VehOwner = ESX.GetPlayerFromId(player)
-			break
-		end
-	end
-end)
+-- 		if test == tmpIdent then
+-- 			VehOwner = ESX.GetPlayerFromId(player)
+-- 			break
+-- 		end
+-- 	end
+-- end)
 
 
 RegisterServerEvent('esx_lscustommeca:buyMod')
 AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
+	local formattedMoney = _U('locale_currency', ESX.Math.GroupDigits(price))
 	local buyer = getIdentOfOwner(plate)
+	local buyerId = ESX.GetPlayerFromId(buyer)
 	local _source = source
 	local osaMechanic = ESX.GetPlayerFromId(_source)
 	local societyAccount = nil
@@ -68,17 +70,17 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 	if buyer then
 		price = tonumber(price)
 		
-		if price < buyer.getMoney() then
+		if price < buyerId.getMoney() then
 			TriggerClientEvent('esx_lscustommeca:installMod', _source)
-			buyer.removeMoney(price)
-			TriggerClientEvent('esx:showNotification', buyer, _U('purchasedBuyer') .. price .. ' ~b~ Kam Shod!')
+			buyerId.removeMoney(price)
+			TriggerClientEvent('esx:showNotification', buyer, _U('purchasedBuyer', formattedMoney))
 			if buyer ~= _source then
-				TriggerClientEvent('esx:showNotification', _source, _U('purchasedMechanic'))
+				TriggerClientEvent('esx:showNotification', _source, _U('purchasedMechanic', price))
 			end
 			societyAccount.addMoney(price)
 		else
 			TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
-			TriggerClientEvent('esx:showNotification', buyer, _U('not_enough_money_buyer') .. price .. ' ~b~Niyaz Ast~')
+			TriggerClientEvent('esx:showNotification', buyer, _U('not_enough_money_buyer', formattedMoney))
 			if buyer ~= _source then
 				TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money_mechanic'))
 			end

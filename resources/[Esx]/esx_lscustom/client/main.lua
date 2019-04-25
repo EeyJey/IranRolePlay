@@ -110,7 +110,6 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 			if parent == nil then
 				lsMenuIsShowed = false
 				local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-				FreezeEntityPosition(vehicle, false)
 				myCar = {}
 			end
 		end,
@@ -403,7 +402,6 @@ Citizen.CreateThread(function()
 				lsMenuIsShowed = true
 
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
-				FreezeEntityPosition(vehicle, true)
 
 				myCar = ESX.Game.GetVehicleProperties(vehicle)
 
