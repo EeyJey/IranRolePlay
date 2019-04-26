@@ -464,9 +464,9 @@ Citizen.CreateThread(function()
 		local loadout        = {}
 		local loadoutChanged = false
 
-		if IsPedDeadOrDying(playerPed) then
-			LoadoutLoaded = false
-		end
+		-- if IsPedDeadOrDying(playerPed) then
+		-- 	LoadoutLoaded = false
+		-- end
 
 		for i=1, #Config.Weapons, 1 do
 
