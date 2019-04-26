@@ -24,6 +24,18 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 
 	cb(data)
 end)
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
 
 RegisterServerEvent('esx_thief:stealPlayerItem')
 AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName, amount)
@@ -37,7 +49,7 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 		local itemLimit = sourceXPlayer.getInventoryItem(itemName).limit
 		local sourceItemCount = sourceXPlayer.getInventoryItem(itemName).count
 		local targetItemCount = targetXPlayer.getInventoryItem(itemName).count
-
+		print(dump(targetXPlayer.getLoadout()))
 		if amount > 0 and targetItemCount >= amount then
 			if itemLimit ~= -1 and (sourceItemCount + amount) > itemLimit then
 				TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('ex_inv_lim_target'))
