@@ -18,7 +18,7 @@ html {
 }
 
 body{
-	display: none;
+	/* display: none; */
 	color: #a8a8aa;
 }
 
@@ -118,7 +118,6 @@ h4{
   width: 100%;
 }
 
-
 .close{
 	padding: 10px;
 	background-color: rgba(255, 70, 70, 1);
@@ -206,7 +205,7 @@ input:focus {
 	flex-direction: row;
 	flex-wrap: wrap;
 	/* display: none; */
-	font-family: iran;
+	font-family: iran !important;
 }
 *{
 	font-family: iran;
@@ -307,4 +306,51 @@ input:focus {
 .bold-text{
   font-weight: bold;
   font-size: 1.3em;
+}
+#titlearea{
+  margin:auto;
+  margin-top:400px;
+  width:30%;
+  padding:20px;
+  padding-top: 3px;
+  padding-bottom:3px;
+  margin-bottom:2px;
+  background-color: #26262b;
+  direction:rtl;
+}
+#factor{
+  display:none;
+}
+#container{
+  margin:auto;
+  width:30%;
+  padding:20px;
+  background-color: #26262b;
+  direction:rtl;
+}
+.title{
+  margin:0;
+}
+hr{
+  margin-top:1px;
+}
+.button{
+  color:white;
+  font-size:20px;
+  display:inline-block;
+  text-align:center;
+  padding:5px;
+  margin:10px;
+  width:30%;
+  margin-right:10%;
+}
+#accept{
+  background-color: #2E7D32;
+}
+#cancel{
+  background-color: #c62828;
+}
+#price{
+  color:white;
+  display:inline-block;
 }
