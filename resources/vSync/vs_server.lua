@@ -3,7 +3,9 @@
 admins = {
     'steam:110000111fc352b',
     'steam:110000118eae7af',
-    'steam:110000107a78e07'
+    'steam:110000107a78e07',
+    'steam:11000010934a428',
+    'steam:11000010a1b83df'
 
     --'license:1234975143578921327',
 }
@@ -14,12 +16,6 @@ DynamicWeather = true
 --------------------------------------------------
 debugprint = true -- don't touch this unless you know what you're doing or you're being asked by Vespura to turn this on.
 --------------------------------------------------
-
-
-
-
-
-
 
 -------------------- DON'T CHANGE THIS --------------------
 AvailableWeatherTypes = {
