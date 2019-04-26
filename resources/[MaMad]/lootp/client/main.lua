@@ -161,7 +161,7 @@ Citizen.CreateThread(function()
 				local closestPlayerPed = GetPlayerPed(target)
 				if IsPedDeadOrDying(closestPlayerPed,1) then
 					OpenStealMenu(target, target_id)
-				else				
+				else
 					IsAbleToSteal(target_id, function(err)
 						if(not err)then
 							OpenStealMenu(target, target_id)

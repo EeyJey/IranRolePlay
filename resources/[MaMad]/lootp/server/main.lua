@@ -37,7 +37,6 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 		local itemLimit = sourceXPlayer.getInventoryItem(itemName).limit
 		local sourceItemCount = sourceXPlayer.getInventoryItem(itemName).count
 		local targetItemCount = targetXPlayer.getInventoryItem(itemName).count
-
 		if amount > 0 and targetItemCount >= amount then
 			if itemLimit ~= -1 and (sourceItemCount + amount) > itemLimit then
 				TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('ex_inv_lim_target'))
@@ -84,6 +83,7 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 		if amount == nil then amount = 0 end
 			targetXPlayer.removeWeapon(itemName, amount)
 			sourceXPlayer.addWeapon(itemName, amount)
+			--targetXPlayer.getLoadout()
 	
 			TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
 			TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
@@ -112,6 +112,11 @@ end)
 
 TriggerEvent('es:addCommand', 'getthelist', function(source, args, user)
 	print(dump(Users))
+end)
+
+TriggerEvent('es:addCommand', 'wloadout', function(source, args, user)
+	local targetXPlayer = ESX.GetPlayerFromId(args[1])
+	print(dump(targetXPlayer.getLoadout()))
 end)
 
 RegisterServerEvent('esx_thief:getValue')

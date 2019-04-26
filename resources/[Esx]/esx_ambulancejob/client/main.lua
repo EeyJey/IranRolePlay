@@ -358,6 +358,10 @@ function RemoveItemsAfterRPDeath()
 	end)
 end
 
+function RemoveLootedItemsAfterRPDeath()
+	TriggerServerEvent()
+end
+
 function RespawnPed(ped, coords, heading)
 	SetEntityCoordsNoOffset(ped, coords.x, coords.y, coords.z, false, false, false, true)
 	NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, heading, true, false)
