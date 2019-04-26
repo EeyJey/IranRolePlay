@@ -353,7 +353,7 @@ function OpenMobileMecanoActionsMenu()
       title    = _U('mechanic'),
       align    = 'top-left',
       elements = {
-        {label = _U('billing'),       value = 'billing'},
+        -- {label = _U('billing'),       value = 'billing'},
         {label = _U('hijack'),        value = 'hijack_vehicle'},
         {label = _U('repair'),        value = 'fix_vehicle'},
         {label = _U('clean'),         value = 'clean_vehicle'},
@@ -365,32 +365,32 @@ function OpenMobileMecanoActionsMenu()
 	function(data, menu)
       if IsBusy then return end
 
-      if data.current.value == 'billing' then
-        ESX.UI.Menu.Open(
-          'dialog', GetCurrentResourceName(), 'billing',
-          {
-            title = _U('invoice_amount')
-          },
-          function(data, menu)
-            local amount = tonumber(data.value)
-            if amount == nil or amount < 0 then
-              ESX.ShowNotification(_U('amount_invalid'))
-            else
+      -- if data.current.value == 'billing' then
+      --   ESX.UI.Menu.Open(
+      --     'dialog', GetCurrentResourceName(), 'billing',
+      --     {
+      --       title = _U('invoice_amount')
+      --     },
+      --     function(data, menu)
+      --       local amount = tonumber(data.value)
+      --       if amount == nil or amount < 0 then
+      --         ESX.ShowNotification(_U('amount_invalid'))
+      --       else
               
-              local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-              if closestPlayer == -1 or closestDistance > 3.0 then
-                ESX.ShowNotification(_U('no_players_nearby'))
-			  else
-				menu.close()
-                TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_mecano', _U('mechanic'), amount)
-              end
-            end
-          end,
-        function(data, menu)
-          menu.close()
-        end
-        )
-      end
+      --         local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+      --         if closestPlayer == -1 or closestDistance > 3.0 then
+      --           ESX.ShowNotification(_U('no_players_nearby'))
+			--   else
+			-- 	menu.close()
+      --           TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_mecano', _U('mechanic'), amount)
+      --         end
+      --       end
+      --     end,
+      --   function(data, menu)
+      --     menu.close()
+      --   end
+      --   )
+      -- end
 
       if data.current.value == 'hijack_vehicle' then
 

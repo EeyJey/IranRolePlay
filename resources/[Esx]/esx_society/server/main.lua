@@ -1,6 +1,10 @@
 ESX                 = nil
 Jobs                = {}
-RegisteredSocieties = {}
+RegisteredSocieties = {
+	{name="mecano", account="society_mecano"},
+	{name="police", account="society_police"},
+	{name="ambulance", account="society_ambulance"}
+}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -167,7 +171,6 @@ end)
 
 ESX.RegisterServerCallback('esx_society:getSocietyMoney', function(source, cb, societyName)
 	local society = GetSociety(societyName)
-
 	if society then
 		TriggerEvent('esx_addonaccount:getSharedAccount', society.account, function(account)
 			cb(account.money)

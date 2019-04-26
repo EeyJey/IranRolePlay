@@ -10,7 +10,7 @@
 
 --]]
 
-lang = 'de' -- languages are: en = english, de = deutsch, fr = français
+lang = 'en' -- languages are: en = english, de = deutsch, fr = français
 
 debug.cfg = true --gives acces to use /checkperms, that will show if you are allowed to use the restart ressource or not.
 debug.msg = true --gives a error message for players that are not allowed for a restart.

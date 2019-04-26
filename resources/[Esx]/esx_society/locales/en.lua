@@ -32,6 +32,8 @@ Locales['en'] = {
   ['you_have_been_hired']    = 'you have been hired by %s',
   ['you_have_fired']         = 'you have fired %s',
   ['you_have_been_fired']    = 'you have been fired from %s',
+  ['check_bank']             = 'Poole Sandogh:',
+  ['locale_currency']        = '$%s',
   ['you_have_promoted']      = 'you have promoted %s as %s',
   ['you_have_been_promoted'] = 'you have been ~b~promoted~s~!',
 }
