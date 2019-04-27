@@ -48,9 +48,10 @@ em {
   margin: 10px;
 
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  /* overflow-y: scroll; */
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -63,7 +64,7 @@ em {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
+} */
 
 .chat-input {
   font-size: 1.2rem;
