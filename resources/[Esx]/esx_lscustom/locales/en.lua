@@ -1,6 +1,6 @@
 Locales['en'] = {
 
-	['by_default'] = 'default',
+	['by_default'] = 'Default',
 	['installed'] = 'installed',
 	['already_own'] = 'In Mashin in Option ro Darad: ~b~',
 	['not_enough_money_buyer'] = 'Baraye Eteqa\'e Mashin Be Andaze Kafi Pool Nadarid, ~b~ %s ~s~Niyaz Ast~',

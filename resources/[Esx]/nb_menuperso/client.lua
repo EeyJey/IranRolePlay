@@ -83,7 +83,7 @@ function OpenPersonnelMenu()
 			'default', GetCurrentResourceName(), 'menu_perso',
 			{
 				title    = 'Menu Personnel',
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = elements
 			},
 			function(data, menu)
@@ -162,7 +162,7 @@ function OpenPersonnelMenu()
 						'default', GetCurrentResourceName(), 'menuperso_modo',
 						{
 							title    = 'Modération',
-							align    = 'top-left',
+							align    = 'top-right',
 							elements = elements
 						},
 						function(data2, menu2)
@@ -263,7 +263,7 @@ function OpenPersonnelMenu()
 						'default', GetCurrentResourceName(), 'menuperso_moi',
 						{
 							title    = 'Me concernant',
-							align    = 'top-left',
+							align    = 'top-right',
 							elements = elements
 						},
 						function(data2, menu2)
@@ -294,7 +294,7 @@ function OpenPersonnelMenu()
 						'default', GetCurrentResourceName(), 'menuperso_actions',
 						{
 							title    = 'Actions',
-							align    = 'top-left',
+							align    = 'top-right',
 							elements = {
 								{label = 'Annuler l\'animation',  value = 'menuperso_actions__annuler'},
 								--{label = 'Faire ses besoins [WIP]',     value = 'menuperso_actions_pipi'},
@@ -323,7 +323,7 @@ function OpenPersonnelMenu()
 									'default', GetCurrentResourceName(), 'menuperso_actions_Salute',
 									{
 										title    = 'Animations de salutations',
-										align    = 'top-left',
+										align    = 'top-right',
 										elements = {
 											{label = 'Saluer',  value = 'menuperso_actions_Salute_saluer'},
 											{label = 'Serrer la main',     value = 'menuperso_actions_Salute_serrerlamain'},
@@ -361,7 +361,7 @@ function OpenPersonnelMenu()
 									'default', GetCurrentResourceName(), 'menuperso_actions_Humor',
 									{
 										title    = 'Animations d\'humeurs',
-										align    = 'top-left',
+										align    = 'top-right',
 										elements = {
 											{label = 'Féliciter',  value = 'menuperso_actions_Humor_feliciter'},
 											{label = 'Super',     value = 'menuperso_actions_Humor_super'},
@@ -424,7 +424,7 @@ function OpenPersonnelMenu()
 									'default', GetCurrentResourceName(), 'menuperso_actions_Travail',
 									{
 										title    = 'Animations de travail',
-										align    = 'top-left',
+										align    = 'top-right',
 										elements = {
 											{label = 'Pêcheur',  value = 'menuperso_actions_Travail_pecheur'},
 											{label = 'Agriculteur',     value = 'menuperso_actions_Travail_agriculteur'},
@@ -467,7 +467,7 @@ function OpenPersonnelMenu()
 									'default', GetCurrentResourceName(), 'menuperso_actions_Festives',
 									{
 										title    = 'Animations festives',
-										align    = 'top-left',
+										align    = 'top-right',
 										elements = {
 											{label = 'Danser',  value = 'menuperso_actions_Festives_danser'},
 											{label = 'Jouer de la musique',     value = 'menuperso_actions_Festives_jouerdelamusique'},
@@ -505,7 +505,7 @@ function OpenPersonnelMenu()
 									'default', GetCurrentResourceName(), 'menuperso_actions_Others',
 									{
 										title    = 'Animations diverses',
-										align    = 'top-left',
+										align    = 'top-right',
 										elements = {
 											{label = 'Fumer une clope',     value = 'menuperso_actions_Others_fumeruneclope'},
 											{label = 'Faire des pompes',     value = 'menuperso_actions_Others_fairedespompes'},
@@ -617,7 +617,7 @@ function OpenPersonnelMenu()
 						'default', GetCurrentResourceName(), 'menuperso_gpsrapide',
 						{
 							title    = 'GPS Rapide',
-							align    = 'top-left',
+							align    = 'top-right',
 							elements = {
 								{label = 'Pôle emploi',     value = 'menuperso_gpsrapide_poleemploi'},
 								{label = 'Comissariat principal',              value = 'menuperso_gpsrapide_comico'},
@@ -669,7 +669,7 @@ function OpenPersonnelMenu()
 						'default', GetCurrentResourceName(), 'menuperso_grade',
 						{
 							title    = 'Gestion d\'entreprise',
-							align    = 'top-left',
+							align    = 'top-right',
 							elements = {
 								{label = 'Recruter',     value = 'menuperso_grade_recruter'},
 								{label = 'Virer',              value = 'menuperso_grade_virer'},
@@ -842,7 +842,7 @@ function OpenVehiculeMenu()
 		{
 			img    = 'menu_vehicule',
 			-- title    = 'Véhicule',
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		},
 		function(data, menu)

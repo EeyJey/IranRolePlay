@@ -48,7 +48,7 @@ function OpenBlanchisseurMenu()
       'default', GetCurrentResourceName(), 'whitening',
       {
         title    = _U('Notification'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
         },
 

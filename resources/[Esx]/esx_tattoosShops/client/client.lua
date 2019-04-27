@@ -70,7 +70,7 @@ function openMenu()
       'default', GetCurrentResourceName(), 'Tattoos_menu',
       {
         title    = 'Tattos',
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -88,7 +88,7 @@ function openMenu()
 				'default', GetCurrentResourceName(), 'Tattoos_Categories_menu',
 				{
 					title    = 'Tattos | '..currentLabel,
-					align    = 'top-left',
+					align    = 'top-right',
 					elements = elements,
 				},
 			function(data2, menu2)

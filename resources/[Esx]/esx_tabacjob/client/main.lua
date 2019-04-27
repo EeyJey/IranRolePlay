@@ -174,7 +174,7 @@ function OpenTabacActionsMenu()
                 'default', GetCurrentResourceName(), 'vehicle_spawner',
                 {
                   title    = _U('service_vehicle'),
-                  align    = 'top-left',
+                  align    = 'top-right',
                   elements = elements,
                 },
                 function(data, menu)
@@ -436,7 +436,7 @@ ESX.UI.Menu.CloseAll()
     'default', GetCurrentResourceName(), 'factu_tabac_actions',
     {
       title    = 'Menu Tabac & Facturation',
-      align    = 'top-left',
+      align    = 'top-right',
       elements = {
         {label = 'Intéraction Client',    value = 'facture_client'},
         {label = 'Passer une annonce', value = 'announce'}        
@@ -452,7 +452,7 @@ ESX.UI.Menu.CloseAll()
           'default', GetCurrentResourceName(), 'facture_client',
           {
             title    = 'Facturation Client',
-            align    = 'top-left',
+            align    = 'top-right',
             elements = {
 
               {label = 'Facture',       value = 'billing'}              

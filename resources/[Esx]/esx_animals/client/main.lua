@@ -72,7 +72,7 @@ function OpenAnimal()
         'default', GetCurrentResourceName(), 'eden_animal',
         {
             title    = _U('pet_management'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = elements,
            
         },
@@ -328,7 +328,7 @@ function ordres()
         'default', GetCurrentResourceName(), 'ordres',
         {
             title    = _U('pet_orders'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = elements,
            
         },

@@ -71,7 +71,7 @@ function OpenAvocatActionsMenu()
                 'default', GetCurrentResourceName(), 'vehicle_spawner',
                 {
                   title    = _U('service_vehicle'),
-                  align    = 'top-left',
+                  align    = 'top-right',
                   elements = elements,
                 },
                 function(data, menu)

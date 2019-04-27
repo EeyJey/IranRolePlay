@@ -141,7 +141,7 @@ function OpenCloakroomMenu()
     'default', GetCurrentResourceName(), 'cloakroom',
     {
       title    = _U('cloakroom'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -204,7 +204,7 @@ function OpenVaultMenu()
       'default', GetCurrentResourceName(), 'vault',
       {
         title    = _U('vault'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -255,7 +255,7 @@ function OpenFridgeMenu()
       'default', GetCurrentResourceName(), 'fridge',
       {
         title    = _U('fridge'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -302,7 +302,7 @@ function OpenVehicleSpawnerMenu()
         'default', GetCurrentResourceName(), 'vehicle_spawner',
         {
           title    = _U('vehicle_menu'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = elements,
         },
         function(data, menu)
@@ -345,7 +345,7 @@ function OpenVehicleSpawnerMenu()
       'default', GetCurrentResourceName(), 'vehicle_spawner',
       {
         title    = _U('vehicle_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -431,7 +431,7 @@ function OpenSocietyActionsMenu()
     'default', GetCurrentResourceName(), 'unicorn_actions',
     {
       title    = _U('unicorn'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements
     },
     function(data, menu)
@@ -768,7 +768,7 @@ function OpenGetWeaponMenu()
       'default', GetCurrentResourceName(), 'vault_get_weapon',
       {
         title    = _U('get_weapon_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -810,7 +810,7 @@ function OpenPutWeaponMenu()
     'default', GetCurrentResourceName(), 'vault_put_weapon',
     {
       title    = _U('put_weapon_menu'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)

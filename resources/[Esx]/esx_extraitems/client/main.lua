@@ -177,7 +177,7 @@ function OpenComponentsMenu()
         'default', GetCurrentResourceName(), 'esx_extraitems',
         {
             title    = _U('accessories_select'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = elements,
            
         },
@@ -288,7 +288,7 @@ function OpenWeaponsSkinsMenu()
 	    'default', GetCurrentResourceName(), 'esx_extraitems_skins',
 	    {
 	        title    = _U('skin_select'),
-	        align    = 'top-left',
+	        align    = 'top-right',
 	        elements = elements,
 	       
 	    },

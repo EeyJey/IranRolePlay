@@ -75,7 +75,7 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 				local vehOpt = ESX.Game.GetVehicleProperties(vehicle)
 				local plate = vehOpt.plate
 				if k == data.current.modType or isRimMod then
-					if data.current.label == _U('by_default') or string.match(data.current.label, _U('installed')) then
+					if string.match(data.current.label, _U('by_default')) or string.match(data.current.label, _U('installed')) then
 						ESX.ShowNotification(_U('already_own') .. data.current.label)
 						TriggerEvent('esx_lscustommeca:installMod')
 					else

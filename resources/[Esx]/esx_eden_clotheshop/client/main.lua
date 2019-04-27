@@ -45,7 +45,7 @@ function OpenShopMenu()
     'default', GetCurrentResourceName(), 'shop_main',
     {
       title    = _U('shop_main_menu'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -219,7 +219,7 @@ function OpenShopMenu()
             'default', GetCurrentResourceName(), 'player_dressing',
             {
               title    = _U('player_clothes'),
-              align    = 'top-left',
+              align    = 'top-right',
               elements = elements,
             },
             function(data, menu)
@@ -268,7 +268,7 @@ function OpenShopMenu()
             'default', GetCurrentResourceName(), 'supprime_cloth',
             {
               title    = _U('suppr_cloth'),
-              align    = 'top-left',
+              align    = 'top-right',
               elements = elements,
             },
             function(data, menu)

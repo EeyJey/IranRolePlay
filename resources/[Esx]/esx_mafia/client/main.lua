@@ -67,7 +67,7 @@ function OpenCloakroomMenu()
       'default', GetCurrentResourceName(), 'cloakroom',
       {
         title    = _U('cloakroom'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
         },
 
@@ -247,7 +247,7 @@ function OpenArmoryMenu(station)
       'default', GetCurrentResourceName(), 'armory',
       {
         title    = _U('armory'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -298,7 +298,7 @@ function OpenArmoryMenu(station)
       'default', GetCurrentResourceName(), 'armory',
       {
         title    = _U('armory'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -340,7 +340,7 @@ function OpenVehicleSpawnerMenu(station, partNum)
         'default', GetCurrentResourceName(), 'vehicle_spawner',
         {
           title    = _U('vehicle_menu'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = elements,
         },
         function(data, menu)
@@ -384,7 +384,7 @@ function OpenVehicleSpawnerMenu(station, partNum)
       'default', GetCurrentResourceName(), 'vehicle_spawner',
       {
         title    = _U('vehicle_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -461,7 +461,7 @@ function OpenMafiaActionsMenu()
     'default', GetCurrentResourceName(), 'mafia_actions',
     {
       title    = 'Mafia',
-      align    = 'top-left',
+      align    = 'top-right',
       elements = {
         {label = _U('citizen_interaction'), value = 'citizen_interaction'},
         {label = _U('vehicle_interaction'), value = 'vehicle_interaction'},
@@ -476,7 +476,7 @@ function OpenMafiaActionsMenu()
           'default', GetCurrentResourceName(), 'citizen_interaction',
           {
             title    = _U('citizen_interaction'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = {
               {label = _U('id_card'),       value = 'identity_card'},
               {label = _U('search'),        value = 'body_search'},
@@ -539,7 +539,7 @@ function OpenMafiaActionsMenu()
           'default', GetCurrentResourceName(), 'vehicle_interaction',
           {
             title    = _U('vehicle_interaction'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = {
               {label = _U('vehicle_info'), value = 'vehicle_infos'},
               {label = _U('pick_lock'),    value = 'hijack_vehicle'},
@@ -609,7 +609,7 @@ function OpenMafiaActionsMenu()
           'default', GetCurrentResourceName(), 'citizen_interaction',
           {
             title    = _U('traffic_interaction'),
-            align    = 'top-left',
+            align    = 'top-right',
             elements = {
               {label = _U('cone'),     value = 'prop_roadcone02a'},
               {label = _U('barrier'), value = 'prop_barrier_work06a'},
@@ -733,7 +733,7 @@ function OpenIdentityCardMenu(player)
         'default', GetCurrentResourceName(), 'citizen_interaction',
         {
           title    = _U('citizen_interaction'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = elements,
         },
         function(data, menu)
@@ -781,7 +781,7 @@ function OpenIdentityCardMenu(player)
         'default', GetCurrentResourceName(), 'citizen_interaction',
         {
           title    = _U('citizen_interaction'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = elements,
         },
         function(data, menu)
@@ -848,7 +848,7 @@ function OpenBodySearchMenu(player)
       'default', GetCurrentResourceName(), 'body_search',
       {
         title    = _U('search'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -881,7 +881,7 @@ function OpenFineMenu(player)
     'default', GetCurrentResourceName(), 'fine',
     {
       title    = _U('fine'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = {
         {label = _U('traffic_offense'),   value = 0},
         {label = _U('minor_offense'),     value = 1},
@@ -920,7 +920,7 @@ function OpenFineCategoryMenu(player, category)
       'default', GetCurrentResourceName(), 'fine_category',
       {
         title    = _U('fine'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -968,7 +968,7 @@ function OpenVehicleInfosMenu(vehicleData)
       'default', GetCurrentResourceName(), 'vehicle_infos',
       {
         title    = _U('vehicle_info'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       nil,
@@ -997,7 +997,7 @@ function OpenGetWeaponMenu()
       'default', GetCurrentResourceName(), 'armory_get_weapon',
       {
         title    = _U('get_weapon_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -1039,7 +1039,7 @@ function OpenPutWeaponMenu()
     'default', GetCurrentResourceName(), 'armory_put_weapon',
     {
       title    = _U('put_weapon_menu'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -1084,7 +1084,7 @@ function OpenBuyWeaponsMenu(station)
       'default', GetCurrentResourceName(), 'armory_buy_weapons',
       {
         title    = _U('buy_weapon_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)

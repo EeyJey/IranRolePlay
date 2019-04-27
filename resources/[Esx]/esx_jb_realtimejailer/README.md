@@ -25,7 +25,7 @@ function openJailMenu(playerid)
 	'default', GetCurrentResourceName(), 'jail_menu',
 	{
 	  title    = 'Mettre en prison',
-	  align    = 'top-left',
+	  align    = 'top-right',
 	  elements = elements,
 	},
 	function(data3, menu)

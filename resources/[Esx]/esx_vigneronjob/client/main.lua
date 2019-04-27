@@ -58,7 +58,7 @@ function OpenCloakroomMenu()
 		'default', GetCurrentResourceName(), 'cloakroom',
 		{
 			title    = _U('cloakroom'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = {
 				{label = _U('vine_clothes_civil'), value = 'citizen_wear'},
 				{label = _U('vine_clothes_vine'), value = 'vigne_wear'},
@@ -116,7 +116,7 @@ function OpenVigneActionsMenu()
 		'default', GetCurrentResourceName(), 'vigne_actions',
 		{
 			title    = 'Vigne',
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		},
 		
@@ -170,7 +170,7 @@ function OpenVehicleSpawnerMenu()
 				'default', GetCurrentResourceName(), 'vehicle_spawner',
 				{
 					title    = _U('veh_menu'),
-					align    = 'top-left',
+					align    = 'top-right',
 					elements = elements,
 				},
 				function(data, menu)
@@ -211,7 +211,7 @@ function OpenVehicleSpawnerMenu()
 			'default', GetCurrentResourceName(), 'vehicle_spawner',
 			{
 				title    = _U('veh_menu'),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = elements,
 			},
 			function(data, menu)
@@ -246,7 +246,7 @@ function OpenMobileVigneActionsMenu()
 		'default', GetCurrentResourceName(), 'mobile_vigne_actions',
 		{
 			title    = 'vigne',
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = {
 				{label = _U('billing'), value = 'billing'}
 			}
@@ -315,7 +315,7 @@ function OpenGetStocksMenu()
 			'default', GetCurrentResourceName(), 'stocks_menu',
 			{
 				title    = 'Vigneron Stock',
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = elements
 			},
 			function(data, menu)

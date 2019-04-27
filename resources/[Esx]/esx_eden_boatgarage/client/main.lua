@@ -100,7 +100,7 @@ function OpenMenuGarage(PointType)
 		'default', GetCurrentResourceName(), 'garage_menu',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -163,7 +163,7 @@ function ListVehiclesMenu()
 		'default', GetCurrentResourceName(), 'spawn_vehicle',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -200,7 +200,7 @@ function reparation(prix,vehicle,vehicleProps)
 		'default', GetCurrentResourceName(), 'delete_menu',
 		{
 			title    = _U('damaged_vehicle'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -358,7 +358,7 @@ function ReturnVehicleMenu()
 		'default', GetCurrentResourceName(), 'return_vehicle',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
