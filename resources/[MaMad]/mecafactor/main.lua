@@ -2,7 +2,7 @@ local display = false
 
 RegisterCommand("mecaon", function()
     Citizen.CreateThread(function()
-      TriggerEvent('mecafactor:on', true)
+      TriggerEvent('mecafactor:on', 100)
     end)
 end)
   
@@ -10,18 +10,18 @@ end)
 
 RegisterCommand("mecaoff", function()
   Citizen.CreateThread(function()
-      TriggerEvent("mecafactor:off", true)
+      TriggerEvent("mecafactor:off", 100)
   end)
 end)
 
   --[[ ////////////////////////////////////////// ]]
 
 RegisterNetEvent('mecafactor:on')
-AddEventHandler('mecafactor:on', function(args)
+AddEventHandler('mecafactor:on', function(p)
   SendNUIMessage({
     type = "ui",
     display = true,
-    price = args[1]
+    price = p
   })
 end)
 

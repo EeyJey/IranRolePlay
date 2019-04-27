@@ -12,7 +12,7 @@ AddEventHandler('sendSession:PlayerNumber', function(clientPlayerNumber)
 		serverPlayerNumber = countPlayer()
 		if serverPlayerNumber-clientPlayerNumber > 4 then 
 			DropPlayer(source, 'Session shodid') -- Kick player
-			print("sendSession:PlayerNumber clientPlayerNumber-"..clientPlayerNumber.." serverPlayerNumber-"..serverPlayerNumber) -- Debug
+			-- print("sendSession:PlayerNumber clientPlayerNumber-"..clientPlayerNumber.." serverPlayerNumber-"..serverPlayerNumber) -- Debug
 		end
 	end
 end)
