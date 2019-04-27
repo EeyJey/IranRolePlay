@@ -2,7 +2,6 @@ $(function(){
 	window.onload = (e) => {
         /* 'links' the js with the Nui message from main.lua */
 		window.addEventListener('message', (event) => {
-			console.log("We are in js lol")
             //document.querySelector("#logo").innerHTML = " "
 			var item = event.data;
 			if (item !== undefined && item.type === "ui") {
@@ -20,11 +19,9 @@ $(function(){
 });
 
 $("#accept").click(function(){
-	console.log('acc')
     $.post('http://mecafactor/accept', JSON.stringify({}));
 });
 
 $("#cancel").click(function(){
-	console.log('canceling')
     $.post('http://mecafactor/cancel', JSON.stringify({}));
 });
