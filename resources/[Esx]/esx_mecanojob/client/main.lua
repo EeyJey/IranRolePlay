@@ -887,7 +887,7 @@ end)
 
 -- Create Blips
 Citizen.CreateThread(function()
-  local blip = AddBlipForCoord(Config.Zones.MecanoActions.Pos.x, Config.Zones.MecanoActions.Pos.y, Config.Zones.MecanoActions.Pos.z)
+  local blip = AddBlipForCoord(Config.Zones.MecanoActions.Sop.x, Config.Zones.MecanoActions.Sop.y, Config.Zones.MecanoActions.Sop.z)
   SetBlipSprite (blip, 446)
   SetBlipDisplay(blip, 4)
   SetBlipScale  (blip, 0.9)
