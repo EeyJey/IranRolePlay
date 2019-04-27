@@ -90,27 +90,80 @@ Config.PoliceStations = {
 -- https://wiki.rage.mp/index.php?title=Vehicles
 Config.AuthorizedVehicles = {
 	Shared = {
+		
 	},
 
 	recruit = {
 		{
+			model = 'police',
+			label = 'police1'
+		},	
+		{
 			model = 'police2',
 			label = 'Dodge Charger'
+		},
+		{
+			model = 'police3',
+			label = 'police3'
 		},	
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
 	},
 
 	officer = {
-    	{
-			model = 'police2',
-			label = 'Dodge Charger'
+		{
+			model = 'police',
+			label = 'police1'
 		},	
 		{
+			model = 'police2',
+			label = 'Dodge Charger'
+		},
+		{
 			model = 'police3',
-			label = 'Ford Interceptor'
+			label = 'police3'
+		},	
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
+    	{
+			model = 'policeb',
+			label = 'Motor'
+		},	
+		{
+			model = 'sheriff',
+			label = 'Sheriff'
 		},
 	},
 
 	sergeant = {
+		{
+			model = 'police',
+			label = 'police1'
+		},	
+		{
+			model = 'police2',
+			label = 'Dodge Charger'
+		},
+		{
+			model = 'police3',
+			label = 'police3'
+		},	
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
+		{
+			model = 'policeb',
+			label = 'Motor'
+		},	
+		{
+			model = 'sheriff',
+			label = 'Sheriff'
+		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
@@ -126,17 +179,49 @@ Config.AuthorizedVehicles = {
 	},
 
 	lieutenant = {
+		{
+			model = 'police',
+			label = 'police1'
+		},	
+		{
+			model = 'police2',
+			label = 'Dodge Charger'
+		},
+		{
+			model = 'police3',
+			label = 'police3'
+		},	
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
+		{
+			model = 'policeb',
+			label = 'Motor'
+		},	
+		{
+			model = 'sheriff',
+			label = 'Sheriff'
+		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
 		},
-    	{
+		{
+			model = 'police3',
+			label = 'Ford Interceptor'
+		},
+		{
 			model = 'police4',
 			label = 'Ford Berline'
 		},
 		{
-			model = 'police3',
-			label = 'Ford Interceptor'
+			model = 'fbi',
+			label = 'FBI'
+		},
+		{
+			model = 'sheriff2',
+			label = 'sheriff2'
 		},
 		{
 			model = 'police5',
@@ -149,17 +234,49 @@ Config.AuthorizedVehicles = {
 	},
 
 	boss = {
+		{
+			model = 'police',
+			label = 'police1'
+		},	
+		{
+			model = 'police2',
+			label = 'Dodge Charger'
+		},
+		{
+			model = 'police3',
+			label = 'police3'
+		},	
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
+		{
+			model = 'policeb',
+			label = 'Motor'
+		},	
+		{
+			model = 'sheriff',
+			label = 'Sheriff'
+		},
     	{
 			model = 'police2',
 			label = 'Dodge Charger'
 		},
-    	{
+		{
+			model = 'police3',
+			label = 'Ford Interceptor'
+		},
+		{
 			model = 'police4',
 			label = 'Ford Berline'
 		},
 		{
-			model = 'police3',
-			label = 'Ford Interceptor'
+			model = 'fbi',
+			label = 'FBI'
+		},
+		{
+			model = 'sheriff2',
+			label = 'sheriff2'
 		},
 		{
 			model = 'police5',
@@ -168,8 +285,22 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'polgs350',
 			label = 'Lexus'
+		},{
+			model = 'police5',
+			label = 'Aventadoor'
 		},
-		
+		{
+			model = 'polgs350',
+			label = 'Lexus'
+		},
+		{
+			model = 'insurgent2',
+			label = 'Insurgent2'
+		},
+		{
+			model = 'Fbi2',
+			label = 'Fbi2'
+		},
 	},
 }
 
@@ -179,7 +310,7 @@ Config.AuthorizedVehicles = {
 Config.Uniforms = {
 	recruit_wear = {
 		male = {
-			['tshirt_1'] = 59,  ['tshirt_2'] = 1,
+			['tshirt_1'] = 58,  ['tshirt_2'] = 1,
 			['torso_1'] = 55,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 41,
