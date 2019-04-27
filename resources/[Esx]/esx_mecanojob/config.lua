@@ -10,7 +10,7 @@ Config.Locale                     = 'fa'
 
 Config.Zones = {
   MecanoActions = {
-    Pos   = { x = -206.780, y = -1341.700, z = 33.894 },
+    Pos   = { x = -205.7434, y = -1310.3275, z = 31.2959 },
     Size  = { x = 1.5, y = 1.5, z = 1.0 },
     Color = { r = 204, g = 204, b = 0 },
     Type  = 1,
