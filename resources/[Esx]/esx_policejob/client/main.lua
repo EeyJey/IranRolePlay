@@ -1608,11 +1608,11 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 		if IsHandcuffed then
-			DisableControlAction(2, 1, true) -- Disable pan
+			-- DisableControlAction(2, 1, true) -- Disable pan
 			DisableControlAction(2, 2, true) -- Disable tilt
 			DisableControlAction(2, 24, true) -- Attack
 			DisableControlAction(2, 257, true) -- Attack 2
-			-- DisableControlAction(2, 25, true) -- Aim
+			DisableControlAction(2, 25, true) -- Aim
 			DisableControlAction(2, 263, true) -- Melee Attack 1
 			DisableControlAction(2, Keys['R'], true) -- Reload
 			DisableControlAction(2, Keys['TOP'], true) -- Open phone (not needed?)
