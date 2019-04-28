@@ -35,7 +35,8 @@ Config.PoliceStations = {
 		-- https://wiki.rage.mp/index.php?title=Weapons
 		AuthorizedWeapons = {
 			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
-			{ name = 'WEAPON_STUNGUN',       price = 100 },
+			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
+			{ name = 'weapon_flashlight',       price = 100 },
 			{ name = 'WEAPON_PISTOL',     price = 5000 },
 			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
 			{ name = 'weapon_combatpistol',     price = 7000 },
