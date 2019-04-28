@@ -20,6 +20,7 @@ Config.Priority = {
     ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
     ["steam:11000010b421c27"] = 70, -- AmoBig streamer
     ["steam:11000010b4600ae"] = 70, -- Mr Toxic streamer
+    ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     --["steam:11000011a3f0a06"] = 70, --game_over streamer
     ["steam:110000111236158"] = 70, -- Matin_Dark streamer
     ["ip:127.0.0.0"] = 85
