@@ -169,7 +169,7 @@ Config.AuthorizedVehicles = {
 			label = 'Unmarked car'
 		},
 		{
-			model = 'riot2'
+			model = 'riot2',
 			label = 'Riot'
 		}
 	},
