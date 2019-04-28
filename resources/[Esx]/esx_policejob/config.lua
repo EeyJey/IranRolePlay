@@ -100,7 +100,7 @@ Config.AuthorizedVehicles = {
 		},	
 		{
 			model = 'police2',
-			label = 'Dodge Charger'
+			label = 'police2'
 		},
 		{
 			model = 'police3',
@@ -119,7 +119,7 @@ Config.AuthorizedVehicles = {
 		},	
 		{
 			model = 'police2',
-			label = 'Dodge Charger'
+			label = 'police2'
 		},
 		{
 			model = 'police3',
@@ -134,7 +134,7 @@ Config.AuthorizedVehicles = {
 			label = 'Motor'
 		},	
 		{
-			model = 'sheriff',
+			model = 'Sheriff',
 			label = 'Sheriff'
 		},
 	},
@@ -146,7 +146,7 @@ Config.AuthorizedVehicles = {
 		},	
 		{
 			model = 'police2',
-			label = 'Dodge Charger'
+			label = 'police2'
 		},
 		{
 			model = 'police3',
@@ -164,18 +164,14 @@ Config.AuthorizedVehicles = {
 			model = 'sheriff',
 			label = 'Sheriff'
 		},
-    	{
-			model = 'police2',
-			label = 'Dodge Charger'
-		},
-		{
-			model = 'police3',
-			label = 'Ford Interceptor'
-		},
 		{
 			model = 'police4',
-			label = 'Ford Berline'
+			label = 'Unmarked car'
 		},
+		{
+			model = 'riot2'
+			label = 'Riot'
+		}
 	},
 
 	lieutenant = {
@@ -205,15 +201,11 @@ Config.AuthorizedVehicles = {
 		},
     	{
 			model = 'police2',
-			label = 'Dodge Charger'
-		},
-		{
-			model = 'police3',
-			label = 'Ford Interceptor'
+			label = 'Police2'
 		},
 		{
 			model = 'police4',
-			label = 'Ford Berline'
+			label = 'Unmarked car'
 		},
 		{
 			model = 'fbi',
@@ -221,11 +213,11 @@ Config.AuthorizedVehicles = {
 		},
 		{
 			model = 'sheriff2',
-			label = 'sheriff2'
+			label = 'Patrol Sheriff'
 		},
 		{
 			model = 'police5',
-			label = 'Aventadoor'
+			label = 'Lamburghini'
 		},
 		{
 			model = 'polgs350',
@@ -240,12 +232,16 @@ Config.AuthorizedVehicles = {
 		},	
 		{
 			model = 'police2',
-			label = 'Dodge Charger'
+			label = 'Police2'
 		},
 		{
 			model = 'police3',
 			label = 'police3'
 		},	
+		{
+			model = 'police4',
+			label = 'Unmarked car'
+		},
 		{
 			model = 'Towtruck',
 			label = 'Tow truck'
@@ -258,36 +254,17 @@ Config.AuthorizedVehicles = {
 			model = 'sheriff',
 			label = 'Sheriff'
 		},
-    	{
-			model = 'police2',
-			label = 'Dodge Charger'
-		},
-		{
-			model = 'police3',
-			label = 'Ford Interceptor'
-		},
-		{
-			model = 'police4',
-			label = 'Ford Berline'
-		},
 		{
 			model = 'fbi',
 			label = 'FBI'
 		},
 		{
 			model = 'sheriff2',
-			label = 'sheriff2'
+			label = 'Patrol sheriff'
 		},
 		{
 			model = 'police5',
-			label = 'Aventadoor'
-		},
-		{
-			model = 'polgs350',
-			label = 'Lexus'
-		},{
-			model = 'police5',
-			label = 'Aventadoor'
+			label = 'Lamburghini'
 		},
 		{
 			model = 'polgs350',
@@ -295,7 +272,7 @@ Config.AuthorizedVehicles = {
 		},
 		{
 			model = 'insurgent2',
-			label = 'Insurgent2'
+			label = 'S.W.A.T'
 		},
 		{
 			model = 'Fbi2',
