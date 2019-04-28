@@ -90,7 +90,10 @@ Config.PoliceStations = {
 -- https://wiki.rage.mp/index.php?title=Vehicles
 Config.AuthorizedVehicles = {
 	Shared = {
-		
+		{
+			model = 'pbus',
+			label = 'Bus'
+		},	
 	},
 
 	recruit = {
