@@ -279,7 +279,7 @@ Config.AuthorizedVehicles = {
 		},
 		{
 			model = 'Fbi2',
-			label = 'Fbi2'
+			label = 'Patrol FBI'
 		},
 	},
 }
