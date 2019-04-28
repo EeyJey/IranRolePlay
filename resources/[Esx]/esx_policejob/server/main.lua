@@ -124,6 +124,10 @@ RegisterServerEvent('esx_policejob:putStockItems')
 AddEventHandler('esx_policejob:putStockItems', function(itemName, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
+	local oocname =  GetPlayerName(source)
+
+
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..'count'..' items ' .. weaponName, 'steam', true, source, false)
 
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)
 
@@ -296,10 +300,12 @@ end)
 ESX.RegisterServerCallback('esx_policejob:addArmoryWeapon', function(source, cb, weaponName, removeWeapon)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
+	local oocname =  GetPlayerName(source)
 
 	if removeWeapon then
 		xPlayer.removeWeapon(weaponName)
 	end
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored a weapon ' .. weaponName, 'steam', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
