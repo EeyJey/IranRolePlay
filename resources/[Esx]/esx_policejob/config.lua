@@ -226,6 +226,14 @@ Config.AuthorizedVehicles = {
 			model = 'polgs350',
 			label = 'Lexus'
 		},
+		{
+			model = 'policeold1',
+			label = 'Mashin barf'
+		},
+		{
+			model = 'policeold2',
+			label = 'Patrol barf'
+		}
 	},
 
 	boss = {
@@ -281,6 +289,14 @@ Config.AuthorizedVehicles = {
 			model = 'Fbi2',
 			label = 'Patrol FBI'
 		},
+		{
+			model = 'policeold1',
+			label = 'Mashin barf'
+		},
+		{
+			model = 'policeold2',
+			label = 'Patrol barf'
+		}
 	},
 }
 
