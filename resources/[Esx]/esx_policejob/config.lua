@@ -35,6 +35,7 @@ Config.PoliceStations = {
 		-- https://wiki.rage.mp/index.php?title=Weapons
 		AuthorizedWeapons = {
 			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
+			{ name = 'WEAPON_STUNGUN',       price = 100 },
 			{ name = 'WEAPON_PISTOL',     price = 5000 },
 			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
 			{ name = 'weapon_combatpistol',     price = 7000 },
@@ -174,7 +175,11 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'riot2',
 			label = 'Riot'
-		}
+		},
+		{
+			model = 'sheriff2',
+			label = 'Patrol Sheriff'
+		},
 	},
 
 	lieutenant = {
@@ -233,6 +238,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'policeold2',
 			label = 'Patrol barf'
+		},
+		{
+			model = 'riot2',
+			label = 'Riot'
 		}
 	},
 
@@ -264,6 +273,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'sheriff',
 			label = 'Sheriff'
+		},
+		{
+			model = 'riot2',
+			label = 'Riot'
 		},
 		{
 			model = 'fbi',
