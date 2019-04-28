@@ -9,5 +9,5 @@ files {
     'html/index.html',
     'html/style.css',
     'html/iran.otf',
-    'html/shit.js'
+    'html/listener.js'
 }
