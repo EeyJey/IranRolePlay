@@ -103,7 +103,7 @@ RegisterServerEvent('es_admin:all')
 AddEventHandler('es_admin:all', function(type)
 	local Source = source
 	TriggerEvent('es:getPlayerFromId', source, function(user)
-		TriggerEvent('es:canGroupTarget', user.getGroup(), "admin", function(available)
+		TriggerEvent('es:canGroupTarget', user.getGroup(), "mod", function(available)
 			if available or user.getGroup() == "superadmin" then
 				if type == "slay_all" then TriggerClientEvent('es_admin:quick', -1, 'slay') end
 				if type == "bring_all" then TriggerClientEvent('es_admin:quick', -1, 'bring', Source) end
