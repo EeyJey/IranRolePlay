@@ -19,7 +19,7 @@ RegisterServerEvent('3dme:shareDisplay')
 AddEventHandler('3dme:shareDisplay', function(text)
 	local name = getIdentity(source).firstname
 	local oocname =  GetPlayerName(source)
-	TriggerEvent('DiscordBot:ToDiscord', 'chat', oocname, '/me '..text, 'steam', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'chat', oocname, '/me '..text, 'user', true, source, false)
 	TriggerClientEvent('3dme:triggerDisplay', -1, text, source,name)
 	if logEnabled then
 		setLog(text, source)

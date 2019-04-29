@@ -169,7 +169,6 @@ AddEventHandler('DiscordBot:ToDiscord', function(WebHook, Name, Message, Image, 
 					for i, Line in ipairs(SteamProfileSplitted) do
 						if Line:find('<avatarFull>') then
 							Image = Line:gsub('	<avatarFull><!%[CDATA%[', ''):gsub(']]></avatarFull>', '')
-							print('In loop of discord '.. Message)
 							return PerformHttpRequest(WebHook, function(Error, Content, Head) end, 'POST', json.encode({username = Name, content = Message, avatar_url = Image, tts = TTS}), {['Content-Type'] = 'application/json'})
 						end
 					end
@@ -181,7 +180,6 @@ AddEventHandler('DiscordBot:ToDiscord', function(WebHook, Name, Message, Image, 
 			Image = SystemAvatar
 		end
 	end
-	print('Here in discord before calling webhook '.. Message)
 	PerformHttpRequest(WebHook, function(Error, Content, Head) end, 'POST', json.encode({username = Name, content = Message, avatar_url = Image, tts = TTS}), {['Content-Type'] = 'application/json'})
 end)
 

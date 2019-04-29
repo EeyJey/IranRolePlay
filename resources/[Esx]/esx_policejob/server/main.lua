@@ -110,7 +110,7 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 			else
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
-				TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew '.. count .. ' ' .. itemName, 'steam', true, source, false)
+				TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew '.. count .. ' ' .. itemName, 'user', true, source, false)
 				TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
 			end
 		else
@@ -127,7 +127,7 @@ AddEventHandler('esx_policejob:putStockItems', function(itemName, count)
 	local oocname =  GetPlayerName(source)
 
 
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..count..' items ' .. itemName, 'steam', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..count..' items ' .. itemName, 'user', true, source, false)
 
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)
 
@@ -305,7 +305,7 @@ ESX.RegisterServerCallback('esx_policejob:addArmoryWeapon', function(source, cb,
 	if removeWeapon then
 		xPlayer.removeWeapon(weaponName)
 	end
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored a weapon ' .. weaponName, 'steam', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored a weapon ' .. weaponName, 'user', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
@@ -344,7 +344,7 @@ ESX.RegisterServerCallback('esx_policejob:removeArmoryWeapon', function(source, 
 	local oocname =  GetPlayerName(source)
 	
 	xPlayer.addWeapon(weaponName, 500)
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew a weapon ' .. weaponName, 'steam', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew a weapon ' .. weaponName, 'user', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
