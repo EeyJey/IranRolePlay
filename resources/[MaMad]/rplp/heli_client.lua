@@ -68,13 +68,6 @@ Citizen.CreateThread(function()
 						Citizen.CreateThread(function()
 							Wait(15000)
 							SetPedCanRagdoll(GetPlayerPed(-1), true)
-						end)if GetPedInVehicleSeat(heli, 1) == lPed or GetPedInVehicleSeat(heli, 2) == lPed or GetPedInVehicleSeat(heli, 0) or GetPedInVehicleSeat(heli, -1) then
-						PlaySoundFrontend(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", false)
-						SetPedCanRagdoll(GetPlayerPed(-1), false)
-						TaskRappelFromHeli(GetPlayerPed(-1), 1)
-						Citizen.CreateThread(function()
-							Wait(15000)
-							SetPedCanRagdoll(GetPlayerPed(-1), true)
 						end)
 					else
 						SetNotificationTextEntry( "STRING" )
