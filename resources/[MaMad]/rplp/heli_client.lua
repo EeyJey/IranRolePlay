@@ -129,7 +129,7 @@ Citizen.CreateThread(function()
 			RenderScriptCams(false, false, 0, 1, 0) -- Return to gameplay camera
 			SetScaleformMovieAsNoLongerNeeded(scaleform) -- Cleanly release the scaleform
 			DestroyCam(cam, false)
-			-- SetNightvision(false)
+			SetNightvision(false)
 			SetSeethrough(false)
 		end
 	end
@@ -154,10 +154,10 @@ end
 
 function ChangeVision()
 	if vision_state == 0 then
-		-- SetNightvision(true)
+		SetNightvision(true)
 		vision_state = 1
 	else
-		-- SetNightvision(false)
+		SetNightvision(false)
 		vision_state = 0
 	end
 end
@@ -234,14 +234,14 @@ end
 
 -- function HandleSpotlight(cam)
 -- if IsControlJustPressed(0, toggle_spotlight) then
-	-- PlaySoundFrontend(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", false)
-	-- spotlight_state = not spotlight_state
+-- 	PlaySoundFrontend(-1, "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", false)
+-- 	spotlight_state = not spotlight_state
 -- end
 -- if spotlight_state then
-	-- local rotation = GetCamRot(cam, 2)
-	-- local forward_vector = RotAnglesToVec(rotation)
-	-- local camcoords = GetCamCoord(cam)
-	-- DrawSpotLight(camcoords, forward_vector, 255, 255, 255, 300.0, 10.0, 0.0, 2.0, 1.0)
+-- 	local rotation = GetCamRot(cam, 2)
+-- 	local forward_vector = RotAnglesToVec(rotation)
+-- 	local camcoords = GetCamCoord(cam)
+-- 	DrawSpotLight(camcoords, forward_vector, 255, 255, 255, 300.0, 10.0, 0.0, 2.0, 1.0)
 -- end
 -- end
 
