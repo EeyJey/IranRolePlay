@@ -506,7 +506,7 @@ function ChangeVision()
 		SetNightvision(true)
 		vision_state = 1
 	else
-		SetSeethrough(false)
+		SetNightvision(false)
 		vision_state = 0
 	end
 end
