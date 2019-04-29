@@ -127,7 +127,7 @@ AddEventHandler('esx_policejob:putStockItems', function(itemName, count)
 	local oocname =  GetPlayerName(source)
 
 
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..'count'..' items ' .. weaponName, 'steam', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..'count'..' items ' .. itemName, 'steam', true, source, false)
 
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)
 

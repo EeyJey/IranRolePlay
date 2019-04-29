@@ -293,7 +293,6 @@ function StartDeathTimer()
 		-- bleedout timer
 		while bleedoutTimer > 0 and IsDead do
 			Citizen.Wait(0)
-			DisableControlAction(2, 1, false) -- Disable pan
 			text = _U('respawn_bleedout_in', secondsToClock(bleedoutTimer))
 
 			if not Config.EarlyRespawnFine then
