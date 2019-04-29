@@ -1614,6 +1614,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(2, 257, true) -- Attack 2
 			DisableControlAction(2, 25, true) -- Aim
 			DisableControlAction(2, 263, true) -- Melee Attack 1
+			DisableControlAction(2, Keys['~'], true) -- HandsUP
 			DisableControlAction(2, Keys['R'], true) -- Reload
 			DisableControlAction(2, Keys['TOP'], true) -- Open phone (not needed?)
 			DisableControlAction(2, Keys['SPACE'], true) -- Jump
