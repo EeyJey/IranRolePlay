@@ -34,6 +34,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local drill = xPlayer.getInventoryItem('drill')
 	local xPlayers = ESX.GetPlayers()
+	local oocname =  GetPlayerName(source)
 	
 	if Banks[robb] then
 
@@ -73,6 +74,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 							TriggerClientEvent('esx_holdupbank:setblip', xPlayers[i], Banks[robb].position)
 					end
 				end
+				TriggerEvent('DiscordBot:ToDiscord', 'rob', oocname, 'Started bank robbery in ' ..bank.nameofbank , true, source, false)
 
 				TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. bank.nameofbank .. _U('do_not_move'))
 				TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
