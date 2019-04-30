@@ -14,7 +14,7 @@
 Config 				  = {}
 Config.UseESX 		  = true
 Config.CooldownPolice = 2000 -- Will work with ESX only
-Config.cooldown		  = 3000
+Config.cooldown		  = 2000
 
 
 
