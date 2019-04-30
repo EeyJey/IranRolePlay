@@ -81,9 +81,11 @@ end)
 end)
 
 Citizen.CreateThread(function()
+	local tmpTime = os.time()
 	while true do
 		Citizen.Wait(0)
-			if blocked then
+			if blocked and (os.time() - tmpTime) <3 then
+				tmpTime = os.time()
 				DisableControlAction(1, 25, true )
 				DisableControlAction(1, 140, true)
 				DisableControlAction(1, 141, true)
@@ -91,6 +93,8 @@ Citizen.CreateThread(function()
 				DisableControlAction(1, 23, true)
 				DisableControlAction(1, 37, true) -- Disables INPUT_SELECT_WEAPON (TAB)
 				DisablePlayerFiring(ped, true) -- Disable weapon firing
+			else 
+				blocked = false
 			end
 	end
 end)
