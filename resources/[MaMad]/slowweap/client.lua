@@ -66,7 +66,7 @@ end)
 			--elseif not IsPedArmed(ped, 4) then
 				if not holstered then
 						TaskPlayAnim(ped, "weapons@pistol@", "aim_2_holster", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
-						Citizen.Wait(500)
+						Citizen.Wait(2000)
 						ClearPedTasks(ped)
 						holstered = true
 				end
