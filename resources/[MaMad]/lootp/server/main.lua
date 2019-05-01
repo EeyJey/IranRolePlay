@@ -33,7 +33,7 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 	local oocname =  GetPlayerName(source)
 	local targetName =  GetPlayerName(target)
 
-	TriggerEvent('DiscordBot:ToDiscord', 'loot', oocname, 'Stole '..amount ..' of '.. itemName .. ' from ' .. targetName, true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'loot', oocname, 'Stole '..amount ..' of '.. itemName .. ' from ' .. targetName,'user', true, source, false)
 
 
 	if itemType == 'item_standard' then
