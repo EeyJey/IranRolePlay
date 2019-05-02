@@ -17,7 +17,6 @@ local blocked	 = false
 local PlayerData = {}
 local cooldown	 = Config.cooldown
 ------------------------
-local tmpTime = os.time()
 
 
 Citizen.CreateThread(function()
@@ -53,7 +52,6 @@ end)
 			if CheckWeapon(ped) then
 			--if IsPedArmed(ped, 4) then
 				if holstered then
-					tmpTime = os.time()
 					blocked   = true
 					TaskPlayAnim(ped, "reaction@intimidation@cop@unarmed", "intro", 8.0, 2.0, -1, 50, 2.0, 0, 0, 0 )
 					Citizen.Wait(cooldown)
@@ -85,15 +83,25 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-			if blocked and ((os.time() - tmpTime) < 3) then
-				DisableControlAction(1, 25, true )
-				DisableControlAction(1, 140, true)
-				DisableControlAction(1, 141, true)
-				DisableControlAction(1, 142, true)
-				DisableControlAction(1, 23, true)
-				DisableControlAction(1, 37, true) -- Disables INPUT_SELECT_WEAPON (TAB)
-				DisablePlayerFiring(ped, true) -- Disable weapon firing
-			end
+		if blocked then
+			Citizen.wait(3000)
+			blocked = false
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+		if blocked then
+			DisableControlAction(1, 25, true )
+			DisableControlAction(1, 140, true)
+			DisableControlAction(1, 141, true)
+			DisableControlAction(1, 142, true)
+			DisableControlAction(1, 23, true)
+			DisableControlAction(1, 37, true) -- Disables INPUT_SELECT_WEAPON (TAB)
+			DisablePlayerFiring(ped, true) -- Disable weapon firing
+		end
 	end
 end)
 
