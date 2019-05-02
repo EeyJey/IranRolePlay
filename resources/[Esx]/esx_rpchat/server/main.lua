@@ -54,7 +54,8 @@ end
 	-- 	end
 	-- end)
 
-	AddEventHandler('mpCommand',function(source, args)
+	RegisterServerEvent('mpCommand')
+	AddEventHandler('mpCommand', function(args)
 		xPlayer = ESX.GetPlayerFromId(source)
 		print('mp shit '.. table.concat(args, " "))
 		if xPlayer.job.name == 'police' then
