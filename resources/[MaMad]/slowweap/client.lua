@@ -93,8 +93,6 @@ Citizen.CreateThread(function()
 				DisableControlAction(1, 23, true)
 				DisableControlAction(1, 37, true) -- Disables INPUT_SELECT_WEAPON (TAB)
 				DisablePlayerFiring(ped, true) -- Disable weapon firing
-			else 
-				blocked = false
 			end
 	end
 end)
