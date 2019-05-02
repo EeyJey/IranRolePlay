@@ -9,9 +9,33 @@ AddEventHandler('sendProximityMessage', function(id, name, message)
   local myId = PlayerId()
   local pid = GetPlayerFromServerId(id)
   if pid == myId then
-    TriggerEvent('chatMessage', name , {0, 153, 204}, message)
+    TriggerEvent('chatMessage', name , {255, 0, 0}, message)
   elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
-    TriggerEvent('chatMessage', name , {0, 153, 204}, message)
+    TriggerEvent('chatMessage', name , {255, 0, 0}, message)
+  end
+end)
+
+RegisterNetEvent('sendProximityMessageShout')
+AddEventHandler('sendProximityMessageShout', function(id, name, message)
+  local myId = PlayerId()
+  local pid = GetPlayerFromServerId(id)
+	if pid == myId then
+		TriggerEvent('chatMessage',  name, {255, 0, 0}, message)
+	elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 30.0 then
+		TriggerEvent('chatMessage', name, {255, 0, 0},  message)
+	end
+end)
+
+RegisterNetEvent('sendProximityMessageMP')
+AddEventHandler('sendProximityMessageMP', function(id, name, message)
+  local myId = PlayerId()
+  local pid = GetPlayerFromServerId(id)
+  if IsPedInAnyVehicle(PlayerPedId(-1), true) then
+    if pid == myId then
+      TriggerEvent('chatMessage',  name, {0, 25, 255}, message)
+    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 40.0 then
+      TriggerEvent('chatMessage', name, {0, 25, 255},  message)
+    end
   end
 end)
 

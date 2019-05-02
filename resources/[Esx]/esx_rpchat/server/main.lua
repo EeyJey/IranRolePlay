@@ -26,11 +26,11 @@ function getIdentity(source)
 end
 
 	AddEventHandler('chatMessage', function(source, name, message)
-			if string.sub(message, 1, string.len("/")) ~= "/" then
-					local name = getIdentity(source)
+		if string.sub(message, 1, string.len("/")) ~= "/" then
+			local name = getIdentity(source)
 		TriggerClientEvent("sendProximityMessage", -1, source, name.firstname, message)
-			end
-			CancelEvent()
+		end
+		CancelEvent()
 	end)
 	TriggerEvent('es:addCommand', 'ooc', function(source, args, user)
 		local name =  GetPlayerName(source)
@@ -40,6 +40,18 @@ end
 	TriggerEvent('es:addCommand', 'b', function(source, args, user)
 		local name =  GetPlayerName(source)
 		TriggerClientEvent("sendProximityMessageMe", -1, source, "OOC | " .. name, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 's', function(source, args, user)
+		local name = getIdentity(source)
+		TriggerClientEvent("sendProximityMessageShout", -1, source, name.firstname .. " Faryad Mizanad", table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'mp', function(source, args, user)
+		xPlayer = ESX.GetPlayerFromId(source)
+		if xPlayer.job.name == 'police' then
+			TriggerClientEvent("sendProximityMessageMP", -1, source, "Bolandgo Police", table.concat(args, " "))
+		end
 	end)
 
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)
