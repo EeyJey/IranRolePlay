@@ -55,11 +55,11 @@ end
 	-- end)
 
 	RegisterServerEvent('mpCommand')
-	AddEventHandler('mpCommand', function(args)
+	AddEventHandler('mpCommand', function(message)
 		xPlayer = ESX.GetPlayerFromId(source)
-		print('mp shit '.. args)
+		print('mp shit '.. message)
 		if xPlayer.job.name == 'police' then
-			TriggerClientEvent("sendProximityMessageMP", -1, source, "Bolandgo Police", table.concat(args, " "))
+			TriggerClientEvent("sendProximityMessageMP", -1, source, "Bolandgo Police", message)
 		end
 	end)
 
