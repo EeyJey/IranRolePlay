@@ -32,7 +32,7 @@ RegisterNetEvent('sendProximityMessageMP')
 AddEventHandler('sendProximityMessageMP', function(id, name, message)
   local myId = PlayerId()
   local pid = GetPlayerFromServerId(id)
-  if IsPedInAnyVehicle(PlayerPedId(-1), true) then
+  if IsPedInAnyVehicle(PlayerPedId(myId), true) then
     if pid == myId then
       TriggerEvent('chatMessage',  name, {0, 25, 255}, message)
     elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 40.0 then
