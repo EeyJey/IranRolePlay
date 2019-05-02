@@ -156,7 +156,7 @@ Citizen.CreateThread(function()
 		if IsControlJustPressed(0, Keys['Z']) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and IsPedOnFoot(ped) then
 			local target, distance = ESX.Game.GetClosestPlayer()
 			
-			if target ~= -1 and distance ~= -1 and distance <= 2.0 then
+			if target ~= -1 and distance ~= -1 and distance <= 1.5 then
 				local target_id = GetPlayerServerId(target)
 				local closestPlayerPed = GetPlayerPed(target)
 				if IsPedDeadOrDying(closestPlayerPed,1) then
