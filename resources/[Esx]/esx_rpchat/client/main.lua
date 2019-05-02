@@ -20,7 +20,7 @@ print("mp ".. source ..' ' .. table.concat(args," "))
   if IsPedInAnyVehicle(PlayerPedId(-1), true) then
 print("mp2222 ".. source ..' ' .. table.concat(args," "))
 
-   TriggerServerEvent('mpCommand', args)
+   TriggerServerEvent('mpCommand', table.concat(args," "))
   end
 end, false)
 
