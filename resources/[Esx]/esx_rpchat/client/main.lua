@@ -17,8 +17,8 @@ end)
 
 RegisterCommand('mp', function(source, args)
 print("mp ".. source ..' ' .. table.concat(args," "))
-  if IsPedInAnyVehicle(PlayerPedId(source), true) then
-   TriggerServerEvent('mpCommand', source, args)
+  if IsPedInAnyVehicle(PlayerPedId(-1), true) then
+   TriggerServerEvent('mpCommand', args)
   end
 end, false)
 
