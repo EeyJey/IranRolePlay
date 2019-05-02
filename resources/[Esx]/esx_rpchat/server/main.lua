@@ -50,8 +50,12 @@ end
 	TriggerEvent('es:addCommand', 'mp', function(source, args, user)
 		xPlayer = ESX.GetPlayerFromId(source)
 		if xPlayer.job.name == 'police' then
-			TriggerClientEvent("sendProximityMessageMP", source, "Bolandgo Police", table.concat(args, " "))
+			TriggerClientEvent("checkIsInVehicle", source, args)
 		end
+	end)
+
+	AddEventHandler('megaPhoneVehicleCheck', function(id, args)
+		TriggerClientEvent('sendProximityMessageMP', -1, source, "Bolandgo Police", table.concat(args, " "))
 	end)
 
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)

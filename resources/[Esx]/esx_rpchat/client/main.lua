@@ -26,16 +26,21 @@ AddEventHandler('sendProximityMessageShout', function(id, name, message)
 	end
 end)
 
+RegisterNetEvent('checkIsInVehicle')
+AddEventHandler('checkIsInVehicle', function(id, args)
+  if IsPedInAnyVehicle(PlayerPedId(myId), true) then
+    TriggerServerEvent('megaPhoneVehicleCheck',id, args)
+  end
+end)
+
 RegisterNetEvent('sendProximityMessageMP')
 AddEventHandler('sendProximityMessageMP', function(id, name, message)
   local myId = PlayerId()
-  local pid = GetPlayerFromServerId(-1)
-  if IsPedInAnyVehicle(PlayerPedId(id), true) then
-    if pid == myId then
-      TriggerEvent('chatMessage',  name, {0, 25, 255}, message)
-    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 40.0 then
-      TriggerEvent('chatMessage', name, {0, 25, 255},  message)
-    end
+  local pid = GetPlayerFromServerId(id)
+  if pid == myId then
+    TriggerEvent('chatMessage',  name, {0, 25, 255}, message)
+  elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 40.0 then
+    TriggerEvent('chatMessage', name, {0, 25, 255},  message)
   end
 end)
 
