@@ -16,7 +16,7 @@ AddEventHandler('sendProximityMessage', function(id, name, message)
 end)
 
 RegisterCommand('mp', function(source, args)
-
+print("mp ".. table.concat(args," "))
   if IsPedInAnyVehicle(PlayerPedId(source), true) then
    TriggerServerEvent('mpCommand', source, args)
   end
