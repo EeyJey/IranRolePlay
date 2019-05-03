@@ -9,11 +9,14 @@ local Keys = {
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
+local modeltypes = {'prop_fleeca_atm', 'prop_atm_01', 'prop_atm_02', 'prop_atm_03'}
+IsPlayerUsingAtm
+local anim = "mini@atmenter"
 
 -- internal variables
 local hasAlreadyEnteredMarker = false
 local isInATMMarker = false
-local menuIsShowed = false
+local IsPlayerUsingAtm = false
 ESX = nil
 
 Citizen.CreateThread(function()
@@ -23,13 +26,46 @@ Citizen.CreateThread(function()
 	end
 end)
 
+local function DisplayHelpLabel(label, sublabel, time)
+	ClearBrief()
+	ClearAllHelpMessages()
+	
+	BeginTextCommandDisplayHelp(label)
+	if sublabel then
+	   AddTextComponentSubstringPlayerName(sublabel)
+	end
+  
+	if time then
+		displayTime = time
+	else
+		displayTime = 3000
+	end
+	EndTextCommandDisplayHelp(0, 0, 0, displayTime)
+  end
+  
 RegisterNetEvent('esx_atm:closeATM')
 AddEventHandler('esx_atm:closeATM', function()
-	SetNuiFocus(false)
-	menuIsShowed = false
+	IsPlayerUsingAtm = false
 	SendNUIMessage({
 		hideAll = true
 	})
+	FreezeEntityPosition(PlayerPedId(), false)
+
+	RequestAnimDict("mini@atmexit")
+	while not HasAnimDictLoaded("mini@atmexit") do
+		Wait(1)
+	end
+
+	TaskPlayAnim(playerPed, "mini@atmexit", "exit", 8.0, 1.0, -1, 0, 0.0, 0, 0, 0)
+	RemoveAnimDict(animDict)
+	Wait(500)
+
+	IsPlayerUsingAtm = false
+	SetNuiFocus(false)	
+end)
+
+RegisterNUICallback('navigate', function(data, cb)
+    PlaySoundFrontend(-1, "PIN_BUTTON", "ATM_SOUNDS", true)
 end)
 
 RegisterNUICallback('escape', function(data, cb)
@@ -66,37 +102,34 @@ end)
 
 -- Activate menu when player is inside marker
 Citizen.CreateThread(function()
+	SetNuiFocus(false)
+	SendNUIMessage({type = 'close'})
+
 	while true do
-		Citizen.Wait(10)
-		local coords = GetEntityCoords(PlayerPedId())
-		local canSleep = true
-		isInATMMarker = false
+		Wait(550)
+		playerPed = PlayerPedId()
+		x,y,z = table.unpack(GetEntityCoords(playerPed, true))
+		IsPlayerInVehicle = IsPedInAnyVehicle(playerPed, true)
 
-		for k,v in pairs(Config.ATMLocations) do
-			if GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 1.0 then
-				isInATMMarker, canSleep = true, false
-				break
+		if not IsPlayerNearAtm then
+			if not IsPlayerInVehicle then
+				for k,v in pairs(modeltypes) do
+					atm = GetClosestObjectOfType(x, y, z, 0.75, GetHashKey(v), false)
+					if DoesEntityExist(atm) then
+						currentAtm = atm
+						atmX, atmY, atmZ = table.unpack(GetOffsetFromEntityInWorldCoords(currentAtm, 0.0, -0.65, 0.0))
+						IsPlayerNearAtm = true
+					end
+				end
 			end
-		end
-
-		if isInATMMarker and not hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = true
-			canSleep = false
-		end
-	
-		if not isInATMMarker and hasAlreadyEnteredMarker then
-			hasAlreadyEnteredMarker = false
-			SetNuiFocus(false)
-			menuIsShowed = false
-			canSleep = false
-
-			SendNUIMessage({
-				hideAll = true
-			})
-		end
-
-		if canSleep then
-			Citizen.Wait(500)
+		else
+			if not DoesEntityExist(currentAtm) then
+				IsPlayerNearAtm = false
+			else
+				if GetDistanceBetweenCoords(x,y,z, atmX, atmY, atmZ, true) > 2.0 then
+					IsPlayerNearAtm = false
+				end
+			end
 		end
 	end
 end)
@@ -104,14 +137,37 @@ end)
 -- Menu interactions
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Wait(10)
 
-		if isInATMMarker and not menuIsShowed then
-
-			ESX.ShowHelpNotification(_U('press_e_atm'))
-
-			if IsControlJustReleased(0, Keys['E']) and IsPedOnFoot(PlayerPedId()) then
-				menuIsShowed = true
+		if IsPlayerNearAtm then
+			if not IsPlayerUsingAtm then
+				DisplayHelpLabel("FINH_ATMNEAR", "~INPUT_CONTEXT~")
+			else
+				ClearAllHelpMessages()
+				DisableControlAction(0, 201, true)
+				DisableControlAction(1, 201, true)
+			end
+			if IsControlJustPressed(0, 51) then	
+				RequestAnimDict("mini@atmbase")		
+				RequestAnimDict(anim)
+				while not HasAnimDictLoaded(anim) do
+					Wait(1)
+				end
+				SetCurrentPedWeapon(playerPed, GetHashKey("weapon_unarmed"), true)
+				TaskLookAtEntity(playerPed, currentAtm, 2000, 2048, 2)
+				Wait(500)
+				TaskGoStraightToCoord(playerPed, atmX, atmY, atmZ, 0.1, 4000, GetEntityHeading(currentAtm), 0.5)	
+				Wait(2000)
+				TaskPlayAnim(playerPed, anim, "enter", 8.0, 1.0, -1, 0, 0.0, 0, 0, 0)
+				RemoveAnimDict(animDict)
+				Wait(4000)
+				TaskPlayAnim(playerPed, "mini@atmbase", "base", 8.0, 1.0, -1, 0, 0.0, 0, 0, 0)
+				RemoveAnimDict("mini@atmbase")		
+				Wait(1000)
+				player = PlayerId()
+				PlaySoundFrontend(-1, "ATM_WINDOW", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+				FreezeEntityPosition(playerPed, true)
+				IsPlayerUsingAtm = true
 				ESX.TriggerServerCallback('esx:getPlayerData', function(data)
 					SendNUIMessage({
 						showMenu = true,
@@ -134,7 +190,7 @@ end)
 -- close the menu when script is stopping to avoid being stuck in NUI focus
 AddEventHandler('onResourceStop', function(resource)
 	if resource == GetCurrentResourceName() then
-		if menuIsShowed then
+		if menuIsSIsPlayerUsingAtmhowed then
 			TriggerEvent('esx_atm:closeATM')
 		end
 	end
