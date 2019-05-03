@@ -163,10 +163,27 @@ end, function(source, args, user)
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
-	local xPlayer    = ESX.GetPlayerFromId(args[1])
 	local weaponName = string.upper(args[2])
+	if tonumber(args[1]) and args[2] and tonumber(args[3]) then
+		local xPlayer    = ESX.GetPlayerFromId(args[1])
+		if xPlayer then
+			if weaponName then
+				if tonumber(args[3]) then
+					xPlayer.addWeapon(weaponName, tonumber(args[3]))
+				else
+					xPlayer.addWeapon(weaponName, 0)
+				end
+			else
+				TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Enter Weapon Name' } })
+			end
 
-	xPlayer.addWeapon(weaponName, tonumber(args[3]))
+		else
+			TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
+		end
+	else
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid usage.' } })
+	end
+
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('giveweapon'), params = {{name = "id", help = _U('id_param')}, {name = "weapon", help = _U('weapon')}, {name = "ammo", help = _U('amountammo')}}})

@@ -494,47 +494,6 @@ AddEventHandler('gcPhone:appelsDeleteAllHistorique', function ()
     appelsDeleteAllHistorique(srcIdentifier)
 end)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --====================================================================================
 --  OnLoad
 --====================================================================================
@@ -546,7 +505,7 @@ AddEventHandler('es:playerLoaded',function(source)
         TriggerClientEvent("gcPhone:myPhoneNumber", sourcePlayer, myPhoneNumber)
         TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
         TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
-		TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
+		-- TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
 		
     end)
 end)
@@ -562,7 +521,7 @@ AddEventHandler('gcPhone:allUpdate', function()
     TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
     TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
     TriggerClientEvent('gcPhone:getBourse', sourcePlayer, getBourse())
-	TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
+	-- TriggerClientEvent("gcPhone:loadBank", sourcePlayer, getBankFromUser(_source))
     sendHistoriqueCall(sourcePlayer, num)
 end)
 
@@ -692,8 +651,8 @@ function onRejectFixePhone(source, infoCall, rtcAnswer)
     
 end
 
-function getBankFromUser(playerSource)
-	local xPlayer = ESX.GetPlayerFromId(playerSource)
-	local account = xPlayer.getAccount('bank')
-	return account.money
-end
+-- function getBankFromUser(playerSource)
+-- 	local xPlayer = ESX.GetPlayerFromId(playerSource)
+-- 	local account = xPlayer.getAccount('bank')
+-- 	return account.money
+-- end
