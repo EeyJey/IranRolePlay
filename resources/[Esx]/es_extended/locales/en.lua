@@ -78,6 +78,7 @@ Locales['en'] = {
   ['disconnect'] = 'disconnect from the server',
   ['chat_clear'] = 'clear the chat',
   ['chat_clear_all'] = 'clear the chat for everyone',
+  ['a_repair'] = 'repair ped vehicle',
   ['command_clearinventory'] = 'clear all items from inventory',
   ['command_clearloadout'] = 'remove all weapons from loadout',
   ['command_playerid_param'] = 'specify playerId or leave blank for yourself',

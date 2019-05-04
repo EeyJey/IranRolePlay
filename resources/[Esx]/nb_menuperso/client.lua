@@ -1210,15 +1210,19 @@ end
 -- FIN INVISIBLE
 
 -- Réparer vehicule
-function admin_vehicle_repair()
+function admin_vehicle_repair(id)
 
-    local ped = GetPlayerPed(-1)
+    local ped = GetPlayerPed(id)
     local car = GetVehiclePedIsUsing(ped)
 	
 		SetVehicleFixed(car)
 		SetVehicleDirtLevel(car, 0.0)
 
 end
+RegisterNetEvent('NB:repair')
+AddEventHandler('NB:repair', function(id)
+	admin_vehicle_repair(id)
+end)
 -- FIN Réparer vehicule
 
 -- Spawn vehicule

@@ -17,7 +17,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
  		end
  		if money < amount then
  			local money = xPlayer.getAccount('black_money').money
- 			xPlayer.addMoney(tonumber(money)) -- Add Clean Money
+ 			xPlayer.addMoney(tonumber(money/2)) -- Add Clean Money
  			xPlayer.removeAccountMoney('black_money', money) -- Removes Dirty Money
  			TriggerClientEvent('esx:showNotification', _source, "You have ~g~cleaned all your money: $" ..money)
  			retourcamion_oui()
