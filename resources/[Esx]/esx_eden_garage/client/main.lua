@@ -10,7 +10,7 @@ local Keys = {
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
-
+local Spawned = {}
 local CurrentAction = nil
 local GUI                       = {}
 GUI.Time                        = 0
@@ -267,6 +267,11 @@ function ranger(vehicle,vehicleProps)
 	ESX.Game.DeleteVehicle(vehicle)
 	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true)
 	TriggerEvent('esx:showNotification', _U('vehicle_in_garage'))
+	for i=1, #Spawned, 1 do
+		if Spawned[i] = vehicle then
+			table.remove(Spawned, i)
+		end
+	end
 end
 
 -- Store vehicle
@@ -308,7 +313,7 @@ end
 --Vehicle spawn
 
 function SpawnVehicle(vehicle, plate)
-
+	playerPed = GetPlayerPed(-1)
 	ESX.Game.SpawnVehicle(vehicle.model,{
 		x=this_Garage.SpawnPoint.Pos.x ,
 		y=this_Garage.SpawnPoint.Pos.y,
@@ -316,9 +321,13 @@ function SpawnVehicle(vehicle, plate)
 		},this_Garage.SpawnPoint.Heading, function(callback_vehicle)
 		ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
 		SetVehRadioStation(callback_vehicle, "OFF")
-		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
+		TaskWarpPedIntoVehicle(playerPed, callback_vehicle, -1)
 		end)
-		
+		while IsPedInAnyVehicle(playerPed, false) do
+			Wait(1)
+		end
+		vehicle = GetVehiclePedIsIn(playerPed, false)
+		table.insert(Spawned, vehicle)
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
@@ -338,6 +347,9 @@ function SpawnPoundedVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
+	for i=1, #Spawned, 1 do
+		ESX.Game.DeleteVehicle(Spawned[i])
+	end
 	TriggerServerEvent('eden_garage:modifystate', plate, true)
 
 	ESX.SetTimeout(10000, function()
