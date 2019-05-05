@@ -323,9 +323,6 @@ function SpawnVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(playerPed, callback_vehicle, -1)
 		end)
-		while IsPedInAnyVehicle(playerPed, false) do
-			Wait(1)
-		end
 		vehicle = GetVehiclePedIsIn(playerPed, false)
 		table.insert(Spawned, vehicle)
 
