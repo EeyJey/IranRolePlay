@@ -313,6 +313,7 @@ end
 --Vehicle spawn
 
 function SpawnVehicle(vehicle, plate)
+	local fuck
 	ESX.Game.SpawnVehicle(vehicle.model,{
 		x=this_Garage.SpawnPoint.Pos.x ,
 		y=this_Garage.SpawnPoint.Pos.y,
@@ -321,11 +322,9 @@ function SpawnVehicle(vehicle, plate)
 		ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
+		fuck = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 		end)
-		while GetVehiclePedIsIn(GetPlayerPed(-1), false) do
-			Wait(1)
-		end
-		table.insert(Spawned, GetVehiclePedIsIn(GetPlayerPed(-1), false))
+		table.insert(Spawned, fuck)
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
