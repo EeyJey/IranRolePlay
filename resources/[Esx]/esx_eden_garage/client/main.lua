@@ -22,6 +22,19 @@ local times 					= 0
 local userProperties = {}
 local this_Garage = {}
 
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
+
 -- End Local
 -- Initialise ESX
 
@@ -36,6 +49,10 @@ end)
 
 -- End ESX Initialisation
 --- Generate map blips
+
+RegisterCommand('spawned', function()
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+end, false)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -313,7 +330,6 @@ end
 --Vehicle spawn
 
 function SpawnVehicle(vehicle, plate)
-	local fuck
 	ESX.Game.SpawnVehicle(vehicle.model,{
 		x=this_Garage.SpawnPoint.Pos.x ,
 		y=this_Garage.SpawnPoint.Pos.y,
@@ -322,9 +338,8 @@ function SpawnVehicle(vehicle, plate)
 		ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
-		fuck = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 		end)
-		table.insert(Spawned, fuck)
+		table.insert(Spawned, GetVehiclePedIsIn(GetPlayerPed(-1), false))
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
