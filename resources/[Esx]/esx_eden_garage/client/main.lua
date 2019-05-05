@@ -267,8 +267,8 @@ function ranger(vehicle,vehicleProps)
 	ESX.Game.DeleteVehicle(vehicle)
 	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true)
 	TriggerEvent('esx:showNotification', _U('vehicle_in_garage'))
-	for i=1, #Spawned, 1 do
-		if Spawned[i] = vehicle then
+	for _,v in Spawned do
+		if Spawned.v == vehicle then
 			table.remove(Spawned, i)
 		end
 	end
