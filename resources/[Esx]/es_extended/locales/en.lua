@@ -82,6 +82,7 @@ Locales['en'] = {
   ['command_clearinventory'] = 'clear all items from inventory',
   ['command_clearloadout'] = 'remove all weapons from loadout',
   ['command_playerid_param'] = 'specify playerId or leave blank for yourself',
+  ['repair_car'] = 'Repair car for specfied id',
   -- Locale settings
   ['locale_digit_grouping_symbol'] = ',',
   ['locale_currency'] = '$%s',

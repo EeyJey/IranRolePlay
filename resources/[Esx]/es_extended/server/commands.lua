@@ -242,7 +242,7 @@ TriggerEvent('es:addGroupCommand', 'arepair', 'admin', function(source, args, us
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
-end, {help = _U('chat_clear_all')})
+end, {help = _U('repair_car')})
 
 TriggerEvent('es:addGroupCommand', 'clearinventory', 'admin', function(source, args, user)
 	local xPlayer
