@@ -76,7 +76,14 @@ RegisterCommand('c3', function()
 end, false)
 
 RegisterCommand('d', function()
-	ESX.Game.DeleteVehicle(Spawned1)
+	for _,v in Spawned1 do
+		ESX.Game.DeleteVehicle(Spawned1.v)
+		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
+	end
+end, false)
+
+RegisterCommand('r', function()
+	Spawned1 = {}
 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
 end, false)
 
