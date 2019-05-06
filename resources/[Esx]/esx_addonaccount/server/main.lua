@@ -28,6 +28,7 @@ AddEventHandler('onMySQLReady', function ()
 			for j=1, #result2, 1 do
 				local addonAccount = CreateAddonAccount(name, result2[j].owner, result2[j].money)
 				table.insert(Accounts[name], addonAccount)
+				-- print(ESX.DumpTable(Accounts[name]))
 			end
 
 		else
@@ -55,6 +56,21 @@ AddEventHandler('onMySQLReady', function ()
 
 	end
 
+end)
+
+AddEventHandler('playerActivated', function()
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local result = MySQL.Sync.fetchAll('SELECT * FROM addon_account_data WHERE owner = @owner', {
+		['@owner'] = 	xPlayer.identifier
+	})
+
+	for j=1, #Accounts[name], 1 do
+		if Accounts[name].j.owner == result[1].owner then
+			Accounts[name].j.owner == result[1].money
+		end
+		-- local addonAccount = CreateAddonAccount('property_black_money', result[j].owner, result[j].money)
+		-- table.insert(Accounts[name], addonAccount)
+	end
 end)
 
 function GetAccount(name, owner)
