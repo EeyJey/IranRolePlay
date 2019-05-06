@@ -50,8 +50,36 @@ end)
 -- End ESX Initialisation
 --- Generate map blips
 
-RegisterCommand('spawned', function()
+local ped = GetPlayerPed(id)
+local car = GetVehiclePedIsUsing(ped)
+
+table.insert(Spawned, GetVehiclePedIsIn(GetPlayerPed(-1), false))
+
+
+RegisterCommand('s', function()
+
 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+end, false)
+
+RegisterCommand('c1', function()
+	local ped = GetPlayerPed(-1)
+	local car = GetVehiclePedIsUsing(ped)
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
+end, false)
+
+RegisterCommand('c2', function()
+	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
+end, false)
+
+RegisterCommand('c3', function()
+	local x = IsPedInAnyVehicle(PlayerPedId(-1), false)
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
+end, false)
+
+RegisterCommand('d', function(args)
+	ESX.Game.DeleteVehicle(args[1])
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "Deleted" .. args[i])
 end, false)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -173,6 +201,10 @@ function OpenMenuGarage(PointType)
 			if(data.current.value == 'return_vehicle') then
 				ReturnVehicleMenu()
 			end
+
+			local playerPed = GetPlayerPed(-1)
+			SpawnVehicle(data.current.value)
+
 		end,
 		function(data, menu)
 			menu.close()
@@ -225,10 +257,6 @@ function ListVehiclesMenu()
 				menu.close()
 				if c > 0 then
 					SpawnVehicle(data.current.value.vehicle, data.current.value.plate)
-					while IsPedInAnyVehicle(PlayerPedId(-1), false) do
-						Wait(1)
-					end
-					table.insert(Spawned, tostring(GetVehiclePedIsIn(GetPlayerPed(-1), false)))
 				else
 					TriggerEvent('esx:showNotification', _U('vehicle_is_impounded'))
 				end
@@ -339,6 +367,7 @@ function SpawnVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
+
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
 end
