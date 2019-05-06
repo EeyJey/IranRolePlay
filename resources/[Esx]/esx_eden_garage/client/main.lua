@@ -22,19 +22,6 @@ local times 					= 0
 local userProperties = {}
 local this_Garage = {}
 
-function dump(o)
-	if type(o) == 'table' then
-	   local s = '{ '
-	   for k,v in pairs(o) do
-		  if type(k) ~= 'number' then k = '"'..k..'"' end
-		  s = s .. '['..k..'] = ' .. dump(v) .. ','
-	   end
-	   return s .. '} '
-	else
-	   return tostring(o)
-	end
- end
-
 -- End Local
 -- Initialise ESX
 
@@ -50,53 +37,52 @@ end)
 -- End ESX Initialisation
 --- Generate map blips
 
-RegisterCommand('s', function()
+-- RegisterCommand('s', function()
 
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
-end, false)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+-- end, false)
 
-RegisterCommand('c1', function()
-	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
-	local model = GetEntityModel(car)
-	table.insert(Spawned, {model = model, id = id})
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(model))
-end, false)
+-- RegisterCommand('c1', function()
+-- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+-- 	table.insert(Spawned, car)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
+-- end, false)
 
-RegisterCommand('cc', function()
-	local playerPed = GetPlayerPed(-1)
-	local vehicle = GetVehiclePedIsIn(playerPed,false) 
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(vehicle))
-end, false)
+-- RegisterCommand('cc', function()
+-- 	local playerPed = GetPlayerPed(-1)
+-- 	local vehicle = GetVehiclePedIsIn(playerPed,false) 
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(vehicle))
+-- end, false)
    
 
-RegisterCommand('c2', function()
-	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
-end, false)
+-- RegisterCommand('c2', function()
+-- 	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
+-- end, false)
 
-RegisterCommand('c3', function()
+-- RegisterCommand('c3', function()
 
-	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
-		Wait(1)
-	end
-	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
-	table.insert(Spawned, car)
+-- 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
+-- 		Wait(1)
+-- 	end
+-- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+-- 	table.insert(Spawned, car)
 
 
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
-end, false)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
+-- end, false)
 
-RegisterCommand('d', function()
-	for _,v in pairs(Spawned) do
-		ESX.Game.DeleteVehicle(v)
-		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(v))
-	end
-end, false)
+-- RegisterCommand('d', function()
+-- 	for _,v in pairs(Spawned) do
+-- 		ESX.Game.DeleteVehicle(v)
+-- 		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(v))
+-- 	end
+-- end, false)
 
-RegisterCommand('r', function()
-	Spawned = {}
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
-end, false)
+-- RegisterCommand('r', function()
+-- 	Spawned = {}
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+-- end, false)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -391,9 +377,8 @@ function SpawnVehicle(vehicle, plate)
 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
 		Wait(1)
 	end
-	local id = GetVehiclePedIsUsing(GetPlayerPed(-1))
-	GetEntityModel(id)
-	table.insert(Spawned, {model = model, id = id)
+	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	table.insert(Spawned, car)
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 

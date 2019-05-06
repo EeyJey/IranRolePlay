@@ -44,7 +44,9 @@ end
 
 	TriggerEvent('es:addCommand', 's', function(source, args, user)
 		local name = getIdentity(source)
+		if args then
 		TriggerClientEvent("sendProximityMessageShout", -1, source, name.firstname .. " Faryad Mizanad", table.concat(args, " "))
+		end
 	end)
 
 	-- TriggerEvent('es:addCommand', 'mp', function(source, args, user)
