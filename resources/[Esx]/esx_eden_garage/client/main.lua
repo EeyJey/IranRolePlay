@@ -11,7 +11,6 @@ local Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 local Spawned = {}
-local Spawned1 = {}
 local CurrentAction = nil
 local GUI                       = {}
 GUI.Time                        = 0
@@ -53,7 +52,7 @@ end)
 
 RegisterCommand('s', function()
 
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
 end, false)
 
 RegisterCommand('c1', function()
@@ -87,15 +86,15 @@ RegisterCommand('c3', function()
 end, false)
 
 RegisterCommand('d', function()
-	for _,v in pairs(Spawned1) do
+	for _,v in pairs(Spawned) do
 		ESX.Game.DeleteVehicle(v)
 		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(v))
 	end
 end, false)
 
 RegisterCommand('r', function()
-	Spawned1 = {}
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
+	Spawned = {}
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
 end, false)
 
 RegisterNetEvent('esx:playerLoaded')
@@ -412,7 +411,7 @@ function SpawnPoundedVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
-	for _,v in pairs(Spawned1) do
+	for _,v in pairs(Spawned) do
 		ESX.Game.DeleteVehicle(v)
 	end
 	Spawned = {}
