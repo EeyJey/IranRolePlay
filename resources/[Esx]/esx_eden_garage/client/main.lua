@@ -57,8 +57,9 @@ end, false)
 
 RegisterCommand('c1', function()
 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
-	table.insert(Spawned, car)
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
+	local model = GetEntityModel(car)
+	table.insert(Spawned, {model = model, id = id})
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(model))
 end, false)
 
 RegisterCommand('cc', function()
@@ -390,8 +391,9 @@ function SpawnVehicle(vehicle, plate)
 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
 		Wait(1)
 	end
-	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
-	table.insert(Spawned, car)
+	local id = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	GetEntityModel(id)
+	table.insert(Spawned, {model = model, id = id)
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 

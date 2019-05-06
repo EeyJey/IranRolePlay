@@ -192,7 +192,7 @@ function OpenPersonnelMenu()
 							end
 
 							if data2.current.value == 'menuperso_modo_vehicle_repair' then
-								admin_vehicle_repair()
+								admin_vehicle_repair(-1)
 							end
 
 							if data2.current.value == 'menuperso_modo_vehicle_spawn' then
