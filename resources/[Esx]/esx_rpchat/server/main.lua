@@ -44,7 +44,7 @@ end
 
 	TriggerEvent('es:addCommand', 's', function(source, args, user)
 		local name = getIdentity(source)
-		if args then
+		if args[1] then
 		TriggerClientEvent("sendProximityMessageShout", -1, source, name.firstname .. " Faryad Mizanad", table.concat(args, " "))
 		end
 	end)
@@ -59,7 +59,6 @@ end
 	RegisterServerEvent('mpCommand')
 	AddEventHandler('mpCommand', function(message)
 		xPlayer = ESX.GetPlayerFromId(source)
-		print('mp shit '.. message)
 		if xPlayer.job.name == 'police' then
 			TriggerClientEvent("sendProximityMessageMP", -1, source, "Bolandgo Police", message)
 		end
