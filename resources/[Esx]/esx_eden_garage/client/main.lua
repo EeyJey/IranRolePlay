@@ -11,6 +11,7 @@ local Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 local Spawned = {}
+local Spawned1 = {}
 local CurrentAction = nil
 local GUI                       = {}
 GUI.Time                        = 0
@@ -50,20 +51,15 @@ end)
 -- End ESX Initialisation
 --- Generate map blips
 
-local ped = GetPlayerPed(id)
-local car = GetVehiclePedIsUsing(ped)
-
-table.insert(Spawned, GetVehiclePedIsIn(GetPlayerPed(-1), false))
-
-
 RegisterCommand('s', function()
 
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
 end, false)
 
 RegisterCommand('c1', function()
 	local ped = GetPlayerPed(-1)
 	local car = GetVehiclePedIsUsing(ped)
+	table.insert(Spawned1, car)
 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
 end, false)
 
@@ -73,13 +69,15 @@ RegisterCommand('c2', function()
 end, false)
 
 RegisterCommand('c3', function()
-	local x = IsPedInAnyVehicle(PlayerPedId(-1), false)
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
+	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
+		Wait(1)
+	end
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
 end, false)
 
-RegisterCommand('d', function(args)
-	ESX.Game.DeleteVehicle(args[1])
-	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "Deleted" .. args[i])
+RegisterCommand('d', function()
+	ESX.Game.DeleteVehicle(Spawned1)
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned1))
 end, false)
 
 RegisterNetEvent('esx:playerLoaded')
