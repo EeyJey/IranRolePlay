@@ -339,6 +339,9 @@ function SpawnVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
+		while IsPedInAnyVehicle(PlayerPedId(-1), false) then
+			Wait(1)
+		end
 		table.insert(Spawned, GetVehiclePedIsIn(GetPlayerPed(-1), false))
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
@@ -360,7 +363,7 @@ function SpawnPoundedVehicle(vehicle, plate)
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
 	for i=1, #Spawned, 1 do
-		ESX.Game.DeleteVehicle(Spawned[i])
+		ESX.Game.DeleteVehicle(Spawned.i)
 	end
 	TriggerServerEvent('eden_garage:modifystate', plate, true)
 
