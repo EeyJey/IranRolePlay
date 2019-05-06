@@ -57,11 +57,17 @@ RegisterCommand('s', function()
 end, false)
 
 RegisterCommand('c1', function()
-	local ped = GetPlayerPed(-1)
-	local car = GetVehiclePedIsUsing(ped)
-	table.insert(Spawned1, car)
+	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	table.insert(Spawned, car)
 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
 end, false)
+
+RegisterCommand('cc', function()
+	local playerPed = GetPlayerPed(-1)
+	local vehicle = GetVehiclePedIsIn(playerPed,false) 
+	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(vehicle))
+end, false)
+   
 
 RegisterCommand('c2', function()
 	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
@@ -69,9 +75,14 @@ RegisterCommand('c2', function()
 end, false)
 
 RegisterCommand('c3', function()
+
 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
 		Wait(1)
 	end
+	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	table.insert(Spawned, car)
+
+
 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
 end, false)
 
@@ -331,8 +342,8 @@ function StockVehicleMenu()
 	if IsPedInAnyVehicle(playerPed,  false) then
 
 		local playerPed = GetPlayerPed(-1)
-    	local coords    = GetEntityCoords(playerPed)
-    	local vehicle = GetVehiclePedIsIn(playerPed,false)     
+    local coords    = GetEntityCoords(playerPed)
+    local vehicle = GetVehiclePedIsIn(playerPed,false)     
 		local vehicleProps  = ESX.Game.GetVehicleProperties(vehicle)
 		local current 	    = GetPlayersLastVehicle(GetPlayerPed(-1), true)
 		local engineHealth  = GetVehicleEngineHealth(current)
@@ -352,6 +363,11 @@ function StockVehicleMenu()
 				TriggerEvent('esx:showNotification', _U('cannot_store_vehicle'))
 			end
 		end,vehicleProps)
+	for k,v in pairs(Spawned) do
+		if v == vehicle then
+			table.remove(Spawned, k)
+		end
+	end
 	else
 		TriggerEvent('esx:showNotification', _('no_vehicle_to_enter'))
 	end
@@ -372,6 +388,11 @@ function SpawnVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
+	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
+		Wait(1)
+	end
+	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	table.insert(Spawned, car)
 
 	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
@@ -391,9 +412,10 @@ function SpawnPoundedVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
-	for i=1, #Spawned, 1 do
-		ESX.Game.DeleteVehicle(Spawned.i)
+	for _,v in pairs(Spawned1) do
+		ESX.Game.DeleteVehicle(v)
 	end
+	Spawned = {}
 	TriggerServerEvent('eden_garage:modifystate', plate, true)
 
 	ESX.SetTimeout(10000, function()
