@@ -105,6 +105,9 @@ Citizen.CreateThread(function()
 	end
 end)
 
+RegisterCommand('isblocked',function()
+	print(blocked)
+end)
 
 function CheckWeapon(ped)
 	--[[if IsPedArmed(ped, 4) then
