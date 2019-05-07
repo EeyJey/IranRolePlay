@@ -1,5 +1,5 @@
 
-RegisterCommand('mystatus', function(args)
+RegisterCommand('mystatus', function(source, args, raw)
     print(args[0])
     -- for netid, data in pairs(names) do
     --     local guid = GetPlayerIdentifiers(netid)
