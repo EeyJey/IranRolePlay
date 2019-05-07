@@ -12,4 +12,4 @@ RegisterCommand('mystatus', function(source, args, raw)
     -- end
 
     -- CancelEvent()
-end)
+end, true)
