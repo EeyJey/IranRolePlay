@@ -1,7 +1,7 @@
 Config = {}
 Config.Locale = 'en'
 
-Config.PoliceNumberRequired = 1
+Config.PoliceNumberRequired = 2
 Config.TimerBeforeNewRob = 600 -- seconds
 
 Config.MaxDistance    = 15 -- max distance from the robbary, going any longer away from it will to cancel the robbary

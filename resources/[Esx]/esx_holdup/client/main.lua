@@ -36,7 +36,6 @@ function drawTxt(x,y ,width,height,scale, text, r,g,b,a, outline)
     SetTextEntry("STRING")
     AddTextComponentString(text)
 	DrawText(x - width/2, y - height/2 + 0.005)
-	print("reaching here :| ".. text)
 end
 
 RegisterNetEvent('esx_holdup:currentlyrobbing')
@@ -94,7 +93,6 @@ AddEventHandler('esx_holdup:starttimer', function()
 		while true do
 			Citizen.Wait(0)
 			if holdingup then
-				-- print(_U('robbery_timer', timer))
 				drawTxt(0.96, 1.44, 1.0,1.0,0.4, _U('robbery_timer', timer), 255, 255, 255, 255)
 			else
 				Citizen.Wait(1000)
