@@ -60,17 +60,17 @@ function dump(o)
 		 return tostring(o)
 	end
 end
-AddEventHandler('eden_garage:modifystate', function(plate, state)
+AddEventHandler('eden_garage:modifystate', function(plate, state, garage)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local vehicules = getPlayerVehicles(xPlayer.getIdentifier())
 	local state = state
-	
+
 	if plate ~= nil then
 		print('UPDATING STATE')
 		print(plate)
 		local oocname =  GetPlayerName(_source)
-
+print(dump(garage))
 		TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and (state and 'true' or 'false') or 'no state')  , 'user', true, source, false)
 	end
 

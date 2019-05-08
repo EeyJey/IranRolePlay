@@ -338,10 +338,10 @@ function SpawnPoundedVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
-	TriggerServerEvent('eden_garage:modifystate', plate, true)
+	TriggerServerEvent('eden_garage:modifystate', plate, true ,this_Garage)
 
 	ESX.SetTimeout(10000, function()
-		TriggerServerEvent('eden_garage:modifystate', plate, false)
+		TriggerServerEvent('eden_garage:modifystate', plate, false ,this_Garage)
 	end)
 
 end
