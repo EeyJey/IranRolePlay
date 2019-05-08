@@ -265,7 +265,7 @@ end
 
 function ranger(vehicle,vehicleProps)
 	ESX.Game.DeleteVehicle(vehicle)
-	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true)
+	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true, nil)
 	TriggerEvent('esx:showNotification', _U('vehicle_in_garage'))
 end
 
@@ -320,7 +320,7 @@ function SpawnVehicle(vehicle, plate)
 		end)
 		
 
-	TriggerServerEvent('eden_garage:modifystate', plate, false)
+	TriggerServerEvent('eden_garage:modifystate', plate, false, nil)
 
 end
 
