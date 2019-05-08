@@ -48,19 +48,8 @@ end)
 
 -- End vehicle store
 -- Change state of vehicle
-function dump(o)
-	if type(o) == 'table' then
-		 local s = '{ '
-		 for k,v in pairs(o) do
-				if type(k) ~= 'number' then k = '"'..k..'"' end
-				s = s .. '['..k..'] = ' .. dump(v) .. ','
-		 end
-		 return s .. '} '
-	else
-		 return tostring(o)
-	end
-end
-AddEventHandler('eden_garage:modifystate', function(plate, state, garage)
+
+AddEventHandler('eden_garage:modifystate', function(plate, state, ispound)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local vehicules = getPlayerVehicles(xPlayer.getIdentifier())
@@ -70,8 +59,8 @@ AddEventHandler('eden_garage:modifystate', function(plate, state, garage)
 		print('UPDATING STATE')
 		print(plate)
 		local oocname =  GetPlayerName(_source)
-		if garage ~= nil and garage.MunicipalPoundPoint then
-			TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and (state and 'true' or 'false') or 'no state')  , 'user', true, source, false)
+		if ispound ~= nil and ispound then
+			TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate')  , 'user', true, source, false)
 		end
 	end
 
