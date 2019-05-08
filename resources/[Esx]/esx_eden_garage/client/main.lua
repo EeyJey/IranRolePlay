@@ -341,7 +341,7 @@ function SpawnPoundedVehicle(vehicle, plate)
 	TriggerServerEvent('eden_garage:modifystate', plate, true ,true)
 
 	ESX.SetTimeout(10000, function()
-		TriggerServerEvent('eden_garage:modifystate', plate, false ,true)
+		TriggerServerEvent('eden_garage:modifystate', plate, false ,false)
 	end)
 
 end
