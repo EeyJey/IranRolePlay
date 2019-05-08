@@ -58,7 +58,7 @@ AddEventHandler('eden_garage:modifystate', function(plate, state)
 	print(plate)
 	local oocname =  GetPlayerName(_source)
 
-	TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,plate .. ' ' .. ((state ~= nil) and state or 's')  , 'user', true, source, false)
+	TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and state or 'no state')  , 'user', true, source, false)
 
 	for _,v in pairs(vehicules) do
 		MySQL.Sync.execute("UPDATE owned_vehicles SET state =@state WHERE plate=@plate",{['@state'] = state , ['@plate'] = plate})
