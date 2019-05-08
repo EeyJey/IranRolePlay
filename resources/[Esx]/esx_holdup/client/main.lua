@@ -105,7 +105,7 @@ end)
 
 
 RegisterCommand('dst', function()
-	drawTxt(0.66, 1.44, 1.0,1.0,0.4,"sample text", 255, 255, 255, 255)
+	drawTxt(0.66, 2.44, 1.0,1.0,0.4,"sample text", 255, 255, 255, 255)
 end)
 
 Citizen.CreateThread(function()
