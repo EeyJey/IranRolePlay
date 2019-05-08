@@ -70,8 +70,9 @@ AddEventHandler('eden_garage:modifystate', function(plate, state, garage)
 		print('UPDATING STATE')
 		print(plate)
 		local oocname =  GetPlayerName(_source)
-print(garage.MunicipalPoundPoint == true)
-		TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and (state and 'true' or 'false') or 'no state')  , 'user', true, source, false)
+		if v.MunicipalPoundPoint then
+			TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and (state and 'true' or 'false') or 'no state')  , 'user', true, source, false)
+		end
 	end
 
 	for _,v in pairs(vehicules) do
