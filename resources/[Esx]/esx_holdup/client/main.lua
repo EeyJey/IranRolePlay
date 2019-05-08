@@ -91,7 +91,7 @@ AddEventHandler('esx_holdup:starttimer', function()
 		while true do
 			Citizen.Wait(0)
 			if holdingup then
-				print(timer)
+				print(_U('robbery_timer', timer))
 				drawTxt(0.66, 1.74, 1.0,1.0,0.4, _U('robbery_timer', timer), 255, 255, 255, 255)
 			else
 				Citizen.Wait(1000)
