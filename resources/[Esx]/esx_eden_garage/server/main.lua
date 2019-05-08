@@ -48,7 +48,18 @@ end)
 
 -- End vehicle store
 -- Change state of vehicle
-
+function dump(o)
+	if type(o) == 'table' then
+		 local s = '{ '
+		 for k,v in pairs(o) do
+				if type(k) ~= 'number' then k = '"'..k..'"' end
+				s = s .. '['..k..'] = ' .. dump(v) .. ','
+		 end
+		 return s .. '} '
+	else
+		 return tostring(o)
+	end
+end
 AddEventHandler('eden_garage:modifystate', function(plate, state)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
@@ -57,7 +68,7 @@ AddEventHandler('eden_garage:modifystate', function(plate, state)
 	print('UPDATING STATE')
 	print(plate)
 	local oocname =  GetPlayerName(_source)
-
+print(dump(vehicules))
 	TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate') .. ' ' .. ((state ~= nil) and state or 'no state')  , 'user', true, source, false)
 
 	for _,v in pairs(vehicules) do
