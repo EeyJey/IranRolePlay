@@ -84,7 +84,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		if blocked then
-			Citizen.wait(3000)
+			Citizen.Wait(3000)
 			blocked = false
 		end
 	end

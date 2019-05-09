@@ -24,7 +24,7 @@ RegisterServerEvent("antirpquestion:didQuestion")
 AddEventHandler("antirpquestion:didQuestion", function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	MySQL.Async.fetchAll('SELECT * FROM users WHERE `identifier`=@identifier;', {identifier = xPlayer.identifier}, function(users)
+	MySQL.Async.fetchAll('SELECT * FROM users WHERE `identifier`=@identifier;', {identifier = (xPlayer ~= nil and xPlayer.identifier or "1234")}, function(users)
 		for i=1, #users, 1 do
 			local questionMade = users[i].question_rp
 			if (questionMade == "false") then
