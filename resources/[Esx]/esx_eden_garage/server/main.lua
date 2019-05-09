@@ -34,6 +34,7 @@ ESX.RegisterServerCallback('eden_garage:stockv',function(source,cb, vehicleProps
 	local vehicules = getPlayerVehicles(xPlayer.getIdentifier())
 	local plate = vehicleProps.plate
 	print(plate)
+	print(vehicleProps.model)
 	
 		for _,v in pairs(vehicules) do
 			if(plate == plate)then
