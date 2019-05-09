@@ -39,10 +39,10 @@ ESX.RegisterServerCallback('eden_garage:stockv',function(source,cb, vehicleProps
 			if(plate == plate)then
 				local vehprop = json.encode(vehicleProps)
 				--logging cheaters query
-				MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type) select 
-				 "'..xPlayer.identifier..'","@plate", "@vehprop","ch_hash" from dual WHERE
-					NOT EXISTS
-					(SELECT * FROM owned_vehicles WHERE plate = "@plate" and vehicle like model = "%'..vehicleProps.model..'%")'
+				MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type) select "'..
+				 xPlayer.identifier..'","@plate", "@vehprop","ch_hash" from dual WHERE '..
+				 'NOT EXISTS '..
+					'(SELECT * FROM owned_vehicles WHERE plate = "@plate" and vehicle like model = "%'..vehicleProps.model..'%")
 					,{['@vehprop'] = vehprop, ['@plate'] = plate})
 				--end logging query
 
