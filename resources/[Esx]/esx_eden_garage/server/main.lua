@@ -35,22 +35,17 @@ ESX.RegisterServerCallback('eden_garage:stockv',function(source,cb, vehicleProps
 	local plate = vehicleProps.plate
 	print(plate)
 
-		for _,v in pairs(vehicules) do
-			if(plate == plate)then
-				local vehprop = json.encode(vehicleProps)
-				--logging cheaters query
-				MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type) select "'..
-				 xPlayer.identifier..'",@plate, @vehprop,"ch_hash" from dual WHERE '..
-				 'NOT EXISTS '..
-					'(SELECT * FROM owned_vehicles WHERE plate = @plate and vehicle like "%'..vehicleProps.model..'%")'
-					,{['@vehprop'] = vehprop, ['@plate'] = plate})
-				--end logging query
+	local vehprop = json.encode(vehicleProps)
+	--logging cheaters query
+	MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type,time) select "'..
+	xPlayer.identifier..'",@plate, @vehprop,"ch_hash",now() from dual WHERE '..
+	'NOT EXISTS '..
+	'(SELECT * FROM owned_vehicles WHERE plate = @plate and vehicle like "%'..vehicleProps.model..'%")'
+	,{['@vehprop'] = vehprop, ['@plate'] = plate})
+	--end logging query
 
-				MySQL.Sync.execute("UPDATE owned_vehicles SET vehicle=@vehprop WHERE plate=@plate and vehicle like \"%"..vehicleProps.model.."%\"",{['@vehprop'] = vehprop, ['@plate'] = plate})
-				isFound = true
-				break
-			end		
-		end
+	MySQL.Sync.execute("UPDATE owned_vehicles SET vehicle=@vehprop WHERE plate=@plate and vehicle like \"%"..vehicleProps.model.."%\"",{['@vehprop'] = vehprop, ['@plate'] = plate})
+	isFound = true
 	cb(isFound)
 end)
 
@@ -60,7 +55,6 @@ end)
 AddEventHandler('eden_garage:modifystate', function(plate, state, ispound)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	local vehicules = getPlayerVehicles(xPlayer.getIdentifier())
 	local state = state
 
 	if plate ~= nil then
@@ -71,11 +65,7 @@ AddEventHandler('eden_garage:modifystate', function(plate, state, ispound)
 			TriggerEvent('DiscordBot:ToDiscord', 'impound', oocname,((plate ~= nil) and plate or 'no plate')  , 'user', true, source, false)
 		end
 	end
-
-	for _,v in pairs(vehicules) do
-		MySQL.Sync.execute("UPDATE owned_vehicles SET state =@state WHERE plate=@plate",{['@state'] = state , ['@plate'] = plate})
-		break		
-	end
+	MySQL.Sync.execute("UPDATE owned_vehicles SET state =@state WHERE plate=@plate",{['@state'] = state , ['@plate'] = plate})
 end)
 
 -- End state update
