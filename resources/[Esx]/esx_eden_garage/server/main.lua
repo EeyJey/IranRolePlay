@@ -42,7 +42,7 @@ ESX.RegisterServerCallback('eden_garage:stockv',function(source,cb, vehicleProps
 				MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type) select "'..
 				 xPlayer.identifier..'","@plate", "@vehprop","ch_hash" from dual WHERE '..
 				 'NOT EXISTS '..
-					'(SELECT * FROM owned_vehicles WHERE plate = "@plate" and vehicle like "%'..vehicleProps.model..'%"'
+					'(SELECT * FROM owned_vehicles WHERE plate = "@plate" and vehicle like "%'..vehicleProps.model..'%")'
 					,{['@vehprop'] = vehprop, ['@plate'] = plate})
 				--end logging query
 
