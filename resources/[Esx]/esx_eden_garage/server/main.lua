@@ -46,8 +46,7 @@ ESX.RegisterServerCallback('eden_garage:stockv',function(source,cb, vehicleProps
 					,{['@vehprop'] = vehprop, ['@plate'] = plate})
 				--end logging query
 
-				MySQL.Sync.execute("UPDATE owned_vehicles SET vehicle=@vehprop WHERE plate=@plate and vehicle like model =
-				 \"%"..vehicleProps.model.."%\"",{['@vehprop'] = vehprop, ['@plate'] = plate})
+				MySQL.Sync.execute("UPDATE owned_vehicles SET vehicle=@vehprop WHERE plate=@plate and vehicle like model =\"%"..vehicleProps.model.."%\"",{['@vehprop'] = vehprop, ['@plate'] = plate})
 				isFound = true
 				break
 			end		
