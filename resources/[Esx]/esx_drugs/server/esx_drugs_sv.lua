@@ -154,7 +154,7 @@ local function SellCoke(source)
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', _source, _U('no_pouches_sale'))
 			end
-			for i = 0  ,poochQuantity,+1
+			for i = 0  ,poochQuantity,1
 			do
 				SetTimeout(Config.TimeToSell, function()
 					xPlayer.removeInventoryItem('coke_pooch', 1)
@@ -310,7 +310,7 @@ local function SellMeth(source)
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', _source, _U('no_pouches_sale'))
 			end
-			for i = 0  ,poochQuantity,+1
+			for i = 0  ,poochQuantity,1
 			do
 				SetTimeout(Config.TimeToSell, function()
 					xPlayer.removeInventoryItem('meth_pooch', 1)
@@ -466,7 +466,7 @@ local function SellWeed(source)
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', _source, _U('no_pouches_sale'))
 			end
-			for i = 0  ,poochQuantity,+1
+			for i = 0  ,poochQuantity,1
 			do
 				SetTimeout(Config.TimeToSell, function()
 
@@ -626,7 +626,7 @@ local function SellOpium(source)
 			if poochQuantity == 0 then
 				TriggerClientEvent('esx:showNotification', _source, _U('no_pouches_sale'))
 			end
-			for i = 0  ,poochQuantity,+1
+			for i = 0  ,poochQuantity,1
 			do
 				SetTimeout(Config.TimeToSell, function()
 					xPlayer.removeInventoryItem('opium_pooch', 1)
