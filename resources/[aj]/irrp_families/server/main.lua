@@ -55,21 +55,21 @@ end)
 		data      = data,
 	}
 
- 	for i=1, #RegisteredSocieties, 1 do
-		if RegisteredSocieties[i].name == name then
+ 	for i=1, #RegisteredFamilies, 1 do
+		if RegisteredFamilies[i].name == name then
 			found = true
-			RegisteredSocieties[i] = family
+			RegisteredFamilies[i] = family
 			break
 		end
 	end
 
  	if not found then
-		table.insert(RegisteredSocieties, family)
+		table.insert(RegisteredFamilies, family)
 	end
 end)
 
  AddEventHandler('irrp_families:getFamilies', function(cb)
-	cb(RegisteredSocieties)
+	cb(RegisteredFamilies)
 end)
 
  AddEventHandler('irrp_families:getFamily', function(name, cb)
