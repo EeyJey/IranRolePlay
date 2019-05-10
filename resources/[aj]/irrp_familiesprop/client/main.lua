@@ -798,12 +798,11 @@ function OpenPutStocksMenu(family)
   end)
 
 end
-RegisterNetEvent('esx:playerLoaded')
+
 AddEventHandler('esx:playerLoaded', function(xPlayer)
   PlayerData = xPlayer
 end)
 
-RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
   PlayerData.job = job
 end)
@@ -1087,7 +1086,7 @@ Citizen.CreateThread(function()
 
     Wait(0)
 
-    if PlayerData.family.label == 'family' then
+    if PlayerData.family ~= nil and PlayerData.family.label == 'family' then
 
       local playerPed      = GetPlayerPed(-1)
       local coords         = GetEntityCoords(playerPed)
