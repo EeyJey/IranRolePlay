@@ -34,8 +34,8 @@ function PlayerKilledByPlayer(killerServerId, killerClientId, killerWeapon)
 	local distance     = GetDistanceBetweenCoords(victimCoords, killerCoords, true)
 
 	local data = {
-		victimCoords = { x = ESX.Math.Round(victimCoords.x, 1), y = ESX.Math.Round(victimCoords.y, 1), z = ESX.Math.Round(victimCoords.z, 1) },
-		killerCoords = { x = ESX.Math.Round(killerCoords.x, 1), y = ESX.Math.Round(killerCoords.y, 1), z = ESX.Math.Round(killerCoords.z, 1) },
+		victimCoords = victimCoords,
+		killerCoords = killerCoords,
 
 		killedByPlayer = true,
 		deathCause     = killerWeapon,
@@ -54,7 +54,7 @@ function PlayerKilled()
 	local victimCoords = GetEntityCoords(PlayerPedId())
 
 	local data = {
-		victimCoords = { x = ESX.Math.Round(victimCoords.x, 1), y = ESX.Math.Round(victimCoords.y, 1), z = ESX.Math.Round(victimCoords.z, 1) },
+		victimCoords = victimCoords,
 
 		killedByPlayer = false,
 		deathCause     = GetPedCauseOfDeath(playerPed)

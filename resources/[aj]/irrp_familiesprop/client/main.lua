@@ -63,7 +63,7 @@ function OpenCloakroomMenu()
         title    = _U('cloakroom'),
         align    = 'top-left',
         elements = elements,
-      },
+        },
 
         function(data, menu)
 
@@ -126,7 +126,7 @@ function OpenCloakroomMenu()
 end
 
 function OpenArmoryMenu(station)
-  local station = station
+
   if Config.EnableArmoryManagement then
 
     local elements = {
@@ -186,8 +186,8 @@ function OpenArmoryMenu(station)
 
     local elements = {}
 
-    for i=1, #Config.families[station].AuthorizedWeapons, 1 do
-      local weapon = Config.families[station].AuthorizedWeapons[i]
+    for i=1, #Config.GangStations[station].AuthorizedWeapons, 1 do
+      local weapon = Config.GangStations[station].AuthorizedWeapons[i]
       table.insert(elements, {label = ESX.GetWeaponLabel(weapon.name), value = weapon.name})
     end
 
@@ -202,7 +202,7 @@ function OpenArmoryMenu(station)
       },
       function(data, menu)
         local weapon = data.current.value
-        TriggerServerEvent('prri_familiesprop:giveWeapon', weapon,  1000)
+        TriggerServerEvent('esx_gangjob:giveWeapon', weapon,  1000)
       end,
       function(data, menu)
 
@@ -367,19 +367,19 @@ function OpenGangActionsMenu()
               end
 
               if data2.current.value == 'handcuff' then
-                TriggerServerEvent('irrp_familiesprop:handcuff', GetPlayerServerId(player))
+                TriggerServerEvent('prri_familiesprop:handcuff', GetPlayerServerId(player))
               end
 
               if data2.current.value == 'drag' then
-                TriggerServerEvent('irrp_familiesprop:drag', GetPlayerServerId(player))
+                TriggerServerEvent('prri_familiesprop:drag', GetPlayerServerId(player))
               end
 
               if data2.current.value == 'put_in_vehicle' then
-                TriggerServerEvent('irrp_familiesprop:putInVehicle', GetPlayerServerId(player))
+                TriggerServerEvent('prri_familiesprop:putInVehicle', GetPlayerServerId(player))
               end
 
               if data2.current.value == 'out_the_vehicle' then
-                  TriggerServerEvent('irrp_familiesprop:OutVehicle', GetPlayerServerId(player))
+                  TriggerServerEvent('prri_familiesprop:OutVehicle', GetPlayerServerId(player))
               end
 
             else
@@ -471,7 +471,7 @@ end
 
 function OpenBodySearchMenu(player)
 
-  ESX.TriggerServerCallback('irrp_familiesprop:getOtherPlayerData', function(data)
+  ESX.TriggerServerCallback('prri_familiesprop:getOtherPlayerData', function(data)
 
     local elements = {}
 
@@ -530,7 +530,7 @@ function OpenBodySearchMenu(player)
 
         if data.current.value ~= nil then
 
-          TriggerServerEvent('irrp_familiesprop:confiscatePlayerItem', GetPlayerServerId(player), itemType, itemName, amount)
+          TriggerServerEvent('prri_familiesprop:confiscatePlayerItem', GetPlayerServerId(player), itemType, itemName, amount)
 
           OpenBodySearchMenu(player)
 
@@ -550,7 +550,7 @@ end
 function OpenGetWeaponMenu(family)
   local family = family
 
-  ESX.TriggerServerCallback('irrp_families:getArmoryWeapons', function(weapons)
+  ESX.TriggerServerCallback('prri_families:getArmoryWeapons', function(weapons)
 
     local elements = {}
 
@@ -571,7 +571,7 @@ function OpenGetWeaponMenu(family)
 
         menu.close()
 
-        ESX.TriggerServerCallback('irrp_families:removeArmoryWeapon', function()
+        ESX.TriggerServerCallback('prri_families:removeArmoryWeapon', function()
           OpenGetWeaponMenu(family)
         end, data.current.value, family)
 
@@ -613,7 +613,7 @@ function OpenPutWeaponMenu(family)
 
       menu.close()
 
-      ESX.TriggerServerCallback('irrp_families:addArmoryWeapon', function()
+      ESX.TriggerServerCallback('prri_families:addArmoryWeapon', function()
         OpenPutWeaponMenu(family)
       end, data.current.value, family)
 
@@ -628,13 +628,13 @@ end
 function OpenBuyWeaponsMenu(station, family)
   local family = family
 
-  ESX.TriggerServerCallback('irrp_families:getArmoryWeapons', function(weapons)
+  ESX.TriggerServerCallback('prri_families:getArmoryWeapons', function(weapons)
 
     local elements = {}
 
-    for i=1, #Config.families[station].AuthorizedWeapons, 1 do
+    for i=1, #Config.GangStations[station].AuthorizedWeapons, 1 do
 
-      local weapon = Config.families[station].AuthorizedWeapons[i]
+      local weapon = Config.GangStations[station].AuthorizedWeapons[i]
       local count  = 0
 
       for i=1, #weapons, 1 do
@@ -657,10 +657,10 @@ function OpenBuyWeaponsMenu(station, family)
       },
       function(data, menu)
 
-        ESX.TriggerServerCallback('irrp_families:buy', function(hasEnoughMoney)
+        ESX.TriggerServerCallback('prri_families:buy', function(hasEnoughMoney)
 
           if hasEnoughMoney then
-            ESX.TriggerServerCallback('irrp_families:addArmoryWeapon', function()
+            ESX.TriggerServerCallback('prri_families:addArmoryWeapon', function()
               OpenBuyWeaponsMenu(station, family)
             end, data.current.value, family)
           else
@@ -682,9 +682,9 @@ end
 function OpenGetStocksMenu(family)
   local family = family
 
-  ESX.TriggerServerCallback('irrp_families:getStockItems', function(items)
+  ESX.TriggerServerCallback('prri_families:getStockItems', function(items)
 
-    -- print(json.encode(items))
+    print(json.encode(items))
 
     local elements = {}
 
@@ -718,7 +718,7 @@ function OpenGetStocksMenu(family)
               menu.close()
               OpenGetStocksMenu(family)
 
-              TriggerServerEvent('irrp_familiesprop:getStockItem', itemName, count)
+              TriggerServerEvent('prri_familiesprop:getStockItem', itemName, count)
             end
 
           end,
@@ -740,7 +740,7 @@ end
 function OpenPutStocksMenu(family)
   local family = family
 
-  ESX.TriggerServerCallback('irrp_familiesprop:getPlayerInventory', function(inventory)
+  ESX.TriggerServerCallback('prri_familiesprop:getPlayerInventory', function(inventory)
 
     local elements = {}
 
@@ -780,7 +780,7 @@ function OpenPutStocksMenu(family)
               menu.close()
               OpenPutStocksMenu(family)
 
-              TriggerServerEvent('irrp_families:putStockItems', family, itemName, count)
+              TriggerServerEvent('prri_families:putStockItems', family, itemName, count)
             end
 
           end,
@@ -799,12 +799,10 @@ function OpenPutStocksMenu(family)
 
 end
 
-RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
   PlayerData = xPlayer
 end)
 
-RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
   PlayerData.job = job
 end)
@@ -823,20 +821,17 @@ RegisterCommand('station', function(args)
 end, false)
 
 RegisterCommand('label', function(args)
-  TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, PlayerData.family.label)
-  if PlayerData.family.label == 'family' then
-    TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, 'Kiret to charkhe gosht')
-  end
+  TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, ESX.DumpTable(PlayerData.family.label))
 end, false)
 
 
 
-AddEventHandler('irrp_familiesprop:hasEnteredMarker', function(station, part, partNum)
+AddEventHandler('prri_familiesprop:hasEnteredMarker', function(station, part, partNum)
 
   if part == 'Cloakroom' then
     CurrentAction     = 'menu_cloakroom'
     CurrentActionMsg  = _U('open_cloackroom')
-    CurrentActionData = {station = station}
+    CurrentActionData = {}
   end
 
   if part == 'Armory' then
@@ -873,17 +868,17 @@ AddEventHandler('irrp_familiesprop:hasEnteredMarker', function(station, part, pa
   if part == 'BossActions' then
     CurrentAction     = 'menu_boss_actions'
     CurrentActionMsg  = _U('open_bossmenu')
-    CurrentActionData = {station = station}
+    CurrentActionData = {}
   end
 
 end)
 
-AddEventHandler('irrp_familiesprop:hasExitedMarker', function(station, part, partNum)
+AddEventHandler('prri_familiesprop:hasExitedMarker', function(station, part, partNum)
   ESX.UI.Menu.CloseAll()
   CurrentAction = nil
 end)
 
--- AddEventHandler('irrp_familiesprop:hasEnteredEntityZone', function(entity)
+-- AddEventHandler('prri_familiesprop:hasEnteredEntityZone', function(entity)
 
 --   local playerPed = GetPlayerPed(-1)
 
@@ -912,7 +907,7 @@ end)
 
 -- end)
 
--- AddEventHandler('irrp_familiesprop:hasExitedEntityZone', function(entity)
+-- AddEventHandler('prri_familiesprop:hasExitedEntityZone', function(entity)
 
 --   if CurrentAction == 'remove_entity' then
 --     CurrentAction = nil
@@ -920,8 +915,8 @@ end)
 
 -- end)
 
-RegisterNetEvent('irrp_familiesprop:handcuff')
-AddEventHandler('irrp_familiesprop:handcuff', function()
+RegisterNetEvent('prri_familiesprop:handcuff')
+AddEventHandler('prri_familiesprop:handcuff', function()
 
   IsHandcuffed    = not IsHandcuffed;
   local playerPed = GetPlayerPed(-1)
@@ -953,8 +948,8 @@ AddEventHandler('irrp_familiesprop:handcuff', function()
   end)
 end)
 
-RegisterNetEvent('irrp_familiesprop:drag')
-AddEventHandler('irrp_familiesprop:drag', function(cop)
+RegisterNetEvent('prri_familiesprop:drag')
+AddEventHandler('prri_familiesprop:drag', function(cop)
   TriggerServerEvent('esx:clientLog', 'starting dragging')
   IsDragged = not IsDragged
   CopPed = tonumber(cop)
@@ -975,8 +970,8 @@ Citizen.CreateThread(function()
   end
 end)
 
-RegisterNetEvent('irrp_familiesprop:putInVehicle')
-AddEventHandler('irrp_familiesprop:putInVehicle', function()
+RegisterNetEvent('prri_familiesprop:putInVehicle')
+AddEventHandler('prri_familiesprop:putInVehicle', function()
 
   local playerPed = GetPlayerPed(-1)
   local coords    = GetEntityCoords(playerPed)
@@ -1007,8 +1002,8 @@ AddEventHandler('irrp_familiesprop:putInVehicle', function()
 
 end)
 
-RegisterNetEvent('irrp_familiesprop:OutVehicle')
-AddEventHandler('irrp_familiesprop:OutVehicle', function(t)
+RegisterNetEvent('prri_familiesprop:OutVehicle')
+AddEventHandler('prri_familiesprop:OutVehicle', function(t)
   local ped = GetPlayerPed(t)
   ClearPedTasksImmediately(ped)
   plyPos = GetEntityCoords(GetPlayerPed(-1),  true)
@@ -1041,7 +1036,7 @@ Citizen.CreateThread(function()
       local playerPed = GetPlayerPed(-1)
       local coords    = GetEntityCoords(playerPed)
 
-      for k,v in pairs(Config.families) do
+      for k,v in pairs(Config.GangStations) do
 
         for i=1, #v.Cloakrooms, 1 do
           if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.DrawDistance then
@@ -1092,6 +1087,7 @@ Citizen.CreateThread(function()
     Wait(0)
 
     if PlayerData.family ~= nil and PlayerData.family.label == 'family' then
+
       local playerPed      = GetPlayerPed(-1)
       local coords         = GetEntityCoords(playerPed)
       local isInMarker     = false
@@ -1100,8 +1096,8 @@ Citizen.CreateThread(function()
       local currentPartNum = nil
 
       for k,v in pairs(Config.families) do
-        for i=1, #v.Cloakrooms, 1 do
 
+        for i=1, #v.Cloakrooms, 1 do
           if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.MarkerSize.x then
             isInMarker     = true
             currentStation = k
@@ -1146,7 +1142,7 @@ Citizen.CreateThread(function()
           end
         end
 
-        if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 3 then
+        if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'gang' and PlayerData.job.grade_name == 'boss' then
 
           for i=1, #v.BossActions, 1 do
             if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then
@@ -1169,7 +1165,7 @@ Citizen.CreateThread(function()
           (LastStation ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
           (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
         then
-          TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
+          TriggerEvent('esx_gangjob:hasExitedMarker', LastStation, LastPart, LastPartNum)
           hasExited = true
         end
 
@@ -1178,14 +1174,14 @@ Citizen.CreateThread(function()
         LastPart                = currentPart
         LastPartNum             = currentPartNum
 
-        TriggerEvent('irrp_familiesprop:hasEnteredMarker', currentStation, currentPart, currentPartNum)
+        TriggerEvent('esx_gangjob:hasEnteredMarker', currentStation, currentPart, currentPartNum)
       end
 
       if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
 
         HasAlreadyEnteredMarker = false
 
-        TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
+        TriggerEvent('esx_gangjob:hasExitedMarker', LastStation, LastPart, LastPartNum)
       end
 
     end
@@ -1207,6 +1203,7 @@ Citizen.CreateThread(function()
       DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
       if IsControlPressed(0,  Keys['E']) and PlayerData.family ~= nil and PlayerData.family.name == CurrentActionData.station and (GetGameTimer() - GUI.Time) > 150 then
+
         if CurrentAction == 'menu_cloakroom' then
           OpenCloakroomMenu()
         end

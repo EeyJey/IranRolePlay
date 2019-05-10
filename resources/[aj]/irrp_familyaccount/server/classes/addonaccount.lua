@@ -10,7 +10,7 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('irrp_familyaccount:setMoney', self.name, self.money)
+		TriggerClientEvent('prri_familyaccount:setMoney', self.name, self.money)
 	end
 
 	self.removeMoney = function(m)
@@ -18,7 +18,7 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('irrp_familyaccount:setMoney', self.name, self.money)
+		TriggerClientEvent('prri_familyaccount:setMoney', self.name, self.money)
 	end
 
 	self.setMoney = function(m)
@@ -26,14 +26,14 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('irrp_familyaccount:setMoney', -1, self.name, self.money)
+		TriggerClientEvent('prri_familyaccount:setMoney', -1, self.name, self.money)
 	end
 
 	self.save = function()
 		if self.owner == nil then
-			MySQL.Async.execute('UPDATE family_account_data SET money = @money WHERE family_name = @family_name',
+			MySQL.Async.execute('UPDATE family_account_data SET money = @money WHERE account_name = @account_name',
 			{
-				['@family_name'] = self.name,
+				['@account_name'] = self.name,
 				['@money']        = self.money
 			})
 		end
