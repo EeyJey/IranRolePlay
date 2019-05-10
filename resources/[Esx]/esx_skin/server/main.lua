@@ -61,6 +61,28 @@ ESX.RegisterServerCallback('esx_skin:getPlayerSkin', function(source, cb)
 	end)
 end)
 
+ESX.RegisterServerCallback('esx_skin:getFamilySkin', function(source, cb)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	MySQL.Async.fetchAll('SELECT skin FROM users WHERE identifier = @identifier', {
+		['@identifier'] = xPlayer.identifier
+	}, function(users)
+		local user = users[1]
+		local skin = nil
+
+		local familySkin = {
+			skin_male   = xPlayer.family.skin_male,
+			skin_female = xPlayer.family.skin_female
+		}
+
+		if user.skin ~= nil then
+			skin = json.decode(user.skin)
+		end
+
+		cb(skin, familySkin)
+	end)
+end)
+
 -- Commands
 TriggerEvent('es:addGroupCommand', 'skin', 'admin', function(source, args, user)
 	TriggerClientEvent('esx_skin:openSaveableMenu', source)
