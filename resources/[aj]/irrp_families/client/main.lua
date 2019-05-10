@@ -1,95 +1,95 @@
 ESX = nil
 
-local base64MoneyIcon = ''
+ local base64MoneyIcon = ''
 
-Citizen.CreateThread(function()
+ Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
 
-	while ESX.GetPlayerData().job == nil do
+ 	while ESX.GetPlayerData().family == nil do
 		Citizen.Wait(10)
 	end
 
-	ESX.PlayerData = ESX.GetPlayerData()
+ 	ESX.PlayerData = ESX.GetPlayerData()
 
+ 	RefreshBussHUD()
+end)
+
+ RegisterNetEvent('esx:setFamily')
+AddEventHandler('esx:setFamily', function(family)
+	ESX.PlayerData.family = family
 	RefreshBussHUD()
 end)
 
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-	ESX.PlayerData.job = job
-	RefreshBussHUD()
-end)
-
-function RefreshBussHUD()
+ function RefreshBussHUD()
 	DisableSocietyMoneyHUDElement()
 
-	if ESX.PlayerData.job.grade_name == 'boss' then
+ 	if ESX.PlayerData.family.grade == 6 then
 		EnableSocietyMoneyHUDElement()
 
-		ESX.TriggerServerCallback('esx_society:getSocietyMoney', function(money)
+ 		ESX.TriggerServerCallback('irrp_families:getFamilyMoney', function(money)
 			UpdateSocietyMoneyHUDElement(money)
-		end, ESX.PlayerData.job.name)
+		end, ESX.PlayerData.family.name)
 	end
 end
 
-RegisterNetEvent('irrp_familyaccount:setMoney')
-AddEventHandler('irrp_familyaccount:setMoney', function(society, money)
-	if ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' and 'society_' .. ESX.PlayerData.job.name == society then
+ RegisterNetEvent('irrp_familyaccount:setMoney')
+AddEventHandler('irrp_familyaccount:setMoney', function(family, money)
+	if ESX.PlayerData.family and ESX.PlayerData.family.grade == 6 and 'family_' .. ESX.PlayerData.family.name == family then
 		UpdateSocietyMoneyHUDElement(money)
 	end
 end)
 
-function EnableSocietyMoneyHUDElement()
+ function EnableSocietyMoneyHUDElement()
 	local societyMoneyHUDElementTpl = '<div><img src="' .. base64MoneyIcon .. '" style="width:20px; height:20px; vertical-align:middle;">&nbsp;{{money}}</div>'
 
-	if ESX.GetConfig().EnableHud then
+ 	if ESX.GetConfig().EnableHud then
 		ESX.UI.HUD.RegisterElement('society_money', 3, 0, societyMoneyHUDElementTpl, {
 			money = 0
 		})
 	end
 
-	TriggerEvent('esx_society:toggleSocietyHud', true)
+ 	TriggerEvent('irrp_families:toggleSocietyHud', true)
 end
 
-function DisableSocietyMoneyHUDElement()
+ function DisableSocietyMoneyHUDElement()
 	if ESX.GetConfig().EnableHud then
 		ESX.UI.HUD.RemoveElement('society_money')
 	end
 
-	TriggerEvent('esx_society:toggleSocietyHud', false)
+ 	TriggerEvent('irrp_families:toggleSocietyHud', false)
 end
 
-function UpdateSocietyMoneyHUDElement(money)
+ function UpdateSocietyMoneyHUDElement(money)
 	if ESX.GetConfig().EnableHud then
 		ESX.UI.HUD.UpdateElement('society_money', {
 			money = ESX.Math.GroupDigits(money)
 		})
 	end
 
-	TriggerEvent('esx_society:setSocietyMoney', money)
+ 	TriggerEvent('irrp_families:setSocietyMoney', money)
 end
 
-function OpenBossMenu(family, close, options)
+ function OpenBossMenu(family, close, options)
 	local isBoss = nil
 	local options  = options or {}
 	local elements = {}
 
-	ESX.TriggerServerCallback('irrp_families:isBoss', function(result)
+ 	ESX.TriggerServerCallback('irrp_families:isBoss', function(result)
 		isBoss = result
 	end, family)
 
-	while isBoss == nil do
+ 	while isBoss == nil do
 		Citizen.Wait(100)
 	end
 
-	if not isBoss then
+ 	if not isBoss then
 		return
 	end
 
-	local defaultOptions = {
+ 	local defaultOptions = {
 		withdraw  = true,
 		deposit   = true,
 		wash      = true,
@@ -97,112 +97,112 @@ function OpenBossMenu(family, close, options)
 		grades    = true
 	}
 
-	for k,v in pairs(defaultOptions) do
+ 	for k,v in pairs(defaultOptions) do
 		if options[k] == nil then
 			options[k] = v
 		end
 	end
 
-	if options.withdraw then
+ 	if options.withdraw then
 		table.insert(elements, {label = _U('withdraw_society_money'), value = 'withdraw_society_money'})
 	end
 
-	if options.deposit then
+ 	if options.deposit then
 		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
 	end
 
-	if options.wash then
+ 	if options.wash then
 		table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
 	end
 
-	if options.employees then
+ 	if options.employees then
 		table.insert(elements, {label = _U('employee_management'), value = 'manage_employees'})
 	end
 
-	if options.grades then
+ 	if options.grades then
 		table.insert(elements, {label = _U('salary_management'), value = 'manage_grades'})
 	end
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'boss_actions_' .. society, {
+ 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'boss_actions_' .. family, {
 		title    = _U('boss_menu'),
 		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 
-		if data.current.value == 'withdraw_society_money' then
+ 		if data.current.value == 'withdraw_society_money' then
 
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_society_money_amount_' .. society, {
+ 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_society_money_amount_' .. family, {
 				title = _U('withdraw_amount')
 			}, function(data, menu)
 
-				local amount = tonumber(data.value)
+ 				local amount = tonumber(data.value)
 
-				if amount == nil then
+ 				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
 					menu.close()
-					TriggerServerEvent('esx_society:withdrawMoney', society, amount)
+					TriggerServerEvent('irrp_families:withdrawMoney', family, amount)
 				end
 
-			end, function(data, menu)
+ 			end, function(data, menu)
 				menu.close()
 			end)
 
-		elseif data.current.value == 'deposit_money' then
+ 		elseif data.current.value == 'deposit_money' then
 
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. society, {
+ 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. family, {
 				title = _U('deposit_amount')
 			}, function(data, menu)
 
-				local amount = tonumber(data.value)
+ 				local amount = tonumber(data.value)
 
-				if amount == nil then
+ 				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
 					menu.close()
-					TriggerServerEvent('esx_society:depositMoney', society, amount)
+					TriggerServerEvent('irrp_families:depositMoney', family, amount)
 				end
 
-			end, function(data, menu)
+ 			end, function(data, menu)
 				menu.close()
 			end)
 
-		elseif data.current.value == 'wash_money' then
+ 		elseif data.current.value == 'wash_money' then
 
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'wash_money_amount_' .. society, {
+ 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'wash_money_amount_' .. family, {
 				title = _U('wash_money_amount')
 			}, function(data, menu)
 
-				local amount = tonumber(data.value)
+ 				local amount = tonumber(data.value)
 
-				if amount == nil then
+ 				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
 					menu.close()
-					TriggerServerEvent('esx_society:washMoney', society, amount)
+					TriggerServerEvent('irrp_families:washMoney', family, amount)
 				end
 
-			end, function(data, menu)
+ 			end, function(data, menu)
 				menu.close()
 			end)
 
-		elseif data.current.value == 'manage_employees' then
-			OpenManageEmployeesMenu(society)
+ 		elseif data.current.value == 'manage_employees' then
+			OpenManageEmployeesMenu(family)
 		elseif data.current.value == 'manage_grades' then
-			OpenManageGradesMenu(society)
+			OpenManageGradesMenu(family)
 		end
 
-	end, function(data, menu)
+ 	end, function(data, menu)
 		if close then
 			close(data, menu)
 		end
 	end)
 
-end
+ end
 
-function OpenManageEmployeesMenu(society)
+ function OpenManageEmployeesMenu(family)
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_employees_' .. society, {
+ 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_employees_' .. family, {
 		title    = _U('employee_management'),
 		align    = 'top-left',
 		elements = {
@@ -211,32 +211,32 @@ function OpenManageEmployeesMenu(society)
 		}
 	}, function(data, menu)
 
-		if data.current.value == 'employee_list' then
-			OpenEmployeeList(society)
+ 		if data.current.value == 'employee_list' then
+			OpenEmployeeList(family)
 		end
 
-		if data.current.value == 'recruit' then
-			OpenRecruitMenu(society)
+ 		if data.current.value == 'recruit' then
+			OpenRecruitMenu(family)
 		end
 
-	end, function(data, menu)
+ 	end, function(data, menu)
 		menu.close()
 	end)
 end
 
-function OpenEmployeeList(society)
+ function OpenEmployeeList(family)
 
-	ESX.TriggerServerCallback('esx_society:getEmployees', function(employees)
+ 	ESX.TriggerServerCallback('irrp_families:getEmployees', function(employees)
 
-		local elements = {
+ 		local elements = {
 			head = {_U('employee'), _U('grade'), _U('actions')},
 			rows = {}
 		}
 
-		for i=1, #employees, 1 do
-			local gradeLabel = (employees[i].job.grade_label == '' and employees[i].job.label or employees[i].job.grade_label)
+ 		for i=1, #employees, 1 do
+			local gradeLabel = (employees[i].family.grade_label == '' and employees[i].family.label or employees[i].family.grade_label)
 
-			table.insert(elements.rows, {
+ 			table.insert(elements.rows, {
 				data = employees[i],
 				cols = {
 					employees[i].name,
@@ -246,36 +246,36 @@ function OpenEmployeeList(society)
 			})
 		end
 
-		ESX.UI.Menu.Open('list', GetCurrentResourceName(), 'employee_list_' .. society, elements, function(data, menu)
+ 		ESX.UI.Menu.Open('list', GetCurrentResourceName(), 'employee_list_' .. family, elements, function(data, menu)
 			local employee = data.data
 
-			if data.value == 'promote' then
+ 			if data.value == 'promote' then
 				menu.close()
-				OpenPromoteMenu(society, employee)
+				OpenPromoteMenu(family, employee)
 			elseif data.value == 'fire' then
 				ESX.ShowNotification(_U('you_have_fired', employee.name))
 
-				ESX.TriggerServerCallback('esx_society:setJob', function()
-					OpenEmployeeList(society)
-				end, employee.identifier, 'unemployed', 0, 'fire')
+ 				ESX.TriggerServerCallback('irrp_families:setFamily', function()
+					OpenEmployeeList(family)
+				end, employee.identifier, 'nofamily', 0, 'fire')
 			end
 		end, function(data, menu)
 			menu.close()
-			OpenManageEmployeesMenu(society)
+			OpenManageEmployeesMenu(family)
 		end)
 
-	end, society)
+ 	end, family)
 
-end
+ end
 
-function OpenRecruitMenu(society)
+ function OpenRecruitMenu(family)
 
-	ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
+ 	ESX.TriggerServerCallback('irrp_families:getOnlinePlayers', function(players)
 
-		local elements = {}
+ 		local elements = {}
 
-		for i=1, #players, 1 do
-			if players[i].job.name ~= society then
+ 		for i=1, #players, 1 do
+			if players[i].family.name ~= family then
 				table.insert(elements, {
 					label = players[i].name,
 					value = players[i].source,
@@ -285,13 +285,13 @@ function OpenRecruitMenu(society)
 			end
 		end
 
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_' .. society, {
+ 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_' .. family, {
 			title    = _U('recruiting'),
 			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 
-			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_confirm_' .. society, {
+ 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_confirm_' .. family, {
 				title    = _U('do_you_want_to_recruit', data.current.name),
 				align    = 'top-left',
 				elements = {
@@ -301,42 +301,42 @@ function OpenRecruitMenu(society)
 			}, function(data2, menu2)
 				menu2.close()
 
-				if data2.current.value == 'yes' then
+ 				if data2.current.value == 'yes' then
 					ESX.ShowNotification(_U('you_have_hired', data.current.name))
 
-					ESX.TriggerServerCallback('esx_society:setJob', function()
-						OpenRecruitMenu(society)
-					end, data.current.identifier, society, 0, 'hire')
+ 					ESX.TriggerServerCallback('irrp_families:setFamily', function()
+						OpenRecruitMenu(family)
+					end, data.current.identifier, family, 0, 'hire')
 				end
 			end, function(data2, menu2)
 				menu2.close()
 			end)
 
-		end, function(data, menu)
+ 		end, function(data, menu)
 			menu.close()
 		end)
 
-	end)
+ 	end)
 
-end
+ end
 
-function OpenPromoteMenu(society, employee)
+ function OpenPromoteMenu(familyname, employee)
 
-	ESX.TriggerServerCallback('esx_society:getJob', function(job)
+ 	ESX.TriggerServerCallback('irrp_families:getFamily', function(family)
 
-		local elements = {}
+ 		local elements = {}
 
-		for i=1, #job.grades, 1 do
-			local gradeLabel = (job.grades[i].label == '' and job.label or job.grades[i].label)
+ 		for i=1, #family.grades, 1 do
+			local gradeLabel = (family.grades[i].label == '' and family.label or family.grades[i].label)
 
-			table.insert(elements, {
+ 			table.insert(elements, {
 				label = gradeLabel,
-				value = job.grades[i].grade,
-				selected = (employee.job.grade == job.grades[i].grade)
+				value = family.grades[i].grade,
+				selected = (employee.family.grade == family.grades[i].grade)
 			})
 		end
 
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'promote_employee_' .. society, {
+ 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'promote_employee_' .. familyname, {
 			title    = _U('promote_employee', employee.name),
 			align    = 'top-left',
 			elements = elements
@@ -344,69 +344,69 @@ function OpenPromoteMenu(society, employee)
 			menu.close()
 			ESX.ShowNotification(_U('you_have_promoted', employee.name, data.current.label))
 
-			ESX.TriggerServerCallback('esx_society:setJob', function()
-				OpenEmployeeList(society)
-			end, employee.identifier, society, data.current.value, 'promote')
+ 			ESX.TriggerServerCallback('irrp_families:setFamily', function()
+				OpenEmployeeList(familyname)
+			end, employee.identifier, family, data.current.value, 'promote')
 		end, function(data, menu)
 			menu.close()
-			OpenEmployeeList(society)
+			OpenEmployeeList(familyname)
 		end)
 
-	end, society)
+ 	end, familyname)
 
-end
+ end
 
-function OpenManageGradesMenu(society)
+ function OpenManageGradesMenu(familyname)
 
-	ESX.TriggerServerCallback('esx_society:getJob', function(job)
+ 	ESX.TriggerServerCallback('irrp_families:getFamily', function(family)
 
-		local elements = {}
+ 		local elements = {}
 
-		for i=1, #job.grades, 1 do
-			local gradeLabel = (job.grades[i].label == '' and job.label or job.grades[i].label)
+ 		for i=1, #family.grades, 1 do
+			local gradeLabel = (family.grades[i].label == '' and family.label or family.grades[i].label)
 
-			table.insert(elements, {
-				label = ('%s - <span style="color:green;">%s</span>'):format(gradeLabel, _U('money_generic', ESX.Math.GroupDigits(job.grades[i].salary))),
-				value = job.grades[i].grade
+ 			table.insert(elements, {
+				label = ('%s - <span style="color:green;">%s</span>'):format(gradeLabel, _U('money_generic', ESX.Math.GroupDigits(family.grades[i].salary))),
+				value = family.grades[i].grade
 			})
 		end
 
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_grades_' .. society, {
+ 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_grades_' .. family.name, {
 			title    = _U('salary_management'),
 			align    = 'top-left',
 			elements = elements
 		}, function(data, menu)
 
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'manage_grades_amount_' .. society, {
+ 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'manage_grades_amount_' .. family.name, {
 				title = _U('salary_amount')
 			}, function(data2, menu2)
 
-				local amount = tonumber(data2.value)
+ 				local amount = tonumber(data2.value)
 
-				if amount == nil then
+ 				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				elseif amount > Config.MaxSalary then
 					ESX.ShowNotification(_U('invalid_amount_max'))
 				else
 					menu2.close()
 
-					ESX.TriggerServerCallback('esx_society:setJobSalary', function()
-						OpenManageGradesMenu(society)
-					end, society, data.current.value, amount)
+ 					ESX.TriggerServerCallback('irrp_families:setFamilySalary', function()
+						OpenManageGradesMenu(familyname)
+					end, family, data.current.value, amount)
 				end
 
-			end, function(data2, menu2)
+ 			end, function(data2, menu2)
 				menu2.close()
 			end)
 
-		end, function(data, menu)
+ 		end, function(data, menu)
 			menu.close()
 		end)
 
-	end, society)
+ 	end, familyname)
 
-end
+ end
 
-AddEventHandler('irrp_families:openBossMenu', function(family, close, options)
+ AddEventHandler('irrp_families:openBossMenu', function(family, close, options)
 	OpenBossMenu(family, close, options)
 end)
