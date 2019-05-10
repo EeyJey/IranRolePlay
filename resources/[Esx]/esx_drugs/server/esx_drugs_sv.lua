@@ -156,11 +156,10 @@ local function SellCoke(source)
 			end
 			for i = 0  ,poochQuantity,1
 			do
-				SetTimeout(Config.TimeToSell, function()
+					Citizen.Wait(Config.TimeToSell)
 					xPlayer.removeInventoryItem('coke_pooch', 1)
 					xPlayer.addAccountMoney('black_money', 1220)
 					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
-				end)
 			end
 
 		end
@@ -312,11 +311,10 @@ local function SellMeth(source)
 			end
 			for i = 0  ,poochQuantity,1
 			do
-				SetTimeout(Config.TimeToSell, function()
+					Citizen.Wait(Config.TimeToSell)
 					xPlayer.removeInventoryItem('meth_pooch', 1)
 					xPlayer.addAccountMoney('black_money', 1000)
 					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
-				end)
 			end
 
 		end
@@ -468,12 +466,10 @@ local function SellWeed(source)
 			end
 			for i = 0  ,poochQuantity,1
 			do
-				SetTimeout(Config.TimeToSell, function()
-
+					Citizen.Wait(Config.TimeToSell)
 					xPlayer.removeInventoryItem('weed_pooch', 1)
 					xPlayer.addAccountMoney('black_money', 350)
 					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
-				end)
 			end
 
 		end
@@ -628,11 +624,10 @@ local function SellOpium(source)
 			end
 			for i = 0  ,poochQuantity,1
 			do
-				SetTimeout(Config.TimeToSell, function()
+					Citizen.Wait(Config.TimeToSell)
 					xPlayer.removeInventoryItem('opium_pooch', 1)
 					xPlayer.addAccountMoney('black_money', 850)
 					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
-				end)
 			end
 		end
 end
