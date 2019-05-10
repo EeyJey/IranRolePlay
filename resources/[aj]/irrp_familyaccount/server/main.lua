@@ -2,7 +2,7 @@ ESX                  = nil
 local AccountsIndex  = {}
 local FamilyAccounts = {}
 
-TriggerEvent('irrp_familyaccount:getFamilyBank', function(obj) ESX = obj end)
+TriggerEvent('irrp_familiesprop:getFamilyBank', function(obj) ESX = obj end)
 
 MySQL.ready(function()
 	local result = MySQL.Sync.fetchAll('SELECT * FROM family_account')
@@ -41,6 +41,6 @@ function GetFamilyAccount(name)
 	return FamilyAccounts[name]
 end
 
-AddEventHandler('irrp_familyaccount:getFamilyAccount', function(name, cb)
+AddEventHandler('irrp_familiesprop:getFamilyAccount', function(name, cb)
 	cb(GetFamilyAccount(name))
 end)

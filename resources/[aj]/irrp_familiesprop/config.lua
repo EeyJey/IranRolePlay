@@ -13,36 +13,36 @@ Config.MaxInService               = -1
 Config.Locale                     = 'en'
 
 Config.families = {
-  Daltons = {
-    AuthorizedWeapons = {
-      { name = 'WEAPON_PISTOL',      price = 10000 },
-    },
-    AuthorizedVehicles = {
-      { name = 'vigilante',  label = 'Vigilante' },
-		  { name = 'deveste',    label = 'Deveste' },
-		  { name = 'Granger',   label = '4X4' },
-		  { name = 'sultan',      label = 'Sultan' },
-    },
-    Cloakrooms = {
-      { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
-    },
-    Armories = {
-      { x = 146.15225219727, y = -2199.4108886719, z = 3.6880254745483},
-    },
-    Vehicles = {
-      {
-        Spawner    = { x = 120.57460021973, y = -2196.5703125, z = 5.0333256721497 },
-        SpawnPoint = { x = 126.54863739014, y = -2192.8732910156, z = 5.0333247184753 },
-        Heading    = 261.51,
+    Daltons = {
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'vigilante',  label = 'Vigilante' },
+        { name = 'deveste',    label = 'Deveste' },
+        { name = 'Granger',   label = '4X4' },
+        { name = 'sultan',      label = 'Sultan' },
+      },
+      Cloakrooms = {
+        { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
+      },
+      Armories = {
+        { x = 146.15225219727, y = -2199.4108886719, z = 3.6880254745483},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = 120.57460021973, y = -2196.5703125, z = 5.0333256721497 },
+          SpawnPoint = { x = 126.54863739014, y = -2192.8732910156, z = 5.0333247184753 },
+          Heading    = 261.51,
+        }
+      },
+      VehicleDeleters = {
+        { x = 126.88283538818, y = -2199.6921386719, z = 5.0333247184753 },
+      },
+      BossActions = {
+        { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
       }
     },
-    VehicleDeleters = {
-      { x = 126.88283538818, y = -2199.6921386719, z = 5.0333247184753 },
-    },
-    BossActions = {
-      { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
-    }
-  }
   }
   -- {
   --   Name = Ballas,
