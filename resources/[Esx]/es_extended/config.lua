@@ -1,6 +1,6 @@
 Config                      = {}
 Config.Locale               = 'en'
-
+Config.MaxPlayers           = 32
 Config.Accounts             = { 'bank', 'black_money' }
 Config.AccountLabels        = { bank = _U('bank'), black_money = _U('black_money') }
 

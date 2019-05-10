@@ -321,7 +321,25 @@ Citizen.CreateThread(function()
 	end
 end)
 
+local lsMenuIsShowed = false
 RegisterNetEvent('esx_drugs:freezePlayer')
 AddEventHandler('esx_drugs:freezePlayer', function(freeze)
 	FreezeEntityPosition(GetPlayerPed(-1), freeze)
+	lsMenuIsShowed = freeze
+end)
+
+
+Citizen.CreateThread(function()
+	while true do
+		Wait(0)
+		if lsMenuIsShowed then
+			DisableControlAction(0,75,true)
+			DisableControlAction(0, Keys['F1'], true)
+			DisableControlAction(0, Keys['F2'], true)
+			DisableControlAction(0, Keys['F3'], true)
+			DisableControlAction(0, Keys['F5'], true)
+			DisableControlAction(0, Keys['F6'], true)
+			DisableControlAction(0, Keys['F7'], true)
+		end
+	end
 end)
