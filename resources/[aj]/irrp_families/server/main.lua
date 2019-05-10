@@ -27,7 +27,7 @@ MySQL.ready(function()
 	end
 end)
 
-AddEventHandler('prri_families:registerFamily', function(name, label, account, datastore, inventory, data)
+AddEventHandler('irrp_families:registerFamily', function(name, label, account, datastore, inventory, data)
 	local found = false
 
 	local family = {
@@ -52,22 +52,22 @@ AddEventHandler('prri_families:registerFamily', function(name, label, account, d
 	end
 end)
 
-AddEventHandler('prri_families:getSocieties', function(cb)
+AddEventHandler('irrp_families:getSocieties', function(cb)
 	cb(RegisteredSocieties)
 end)
 
-AddEventHandler('prri_families:getFamily', function(name, cb)
+AddEventHandler('irrp_families:getFamily', function(name, cb)
 	cb(GetFamily(name))
 end)
 
-RegisterServerEvent('prri_families:withdrawMoney')
-AddEventHandler('prri_families:withdrawMoney', function(family, amount)
+RegisterServerEvent('irrp_families:withdrawMoney')
+AddEventHandler('irrp_families:withdrawMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local family = GetFamily(family)
 	amount = ESX.Math.Round(tonumber(amount))
 
 	if xPlayer.job.name ~= family.name then
-		print(('prri_families: %s attempted to call withdrawMoney!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to call withdrawMoney!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -83,14 +83,14 @@ AddEventHandler('prri_families:withdrawMoney', function(family, amount)
 	end)
 end)
 
-RegisterServerEvent('prri_families:depositMoney')
-AddEventHandler('prri_families:depositMoney', function(family, amount)
+RegisterServerEvent('irrp_families:depositMoney')
+AddEventHandler('irrp_families:depositMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local family = GetFamily(family)
 	amount = ESX.Math.Round(tonumber(amount))
 
 	if xPlayer.job.name ~= family.name then
-		print(('prri_families: %s attempted to call depositMoney!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to call depositMoney!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -107,14 +107,14 @@ AddEventHandler('prri_families:depositMoney', function(family, amount)
 end)
 
 
-RegisterServerEvent('prri_families:getStockItem')
-AddEventHandler('prri_families:getStockItem', function(family, itemName, count)
+RegisterServerEvent('irrp_families:getStockItem')
+AddEventHandler('irrp_families:getStockItem', function(family, itemName, count)
 
   local xPlayer = ESX.GetPlayerFromId(source)
   local family = getFamily(family)
 
   if xPlayer.family.name ~= family.name then
-		print(('prri_families: %s attempted to call getStock without permission!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to call getStock without permission!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -132,14 +132,14 @@ AddEventHandler('prri_families:getStockItem', function(family, itemName, count)
 end)
 
 
-RegisterServerEvent('prri_families:putStockItems')
-AddEventHandler('prri_families:putStockItems', function(family, itemName, count)
+RegisterServerEvent('irrp_families:putStockItems')
+AddEventHandler('irrp_families:putStockItems', function(family, itemName, count)
 
   local xPlayer = ESX.GetPlayerFromId(source)
   local family = getFamily(family)
 
   if xPlayer.family.name ~= family.name then
-	print(('prri_families: %s attempted to call putStock without permission!'):format(xPlayer.identifier))
+	print(('irrp_families: %s attempted to call putStock without permission!'):format(xPlayer.identifier))
 	return
   end
 
@@ -160,14 +160,14 @@ AddEventHandler('prri_families:putStockItems', function(family, itemName, count)
 
 end)
 
-RegisterServerEvent('prri_families:washMoney')
-AddEventHandler('prri_families:washMoney', function(family, amount)
+RegisterServerEvent('irrp_families:washMoney')
+AddEventHandler('irrp_families:washMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local account = xPlayer.getAccount('black_money')
 	amount = ESX.Math.Round(tonumber(amount))
 
 	if xPlayer.job.name ~= family then
-		print(('prri_families: %s attempted to call washMoney!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to call washMoney!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -187,8 +187,8 @@ AddEventHandler('prri_families:washMoney', function(family, amount)
 
 end)
 
-RegisterServerEvent('prri_families:putVehicleInGarage')
-AddEventHandler('prri_families:putVehicleInGarage', function(familyName, vehicle)
+RegisterServerEvent('irrp_families:putVehicleInGarage')
+AddEventHandler('irrp_families:putVehicleInGarage', function(familyName, vehicle)
 	local family = GetFamily(familyName)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', family.datastore, function(store)
@@ -199,8 +199,8 @@ AddEventHandler('prri_families:putVehicleInGarage', function(familyName, vehicle
 	end)
 end)
 
-RegisterServerEvent('prri_families:removeVehicleFromGarage')
-AddEventHandler('prri_families:removeVehicleFromGarage', function(familyName, vehicle)
+RegisterServerEvent('irrp_families:removeVehicleFromGarage')
+AddEventHandler('irrp_families:removeVehicleFromGarage', function(familyName, vehicle)
 	local family = GetFamily(familyName)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', family.datastore, function(store)
@@ -217,7 +217,7 @@ AddEventHandler('prri_families:removeVehicleFromGarage', function(familyName, ve
 	end)
 end)
 
-ESX.RegisterServerCallback('prri_families:getFamilyMoney', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getFamilyMoney', function(source, cb, family)
 	local family = GetFamily(family)
 
 	if family then
@@ -229,7 +229,7 @@ ESX.RegisterServerCallback('prri_families:getFamilyMoney', function(source, cb, 
 	end
 end)
 
-ESX.RegisterServerCallback('prri_families:getArmoryWeapons', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getArmoryWeapons', function(source, cb, family)
 	local family = GetFamily(family)
 
 	if family then
@@ -249,11 +249,11 @@ ESX.RegisterServerCallback('prri_families:getArmoryWeapons', function(source, cb
 	end
 end)
 
-ESX.RegisterServerCallback('prri_families:addArmoryWeapon', function(source, cb, weaponName, family)
+ESX.RegisterServerCallback('irrp_families:addArmoryWeapon', function(source, cb, weaponName, family)
 	local family = GetFamily(family)
     local xPlayer = ESX.GetPlayerFromId(source)
 	if xPlayer.family.name == family.name then
-		print(('prri_families: %s attempted to addArmoryWeapon!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to addArmoryWeapon!'):format(xPlayer.identifier))
 		return
 	end
     xPlayer.removeWeapon(weaponName)
@@ -290,11 +290,11 @@ ESX.RegisterServerCallback('prri_families:addArmoryWeapon', function(source, cb,
 
 end)
 
-ESX.RegisterServerCallback('prri_families:removeArmoryWeapon', function(source, cb, weaponName, family)
+ESX.RegisterServerCallback('irrp_families:removeArmoryWeapon', function(source, cb, weaponName, family)
 	local family = GetFamily(family)
     local xPlayer = ESX.GetPlayerFromId(source)
 	if xPlayer.family.name == family.name then
-		print(('prri_families: %s attempted to removeArmoryWeapon!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to removeArmoryWeapon!'):format(xPlayer.identifier))
 		return
 	end
     xPlayer.addWeapon(weaponName, 1000)
@@ -331,11 +331,11 @@ ESX.RegisterServerCallback('prri_families:removeArmoryWeapon', function(source, 
 
   end)
 
-  ESX.RegisterServerCallback('prri_families:buy', function(source, cb, amount, family)
+  ESX.RegisterServerCallback('irrp_families:buy', function(source, cb, amount, family)
 	local family = GetFamily(family)
     local xPlayer = ESX.GetPlayerFromId(source)
 	if xPlayer.family.name == family.name then
-		print(('prri_families: %s attempted to buy!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
 		return
 	end
     TriggerEvent('esx_addonaccount:getSharedAccount', family.account, function(account)
@@ -351,11 +351,11 @@ ESX.RegisterServerCallback('prri_families:removeArmoryWeapon', function(source, 
 
   end)
 
-  ESX.RegisterServerCallback('prri_families:getStockItems', function(source, cb, family)
+  ESX.RegisterServerCallback('irrp_families:getStockItems', function(source, cb, family)
 	local family = GetFamily(family)
     local xPlayer = ESX.GetPlayerFromId(source)
 	if xPlayer.family.name == family.name then
-		print(('prri_families: %s attempted to buy!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -366,7 +366,7 @@ ESX.RegisterServerCallback('prri_families:removeArmoryWeapon', function(source, 
   end)
   
 
-ESX.RegisterServerCallback('prri_families:getEmployees', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getEmployees', function(source, cb, family)
 	if Config.EnableESXIdentity then
 
 		MySQL.Async.fetchAll('SELECT firstname, lastname, identifier, job, job_grade FROM users WHERE job = @job ORDER BY job_grade DESC', {
@@ -415,7 +415,7 @@ ESX.RegisterServerCallback('prri_families:getEmployees', function(source, cb, fa
 	end
 end)
 
-ESX.RegisterServerCallback('prri_families:getJob', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getJob', function(source, cb, family)
 	local job    = json.decode(json.encode(Jobs[family]))
 	local grades = {}
 
@@ -433,7 +433,7 @@ ESX.RegisterServerCallback('prri_families:getJob', function(source, cb, family)
 end)
 
 
-ESX.RegisterServerCallback('prri_families:setJob', function(source, cb, identifier, family, grade, type)
+ESX.RegisterServerCallback('irrp_families:setJob', function(source, cb, identifier, family, grade, type)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local isBoss = xPlayer.family.grade_name == 'boss'
 
@@ -462,12 +462,12 @@ ESX.RegisterServerCallback('prri_families:setJob', function(source, cb, identifi
 			end)
 		end
 	else
-		print(('prri_families: %s attempted to setFamily'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted to setFamily'):format(xPlayer.identifier))
 		cb()
 	end
 end)
 
-ESX.RegisterServerCallback('prri_families:setJobSalary', function(source, cb, job, grade, salary)
+ESX.RegisterServerCallback('irrp_families:setJobSalary', function(source, cb, job, grade, salary)
 	local isBoss = isPlayerBoss(source, job)
 	local identifier = GetPlayerIdentifier(source, 0)
 
@@ -492,16 +492,16 @@ ESX.RegisterServerCallback('prri_families:setJobSalary', function(source, cb, jo
 				cb()
 			end)
 		else
-			print(('prri_families: %s attempted to setJobSalary over config limit!'):format(identifier))
+			print(('irrp_families: %s attempted to setJobSalary over config limit!'):format(identifier))
 			cb()
 		end
 	else
-		print(('prri_families: %s attempted to setJobSalary'):format(identifier))
+		print(('irrp_families: %s attempted to setJobSalary'):format(identifier))
 		cb()
 	end
 end)
 
-ESX.RegisterServerCallback('prri_families:getOnlinePlayers', function(source, cb)
+ESX.RegisterServerCallback('irrp_families:getOnlinePlayers', function(source, cb)
 	local xPlayers = ESX.GetPlayers()
 	local players  = {}
 
@@ -519,7 +519,7 @@ ESX.RegisterServerCallback('prri_families:getOnlinePlayers', function(source, cb
 	cb(players)
 end)
 
-ESX.RegisterServerCallback('prri_families:getVehiclesInGarage', function(source, cb, familyName)
+ESX.RegisterServerCallback('irrp_families:getVehiclesInGarage', function(source, cb, familyName)
 	local family = GetFamily(familyName)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', family.datastore, function(store)
@@ -528,7 +528,7 @@ ESX.RegisterServerCallback('prri_families:getVehiclesInGarage', function(source,
 	end)
 end)
 
-ESX.RegisterServerCallback('prri_families:isBoss', function(source, cb, job)
+ESX.RegisterServerCallback('irrp_families:isBoss', function(source, cb, job)
 	cb(isPlayerBoss(source, job))
 end)
 
@@ -538,7 +538,7 @@ function isPlayerBoss(playerId, job)
 	if xPlayer.job.name == job and xPlayer.job.grade_name == 'boss' then
 		return true
 	else
-		print(('prri_families: %s attempted open a family boss menu!'):format(xPlayer.identifier))
+		print(('irrp_families: %s attempted open a family boss menu!'):format(xPlayer.identifier))
 		return false
 	end
 end

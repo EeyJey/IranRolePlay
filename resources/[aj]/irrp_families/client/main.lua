@@ -35,8 +35,8 @@ function RefreshBussHUD()
 	end
 end
 
-RegisterNetEvent('prri_familyaccount:setMoney')
-AddEventHandler('prri_familyaccount:setMoney', function(society, money)
+RegisterNetEvent('irrp_familyaccount:setMoney')
+AddEventHandler('irrp_familyaccount:setMoney', function(society, money)
 	if ESX.PlayerData.job and ESX.PlayerData.job.grade_name == 'boss' and 'society_' .. ESX.PlayerData.job.name == society then
 		UpdateSocietyMoneyHUDElement(money)
 	end

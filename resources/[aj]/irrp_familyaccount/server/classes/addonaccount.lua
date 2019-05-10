@@ -10,7 +10,7 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('prri_familyaccount:setMoney', self.name, self.money)
+		TriggerClientEvent('irrp_familyaccount:setMoney', self.name, self.money)
 	end
 
 	self.removeMoney = function(m)
@@ -18,7 +18,7 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('prri_familyaccount:setMoney', self.name, self.money)
+		TriggerClientEvent('irrp_familyaccount:setMoney', self.name, self.money)
 	end
 
 	self.setMoney = function(m)
@@ -26,7 +26,7 @@ function CreateFamilyAccount(name, owner, money)
 
 		self.save()
 
-		TriggerClientEvent('prri_familyaccount:setMoney', -1, self.name, self.money)
+		TriggerClientEvent('irrp_familyaccount:setMoney', -1, self.name, self.money)
 	end
 
 	self.save = function()

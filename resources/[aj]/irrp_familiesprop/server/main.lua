@@ -9,36 +9,36 @@ if Config.MaxInService ~= -1 then
 end
 
 -- TriggerEvent('esx_phone:registerNumber', 'family', _U('alert_mafia'), true, true)
-TriggerEvent('prri_families:registerFamily', 'grovestreet', 'family', 'family_grovestreet', 'family_grovestreet', 'family_grovestreet', {type = 'public'})
+TriggerEvent('irrp_families:registerFamily', 'grovestreet', 'family', 'family_grovestreet', 'family_grovestreet', 'family_grovestreet', {type = 'public'})
 
-RegisterServerEvent('prri_familiesprop:giveWeapon')
-AddEventHandler('prri_familiesprop:giveWeapon', function(weapon, ammo)
+RegisterServerEvent('irrp_familiesprop:giveWeapon')
+AddEventHandler('irrp_familiesprop:giveWeapon', function(weapon, ammo)
     local xPlayer = ESX.GetPlayerFromId(source)
     xPlayer.addWeapon(weapon, ammo)
 end)
 
-RegisterServerEvent('prri_familiesprop:handcuff')
-AddEventHandler('prri_familiesprop:handcuff', function(target)
-    TriggerClientEvent('prri_familiesprop:handcuff', target)
+RegisterServerEvent('irrp_familiesprop:handcuff')
+AddEventHandler('irrp_familiesprop:handcuff', function(target)
+    TriggerClientEvent('irrp_familiesprop:handcuff', target)
 end)
 
-RegisterServerEvent('prri_familiesprop:drag')
-AddEventHandler('prri_familiesprop:drag', function(target)
+RegisterServerEvent('irrp_familiesprop:drag')
+AddEventHandler('irrp_familiesprop:drag', function(target)
     local _source = source
-    TriggerClientEvent('prri_familiesprop:drag', target, _source)
+    TriggerClientEvent('irrp_familiesprop:drag', target, _source)
 end)
 
-RegisterServerEvent('prri_familiesprop:putInVehicle')
-AddEventHandler('prri_familiesprop:putInVehicle', function(target)
-    TriggerClientEvent('prri_familiesprop:putInVehicle', target)
+RegisterServerEvent('irrp_familiesprop:putInVehicle')
+AddEventHandler('irrp_familiesprop:putInVehicle', function(target)
+    TriggerClientEvent('irrp_familiesprop:putInVehicle', target)
 end)
 
-RegisterServerEvent('prri_familiesprop:OutVehicle')
-AddEventHandler('prri_familiesprop:OutVehicle', function(target)
-    TriggerClientEvent('prri_familiesprop:OutVehicle', target)
+RegisterServerEvent('irrp_familiesprop:OutVehicle')
+AddEventHandler('irrp_familiesprop:OutVehicle', function(target)
+    TriggerClientEvent('irrp_familiesprop:OutVehicle', target)
 end)
 
-ESX.RegisterServerCallback('prri_familiesprop:getOtherPlayerData', function(source, cb, target)
+ESX.RegisterServerCallback('irrp_familiesprop:getOtherPlayerData', function(source, cb, target)
 
   if Config.EnableESXIdentity then
 
@@ -118,8 +118,8 @@ ESX.RegisterServerCallback('prri_familiesprop:getOtherPlayerData', function(sour
   end
 
 end)
-RegisterServerEvent('prri_familiesprop:confiscatePlayerItem')
-AddEventHandler('prri_familiesprop:confiscatePlayerItem', function(target, itemType, itemName, amount)
+RegisterServerEvent('irrp_familiesprop:confiscatePlayerItem')
+AddEventHandler('irrp_familiesprop:confiscatePlayerItem', function(target, itemType, itemName, amount)
 
   local sourceXPlayer = ESX.GetPlayerFromId(source)
   local targetXPlayer = ESX.GetPlayerFromId(target)
@@ -158,7 +158,7 @@ AddEventHandler('prri_familiesprop:confiscatePlayerItem', function(target, itemT
 
 end)
 
-ESX.RegisterServerCallback('prri_familiesprop:getPlayerInventory', function(source, cb)
+ESX.RegisterServerCallback('irrp_familiesprop:getPlayerInventory', function(source, cb)
 
         local xPlayer = ESX.GetPlayerFromId(source)
         local items   = xPlayer.inventory
