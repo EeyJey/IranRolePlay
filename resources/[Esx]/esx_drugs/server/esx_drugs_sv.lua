@@ -143,7 +143,6 @@ local function SellCoke(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToSell, function()
 
 		if PlayersSellingCoke[source] == true then
 
@@ -157,13 +156,14 @@ local function SellCoke(source)
 			end
 			for i = 0  ,poochQuantity,+1
 			do
-				xPlayer.removeInventoryItem('coke_pooch', 1)
-				xPlayer.addAccountMoney('black_money', 1220)
-				TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				SetTimeout(Config.TimeToSell, function()
+					xPlayer.removeInventoryItem('coke_pooch', 1)
+					xPlayer.addAccountMoney('black_money', 1220)
+					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				end)
 			end
 
 		end
-	end)
 end
 
 RegisterServerEvent('esx_drugs:startSellCoke')
@@ -299,7 +299,6 @@ local function SellMeth(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToSell, function()
 
 		if PlayersSellingMeth[source] == true then
 
@@ -313,13 +312,14 @@ local function SellMeth(source)
 			end
 			for i = 0  ,poochQuantity,+1
 			do
-				xPlayer.removeInventoryItem('meth_pooch', 1)
-				xPlayer.addAccountMoney('black_money', 1000)
-				TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				SetTimeout(Config.TimeToSell, function()
+					xPlayer.removeInventoryItem('meth_pooch', 1)
+					xPlayer.addAccountMoney('black_money', 1000)
+					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				end)
 			end
 
 		end
-	end)
 end
 
 RegisterServerEvent('esx_drugs:startSellMeth')
@@ -454,7 +454,6 @@ local function SellWeed(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToSell, function()
 
 		if PlayersSellingWeed[source] == true then
 
@@ -469,13 +468,15 @@ local function SellWeed(source)
 			end
 			for i = 0  ,poochQuantity,+1
 			do
-				xPlayer.removeInventoryItem('weed_pooch', 1)
-				xPlayer.addAccountMoney('black_money', 350)
-				TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				SetTimeout(Config.TimeToSell, function()
+
+					xPlayer.removeInventoryItem('weed_pooch', 1)
+					xPlayer.addAccountMoney('black_money', 350)
+					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				end)
 			end
 
 		end
-	end)
 end
 
 RegisterServerEvent('esx_drugs:startSellWeed')
@@ -613,7 +614,6 @@ local function SellOpium(source)
 		return
 	end
 
-	SetTimeout(Config.TimeToSell, function()
 
 		if PlayersSellingOpium[source] == true then
 
@@ -628,13 +628,13 @@ local function SellOpium(source)
 			end
 			for i = 0  ,poochQuantity,+1
 			do
-				xPlayer.removeInventoryItem('opium_pooch', 1)
-				xPlayer.addAccountMoney('black_money', 850)
-				TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				SetTimeout(Config.TimeToSell, function()
+					xPlayer.removeInventoryItem('opium_pooch', 1)
+					xPlayer.addAccountMoney('black_money', 850)
+					TriggerClientEvent('esx:showNotification', source, _U('sold_one_meth'))
+				end)
 			end
-
 		end
-	end)
 end
 
 RegisterServerEvent('esx_drugs:startSellOpium')
