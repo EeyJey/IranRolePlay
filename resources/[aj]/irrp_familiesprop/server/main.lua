@@ -9,7 +9,7 @@ if Config.MaxInService ~= -1 then
 end
 
 -- TriggerEvent('esx_phone:registerNumber', 'family', _U('alert_mafia'), true, true)
-TriggerEvent('prri_families:registerFamily', 'Daltons', 'family', 'family_daltons', 'family_daltons', 'family_daltons', {type = 'public'})
+TriggerEvent('prri_families:registerFamily', 'grovestreet', 'family', 'family_grovestreet', 'family_grovestreet', 'family_grovestreet', {type = 'public'})
 
 RegisterServerEvent('prri_familiesprop:giveWeapon')
 AddEventHandler('prri_familiesprop:giveWeapon', function(weapon, ammo)
@@ -59,7 +59,7 @@ ESX.RegisterServerCallback('prri_familiesprop:getOtherPlayerData', function(sour
 
     local data = {
       name        = GetPlayerName(target),
-      family      = xPlayer.family,
+      job         = xPlayer.job,
       inventory   = xPlayer.inventory,
       accounts    = xPlayer.accounts,
       weapons     = xPlayer.loadout,
@@ -95,7 +95,7 @@ ESX.RegisterServerCallback('prri_familiesprop:getOtherPlayerData', function(sour
 
     local data = {
       name       = GetPlayerName(target),
-      family     = xPlayer.family,
+      job        = xPlayer.job,
       inventory  = xPlayer.inventory,
       accounts   = xPlayer.accounts,
       weapons    = xPlayer.loadout

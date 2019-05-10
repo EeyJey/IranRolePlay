@@ -47,7 +47,7 @@ TriggerEvent('es:addGroupCommand', 'setfamily', 'admin', function(source, args, 
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
-end, {help = _U('setfamily'), params = {{name = "id", help = _U('id_param')}, {name = "job", help = _U('setfamily_param2')}, {name = "grade_id", help = _U('setfamily_param3')}}})
+end, {help = _U('setfamily'), params = {{name = "id", help = _U('id_param')}, {name = "family", help = _U('setfamily_param2')}, {name = "grade_id", help = _U('setfamily_param3')}}})
 
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
 	TriggerClientEvent('esx:loadIPL', -1, args[1])
