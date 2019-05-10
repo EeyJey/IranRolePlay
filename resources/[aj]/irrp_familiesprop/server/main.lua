@@ -59,7 +59,7 @@ ESX.RegisterServerCallback('irrp_familiesprop:getOtherPlayerData', function(sour
 
     local data = {
       name        = GetPlayerName(target),
-      job         = xPlayer.job,
+      family      = xPlayer.family,
       inventory   = xPlayer.inventory,
       accounts    = xPlayer.accounts,
       weapons     = xPlayer.loadout,
