@@ -16,7 +16,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = "Teleport to coordinates", params = {{name = "x", help = "X coords"}, {name = "y", help = "Y coords"}, {name = "z", help = "Z coords"}}})
 
-TriggerEvent('es:addGroupCommand', 'setjob', 'jobmaster', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'setjob', 'admin', function(source, args, user)
 	if tonumber(args[1]) and args[2] and tonumber(args[3]) then
 		local xPlayer = ESX.GetPlayerFromId(args[1])
 
