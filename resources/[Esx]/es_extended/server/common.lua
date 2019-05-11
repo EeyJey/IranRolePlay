@@ -9,10 +9,7 @@ ESX.LastPlayerData       = {}
 ESX.Pickups              = {}
 ESX.PickupId             = 0
 <<<<<<< HEAD
-<<<<<<< HEAD
 ESX.Jobs                 = {}
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 =======
 >>>>>>> parent of 3528fc2... restore es_extended
 
@@ -35,7 +32,6 @@ MySQL.ready(function()
 			}
 		end
 	end)
-<<<<<<< HEAD
 <<<<<<< HEAD
 
 	local result = MySQL.Sync.fetchAll('SELECT * FROM jobs', {})
@@ -61,8 +57,6 @@ MySQL.ready(function()
 			print(('es_extended: ignoring job "%s" due to missing job grades!'):format(v.name))
 		end
 	end
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 =======
 >>>>>>> parent of 3528fc2... restore es_extended
 end)

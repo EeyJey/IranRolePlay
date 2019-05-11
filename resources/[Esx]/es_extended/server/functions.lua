@@ -87,7 +87,6 @@ ESX.SavePlayer = function(xPlayer, cb)
 	-- Job, loadout and position
 	table.insert(asyncTasks, function(cb)
 <<<<<<< HEAD
-<<<<<<< HEAD
 		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier', {
 			['@job']        = xPlayer.job.name,
 			['@job_grade']  = xPlayer.job.grade,
@@ -95,8 +94,6 @@ ESX.SavePlayer = function(xPlayer, cb)
 			['@position']   = json.encode(xPlayer.getLastPosition()),
 			['@identifier'] = xPlayer.identifier
 =======
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `family` = @family, `family_grade` = @family_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier',
 		{
 			['@job']       		= xPlayer.job.name,
@@ -106,9 +103,6 @@ ESX.SavePlayer = function(xPlayer, cb)
 			['@loadout']	    = json.encode(xPlayer.getLoadout()),
 			['@position']	   	= json.encode(xPlayer.getLastPosition()),
 			['@identifier']		= xPlayer.identifier
-<<<<<<< HEAD
->>>>>>> parent of 3528fc2... restore es_extended
-=======
 >>>>>>> parent of 3528fc2... restore es_extended
 		}, function(rowsChanged)
 			cb()
@@ -204,7 +198,6 @@ ESX.CreatePickup = function(type, name, count, label, player)
 	ESX.PickupId = pickupId
 end
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 ESX.DoesJobExist = function(job, grade)
 	grade = tostring(grade)
@@ -217,7 +210,5 @@ ESX.DoesJobExist = function(job, grade)
 
 	return false
 end
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 =======
 >>>>>>> parent of 3528fc2... restore es_extended

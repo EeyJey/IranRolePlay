@@ -186,10 +186,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 		return self.job
 	end
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 
 	self.getFamily = function()
 		return self.family
@@ -395,10 +392,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 		end)
 	end
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 
 	self.setFamily = function(name, grade)
 		local lastFamily = json.decode(json.encode(self.family))

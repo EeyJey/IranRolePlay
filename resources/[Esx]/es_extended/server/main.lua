@@ -190,10 +190,7 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 		end)
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 
 		-- Get family
 		table.insert(tasks, function(cb)
