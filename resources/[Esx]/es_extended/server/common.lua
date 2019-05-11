@@ -8,10 +8,7 @@ ESX.CancelledTimeouts    = {}
 ESX.LastPlayerData       = {}
 ESX.Pickups              = {}
 ESX.PickupId             = 0
-<<<<<<< HEAD
 ESX.Jobs                 = {}
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 
 AddEventHandler('esx:getSharedObject', function(cb)
 	cb(ESX)
@@ -32,7 +29,6 @@ MySQL.ready(function()
 			}
 		end
 	end)
-<<<<<<< HEAD
 
 	local result = MySQL.Sync.fetchAll('SELECT * FROM jobs', {})
 
@@ -57,8 +53,6 @@ MySQL.ready(function()
 			print(('es_extended: ignoring job "%s" due to missing job grades!'):format(v.name))
 		end
 	end
-=======
->>>>>>> parent of 3528fc2... restore es_extended
 end)
 
 AddEventHandler('esx:playerLoaded', function(source)
