@@ -245,7 +245,72 @@ Config.AuthorizedVehicles = {
 			label = 'Riot'
 		}
 	},
-
+	chef = {
+		{
+			model = 'police',
+			label = 'police1'
+		},	
+		{
+			model = 'police2',
+			label = 'Police2'
+		},
+		{
+			model = 'police3',
+			label = 'police3'
+		},	
+		{
+			model = 'police4',
+			label = 'Unmarked car'
+		},
+		{
+			model = 'Towtruck',
+			label = 'Tow truck'
+		},
+		{
+			model = 'policeb',
+			label = 'Motor'
+		},	
+		{
+			model = 'sheriff',
+			label = 'Sheriff'
+		},
+		{
+			model = 'riot2',
+			label = 'Riot'
+		},
+		{
+			model = 'fbi',
+			label = 'FBI'
+		},
+		{
+			model = 'sheriff2',
+			label = 'Patrol sheriff'
+		},
+		{
+			model = 'police5',
+			label = 'Lamburghini'
+		},
+		{
+			model = 'polgs350',
+			label = 'Lexus'
+		},
+		{
+			model = 'insurgent2',
+			label = 'S.W.A.T'
+		},
+		{
+			model = 'Fbi2',
+			label = 'Patrol FBI'
+		},
+		{
+			model = 'policeold1',
+			label = 'Mashin barf'
+		},
+		{
+			model = 'policeold2',
+			label = 'Patrol barf'
+		}
+	},
 	boss = {
 		{
 			model = 'police',
