@@ -43,7 +43,7 @@ Config.families = {
         { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
       }
     },
-    LAFUENTE = {
+    'LA-FUENTE' = {
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
