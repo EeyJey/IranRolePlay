@@ -14,7 +14,8 @@ AddEventHandler('esx:setJob', function(playerId, job, lastJob)
 	TriggerClientEvent('esx_scoreboard:updateConnectedPlayers', -1, connectedPlayers)
 end)
 
-AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
+AddEventHandler('esx:playerLoaded', function(playerId)
+	xPlayer = ESX.GetPlayerFromId(playerId)
 	AddPlayerToScoreboard(xPlayer, true)
 end)
 

@@ -56,12 +56,12 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 				for i=1, #inventory, 1 do
 					table.insert(userData.inventory, {
-						name = inventory[i].item,
-						count = inventory[i].count,
-						label = ESX.Items[inventory[i].item].label,
-						limit = ESX.Items[inventory[i].item].limit,
-						usable = ESX.UsableItemsCallbacks[inventory[i].item] ~= nil,
-						rare = ESX.Items[inventory[i].item].rare,
+						name      = inventory[i].item,
+						count     = inventory[i].count,
+						label     = ESX.Items[inventory[i].item].label,
+						limit     = ESX.Items[inventory[i].item].limit,
+						usable    = ESX.UsableItemsCallbacks[inventory[i].item] ~= nil,
+						rare      = ESX.Items[inventory[i].item].rare,
 						canRemove = ESX.Items[inventory[i].item].canRemove
 					})
 				end
@@ -79,22 +79,23 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 					if not found then
 
 						table.insert(userData.inventory, {
-							name = k,
-							count = 0,
-							label = ESX.Items[k].label,
-							limit = ESX.Items[k].limit,
-							usable = ESX.UsableItemsCallbacks[k] ~= nil,
-							rare = ESX.Items[k].rare,
+							name      = k,
+							count     = 0,
+							label     = ESX.Items[k].label,
+							limit     = ESX.Items[k].limit,
+							usable    = ESX.UsableItemsCallbacks[k] ~= nil,
+							rare      = ESX.Items[k].rare,
 							canRemove = ESX.Items[k].canRemove
 						})
 
 						local scope = function(item, identifier)
 
 							table.insert(tasks2, function(cb2)
-								MySQL.Async.execute('INSERT INTO user_inventory (identifier, item, count) VALUES (@identifier, @item, @count)', {
+								MySQL.Async.execute('INSERT INTO user_inventory (identifier, item, count) VALUES (@identifier, @item, @count)',
+								{
 									['@identifier'] = identifier,
-									['@item'] = item,
-									['@count'] = 0
+									['@item']       = item,
+									['@count']      = 0
 								}, function(rowsChanged)
 									cb2()
 								end)
@@ -130,62 +131,11 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 				MySQL.Async.fetchAll('SELECT job, job_grade, loadout, position FROM `users` WHERE `identifier` = @identifier', {
 					['@identifier'] = player.getIdentifier()
 				}, function(result)
-					local job, grade = result[1].job, tostring(result[1].job_grade)
-
-					if ESX.DoesJobExist(job, grade) then
-						local jobObject, gradeObject = ESX.Jobs[job], ESX.Jobs[job].grades[grade]
-
-						userData.job = {}
-
-						userData.job.id    = jobObject.id
-						userData.job.name  = jobObject.name
-						userData.job.label = jobObject.label
-
-						userData.job.grade        = tonumber(grade)
-						userData.job.grade_name   = gradeObject.name
-						userData.job.grade_label  = gradeObject.label
-						userData.job.grade_salary = gradeObject.salary
-
-						userData.job.skin_male    = {}
-						userData.job.skin_female  = {}
-
-						if gradeObject.skin_male ~= nil then
-							userData.job.skin_male = json.decode(gradeObject.skin_male)
-						end
-			
-						if gradeObject.skin_female ~= nil then
-							userData.job.skin_female = json.decode(gradeObject.skin_female)
-						end
-					else
-						print(('es_extended: %s had an unknown job [job: %s, grade: %s], setting as unemployed!'):format(player.getIdentifier(), job, grade))
-
-						local job, grade = 'unemployed', '0'
-						local jobObject, gradeObject = ESX.Jobs[job], ESX.Jobs[job].grades[grade]
-
-						userData.job = {}
-
-						userData.job.id    = jobObject.id
-						userData.job.name  = jobObject.name
-						userData.job.label = jobObject.label
-			
-						userData.job.grade        = tonumber(grade)
-						userData.job.grade_name   = gradeObject.name
-						userData.job.grade_label  = gradeObject.label
-						userData.job.grade_salary = gradeObject.salary
-			
-						userData.job.skin_male    = {}
-						userData.job.skin_female  = {}
-					end
+					userData.job['name']  = result[1].job
+					userData.job['grade'] = result[1].job_grade
 
 					if result[1].loadout ~= nil then
 						userData.loadout = json.decode(result[1].loadout)
-
-						-- Compatibility with old loadouts prior to components update
-						for k,v in ipairs(userData.loadout) do
-							if v.components == nil then
-								v.components = {}
-							end
-						end
 					end
 
 					if result[1].position ~= nil then
@@ -197,14 +147,117 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 			end)
 
+			-- Get job label
+			table.insert(tasks2, function(cb2)
+				MySQL.Async.fetchAll('SELECT * FROM `jobs` WHERE `name` = @name', {
+					['@name'] = userData.job.name
+				}, function(result)
+					userData.job['label'] = result[1].label
+					cb2()
+				end)
+			end)
+
+			-- Get job grade data
+			table.insert(tasks2, function(cb2)
+
+				MySQL.Async.fetchAll('SELECT * FROM `job_grades` WHERE `job_name` = @job_name AND `grade` = @grade',
+				{
+					['@job_name'] = userData.job.name,
+					['@grade']    = userData.job.grade
+				}, function(result)
+
+					userData.job['grade_name']   = result[1].name
+					userData.job['grade_label']  = result[1].label
+					userData.job['grade_salary'] = result[1].salary
+
+					userData.job['skin_male']   = {}
+					userData.job['skin_female'] = {}
+
+					if result[1].skin_male ~= nil then
+						userData.job['skin_male'] = json.decode(result[1].skin_male)
+					end
+
+					if result[1].skin_female ~= nil then
+						userData.job['skin_female'] = json.decode(result[1].skin_female)
+					end
+
+					cb2()
+				end)
+
+			end)
+
 			Async.series(tasks2, cb)
 
 		end)
+<<<<<<< HEAD
+=======
+
+		-- Get family
+		table.insert(tasks, function(cb)
+
+			local tasks2 = {}
+
+			-- Get family name, grade
+			table.insert(tasks2, function(cb2)
+
+				MySQL.Async.fetchAll('SELECT family, family_grade, loadout FROM `users` WHERE `identifier` = @identifier', {
+					['@identifier'] = player.getIdentifier()
+				}, function(result)
+					userData.family['name']  = result[1].family
+					userData.family['grade'] = result[1].family_grade
+					cb2()
+				end)
+
+			end)
+
+			-- Get family label
+			table.insert(tasks2, function(cb2)
+				MySQL.Async.fetchAll('SELECT * FROM `families` WHERE `name` = @name', {
+					['@name'] = userData.family.name
+				}, function(result)
+					userData.family['label'] = result[1].label
+					cb2()
+				end)
+			end)
+
+			-- Get family grade data
+			table.insert(tasks2, function(cb2)
+
+				MySQL.Async.fetchAll('SELECT * FROM `family_grades` WHERE `family_name` = @family_name AND `grade` = @grade',
+				{
+					['@family_name'] = userData.family.name,
+					['@grade']    = userData.family.grade
+				}, function(result)
+
+					userData.family['grade_name']   = result[1].name
+					userData.family['grade_label']  = result[1].label
+					userData.family['grade_salary'] = result[1].salary
+
+					userData.family['skin_male']   = {}
+					userData.family['skin_female'] = {}
+
+					if result[1].skin_male ~= nil then
+						userData.family['skin_male'] = json.decode(result[1].skin_male)
+					end
+
+					if result[1].skin_female ~= nil then
+						userData.family['skin_female'] = json.decode(result[1].skin_female)
+					end
+
+					cb2()
+				end)
+
+			end)
+
+			Async.series(tasks2, cb)
+
+		end)
+>>>>>>> parent of 3528fc2... restore es_extended
 
 		-- Run Tasks
 		Async.parallel(tasks, function(results)
 
-			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.loadout, userData.playerName, userData.lastPosition)
+			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.family, userData.loadout, userData.playerName, userData.lastPosition)
 
 			xPlayer.getMissingAccounts(function(missingAccounts)
 
@@ -223,7 +276,7 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 				ESX.Players[_source] = xPlayer
 
-				TriggerEvent('esx:playerLoaded', _source, xPlayer)
+				TriggerEvent('esx:playerLoaded', _source)
 
 				TriggerClientEvent('esx:playerLoaded', _source, {
 					identifier   = xPlayer.identifier,
@@ -232,10 +285,10 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 					job          = xPlayer.getJob(),
 					loadout      = xPlayer.getLoadout(),
 					lastPosition = xPlayer.getLastPosition(),
-					money        = xPlayer.getMoney()
+					money        = xPlayer.get('money')
 				})
 
-				xPlayer.displayMoney(xPlayer.getMoney())
+				xPlayer.player.displayMoney(xPlayer.get('money'))
 
 			end)
 
@@ -261,14 +314,14 @@ end)
 
 RegisterServerEvent('esx:updateLoadout')
 AddEventHandler('esx:updateLoadout', function(loadout)
-	local xPlayer = ESX.GetPlayerFromId(source)
+	local xPlayer   = ESX.GetPlayerFromId(source)
 	xPlayer.loadout = loadout
 end)
 
 RegisterServerEvent('esx:updateLastPosition')
 AddEventHandler('esx:updateLastPosition', function(position)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.setLastPosition(position)
+	local xPlayer        = ESX.GetPlayerFromId(source)
+	xPlayer.lastPosition = position
 end)
 
 RegisterServerEvent('esx:giveInventoryItem')
