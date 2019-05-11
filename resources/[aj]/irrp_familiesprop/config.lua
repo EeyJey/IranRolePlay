@@ -13,7 +13,7 @@ Config.MaxInService               = -1
 Config.Locale                     = 'en'
 
 Config.families = {
-    Daltons = {
+    ['Daltons'] = {
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
@@ -43,7 +43,7 @@ Config.families = {
         { x = 150.89761352539, y = -2204.248046875, z = 3.688024520874 },
       }
     },
-    'LA-FUENTE' = {
+    ['LA-FUENTE'] = {
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
