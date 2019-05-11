@@ -245,7 +245,7 @@ Config.AuthorizedVehicles = {
 			label = 'Riot'
 		}
 	},
-	chef =  = {
+	chef = {
 		{
 			model = 'police',
 			label = 'police1'
