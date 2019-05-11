@@ -7,7 +7,21 @@ secondsUntilKick = 1400
 kickWarning = true
 local isClientDead = false
 -- CODE --
+ESX = nil
 
+Citizen.CreateThread(
+	function()
+		while ESX == nil do
+			TriggerEvent(
+				"esx:getSharedObject",
+				function(obj)
+					ESX = obj
+				end
+			)
+			Citizen.Wait(0)
+		end
+	end
+)
 Citizen.CreateThread(function()
 	while true do
 		Wait(1000)

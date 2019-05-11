@@ -13,7 +13,21 @@ ____________________________________________________________________________
 ---------------------------------------------------------------------------
 ]]--
 
+ESX = nil
 
+ Citizen.CreateThread(
+        function()
+               while ESX == nil do
+                      TriggerEvent(
+                             "esx:getSharedObject",
+                             function(obj)
+                                    ESX = obj
+                             end
+                      )
+                      Citizen.Wait(0)
+               end
+        end
+ )
 TriggerEvent('es:addGroupCommand', 'revivea', 'user', function(source, args, user)
 	local xPlayers = ESX.GetPlayers()
 	local AdminsConnected = 0
@@ -35,4 +49,4 @@ TriggerEvent('es:addGroupCommand', 'revivea', 'user', function(source, args, use
 	else
 		TriggerClientEvent('esx_ambulancejob:revive', source)
 	end
-end, {help = _U('revive_help'), params = {{name = 'id'}}})
+end, {help = "shit", params = {{name = 'id'}}})
