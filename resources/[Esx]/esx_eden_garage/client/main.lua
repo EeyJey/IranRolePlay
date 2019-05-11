@@ -10,7 +10,7 @@ local Keys = {
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
-
+local Spawned = {}
 local CurrentAction = nil
 local GUI                       = {}
 GUI.Time                        = 0
@@ -36,6 +36,53 @@ end)
 
 -- End ESX Initialisation
 --- Generate map blips
+
+-- RegisterCommand('s', function()
+
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+-- end, false)
+
+-- RegisterCommand('c1', function()
+-- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+-- 	table.insert(Spawned, car)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
+-- end, false)
+
+-- RegisterCommand('cc', function()
+-- 	local playerPed = GetPlayerPed(-1)
+-- 	local vehicle = GetVehiclePedIsIn(playerPed,false) 
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(vehicle))
+-- end, false)
+   
+
+-- RegisterCommand('c2', function()
+-- 	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
+-- end, false)
+
+-- RegisterCommand('c3', function()
+
+-- 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
+-- 		Wait(1)
+-- 	end
+-- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+-- 	table.insert(Spawned, car)
+
+
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
+-- end, false)
+
+-- RegisterCommand('d', function()
+-- 	for _,v in pairs(Spawned) do
+-- 		ESX.Game.DeleteVehicle(v)
+-- 		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(v))
+-- 	end
+-- end, false)
+
+-- RegisterCommand('r', function()
+-- 	Spawned = {}
+-- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
+-- end, false)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -141,7 +188,7 @@ function OpenMenuGarage(PointType)
 		'default', GetCurrentResourceName(), 'garage_menu',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -204,7 +251,7 @@ function ListVehiclesMenu()
 		'default', GetCurrentResourceName(), 'spawn_vehicle',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -241,7 +288,7 @@ function reparation(prix,vehicle,vehicleProps)
 		'default', GetCurrentResourceName(), 'delete_menu',
 		{
 			title    = _U('damaged_vehicle'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
@@ -265,8 +312,13 @@ end
 
 function ranger(vehicle,vehicleProps)
 	ESX.Game.DeleteVehicle(vehicle)
-	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true, nil)
+	TriggerServerEvent('eden_garage:modifystate', vehicleProps.plate, true)
 	TriggerEvent('esx:showNotification', _U('vehicle_in_garage'))
+	for _,v in Spawned do
+		if Spawned.v == vehicle then
+			table.remove(Spawned, i)
+		end
+	end
 end
 
 -- Store vehicle
@@ -276,8 +328,8 @@ function StockVehicleMenu()
 	if IsPedInAnyVehicle(playerPed,  false) then
 
 		local playerPed = GetPlayerPed(-1)
-    	local coords    = GetEntityCoords(playerPed)
-    	local vehicle = GetVehiclePedIsIn(playerPed,false)     
+    local coords    = GetEntityCoords(playerPed)
+    local vehicle = GetVehiclePedIsIn(playerPed,false)     
 		local vehicleProps  = ESX.Game.GetVehicleProperties(vehicle)
 		local current 	    = GetPlayersLastVehicle(GetPlayerPed(-1), true)
 		local engineHealth  = GetVehicleEngineHealth(current)
@@ -297,6 +349,11 @@ function StockVehicleMenu()
 				TriggerEvent('esx:showNotification', _U('cannot_store_vehicle'))
 			end
 		end,vehicleProps)
+	for k,v in pairs(Spawned) do
+		if v == vehicle then
+			table.remove(Spawned, k)
+		end
+	end
 	else
 		TriggerEvent('esx:showNotification', _('no_vehicle_to_enter'))
 	end
@@ -308,7 +365,6 @@ end
 --Vehicle spawn
 
 function SpawnVehicle(vehicle, plate)
-
 	ESX.Game.SpawnVehicle(vehicle.model,{
 		x=this_Garage.SpawnPoint.Pos.x ,
 		y=this_Garage.SpawnPoint.Pos.y,
@@ -318,9 +374,13 @@ function SpawnVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
-		
+	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
+		Wait(1)
+	end
+	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	table.insert(Spawned, car)
 
-	TriggerServerEvent('eden_garage:modifystate', plate, false, nil)
+	TriggerServerEvent('eden_garage:modifystate', plate, false)
 
 end
 
@@ -338,10 +398,14 @@ function SpawnPoundedVehicle(vehicle, plate)
 		SetVehRadioStation(callback_vehicle, "OFF")
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
-	TriggerServerEvent('eden_garage:modifystate', plate, true ,true)
+	for _,v in pairs(Spawned) do
+		ESX.Game.DeleteVehicle(v)
+	end
+	Spawned = {}
+	TriggerServerEvent('eden_garage:modifystate', plate, true)
 
 	ESX.SetTimeout(10000, function()
-		TriggerServerEvent('eden_garage:modifystate', plate, false ,false)
+		TriggerServerEvent('eden_garage:modifystate', plate, false)
 	end)
 
 end
@@ -399,7 +463,7 @@ function ReturnVehicleMenu()
 		'default', GetCurrentResourceName(), 'return_vehicle',
 		{
 			title    = _U('garage'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements,
 		},
 		function(data, menu)
