@@ -21,7 +21,12 @@ TriggerEvent('es:addGroupCommand', 'setjob', 'jobmaster', function(source, args,
 		local xPlayer = ESX.GetPlayerFromId(args[1])
 
 		if xPlayer then
-			xPlayer.setJob(args[2], tonumber(args[3]))
+			if ESX.DoesJobExist(args[2], args[3]) then
+				xPlayer.setJob(args[2], args[3])
+			else
+				TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'That job does not exist.' } })
+			end
+
 		else
 			TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
 		end
@@ -37,8 +42,12 @@ TriggerEvent('es:addGroupCommand', 'setfamily', 'admin', function(source, args, 
 		local xPlayer = ESX.GetPlayerFromId(args[1])
 
 		if xPlayer then
-			xPlayer.setFamily(args[2], tonumber(args[3]))
-			TriggerClientEvent('chat:addMessage', xPlayer.source, { args = { '^1SYSTEM', 'Your family has been set/changed.' } })
+			if ESX.DoesFamilyExist(args[2], args[3]) then
+				xPlayer.setFamily(args[2], args[3])
+			else
+				TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'That family does not exist.' } })
+			end
+
 		else
 			TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Player not online.' } })
 		end
@@ -85,7 +94,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('delete_vehicle')})
 
-TriggerEvent('es:addGroupCommand', 'dv', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'dv', 'mod', function(source, args, user)
 	TriggerClientEvent('esx:deleteVehicle', source)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
@@ -138,18 +147,22 @@ end, {help = _U('setmoney'), params = {{name = "id", help = _U('id_param')}, {na
 
 TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
 	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(args[1])
-	local account = args[2]
-	local amount  = tonumber(args[3])
+	if tonumber(args[1]) then
+		local xPlayer = ESX.GetPlayerFromId(args[1])
+		local account = args[2]
+		local amount  = tonumber(args[3])
 
-	if amount ~= nil then
-		if xPlayer.getAccount(account) ~= nil then
-			xPlayer.addAccountMoney(account, amount)
+		if amount ~= nil then
+			if xPlayer.getAccount(account) ~= nil then
+				xPlayer.addAccountMoney(account, amount)
+			else
+				TriggerClientEvent('esx:showNotification', _source, _U('invalid_account'))
+			end
 		else
-			TriggerClientEvent('esx:showNotification', _source, _U('invalid_account'))
+			TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
 		end
 	else
-		TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid ID.' } })
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
@@ -157,28 +170,36 @@ end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param
 
 TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
 	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(args[1])
-	local item    = args[2]
-	local count   = (args[3] == nil and 1 or tonumber(args[3]))
+	if tonumber(args[1]) then
+		local xPlayer = ESX.GetPlayerFromId(args[1])
+		local item    = args[2]
+		local count   = (args[3] == nil and 1 or tonumber(args[3]))
 
-	if count ~= nil then
-		if xPlayer.getInventoryItem(item) ~= nil then
-			xPlayer.addInventoryItem(item, count)
+		if count ~= nil then
+			if xPlayer.getInventoryItem(item) ~= nil then
+				xPlayer.addInventoryItem(item, count)
+			else
+				TriggerClientEvent('esx:showNotification', _source, _U('invalid_item'))
+			end
 		else
-			TriggerClientEvent('esx:showNotification', _source, _U('invalid_item'))
+			TriggerClientEvent('esx:showNotification', _source, _U('invalid_amount'))
 		end
 	else
-		TriggerClientEvent('esx:showNotification', _source, _U('invalid_amount'))
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid ID.' } })
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
-	local xPlayer    = ESX.GetPlayerFromId(args[1])
-	local weaponName = string.upper(args[2])
+	if tonumber(args[1]) and args[1] and tonumber(args[3]) then
+		local xPlayer    = ESX.GetPlayerFromId(args[1])
+		local weaponName = string.upper(args[2])
 
-	xPlayer.addWeapon(weaponName, tonumber(args[3]))
+		xPlayer.addWeapon(weaponName, tonumber(args[3]))
+	else
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid Usage.' } })
+	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('giveweapon'), params = {{name = "id", help = _U('id_param')}, {name = "weapon", help = _U('weapon')}, {name = "ammo", help = _U('amountammo')}}})
@@ -256,7 +277,7 @@ TriggerEvent('es:addGroupCommand', 'clearloadout', 'admin', function(source, arg
 		return
 	end
 
-	for i=1, #xPlayer.loadout, 1 do
+	for i=#xPlayer.loadout, 1, -1 do
 		xPlayer.removeWeapon(xPlayer.loadout[i].name)
 	end
 end, function(source, args, user)
