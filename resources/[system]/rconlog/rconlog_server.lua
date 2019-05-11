@@ -69,6 +69,13 @@ AddEventHandler('rconCommand', function(commandName, args)
         DropPlayer(playerId, msg)
 
         CancelEvent()
+    elseif commandName:lower() == 'kickall' then
+        
+        for netid, data in pairs(names) do
+            DropPlayer(netid, 'Server Restart')
+        end
+
+        CancelEvent()
     elseif commandName:lower() == 'tempbanclient' then
         local playerId = table.remove(args, 1)
         local msg = table.concat(args, ' ')
