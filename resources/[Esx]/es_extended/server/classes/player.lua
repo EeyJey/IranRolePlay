@@ -1,11 +1,10 @@
-function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout, name, lastPosition)
+function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, lastPosition)
 	local self = {}
 
 	self.player       = player
 	self.accounts     = accounts
 	self.inventory    = inventory
 	self.job          = job
-	self.family		  = family
 	self.loadout      = loadout
 	self.name         = name
 	self.lastPosition = lastPosition
@@ -185,10 +184,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 
 	self.getJob = function()
 		return self.job
-	end
-	
-	self.getFamily = function()
-		return self.family
 	end
 
 	self.getLoadout = function()
@@ -383,40 +378,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 			TriggerClientEvent('esx:setJob', self.source, self.job)
 		else
 			print(('es_extended: ignoring setJob for %s due to job not found!'):format(self.source))
-		end
-	end
-	
-	self.setFamily = function(family, grade)
-		grade = tostring(grade)
-		local lastFamily = json.decode(json.encode(self.family))
-
-		if ESX.DoesFamilyExist(family, grade) then
-			local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
-
-			self.family.id    = familyObject.id
-			self.family.name  = familyObject.name
-			self.family.label = familyObject.label
-
-			self.family.grade        = tonumber(grade)
-			self.family.grade_name   = gradeObject.name
-			self.family.grade_label  = gradeObject.label
-			self.family.grade_salary = gradeObject.salary
-
-			self.family.skin_male    = {}
-			self.family.skin_female  = {}
-
-			if gradeObject.skin_male ~= nil then
-				self.family.skin_male = json.decode(gradeObject.skin_male)
-			end
-
-			if gradeObject.skin_female ~= nil then
-				self.family.skin_female = json.decode(gradeObject.skin_female)
-			end
-
-			TriggerEvent('esx:setFamily', self.source, self.family, lastFamily)
-			TriggerClientEvent('esx:setFamily', self.source, self.family)
-		else
-			print(('es_extended: ignoring setFamily for %s due to family not found!'):format(self.source))
 		end
 	end
 

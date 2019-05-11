@@ -103,6 +103,7 @@ AddEventHandler('playerSpawned', function()
 
 	TriggerEvent('esx:restoreLoadout') -- restore loadout
 
+
 	LoadoutLoaded = true
 	PlayerSpawned = true
 	isDead = false
@@ -238,11 +239,6 @@ end)
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
-end)
-
-RegisterNetEvent('esx:setFamily')
-AddEventHandler('esx:setFamily', function(family)
-	ESX.PlayerData.family = family
 end)
 
 RegisterNetEvent('esx:addWeapon')
@@ -468,9 +464,9 @@ Citizen.CreateThread(function()
 		local loadout        = {}
 		local loadoutChanged = false
 
-		if IsPedDeadOrDying(playerPed) then
-			LoadoutLoaded = false
-		end
+		-- if IsPedDeadOrDying(playerPed) then
+		-- 	LoadoutLoaded = false
+		-- end
 
 		for i=1, #Config.Weapons, 1 do
 

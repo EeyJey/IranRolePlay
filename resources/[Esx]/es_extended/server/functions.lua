@@ -84,11 +84,9 @@ ESX.SavePlayer = function(xPlayer, cb)
 
 	-- Job, loadout and position
 	table.insert(asyncTasks, function(cb)
-		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `family` = @family, `family_grade` = @family_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier', {
+		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier', {
 			['@job']        = xPlayer.job.name,
 			['@job_grade']  = xPlayer.job.grade,
-			['@family']       	= xPlayer.family.name,
-			['@family_grade']  	= xPlayer.family.grade,
 			['@loadout']    = json.encode(xPlayer.getLoadout()),
 			['@position']   = json.encode(xPlayer.getLastPosition()),
 			['@identifier'] = xPlayer.identifier
@@ -191,18 +189,6 @@ ESX.DoesJobExist = function(job, grade)
 
 	if job and grade then
 		if ESX.Jobs[job] and ESX.Jobs[job].grades[grade] then
-			return true
-		end
-	end
-
-	return false
-end
-
-ESX.DoesFamilyExist = function(family, grade)
-	grade = tostring(grade)
-
-	if family and grade then
-		if ESX.Families[family] and ESX.Families[family].grades[grade] then
 			return true
 		end
 	end
