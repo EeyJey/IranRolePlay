@@ -202,9 +202,76 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 		end)
 
+				-- Get family
+				table.insert(tasks, function(cb)
+
+					local tasks2 = {}
+		
+					-- Get family name
+					table.insert(tasks2, function(cb2)
+		
+						MySQL.Async.fetchAll('SELECT family, family_grade, loadout, position FROM `users` WHERE `identifier` = @identifier', {
+							['@identifier'] = player.getIdentifier()
+						}, function(result)
+							local family, grade = result[1].family, tostring(result[1].family_grade)
+		
+							if ESX.DoesFamilyExist(family, grade) then
+								local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
+		
+								userData.family = {}
+		
+								userData.family.id    = familyObject.id
+								userData.family.name  = familyObject.name
+								userData.family.label = familyObject.label
+		
+								userData.family.grade        = tonumber(grade)
+								userData.family.grade_name   = gradeObject.name
+								userData.family.grade_label  = gradeObject.label
+								userData.family.grade_salary = gradeObject.salary
+		
+								userData.family.skin_male    = {}
+								userData.family.skin_female  = {}
+		
+								if gradeObject.skin_male ~= nil then
+									userData.family.skin_male = json.decode(gradeObject.skin_male)
+								end
+					
+								if gradeObject.skin_female ~= nil then
+									userData.family.skin_female = json.decode(gradeObject.skin_female)
+								end
+							else
+								print(('es_extended: %s had an unknown family [family: %s, grade: %s], setting as unemployed!'):format(player.getIdentifier(), family, grade))
+		
+								local family, grade = 'nofamily', '0'
+								local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
+		
+								userData.family = {}
+		
+								userData.family.id    = familyObject.id
+								userData.family.name  = familyObject.name
+								userData.family.label = familyObject.label
+					
+								userData.family.grade        = tonumber(grade)
+								userData.family.grade_name   = gradeObject.name
+								userData.family.grade_label  = gradeObject.label
+								userData.family.grade_salary = gradeObject.salary
+					
+								userData.family.skin_male    = {}
+								userData.family.skin_female  = {}
+							end
+		
+							cb2()
+						end)
+		
+					end)
+		
+					Async.series(tasks2, cb)
+		
+				end)
+
 		-- Run Tasks
 		Async.parallel(tasks, function(results)
-			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.loadout, userData.playerName, userData.lastPosition)
+			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.family, userData.loadout, userData.playerName, userData.lastPosition)
 
 			xPlayer.getMissingAccounts(function(missingAccounts)
 				if #missingAccounts > 0 then
@@ -229,6 +296,7 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 					accounts     = xPlayer.getAccounts(),
 					inventory    = xPlayer.getInventory(),
 					job          = xPlayer.getJob(),
+					family       = xPlayer.getFamily(),
 					loadout      = xPlayer.getLoadout(),
 					lastPosition = xPlayer.getLastPosition(),
 					money        = xPlayer.getMoney()
@@ -488,6 +556,7 @@ ESX.RegisterServerCallback('esx:getPlayerData', function(source, cb)
 		accounts     = xPlayer.getAccounts(),
 		inventory    = xPlayer.getInventory(),
 		job          = xPlayer.getJob(),
+		family       = xPlayer.getFamily(),
 		loadout      = xPlayer.getLoadout(),
 		lastPosition = xPlayer.getLastPosition(),
 		money        = xPlayer.getMoney()
@@ -502,6 +571,7 @@ ESX.RegisterServerCallback('esx:getOtherPlayerData', function(source, cb, target
 		accounts     = xPlayer.getAccounts(),
 		inventory    = xPlayer.getInventory(),
 		job          = xPlayer.getJob(),
+		family       = xPlayer.getFamily(),
 		loadout      = xPlayer.getLoadout(),
 		lastPosition = xPlayer.getLastPosition(),
 		money        = xPlayer.getMoney()

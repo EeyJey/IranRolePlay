@@ -87,6 +87,19 @@ ESX.SavePlayer = function(xPlayer, cb)
 		end)
 	end)
 
+	-- family
+		table.insert(asyncTasks, function(cb)
+			MySQL.Async.execute('UPDATE users SET `family` = @family, `family_grade` = @family_grade WHERE identifier = @identifier', {
+				['@family']       	= xPlayer.family.name,
+				['@family_grade'] 	= xPlayer.family.grade,
+				['@loadout']    	= json.encode(xPlayer.getLoadout()),
+				['@position'] 	 	= json.encode(xPlayer.getLastPosition()),
+				['@identifier'] 	= xPlayer.identifier
+			}, function(rowsChanged)
+				cb()
+			end)
+		end)
+
 	Async.parallel(asyncTasks, function(results)
 		RconPrint('[SAVED] ' .. xPlayer.name .. "^7\n")
 
@@ -180,6 +193,18 @@ ESX.DoesJobExist = function(job, grade)
 
 	if job and grade then
 		if ESX.Jobs[job] and ESX.Jobs[job].grades[grade] then
+			return true
+		end
+	end
+
+	return false
+end
+
+ESX.DoesFamilyExist = function(family, grade)
+	grade = tostring(grade)
+
+	if family and grade then
+		if ESX.Families[family] and ESX.Families[family].grades[grade] then
 			return true
 		end
 	end

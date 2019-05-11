@@ -179,6 +179,11 @@ AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
 end)
 
+-- RegisterNetEvent('esx:setFamily')
+-- AddEventHandler('esx:setFamily', function(family)
+-- 	ESX.PlayerData.family = family
+-- end)
+
 RegisterNetEvent('esx:addWeapon')
 AddEventHandler('esx:addWeapon', function(weaponName, ammo)
 	local playerPed  = PlayerPedId()
@@ -249,6 +254,16 @@ AddEventHandler('esx:setJob', function(job)
 		})
 	end
 end)
+
+-- RegisterNetEvent('esx:setFamily')
+-- AddEventHandler('esx:setFamily', function(family)
+-- 	if Config.EnableHud then
+-- 		ESX.UI.HUD.UpdateElement('family', {
+-- 			family_label   = family.label,
+-- 			grade_label = family.grade_label
+-- 		})
+-- 	end
+-- end)
 
 RegisterNetEvent('esx:loadIPL')
 AddEventHandler('esx:loadIPL', function(name)
@@ -424,10 +439,6 @@ Citizen.CreateThread(function()
 		local playerPed      = PlayerPedId()
 		local loadout        = {}
 		local loadoutChanged = false
-
-		if IsPedDeadOrDying(playerPed) then
-			LoadoutLoaded = false
-		end
 
 		for i=1, #Config.Weapons, 1 do
 

@@ -9,6 +9,7 @@ ESX.LastPlayerData       = {}
 ESX.Pickups              = {}
 ESX.PickupId             = 0
 ESX.Jobs                 = {}
+ESX.Families             = {}
 
 AddEventHandler('esx:getSharedObject', function(cb)
 	cb(ESX)
@@ -51,6 +52,30 @@ MySQL.ready(function()
 		if next(v.grades) == nil then
 			ESX.Jobs[v.name] = nil
 			print(('es_extended: ignoring job "%s" due to missing job grades!'):format(v.name))
+		end
+	end
+
+	local family = MySQL.Sync.fetchAll('SELECT * FROM families', {})
+
+	for i=1, #family do
+		ESX.Families[family[i].name] = family[i]
+		ESX.Families[family[i].name].grades = {}
+	end
+
+	local family2 = MySQL.Sync.fetchAll('SELECT * FROM family_grades', {})
+
+	for i=1, #family2 do
+		if ESX.Families[family2[i].family_name] then
+			ESX.Families[family2[i].family_name].grades[tostring(family2[i].grade)] = family2[i]
+		else
+			print(('es_extended: invalid family "%s" from table family_grades ignored!'):format(family2[i].family_name))
+		end
+	end
+
+	for k,v in pairs(ESX.Families) do
+		if next(v.grades) == nil then
+			ESX.Families[v.name] = nil
+			print(('es_extended: ignoring family "%s" due to missing family grades!'):format(v.name))
 		end
 	end
 end)
