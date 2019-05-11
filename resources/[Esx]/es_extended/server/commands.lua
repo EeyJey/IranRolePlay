@@ -145,6 +145,7 @@ end, {help = _U('setmoney'), params = {{name = "id", help = _U('id_param')}, {na
 
 TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if args[1] and args[2] and args[3] then
 		local xPlayer = ESX.GetPlayerFromId(args[1])
 		local account = args[2]
@@ -171,10 +172,24 @@ TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source,
 		if xPlayer.getAccount(account) ~= nil then
 			xPlayer.addAccountMoney(account, amount)
 		else
+=======
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(args[1])
+	local account = args[2]
+	local amount  = tonumber(args[3])
+
+	if amount ~= nil then
+		if xPlayer.getAccount(account) ~= nil then
+			xPlayer.addAccountMoney(account, amount)
+		else
+>>>>>>> parent of 3528fc2... restore es_extended
 			TriggerClientEvent('esx:showNotification', _source, _U('invalid_account'))
 		end
 	else
 		TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
+<<<<<<< HEAD
+>>>>>>> parent of 3528fc2... restore es_extended
+=======
 >>>>>>> parent of 3528fc2... restore es_extended
 	end
 end, function(source, args, user)
@@ -182,6 +197,7 @@ end, function(source, args, user)
 end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param')}, {name = "account", help = _U('account')}, {name = "amount", help = _U('money_amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	if args[1] and args[2] and args[3] then
 		local xPlayer = ESX.GetPlayerFromId(args[1])
@@ -214,12 +230,28 @@ TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, u
 	else
 		TriggerClientEvent('esx:showNotification', _source, _U('invalid_amount'))
 >>>>>>> parent of 3528fc2... restore es_extended
+=======
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(args[1])
+	local item    = args[2]
+	local count   = (args[3] == nil and 1 or tonumber(args[3]))
+
+	if count ~= nil then
+		if xPlayer.getInventoryItem(item) ~= nil then
+			xPlayer.addInventoryItem(item, count)
+		else
+			TriggerClientEvent('esx:showNotification', _source, _U('invalid_item'))
+		end
+	else
+		TriggerClientEvent('esx:showNotification', _source, _U('invalid_amount'))
+>>>>>>> parent of 3528fc2... restore es_extended
 	end
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('giveitem'), params = {{name = "id", help = _U('id_param')}, {name = "item", help = _U('item')}, {name = "amount", help = _U('amount')}}})
 
 TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args, user)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	if args[1] and args[2] and args[3] then
 		weaponName = string.upper(args[2])
@@ -242,6 +274,12 @@ TriggerEvent('es:addGroupCommand', 'giveweapon', 'admin', function(source, args,
 		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid usage.' } })
 	end
 
+=======
+	local xPlayer    = ESX.GetPlayerFromId(args[1])
+	local weaponName = string.upper(args[2])
+
+	xPlayer.addWeapon(weaponName, tonumber(args[3]))
+>>>>>>> parent of 3528fc2... restore es_extended
 =======
 	local xPlayer    = ESX.GetPlayerFromId(args[1])
 	local weaponName = string.upper(args[2])

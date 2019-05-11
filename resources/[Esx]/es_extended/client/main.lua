@@ -406,6 +406,7 @@ Citizen.CreateThread(function()
 			if HasPedGotWeapon(playerPed, weaponHash, false) and weaponName ~= 'WEAPON_UNARMED' then
 				local ammo = GetAmmoInPedWeapon(playerPed, weaponHash)
 				local components = Config.Weapons[i].components
+<<<<<<< HEAD
 
 				for j=1, #components, 1 do
 					if HasPedGotWeaponComponent(playerPed, weaponHash, components[j].hash) then
@@ -413,6 +414,15 @@ Citizen.CreateThread(function()
 					end
 				end
 
+=======
+
+				for j=1, #components, 1 do
+					if HasPedGotWeaponComponent(playerPed, weaponHash, components[j].hash) then
+						table.insert(weaponComponents, components[j].name)
+					end
+				end
+
+>>>>>>> parent of 3528fc2... restore es_extended
 				if LastLoadout[weaponName] == nil or LastLoadout[weaponName] ~= ammo then
 					loadoutChanged = true
 				end
