@@ -1,11 +1,10 @@
-function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout, name, lastPosition)
+function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, lastPosition)
 	local self = {}
 
 	self.player       = player
 	self.accounts     = accounts
 	self.inventory    = inventory
 	self.job          = job
-	self.family		  = family
 	self.loadout      = loadout
 	self.name         = name
 	self.lastPosition = lastPosition
@@ -49,8 +48,8 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		self.player.coords = {x = x, y = y, z = z}
 	end
 
-	self.kick = function(r)
-		self.player.kick(r)
+	self.kick = function(reason)
+		self.player.kick(reason)
 	end
 
 	self.addMoney = function(money)
@@ -186,14 +185,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 	self.getJob = function()
 		return self.job
 	end
-	
-	self.getFamily = function()
-		return self.family
-	end
-
-	self.getFamily = function()
-		return self.family
-	end
 
 	self.getLoadout = function()
 		return self.loadout
@@ -250,8 +241,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 
 	self.createAccounts = function(missingAccounts, cb)
 		for i=1, #missingAccounts, 1 do
-			MySQL.Async.execute('INSERT INTO `user_accounts` (identifier, name) VALUES (@identifier, @name)',
-			{
+			MySQL.Async.execute('INSERT INTO `user_accounts` (identifier, name) VALUES (@identifier, @name)', {
 				['@identifier'] = self.getIdentifier(),
 				['@name']       = missingAccounts[i]
 			}, function(rowsChanged)
@@ -330,8 +320,8 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		local newCount = item.count + count
 		item.count     = newCount
 
-		TriggerEvent("esx:onAddInventoryItem", self.source, item, count)
-		TriggerClientEvent("esx:addInventoryItem", self.source, item, count)
+		TriggerEvent('esx:onAddInventoryItem', self.source, item, count)
+		TriggerClientEvent('esx:addInventoryItem', self.source, item, count)
 	end
 
 	self.removeInventoryItem = function(name, count)
@@ -339,8 +329,8 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		local newCount = item.count - count
 		item.count     = newCount
 
-		TriggerEvent("esx:onRemoveInventoryItem", self.source, item, count)
-		TriggerClientEvent("esx:removeInventoryItem", self.source, item, count)
+		TriggerEvent('esx:onRemoveInventoryItem', self.source, item, count)
+		TriggerClientEvent('esx:removeInventoryItem', self.source, item, count)
 	end
 
 	self.setInventoryItem = function(name, count)
@@ -349,119 +339,45 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		item.count     = count
 
 		if oldCount > item.count  then
-			TriggerEvent("esx:onRemoveInventoryItem", self.source, item, oldCount - item.count)
-			TriggerClientEvent("esx:removeInventoryItem", self.source, item, oldCount - item.count)
+			TriggerEvent('esx:onRemoveInventoryItem', self.source, item, oldCount - item.count)
+			TriggerClientEvent('esx:removeInventoryItem', self.source, item, oldCount - item.count)
 		else
-			TriggerEvent("esx:onAddInventoryItem", self.source, item, item.count - oldCount)
-			TriggerClientEvent("esx:addInventoryItem", self.source, item, item.count - oldCount)
+			TriggerEvent('esx:onAddInventoryItem', self.source, item, item.count - oldCount)
+			TriggerClientEvent('esx:addInventoryItem', self.source, item, item.count - oldCount)
 		end
 	end
 
-	self.setJob = function(name, grade)
+	self.setJob = function(job, grade)
+		grade = tostring(grade)
 		local lastJob = json.decode(json.encode(self.job))
 
-		MySQL.Async.fetchAll('SELECT * FROM `jobs` WHERE `name` = @name', {
-			['@name'] = name
-		}, function(result)
+		if ESX.DoesJobExist(job, grade) then
+			local jobObject, gradeObject = ESX.Jobs[job], ESX.Jobs[job].grades[grade]
 
-			self.job['id']    = result[1].id
-			self.job['name']  = result[1].name
-			self.job['label'] = result[1].label
+			self.job.id    = jobObject.id
+			self.job.name  = jobObject.name
+			self.job.label = jobObject.label
 
-			MySQL.Async.fetchAll('SELECT * FROM `job_grades` WHERE `job_name` = @job_name AND `grade` = @grade', {
-				['@job_name'] = name,
-				['@grade']    = grade
-			}, function(result)
-				self.job['grade']        = grade
-				self.job['grade_name']   = result[1].name
-				self.job['grade_label']  = result[1].label
-				self.job['grade_salary'] = result[1].salary
+			self.job.grade        = tonumber(grade)
+			self.job.grade_name   = gradeObject.name
+			self.job.grade_label  = gradeObject.label
+			self.job.grade_salary = gradeObject.salary
 
-				self.job['skin_male']    = nil
-				self.job['skin_female']  = nil
-
-				if result[1].skin_male ~= nil then
-					self.job['skin_male'] = json.decode(result[1].skin_male)
-				end
-
-				if result[1].skin_female ~= nil then
-					self.job['skin_female'] = json.decode(result[1].skin_female)
-				end
-
-				TriggerEvent("esx:setJob", self.source, self.job, lastJob)
-				TriggerClientEvent("esx:setJob", self.source, self.job)
-			end)
-		end)
-	end
-
-	self.setFamily = function(name, grade)
-		local lastFamily = json.decode(json.encode(self.family))
-
-		MySQL.Async.fetchAll('SELECT * FROM `families` WHERE `name` = @name', {
-			['@name'] = name
-		}, function(result)
-
-			self.family['id']    = result[1].id
-			self.family['name']  = result[1].name
-			self.family['label'] = result[1].label
-
-			MySQL.Async.fetchAll('SELECT * FROM `family_grades` WHERE `family_name` = @family_name AND `grade` = @grade', {
-				['@family_name'] = name,
-				['@grade']    = grade
-			}, function(result)
-				self.family['grade']        = grade
-				self.family['grade_name']   = result[1].name
-				self.family['grade_label']  = result[1].label
-				self.family['grade_salary'] = result[1].salary
-
-				self.family['skin_male']    = nil
-				self.family['skin_female']  = nil
-
-				if result[1].skin_male ~= nil then
-					self.family['skin_male'] = json.decode(result[1].skin_male)
-				end
-
-				if result[1].skin_female ~= nil then
-					self.family['skin_female'] = json.decode(result[1].skin_female)
-				end
-
-				TriggerEvent("esx:setFamily", self.source, self.family, lastFamily)
-				TriggerClientEvent("esx:setFamily", self.source, self.family)
-			end)
-		end)
-	end
-	
-	self.setFamily = function(family, grade)
-		grade = tostring(grade)
-		local lastFamily = json.decode(json.encode(self.family))
-
-		if ESX.DoesFamilyExist(family, grade) then
-			local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
-
-			self.family.id    = familyObject.id
-			self.family.name  = familyObject.name
-			self.family.label = familyObject.label
-
-			self.family.grade        = tonumber(grade)
-			self.family.grade_name   = gradeObject.name
-			self.family.grade_label  = gradeObject.label
-			self.family.grade_salary = gradeObject.salary
-
-			self.family.skin_male    = {}
-			self.family.skin_female  = {}
+			self.job.skin_male    = {}
+			self.job.skin_female  = {}
 
 			if gradeObject.skin_male ~= nil then
-				self.family.skin_male = json.decode(gradeObject.skin_male)
+				self.job.skin_male = json.decode(gradeObject.skin_male)
 			end
 
 			if gradeObject.skin_female ~= nil then
-				self.family.skin_female = json.decode(gradeObject.skin_female)
+				self.job.skin_female = json.decode(gradeObject.skin_female)
 			end
 
-			TriggerEvent('esx:setFamily', self.source, self.family, lastFamily)
-			TriggerClientEvent('esx:setFamily', self.source, self.family)
+			TriggerEvent('esx:setJob', self.source, self.job, lastJob)
+			TriggerClientEvent('esx:setJob', self.source, self.job)
 		else
-			print(('es_extended: ignoring setFamily for %s due to family not found!'):format(self.source))
+			print(('es_extended: ignoring setJob for %s due to job not found!'):format(self.source))
 		end
 	end
 
@@ -500,6 +416,10 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 			if self.loadout[i].name == weaponName then
 				weaponLabel = self.loadout[i].label
 
+				for j=1, #self.loadout[i].components, 1 do
+					TriggerClientEvent('esx:removeWeaponComponent', self.source, weaponName, self.loadout[i].components[j])
+				end
+
 				table.remove(self.loadout, i)
 				break
 			end
@@ -513,7 +433,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 
 	self.removeWeaponComponent = function(weaponName, weaponComponent)
 		local loadoutNum, weapon = self.getWeapon(weaponName)
-		
+
 		if not weapon then
 			return
 		end

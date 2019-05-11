@@ -6,19 +6,17 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 		accounts     = {},
 		inventory    = {},
 		job          = {},
-		family		 = {},
 		loadout      = {},
 		playerName   = GetPlayerName(_source),
 		lastPosition = nil
 	}
 
 	TriggerEvent('es:getPlayerFromId', _source, function(player)
-
 		-- Update user name in DB
 		table.insert(tasks, function(cb)
 			MySQL.Async.execute('UPDATE `users` SET `name` = @name WHERE `identifier` = @identifier', {
 				['@identifier'] = player.getIdentifier(),
-				['@name']       = userData.playerName
+				['@name'] = userData.playerName
 			}, function(rowsChanged)
 				cb()
 			end)
@@ -29,7 +27,6 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 			MySQL.Async.fetchAll('SELECT * FROM `user_accounts` WHERE `identifier` = @identifier', {
 				['@identifier'] = player.getIdentifier()
 			}, function(accounts)
-
 				for i=1, #Config.Accounts, 1 do
 					for j=1, #accounts, 1 do
 						if accounts[j].name == Config.Accounts[i] then
@@ -39,6 +36,8 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 								label = Config.AccountLabels[accounts[j].name]
 							})
 						end
+
+						break
 					end
 				end
 
@@ -52,25 +51,30 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 			MySQL.Async.fetchAll('SELECT * FROM `user_inventory` WHERE `identifier` = @identifier', {
 				['@identifier'] = player.getIdentifier()
 			}, function(inventory)
-
 				local tasks2 = {}
 
-				for i=1, #inventory, 1 do
-					table.insert(userData.inventory, {
-						name      = inventory[i].item,
-						count     = inventory[i].count,
-						label     = ESX.Items[inventory[i].item].label,
-						limit     = ESX.Items[inventory[i].item].limit,
-						usable    = ESX.UsableItemsCallbacks[inventory[i].item] ~= nil,
-						rare      = ESX.Items[inventory[i].item].rare,
-						canRemove = ESX.Items[inventory[i].item].canRemove
-					})
+				for i=1, #inventory do
+					local item = ESX.Items[inventory[i].item]
+
+					if item then
+						table.insert(userData.inventory, {
+							name = inventory[i].item,
+							count = inventory[i].count,
+							label = item.label,
+							limit = item.limit,
+							usable = ESX.UsableItemsCallbacks[inventory[i].item] ~= nil,
+							rare = item.rare,
+							canRemove = item.canRemove
+						})
+					else
+						print(('es_extended: invalid item "%s" ignored!'):format(inventory[i].item))
+					end
 				end
 
 				for k,v in pairs(ESX.Items) do
 					local found = false
 
-					for j=1, #userData.inventory, 1 do
+					for j=1, #userData.inventory do
 						if userData.inventory[j].name == k then
 							found = true
 							break
@@ -78,34 +82,29 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 					end
 
 					if not found then
-
 						table.insert(userData.inventory, {
-							name      = k,
-							count     = 0,
-							label     = ESX.Items[k].label,
-							limit     = ESX.Items[k].limit,
-							usable    = ESX.UsableItemsCallbacks[k] ~= nil,
-							rare      = ESX.Items[k].rare,
+							name = k,
+							count = 0,
+							label = ESX.Items[k].label,
+							limit = ESX.Items[k].limit,
+							usable = ESX.UsableItemsCallbacks[k] ~= nil,
+							rare = ESX.Items[k].rare,
 							canRemove = ESX.Items[k].canRemove
 						})
 
 						local scope = function(item, identifier)
-
 							table.insert(tasks2, function(cb2)
-								MySQL.Async.execute('INSERT INTO user_inventory (identifier, item, count) VALUES (@identifier, @item, @count)',
-								{
+								MySQL.Async.execute('INSERT INTO user_inventory (identifier, item, count) VALUES (@identifier, @item, @count)', {
 									['@identifier'] = identifier,
-									['@item']       = item,
-									['@count']      = 0
+									['@item'] = item,
+									['@count'] = 0
 								}, function(rowsChanged)
 									cb2()
 								end)
 							end)
-
 						end
 
 						scope(k, player.getIdentifier())
-
 					end
 
 				end
@@ -132,183 +131,66 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 				MySQL.Async.fetchAll('SELECT job, job_grade, loadout, position FROM `users` WHERE `identifier` = @identifier', {
 					['@identifier'] = player.getIdentifier()
 				}, function(result)
-					userData.job['name']  = result[1].job
-					userData.job['grade'] = result[1].job_grade
+					local job, grade = result[1].job, tostring(result[1].job_grade)
+
+					if ESX.DoesJobExist(job, grade) then
+						local jobObject, gradeObject = ESX.Jobs[job], ESX.Jobs[job].grades[grade]
+
+						userData.job = {}
+
+						userData.job.id    = jobObject.id
+						userData.job.name  = jobObject.name
+						userData.job.label = jobObject.label
+
+						userData.job.grade        = tonumber(grade)
+						userData.job.grade_name   = gradeObject.name
+						userData.job.grade_label  = gradeObject.label
+						userData.job.grade_salary = gradeObject.salary
+
+						userData.job.skin_male    = {}
+						userData.job.skin_female  = {}
+
+						if gradeObject.skin_male ~= nil then
+							userData.job.skin_male = json.decode(gradeObject.skin_male)
+						end
+			
+						if gradeObject.skin_female ~= nil then
+							userData.job.skin_female = json.decode(gradeObject.skin_female)
+						end
+					else
+						print(('es_extended: %s had an unknown job [job: %s, grade: %s], setting as unemployed!'):format(player.getIdentifier(), job, grade))
+
+						local job, grade = 'unemployed', '0'
+						local jobObject, gradeObject = ESX.Jobs[job], ESX.Jobs[job].grades[grade]
+
+						userData.job = {}
+
+						userData.job.id    = jobObject.id
+						userData.job.name  = jobObject.name
+						userData.job.label = jobObject.label
+			
+						userData.job.grade        = tonumber(grade)
+						userData.job.grade_name   = gradeObject.name
+						userData.job.grade_label  = gradeObject.label
+						userData.job.grade_salary = gradeObject.salary
+			
+						userData.job.skin_male    = {}
+						userData.job.skin_female  = {}
+					end
 
 					if result[1].loadout ~= nil then
 						userData.loadout = json.decode(result[1].loadout)
+
+						-- Compatibility with old loadouts prior to components update
+						for k,v in ipairs(userData.loadout) do
+							if v.components == nil then
+								v.components = {}
+							end
+						end
 					end
 
 					if result[1].position ~= nil then
 						userData.lastPosition = json.decode(result[1].position)
-					end
-
-					cb2()
-				end)
-
-			end)
-
-			-- Get job label
-			table.insert(tasks2, function(cb2)
-				MySQL.Async.fetchAll('SELECT * FROM `jobs` WHERE `name` = @name', {
-					['@name'] = userData.job.name
-				}, function(result)
-					userData.job['label'] = result[1].label
-					cb2()
-				end)
-			end)
-
-			-- Get job grade data
-			table.insert(tasks2, function(cb2)
-
-				MySQL.Async.fetchAll('SELECT * FROM `job_grades` WHERE `job_name` = @job_name AND `grade` = @grade',
-				{
-					['@job_name'] = userData.job.name,
-					['@grade']    = userData.job.grade
-				}, function(result)
-
-					userData.job['grade_name']   = result[1].name
-					userData.job['grade_label']  = result[1].label
-					userData.job['grade_salary'] = result[1].salary
-
-					userData.job['skin_male']   = {}
-					userData.job['skin_female'] = {}
-
-					if result[1].skin_male ~= nil then
-						userData.job['skin_male'] = json.decode(result[1].skin_male)
-					end
-
-					if result[1].skin_female ~= nil then
-						userData.job['skin_female'] = json.decode(result[1].skin_female)
-					end
-
-					cb2()
-				end)
-
-			end)
-
-			Async.series(tasks2, cb)
-
-		end)
-
-		-- Get family
-		table.insert(tasks, function(cb)
-
-			local tasks2 = {}
-
-			-- Get family name, grade
-			table.insert(tasks2, function(cb2)
-
-				MySQL.Async.fetchAll('SELECT family, family_grade, loadout FROM `users` WHERE `identifier` = @identifier', {
-					['@identifier'] = player.getIdentifier()
-				}, function(result)
-					userData.family['name']  = result[1].family
-					userData.family['grade'] = result[1].family_grade
-					cb2()
-				end)
-
-			end)
-
-			-- Get family label
-			table.insert(tasks2, function(cb2)
-				MySQL.Async.fetchAll('SELECT * FROM `families` WHERE `name` = @name', {
-					['@name'] = userData.family.name
-				}, function(result)
-					userData.family['label'] = result[1].label
-					cb2()
-				end)
-			end)
-
-			-- Get family grade data
-			table.insert(tasks2, function(cb2)
-
-				MySQL.Async.fetchAll('SELECT * FROM `family_grades` WHERE `family_name` = @family_name AND `grade` = @grade',
-				{
-					['@family_name'] = userData.family.name,
-					['@grade']    = userData.family.grade
-				}, function(result)
-
-					userData.family['grade_name']   = result[1].name
-					userData.family['grade_label']  = result[1].label
-					userData.family['grade_salary'] = result[1].salary
-
-					userData.family['skin_male']   = {}
-					userData.family['skin_female'] = {}
-
-					if result[1].skin_male ~= nil then
-						userData.family['skin_male'] = json.decode(result[1].skin_male)
-					end
-
-					if result[1].skin_female ~= nil then
-						userData.family['skin_female'] = json.decode(result[1].skin_female)
-					end
-
-					cb2()
-				end)
-
-			end)
-
-			Async.series(tasks2, cb)
-
-		end)
-		
-
-		-- Get Family
-		table.insert(tasks, function(cb)
-
-			local tasks2 = {}
-
-			-- Get Family name
-			table.insert(tasks2, function(cb2)
-
-				MySQL.Async.fetchAll('SELECT family, family_grade, loadout, position FROM `users` WHERE `identifier` = @identifier', {
-					['@identifier'] = player.getIdentifier()
-				}, function(result)
-					local family, grade = result[1].family, tostring(result[1].family_grade)
-
-					if ESX.DoesFamilyExist(family, grade) then
-						local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
-
-						userData.family = {}
-
-						userData.family.id    = familyObject.id
-						userData.family.name  = familyObject.name
-						userData.family.label = familyObject.label
-
-						userData.family.grade        = tonumber(grade)
-						userData.family.grade_name   = gradeObject.name
-						userData.family.grade_label  = gradeObject.label
-						userData.family.grade_salary = gradeObject.salary
-
-						userData.family.skin_male    = {}
-						userData.family.skin_female  = {}
-
-						if gradeObject.skin_male ~= nil then
-							userData.family.skin_male = json.decode(gradeObject.skin_male)
-						end
-			
-						if gradeObject.skin_female ~= nil then
-							userData.family.skin_female = json.decode(gradeObject.skin_female)
-						end
-					else
-						print(('es_extended: %s had an unknown family [family: %s, grade: %s], setting as nofamily!'):format(player.getIdentifier(), family, grade))
-
-						local family, grade = 'nofamily', '0'
-						local familyObject, gradeObject = ESX.Families[family], ESX.Families[family].grades[grade]
-
-						userData.family = {}
-
-						userData.family.id    = familyObject.id
-						userData.family.name  = familyObject.name
-						userData.family.label = familyObject.label
-			
-						userData.family.grade        = tonumber(grade)
-						userData.family.grade_name   = gradeObject.name
-						userData.family.grade_label  = gradeObject.label
-						userData.family.grade_salary = gradeObject.salary
-			
-						userData.family.skin_male    = {}
-						userData.family.skin_female  = {}
 					end
 
 					cb2()
@@ -322,11 +204,9 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 		-- Run Tasks
 		Async.parallel(tasks, function(results)
-
-			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.family, userData.loadout, userData.playerName, userData.lastPosition)
+			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.loadout, userData.playerName, userData.lastPosition)
 
 			xPlayer.getMissingAccounts(function(missingAccounts)
-
 				if #missingAccounts > 0 then
 
 					for i=1, #missingAccounts, 1 do
@@ -342,38 +222,34 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 
 				ESX.Players[_source] = xPlayer
 
-				TriggerEvent('esx:playerLoaded', _source)
+				TriggerEvent('esx:playerLoaded', _source, xPlayer)
 
 				TriggerClientEvent('esx:playerLoaded', _source, {
 					identifier   = xPlayer.identifier,
 					accounts     = xPlayer.getAccounts(),
 					inventory    = xPlayer.getInventory(),
 					job          = xPlayer.getJob(),
-					family		 = xPlayer.getFamily(),
 					loadout      = xPlayer.getLoadout(),
 					lastPosition = xPlayer.getLastPosition(),
-					money        = xPlayer.get('money')
+					money        = xPlayer.getMoney()
 				})
 
-				xPlayer.player.displayMoney(xPlayer.get('money'))
-
+				xPlayer.displayMoney(xPlayer.getMoney())
 			end)
-
 		end)
 
 	end)
-
 end)
 
 AddEventHandler('playerDropped', function(reason)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
-	if xPlayer ~= nil then
+	if xPlayer then
 		TriggerEvent('esx:playerDropped', _source, reason)
 
 		ESX.SavePlayer(xPlayer, function()
-			ESX.Players[_source]        = nil
+			ESX.Players[_source] = nil
 			ESX.LastPlayerData[_source] = nil
 		end)
 	end
@@ -381,14 +257,14 @@ end)
 
 RegisterServerEvent('esx:updateLoadout')
 AddEventHandler('esx:updateLoadout', function(loadout)
-	local xPlayer   = ESX.GetPlayerFromId(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
 	xPlayer.loadout = loadout
 end)
 
 RegisterServerEvent('esx:updateLastPosition')
 AddEventHandler('esx:updateLastPosition', function(position)
-	local xPlayer        = ESX.GetPlayerFromId(source)
-	xPlayer.lastPosition = position
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.setLastPosition(position)
 end)
 
 RegisterServerEvent('esx:giveInventoryItem')
@@ -422,13 +298,11 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 	elseif type == 'item_money' then
 
 		if itemCount > 0 and sourceXPlayer.getMoney() >= itemCount then
-
 			sourceXPlayer.removeMoney(itemCount)
 			targetXPlayer.addMoney   (itemCount)
 
 			TriggerClientEvent('esx:showNotification', _source, _U('gave_money', ESX.Math.GroupDigits(itemCount), targetXPlayer.name))
 			TriggerClientEvent('esx:showNotification', target,  _U('received_money', ESX.Math.GroupDigits(itemCount), sourceXPlayer.name))
-
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_amount'))
 		end
@@ -436,13 +310,11 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 	elseif type == 'item_account' then
 
 		if itemCount > 0 and sourceXPlayer.getAccount(itemName).money >= itemCount then
-
 			sourceXPlayer.removeAccountMoney(itemName, itemCount)
 			targetXPlayer.addAccountMoney   (itemName, itemCount)
 
 			TriggerClientEvent('esx:showNotification', _source, _U('gave_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], targetXPlayer.name))
 			TriggerClientEvent('esx:showNotification', target,  _U('received_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], sourceXPlayer.name))
-
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_amount'))
 		end
@@ -450,7 +322,6 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 	elseif type == 'item_weapon' then
 
 		if not targetXPlayer.hasWeapon(itemName) then
-
 			sourceXPlayer.removeWeapon(itemName)
 			targetXPlayer.addWeapon(itemName, itemCount)
 
@@ -463,14 +334,12 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 				TriggerClientEvent('esx:showNotification', _source, _U('gave_weapon', weaponLabel, targetXPlayer.name))
 				TriggerClientEvent('esx:showNotification', target,  _U('received_weapon', weaponLabel, sourceXPlayer.name))
 			end
-
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('gave_weapon_hasalready', targetXPlayer.name, weaponLabel))
 			TriggerClientEvent('esx:showNotification', _source, _U('received_weapon_hasalready', sourceXPlayer.name, weaponLabel))
 		end
 
 	end
-
 end)
 
 RegisterServerEvent('esx:removeInventoryItem')
@@ -482,7 +351,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 		if itemCount == nil or itemCount < 1 then
 			TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_quantity'))
 		else
-
 			local xPlayer = ESX.GetPlayerFromId(source)
 			local xItem = xPlayer.getInventoryItem(itemName)
 
@@ -495,7 +363,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				ESX.CreatePickup('item_standard', itemName, itemCount, pickupLabel, _source)
 				TriggerClientEvent('esx:showNotification', _source, _U('threw_standard', itemCount, xItem.label))
 			end
-
 		end
 
 	elseif type == 'item_money' then
@@ -503,7 +370,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 		if itemCount == nil or itemCount < 1 then
 			TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_amount'))
 		else
-
 			local xPlayer = ESX.GetPlayerFromId(source)
 			local playerCash = xPlayer.getMoney()
 
@@ -516,7 +382,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				ESX.CreatePickup('item_money', 'money', itemCount, pickupLabel, _source)
 				TriggerClientEvent('esx:showNotification', _source, _U('threw_money', ESX.Math.GroupDigits(itemCount)))
 			end
-
 		end
 
 	elseif type == 'item_account' then
@@ -524,7 +389,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 		if itemCount == nil or itemCount < 1 then
 			TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_amount'))
 		else
-
 			local xPlayer = ESX.GetPlayerFromId(source)
 			local account = xPlayer.getAccount(itemName)
 
@@ -537,7 +401,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				ESX.CreatePickup('item_account', itemName, itemCount, pickupLabel, _source)
 				TriggerClientEvent('esx:showNotification', _source, _U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(account.label)))
 			end
-
 		end
 
 	elseif type == 'item_weapon' then
@@ -568,7 +431,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 		end
 
 	end
-
 end)
 
 RegisterServerEvent('esx:useItem')

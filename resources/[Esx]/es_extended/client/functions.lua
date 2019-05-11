@@ -46,23 +46,23 @@ end
 
 ESX.ShowNotification = function(msg)
 	SetNotificationTextEntry('STRING')
-	AddTextComponentSubstringWebsite(msg)
+	AddTextComponentSubstringPlayerName(msg)
 	DrawNotification(false, true)
 end
 
 ESX.ShowAdvancedNotification = function(title, subject, msg, icon, iconType)
 	SetNotificationTextEntry('STRING')
-	AddTextComponentSubstringWebsite(msg)
+	AddTextComponentSubstringPlayerName(msg)
 	SetNotificationMessage(icon, icon, false, iconType, title, subject)
 	DrawNotification(false, false)
 end
 
 ESX.ShowHelpNotification = function(msg)
-	if not IsHelpMessageOnScreen() then
+	--if not IsHelpMessageBeingDisplayed() then
 		BeginTextCommandDisplayHelp('STRING')
-		AddTextComponentSubstringWebsite(msg)
+		AddTextComponentSubstringPlayerName(msg)
 		EndTextCommandDisplayHelp(0, false, true, -1)
-	end
+	--end
 end
 
 ESX.TriggerServerCallback = function(name, cb, ...)
@@ -130,14 +130,14 @@ ESX.UI.HUD.UpdateElement = function(name, data)
 	SendNUIMessage({
 		action = 'updateHUDElement',
 		name   = name,
-		data   = data,
+		data   = data
 	})
 end
 
 ESX.UI.Menu.RegisterType = function(type, open, close)
 	ESX.UI.Menu.RegisteredTypes[type] = {
 		open   = open,
-		close  = close,
+		close  = close
 	}
 end
 
@@ -198,6 +198,24 @@ ESX.UI.Menu.Open = function(type, namespace, name, data, submit, cancel, change,
 		menu.data.elements[i][key] = val
 	end
 
+	menu.setTitle = function(val)
+		menu.data.title = val
+	end
+
+	menu.removeElement = function(query)
+		for i=1, #menu.data.elements, 1 do
+			for k,v in pairs(query) do
+				if menu.data.elements[i] then
+					if menu.data.elements[i][k] == v then
+						table.remove(menu.data.elements, i)
+						break
+					end
+				end
+
+			end
+		end
+	end
+
 	table.insert(ESX.UI.Menu.Opened, menu)
 	ESX.UI.Menu.RegisteredTypes[type].open(namespace, name, data)
 
@@ -253,6 +271,7 @@ end
 
 ESX.Game.GetPedMugshot = function(ped)
 	local mugshot = RegisterPedheadshot(ped)
+
 	while not IsPedheadshotReady(mugshot) do
 		Citizen.Wait(0)
 	end
@@ -264,7 +283,7 @@ ESX.Game.Teleport = function(entity, coords, cb)
 	RequestCollisionAtCoord(coords.x, coords.y, coords.z)
 
 	while not HasCollisionLoadedAroundEntity(entity) do
-		RequestCollisionAtCoord(coords.x, coords.x, coords.x)
+		RequestCollisionAtCoord(coords.x, coords.y, coords.z)
 		Citizen.Wait(0)
 	end
 
@@ -387,6 +406,13 @@ ESX.Game.SpawnLocalVehicle = function(modelName, coords, heading, cb)
 	end)
 end
 
+ESX.Game.IsVehicleEmpty = function(vehicle)
+	local passengers = GetVehicleNumberOfPassengers(vehicle)
+	local driverSeatFree = IsVehicleSeatFree(vehicle, -1)
+
+	return passengers == 0 and driverSeatFree
+end
+
 ESX.Game.GetObjects = function()
 	local objects = {}
 
@@ -416,13 +442,11 @@ ESX.Game.GetClosestObject = function(filter, coords)
 	end
 
 	for i=1, #objects, 1 do
-
 		local foundObject = false
 
 		if filter == nil or (type(filter) == 'table' and #filter == 0) then
 			foundObject = true
 		else
-
 			local objectModel = GetEntityModel(objects[i])
 
 			for j=1, #filter, 1 do
@@ -430,7 +454,6 @@ ESX.Game.GetClosestObject = function(filter, coords)
 					foundObject = true
 				end
 			end
-
 		end
 
 		if foundObject then
@@ -442,7 +465,6 @@ ESX.Game.GetClosestObject = function(filter, coords)
 				closestDistance = distance
 			end
 		end
-
 	end
 
 	return closestObject, closestDistance
@@ -623,8 +645,16 @@ ESX.Game.GetClosestPed = function(coords, ignoreList)
 end
 
 ESX.Game.GetVehicleProperties = function(vehicle)
-	local color1, color2               = GetVehicleColours(vehicle)
+	local color1, color2 = GetVehicleColours(vehicle)
 	local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
+	local extras = {}
+
+	for id=0, 12 do
+		if DoesExtraExist(vehicle, id) then
+			local state = IsVehicleExtraTurnedOn(vehicle, id) == 1
+			extras[tostring(id)] = state
+		end
+	end
 
 	return {
 
@@ -651,6 +681,8 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 			IsVehicleNeonLightEnabled(vehicle, 2),
 			IsVehicleNeonLightEnabled(vehicle, 3)
 		},
+
+		extras            = extras,
 
 		neonColor         = table.pack(GetVehicleNeonLightsColour(vehicle)),
 		tyreSmokeColor    = table.pack(GetVehicleTyreSmokeColor(vehicle)),
@@ -703,7 +735,7 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 		modTrimB          = GetVehicleMod(vehicle, 44),
 		modTank           = GetVehicleMod(vehicle, 45),
 		modWindows        = GetVehicleMod(vehicle, 46),
-		modLivery         = GetVehicleMod(vehicle, 48)
+		modLivery         = GetVehicleLivery(vehicle)
 	}
 end
 
@@ -759,6 +791,16 @@ ESX.Game.SetVehicleProperties = function(vehicle, props)
 		SetVehicleNeonLightEnabled(vehicle, 1, props.neonEnabled[2])
 		SetVehicleNeonLightEnabled(vehicle, 2, props.neonEnabled[3])
 		SetVehicleNeonLightEnabled(vehicle, 3, props.neonEnabled[4])
+	end
+
+	if props.extras ~= nil then
+		for id,enabled in pairs(props.extras) do
+			if enabled then
+				SetVehicleExtra(vehicle, tonumber(id), 0)
+			else
+				SetVehicleExtra(vehicle, tonumber(id), 1)
+			end
+		end
 	end
 
 	if props.neonColor ~= nil then
@@ -947,6 +989,7 @@ ESX.Game.SetVehicleProperties = function(vehicle, props)
 
 	if props.modLivery ~= nil then
 		SetVehicleMod(vehicle, 48, props.modLivery, false)
+		SetVehicleLivery(vehicle, props.modLivery)
 	end
 end
 
@@ -1095,7 +1138,7 @@ ESX.ShowInventory = function()
 				local players      = ESX.Game.GetPlayersInArea(GetEntityCoords(playerPed), 3.0)
 				local foundPlayers = false
 				local elements     = {}
-			
+
 				for i=1, #players, 1 do
 					if players[i] ~= PlayerId() then
 						foundPlayers = true
@@ -1125,7 +1168,7 @@ ESX.ShowInventory = function()
 
 					for i=1, #players, 1 do
 						if players[i] ~= PlayerId() then
-							
+
 							if players[i] == data2.current.player then
 								foundPlayers = true
 								nearbyPlayer = players[i]
@@ -1304,20 +1347,16 @@ end)
 -- SetTimeout
 Citizen.CreateThread(function()
 	while true do
-
 		Citizen.Wait(0)
 		local currTime = GetGameTimer()
 
 		for i=1, #ESX.TimeoutCallbacks, 1 do
-
-			if ESX.TimeoutCallbacks[i] ~= nil then
+			if ESX.TimeoutCallbacks[i] then
 				if currTime >= ESX.TimeoutCallbacks[i].time then
 					ESX.TimeoutCallbacks[i].cb()
 					ESX.TimeoutCallbacks[i] = nil
 				end
 			end
-
 		end
-
 	end
 end)

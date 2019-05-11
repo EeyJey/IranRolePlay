@@ -21,6 +21,40 @@ RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
 	ESX.PlayerLoaded = true
 	ESX.PlayerData   = xPlayer
+
+	if Config.EnableHud then
+
+		for i=1, #xPlayer.accounts, 1 do
+			local accountTpl = '<div><img src="img/accounts/' .. xPlayer.accounts[i].name .. '.png"/>&nbsp;{{money}}</div>'
+
+			ESX.UI.HUD.RegisterElement('account_' .. xPlayer.accounts[i].name, i-1, 0, accountTpl, {
+				money = 0
+			})
+
+			ESX.UI.HUD.UpdateElement('account_' .. xPlayer.accounts[i].name, {
+				money = ESX.Math.GroupDigits(xPlayer.accounts[i].money)
+			})
+		end
+
+		local jobTpl = '<div>{{job_label}} - {{grade_label}}</div>'
+
+		if xPlayer.job.grade_label == '' then
+			jobTpl = '<div>{{job_label}}</div>'
+		end
+
+		ESX.UI.HUD.RegisterElement('job', #xPlayer.accounts, 0, jobTpl, {
+			job_label   = '',
+			grade_label = ''
+		})
+
+		ESX.UI.HUD.UpdateElement('job', {
+			job_label   = xPlayer.job.label,
+			grade_label = xPlayer.job.grade_label
+		})
+
+	else
+		TriggerEvent('es:setMoneyDisplay', 0.0)
+	end
 end)
 
 AddEventHandler('playerSpawned', function()
@@ -145,11 +179,6 @@ AddEventHandler('esx:setJob', function(job)
 	ESX.PlayerData.job = job
 end)
 
-RegisterNetEvent('esx:setFamily')
-AddEventHandler('esx:setFamily', function(family)
-	ESX.PlayerData.family = family
-end)
-
 RegisterNetEvent('esx:addWeapon')
 AddEventHandler('esx:addWeapon', function(weaponName, ammo)
 	local playerPed  = PlayerPedId()
@@ -225,7 +254,6 @@ RegisterNetEvent('esx:loadIPL')
 AddEventHandler('esx:loadIPL', function(name)
 	Citizen.CreateThread(function()
 		LoadMpDlcMaps()
-		EnableMpDlcMaps(true)
 		RequestIpl(name)
 	end)
 end)
@@ -453,7 +481,7 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(0)
 
-		if IsControlJustReleased(0, Keys['F2']) and GetLastInputMethod(2) and not isDead and not ESX.UI.Menu.IsOpen('default', 'es_extended', 'inventory') then
+		if IsControlJustReleased(0, Keys['F2']) and IsInputDisabled(0) and not isDead and not ESX.UI.Menu.IsOpen('default', 'es_extended', 'inventory') then
 			ESX.ShowInventory()
 		end
 
