@@ -77,21 +77,21 @@ end)
 
 
 --[[client/main.lua]]
-[...]
+-- [...]
 
-      {label = 'Voir les permis',            value = 'license_see'},
-[...]
+--       {label = 'Voir les permis',            value = 'license_see'},
+-- [...]
 
-    },
-  },
-    function(data2, menu2)
+--     },
+--   },
+--     function(data2, menu2)
 
 
-  local player, distance = ESX.Game.GetClosestPlayer()
+--   local player, distance = ESX.Game.GetClosestPlayer()
 
-    if distance ~= -1 and distance <= 3.0 then
+--     if distance ~= -1 and distance <= 3.0 then
 
-      if data2.current.value == 'license_see' then
-              TriggerServerEvent('esx_policejob:license_see', GetPlayerServerId(player))
-          end
-[...]
+--       if data2.current.value == 'license_see' then
+--               TriggerServerEvent('esx_policejob:license_see', GetPlayerServerId(player))
+--           end
+-- [...]
