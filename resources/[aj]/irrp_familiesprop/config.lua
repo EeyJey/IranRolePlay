@@ -44,7 +44,7 @@ Config.families = {
       }
     },
   },
-  LA-FUENTE = {
+  'LA-FUENTE' = {
     AuthorizedWeapons = {
       { name = 'WEAPON_PISTOL',      price = 10000 },
     },
