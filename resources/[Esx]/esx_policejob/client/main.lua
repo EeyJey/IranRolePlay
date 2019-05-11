@@ -124,6 +124,8 @@ function OpenCloakroomMenu()
 		table.insert(elements, {label = _U('police_wear'), value = 'chef_wear'})
 	elseif grade == 'boss' then
 		table.insert(elements, {label = _U('police_wear'), value = 'boss_wear'})
+	else
+		table.insert(elements, {label = _U('police_wear'), value = 'lieutenant_wear'})
 	end
 
 	if Config.EnableNonFreemodePeds then

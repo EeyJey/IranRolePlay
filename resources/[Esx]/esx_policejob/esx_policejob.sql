@@ -15,11 +15,15 @@ INSERT INTO `jobs` (name, label) VALUES
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
-	('police',0,'recruit','Recrue',20,'{}','{}'),
-	('police',1,'officer','Officier',40,'{}','{}'),
-	('police',2,'sergeant','Sergent',60,'{}','{}'),
-	('police',3,'lieutenant','Lieutenant',85,'{}','{}'),
-	('police',4,'boss','Commandant',100,'{}','{}')
+	('police',0,'recruit','Cadet',20,'{}','{}'),
+	('police',1,'officer','Police Officer I',40,'{}','{}'),
+	('police',2,'officer','Police Officer II',40,'{}','{}'),
+	('police',3,'officer','Police Officer III',40,'{}','{}'),
+	('police',4,'senior','Senior Lead Officer',60,'{}','{}'),
+	('police',5,'sergeant','Sergeant',60,'{}','{}'),
+	('police',6,'commander','Commander',85,'{}','{}'),
+	('police',7,'boss','Deputy Chief',100,'{}','{}'),
+	('police',8,'boss','Chief Of LSPD',100,'{}','{}')
 ;
 
 CREATE TABLE `fine_types` (
