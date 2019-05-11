@@ -86,6 +86,7 @@ ESX.SavePlayer = function(xPlayer, cb)
 
 	-- Job, loadout and position
 	table.insert(asyncTasks, function(cb)
+<<<<<<< HEAD
 		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `family` = @family, `family_grade` = @family_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier',
 		{
 			['@job']       		= xPlayer.job.name,
@@ -95,6 +96,16 @@ ESX.SavePlayer = function(xPlayer, cb)
 			['@loadout']	    = json.encode(xPlayer.getLoadout()),
 			['@position']	   	= json.encode(xPlayer.getLastPosition()),
 			['@identifier']		= xPlayer.identifier
+=======
+		MySQL.Async.execute('UPDATE users SET `job` = @job, `job_grade` = @job_grade, `family` = @family, `family_grade` = @family_grade, `loadout` = @loadout, `position` = @position WHERE identifier = @identifier', {
+			['@job']        = xPlayer.job.name,
+			['@job_grade']  = xPlayer.job.grade,
+			['@family']       	= xPlayer.family.name,
+			['@family_grade']  	= xPlayer.family.grade,
+			['@loadout']    = json.encode(xPlayer.getLoadout()),
+			['@position']   = json.encode(xPlayer.getLastPosition()),
+			['@identifier'] = xPlayer.identifier
+>>>>>>> parent of 333b403... goh khordam
 		}, function(rowsChanged)
 			cb()
 		end)
@@ -188,3 +199,30 @@ ESX.CreatePickup = function(type, name, count, label, player)
 	TriggerClientEvent('esx:pickup', -1, pickupId, label, player)
 	ESX.PickupId = pickupId
 end
+<<<<<<< HEAD
+=======
+
+ESX.DoesJobExist = function(job, grade)
+	grade = tostring(grade)
+
+	if job and grade then
+		if ESX.Jobs[job] and ESX.Jobs[job].grades[grade] then
+			return true
+		end
+	end
+
+	return false
+end
+
+ESX.DoesFamilyExist = function(family, grade)
+	grade = tostring(grade)
+
+	if family and grade then
+		if ESX.Families[family] and ESX.Families[family].grades[grade] then
+			return true
+		end
+	end
+
+	return false
+end
+>>>>>>> parent of 333b403... goh khordam
