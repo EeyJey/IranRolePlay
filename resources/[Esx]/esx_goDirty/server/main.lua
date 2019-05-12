@@ -20,7 +20,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
  			xPlayer.addMoney(tonumber(money/2)) -- Add Clean Money
  			xPlayer.removeAccountMoney('black_money', money) -- Removes Dirty Money
  			TriggerClientEvent('esx:showNotification', _source, "You have ~g~cleaned all your money: $" ..money)
- 			retourcamion_oui()
+ 			-- retourcamion_oui()
  			isJobTrucker = false
  		end
  	end

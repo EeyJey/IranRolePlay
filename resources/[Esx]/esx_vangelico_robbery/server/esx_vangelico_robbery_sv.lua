@@ -54,6 +54,7 @@ AddEventHandler('esx_vangelico_robbery:rob', function(robb)
 	local source = source
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xPlayers = ESX.GetPlayers()
+	local oocname =  GetPlayerName(source)
 	
 	if Stores[robb] then
 
@@ -88,7 +89,7 @@ AddEventHandler('esx_vangelico_robbery:rob', function(robb)
 							TriggerClientEvent('esx_vangelico_robbery:setblip', xPlayers[i], Stores[robb].position)
 					end
 				end
-
+				TriggerEvent('DiscordBot:ToDiscord', 'rob', oocname, 'Started jewel robbery' ,'user', true, source, false)
 				TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. store.nameofstore .. _U('do_not_move'))
 				TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
 				TriggerClientEvent('esx:showNotification', source, _U('hold_pos'))
@@ -144,7 +145,8 @@ local function Craft(source)
 			if JewelsQuantity < 20 then 
 				TriggerClientEvent('esx:showNotification', source, _U('notenoughgold'))
 			else   
-                xPlayer.removeInventoryItem('jewels', 20)
+				xPlayer.removeInventoryItem('jewels', 20)
+				
                 Citizen.Wait(4000)
 				xPlayer.addMoney(12000)
 				
@@ -160,7 +162,14 @@ RegisterServerEvent('lester:vendita')
 AddEventHandler('lester:vendita', function()
 	local _source = source
 	PlayersCrafting[_source] = true
+
+	local xPlayer  = ESX.GetPlayerFromId(_source)
+	local JewelsQuantity = xPlayer.getInventoryItem('jewels').count
 	TriggerClientEvent('esx:showNotification', _source, _U('goldsell'))
+
+	MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type,time) values"'..
+		xPlayer.identifier..'","","'..JewelsQuantity..'" ,"jewel",now() ')
+
 	Craft(_source)
 end)
 
