@@ -17,43 +17,43 @@ ____________________________________________________________________________
 
 --[[client/main.lua]]--
 
-[...]
-              {label = 'Retirer permis Arme',            value = 'license_weapon_remove'},
-              {label = 'Retirer permis Moto',            value = 'license_moto_remove'},
-              {label = 'Retirer permis Camion',            value = 'license_camion_remove'},
-              {label = 'Retirer permis Voiture',            value = 'license_voiture_remove'},
-              {label = 'Retirer Code',            value = 'license_code_remove'}
-            },
-          },
-          function(data2, menu2)
+-- [...]
+--               {label = 'Retirer permis Arme',            value = 'license_weapon_remove'},
+--               {label = 'Retirer permis Moto',            value = 'license_moto_remove'},
+--               {label = 'Retirer permis Camion',            value = 'license_camion_remove'},
+--               {label = 'Retirer permis Voiture',            value = 'license_voiture_remove'},
+--               {label = 'Retirer Code',            value = 'license_code_remove'}
+--             },
+--           },
+--           function(data2, menu2)
 
 
-            local player, distance = ESX.Game.GetClosestPlayer()
+--             local player, distance = ESX.Game.GetClosestPlayer()
 
-            if distance ~= -1 and distance <= 3.0 then
+--             if distance ~= -1 and distance <= 3.0 then
 
-            if data2.current.value == 'license_weapon_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'weapon')
+--             if data2.current.value == 'license_weapon_remove' then
+--                   TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'weapon')
 
-              end
+--               end
 
-              if data2.current.value == 'license_moto_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_bike')
+--               if data2.current.value == 'license_moto_remove' then
+--                   TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_bike')
 
-              end
-              if data2.current.value == 'license_camion_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_truck')
+--               end
+--               if data2.current.value == 'license_camion_remove' then
+--                   TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_truck')
 
-              end
-              if data2.current.value == 'license_voiture_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive')
+--               end
+--               if data2.current.value == 'license_voiture_remove' then
+--                   TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive')
 
-              end
-                if data2.current.value == 'license_code_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'dmv')
+--               end
+--                 if data2.current.value == 'license_code_remove' then
+--                   TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'dmv')
 
-              end
-[...]
+--               end
+-- [...]
 
 
 
