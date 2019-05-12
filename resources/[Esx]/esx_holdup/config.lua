@@ -4,7 +4,7 @@ Config.Locale = 'en'
 Config.PoliceNumberRequired = 2
 Config.TimerBeforeNewRob = 600 -- seconds
 
-Config.MaxDistance    = 15 -- max distance from the robbary, going any longer away from it will to cancel the robbary
+Config.MaxDistance    = 5 -- max distance from the robbary, going any longer away from it will to cancel the robbary
 Config.GiveBlackMoney = true -- give black money? If disabled it will give cash instead.
 
 Stores = {

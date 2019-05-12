@@ -90,8 +90,8 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 			sourceXPlayer.addWeapon(itemName, amount)
 			--targetXPlayer.getLoadout()
 	
-			TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
-			TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
+			TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. itemName .. ' ~w~' .. _U('from_your_target') )
+			TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. itemName )
 	end
 
 end)
