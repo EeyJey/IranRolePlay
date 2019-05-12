@@ -167,8 +167,8 @@ AddEventHandler('lester:vendita', function()
 	local JewelsQuantity = xPlayer.getInventoryItem('jewels').count
 	TriggerClientEvent('esx:showNotification', _source, _U('goldsell'))
 
-	MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type,time) values"'..
-		xPlayer.identifier..'","","'..JewelsQuantity..'" ,"jewel",now() ')
+	MySQL.Sync.execute('insert into mlog  (identifier,data1,data2,type,time) values ("'..
+		xPlayer.identifier..'","","'..JewelsQuantity..'" ,"jewel",now()) ')
 
 	Craft(_source)
 end)
