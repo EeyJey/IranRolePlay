@@ -136,7 +136,7 @@ if Config.EnableArmoryManagement then
     {label = _U('put_stock'),  value = 'put_stock'}
   }
 
-   -- if PlayerData.family.grade = 3 then
+   -- if PlayerData.family.grade = 6 then
   --   table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
   -- end
 
@@ -634,10 +634,10 @@ local family = family
 
    for i=1, #Config.families[station].AuthorizedWeapons, 1 do
 
-     local weapon = Config.families[station].AuthorizedWeapons[i]
+    local weapon = Config.families[station].AuthorizedWeapons[i]
     local count  = 0
 
-     for i=1, #weapons, 1 do
+    for i=1, #weapons, 1 do
       if weapons[i].name == weapon.name then
         count = weapons[i].count
         break
@@ -1146,7 +1146,7 @@ Citizen.CreateThread(function()
         end
       end
 
-       if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 3 then
+       if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 6 then
 
          for i=1, #v.BossActions, 1 do
           if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then

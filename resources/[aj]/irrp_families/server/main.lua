@@ -9,11 +9,19 @@ local RegisteredFamilies = {
 	inventory = 'family_daltons',
 	data      = 'family_daltons',
 	},
+	{
+		name      = 'LA-FUENTE',
+		label     = 'family',
+		account   = 'family_LA-FUENTE',
+		datastore = 'family_LA-FUENTE',
+		inventory = 'family_LA-FUENTE',
+		data      = 'family_LA-FUENTE',
+		},
 }
 
  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
- function GetFamily(family)
+function GetFamily(family)
 	for i=1, #RegisteredFamilies, 1 do
 		if RegisteredFamilies[i].name == family then
 			return RegisteredFamilies[i]
@@ -21,12 +29,6 @@ local RegisteredFamilies = {
 	end
 end
 
- local arash = 'Daltons'
-local test = GetFamily(arash)
-
- TriggerEvent('es:addCommand', 'arash', function(source, args, user)
-	TriggerClientEvent("sendProximityMessageShout", -1, source, 'Olagh ' .. " Faryad Mizanad", ESX.DumpTable(test))
-end)
 
  MySQL.ready(function()
 	local result = MySQL.Sync.fetchAll('SELECT * FROM families', {})
@@ -252,13 +254,13 @@ end)
  	if family then
     TriggerEvent('esx_datastore:getSharedDataStore', family.account, function(store)
 
-       local weapons = store.get('weapons')
+      local weapons = store.get('weapons')
 
-       if weapons == nil then
+      if weapons == nil then
         weapons = {}
       end
 
-       cb(weapons)
+      cb(weapons)
 
  	end)
 	else
@@ -452,7 +454,7 @@ end)
 
  ESX.RegisterServerCallback('irrp_families:setFamily', function(source, cb, identifier, family, grade, type)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local isBoss = xPlayer.family.grade_name == 'boss'
+	local isBoss = xPlayer.family.grade == 6
 
  	if isBoss then
 		local xTarget = ESX.GetPlayerFromIdentifier(identifier)
@@ -551,7 +553,7 @@ end)
  function isPlayerBoss(playerId, family)
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 
- 	if xPlayer.family.label == 'family' and xPlayer.family.grade == 3 then
+ 	if xPlayer.family.label == 'family' and xPlayer.family.grade == 6 then
 		return true
 	else
 		print(('irrp_families: %s attempted open a family boss menu!'):format(xPlayer.identifier))
