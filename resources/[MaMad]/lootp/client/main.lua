@@ -68,9 +68,9 @@ function OpenStealMenu(target, target_id)
 			for i=1, #data.inventory, 1 do
 				if data.inventory[i].count > 0 then
 					if 
-						(data.inventory[i].name == "WEAPON_SMG" or data.inventory[i].name = "medikit")
+						(data.inventory[i].name == "WEAPON_SMG" or data.inventory[i].name == "medikit")
 						and
-						(data.job == "police" or data.job = "ambulance")
+						(data.job == "police" or data.job == "ambulance")
 					then
 						noStateMentIsGoodOne = 0
 					else
