@@ -64,9 +64,9 @@ AddEventHandler('duty:ambulance', function(job)
     elseif xPlayer.job.name == 'ambulance' and xPlayer.job.grade == 3 then
         xPlayer.setJob('offambulance', 3)
     end
-
-    if  xPlayer.job.name == 'ambulance' and xPlayer.job.grade == 0 then
-        xPlayer.setJob('offambulance', 0)
+    
+    if  xPlayer.job.name == 'offambulance' and xPlayer.job.grade == 0 then
+        xPlayer.setJob('ambulance', 0)
     elseif xPlayer.job.name == 'offambulance' and xPlayer.job.grade == 1 then
         xPlayer.setJob('ambulance', 1)
     elseif xPlayer.job.name == 'offambulance' and xPlayer.job.grade == 2 then
