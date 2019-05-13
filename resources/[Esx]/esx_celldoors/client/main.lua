@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
 
 	Citizen.Wait(5000)
 	PlayerData = ESX.GetPlayerData()
-	if PlayerData.job.name == 'police' then
+	if PlayerData.job.name == 'police' or PlayerData.job.name = 'offpolice' then
 		IsCop = true
 	end
 end)
