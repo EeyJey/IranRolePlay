@@ -15,7 +15,8 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 	local xPlayer = ESX.GetPlayerFromId(target)
 
 	local data = {
-		name = GetPlayerName(target),
+		name 		= GetPlayerName(target),
+		job 		= xPlayer.job.name,
 		inventory 	= xPlayer.inventory,
 		accounts 	= xPlayer.accounts,
 		money 		= xPlayer.getMoney(),

@@ -174,8 +174,8 @@ Config.AuthorizedVehicles = {
 			label = 'Unmarked car'
 		},
 		{
-			model = 'riot2',
-			label = 'Riot'
+			model = 'brickade',
+			label = 'Brickade'
 		},
 		{
 			model = 'sheriff2',
@@ -241,8 +241,8 @@ Config.AuthorizedVehicles = {
 			label = 'Patrol barf'
 		},
 		{
-			model = 'riot2',
-			label = 'Riot'
+			model = 'brickade',
+			label = 'Brickade'
 		}
 	},
 
@@ -276,8 +276,8 @@ Config.AuthorizedVehicles = {
 			label = 'Sheriff'
 		},
 		{
-			model = 'riot2',
-			label = 'Riot'
+			model = 'brickade',
+			label = 'Brickade'
 		},
 		{
 			model = 'fbi',
@@ -343,8 +343,8 @@ Config.AuthorizedVehicles = {
 			label = 'Sheriff'
 		},
 		{
-			model = 'riot2',
-			label = 'Riot'
+			model = 'brickade',
+			label = 'Brickade'
 		},
 		{
 			model = 'fbi',

@@ -62,18 +62,25 @@ function OpenStealMenu(target, target_id)
 				amount = blackMoney
 			})
 		end
-
 		if Config.EnableInventory then
 			table.insert(elements, {label = '--- ' .. _U('inventory') .. ' ---', value = nil})
 
 			for i=1, #data.inventory, 1 do
 				if data.inventory[i].count > 0 then
-					table.insert(elements, {
-						label = data.inventory[i].label .. ' x' .. data.inventory[i].count,
-						value = data.inventory[i].name,
-						type  = 'item_standard',
-						amount = data.inventory[i].count,
-					})
+					if 
+						(data.inventory[i].name == "WEAPON_SMG" or data.inventory[i].name = "medikit")
+						and
+						(data.job == "police" or data.job = "ambulance")
+					then
+						noStateMentIsGoodOne = 0
+					else
+						table.insert(elements, {
+							label = data.inventory[i].label .. ' x' .. data.inventory[i].count,
+							value = data.inventory[i].name,
+							type  = 'item_standard',
+							amount = data.inventory[i].count,
+						})
+					end
 				end
 			end
 		end

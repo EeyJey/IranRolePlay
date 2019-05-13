@@ -12,18 +12,19 @@ Config.Priority = {
     ["steam:11000010494a934"] = 80, -- Obi Vika
     ["steam:110000118eae7af"] = 80, -- hooman :| dahanamo gaiidi :|
     ["steam:11000010934a428"] = 80, -- Quiet^ Admin
-    -- ["steam:11000010b6e4e2c"] = 80, -- NoName Admin
     ["steam:11000010f0a6439"] = 70, -- Peyman- Admin
     ["steam:110000115e0be8a"] = 70, -- MehdiJokerPir- Rais medic
-    -- ["steam:1100001196679b9"] = 70, -- zartosht streamer
     ["steam:110000111ca680b"] = 70, -- Bigezmoge streamer
-    -- ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
+    ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
+    ["steam:110000102c04e96"] = 70, -- PythQn
+    ["steam:110000111236158"] = 70, -- Matin_Dark streamer
+    ["steam:11000011c6ff036"] = 70, -- gift from arash
+    -- ["steam:1100001196679b9"] = 70, -- zartosht streamer
     -- ["steam:11000010b421c27"] = 70, -- AmoBig streamer
     -- ["steam:11000010b4600ae"] = 70, -- Mr Toxic streamer
     -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
     --["steam:11000011a3f0a06"] = 70, --game_over streamer
-    ["steam:110000111236158"] = 70, -- Matin_Dark streamer
     ["ip:127.0.0.0"] = 85
 }
 
