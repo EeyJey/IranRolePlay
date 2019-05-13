@@ -68,9 +68,9 @@ function OpenStealMenu(target, target_id)
 			for i=1, #data.inventory, 1 do
 				if data.inventory[i].count > 0 then
 					if 
-						(data.inventory[i].name == "WEAPON_SMG" or data.inventory[i].name == "medikit")
+						( data.inventory[i].name == "medikit" or data.inventory[i].name == "bandage" )
 						and
-						(data.job == "police" or data.job == "ambulance")
+						(data.job == "ambulance" or data.job == "police")
 					then
 						noStateMentIsGoodOne = 0
 					else
@@ -88,13 +88,21 @@ function OpenStealMenu(target, target_id)
 		if Config.EnableWeapons then
             table.insert(elements, {label = '=== ' .. _U('gun_label') .. ' ===', value = nil})
 
-            for i=1, #data.weapons, 1 do
-                table.insert(elements, {
-                    label    = ESX.GetWeaponLabel(data.weapons[i].name) .. ' x' .. data.weapons[i].ammo,
-                    value    = data.weapons[i].name,
-                    type     = 'item_weapon',
-                    amount   = data.weapons[i].ammo
-                })
+			for i=1, #data.weapons, 1 do
+				if 
+						( data.inventory[i].name == "WEAPON_SMG")
+						and
+						(data.job == "police")
+				then
+					noStateMentIsGoodOne = 0
+				else
+					table.insert(elements, {
+						label    = ESX.GetWeaponLabel(data.weapons[i].name) .. ' x' .. data.weapons[i].ammo,
+						value    = data.weapons[i].name,
+						type     = 'item_weapon',
+						amount   = data.weapons[i].ammo
+					})
+				end
             end
         end
 
