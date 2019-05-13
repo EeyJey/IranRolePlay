@@ -12,7 +12,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_door01',
 		objCoords  = {x = 434.747, y = -980.618, z = 30.839},
 		textCoords = {x = 434.747, y = -981.50, z = 31.50},
-		authorizedJobs = { 'police' },
+		authorizedJobs = { 'police','offpolice' },
 		locked = false,
 		distance = 2.5
 	},
@@ -21,7 +21,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_door002',
 		objCoords  = {x = 434.747, y = -983.215, z = 30.839},
 		textCoords = {x = 434.747, y = -982.50, z = 31.50},
-		authorizedJobs = { 'police' },
+		authorizedJobs = { 'police','offpolice' },
 		locked = false,
 		distance = 2.5
 	},
@@ -31,7 +31,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_gendoor004',
 		objCoords  = {x = 449.698, y = -986.469, z = 30.689},
 		textCoords = {x = 450.104, y = -986.388, z = 31.739},
-		authorizedJobs = { 'police' },
+		authorizedJobs = { 'police','offpolice' },
 		locked = true
 	},
 
