@@ -25,7 +25,7 @@ Config.Locations1 = { -- Some Shop & Interior NPCs
 	{ x = 241.06,   y = -1378.91, z = 32.74, heading = 148.30 },	-- esx_dmvschool
 	{ x = 262.43,   y = -1360.00, z = 23.55, heading = 47.15 },    -- Central Hospital Main
 	{ x = 265.91,   y = -1358.64, z = 23.55, heading = 316.30 },    -- Central Hospital Main 2
-	-- { x = 440.85,   y = -978.41,  z = 29.69, heading = 165.95 },    -- PD Main Welcome
+	{ x = 440.85,   y = -978.41,  z = 29.69, heading = 165.95 },    -- PD Main Welcome
 	{ x = 458.97,   y = -1017.28, z = 27.16, heading = 93.50 },    -- PD Main Garage
 	{ x = -1117.15, y = -503.20,  z = 34.81, heading = 294.48 },    -- Moneywash Moveact
 	{ x = -705.93,  y = -914.33,  z = 18.22, heading = 81.50 },    -- LT Gasoline1
