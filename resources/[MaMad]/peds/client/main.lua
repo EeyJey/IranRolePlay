@@ -231,15 +231,15 @@ end)
 
 -- Nightclub Guards
 Citizen.CreateThread(function()
-    RequestModel(GetHashKey("s_m_m_chemsec_01"))
+    RequestModel(GetHashKey("s_m_y_doorman_01"))
 	
-    while not HasModelLoaded(GetHashKey("s_m_m_chemsec_01")) do
+    while not HasModelLoaded(GetHashKey("s_m_y_doorman_01")) do
         Wait(1)
     end
 	
 	if Config.EnableNightclubs then
 		for _, item in pairs(Config.Locations11) do
-			local npc = CreatePed(1, 0x2EFEAFD5, item.x, item.y, item.z, item.heading, false, true)
+			local npc = CreatePed(1, 0x22911304, item.x, item.y, item.z, item.heading, false, true)
 			
 			FreezeEntityPosition(npc, true)	
 			SetEntityHeading(npc, item.heading)
@@ -300,15 +300,15 @@ end)
 
 -- Biker Guards2 (Druglabors & Points, Biker DLC)
 Citizen.CreateThread(function()
-    RequestModel(GetHashKey("s_m_m_chemsec_01"))
+    RequestModel(GetHashKey("s_m_y_doorman_01"))
 	
-    while not HasModelLoaded(GetHashKey("s_m_m_chemsec_01")) do
+    while not HasModelLoaded(GetHashKey("s_m_y_doorman_01")) do
         Wait(1)
     end
 	
 	if Config.EnableDrugs then
 		for _, item in pairs(Config.Locations14) do
-			local npc = CreatePed(1, 0x2EFEAFD5, item.x, item.y, item.z, item.heading, false, true)
+			local npc = CreatePed(1, 0x22911304, item.x, item.y, item.z, item.heading, false, true)
 			
 			FreezeEntityPosition(npc, true)	
 			SetEntityHeading(npc, item.heading)
