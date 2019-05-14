@@ -323,7 +323,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
               	local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1),true))
   				    	local closecar = GetClosestVehicle(x, y, z, 4.0, 0, 71)
 
-              --  VehicleMaxSpeed(closecar,totalweight,Config.VehicleLimit[GetVehicleClass(closecar)])
+               VehicleMaxSpeed(closecar,totalweight,Config.VehicleLimit[GetVehicleClass(closecar)])
 
   				TriggerServerEvent('esx_truck_inventory:addInventoryItem', GetVehicleClass(closecar), GetDisplayNameFromVehicleModel(GetEntityModel(closecar)), GetVehicleNumberPlateText(vehFront), data3.current.value, quantity, data3.current.name, data3.current.type, ownedV)
                 ESX.ShowNotification('vazn : ~g~'.. Kgweight .. ' Kg / '..MaxVh..' Kg')
