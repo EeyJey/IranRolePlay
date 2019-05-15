@@ -52,7 +52,7 @@ ESX.RegisterServerCallback('esx-kr-bag:getAllBags', function(source, cb)
     end)
 end)
 
-TriggerEvent('addCommand', 'hasbag', function(source, args, user)
+TriggerEvent('es:addCommand', 'hasbag', function(source, args, user)
     MySQL.Async.fetchAll('SELECT * FROM owned_bags', {}, function(bags)
        
         if bags[1] ~= nil then
