@@ -393,6 +393,7 @@ Citizen.CreateThread(function()
         end
         if IsEntityDead(GetPlayerPed(-1)) and HasBag then
             DropBag()
+            Wait(10000)
         end
     end
 end)
