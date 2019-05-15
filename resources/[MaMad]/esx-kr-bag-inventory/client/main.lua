@@ -391,7 +391,7 @@ Citizen.CreateThread(function()
         if IsControlJustReleased(0, Keys["M"]) and HasBag and not IsPedInAnyVehicle(GetPlayerPed(-1), true) and not IsEntityInAir(PlayerPedId()) and not IsEntityDead(GetPlayerPed(-1))  then -- Change F5 to the key you want to open the meny with
             Bag()
         end
-        if IsEntityDead(GetPlayerPed(-1)) then
+        if IsEntityDead(GetPlayerPed(-1)) and HasBag then
             DropBag()
         end
     end
