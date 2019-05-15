@@ -88,6 +88,10 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 							end
 						end
 
+						if vehiclePrice == 0 then
+							vehiclePrice = 15000000
+						end
+
 						if isRimMod then
 							price = math.floor(vehiclePrice * data.current.price / 150)
 							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
