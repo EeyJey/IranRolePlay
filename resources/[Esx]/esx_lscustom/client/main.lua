@@ -200,6 +200,10 @@ function GetAction(data)
 		end
 	end
 
+	if vehiclePrice == 0 then
+		vehiclePrice = 15000000
+	end
+
 	for k,v in pairs(Config.Menus) do
 
 		if data.value == k then
