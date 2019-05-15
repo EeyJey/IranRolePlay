@@ -17,6 +17,8 @@ Locales['en'] = {
   ['put_stock']   = 'Gozashtane Vasile',
   ['armory'] = 'armory',
   ['open_armory'] = 'press ~INPUT_CONTEXT~ to access the armory',
+  --stock
+  ['gang_stock'] = 'Sandoghe Family',
   -- Vehicles
   ['vehicle_menu'] = 'vehicle',
   ['vehicle_out'] = 'there is already a car out of the garage',

@@ -102,7 +102,7 @@ AddEventHandler('irrp_families:withdrawMoney', function(familyname, amount)
 	end)
 end)
 
- RegisterServerEvent('irrp_families:depositMoney')
+RegisterServerEvent('irrp_families:depositMoney')
 AddEventHandler('irrp_families:depositMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local family = GetFamily(family)
@@ -126,60 +126,63 @@ AddEventHandler('irrp_families:depositMoney', function(family, amount)
 end)
 
 
- RegisterServerEvent('irrp_families:getStockItem')
-AddEventHandler('irrp_families:getStockItem', function(family, itemName, count)
+RegisterServerEvent('irrp_families:getStockItem')
+AddEventHandler('irrp_families:getStockItem', function(station, itemName, count)
 
-   local xPlayer = ESX.GetPlayerFromId(source)
-  local family = getFamily(family)
+  local xPlayer = ESX.GetPlayerFromId(source)
+  local family = GetFamily(station)
 
-   if xPlayer.family.name ~= family.name then
+  if xPlayer.family.name ~= family.name then
 		print(('irrp_families: %s attempted to call getStock without permission!'):format(xPlayer.identifier))
 		return
 	end
 
-   TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
 	local item = inventory.getItem(itemName)
+	local sourceItem = xPlayer.getInventoryItem(itemName)
 	if item.count >= count and count > 0 then
-	  inventory.removeItem(itemName, count)
-	  xPlayer.addInventoryItem(itemName, count)
+		if sourceItem.limit ~= -1 and (sourceItem.count + count) > sourceItem.limit then
+			TriggerClientEvent('esx:showNotification', xPlayer.source, 'Shoma Fazaye Kafi Nadarid!')
+		else
+			inventory.removeItem(itemName, count)
+			xPlayer.addInventoryItem(itemName, count)
+			TriggerClientEvent('esx:showNotification', xPlayer.source, 'Shoma be Tedade ' .. count .. ' ' .. item.label .. ' Az Sandogh Bardashtid!')
+		end
 	else
-	  TriggerClientEvent('esx:showNotification', xPlayer.source, _U('quantity_invalid'))
+	  TriggerClientEvent('esx:showNotification', xPlayer.source, 'Tedad Ro Eshtebah Vared Kardid!')
 	end
-
- 	TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_withdrawn') .. count .. ' ' .. item.label)
 	end)
 end)
 
 
- RegisterServerEvent('irrp_families:putStockItems')
-AddEventHandler('irrp_families:putStockItems', function(family, itemName, count)
+RegisterServerEvent('irrp_families:putStockItems')
+AddEventHandler('irrp_families:putStockItems', function(station, itemName, count)
 
-   local xPlayer = ESX.GetPlayerFromId(source)
-  local family = getFamily(family)
+	local xPlayer = ESX.GetPlayerFromId(source)
+  local family = GetFamily(station)
 
-   if xPlayer.family.name ~= family.name then
-	print(('irrp_families: %s attempted to call putStock without permission!'):format(xPlayer.identifier))
-	return
+  if xPlayer.family.name ~= family.name then
+		print(('irrp_families: %s attempted to call putStock without permission!'):format(xPlayer.identifier))
+		return
   end
 
-   TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
 
- 	local item = inventory.getItem(itemName)
+	local item = xPlayer.getInventoryItem(itemName)
 
- 	if item.count >= 0 then
+ 	if item.count >= count then
 	  xPlayer.removeInventoryItem(itemName, count)
-	  inventory.addItem(itemName, count)
+		inventory.addItem(itemName, count)
+		TriggerClientEvent('esx:showNotification', xPlayer.source, 'Tedade ' .. count .. ' ' .. item.label .. ' Varde Sandogh Shod')
 	else
-	  TriggerClientEvent('esx:showNotification', xPlayer.source, _U('quantity_invalid'))
+	  TriggerClientEvent('esx:showNotification', xPlayer.source, 'Tedad ro Eshtebah Vared Kardid!')
 	end
 
- 	TriggerClientEvent('esx:showNotification', xPlayer.source, _U('added') .. count .. ' ' .. item.label)
-
-   end)
+  end)
 
  end)
 
- RegisterServerEvent('irrp_families:washMoney')
+RegisterServerEvent('irrp_families:washMoney')
 AddEventHandler('irrp_families:washMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local account = xPlayer.getAccount('black_money')
@@ -268,10 +271,10 @@ end)
 	end
 end)
 
- ESX.RegisterServerCallback('irrp_families:addArmoryWeapon', function(source, cb, weaponName, family)
-	local family = GetFamily(family)
-    local xPlayer = ESX.GetPlayerFromId(source)
-	if xPlayer.family.name == family.name then
+ ESX.RegisterServerCallback('irrp_families:addArmoryWeapon', function(source, cb, weaponName, station)
+	local family = GetFamily(station)
+  local xPlayer = ESX.GetPlayerFromId(source)
+	if xPlayer.family.name ~= family.name then
 		print(('irrp_families: %s attempted to addArmoryWeapon!'):format(xPlayer.identifier))
 		return
 	end
@@ -309,51 +312,61 @@ end)
 
  end)
 
- ESX.RegisterServerCallback('irrp_families:removeArmoryWeapon', function(source, cb, weaponName, family)
-	local family = GetFamily(family)
-    local xPlayer = ESX.GetPlayerFromId(source)
-	if xPlayer.family.name == family.name then
+ ESX.RegisterServerCallback('irrp_families:removeArmoryWeapon', function(source, cb, weaponName, station)
+	local family = GetFamily(station)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local alreadyHaveWeapon = false
+	if xPlayer.family.name ~= family.name then
 		print(('irrp_families: %s attempted to removeArmoryWeapon!'):format(xPlayer.identifier))
 		return
 	end
-    xPlayer.addWeapon(weaponName, 1000)
+	
+	for i=#xPlayer.loadout, 1, -1 do
+		if xPlayer.loadout[i].name == weaponName then
+			alreadyHaveWeapon = true
+		end
+	end
+	if not alreadyHaveWeapon then
+		xPlayer.addWeapon(weaponName, 1000)
+		TriggerEvent('esx_datastore:getSharedDataStore', family.account, function(store)
 
-     TriggerEvent('esx_datastore:getSharedDataStore', family.account, function(store)
+			local weapons = store.get('weapons')
 
-       local weapons = store.get('weapons')
+			if weapons == nil then
+				weapons = {}
+			end
 
-       if weapons == nil then
-        weapons = {}
-      end
+			local foundWeapon = false
 
-       local foundWeapon = false
+			for i=1, #weapons, 1 do
+				if weapons[i].name == weaponName then
+					weapons[i].count = (weapons[i].count > 0 and weapons[i].count - 1 or 0)
+					foundWeapon = true
+				end
+			end
 
-       for i=1, #weapons, 1 do
-        if weapons[i].name == weaponName then
-          weapons[i].count = (weapons[i].count > 0 and weapons[i].count - 1 or 0)
-          foundWeapon = true
-        end
-      end
+			if not foundWeapon then
+				table.insert(weapons, {
+					name  = weaponName,
+					count = 0
+				})
+			end
 
-       if not foundWeapon then
-        table.insert(weapons, {
-          name  = weaponName,
-          count = 0
-        })
-      end
+			store.set('weapons', weapons)
 
-       store.set('weapons', weapons)
+			cb()
 
-       cb()
-
-     end)
+			end)
+	else
+		TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Shoma in Aslahe ro Darid!')
+	end
 
    end)
 
-   ESX.RegisterServerCallback('irrp_families:buy', function(source, cb, amount, family)
-	local family = GetFamily(family)
-    local xPlayer = ESX.GetPlayerFromId(source)
-	if xPlayer.family.name == family.name then
+   ESX.RegisterServerCallback('irrp_families:buy', function(source, cb, amount, station)
+	local family = GetFamily(station)
+  local xPlayer = ESX.GetPlayerFromId(source)
+	if xPlayer.family.name ~= family.name then
 		print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
 		return
 	end
@@ -370,19 +383,19 @@ end)
 
    end)
 
-   ESX.RegisterServerCallback('irrp_families:getStockItems', function(source, cb, family)
-	local family = GetFamily(family)
-    local xPlayer = ESX.GetPlayerFromId(source)
-	if xPlayer.family.name == family.name then
-		print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
+  ESX.RegisterServerCallback('irrp_families:getStockItems', function(source, cb, station)
+	local family = GetFamily(station)
+  local xPlayer = ESX.GetPlayerFromId(source)
+	if xPlayer.family.name ~= family.name then
+		print(('irrp_families: %s attempted to GetStockItems!'):format(xPlayer.identifier))
 		return
 	end
 
-     TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
-      cb(inventory.items)
-    end)
+  TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
+    cb(inventory.items)
+  end)
 
-   end)
+  end)
 
 
  ESX.RegisterServerCallback('irrp_families:getEmployees', function(source, cb, family)
@@ -537,7 +550,7 @@ end)
  	cb(players)
 end)
 
- ESX.RegisterServerCallback('irrp_families:getVehiclesInGarage', function(source, cb, familyName)
+ESX.RegisterServerCallback('irrp_families:getVehiclesInGarage', function(source, cb, familyName)
 	local family = GetFamily(familyName)
 
  	TriggerEvent('esx_datastore:getSharedDataStore', family.datastore, function(store)
@@ -546,11 +559,11 @@ end)
 	end)
 end)
 
- ESX.RegisterServerCallback('irrp_families:isBoss', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:isBoss', function(source, cb, family)
 	cb(isPlayerBoss(source, family))
 end)
 
- function isPlayerBoss(playerId, family)
+function isPlayerBoss(playerId, family)
 	local xPlayer = ESX.GetPlayerFromId(playerId)
 
  	if xPlayer.family.label == 'family' and xPlayer.family.grade == 6 then

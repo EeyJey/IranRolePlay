@@ -186,7 +186,7 @@ if Config.EnableArmoryManagement then
 
    local elements = {}
 
-   for i=1, #Config.families[station].AuthorizedWeapons, 1 do
+  for i=1, #Config.families[station].AuthorizedWeapons, 1 do
     local weapon = Config.families[station].AuthorizedWeapons[i]
     table.insert(elements, {label = ESX.GetWeaponLabel(weapon.name), value = weapon.name})
   end
@@ -631,23 +631,9 @@ local family = family
  ESX.TriggerServerCallback('irrp_families:getArmoryWeapons', function(weapons)
 
    local elements = {}
-
-   for i=1, #Config.families[station].AuthorizedWeapons, 1 do
-
-    local weapon = Config.families[station].AuthorizedWeapons[i]
-    local count  = 0
-
-    for i=1, #weapons, 1 do
-      if weapons[i].name == weapon.name then
-        count = weapons[i].count
-        break
-      end
-    end
-
-     table.insert(elements, {label = 'x' .. count .. ' ' .. ESX.GetWeaponLabel(weapon.name) .. ' $' .. weapon.price, value = weapon.name, price = weapon.price})
-
+   for i=1, #weapons, 1 do
+    table.insert(elements, {label = 'x' .. weapons[i].count .. ' ' .. ESX.GetWeaponLabel(weapons[i].name) .. ' $' .. weapons[i].price, value = weapons[i].name, price = weapons[i].price})
    end
-
    ESX.UI.Menu.Open(
     'default', GetCurrentResourceName(), 'armory_buy_weapons',
     {
@@ -686,9 +672,9 @@ local family = family
 
    -- print(json.encode(items))
 
-   local elements = {}
+  local elements = {}
 
-   for i=1, #items, 1 do
+  for i=1, #items, 1 do
     table.insert(elements, {label = 'x' .. items[i].count .. ' ' .. items[i].label, value = items[i].name})
   end
 
@@ -709,16 +695,15 @@ local family = family
         },
         function(data2, menu2)
 
-           local count = tonumber(data2.value)
+          local count = tonumber(data2.value)
 
-           if count == nil then
+          if count == nil then
             ESX.ShowNotification(_U('quantity_invalid'))
           else
             menu2.close()
             menu.close()
             OpenGetStocksMenu(family)
-
-             TriggerServerEvent('irrp_familiesprop:getStockItem', itemName, count)
+            TriggerServerEvent('irrp_families:getStockItem', family, itemName, count)
           end
 
          end,
@@ -737,8 +722,8 @@ local family = family
 
 end
 
-function OpenPutStocksMenu(family)
-local family = family
+function OpenPutStocksMenu(station)
+local family = station
 
  ESX.TriggerServerCallback('irrp_familiesprop:getPlayerInventory', function(inventory)
 
@@ -771,16 +756,16 @@ local family = family
         },
         function(data2, menu2)
 
-           local count = tonumber(data2.value)
+          local count = tonumber(data2.value)
 
-           if count == nil then
+          if count == nil then
             ESX.ShowNotification(_U('quantity_invalid'))
           else
             menu2.close()
             menu.close()
-            OpenPutStocksMenu(family)
 
-             TriggerServerEvent('irrp_families:putStockItems', family, itemName, count)
+            TriggerServerEvent('irrp_families:putStockItems', family, itemName, count)
+            OpenPutStocksMenu(station)
           end
 
          end,

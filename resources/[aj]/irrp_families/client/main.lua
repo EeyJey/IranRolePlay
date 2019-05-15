@@ -92,7 +92,7 @@ end
  	local defaultOptions = {
 		withdraw  = true,
 		deposit   = true,
-		wash      = true,
+		wash      = false,
 		employees = true,
 		grades    = true
 	}
