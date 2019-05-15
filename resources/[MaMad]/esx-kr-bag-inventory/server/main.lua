@@ -52,7 +52,28 @@ ESX.RegisterServerCallback('esx-kr-bag:getAllBags', function(source, cb)
     end)
 end)
 
-
+TriggerEvent('addCommand', 'hasbag', function(source, args, user)
+    MySQL.Async.fetchAll('SELECT * FROM owned_bags', {}, function(bags)
+       
+        if bags[1] ~= nil then
+            print(dump(bags))
+        else
+            print("no bag shit stuff")
+        end
+    end)
+end)
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
 ESX.RegisterServerCallback('esx-kr-bag:getBagInventory', function(source, cb, BagId)
     local src = source
     local identifier = ESX.GetPlayerFromId(src).identifier
@@ -155,7 +176,7 @@ AddEventHandler('esx-kr-bag:PickUpBag', function(id)
 
      for i=1, #xPlayers, 1 do
         TriggerClientEvent('esx-kr-bag:SetOntoPlayer', src, id)
-	TriggerClientEvent('esx:showNotification', src, 'Press ~b~[F5]~w~ to access your bag.')
+	TriggerClientEvent('esx:showNotification', src, 'Press ~b~M~w~ to access your bag.')
         TriggerClientEvent('esx-kr-bag:ReSync', xPlayers[i], id)
      end
 end)

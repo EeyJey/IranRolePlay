@@ -388,14 +388,8 @@ Citizen.CreateThread(function()
     while true do
         Wait(5)
 
-        if IsControlJustReleased(0, Keys["."]) and HasBag and not IsPedInAnyVehicle(GetPlayerPed(-1), true) and not IsEntityInAir(PlayerPedId()) then -- Change F5 to the key you want to open the meny with
+        if IsControlJustReleased(0, Keys["M"]) and HasBag and not IsPedInAnyVehicle(GetPlayerPed(-1), true) and not IsEntityInAir(PlayerPedId()) then -- Change F5 to the key you want to open the meny with
             Bag()
         end
     end
-end)
-
-
-
-TriggerEvent('addCommand', 'hasbag', function(source, args, user)
-	print(HasBag)
 end)
