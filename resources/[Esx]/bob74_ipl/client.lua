@@ -275,4 +275,5 @@ Citizen.CreateThread(function()
 			-- RequestIpl("imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_")
 			-- RequestIpl("imp_impexp_interior_placement_interior_2_imptexp_mod_int_01_milo_")
 			
+
 end)
