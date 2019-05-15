@@ -2,12 +2,12 @@ ESX = nil
 local Families = {}
 local RegisteredFamilies = {
 	{
-	name      = 'Daltons',
-	label     = 'family',
-	account   = 'family_daltons',
-	datastore = 'family_daltons',
-	inventory = 'family_daltons',
-	data      = 'family_daltons',
+		name      = 'Daltons',
+		label     = 'family',
+		account   = 'family_daltons',
+		datastore = 'family_daltons',
+		inventory = 'family_daltons',
+		data      = 'family_daltons',
 	},
 	{
 		name      = 'LA-FUENTE',
@@ -16,7 +16,15 @@ local RegisteredFamilies = {
 		datastore = 'family_LA-FUENTE',
 		inventory = 'family_LA-FUENTE',
 		data      = 'family_LA-FUENTE',
-		},
+	},
+	{
+		name      = 'Arazel',
+		label     = 'family',
+		account   = 'family_arazel',
+		datastore = 'family_arazel',
+		inventory = 'family_arazel',
+		data      = 'family_arazel',
+	},
 }
 
  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
