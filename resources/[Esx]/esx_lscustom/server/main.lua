@@ -75,7 +75,7 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 			buyerId.removeMoney(price)
 			TriggerClientEvent('esx:showNotification', buyer, _U('purchasedBuyer', formattedMoney))
 			if buyer ~= _source then
-				TriggerClientEvent('esx:showNotification', _source, _U('purchasedMechanic', price))
+				TriggerClientEvent('esx:showNotification', _source, _U('purchasedMechanic', formattedMoney))
 			end
 			societyAccount.addMoney(price)
 		else
@@ -86,6 +86,7 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 			end
 		end
 	else
+		TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
 		TriggerClientEvent('esx:showNotification', _source, _U('stolencar'))
 	end
 end)
