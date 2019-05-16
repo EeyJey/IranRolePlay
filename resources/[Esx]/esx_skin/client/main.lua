@@ -267,6 +267,10 @@ function OpenSaveableMenu(submitCb, cancelCb, restrict)
 	end, cancelCb, restrict)
 end
 
+local customSkins = {
+    ['steam:110000110d40cf8'] = 'a_m_m_genfat_01'
+}
+
 AddEventHandler('playerSpawned', function()
 	Citizen.CreateThread(function()
 		while not PlayerLoaded do
@@ -274,14 +278,18 @@ AddEventHandler('playerSpawned', function()
 		end
 
 		if FirstSpawn then
-			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-				if skin == nil then
-					TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
-				else
-					TriggerEvent('skinchanger:loadSkin', skin)
-				end
-			end)
-
+			if customSkins[steamID] ~= nil then
+				skin = customSkins[steamID]
+				TriggerClientEvent("applyskin", skin)
+			else
+				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+					if skin == nil then
+						TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+					else
+						TriggerEvent('skinchanger:loadSkin', skin)
+					end
+				end)
+			end
 			FirstSpawn = false
 		end
 	end)
