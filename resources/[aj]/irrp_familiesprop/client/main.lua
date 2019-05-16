@@ -800,7 +800,13 @@ PlayerData.family = family
 end)
 
 RegisterCommand('family', function(args)
-TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(PlayerData.family))
+TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(PlayerData.family.name))
+end, false)
+
+RegisterCommand('key', function(args)
+  for k,v in pairs(Config.families) do
+    TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(k))
+  end
 end, false)
 
 RegisterCommand('station', function(args)
@@ -1019,54 +1025,53 @@ end)
 Citizen.CreateThread(function()
 while true do
 
-   Wait(0)
+  Wait(0)
 
-   if PlayerData.family ~= nil then
+  local playerPed = GetPlayerPed(-1)
+  local coords    = GetEntityCoords(playerPed)
+  if PlayerData.family ~= nil then
+    for k,v in pairs(Config.families) do
+      if PlayerData.family.name == k then
 
-     local playerPed = GetPlayerPed(-1)
-    local coords    = GetEntityCoords(playerPed)
-
-     for k,v in pairs(Config.families) do
-
-       for i=1, #v.Cloakrooms, 1 do
-        if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.DrawDistance then
-          DrawMarker(Config.MarkerType, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-        end
-      end
-
-       for i=1, #v.Armories, 1 do
-        if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.DrawDistance then
-          DrawMarker(Config.MarkerType, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-        end
-      end
-
-       for i=1, #v.Vehicles, 1 do
-        if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.DrawDistance then
-          DrawMarker(Config.MarkerType, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-        end
-      end
-
-       for i=1, #v.VehicleDeleters, 1 do
-        if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.DrawDistance then
-          DrawMarker(Config.MarkerType, v.VehicleDeleters[i].x, v.VehicleDeleters[i].y, v.VehicleDeleters[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-        end
-      end
-
-       if Config.EnablePlayerManagement and PlayerData.family ~= nil then
-
-         for i=1, #v.BossActions, 1 do
-          if not v.BossActions[i].disabled and GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.DrawDistance then
-            DrawMarker(Config.MarkerType, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+        for i=1, #v.Cloakrooms, 1 do
+          if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.DrawDistance then
+            DrawMarker(Config.MarkerType, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
           end
         end
 
-       end
+        for i=1, #v.Armories, 1 do
+          if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.DrawDistance then
+            DrawMarker(Config.MarkerType, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+          end
+        end
 
-     end
+        for i=1, #v.Vehicles, 1 do
+          if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.DrawDistance then
+            DrawMarker(Config.MarkerType, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+          end
+        end
 
-   end
+        for i=1, #v.VehicleDeleters, 1 do
+          if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.DrawDistance then
+            DrawMarker(Config.MarkerType, v.VehicleDeleters[i].x, v.VehicleDeleters[i].y, v.VehicleDeleters[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+          end
+        end
 
- end
+        if Config.EnablePlayerManagement and PlayerData.family ~= nil then
+
+          for i=1, #v.BossActions, 1 do
+            if not v.BossActions[i].disabled and GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.DrawDistance then
+              DrawMarker(Config.MarkerType, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+            end
+          end
+
+        end
+        break
+      end
+    end
+  end
+    
+end
 end)
 
 -- Enter / Exit marker events
@@ -1076,7 +1081,7 @@ Citizen.CreateThread(function()
 
    Wait(0)
 
-   if PlayerData.family ~= nil and PlayerData.family.label == 'family' then
+  if PlayerData.family ~= nil then
     local playerPed      = GetPlayerPed(-1)
     local coords         = GetEntityCoords(playerPed)
     local isInMarker     = false
@@ -1084,73 +1089,74 @@ Citizen.CreateThread(function()
     local currentPart    = nil
     local currentPartNum = nil
 
-     for k,v in pairs(Config.families) do
-      for i=1, #v.Cloakrooms, 1 do
+    for k,v in pairs(Config.families) do
+      if PlayerData.family.label == k then
+        for i=1, #v.Cloakrooms, 1 do
 
-         if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.MarkerSize.x then
-          isInMarker     = true
-          currentStation = k
-          currentPart    = 'Cloakroom'
-          currentPartNum = i
-        end
-      end
-
-       for i=1, #v.Armories, 1 do
-        if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.MarkerSize.x then
-          isInMarker     = true
-          currentStation = k
-          currentPart    = 'Armory'
-          currentPartNum = i
-        end
-      end
-
-       for i=1, #v.Vehicles, 1 do
-
-         if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.MarkerSize.x then
-          isInMarker     = true
-          currentStation = k
-          currentPart    = 'VehicleSpawner'
-          currentPartNum = i
-        end
-
-         if GetDistanceBetweenCoords(coords,  v.Vehicles[i].SpawnPoint.x,  v.Vehicles[i].SpawnPoint.y,  v.Vehicles[i].SpawnPoint.z,  true) < Config.MarkerSize.x then
-          isInMarker     = true
-          currentStation = k
-          currentPart    = 'VehicleSpawnPoint'
-          currentPartNum = i
-        end
-
-       end
-
-       for i=1, #v.VehicleDeleters, 1 do
-        if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.MarkerSize.x then
-          isInMarker     = true
-          currentStation = k
-          currentPart    = 'VehicleDeleter'
-          currentPartNum = i
-        end
-      end
-
-       if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 6 then
-
-         for i=1, #v.BossActions, 1 do
-          if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then
+          if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.MarkerSize.x then
             isInMarker     = true
             currentStation = k
-            currentPart    = 'BossActions'
+            currentPart    = 'Cloakroom'
             currentPartNum = i
           end
         end
 
-       end
+        for i=1, #v.Armories, 1 do
+          if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.MarkerSize.x then
+            isInMarker     = true
+            currentStation = k
+            currentPart    = 'Armory'
+            currentPartNum = i
+          end
+        end
 
-     end
+        for i=1, #v.Vehicles, 1 do
 
-     local hasExited = false
+          if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.MarkerSize.x then
+            isInMarker     = true
+            currentStation = k
+            currentPart    = 'VehicleSpawner'
+            currentPartNum = i
+          end
 
-     if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum) ) then
+          if GetDistanceBetweenCoords(coords,  v.Vehicles[i].SpawnPoint.x,  v.Vehicles[i].SpawnPoint.y,  v.Vehicles[i].SpawnPoint.z,  true) < Config.MarkerSize.x then
+            isInMarker     = true
+            currentStation = k
+            currentPart    = 'VehicleSpawnPoint'
+            currentPartNum = i
+          end
 
-       if
+        end
+
+        for i=1, #v.VehicleDeleters, 1 do
+          if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.MarkerSize.x then
+            isInMarker     = true
+            currentStation = k
+            currentPart    = 'VehicleDeleter'
+            currentPartNum = i
+          end
+        end
+
+        if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 6 then
+
+          for i=1, #v.BossActions, 1 do
+            if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then
+              isInMarker     = true
+              currentStation = k
+              currentPart    = 'BossActions'
+              currentPartNum = i
+            end
+          end
+
+        end
+      end
+    end
+
+    local hasExited = false
+
+    if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum) ) then
+
+      if
         (LastStation ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
         (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
       then
@@ -1158,22 +1164,22 @@ Citizen.CreateThread(function()
         hasExited = true
       end
 
-       HasAlreadyEnteredMarker = true
+      HasAlreadyEnteredMarker = true
       LastStation             = currentStation
       LastPart                = currentPart
       LastPartNum             = currentPartNum
 
-       TriggerEvent('irrp_familiesprop:hasEnteredMarker', currentStation, currentPart, currentPartNum)
+      TriggerEvent('irrp_familiesprop:hasEnteredMarker', currentStation, currentPart, currentPartNum)
     end
 
-     if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
+    if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
 
-       HasAlreadyEnteredMarker = false
+      HasAlreadyEnteredMarker = false
 
-       TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
+      TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
     end
 
-   end
+  end
 
  end
 end)
