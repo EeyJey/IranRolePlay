@@ -11,3 +11,10 @@ AddEventHandler('applyskin', function(skin)
         SetPedComponentVariation(GetPlayerPed(-1), 0, 0, 0, 2)
     end)
 end)
+
+
+TriggerEvent('es:addCommand', 'rchar', function(source)
+    ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+        TriggerEvent('skinchanger:loadSkin', skin)
+    end)
+end)
