@@ -1,7 +1,7 @@
 local skins = {
     ['steam:110000110d40cf8'] = 'a_m_m_genfat_01',
     ['steam:11000010a1b83df'] = 'a_m_o_acult_01',
-    ['steam:110000118eae7af'] = 'g_m_m_armlieut_01'
+    ['steam:110000118eae7af'] = ' a_c_mtlion'
 }
 
 RegisterServerEvent('modelpedspawn')
