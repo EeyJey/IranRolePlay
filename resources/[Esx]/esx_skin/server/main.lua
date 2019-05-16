@@ -39,6 +39,7 @@ AddEventHandler('esx_skin:responseSaveSkin', function(skin)
 
 end)
 
+
 ESX.RegisterServerCallback('esx_skin:getPlayerSkin', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 

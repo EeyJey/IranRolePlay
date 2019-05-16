@@ -322,7 +322,7 @@ AddEventHandler('skinchanger:loadSkin', function(skin, cb)
     end
 
   end
-
+  ApplySkin(skin)
   LastSex = skin['sex']
 
 end)
