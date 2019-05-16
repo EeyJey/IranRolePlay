@@ -28,6 +28,5 @@ AddEventHandler('resetchar', function(skin)
                 print("reseting2")
                     TriggerEvent('skinchanger:loadSkin', skin)
             end)
-		end
 	end)
 end)
