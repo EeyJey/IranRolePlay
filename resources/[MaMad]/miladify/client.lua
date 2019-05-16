@@ -20,11 +20,8 @@ end)
 
 RegisterNetEvent('resetchar')
 AddEventHandler('resetchar', function()
-    print("reseting1")
-
 	Citizen.CreateThread(function()
             ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-                print("reseting2 "..skin)
                     TriggerEvent('skinchanger:loadSkin', skin)
             end)
 	end)
