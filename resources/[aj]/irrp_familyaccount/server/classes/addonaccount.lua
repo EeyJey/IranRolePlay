@@ -31,9 +31,9 @@ function CreateFamilyAccount(name, owner, money)
 
 	self.save = function()
 		if self.owner == nil then
-			MySQL.Async.execute('UPDATE family_account_data SET money = @money WHERE account_name = @account_name',
+			MySQL.Async.execute('UPDATE family_account_data SET money = @money WHERE family_name = @family_name',
 			{
-				['@account_name'] = self.name,
+				['@family_name'] = self.name,
 				['@money']        = self.money
 			})
 		end

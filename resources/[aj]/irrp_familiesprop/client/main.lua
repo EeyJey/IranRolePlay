@@ -838,20 +838,20 @@ end
 
  if part == 'VehicleDeleter' then
 
-   local playerPed = GetPlayerPed(-1)
+  local playerPed = GetPlayerPed(-1)
   local coords    = GetEntityCoords(playerPed)
 
-   if IsPedInAnyVehicle(playerPed,  false) then
+  if IsPedInAnyVehicle(playerPed,  false) then
 
-     local vehicle = GetVehiclePedIsIn(playerPed, false)
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
 
-     if DoesEntityExist(vehicle) then
+    if DoesEntityExist(vehicle) then
       CurrentAction     = 'delete_vehicle'
       CurrentActionMsg  = _U('store_vehicle')
       CurrentActionData = {vehicle = vehicle, station = station, partNum = partNum}
     end
 
-   end
+  end
 
  end
 
@@ -1187,24 +1187,18 @@ while true do
 
    if CurrentAction ~= nil then
 
-     SetTextComponentFormat('STRING')
+    SetTextComponentFormat('STRING')
     AddTextComponentString(CurrentActionMsg)
     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
-     if IsControlPressed(0,  Keys['E']) and PlayerData.family ~= nil and PlayerData.family.name == CurrentActionData.station and (GetGameTimer() - GUI.Time) > 150 then
+     if IsControlPressed(0,  Keys['E']) and PlayerData.family ~= nil and PlayerData.family.name == CurrentActionData.station and (GetGameTimer() - GUI.Time) > 150 and PlayerData.family.grade > 1 then
       if CurrentAction == 'menu_cloakroom' then
         OpenCloakroomMenu()
-      end
-
-       if CurrentAction == 'menu_armory' then
+      elseif CurrentAction == 'menu_armory' then
         OpenArmoryMenu(CurrentActionData.station)
-      end
-
-       if CurrentAction == 'menu_vehicle_spawner' then
+      elseif CurrentAction == 'menu_vehicle_spawner' then
         OpenVehicleSpawnerMenu(CurrentActionData.station, CurrentActionData.partNum)
-      end
-
-       if CurrentAction == 'delete_vehicle' then
+      elseif CurrentAction == 'delete_vehicle' then
 
          -- if Config.EnableSocietyOwnedVehicles then
 
@@ -1224,20 +1218,18 @@ while true do
 
          -- end
 
-         -- ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
+        ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
 
-         local station = CurrentActionData.station
-        local vehicles = Config.families[station].AuthorizedVehicles
-        local vehicle = GetEntityModel(vehicle)
-        for i=1, #vehicles, 1 do
-          if vehicle == GetHashKey(vehicles.name) then
-            ESX.Game.DeleteVehicle(vehicle)
-          end
-        end
+        -- local station = CurrentActionData.station
+        -- local vehicles = Config.families[station].AuthorizedVehicles
+        -- local vehicle = GetEntityModel(CurrentActionData.vehicle)
+        -- for i=1, #vehicles, 1 do
+        --   if vehicle == GetHashKey(vehicles.name) then
+        --   ESX.Game.DeleteVehicle(CurrentActionData.vehicle)
+        --   end
+        -- end
 
-       end
-
-       if CurrentAction == 'menu_boss_actions' then
+      elseif CurrentAction == 'menu_boss_actions' then
 
          ESX.UI.Menu.CloseAll()
 

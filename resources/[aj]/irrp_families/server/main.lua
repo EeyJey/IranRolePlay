@@ -78,19 +78,18 @@ end)
 	end
 end)
 
- AddEventHandler('irrp_families:getFamilies', function(cb)
+AddEventHandler('irrp_families:getFamilies', function(cb)
 	cb(RegisteredSocieties)
 end)
 
- AddEventHandler('irrp_families:getFamily', function(name, cb)
+AddEventHandler('irrp_families:getFamily', function(name, cb)
 	cb(GetFamily(name))
 end)
 
- RegisterServerEvent('irrp_families:withdrawMoney')
+RegisterServerEvent('irrp_families:withdrawMoney')
 AddEventHandler('irrp_families:withdrawMoney', function(familyname, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local family = GetFamily(familyname)
-	print(ESX.DumpTable(family))
 	amount = ESX.Math.Round(tonumber(amount))
 
  	if xPlayer.family.name ~= family.name then
@@ -98,7 +97,7 @@ AddEventHandler('irrp_families:withdrawMoney', function(familyname, amount)
 		return
 	end
 
- 	TriggerEvent('irrp_familyaccount:getSharedAccount', family.account, function(account)
+ 	TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
 		if amount > 0 and account.money >= amount then
 			account.removeMoney(amount)
 			xPlayer.addMoney(amount)
@@ -122,7 +121,7 @@ AddEventHandler('irrp_families:depositMoney', function(family, amount)
 	end
 
  	if amount > 0 and xPlayer.getMoney() >= amount then
-		TriggerEvent('irrp_familyaccount:getSharedAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
 			xPlayer.removeMoney(amount)
 			account.addMoney(amount)
 		end)
@@ -217,7 +216,7 @@ AddEventHandler('irrp_families:washMoney', function(family, amount)
 
  end)
 
- RegisterServerEvent('irrp_families:putVehicleInGarage')
+RegisterServerEvent('irrp_families:putVehicleInGarage')
 AddEventHandler('irrp_families:putVehicleInGarage', function(familyName, vehicle)
 	local family = GetFamily(familyName)
 
@@ -229,7 +228,7 @@ AddEventHandler('irrp_families:putVehicleInGarage', function(familyName, vehicle
 	end)
 end)
 
- RegisterServerEvent('irrp_families:removeVehicleFromGarage')
+RegisterServerEvent('irrp_families:removeVehicleFromGarage')
 AddEventHandler('irrp_families:removeVehicleFromGarage', function(familyName, vehicle)
 	local family = GetFamily(familyName)
 
@@ -247,11 +246,11 @@ AddEventHandler('irrp_families:removeVehicleFromGarage', function(familyName, ve
 	end)
 end)
 
- ESX.RegisterServerCallback('irrp_families:getFamilyMoney', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getFamilyMoney', function(source, cb, family)
 	local family = GetFamily(family)
 
  	if family then
-		TriggerEvent('irrp_familyaccount:getSharedAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
 			cb(account.money)
 		end)
 	else
@@ -259,7 +258,7 @@ end)
 	end
 end)
 
- ESX.RegisterServerCallback('irrp_families:getArmoryWeapons', function(source, cb, family)
+ESX.RegisterServerCallback('irrp_families:getArmoryWeapons', function(source, cb, family)
 	local family = GetFamily(family)
 
  	if family then
@@ -371,25 +370,22 @@ end)
 
    end)
 
-   ESX.RegisterServerCallback('irrp_families:buy', function(source, cb, amount, station)
-	local family = GetFamily(station)
-  local xPlayer = ESX.GetPlayerFromId(source)
-	if xPlayer.family.name ~= family.name then
-		print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
-		return
-	end
-    TriggerEvent('irrp_familyaccount:getSharedAccount', family.account, function(account)
-
-       if account.money >= amount then
-        account.removeMoney(amount)
-        cb(true)
-      else
-        cb(false)
-      end
-
-     end)
-
-   end)
+  ESX.RegisterServerCallback('irrp_families:buy', function(source, cb, amount, station)
+		local family = GetFamily(station)
+		local xPlayer = ESX.GetPlayerFromId(source)
+		if xPlayer.family.name ~= family.name then
+			print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
+			return
+		end
+		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+    if account.money >= amount then
+      account.removeMoney(amount)
+      cb(true)
+    else
+      cb(false)
+    end
+		end)
+  end)
 
   ESX.RegisterServerCallback('irrp_families:getStockItems', function(source, cb, station)
 	local family = GetFamily(station)
@@ -589,7 +585,7 @@ end
 			local xPlayer = ESX.GetPlayerFromIdentifier(result[i].identifier)
 
  			-- add family money
-			TriggerEvent('irrp_familyaccount:getSharedAccount', family.account, function(account)
+			TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
 				account.addMoney(result[i].amount)
 			end)
 
