@@ -23,6 +23,11 @@ Config.families = {
         { name = 'Granger',   label = '4X4' },
         { name = 'sultan',      label = 'Sultan' },
       },
+      VehicleProp = {
+        color2            = 120,
+        color1            = 120,
+        pearlescentColor  = 80,
+      },
       Cloakrooms = {
         { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
       },
@@ -51,6 +56,11 @@ Config.families = {
         { name = 'Contender',  label = 'Contender' },
         { name = 'Schafter3',    label = 'Schafter' },
         { name = 'CarbonRS',   label = 'CarbonRS' },
+      },
+      VehicleProp = {
+        color2            = 126,
+        color1            = 126,
+        pearlescentColor  = 88,
       },
       Cloakrooms = {
         { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563},
@@ -82,6 +92,11 @@ Config.families = {
         { name = 'btype3',   label = 'btype' },
         { name = 'ztype',      label = 'ztype' },
         { name = 'dubsta3',      label = 'dubsta' },
+      },
+      VehicleProp = {
+        color2            = 90,
+        color1            = 90,
+        pearlescentColor  = 70,
       },
       Cloakrooms = {
         { x = 1407.1309, y = 1153.2783, z = 113.4430},

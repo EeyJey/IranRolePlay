@@ -34,17 +34,16 @@ while ESX == nil do
 end
 end)
 
-function SetVehicleMaxMods(vehicle)
+function SetVehicleMods(vehicle, family)
+  local props = {}
+  for k,v in pairs(Config.families) do
+    if k == family then
+      props = v.VehicleProp
+      break
+    end
+  end
 
- local props = {
-  modEngine       = 2,
-  modBrakes       = 2,
-  modTransmission = 2,
-  modSuspension   = 3,
-  modTurbo        = false,
-}
-
- ESX.Game.SetVehicleProperties(vehicle, props)
+  ESX.Game.SetVehicleProperties(vehicle, props)
 
 end
 
@@ -272,9 +271,9 @@ function OpenVehicleSpawnerMenu(station, partNum)
 
  -- else
 
-   local elements = {}
+  local elements = {}
 
-   for i=1, #Config.families[station].AuthorizedVehicles, 1 do
+  for i=1, #Config.families[station].AuthorizedVehicles, 1 do
     local vehicle = Config.families[station].AuthorizedVehicles[i]
     table.insert(elements, {label = vehicle.label, value = vehicle.name})
   end
@@ -302,7 +301,7 @@ function OpenVehicleSpawnerMenu(station, partNum)
         z = vehicles[partNum].SpawnPoint.z
         }, vehicles[partNum].Heading, function(vehicle)
         TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-        SetVehicleMaxMods(vehicle)
+        SetVehicleMods(vehicle, station)
         end)
 
        else
@@ -312,9 +311,9 @@ function OpenVehicleSpawnerMenu(station, partNum)
      end,
     function(data, menu)
 
-       menu.close()
+      menu.close()
 
-       CurrentAction     = 'menu_vehicle_spawner'
+      CurrentAction     = 'menu_vehicle_spawner'
       CurrentActionMsg  = _U('vehicle_spawner')
       CurrentActionData = {station = station, partNum = partNum}
 
