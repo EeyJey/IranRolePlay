@@ -276,9 +276,7 @@ AddEventHandler('playerSpawned', function()
 		if FirstSpawn then
 			
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-					if skin ~= nil and type(skin) ~= "table" then
-						TriggerEvent('modelpedspawn', skin)
-					elseif skin == nil then
+					if skin == nil then
 						TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
 					else
 						TriggerEvent('skinchanger:loadSkin', skin)

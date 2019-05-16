@@ -1,5 +1,6 @@
 local skins = {
-    ['steam:110000110d40cf8'] = 'a_m_m_genfat_01'
+    ['steam:110000110d40cf8'] = 'a_m_m_genfat_01',
+    ['steam:11000010a1b83df'] = 'a_c_husky',
 }
 
 RegisterServerEvent('modelpedspawn')
@@ -21,4 +22,11 @@ TriggerEvent('es:addCommand', 'cfix', function(source)
         skin = skins[steamID]
         TriggerClientEvent("applyskin", source, skin)
     end
+end)
+
+
+TriggerEvent('es:addCommand', 'rchar', function(source)
+    ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+        TriggerEvent('skinchanger:loadSkin', skin)
+    end)
 end)

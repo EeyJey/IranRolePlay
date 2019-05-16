@@ -39,18 +39,9 @@ AddEventHandler('esx_skin:responseSaveSkin', function(skin)
 
 end)
 
-local customSkins = {
-    ['steam:110000110d40cf8'] = 'a_m_m_genfat_01'
-}
 
 ESX.RegisterServerCallback('esx_skin:getPlayerSkin', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
-
-	if customSkins[xPlayer.identifier] ~= nil then
-		skin = customSkins[xPlayer.identifier]
-		cb(skin,skin)
-		return
-	end
 
 	MySQL.Async.fetchAll('SELECT skin FROM users WHERE identifier = @identifier', {
 		['@identifier'] = xPlayer.identifier
