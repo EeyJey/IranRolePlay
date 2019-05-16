@@ -1191,10 +1191,10 @@ while true do
     AddTextComponentString(CurrentActionMsg)
     DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
-     if IsControlPressed(0,  Keys['E']) and PlayerData.family ~= nil and PlayerData.family.name == CurrentActionData.station and (GetGameTimer() - GUI.Time) > 150 and PlayerData.family.grade > 1 then
+     if IsControlPressed(0,  Keys['E']) and PlayerData.family ~= nil and PlayerData.family.name == CurrentActionData.station and (GetGameTimer() - GUI.Time) > 150 then
       if CurrentAction == 'menu_cloakroom' then
         OpenCloakroomMenu()
-      elseif CurrentAction == 'menu_armory' then
+      elseif CurrentAction == 'menu_armory' and PlayerData.family.grade > 1 then
         OpenArmoryMenu(CurrentActionData.station)
       elseif CurrentAction == 'menu_vehicle_spawner' then
         OpenVehicleSpawnerMenu(CurrentActionData.station, CurrentActionData.partNum)
