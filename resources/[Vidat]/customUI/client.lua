@@ -44,6 +44,8 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 	-- Job
 	local job = PlayerData.job
 	SendNUIMessage({action = "setValue", key = "job", value = job.label.." - "..job.grade_label, icon = job.name})
+	local family = PlayerData.family
+	SendNUIMessage({action = "setValue", key = "family", value = family.label.." - "..family.grade_label, icon = "family"})
 
 	-- Money
 	SendNUIMessage({action = "setValue", key = "money", value = "$"..PlayerData.money})
