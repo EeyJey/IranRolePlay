@@ -20,7 +20,7 @@ end)
 
 
 RegisterNetEvent('resetchar')
-AddEventHandler('resetchar', function(skin)
+AddEventHandler('resetchar', function()
     print("reseting1")
 
 	Citizen.CreateThread(function()
