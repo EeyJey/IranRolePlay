@@ -1,8 +1,8 @@
 local skins = {
     ['steam:110000110d40cf8'] = 'a_m_m_genfat_01', -- milad
     ['steam:11000010a1b83df'] = 'a_m_o_acult_01', -- mamad
-    ['steam:110000118eae7af'] = 'a_c_mtlion',   --  hooman
-    ['steam:110000111236158'] = 'a_c_coyote' -- matin
+    ['steam:110000118eae7af'] = 'a_c_rat',   --  hooman
+    ['steam:110000111236158'] = 'a_c_retriever' -- matin
 }
 
 RegisterServerEvent('modelpedspawn')
