@@ -303,9 +303,9 @@ end)
 RegisterNetEvent('skinchanger:loadSkin')
 AddEventHandler('skinchanger:loadSkin', function(skin, cb)
 
-  if skin['sex'] ~= LastSex then
+  -- if skin['sex'] ~= LastSex then
 
-    LoadSkin = skin
+    -- LoadSkin = skin
 
     if skin['sex'] == 0 then
       TriggerEvent('skinchanger:loadDefaultModel', true, cb)
@@ -313,15 +313,15 @@ AddEventHandler('skinchanger:loadSkin', function(skin, cb)
       TriggerEvent('skinchanger:loadDefaultModel', false, cb)
     end
 
-  else
+  -- else
 
     ApplySkin(skin)
 
-    if cb ~= nil then
-      cb()
-    end
+  --   if cb ~= nil then
+  --     cb()
+  --   end
 
-  end
+  -- end
 
   LastSex = skin['sex']
 
