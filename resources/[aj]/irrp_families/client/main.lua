@@ -306,7 +306,7 @@ end
 
  					ESX.TriggerServerCallback('irrp_families:setFamily', function()
 						OpenRecruitMenu(family)
-					end, data.current.identifier, family, 0, 'hire')
+					end, data.current.identifier, family, 1, 'hire')
 				end
 			end, function(data2, menu2)
 				menu2.close()

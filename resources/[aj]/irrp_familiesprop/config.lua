@@ -49,7 +49,7 @@ Config.families = {
       },
       AuthorizedVehicles = {
         { name = 'Contender',  label = 'Contender' },
-        { name = 'Schafter',    label = 'Schafter3' },
+        { name = 'Schafter3',    label = 'Schafter' },
         { name = 'CarbonRS',   label = 'CarbonRS' },
       },
       Cloakrooms = {
