@@ -57,6 +57,7 @@ files {
 	'html/img/hunger.png',
 	'html/img/water.png',
 	'html/img/drunk.png',
+	'html/img/family.png',
 	'html/img/speaker1.png',
 	'html/img/speaker2.png',
 	'html/img/speaker3.png',
