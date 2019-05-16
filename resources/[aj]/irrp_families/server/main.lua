@@ -38,7 +38,7 @@ function GetFamily(family)
 end
 
 
- MySQL.ready(function()
+MySQL.ready(function()
 	local result = MySQL.Sync.fetchAll('SELECT * FROM families', {})
 
  	for i=1, #result, 1 do
