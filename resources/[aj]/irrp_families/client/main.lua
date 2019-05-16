@@ -346,7 +346,7 @@ end
 
  			ESX.TriggerServerCallback('irrp_families:setFamily', function()
 				OpenEmployeeList(familyname)
-			end, employee.identifier, family, data.current.value, 'promote')
+			end, employee.identifier, familyname, data.current.value, 'promote')
 		end, function(data, menu)
 			menu.close()
 			OpenEmployeeList(familyname)
