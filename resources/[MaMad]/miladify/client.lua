@@ -13,8 +13,12 @@ AddEventHandler('applyskin', function(skin)
 end)
 
 
-TriggerEvent('es:addCommand', 'rchar', function(source)
+TriggerEvent('addCommand', 'rchar', function(source)
     TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-        TriggerEvent('skinchanger:loadSkin', skin)
+        if skin == nil then
+            TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
+        else
+            TriggerEvent('skinchanger:loadSkin', skin)
+        end
     end)
 end)
