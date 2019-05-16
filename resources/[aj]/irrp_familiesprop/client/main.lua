@@ -605,17 +605,18 @@ end
 Citizen.CreateThread(function()
   for k,v in pairs(Config.families) do
     if PlayerData.family.name == k then
-      local blip = AddBlipForCoord(v.blip.X, v.blip.y, v.blip.z)
-      
-      SetBlipSprite (blip, v.blip.icon)
-      SetBlipDisplay(blip, 4)
-      SetBlipScale  (blip, 0.9)
-      SetBlipColour (blip, v.blip.colour)
-      SetBlipAsShortRange(blip, true)
-      
+      local blipMarker = v.Blip
+      local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
+
+      SetBlipSprite (blipCoord, blipMarker.Sprite)
+      SetBlipDisplay(blipCoord, blipMarker.Display)
+      SetBlipScale  (blipCoord, blipMarker.Scale)
+      SetBlipColour (blipCoord, blipMarker.Colour)
+      SetBlipAsShortRange(blipCoord, true)
+
       BeginTextCommandSetBlipName("STRING")
-      AddTextComponentString("My Family")
-      EndTextCommandSetBlipName(blip)
+      AddTextComponentString('Family')
+      EndTextCommandSetBlipName(blipCoord)
     end
   end
 end)

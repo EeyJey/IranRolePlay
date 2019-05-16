@@ -1013,24 +1013,24 @@ AddEventHandler('esx_phone:loaded', function(phoneNumber, contacts)
   TriggerEvent('esx_phone:addSpecialContact', specialContact.name, specialContact.number, specialContact.base64Icon)
 end)
 
--- Create blips
-Citizen.CreateThread(function()
+-- -- Create blips
+-- Citizen.CreateThread(function()
 
-    local blipMarker = Config.Blips.Blip
-    local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
+--     local blipMarker = Config.Blips.Blip
+--     local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
 
-    SetBlipSprite (blipCoord, blipMarker.Sprite)
-    SetBlipDisplay(blipCoord, blipMarker.Display)
-    SetBlipScale  (blipCoord, blipMarker.Scale)
-    SetBlipColour (blipCoord, blipMarker.Colour)
-    SetBlipAsShortRange(blipCoord, true)
+--     SetBlipSprite (blipCoord, blipMarker.Sprite)
+--     SetBlipDisplay(blipCoord, blipMarker.Display)
+--     SetBlipScale  (blipCoord, blipMarker.Scale)
+--     SetBlipColour (blipCoord, blipMarker.Colour)
+--     SetBlipAsShortRange(blipCoord, true)
 
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString(_U('map_blip'))
-    EndTextCommandSetBlipName(blipCoord)
+--     BeginTextCommandSetBlipName("STRING")
+--     AddTextComponentString(_U('map_blip'))
+--     EndTextCommandSetBlipName(blipCoord)
 
 
-end)
+-- end)
 
 -- Display markers
 Citizen.CreateThread(function()

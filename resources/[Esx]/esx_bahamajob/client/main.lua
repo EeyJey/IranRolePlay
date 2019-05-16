@@ -278,22 +278,22 @@ AddEventHandler('esx_bahamajob:hasExitedMarker', function(zone)
 	TriggerServerEvent('esx_bahamajob:stopCraft4')
 end)
 
--- -- Create blips
--- Citizen.CreateThread(function()
+-- Create blips
+Citizen.CreateThread(function()
 
---  local blip = AddBlipForCoord(Config.Zones.Bahama.Pos.x, Config.Zones.Bahama.Pos.y, Config.Zones.Bahama.Pos.z)
+ local blip = AddBlipForCoord(Config.Zones.Bahama.Pos.x, Config.Zones.Bahama.Pos.y, Config.Zones.Bahama.Pos.z)
   
---   SetBlipSprite (blip, 121)
---   SetBlipDisplay(blip, 4)
---   SetBlipScale  (blip, 0.9)
---   SetBlipColour (blip, 4)
---   SetBlipAsShortRange(blip, true)
+  SetBlipSprite (blip, 121)
+  SetBlipDisplay(blip, 4)
+  SetBlipScale  (blip, 0.9)
+  SetBlipColour (blip, 4)
+  SetBlipAsShortRange(blip, true)
   
--- 	BeginTextCommandSetBlipName("STRING")
---   AddTextComponentString("Bahama")
---   EndTextCommandSetBlipName(blip)
+	BeginTextCommandSetBlipName("STRING")
+  AddTextComponentString("Bahama")
+  EndTextCommandSetBlipName(blip)
 
--- end)
+end)
 
 -- Display markers
 Citizen.CreateThread(function()
