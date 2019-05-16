@@ -1090,7 +1090,7 @@ Citizen.CreateThread(function()
     local currentPartNum = nil
 
     for k,v in pairs(Config.families) do
-      if PlayerData.family.label == k then
+      if PlayerData.family.name == k then
         for i=1, #v.Cloakrooms, 1 do
 
           if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.MarkerSize.x then
