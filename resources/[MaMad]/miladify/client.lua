@@ -33,7 +33,11 @@ RegisterNetEvent('resetchar')
 AddEventHandler('resetchar', function()
 	Citizen.CreateThread(function()
             ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-                print(dump(skin))
+                if skin['sex'] == 0 then
+                    TriggerEvent('skinchanger:loadDefaultModel', true)
+                  else
+                    TriggerEvent('skinchanger:loadDefaultModel', false)
+                  end
                     TriggerEvent('skinchanger:loadSkin', skin)
             end)
 	end)
