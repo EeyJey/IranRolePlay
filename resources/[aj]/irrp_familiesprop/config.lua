@@ -14,6 +14,9 @@ Config.Locale                     = 'en'
 
 Config.families = {
     ['Daltons'] = {
+      blip = {
+        { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483, icon = 88 , colour = 72},
+      },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
@@ -49,6 +52,9 @@ Config.families = {
       }
     },
     ['Arazel'] = {
+      blip = {
+        { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563, icon = 88 , colour = 72},
+      },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
@@ -63,7 +69,7 @@ Config.families = {
         pearlescentColor  = 88,
       },
       Cloakrooms = {
-        { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563},
+        { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563 },
       },
       Armories = {
         { x = 8.1211709976196, y = 529.31756591797, z = 169.63500976563},
@@ -83,6 +89,9 @@ Config.families = {
       }
     },
     ['Eclipse'] = {
+      blip = {
+        { x = -1387.3055419922, y = -588.73321533203, z = 29.319526672363, icon = 206 , colour = 76},
+      },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },

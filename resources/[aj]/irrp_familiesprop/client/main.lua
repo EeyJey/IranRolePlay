@@ -599,7 +599,26 @@ local weaponList = ESX.GetWeaponList()
     table.insert(elements, {label = weaponList[i].label, value = weaponList[i].name})
   end
 
- end
+end
+
+-- Create blips
+Citizen.CreateThread(function()
+  for k,v in pairs(Config.families) do
+    if PlayerData.family.name == k then
+      local blip = AddBlipForCoord(v.blip.X, v.blip.y, v.blip.z)
+      
+      SetBlipSprite (blip, v.blip.icon)
+      SetBlipDisplay(blip, 4)
+      SetBlipScale  (blip, 0.9)
+      SetBlipColour (blip, v.blip.colour)
+      SetBlipAsShortRange(blip, true)
+      
+      BeginTextCommandSetBlipName("STRING")
+      AddTextComponentString("My Family")
+      EndTextCommandSetBlipName(blip)
+    end
+  end
+end)
 
  ESX.UI.Menu.Open(
   'default', GetCurrentResourceName(), 'armory_put_weapon',
