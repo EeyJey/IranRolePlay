@@ -1276,14 +1276,25 @@ while true do
 
    end
 
-  if IsControlPressed(0,  Keys['J']) and PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions') and (GetGameTimer() - GUI.Time) > 150 then
-   OpenGangActionsMenu()
-   GUI.Time = GetGameTimer()
-  end
 
  end
 end)
 
+RegisterCommand('fm', function(source)
+  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+   OpenGangActionsMenu()
+  end
+end, false)
+RegisterCommand('familymenu', function(source)
+  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+   OpenGangActionsMenu()
+  end
+end, false)
+
+Citizen.CreateThread(function()
+  TriggerEvent('chat:addSuggestion', '/fm', 'Menu family')
+  TriggerEvent('chat:addSuggestion', '/familymenu', 'Menu family')
+end)
 ---------------------------------------------------------------------------------------------------------
 -- NB : gestion des menu
 ---------------------------------------------------------------------------------------------------------
