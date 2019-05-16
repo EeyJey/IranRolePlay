@@ -15,11 +15,11 @@ Config.Locale                     = 'en'
 Config.families = {
     ['Daltons'] = {
       Blip = {
-        Pos     = { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
-        Sprite  = 88,
+        Pos     = { x = 129.246, y = -1299.363, z = 29.501 },
+        Sprite  = 206,
         Display = 4,
         Scale   = 1.2,
-        Colour  = 72,
+        Colour  = 76,
       },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },

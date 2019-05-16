@@ -601,26 +601,6 @@ local weaponList = ESX.GetWeaponList()
 
 end
 
--- Create blips
-Citizen.CreateThread(function()
-  for k,v in pairs(Config.families) do
-    if PlayerData.family.name == k then
-      local blipMarker = v.Blip
-      local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
-
-      SetBlipSprite (blipCoord, blipMarker.Sprite)
-      SetBlipDisplay(blipCoord, blipMarker.Display)
-      SetBlipScale  (blipCoord, blipMarker.Scale)
-      SetBlipColour (blipCoord, blipMarker.Colour)
-      SetBlipAsShortRange(blipCoord, true)
-
-      BeginTextCommandSetBlipName("STRING")
-      AddTextComponentString('Family')
-      EndTextCommandSetBlipName(blipCoord)
-    end
-  end
-end)
-
  ESX.UI.Menu.Open(
   'default', GetCurrentResourceName(), 'armory_put_weapon',
   {
@@ -828,18 +808,31 @@ RegisterCommand('key', function(args)
   end
 end, false)
 
-RegisterCommand('station', function(args)
-TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, ESX.DumpTable(CurrentActionData.station))
-end, false)
+-- -- Create blips
+-- Citizen.CreateThread(function()
+--   while PlayerData.family.name == nil then
+--     Wait(1)
+--   end
+--   TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, 'frist')
+--   for k,v in pairs(Config.families) do
+--     TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, k)
+--     if PlayerData.family.name == k then
+--       TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, 'in it')
+--       local blipMarker = v.Blip
+--       local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
 
-RegisterCommand('label', function(args)
-TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, PlayerData.family.label)
-if PlayerData.family.label == 'family' then
-  TriggerEvent('chatMessage',  "[Server]", {0, 255, 0}, 'Kiret to charkhe gosht')
-end
-end, false)
+--       SetBlipSprite (blipCoord, blipMarker.Sprite)
+--       SetBlipDisplay(blipCoord, blipMarker.Display)
+--       SetBlipScale  (blipCoord, blipMarker.Scale)
+--       SetBlipColour (blipCoord, blipMarker.Colour)
+--       SetBlipAsShortRange(blipCoord, true)
 
-
+--       BeginTextCommandSetBlipName("STRING")
+--       AddTextComponentString('Family')
+--       EndTextCommandSetBlipName(blipCoord)
+--     end
+--   end
+-- end)
 
 AddEventHandler('irrp_familiesprop:hasEnteredMarker', function(station, part, partNum)
 
