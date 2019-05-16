@@ -1,279 +1,135 @@
+
 Citizen.CreateThread(function()
+    -- ====================================================================
+    -- =--------------------- [GTA V: Single player] ---------------------=
+    -- ====================================================================
 
-	-- Simeon: -47.16170 -1115.3327 26.5
-		RequestIpl("shr_int")
+    -- Michael: -802.311, 175.056, 72.8446
+    Michael.LoadDefault()
 
-	-- Trevor: 1985.48132, 3828.76757, 32.5
-	-- Trash or Tidy. Only choose one.
-		RequestIpl("TrevorsTrailerTrash")
-		--RequestIpl("trevorstrailertidy")
-	
-	-- Heist Jewel: -637.20159 -239.16250 38.1
-		RequestIpl("post_hiest_unload")
-	
-	-- Max Renda: -585.8247, -282.72, 35.45475
-		RequestIpl("refit_unload")
-  
-	-- Heist Union Depository: 2.69689322, -667.0166, 16.1306286
-		RequestIpl("FINBANK")
+    -- Simeon: -47.16170 -1115.3327 26.5
+    Simeon.LoadDefault()
 
-	-- Morgue: 239.75195, -1360.64965, 39.53437
-		RequestIpl("Coroner_Int_on")
-		RequestIpl("coronertrash")
+    -- Franklin's aunt: -9.96562, -1438.54, 31.1015
+    FranklinAunt.LoadDefault()
 	
-	-- Cluckin Bell: -146.3837, 6161.5, 30.2062
-		RequestIpl("CS1_02_cf_onmission1")
-		RequestIpl("CS1_02_cf_onmission2")
-		RequestIpl("CS1_02_cf_onmission3")
-		RequestIpl("CS1_02_cf_onmission4")
+	-- Franklin
+    Franklin.LoadDefault()
+		
+	--Floyd: -1150.703, -1520.713, 10.633
+    Floyd.LoadDefault()
 	
-	-- Grapeseed's farm: 2447.9, 4973.4, 47.7
-		RequestIpl("farm")
-		RequestIpl("farmint")
-		RequestIpl("farm_lod")
-		RequestIpl("farm_props")
-		RequestIpl("des_farmhouse")
-	
-	-- FIB lobby: 105.4557, -745.4835, 44.7548
-		RequestIpl("FIBlobby")
-	
-	-- Billboard: iFruit
-		RequestIpl("FruitBB")
-		RequestIpl("sc1_01_newbill")
-		RequestIpl("hw1_02_newbill")
-		RequestIpl("hw1_emissive_newbill")
-		RequestIpl("sc1_14_newbill")
-		RequestIpl("dt1_17_newbill")
+    -- Trevor: 1985.48132, 3828.76757, 32.5
+    TrevorsTrailer.LoadDefault()
 
-	-- Lester's factory: 716.84, -962.05, 31.59
-		RequestIpl("id2_14_during_door")
-		RequestIpl("id2_14_during1")
-	
-	-- Life Invader lobby: -1047.9, -233.0, 39.0
-		RequestIpl("facelobby")
-	
-	-- Tunnels
-		RequestIpl("v_tunnel_hole")
+    -- Other
+    Ammunations.LoadDefault()
+    LesterFactory.LoadDefault()
+    StripClub.LoadDefault()
 
-	-- Carwash: 55.7, -1391.3, 30.5
-		RequestIpl("Carwash_with_spinners")
-	
-	-- Stadium "Fame or Shame": -248.49159240722656, -2010.509033203125, 34.57429885864258
-		RequestIpl("sp1_10_real_interior")
-		RequestIpl("sp1_10_real_interior_lod")
-	
-	-- House in Banham Canyon: -3086.428, 339.2523, 6.3717
-		RequestIpl("ch1_02_open")
-		
-	-- Garage in La Mesa (autoshop): 970.27453, -1826.56982, 31.11477
-		RequestIpl("bkr_bi_id1_23_door")
-		
-	-- Hill Valley church - Grave: -282.46380000, 2835.84500000, 55.91446000
-		RequestIpl("lr_cs6_08_grave_closed")
-	
-	-- Lost's trailer park: 49.49379000, 3744.47200000, 46.38629000
-		RequestIpl("methtrailer_grp1")
-		
-	-- Lost safehouse: 984.1552, -95.3662, 74.50
-		RequestIpl("bkr_bi_hw1_13_int")
-			
-	-- Raton Canyon river: -1652.83, 4445.28, 2.52
-		RequestIpl("CanyonRvrShallow")
-		
-	-- Zancudo Gates (GTAO like): -1600.30100000, 2806.73100000, 18.79683000
-		RequestIpl("CS3_07_MPGates")
-		
-	-- Pillbox hospital:
-		RequestIpl("rc12b_default")
+    Graffitis.Enable(true)
 
-	-- Josh's house: -1117.1632080078, 303.090698, 66.52217
-		RequestIpl("bh1_47_joshhse_unburnt")
-		RequestIpl("bh1_47_joshhse_unburnt_lod")
-		
-	-- Zancudo River (need streamed content): 86.815, 3191.649, 30.463
-		RequestIpl("cs3_05_water_grp1")
-		RequestIpl("cs3_05_water_grp1_lod")
-		RequestIpl("cs3_05_water_grp2")
-		RequestIpl("cs3_05_water_grp2_lod")
-	
-	-- Cassidy Creek (need streamed content): -425.677, 4433.404, 27.3253
-		RequestIpl("canyonriver01")
-		RequestIpl("canyonriver01_lod")
-		
-	-- Optional
-		-- Graffitis
-			RequestIpl("ch3_rd2_bishopschickengraffiti") -- 1861.28, 2402.11, 58.53
-			RequestIpl("cs5_04_mazebillboardgraffiti") -- 2697.32, 3162.18, 58.1
-			RequestIpl("cs5_roads_ronoilgraffiti") -- 2119.12, 3058.21, 53.25
-			
-		-- Heist Carrier: 3082.3117 -4717.1191 15.2622
-			RequestIpl("hei_carrier")
-			RequestIpl("hei_carrier_distantlights")
-			RequestIpl("hei_Carrier_int1")
-			RequestIpl("hei_Carrier_int2")
-			RequestIpl("hei_Carrier_int3")
-			RequestIpl("hei_Carrier_int4")
-			RequestIpl("hei_Carrier_int5")
-			RequestIpl("hei_Carrier_int6")
-			RequestIpl("hei_carrier_lodlights")
-			RequestIpl("hei_carrier_slod")
-		
-		-- Heist Yatch: -2043.974,-1031.582, 11.981
-			RequestIpl("hei_yacht_heist")
-			RequestIpl("hei_yacht_heist_Bar")
-			RequestIpl("hei_yacht_heist_Bedrm")
-			RequestIpl("hei_yacht_heist_Bridge")
-			RequestIpl("hei_yacht_heist_DistantLights")
-			RequestIpl("hei_yacht_heist_enginrm")
-			RequestIpl("hei_yacht_heist_LODLights")
-			RequestIpl("hei_yacht_heist_Lounge")
-			
-		-- Bunkers - Exteriors
-			RequestIpl("gr_case0_bunkerclosed")
-			RequestIpl("gr_case1_bunkerclosed")
-			RequestIpl("gr_case2_bunkerclosed")
-			RequestIpl("gr_case3_bunkerclosed")
-			RequestIpl("gr_case4_bunkerclosed")
-			RequestIpl("gr_case5_bunkerclosed")
-			RequestIpl("gr_case6_bunkerclosed")
-			RequestIpl("gr_case7_bunkerclosed")
-			RequestIpl("gr_case9_bunkerclosed")
-			RequestIpl("gr_case10_bunkerclosed")
-			RequestIpl("gr_case11_bunkerclosed")
-			
-		-- Bunkers - Interior: 892.6384, -3245.8664, -98.2645
-			-- RequestIpl("gr_entrance_placement")
-			-- RequestIpl("gr_grdlc_interior_placement")
-			-- RequestIpl("gr_grdlc_interior_placement_interior_0_grdlc_int_01_milo_")
-			-- RequestIpl("gr_grdlc_interior_placement_interior_1_grdlc_int_02_milo_")
-			
-		-- Bahama Mamas: -1388.0013, -618.41967, 30.819599
-			--RequestIpl("hei_sm_16_interior_v_bahama_milo_")
-		
-		-- Red Carpet: 300.5927, 199.7589, 104.3776
-			--RequestIpl("redCarpet") 
+    -- Zancudo Gates (GTAO like): -1600.30100000, 2806.73100000, 18.79683000
+    ZancudoGates.LoadDefault()
 
-		-- UFO
-		-- Zancudo: -2051.99463, 3237.05835, 1456.97021
-		-- Hippie base: 2490.47729, 3774.84351, 2414.035
-		-- Chiliad: 501.52880000, 5593.86500000, 796.23250000
-			-- RequestIpl("ufo")
-			-- RequestIpl("ufo_eye")
-			-- RequestIpl("ufo_lod")
-			
-		-- North Yankton: 3217.697, -4834.826, 111.8152
-			-- RequestIpl("prologue01")
-			-- RequestIpl("prologue01c")
-			-- RequestIpl("prologue01d")
-			-- RequestIpl("prologue01e")
-			-- RequestIpl("prologue01f")
-			-- RequestIpl("prologue01g")
-			-- RequestIpl("prologue01h")
-			-- RequestIpl("prologue01i")
-			-- RequestIpl("prologue01j")
-			-- RequestIpl("prologue01k")
-			-- RequestIpl("prologue01z")
-			-- RequestIpl("prologue02")
-			-- RequestIpl("prologue03")
-			-- RequestIpl("prologue03b")
-			-- RequestIpl("prologue04")
-			-- RequestIpl("prologue04b")
-			-- RequestIpl("prologue05")
-			-- RequestIpl("prologue05b")
-			-- RequestIpl("prologue06")
-			-- RequestIpl("prologue06b")
-			-- RequestIpl("prologue06_int")
-			-- RequestIpl("prologuerd")
-			-- RequestIpl("prologuerdb ")
-			-- RequestIpl("prologue_DistantLights")
-			-- RequestIpl("prologue_LODLights")
-			-- RequestIpl("prologue_m2_door")
-			
-		-- CEO Offices :
-			-- Arcadius Business Centre
-				-- RequestIpl("ex_dt1_02_office_02b")	-- Executive Rich
-				-- RequestIpl("ex_dt1_02_office_02c")	-- Executive Cool
-				-- RequestIpl("ex_dt1_02_office_02a")	-- Executive Contrast
-				-- RequestIpl("ex_dt1_02_office_01a")	-- Old Spice Warm
-				-- RequestIpl("ex_dt1_02_office_01b")	-- Old Spice Classical
-				-- RequestIpl("ex_dt1_02_office_01c")	-- Old Spice Vintage
-				-- RequestIpl("ex_dt1_02_office_03a")	-- Power Broker Ice
-				-- RequestIpl("ex_dt1_02_office_03b")	-- Power Broker Conservative
-				-- RequestIpl("ex_dt1_02_office_03c")	-- Power Broker Polished
-				
-			-- Maze Bank Building
-				-- RequestIpl("ex_dt1_11_office_02b")	-- Executive Rich
-				-- RequestIpl("ex_dt1_11_office_02c")	-- Executive Cool
-				-- RequestIpl("ex_dt1_11_office_02a")	-- Executive Contrast
-				-- RequestIpl("ex_dt1_11_office_01a")	-- Old Spice Warm
-				-- RequestIpl("ex_dt1_11_office_01b")	-- Old Spice Classical
-				-- RequestIpl("ex_dt1_11_office_01c")	-- Old Spice Vintage
-				-- RequestIpl("ex_dt1_11_office_03a")	-- Power Broker Ice
-				-- RequestIpl("ex_dt1_11_office_03b")	-- Power Broker Conservative
-				-- RequestIpl("ex_dt1_11_office_03c")	-- Power Broker Polished
-				
-			-- Lom Bank
-				-- RequestIpl("ex_sm_13_office_02b")	-- Executive Rich
-				-- RequestIpl("ex_sm_13_office_02c")	-- Executive Cool
-				-- RequestIpl("ex_sm_13_office_02a")	-- Executive Contrast
-				-- RequestIpl("ex_sm_13_office_01a")	-- Old Spice Warm
-				-- RequestIpl("ex_sm_13_office_01b")	-- Old Spice Classical
-				-- RequestIpl("ex_sm_13_office_01c")	-- Old Spice Vintage
-				-- RequestIpl("ex_sm_13_office_03a")	-- Power Broker Ice
-				-- RequestIpl("ex_sm_13_office_03b")	-- Power Broker Conservative
-				-- RequestIpl("ex_sm_13_office_03c")	-- Power Broker Polished
-				
-			-- Maze Bank West
-				RequestIpl("ex_sm_15_office_02b")	-- Executive Rich
-				RequestIpl("ex_sm_15_office_02c")	-- Executive Cool
-				RequestIpl("ex_sm_15_office_02a")	-- Executive Contrast
-				RequestIpl("ex_sm_15_office_01a")	-- Old Spice Warm
-				RequestIpl("ex_sm_15_office_01b")	-- Old Spice Classical
-				RequestIpl("ex_sm_15_office_01c")	-- Old Spice Vintage
-				RequestIpl("ex_sm_15_office_03a")	-- Power Broker Ice
-				RequestIpl("ex_sm_15_office_03b")	-- Power Broker Convservative
-				RequestIpl("ex_sm_15_office_03c")	-- Power Broker Polished
+    -- UFO
+    UFO.Hippie.Enable(false)    -- 2490.47729, 3774.84351, 2414.035
+    UFO.Chiliad.Enable(false)   -- 501.52880000, 5593.86500000, 796.23250000
+    UFO.Zancudo.Enable(false)   -- -2051.99463, 3237.05835, 1456.97021
+    
+    -- Red Carpet: 300.5927, 199.7589, 104.3776
+    RedCarpet.Enable(false)
+    
+    -- North Yankton: 3217.697, -4834.826, 111.8152
+    NorthYankton.Enable(false)
 
-		-- Biker
-			-- RequestIpl("bkr_biker_interior_placement_interior_0_biker_dlc_int_01_milo")
-			-- RequestIpl("bkr_biker_interior_placement_interior_1_biker_dlc_int_02_milo")
-			
-			-- RequestIpl("bkr_biker_interior_placement_interior_2_biker_dlc_int_ware01_milo")
-			-- RequestIpl("bkr_biker_interior_placement_interior_2_biker_dlc_int_ware02_milo")
-			-- RequestIpl("bkr_biker_interior_placement_interior_2_biker_dlc_int_ware03_milo")
-			-- RequestIpl("bkr_biker_interior_placement_interior_2_biker_dlc_int_ware04_milo")
-			-- RequestIpl("bkr_biker_interior_placement_interior_2_biker_dlc_int_ware05_milo")
-			
-			-- RequestIpl("ex_exec_warehouse_placement_interior_0_int_warehouse_m_dlc_milo ")
-			-- RequestIpl("ex_exec_warehouse_placement_interior_1_int_warehouse_s_dlc_milo ")
-			-- RequestIpl("ex_exec_warehouse_placement_interior_2_int_warehouse_l_dlc_milo ")
-		
-		-- IMPORT/EXPORT
-			-- RequestIpl("imp_dt1_02_modgarage")
-			-- RequestIpl("imp_dt1_02_cargarage_a")
-			-- RequestIpl("imp_dt1_02_cargarage_b")
-			-- RequestIpl("imp_dt1_02_cargarage_c")
-			 
-			-- RequestIpl("imp_dt1_11_modgarage")
-			-- RequestIpl("imp_dt1_11_cargarage_a")
-			-- RequestIpl("imp_dt1_11_cargarage_b")
-			-- RequestIpl("imp_dt1_11_cargarage_c")
-			 
-			-- RequestIpl("imp_sm_13_modgarage")
-			-- RequestIpl("imp_sm_13_cargarage_a")
-			-- RequestIpl("imp_sm_13_cargarage_b")
-			-- RequestIpl("imp_sm_13_cargarage_c")
-			 
-			-- RequestIpl("imp_sm_15_modgarage")
-			-- RequestIpl("imp_sm_15_cargarage_a")
-			-- RequestIpl("imp_sm_15_cargarage_b")
-			-- RequestIpl("imp_sm_15_cargarage_c")
-			 
-			-- RequestIpl("imp_impexp_interior_placement")
-			-- RequestIpl("imp_impexp_interior_placement_interior_0_impexp_int_01_milo_")
-			-- RequestIpl("imp_impexp_interior_placement_interior_3_impexp_int_02_milo_")
-			-- RequestIpl("imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_")
-			-- RequestIpl("imp_impexp_interior_placement_interior_2_imptexp_mod_int_01_milo_")
-			
+    -- ====================================================================
+    -- =-------------------------- [GTA Online] --------------------------=
+    -- ====================================================================
+    GTAOApartmentHi1.LoadDefault()      -- -35.31277 -580.4199 88.71221 (4 Integrity Way, Apt 30)
+    GTAOApartmentHi2.LoadDefault()      -- -1477.14 -538.7499 55.5264 (Dell Perro Heights, Apt 7)
+    GTAOHouseHi1.LoadDefault()          -- -169.286 486.4938 137.4436 (3655 Wild Oats Drive)
+    GTAOHouseHi2.LoadDefault()          -- 340.9412 437.1798 149.3925 (2044 North Conker Avenue)
+    GTAOHouseHi3.LoadDefault()          -- 373.023 416.105 145.7006 (2045 North Conker Avenue)
+    GTAOHouseHi4.LoadDefault()          -- -676.127 588.612 145.1698 (2862 Hillcrest Avenue)
+    GTAOHouseHi5.LoadDefault()          -- -763.107 615.906 144.1401 (2868 Hillcrest Avenue)
+    GTAOHouseHi6.LoadDefault()          -- -857.798 682.563 152.6529 (2874 Hillcrest Avenue)
+    GTAOHouseHi7.LoadDefault()          -- 120.5 549.952 184.097 (2677 Whispymound Drive)
+    GTAOHouseHi8.LoadDefault()          -- -1288 440.748 97.69459 (2133 Mad Wayne Thunder)
+    GTAOHouseMid1.LoadDefault()         -- 347.2686 -999.2955 -99.19622
+    GTAOHouseLow1.LoadDefault()         -- 261.4586 -998.8196 -99.00863
+
+    -- ====================================================================
+    -- =------------------------ [DLC: High life] ------------------------=
+    -- ====================================================================
+    HLApartment1.LoadDefault()          -- -1468.14 -541.815 73.4442 (Dell Perro Heights, Apt 4)
+    HLApartment2.LoadDefault()          -- -915.811 -379.432 113.6748 (Richard Majestic, Apt 2)
+    HLApartment3.LoadDefault()          -- -614.86 40.6783 97.60007 (Tinsel Towers, Apt 42)
+    HLApartment4.LoadDefault()          -- -773.407 341.766 211.397 (EclipseTowers, Apt 3)
+    HLApartment5.LoadDefault()          -- -18.07856 -583.6725 79.46569 (4 Integrity Way, Apt 28)
+    HLApartment6.LoadDefault()          -- -609.56690000 51.28212000 -183.98080
+
+    -- ====================================================================
+    -- =-------------------------- [DLC: Heists] -------------------------=
+    -- ====================================================================
+    HeistCarrier.Enable(true)   -- 3082.3117, -4717.1191, 15.2622
+    HeistYacht.Enable(true)     -- -2043.974,-1031.582, 11.981
+
+    -- ====================================================================
+    -- =--------------- [DLC: Executives & Other Criminals] --------------=
+    -- ====================================================================
+    ExecApartment1.LoadDefault()    -- -787.7805 334.9232 215.8384 (EclipseTowers, Penthouse Suite 1)
+    ExecApartment2.LoadDefault()    -- -773.2258 322.8252 194.8862 (EclipseTowers, Penthouse Suite 2)
+    ExecApartment3.LoadDefault()    -- -787.7805 334.9232 186.1134 (EclipseTowers, Penthouse Suite 3)
+    
+    -- ====================================================================
+    -- =-------------------- [DLC: Finance  & Felony] --------------------=
+    -- ====================================================================
+    FinanceOffice1.LoadDefault()    -- -141.1987, -620.913, 168.8205 (Arcadius Business Centre)
+    FinanceOffice2.LoadDefault()    -- -75.8466, -826.9893, 243.3859 (Maze Bank Building)
+    FinanceOffice3.LoadDefault()    -- -1579.756, -565.0661, 108.523 (Lom Bank)
+    FinanceOffice4.LoadDefault()    -- -1392.667, -480.4736, 72.04217 (Maze Bank West)
+
+    -- ====================================================================
+    -- =-------------------------- [DLC: Bikers] -------------------------=
+    -- ====================================================================
+    BikerCocaine.LoadDefault()	        -- Cocaine lockup: 1093.6, -3196.6, -38.99841
+    BikerCounterfeit.LoadDefault()      -- Counterfeit cash factory: 1121.897, -3195.338, -40.4025
+    BikerDocumentForgery.LoadDefault()  -- Document forgery: 1165, -3196.6, -39.01306
+    BikerMethLab.LoadDefault()          -- Meth lab: 1009.5, -3196.6, -38.99682
+    BikerWeedFarm.LoadDefault()         -- Weed farm: 1051.491, -3196.536, -39.14842
+    BikerClubhouse1.LoadDefault()       -- 1107.04, -3157.399, -37.51859
+    BikerClubhouse2.LoadDefault()       -- 998.4809, -3164.711, -38.90733
+
+    -- ====================================================================
+    -- =---------------------- [DLC: Import/Export] ----------------------=
+    -- ====================================================================
+    ImportCEOGarage1.LoadDefault()             -- Arcadius Business Centre
+    ImportCEOGarage2.LoadDefault()             -- Maze Bank Building               /!\ Do not load parts Garage1, Garage2 and Garage3 at the same time (overlaping issues)
+    ImportCEOGarage3.LoadDefault()             -- Lom Bank                         /!\ Do not load parts Garage1, Garage2 and Garage3 at the same time (overlaping issues)
+    ImportCEOGarage4.LoadDefault()             -- Maze Bank West                   /!\ Do not load parts Garage1, Garage2 and Garage3 at the same time (overlaping issues)
+    ImportVehicleWarehouse.LoadDefault()       -- Vehicle warehouse: 994.5925, -3002.594, -39.64699
+
+    -- ====================================================================
+    -- =------------------------ [DLC: Gunrunning] -----------------------=
+    -- ====================================================================
+    GunrunningBunker.LoadDefault()  -- 892.6384, -3245.8664, -98.2645
+    GunrunningYacht.Enable(true)    -- -1363.724, 6734.108, 2.44598
+    
+    -- ====================================================================
+    -- =---------------------- [DLC: Smuggler's Run] ---------------------=
+    -- ====================================================================
+    SmugglerHangar.LoadDefault()    -- -1267.0 -3013.135 -49.5
+
+    -- ====================================================================
+    -- =-------------------- [DLC: The Doomsday Heist] -------------------=
+    -- ====================================================================
+    DoomsdayFacility.LoadDefault()
+
+    -- ====================================================================
+    -- =----------------------- [DLC: After Hours] -----------------------=
+    -- ====================================================================
+    AfterHoursNightclubs.LoadDefault()          -- -1604.664, -3012.583, -78.000
 
 end)
+

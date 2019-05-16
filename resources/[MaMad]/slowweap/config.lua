@@ -45,5 +45,6 @@ Config.Weapons = {
 	"WEAPON_STUNGUN",
 	"WEAPON_REVOLVER",
 	"WEAPON_ASSAULTRIFLE",
+	"weapon_carbinerifle",
 	"WEAPON_SMG",
 }
