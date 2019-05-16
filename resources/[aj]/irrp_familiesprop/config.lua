@@ -82,6 +82,45 @@ Config.families = {
         { x = 19.941968917847, y = 535.06256103516, z = 169.62770080566 },
       }
     },
+    ['Eclipse'] = {
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'Contender',  label = 'Contender' },
+        { name = 'Schafter3',    label = 'Schafter' },
+        { name = 'CarbonRS',   label = 'CarbonRS' },
+      },
+      VehicleProp = {
+        modEngine       = 3,
+        modBrakes				=	2,
+        windowTint			=	1,
+        modArmor				= 4,
+        modTransmission = 2,
+        color2            = 120,
+        color1            = 120,
+        pearlescentColor  = 120,
+      },
+      Cloakrooms = {
+        { x = 108.02396392822, y = -1304.9970703125, z = 27.768775939941},
+      },
+      Armories = {
+        { x = 8.1211709976196, y = 529.31756591797, z = 169.63500976563},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = 167.43257141113, y = -1271.0773925781, z = 28.158206939697 },
+          SpawnPoint = { x = 151.55178833008, y = -1305.4443359375, z = 28.50 },
+          Heading    = 85.3702697,
+        }
+      },
+      VehicleDeleters = {
+        { x = 162.36933898926, y = -1305.9147949219, z = 28.354679107666 },
+      },
+      BossActions = {
+        { x = 93.747489929199, y = -1292.1848144531, z = 28.268768310547 },
+      }
+    },
     ['LA-FUENTE'] = {
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
