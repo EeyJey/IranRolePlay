@@ -182,6 +182,11 @@ AddEventHandler('esx:setJob', function(job)
   SendNUIMessage({action = "setValue", key = "job", value = job.label.." - "..job.grade_label, icon = job.name})
 end)
 
+RegisterNetEvent('esx:setFamily')
+AddEventHandler('esx:setFamily', function(family)
+  SendNUIMessage({action = "setValue", key = "family", value = family.name .. " - " .. family.grade_label, icon = "family"})
+end)
+
 RegisterNetEvent('es:activateMoney')
 AddEventHandler('es:activateMoney', function(e)
 	SendNUIMessage({action = "setValue", key = "money", value = "$"..e})
