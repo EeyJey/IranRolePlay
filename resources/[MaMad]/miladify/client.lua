@@ -34,12 +34,13 @@ AddEventHandler('resetchar', function()
 	Citizen.CreateThread(function()
             ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
                 if skin['sex'] == 0 then
+                    TriggerEvent('skinchanger:loadDefaultModel', true, cb)
                    TriggerEvent('skinchanger:change', 'sex',1)
                    TriggerEvent('skinchanger:change', 'sex',0)
-                   
                   else
-                    TriggerEvent('skinchanger:change', 'sex',0)
+                    TriggerEvent('skinchanger:loadDefaultModel', false, cb)
                     TriggerEvent('skinchanger:change', 'sex',1)
+                    TriggerEvent('skinchanger:change', 'sex',0)
                   end
             end)
 	end)
