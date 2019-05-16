@@ -26,7 +26,7 @@ end)
 
 
 TriggerEvent('es:addCommand', 'rchar', function(source)
-    ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+    ESX.TriggerCallback('esx_skin:getPlayerSkin', function(source,skin, jobSkin)
         TriggerEvent('skinchanger:loadSkin', skin)
     end)
 end)
