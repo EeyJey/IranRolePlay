@@ -968,7 +968,7 @@ end)
 RegisterNetEvent('irrp_familiesprop:putInVehicle')
 AddEventHandler('irrp_familiesprop:putInVehicle', function()
 
- local playerPed = GetPlayerPed(-1)
+local playerPed = GetPlayerPed(-1)
 local coords    = GetEntityCoords(playerPed)
 
  if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 5.0) then
@@ -1257,7 +1257,7 @@ while true do
 
    end
 
-  if IsControlPressed(0,  Keys['=']) and PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions') and (GetGameTimer() - GUI.Time) > 150 then
+  if IsControlPressed(0,  Keys['J']) and PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions') and (GetGameTimer() - GUI.Time) > 150 then
    OpenGangActionsMenu()
    GUI.Time = GetGameTimer()
   end
@@ -1266,7 +1266,7 @@ while true do
 end)
 
 ---------------------------------------------------------------------------------------------------------
---NB : gestion des menu
+-- NB : gestion des menu
 ---------------------------------------------------------------------------------------------------------
 
 RegisterNetEvent('NB:openMenuGang')
