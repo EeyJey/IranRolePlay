@@ -25,3 +25,7 @@ TriggerEvent('es:addCommand', 'cfix', function(source)
 end)
 
 
+
+TriggerEvent('es:addCommand', 'rchar', function(source)
+    TriggerClientEvent("resetchar", source)
+end)

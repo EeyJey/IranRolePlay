@@ -1,3 +1,9 @@
+ESX = nil 
+while ESX == nil do
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+    Citizen.Wait(0)
+end
+
 RegisterNetEvent('applyskin')
 AddEventHandler('applyskin', function(skin)
     Citizen.CreateThread(function()
@@ -13,12 +19,11 @@ AddEventHandler('applyskin', function(skin)
 end)
 
 
-TriggerEvent('addCommand', 'rchar', function(source)
-    TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-        if skin == nil then
-            TriggerEvent('skinchanger:loadSkin', {sex = 0}, OpenSaveableMenu)
-        else
-            TriggerEvent('skinchanger:loadSkin', skin)
-        end
-    end)
+AddEventHandler('resetchar', function()
+	Citizen.CreateThread(function()
+            ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+                    TriggerEvent('skinchanger:loadSkin', skin)
+            end)
+		end
+	end)
 end)
