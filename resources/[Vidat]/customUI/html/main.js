@@ -20,6 +20,10 @@ $(function(){
 			if (event.data.key == "job"){
 				setJobIcon(event.data.icon)
 			}
+			if(event.data.key === 'family' && event.data.value === 'hide')
+			{	
+				$("#family").hide()
+			}
 			setValue(event.data.key, event.data.value)
 
 		}else if (event.data.action == "updateStatus"){
