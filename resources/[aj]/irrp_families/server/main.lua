@@ -10,12 +10,12 @@ local RegisteredFamilies = {
 		data      = 'family_daltons',
 	},
 	{
-		name      = 'LA-FUENTE',
+		name      = 'LaFuente',
 		label     = 'family',
-		account   = 'family_LA-FUENTE',
-		datastore = 'family_LA-FUENTE',
-		inventory = 'family_LA-FUENTE',
-		data      = 'family_LA-FUENTE',
+		account   = 'family_lafuente',
+		datastore = 'family_lafuente',
+		inventory = 'family_lafuente',
+		data      = 'family_lafuente',
 	},
 	{
 		name      = 'Arazel',
