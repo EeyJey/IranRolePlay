@@ -348,6 +348,7 @@ Citizen.CreateThread(function()
 
                     NetworkFadeOutEntity(Bag, false, false)
                     DeleteObject(Bag)
+                    print(Bag .. ' bb ' .. BagId .. ' cc ' .. Bags[i].id.id)
                 
                     TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
                 end
