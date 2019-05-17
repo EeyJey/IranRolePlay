@@ -850,8 +850,8 @@ function Robbery(id)
 					}
 						TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
 						TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
-						
-						ESX.Game.SpawnObject(1089807209, coords, function(safe)
+						--1089807209
+						ESX.Game.SpawnObject(3830275308, coords, function(safe)
 							print('safe loaded? '.. safe)
 							SetEntityHeading(safe, coords1[id].heading)
 							FreezeEntityPosition(safe, true)
