@@ -36,15 +36,6 @@
 	display: inline-block;
 	right: 15px;
 }
-.famstat{
-	color: #fff;
-	background: black;
-	width: 220px;
-	height: 30px;
-	position: relative;
-	margin-bottom: 7px;
-	/*box-shadow: 0 10px 15px rgba(0,0,0,0.3);*/
-}
 .famicon{
 	height: 30px;
 	width: 30px;
