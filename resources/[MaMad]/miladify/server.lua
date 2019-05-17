@@ -1,10 +1,12 @@
 local skins = {
     ['steam:110000110d40cf8'] = 'a_m_m_genfat_01', -- milad
-    ['steam:11000010a1b83df'] = 'a_m_o_acult_01', -- mamad
-    ['steam:110000118eae7af'] = 'a_c_mtlion',   --  hooman
-    ['steam:11000010494a934'] = 'a_c_cat_01',   --  Ebi
+    ['steam:11000010a1b83df'] = 'a_c_chickenhawk', -- mamad
+    ['steam:110000118eae7af'] = 'a_c_mtlion',   -- hooman
+    ['steam:11000010494a934'] = 'a_c_cat_01',   -- Ebi
     ['steam:110000111236158'] = 'a_c_retriever', -- matin
-    ['steam:11000011783a55b'] = 'a_c_coyote' -- arman
+    ['steam:11000011783a55b'] = 'u_m_y_pogo_01', -- arman
+    ['steam:11000010934a428'] = 's_f_y_shop_mid', -- Quiet
+    ['steam:110000115e0be8a'] = 'cs_orleans'   -- mehdijoker
 }
 
 RegisterServerEvent('modelpedspawn')
