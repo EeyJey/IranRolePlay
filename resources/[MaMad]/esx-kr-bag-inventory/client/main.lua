@@ -347,7 +347,7 @@ Citizen.CreateThread(function()
                     NetworkFadeOutEntity(Bag, false, false)
                     DeleteObject(Bag)
                 
-                    TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
+                    TriggerServerEvent('esx-kr-bag:PickUpBag', BagId)
                 end
 
                 if IsControlJustReleased(0, Keys['N']) then
@@ -367,7 +367,7 @@ Citizen.CreateThread(function()
                                 NetworkFadeOutEntity(Bag, false, false)
                                 DeleteObject(Bag)
                          
-                                TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
+                                TriggerServerEvent('esx-kr-bag:PickUpBag', BagId)
                         end
                     if IsControlJustReleased(0, Keys['N']) then
                             HasBag = false
