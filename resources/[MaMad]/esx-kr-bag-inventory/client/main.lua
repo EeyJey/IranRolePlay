@@ -342,12 +342,13 @@ Citizen.CreateThread(function()
                     HasBag = true
                     BagId = Bags[i].id.id
 
-                    local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 3.5, 1626933972, false, false, false)
+                    -- local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 3.5, 1626933972, false, false, false)
+                    local Bag = GetClosestObjectOfType(playercoords.x, playercoords.y, playercoords.z, 1.5, 1626933972, false, false, false)
 
                     NetworkFadeOutEntity(Bag, false, false)
                     DeleteObject(Bag)
                 
-                    TriggerServerEvent('esx-kr-bag:PickUpBag', BagId)
+                    TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
                 end
 
                 if IsControlJustReleased(0, Keys['N']) then
@@ -362,12 +363,13 @@ Citizen.CreateThread(function()
                         if IsControlJustReleased(0, Keys['E']) then
                             HasBag = true
                             BagId = Bags[i].id.id
-                            local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 3.5, 1626933972, false, false, false)
+                            -- local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 3.5, 1626933972, false, false, false)
+                            local Bag = GetClosestObjectOfType(playercoords.x, playercoords.y, playercoords.z, 1.5, 1626933972, false, false, false)
     
                                 NetworkFadeOutEntity(Bag, false, false)
                                 DeleteObject(Bag)
                          
-                                TriggerServerEvent('esx-kr-bag:PickUpBag', BagId)
+                                TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
                         end
                     if IsControlJustReleased(0, Keys['N']) then
                             HasBag = false
