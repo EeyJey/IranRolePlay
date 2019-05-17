@@ -852,15 +852,16 @@ function Robbery(id)
 						TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
 						
 						ESX.Game.SpawnObject(1089807209, coords, function(safe)
-						SetEntityHeading(safe, coords1[id].heading)
-						FreezeEntityPosition(safe, true)
+							print('safe loaded? '.. safe)
+							SetEntityHeading(safe, coords1[id].heading)
+							FreezeEntityPosition(safe, true)
 
-                        SetEntityHealth(safe, 10000)
-                        OnRobbery = true
-						Var = safe
-						Id = id
-						Coordss = coords
-						Name = result.name
+													SetEntityHealth(safe, 10000)
+													OnRobbery = true
+							Var = safe
+							Id = id
+							Coordss = coords
+							Name = result.name
 						end)
                 else
 					ESX.ShowNotification("~r~There is not enough polices online " .. results .. '/' .. Config.RequiredPolices)
