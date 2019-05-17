@@ -258,58 +258,64 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 	end
 
 	self.setAccountMoney = function(acc, money)
-		if money < 0 then
-			print(('es_extended: %s attempted exploiting! (reason: player tried setting -1 account balance)'):format(self.identifier))
-			return
+		if tonumber(m) then
+			if money < 0 then
+				print(('es_extended: %s attempted exploiting! (reason: player tried setting -1 account balance)'):format(self.identifier))
+				return
+			end
+
+			local account   = self.getAccount(acc)
+			local prevMoney = account.money
+			local newMoney  = ESX.Math.Round(money)
+
+			account.money = newMoney
+
+			if acc == 'bank' then
+				self.set('bank', newMoney)
+			end
+
+			TriggerClientEvent('esx:setAccountMoney', self.source, account)
 		end
-
-		local account   = self.getAccount(acc)
-		local prevMoney = account.money
-		local newMoney  = ESX.Math.Round(money)
-
-		account.money = newMoney
-
-		if acc == 'bank' then
-			self.set('bank', newMoney)
-		end
-
-		TriggerClientEvent('esx:setAccountMoney', self.source, account)
 	end
 
 	self.addAccountMoney = function(acc, money)
-		if money < 0 then
-			print(('es_extended: %s attempted exploiting! (reason: player tried adding -1 account balance)'):format(self.identifier))
-			return
+		if tonumber(m) then
+			if money < 0 then
+				print(('es_extended: %s attempted exploiting! (reason: player tried adding -1 account balance)'):format(self.identifier))
+				return
+			end
+
+			local account  = self.getAccount(acc)
+			local newMoney = account.money + ESX.Math.Round(money)
+
+			account.money = newMoney
+
+			if acc == 'bank' then
+				self.set('bank', newMoney)
+			end
+
+			TriggerClientEvent('esx:setAccountMoney', self.source, account)
 		end
-
-		local account  = self.getAccount(acc)
-		local newMoney = account.money + ESX.Math.Round(money)
-
-		account.money = newMoney
-
-		if acc == 'bank' then
-			self.set('bank', newMoney)
-		end
-
-		TriggerClientEvent('esx:setAccountMoney', self.source, account)
 	end
 
 	self.removeAccountMoney = function(a, m)
-		if m < 0 then
-			print(('es_extended: %s attempted exploiting! (reason: player tried removing -1 account balance)'):format(self.identifier))
-			return
+		if tonumber(m) then
+			if m < 0 then
+				print(('es_extended: %s attempted exploiting! (reason: player tried removing -1 account balance)'):format(self.identifier))
+				return
+			end
+
+			local account  = self.getAccount(a)
+			local newMoney = account.money - m
+
+			account.money = newMoney
+
+			if a == 'bank' then
+				self.set('bank', newMoney)
+			end
+
+			TriggerClientEvent('esx:setAccountMoney', self.source, account)
 		end
-
-		local account  = self.getAccount(a)
-		local newMoney = account.money - m
-
-		account.money = newMoney
-
-		if a == 'bank' then
-			self.set('bank', newMoney)
-		end
-
-		TriggerClientEvent('esx:setAccountMoney', self.source, account)
 	end
 
 	self.getInventoryItem = function(name)

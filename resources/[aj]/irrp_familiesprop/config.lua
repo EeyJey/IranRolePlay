@@ -161,15 +161,20 @@ Config.families = {
         { name = 'dubsta3',      label = 'dubsta' },
       },
       VehicleProp = {
-        color2            = 90,
-        color1            = 90,
-        pearlescentColor  = 70,
+        modEngine         = 3,
+        modBrakes				  =	2,
+        windowTint		  	=	1,
+        modArmor			  	= 4,
+        modTransmission   = 2,
+        color2            = 3,
+        color1            = 3,
+        pearlescentColor  = 3,
       },
       Cloakrooms = {
-        { x = 1407.1309, y = 1153.2783, z = 112.4430},
+        { x = 1407.1309, y = 1153.2783, z = 113.4430},
       },
       Armories = {
-        { x = 1406.1706, y = 1156.8936, z = 112.4430},
+        { x = 1406.1706, y = 1156.8936, z = 113.4430},
       },
       Vehicles = {
         {
@@ -179,10 +184,10 @@ Config.families = {
         }
       },
       VehicleDeleters = {
-        { x = 1415.5629, y = 1116.6584, z = 112.8380 },
+        { x = 1414.300, y = 1117.274, z = 113.8380 },
       },
       BossActions = {
-        { x = 1407.1422, y = 1139.1545, z = 112.4330 },
+        { x = 1407.1422, y = 1139.1545, z = 113.4330 },
       }
     },
     ['Knaxvell'] = {
