@@ -196,9 +196,13 @@ Config.families = {
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
-      VehicleProp = {
-      },
       AuthorizedVehicles = {
+        { name = 'No Car',  label = '' },
+      },
+      VehicleProp = {
+        color2            = 120,
+        color1            = 120,
+        pearlescentColor  = 80,
       },
       VehicleProp = {
         color2            = 90,
@@ -222,7 +226,7 @@ Config.families = {
         { x = 51.226, y = 563.214, z = 179.304 },
       },
       BossActions = {
-        { x = 53.100.1422, y = 543.179, z = 174.853 },
+        { x = 53.100, y = 543.179, z = 174.853 },
       }
     }
 }
