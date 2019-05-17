@@ -344,6 +344,7 @@ Citizen.CreateThread(function()
 
                     -- local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 1.5, 1626933972, false, false, false)
                     local Bag = GetClosestObjectOfType(playercoords.x, playercoords.y, playercoords.z, 1.5, 1626933972, false, false, false)
+                    print(bag .. ' ss ' .. BagId .. ' aa ' .. Bags[i].id.id)
 
                     NetworkFadeOutEntity(Bag, false, false)
                     DeleteObject(Bag)
@@ -365,7 +366,7 @@ Citizen.CreateThread(function()
                             BagId = Bags[i].id.id
                             -- local Bag = GetClosestObjectOfType(Bags[i].id.coords.x, Bags[i].id.coords.y, Bags[i].id.coords.z, 1.5, 1626933972, false, false, false)
                             local Bag = GetClosestObjectOfType(playercoords.x, playercoords.y, playercoords.z, 1.5, 1626933972, false, false, false)
-    
+                            print(bag .. ' ' .. BagId .. ' ' .. Bags[i].id.id)
                                 NetworkFadeOutEntity(Bag, false, false)
                                 DeleteObject(Bag)
                          
