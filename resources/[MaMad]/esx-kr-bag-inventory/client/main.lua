@@ -347,7 +347,7 @@ Citizen.CreateThread(function()
                     print(Bag .. ' ss ' .. BagId .. ' aa ' .. Bags[i].id.id)
 
                     NetworkFadeOutEntity(Bag, false, false)
-                    DeleteObject(Bag)
+                    ESX.Game.DeleteObject(Bag)
                     print(Bag .. ' bb ' .. BagId .. ' cc ' .. Bags[i].id.id)
                 
                     TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
@@ -369,7 +369,7 @@ Citizen.CreateThread(function()
                             local Bag = GetClosestObjectOfType(playercoords.x, playercoords.y, playercoords.z, 1.5, 1626933972, false, false, false)
                             print(Bag .. ' ' .. BagId .. ' ' .. Bags[i].id.id)
                                 NetworkFadeOutEntity(Bag, false, false)
-                                DeleteObject(Bag)
+                                ESX.Game.DeleteObject(Bag)
                          
                                 TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
                         end
