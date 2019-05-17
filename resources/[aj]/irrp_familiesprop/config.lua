@@ -15,8 +15,8 @@ Config.Locale                     = 'en'
 Config.families = {
     ['Daltons'] = {
       Blip = {
-        Pos     = { x = 129.246, y = -1299.363, z = 29.501 },
-        Sprite  = 206,
+        Pos     = { x = 130.202, y = -2197.684, z = 6.533 },
+        Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
         Colour  = 76,
@@ -57,11 +57,11 @@ Config.families = {
     },
     ['Arazel'] = {
       Blip = {
-        Pos     = { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563 },
+        Pos     = { x = 10.139, y = 545.716, z = 176.200 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
-        Colour  = 72,
+        Colour  = 76,
       },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
@@ -143,6 +143,13 @@ Config.families = {
       }
     },
     ['LA-FUENTE'] = {
+      Blip = {
+        Pos     = { 1407.130, y = 1153.2783, z = 113.9430 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
       AuthorizedWeapons = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
