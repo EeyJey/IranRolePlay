@@ -846,14 +846,14 @@ function Robbery(id)
                     local coords = {
                         x = coords1[id].x,
                         y = coords1[id].y,
-                        z = coords1[id].z - 1,
+                        z = coords1[id].z,
 					}
 						TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
 						TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
 						--1089807209
-						coords.z = coords.z + 3
-						print('x '.. coords.x .. ' y '.. coords.y .. ' z '..coords.z)
-						ESX.Game.SpawnObject(3830275308, coords, function(safe)
+						-- coords.z = coords.z + 3
+						-- print('x '.. coords.x .. ' y '.. coords.y .. ' z '..coords.z)
+						ESX.Game.SpawnObject(1089807209, coords, function(safe)
 							SetEntityHeading(safe, coords1[id].heading)
 							FreezeEntityPosition(safe, true)
 
