@@ -204,27 +204,22 @@ Config.families = {
         color1            = 120,
         pearlescentColor  = 80,
       },
-      VehicleProp = {
-        color2            = 90,
-        color1            = 90,
-        pearlescentColor  = 70,
-      },
       Cloakrooms = {
         { x = 45.640, y = 557.033, z = 179.082},
       },
       Armories = {
         { x = 44.148, y = 539.604, z = 174.853},
       },
-      Vehicles = {
-        {
-          Spawner    = { x = 29.694, y = 554.887, z = 177.384 },
-          SpawnPoint = { x = 50.164, y = 565.350, z = 180.262 },
-          Heading    = 33.566,
-        }
-      },
-      VehicleDeleters = {
-        { x = 51.226, y = 563.214, z = 179.304 },
-      },
+      -- Vehicles = {
+      --   {
+      --     Spawner    = { x = 29.694, y = 554.887, z = 177.384 },
+      --     SpawnPoint = { x = 50.164, y = 565.350, z = 180.262 },
+      --     Heading    = 33.566,
+      --   }
+      -- },
+      -- VehicleDeleters = {
+      --   { x = 51.226, y = 563.214, z = 179.304 },
+      -- },
       BossActions = {
         { x = 53.100, y = 543.179, z = 174.853 },
       }
