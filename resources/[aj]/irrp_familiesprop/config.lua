@@ -187,7 +187,7 @@ Config.families = {
     },
     ['Knaxvell'] = {
       Blip = {
-        Pos     = { 45.640, y = 557.033, z = 180.582 },
+        Pos     = { 26.1829, y = 558.913, z = 178.582 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -217,7 +217,7 @@ Config.families = {
       },
       Vehicles = {
         {
-          Spawner    = { x = 29.694, y = 554.887, z = 178.384 },
+          Spawner    = { x = 29.694, y = 554.887, z = 177.384 },
           SpawnPoint = { x = 50.164, y = 565.350, z = 180.262 },
           Heading    = 33.566,
         }

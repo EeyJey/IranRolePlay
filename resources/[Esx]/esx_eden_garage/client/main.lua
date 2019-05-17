@@ -375,7 +375,7 @@ function SpawnVehicle(vehicle, plate)
 		TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
 		end)
 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
-		Wait(1)
+		Citizen.Wait(1)
 	end
 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
 	table.insert(Spawned, car)

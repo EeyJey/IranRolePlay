@@ -206,11 +206,14 @@ end)
 function DropBag()
         ESX.UI.Menu.CloseAll()
         HasBag = false
-
         local coords1 = GetEntityCoords(PlayerPedId())
         local headingvector = GetEntityForwardVector(PlayerPedId())
-        local x, y, z = table.unpack(coords1 + headingvector * 1.0)
-
+        if IsPedInAnyVehicle(PlayerPedId(), false) then
+         local x, y, z = table.unpack(coords1 + headingvector * 1.0)
+         z = z + 1
+        else
+         local x, y, z = table.unpack(coords1 + headingvector * 1.0)
+        end
         local coords2 = {
             x = x,
             y = y,

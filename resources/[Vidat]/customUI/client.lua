@@ -184,7 +184,11 @@ end)
 
 RegisterNetEvent('esx:setFamily')
 AddEventHandler('esx:setFamily', function(family)
-  SendNUIMessage({action = "setValue", key = "family", value = family.name .. " - " .. family.grade_label, icon = "family"})
+	if family.name ~= 'nofamily' then
+		SendNUIMessage({action = "setValue", key = "family", value = family.name .. " - " .. family.grade_label, icon = "family"})
+	else
+		SendNUIMessage({action = "setValue", key = "family", value = 'Gang - Nothing', icon = "family"})
+	end
 end)
 
 RegisterNetEvent('es:activateMoney')
