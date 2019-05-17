@@ -184,5 +184,45 @@ Config.families = {
       BossActions = {
         { x = 1407.1422, y = 1139.1545, z = 113.4330 },
       }
+    },
+    ['Knaxvell'] = {
+      Blip = {
+        Pos     = { 45.640, y = 557.033, z = 180.582 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      VehicleProp = {
+      },
+      AuthorizedVehicles = {
+      },
+      VehicleProp = {
+        color2            = 90,
+        color1            = 90,
+        pearlescentColor  = 70,
+      },
+      Cloakrooms = {
+        { x = 45.640, y = 557.033, z = 179.082},
+      },
+      Armories = {
+        { x = 44.148, y = 539.604, z = 174.853},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = 29.694, y = 554.887, z = 178.384 },
+          SpawnPoint = { x = 50.164, y = 565.350, z = 180.262 },
+          Heading    = 33.566,
+        }
+      },
+      VehicleDeleters = {
+        { x = 51.226, y = 563.214, z = 179.304 },
+      },
+      BossActions = {
+        { x = 53.100.1422, y = 543.179.1545, z = 174.853 },
+      }
     }
 }
