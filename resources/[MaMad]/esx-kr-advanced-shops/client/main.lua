@@ -814,7 +814,7 @@ function Robbery(id)
 	local coords1 = {
   		[1] = {x = 380.74, y = 331.94, z = 102.57, heading = 255.47},
 		[2] = {x = 2550.23, y = 387.34, z = 107.62, heading = 359.25},
-		[3] = {x = -3047.88, y = 588.16, z = 7.91, heading = 20.34},
+		[3] = {x = -3047.88, y = 588.16, z = 6.91, heading = 20.34},
 		[4] = {x = -1478.97, y = -374.36, z = 38.16, heading = 228.54},
 		[5] = {x = 1395.49, y = 3612.94, z = 33.98, heading = 22.18},
 		[6] = {x = -2959.5, y = 387.78, z =13.04 , heading = 171.58},
@@ -823,7 +823,7 @@ function Robbery(id)
 		[9] = {x = 1160.77, y = -314.03, z = 68.21, heading = 10.81},
 		[10] = {x = -708.14, y = -904.05, z =18.22 , heading = 5.29},
 		[11] = {x = -1828.23, y = 799.83, z = 137.16, heading = 53.63},
-		[12] = {x = 1706.87, y = 4919.76, z = 41.06, heading = 237.41},
+		[12] = {x = 1706.87, y = 4919.76, z = 41.06, heading = 237.41},		
 		[13] = {x = 1960.75, y = 3748.67, z = 31.34, heading = 304.34},
 		[14] = {x = 1126.26, y = -980.84, z = 44.42, heading = 9.13},
 		[15] = {x = 30.45, y = -1339.88, z = 28.5 , heading = 269.79},
@@ -833,7 +833,7 @@ function Robbery(id)
 		[19] = {x = 1168.51, y = 2718.37, z = 36.16, heading = 271.45},
 		[20] = {x = 1736.66, y = 6419.02, z = 34.04, heading = 247.6},
     }
-
+		
     -- TriggerServerEvent('esx_kr_shops:UpdateCurrentShop', id)
 
         ESX.TriggerServerCallback('esx_kr_shop-robbery:getUpdates', function(result)
