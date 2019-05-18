@@ -10,6 +10,8 @@ local skins = {
     ['steam:110000107a78e07'] =  's_m_y_prismuscl_01', -- Arash
     ['steam:11000010f0a6439'] = 's_m_m_movalien_01'
 } 
+ESX = nil
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 RegisterServerEvent('modelpedspawn')
 AddEventHandler('modelpedspawn', function(skin)
@@ -45,7 +47,7 @@ TriggerEvent('es:addCommand', 'am', function(source)
     if skins[steamID] ~= nil then
         skin = skins[steamID]
         print('shit2')
-        local xPlayer = GetPlayerFromId(source)
+        local xPlayer = ESX.GetPlayerFromId(source)
             xPlayer.addAccountMoney ('bank',1000)
     end
 end)
