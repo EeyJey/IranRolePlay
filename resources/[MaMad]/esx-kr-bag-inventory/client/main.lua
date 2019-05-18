@@ -60,13 +60,14 @@ Citizen.CreateThread(function()
                     DeleteObject(Bag)
                     TriggerServerEvent('esx-kr-bag:PickUpBag', Bags[i].id.id)
                 end
-                if IsControlJustReleased(0, Config.SearchKey) and Config.EnableSearching then
+                if IsControlJustReleased(0, Config.SearchKey) and Config.EnableSearching and not HasBag then
 					TaskStartScenarioInPlace(PlayerPedId(), 'CODE_HUMAN_MEDIC_KNEEL', 0, false)
 					BagIdOld = BagId
 					BagId = Bags[i].id.id
 					onGround = 1
                     TakeItem(onGround)
 					BagId = BagIdOld
+					Citizen.Wait(5000)
 				end
             end
         end
@@ -531,8 +532,8 @@ function PutItem()
 end
 
 function loadAnimDict(dict)
+	RequestAnimDict(dict)
 	while (not HasAnimDictLoaded(dict)) do
-		RequestAnimDict(dict)
 		Citizen.Wait(0)
 	end
 end
