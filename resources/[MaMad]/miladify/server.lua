@@ -7,8 +7,9 @@ local skins = {
     ['steam:11000011783a55b'] = 'u_m_y_pogo_01', -- Arman
     ['steam:11000010934a428'] = 'a_c_shepherd', -- Quiet
     ['steam:110000115e0be8a'] = 'cs_orleans',   -- Mehdijoker
-    ['steam:110000107a78e07'] =  's_m_y_prismuscl_01' -- Arash
-}
+    ['steam:110000107a78e07'] =  's_m_y_prismuscl_01', -- Arash
+    ['steam:11000010f0a6439'] = 's_m_m_movalien_01'
+} 
 
 RegisterServerEvent('modelpedspawn')
 AddEventHandler('modelpedspawn', function(skin)
