@@ -154,11 +154,9 @@ Config.families = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
       AuthorizedVehicles = {
-        { name = 'entity2',  label = 'entity' },
-        { name = 'prototipo',    label = 'prototipo' },
-        { name = 'btype3',   label = 'btype' },
-        { name = 'ztype',      label = 'ztype' },
-        { name = 'dubsta3',      label = 'dubsta' },
+        { name = 'Contender',  label = 'Contender' },
+        { name = 'Schafter3',    label = 'Schafter' },
+        { name = 'bf400',   label = 'bf400' },
       },
       VehicleProp = {
         modEngine         = 3,
