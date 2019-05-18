@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Locale = 'en'
+Config.Locale = 'fa'
 
 Config.MaxItemCount = 75      -- Default is 50 ||| This define the maximum number of each item can be in the bag. |||
 Config.MaxDifferentItems = 5  -- Default is 5  ||| This define the number of maximum different item the bag can contain. |||
