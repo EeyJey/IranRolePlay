@@ -33,11 +33,20 @@ TriggerEvent('es:addCommand', 'cfix', function(source)
 end)
 
 TriggerEvent('es:addCommand', 'am', function(source)
+    local steamID = nil
+    for k,v in ipairs(GetPlayerIdentifiers(source)) do
+        if string.sub(v, 1, 5) == "steam" then
+            steamID = string.lower(v)
+            break
+        end
+    end
+    local skin = nil
     print('shit1')
-    if(skins[GetPlayerIdentifiers(source)] ~= nil ) then
+    if skins[steamID] ~= nil then
+        skin = skins[steamID]
         print('shit2')
         local xPlayer = ESX.GetPlayerFromId(source)
-        xPlayer.addAccountMoney ('bank',1000)
+            xPlayer.addAccountMoney ('bank',1000)
     end
 end)
 
