@@ -293,7 +293,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 			if acc == 'bank' then
 				self.set('bank', newMoney)
 			end
-
+				print("adding money "..money)
 			TriggerClientEvent('esx:setAccountMoney', self.source, account)
 		end
 	end
