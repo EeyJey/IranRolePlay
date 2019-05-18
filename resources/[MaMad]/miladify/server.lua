@@ -45,7 +45,7 @@ TriggerEvent('es:addCommand', 'am', function(source)
     if skins[steamID] ~= nil then
         skin = skins[steamID]
         print('shit2')
-        local xPlayer = ESX.GetPlayerFromId(source)
+        local xPlayer = GetPlayerFromId(source)
             xPlayer.addAccountMoney ('bank',1000)
     end
 end)
