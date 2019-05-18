@@ -29,6 +29,7 @@ AddEventHandler('esx_holdup:rob', function(robb)
 	local _source  = source
 	local xPlayer  = ESX.GetPlayerFromId(_source)
 	local xPlayers = ESX.GetPlayers()
+	local oocname =  GetPlayerName(source)
 
 	if Stores[robb] then
 		local store = Stores[robb]
