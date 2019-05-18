@@ -804,7 +804,7 @@ end)
 RegisterNetEvent('irrp_familiesprop:blip')
 
 
-RegisterCommand('family', function(args)
+RegisterCommand('myfamily', function(args)
 TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(PlayerData.family.name))
 end, false)
 

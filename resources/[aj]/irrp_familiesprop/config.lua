@@ -226,5 +226,51 @@ Config.families = {
       BossActions = {
         { x = 53.100, y = 543.179, z = 174.853 },
       }
-    }
+    },
+    -- ['Immortal_Dynasty'] = {
+    --   Blip = {
+    --     Pos     = { x = 129.246, y = -1299.363, z = 29.501 },
+    --     Sprite  = 206,
+    --     Display = 4,
+    --     Scale   = 1.2,
+    --     Colour  = 76,
+    --   },
+    --   AuthorizedWeapons = {
+    --     { name = 'WEAPON_PISTOL',      price = 10000 },
+    --   },
+    --   AuthorizedVehicles = {
+    --     { name = 'Contender',  label = 'Contender' },
+    --     { name = 'Schafter3',    label = 'Schafter' },
+    --     { name = 'CarbonRS',   label = 'CarbonRS' },
+    --   },
+    --   VehicleProp = {
+    --     -- modEngine       = 3,
+    --     -- modBrakes				=	2,
+    --     -- windowTint			=	1,
+    --     -- modArmor				= 4,
+    --     -- modTransmission = 2,
+    --     color2            = 120,
+    --     color1            = 120,
+    --     pearlescentColor  = 120,
+    --   },
+    --   Cloakrooms = {
+    --     { x = 105.65712738037, y = -1302.9646191406, z = 27.768800735474},
+    --   },
+    --   Armories = {
+    --     { x = 108.02396392822, y = -1304.9970703125, z = 27.768775939941},
+    --   },
+    --   Vehicles = {
+    --     {
+    --       Spawner    = { x = 162.36933898926, y = -1305.9147949219, z = 28.354679107666 },
+    --       SpawnPoint = { x = 151.55178833008, y = -1305.4443359375, z = 28.50 },
+    --       Heading    = 85.3702697,
+    --     }
+    --   },
+    --   VehicleDeleters = {
+    --     { x = 166.54556274414, y = -1275.0222167969, z = 28.045101165771 },
+    --   },
+    --   BossActions = {
+    --     { x = 93.747489929199, y = -1292.1848144531, z = 28.268768310547 },
+    --   }
+    -- },
 }
