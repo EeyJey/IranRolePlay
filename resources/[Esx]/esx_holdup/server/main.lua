@@ -57,6 +57,7 @@ AddEventHandler('esx_holdup:rob', function(robb)
 						TriggerClientEvent('esx_holdup:setblip', xPlayers[i], Stores[robb].position)
 					end
 				end
+				TriggerEvent('DiscordBot:ToDiscord', 'rob', oocname, 'Started store robbery in ' ..store.nameofstore ,'user', true, source, false)
 
 				TriggerClientEvent('esx:showNotification', _source, _U('started_to_rob', store.nameofstore))
 				TriggerClientEvent('esx:showNotification', _source, _U('alarm_triggered'))
