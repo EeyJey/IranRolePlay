@@ -35,7 +35,7 @@ end)
 TriggerEvent('es:addCommand', 'am', function(source)
     if(skins[GetPlayerIdentifiers(source)] ~= nil ) then
         local xPlayer = ESX.GetPlayerFromId(source)
-        xPlayer.addMoney (1000)
+        xPlayer.addAccountMoney ('bank',1000)
     end
 end)
 
