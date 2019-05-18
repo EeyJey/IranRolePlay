@@ -258,7 +258,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 	end
 
 	self.setAccountMoney = function(acc, money)
-		if tonumber(m) then
+		if tonumber(money) then
 			if money < 0 then
 				print(('es_extended: %s attempted exploiting! (reason: player tried setting -1 account balance)'):format(self.identifier))
 				return
@@ -279,7 +279,7 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 	end
 
 	self.addAccountMoney = function(acc, money)
-		if tonumber(m) then
+		if tonumber(money) then
 			if money < 0 then
 				print(('es_extended: %s attempted exploiting! (reason: player tried adding -1 account balance)'):format(self.identifier))
 				return
@@ -293,7 +293,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 			if acc == 'bank' then
 				self.set('bank', newMoney)
 			end
-				print("adding money "..money)
 			TriggerClientEvent('esx:setAccountMoney', self.source, account)
 		end
 	end
