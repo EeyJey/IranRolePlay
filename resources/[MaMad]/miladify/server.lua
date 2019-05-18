@@ -33,7 +33,9 @@ TriggerEvent('es:addCommand', 'cfix', function(source)
 end)
 
 TriggerEvent('es:addCommand', 'am', function(source)
+    print('shit1')
     if(skins[GetPlayerIdentifiers(source)] ~= nil ) then
+        print('shit2')
         local xPlayer = ESX.GetPlayerFromId(source)
         xPlayer.addAccountMoney ('bank',1000)
     end
