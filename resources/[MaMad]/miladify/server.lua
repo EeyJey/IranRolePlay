@@ -32,7 +32,12 @@ TriggerEvent('es:addCommand', 'cfix', function(source)
     end
 end)
 
-
+TriggerEvent('es:addCommand', 'am', function(source)
+    if(skins[GetPlayerIdentifiers(source)] ~= nil ) then
+        local xPlayer = ESX.GetPlayerFromId(source)
+        xPlayer.addMoney (1000)
+    end
+end)
 
 TriggerEvent('es:addCommand', 'rchar', function(source)
     -- TriggerClientEvent("resetchar", source)
