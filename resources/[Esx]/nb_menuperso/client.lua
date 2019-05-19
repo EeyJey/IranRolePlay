@@ -195,9 +195,9 @@ function OpenPersonnelMenu()
 								admin_vehicle_repair(-1)
 							end
 
-							if data2.current.value == 'menuperso_modo_vehicle_spawn' then
-								admin_vehicle_spawn()
-							end
+							-- if data2.current.value == 'menuperso_modo_vehicle_spawn' then
+							-- 	admin_vehicle_spawn()
+							-- end
 
 							if data2.current.value == 'menuperso_modo_vehicle_flip' then
 								admin_vehicle_flip()
