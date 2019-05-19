@@ -82,7 +82,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('play_emote')})
 
-TriggerEvent('es:addGroupCommand', 'car', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'car', 'superadmin', function(source, args, user)
 	TriggerClientEvent('esx:spawnVehicle', source, args[1])
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
@@ -112,7 +112,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('spawn_object'), params = {{name = "name"}}})
 
-TriggerEvent('es:addGroupCommand', 'setmoney', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'setmoney', 'superadmin', function(source, args, user)
 	local _source = source
 	local target = tonumber(args[1])
 	local money_type = args[2]
@@ -145,7 +145,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('setmoney'), params = {{name = "id", help = _U('id_param')}, {name = "money type", help = _U('money_type')}, {name = "amount", help = _U('money_amount')}}})
 
-TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'giveaccountmoney', 'superadmin', function(source, args, user)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(args[1])
 	local account = args[2]
@@ -164,7 +164,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('giveaccountmoney'), params = {{name = "id", help = _U('id_param')}, {name = "account", help = _U('account')}, {name = "amount", help = _U('money_amount')}}})
 
-TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'giveitem', 'superadmin', function(source, args, user)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(args[1])
 	local item    = args[2]

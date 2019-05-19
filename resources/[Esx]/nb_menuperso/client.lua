@@ -183,9 +183,9 @@ function OpenPersonnelMenu()
 								admin_no_clip()
 							end
 
-							if data2.current.value == 'menuperso_modo_godmode' then
-								admin_godmode()
-							end
+							-- if data2.current.value == 'menuperso_modo_godmode' then
+							-- 	admin_godmode()
+							-- end
 
 							if data2.current.value == 'menuperso_modo_mode_fantome' then
 								admin_mode_fantome()
@@ -203,17 +203,17 @@ function OpenPersonnelMenu()
 								admin_vehicle_flip()
 							end
 
-							if data2.current.value == 'menuperso_modo_give_money' then
-								admin_give_money()
-							end
+							-- if data2.current.value == 'menuperso_modo_give_money' then
+							-- 	admin_give_money()
+							-- end
 
-							if data2.current.value == 'menuperso_modo_give_moneybank' then
-								admin_give_bank()
-							end
+							-- if data2.current.value == 'menuperso_modo_give_moneybank' then
+							-- 	admin_give_bank()
+							-- end
 
-							if data2.current.value == 'menuperso_modo_give_moneydirty' then
-								admin_give_dirty()
-							end
+							-- if data2.current.value == 'menuperso_modo_give_moneydirty' then
+							-- 	admin_give_dirty()
+							-- end
 
 							if data2.current.value == 'menuperso_modo_showcoord' then
 								modo_showcoord()
