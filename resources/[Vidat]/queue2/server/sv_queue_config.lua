@@ -21,6 +21,7 @@ Config.Priority = {
     ["steam:11000011c6ff036"] = 70, -- gift from arash
     ["steam:11000010b4600ae"] = 70, -- Mr Toxic streamer
     ["steam:110000133ffcac3"] = 70, -- Mr X
+    ["steam:110000133201d43"] = 70, -- Moonlight medic khoob
     -- ["steam:1100001196679b9"] = 70, -- zartosht streamer
     ["steam:11000010b421c27"] = 70, -- AmoBig streamer
     -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
