@@ -804,7 +804,7 @@ end)
 RegisterNetEvent('irrp_familiesprop:blip')
 
 
-RegisterCommand('family', function(args)
+RegisterCommand('myfamily', function(args)
 TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(PlayerData.family.name))
 end, false)
 
@@ -1255,9 +1255,9 @@ while true do
 
          TriggerEvent('irrp_families:openBossMenu', CurrentActionData.station, function(data, menu)
 
-           menu.close()
+          menu.close()
 
-           CurrentAction     = 'menu_boss_actions'
+          CurrentAction     = 'menu_boss_actions'
           CurrentActionMsg  = _U('open_bossmenu')
           CurrentActionData = {}
 
@@ -1279,11 +1279,15 @@ end)
 RegisterCommand('fm', function(source)
   if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
+  else
+    ESX.ShowNotification('Shoma Ozv Family Nistid!')
   end
 end, false)
 RegisterCommand('familymenu', function(source)
   if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
+  else
+    ESX.ShowNotification('Shoma Ozv Family Nistid!')
   end
 end, false)
 

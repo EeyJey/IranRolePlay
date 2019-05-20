@@ -46,11 +46,10 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 		SendNUIMessage({action = "setValue", key = "job", value = job.label .. " - " .. job.grade_label, icon = job.name})
 	local family = PlayerData.family
 	if family.name ~= 'nofamily' then
-		SendNUIMessage({action = "setValue", key = "family", value = family.name .. " - " .. family.grade_label, icon = "family"})
+		SendNUIMessage({action = "setValue", key = "family", value = family.name:gsub("_", " ") .. " - " .. family.grade_label, icon = "family"})
 	else
 		SendNUIMessage({action = "setValue", key = "family", value = 'Gang - Nothing', icon = "family"})
 	end
-
 	-- Money
 	SendNUIMessage({action = "setValue", key = "money", value = "$" .. PlayerData.money})
 end)
@@ -185,7 +184,7 @@ end)
 RegisterNetEvent('esx:setFamily')
 AddEventHandler('esx:setFamily', function(family)
 	if family.name ~= 'nofamily' then
-		SendNUIMessage({action = "setValue", key = "family", value = family.name .. " - " .. family.grade_label, icon = "family"})
+		SendNUIMessage({action = "setValue", key = "family", value = family.name:gsub("_", " ") .. " - " .. family.grade_label, icon = "family"})
 	else
 		SendNUIMessage({action = "setValue", key = "family", value = 'Gang - Nothing', icon = "family"})
 	end

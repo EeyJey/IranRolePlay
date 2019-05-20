@@ -17,20 +17,23 @@ MySQL.ready(function()
 
 		if shared ~= 0 then
 			local money = nil
+			local blackmoney = nil
 
 			if #result2 == 0 then
-				MySQL.Sync.execute('INSERT INTO family_account_data (family_name, money, owner) VALUES (@family_name, @money, NULL)',
+				MySQL.Sync.execute('INSERT INTO family_account_data (family_name, money, black_money, owner) VALUES (@family_name, @money, @black_money, NULL)',
 				{
-					['@family_name'] = name,
-					['@money']        = 0
+					['@family_name'] 	= name,
+					['@money']        	= 0,
+					['@black_money']	= 0
 				})
 
 				money = 0
 			else
 				money = result2[1].money
+				blackmoney = result2[1].black_money
 			end
 
-			local familyAccount   = CreateFamilyAccount(name, nil, money)
+			local familyAccount   = CreateFamilyAccount(name, nil, money, blackmoney)
 			FamilyAccounts[name] = familyAccount
 
 		end

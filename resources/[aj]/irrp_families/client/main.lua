@@ -35,7 +35,7 @@ end)
 	end
 end
 
- RegisterNetEvent('irrp_familyaccount:setMoney')
+RegisterNetEvent('irrp_familyaccount:setMoney')
 AddEventHandler('irrp_familyaccount:setMoney', function(family, money)
 	if ESX.PlayerData.family and ESX.PlayerData.family.grade == 6 and 'family_' .. ESX.PlayerData.family.name == family then
 		UpdateSocietyMoneyHUDElement(money)
@@ -111,6 +111,10 @@ end
 		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
 	end
 
+	table.insert(elements, {label = _U('withdraw_black_money'), value = 'withdraw_black_money'})
+
+	table.insert(elements, {label = _U('deposit_black_money'), value = 'deposit_black_money'})
+
  	if options.wash then
 		table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
 	end
@@ -148,10 +152,10 @@ end
 				menu.close()
 			end)
 
- 		elseif data.current.value == 'deposit_money' then
+		elseif data.current.value == 'withdraw_black_money' then
 
- 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. family, {
-				title = _U('deposit_amount')
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_black_money_amount_' .. family, {
+				title = _U('withdraw_black_money')
 			}, function(data, menu)
 
  				local amount = tonumber(data.value)
@@ -160,12 +164,50 @@ end
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
 					menu.close()
-					TriggerServerEvent('irrp_families:depositMoney', family, amount)
+					TriggerServerEvent('irrp_families:withdrawBlackMoney', family, amount)
 				end
 
  			end, function(data, menu)
 				menu.close()
 			end)
+
+		elseif data.current.value == 'deposit_money' then
+
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. family, {
+			   title = _U('deposit_amount')
+		   }, function(data, menu)
+
+				local amount = tonumber(data.value)
+
+				if amount == nil then
+				   ESX.ShowNotification(_U('invalid_amount'))
+			   else
+				   menu.close()
+				   TriggerServerEvent('irrp_families:depositMoney', family, amount)
+			   end
+
+			end, function(data, menu)
+			   menu.close()
+		   end)
+
+		elseif data.current.value == 'deposit_black_money' then
+
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_black_money_amount_' .. family, {
+			   title = _U('deposit_black_money_amount')
+		   }, function(data, menu)
+
+				local amount = tonumber(data.value)
+
+				if amount == nil then
+				   ESX.ShowNotification(_U('invalid_amount'))
+			   else
+				   menu.close()
+				   TriggerServerEvent('irrp_families:depositBlackMoney', family, amount)
+			   end
+
+			end, function(data, menu)
+			   menu.close()
+		   end)
 
  		elseif data.current.value == 'wash_money' then
 

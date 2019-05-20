@@ -41,6 +41,14 @@ local RegisteredFamilies = {
 		inventory = 'family_knaxvell',
 		data      = 'family_knaxvell',
 	},
+	{
+		name      = 'Immortal_Dynasty',
+		label     = 'family',
+		account   = 'family_immortal_dynasty',
+		datastore = 'family_immortal_dynasty',
+		inventory = 'family_immortal_dynasty',
+		data      = 'family_immortal_dynasty',
+	},
 }
 
  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -125,6 +133,31 @@ AddEventHandler('irrp_families:withdrawMoney', function(familyname, amount)
 	end)
 end)
 
+RegisterServerEvent('irrp_families:withdrawBlackMoney')
+AddEventHandler('irrp_families:withdrawBlackMoney', function(familyname, amount)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local family = GetFamily(familyname)
+	amount = ESX.Math.Round(tonumber(amount))
+
+ 	if xPlayer.family.name ~= family.name then
+		print(('irrp_families: %s attempted to call withdrawBlackMoney!'):format(xPlayer.identifier))
+		return
+	end
+
+ 	TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+		if amount > 0 and account.black_money >= amount then
+			account.removeBlackMoney(amount)
+			xPlayer.addAccountMoney('black_money', amount)
+
+ 			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_withdrawn_black_money', ESX.Math.GroupDigits(amount)))
+		else
+			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('invalid_amount'))
+		end
+	end)
+end)
+
+
+
 RegisterServerEvent('irrp_families:depositMoney')
 AddEventHandler('irrp_families:depositMoney', function(family, amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
@@ -143,6 +176,31 @@ AddEventHandler('irrp_families:depositMoney', function(family, amount)
 		end)
 
  		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_deposited', ESX.Math.GroupDigits(amount)))
+	else
+		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('invalid_amount'))
+	end
+end)
+
+RegisterServerEvent('irrp_families:depositBlackMoney')
+AddEventHandler('irrp_families:depositBlackMoney', function(family, amount)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local family = GetFamily(family)
+	amount = ESX.Math.Round(tonumber(amount))
+
+ 	if xPlayer.family.name ~= family.name then
+		print(('irrp_families: %s attempted to call depositBlackMoney!'):format(xPlayer.identifier))
+		return
+	end
+
+	local m = xPlayer.getAccount('black_money').money
+	
+ 	if amount > 0 and m >= amount then
+		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+			xPlayer.removeAccountMoney('black_money', amount)
+			account.addBlackMoney(amount)
+		end)
+
+ 		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_deposited_black_money', ESX.Math.GroupDigits(amount)))
 	else
 		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('invalid_amount'))
 	end
@@ -508,7 +566,7 @@ end)
 			MySQL.Async.execute('UPDATE users SET family = @family, family_grade = @family_grade WHERE identifier = @identifier', {
 				['@family']        = family,
 				['@family_grade']  = grade,
-				['@identifier'] = identifier
+				['@identifier'] 	 = identifier
 			}, function(rowsChanged)
 				cb()
 			end)
