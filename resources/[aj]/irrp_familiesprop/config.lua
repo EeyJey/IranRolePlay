@@ -273,4 +273,45 @@ Config.families = {
     --     { x = 93.747489929199, y = -1292.1848144531, z = 28.268768310547 },
     --   }
     -- },
+    ['MK'] = {
+      Blip = {
+        Pos     = { x = -820.939, y = 183.472, z = 72.523 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'Contender',  label = 'Contender' },
+        { name = 'Schafter3',    label = 'Schafter' },
+        { name = 'CarbonRS',   label = 'CarbonRS' },
+      },
+      VehicleProp = {
+        color2            = 126,
+        color1            = 126,
+        pearlescentColor  = 88,
+      },
+      Cloakrooms = {
+        { x = -811.733, y = 175.159, z = 75.745 },
+      },
+      Armories = {
+        { x = -804.525, y = 189.451, z = 71.835},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = -815.987, y = 183.911, z = 71.4048 },
+          SpawnPoint = { x = -820.939, y = 183.472, z = 71.023 },
+          Heading    = 130.478,
+        }
+      },
+      VehicleDeleters = {
+        { x = -818.524, y = 184.931, z = 71.272 },
+      },
+      BossActions = {
+        { x = -806.306, y = 168.434, z = 75.745 },
+      }
+    },
 }

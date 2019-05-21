@@ -49,6 +49,14 @@ local RegisteredFamilies = {
 		inventory = 'family_immortal_dynasty',
 		data      = 'family_immortal_dynasty',
 	},
+	{
+		name      = 'MK',
+		label     = 'family',
+		account   = 'family_mk',
+		datastore = 'family_mk',
+		inventory = 'family_mk',
+		data      = 'family_mk',
+	},
 }
 
  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -469,7 +477,7 @@ end)
 		return
 	end
 
-  TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
+  TriggerEvent('irrp_families:getSharedInventory', family.account, function(inventory)
     cb(inventory.items)
   end)
 
