@@ -14,7 +14,7 @@ Citizen.CreateThread(function()
     local svid = GetConvar("serverNumber","0")
     local players = nil
 	while true do
-        Citizen.Wait(400*1000) -- Every 10 second
+        Citizen.Wait(120*1000) -- Every 10 second
         players = GetPlayers()
         list = {}
         for _, i in ipairs(players) do
