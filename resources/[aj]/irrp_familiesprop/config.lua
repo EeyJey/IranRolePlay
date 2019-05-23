@@ -144,7 +144,7 @@ Config.families = {
     },
     ['La_Fuente'] = {
       Blip = {
-        Pos     = { 1402.365, y = 1116.664, z = 114.8376 },
+        Pos     = { 1402.365, y = 1116.664, z = 115.6376 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -229,7 +229,7 @@ Config.families = {
     },
     ['Serenity'] = {
       Blip = {
-        Pos     = { x = -1528.885, y = 82.467, z = 57.150 },
+        Pos     = { x = -1528.885, y = 82.467, z = 57.4450 },
         Sprite  = 206,
         Display = 4,
         Scale   = 1.2,
@@ -275,7 +275,7 @@ Config.families = {
     },
     ['MK'] = {
       Blip = {
-        Pos     = { x = -820.939, y = 183.472, z = 72.523 },
+        Pos     = { x = -820.939, y = 183.472, z = 72.823 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -352,7 +352,7 @@ Config.families = {
     },
     ['HildA'] = {
       Blip = {
-        Pos     = { x = -14.878, y = -1446.033, z = 31.146 },
+        Pos     = { x = -14.878, y = -1446.033, z = 31.346 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
