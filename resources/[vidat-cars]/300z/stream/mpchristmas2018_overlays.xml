@@ -1,0 +1,3807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PedDecorationCollection>
+  <bRequiredForSync value="true" />
+  <presets>
+	<Item>
+      <uvPos x="0.224000" y="0.510000" />
+      <scale x="0.260000" y="0.260000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tat_000_M</nameHash>
+      <txdHash>MP_Christmas2018_Tat_000</txdHash>
+      <txtHash>MP_Christmas2018_Tat_000</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_TATTOO</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.224000" y="0.610000" />
+      <scale x="0.260000" y="0.200000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tat_000_F</nameHash>
+      <txdHash>MP_Christmas2018_Tat_000</txdHash>
+      <txtHash>MP_Christmas2018_Tat_000</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_TATTOO</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>  
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_000_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_000</txdHash>
+      <txtHash>MP_Christmas2018_Tee_000</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_000_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_000</txdHash>
+      <txtHash>MP_Christmas2018_Tee_000</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_001_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_001</txdHash>
+      <txtHash>MP_Christmas2018_Tee_001</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_001_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_001</txdHash>
+      <txtHash>MP_Christmas2018_Tee_001</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_002_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_002</txdHash>
+      <txtHash>MP_Christmas2018_Tee_002</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_002_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_002</txdHash>
+      <txtHash>MP_Christmas2018_Tee_002</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_003_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_003</txdHash>
+      <txtHash>MP_Christmas2018_Tee_003</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_003_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_003</txdHash>
+      <txtHash>MP_Christmas2018_Tee_003</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_004_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_004</txdHash>
+      <txtHash>MP_Christmas2018_Tee_004</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_004_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_004</txdHash>
+      <txtHash>MP_Christmas2018_Tee_004</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_005_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_005</txdHash>
+      <txtHash>MP_Christmas2018_Tee_005</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_005_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_005</txdHash>
+      <txtHash>MP_Christmas2018_Tee_005</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_006_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_006</txdHash>
+      <txtHash>MP_Christmas2018_Tee_006</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_006_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_006</txdHash>
+      <txtHash>MP_Christmas2018_Tee_006</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_007_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_007</txdHash>
+      <txtHash>MP_Christmas2018_Tee_007</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.710000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_007_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_007</txdHash>
+      <txtHash>MP_Christmas2018_Tee_007</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_008_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_008</txdHash>
+      <txtHash>MP_Christmas2018_Tee_008</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_008_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_008</txdHash>
+      <txtHash>MP_Christmas2018_Tee_008</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_009_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_009</txdHash>
+      <txtHash>MP_Christmas2018_Tee_009</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_009_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_009</txdHash>
+      <txtHash>MP_Christmas2018_Tee_009</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_010_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_010</txdHash>
+      <txtHash>MP_Christmas2018_Tee_010</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_010_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_010</txdHash>
+      <txtHash>MP_Christmas2018_Tee_010</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_011_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_011</txdHash>
+      <txtHash>MP_Christmas2018_Tee_011</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_011_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_011</txdHash>
+      <txtHash>MP_Christmas2018_Tee_011</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_012_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_012</txdHash>
+      <txtHash>MP_Christmas2018_Tee_012</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_012_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_012</txdHash>
+      <txtHash>MP_Christmas2018_Tee_012</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.610000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_013_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_013</txdHash>
+      <txtHash>MP_Christmas2018_Tee_013</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_013_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_013</txdHash>
+      <txtHash>MP_Christmas2018_Tee_013</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_014_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_014</txdHash>
+      <txtHash>MP_Christmas2018_Tee_014</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_014_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_014</txdHash>
+      <txtHash>MP_Christmas2018_Tee_014</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_015_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_015</txdHash>
+      <txtHash>MP_Christmas2018_Tee_015</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.700000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_015_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_015</txdHash>
+      <txtHash>MP_Christmas2018_Tee_015</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_016_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_016</txdHash>
+      <txtHash>MP_Christmas2018_Tee_016</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.700000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_016_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_016</txdHash>
+      <txtHash>MP_Christmas2018_Tee_016</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.120000" y="0.120000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_017_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_017</txdHash>
+      <txtHash>MP_Christmas2018_Tee_017</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.130000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_017_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_017</txdHash>
+      <txtHash>MP_Christmas2018_Tee_017</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.120000" y="0.120000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_018_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_018</txdHash>
+      <txtHash>MP_Christmas2018_Tee_018</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.120000" y="0.120000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_018_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_018</txdHash>
+      <txtHash>MP_Christmas2018_Tee_018</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_019_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_019</txdHash>
+      <txtHash>MP_Christmas2018_Tee_019</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_019_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_019</txdHash>
+      <txtHash>MP_Christmas2018_Tee_019</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_020_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_020</txdHash>
+      <txtHash>MP_Christmas2018_Tee_020</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_020_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_020</txdHash>
+      <txtHash>MP_Christmas2018_Tee_020</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_021_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_021</txdHash>
+      <txtHash>MP_Christmas2018_Tee_021</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_021_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_021</txdHash>
+      <txtHash>MP_Christmas2018_Tee_021</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_022_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_022</txdHash>
+      <txtHash>MP_Christmas2018_Tee_022</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_022_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_022</txdHash>
+      <txtHash>MP_Christmas2018_Tee_022</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_023_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_023</txdHash>
+      <txtHash>MP_Christmas2018_Tee_023</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_023_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_023</txdHash>
+      <txtHash>MP_Christmas2018_Tee_023</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_024_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_024</txdHash>
+      <txtHash>MP_Christmas2018_Tee_024</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_024_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_024</txdHash>
+      <txtHash>MP_Christmas2018_Tee_024</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_025_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_025</txdHash>
+      <txtHash>MP_Christmas2018_Tee_025</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_025_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_025</txdHash>
+      <txtHash>MP_Christmas2018_Tee_025</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_026_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_026</txdHash>
+      <txtHash>MP_Christmas2018_Tee_026</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_026_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_026</txdHash>
+      <txtHash>MP_Christmas2018_Tee_026</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_027_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_027</txdHash>
+      <txtHash>MP_Christmas2018_Tee_027</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_027_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_027</txdHash>
+      <txtHash>MP_Christmas2018_Tee_027</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_028_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_028</txdHash>
+      <txtHash>MP_Christmas2018_Tee_028</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_028_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_028</txdHash>
+      <txtHash>MP_Christmas2018_Tee_028</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_029_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_029</txdHash>
+      <txtHash>MP_Christmas2018_Tee_029</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_029_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_029</txdHash>
+      <txtHash>MP_Christmas2018_Tee_029</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_030_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_030</txdHash>
+      <txtHash>MP_Christmas2018_Tee_030</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_030_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_030</txdHash>
+      <txtHash>MP_Christmas2018_Tee_030</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_031_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_031</txdHash>
+      <txtHash>MP_Christmas2018_Tee_031</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_031_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_031</txdHash>
+      <txtHash>MP_Christmas2018_Tee_031</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_032_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_032</txdHash>
+      <txtHash>MP_Christmas2018_Tee_032</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_032_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_032</txdHash>
+      <txtHash>MP_Christmas2018_Tee_032</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_033_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_033</txdHash>
+      <txtHash>MP_Christmas2018_Tee_033</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.700000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_033_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_033</txdHash>
+      <txtHash>MP_Christmas2018_Tee_033</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_034_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_034</txdHash>
+      <txtHash>MP_Christmas2018_Tee_034</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_034_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_034</txdHash>
+      <txtHash>MP_Christmas2018_Tee_034</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_035_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_035</txdHash>
+      <txtHash>MP_Christmas2018_Tee_035</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_035_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_035</txdHash>
+      <txtHash>MP_Christmas2018_Tee_035</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_036_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_036</txdHash>
+      <txtHash>MP_Christmas2018_Tee_036</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_036_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_036</txdHash>
+      <txtHash>MP_Christmas2018_Tee_036</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_037_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_037</txdHash>
+      <txtHash>MP_Christmas2018_Tee_037</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_037_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_037</txdHash>
+      <txtHash>MP_Christmas2018_Tee_037</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_038_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_038</txdHash>
+      <txtHash>MP_Christmas2018_Tee_038</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_038_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_038</txdHash>
+      <txtHash>MP_Christmas2018_Tee_038</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_039_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_039</txdHash>
+      <txtHash>MP_Christmas2018_Tee_039</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_039_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_039</txdHash>
+      <txtHash>MP_Christmas2018_Tee_039</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_040_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_040</txdHash>
+      <txtHash>MP_Christmas2018_Tee_040</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_040_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_040</txdHash>
+      <txtHash>MP_Christmas2018_Tee_040</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.610000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_041_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_041</txdHash>
+      <txtHash>MP_Christmas2018_Tee_041</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_041_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_041</txdHash>
+      <txtHash>MP_Christmas2018_Tee_041</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_042_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_042</txdHash>
+      <txtHash>MP_Christmas2018_Tee_042</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_042_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_042</txdHash>
+      <txtHash>MP_Christmas2018_Tee_042</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_043_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_043</txdHash>
+      <txtHash>MP_Christmas2018_Tee_043</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_043_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_043</txdHash>
+      <txtHash>MP_Christmas2018_Tee_043</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_044_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_044</txdHash>
+      <txtHash>MP_Christmas2018_Tee_044</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_044_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_044</txdHash>
+      <txtHash>MP_Christmas2018_Tee_044</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_045_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_045</txdHash>
+      <txtHash>MP_Christmas2018_Tee_045</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_045_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_045</txdHash>
+      <txtHash>MP_Christmas2018_Tee_045</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_046_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_046</txdHash>
+      <txtHash>MP_Christmas2018_Tee_046</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_046_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_046</txdHash>
+      <txtHash>MP_Christmas2018_Tee_046</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_047_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_047</txdHash>
+      <txtHash>MP_Christmas2018_Tee_047</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.620000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_047_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_047</txdHash>
+      <txtHash>MP_Christmas2018_Tee_047</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_048_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_048</txdHash>
+      <txtHash>MP_Christmas2018_Tee_048</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_048_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_048</txdHash>
+      <txtHash>MP_Christmas2018_Tee_048</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_049_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_049</txdHash>
+      <txtHash>MP_Christmas2018_Tee_049</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_049_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_049</txdHash>
+      <txtHash>MP_Christmas2018_Tee_049</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.170000" y="0.170000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_050_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_050</txdHash>
+      <txtHash>MP_Christmas2018_Tee_050</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_050_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_050</txdHash>
+      <txtHash>MP_Christmas2018_Tee_050</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_051_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_051</txdHash>
+      <txtHash>MP_Christmas2018_Tee_051</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_051_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_051</txdHash>
+      <txtHash>MP_Christmas2018_Tee_051</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_052_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_052</txdHash>
+      <txtHash>MP_Christmas2018_Tee_052</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.743000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_052_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_052</txdHash>
+      <txtHash>MP_Christmas2018_Tee_052</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.135000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_053_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_053</txdHash>
+      <txtHash>MP_Christmas2018_Tee_053</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.135000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_053_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_053</txdHash>
+      <txtHash>MP_Christmas2018_Tee_053</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_054_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_054</txdHash>
+      <txtHash>MP_Christmas2018_Tee_054</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.665000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_054_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_054</txdHash>
+      <txtHash>MP_Christmas2018_Tee_054</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_055_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_055</txdHash>
+      <txtHash>MP_Christmas2018_Tee_055</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_055_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_055</txdHash>
+      <txtHash>MP_Christmas2018_Tee_055</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_056_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_056</txdHash>
+      <txtHash>MP_Christmas2018_Tee_056</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_056_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_056</txdHash>
+      <txtHash>MP_Christmas2018_Tee_056</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_057_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_057</txdHash>
+      <txtHash>MP_Christmas2018_Tee_057</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_057_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_057</txdHash>
+      <txtHash>MP_Christmas2018_Tee_057</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_058_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_058</txdHash>
+      <txtHash>MP_Christmas2018_Tee_058</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_058_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_058</txdHash>
+      <txtHash>MP_Christmas2018_Tee_058</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_059_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_059</txdHash>
+      <txtHash>MP_Christmas2018_Tee_059</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_059_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_059</txdHash>
+      <txtHash>MP_Christmas2018_Tee_059</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_060_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_060</txdHash>
+      <txtHash>MP_Christmas2018_Tee_060</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_060_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_060</txdHash>
+      <txtHash>MP_Christmas2018_Tee_060</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_061_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_061</txdHash>
+      <txtHash>MP_Christmas2018_Tee_061</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_061_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_061</txdHash>
+      <txtHash>MP_Christmas2018_Tee_061</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_062_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_062</txdHash>
+      <txtHash>MP_Christmas2018_Tee_062</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_062_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_062</txdHash>
+      <txtHash>MP_Christmas2018_Tee_062</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_063_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_063</txdHash>
+      <txtHash>MP_Christmas2018_Tee_063</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_063_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_063</txdHash>
+      <txtHash>MP_Christmas2018_Tee_063</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_064_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_064</txdHash>
+      <txtHash>MP_Christmas2018_Tee_064</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_064_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_064</txdHash>
+      <txtHash>MP_Christmas2018_Tee_064</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_065_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_065</txdHash>
+      <txtHash>MP_Christmas2018_Tee_065</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_065_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_065</txdHash>
+      <txtHash>MP_Christmas2018_Tee_065</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.125000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_066_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_066</txdHash>
+      <txtHash>MP_Christmas2018_Tee_066</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.125000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_066_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_066</txdHash>
+      <txtHash>MP_Christmas2018_Tee_066</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_067_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_067</txdHash>
+      <txtHash>MP_Christmas2018_Tee_067</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_067_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_067</txdHash>
+      <txtHash>MP_Christmas2018_Tee_067</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.680000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_068_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_068</txdHash>
+      <txtHash>MP_Christmas2018_Tee_068</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.710000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_068_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_068</txdHash>
+      <txtHash>MP_Christmas2018_Tee_068</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_069_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_069</txdHash>
+      <txtHash>MP_Christmas2018_Tee_069</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_069_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_069</txdHash>
+      <txtHash>MP_Christmas2018_Tee_069</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_070_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_070</txdHash>
+      <txtHash>MP_Christmas2018_Tee_070</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_070_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_070</txdHash>
+      <txtHash>MP_Christmas2018_Tee_070</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_071_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_071</txdHash>
+      <txtHash>MP_Christmas2018_Tee_071</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_071_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_071</txdHash>
+      <txtHash>MP_Christmas2018_Tee_071</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.680000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_072_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_072</txdHash>
+      <txtHash>MP_Christmas2018_Tee_072</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_072_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_072</txdHash>
+      <txtHash>MP_Christmas2018_Tee_072</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_073_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_073</txdHash>
+      <txtHash>MP_Christmas2018_Tee_073</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_073_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_073</txdHash>
+      <txtHash>MP_Christmas2018_Tee_073</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_074_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_074</txdHash>
+      <txtHash>MP_Christmas2018_Tee_074</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_074_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_074</txdHash>
+      <txtHash>MP_Christmas2018_Tee_074</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_075_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_075</txdHash>
+      <txtHash>MP_Christmas2018_Tee_075</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_075_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_075</txdHash>
+      <txtHash>MP_Christmas2018_Tee_075</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_076_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_076</txdHash>
+      <txtHash>MP_Christmas2018_Tee_076</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_076_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_076</txdHash>
+      <txtHash>MP_Christmas2018_Tee_076</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_077_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_077</txdHash>
+      <txtHash>MP_Christmas2018_Tee_077</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.150000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_077_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_077</txdHash>
+      <txtHash>MP_Christmas2018_Tee_077</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_078_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_078</txdHash>
+      <txtHash>MP_Christmas2018_Tee_078</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.150000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_078_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_078</txdHash>
+      <txtHash>MP_Christmas2018_Tee_078</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_079_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_079</txdHash>
+      <txtHash>MP_Christmas2018_Tee_079</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.150000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_079_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_079</txdHash>
+      <txtHash>MP_Christmas2018_Tee_079</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_080_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_080</txdHash>
+      <txtHash>MP_Christmas2018_Tee_080</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_080_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_080</txdHash>
+      <txtHash>MP_Christmas2018_Tee_080</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_081_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_081</txdHash>
+      <txtHash>MP_Christmas2018_Tee_081</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.150000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_081_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_081</txdHash>
+      <txtHash>MP_Christmas2018_Tee_081</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_082_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_082</txdHash>
+      <txtHash>MP_Christmas2018_Tee_082</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.150000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_082_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_082</txdHash>
+      <txtHash>MP_Christmas2018_Tee_082</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.160000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_083_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_083</txdHash>
+      <txtHash>MP_Christmas2018_Tee_083</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.160000" y="0.135000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_083_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_083</txdHash>
+      <txtHash>MP_Christmas2018_Tee_083</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_084_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_084</txdHash>
+      <txtHash>MP_Christmas2018_Tee_084</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_084_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_084</txdHash>
+      <txtHash>MP_Christmas2018_Tee_084</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_085_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_085</txdHash>
+      <txtHash>MP_Christmas2018_Tee_085</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_085_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_085</txdHash>
+      <txtHash>MP_Christmas2018_Tee_085</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.530000" />
+      <scale x="0.300000" y="0.310000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_086_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_086</txdHash>
+      <txtHash>MP_Christmas2018_Tee_086</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.580000" />
+      <scale x="0.300000" y="0.270000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_086_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_086</txdHash>
+      <txtHash>MP_Christmas2018_Tee_086</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.757000" y="0.515000" />
+      <scale x="0.270000" y="0.270000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_087_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_087</txdHash>
+      <txtHash>MP_Christmas2018_Tee_087</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.747000" y="0.560000" />
+      <scale x="0.300000" y="0.250000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_087_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_087</txdHash>
+      <txtHash>MP_Christmas2018_Tee_087</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_088_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_088</txdHash>
+      <txtHash>MP_Christmas2018_Tee_088</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_088_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_088</txdHash>
+      <txtHash>MP_Christmas2018_Tee_088</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.747000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_089_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_089</txdHash>
+      <txtHash>MP_Christmas2018_Tee_089</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_089_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_089</txdHash>
+      <txtHash>MP_Christmas2018_Tee_089</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.160000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_090_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_090</txdHash>
+      <txtHash>MP_Christmas2018_Tee_090</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.160000" y="0.150000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_090_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_090</txdHash>
+      <txtHash>MP_Christmas2018_Tee_090</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.170000" y="0.170000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_091_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_091</txdHash>
+      <txtHash>MP_Christmas2018_Tee_091</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.170000" y="0.160000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_091_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_091</txdHash>
+      <txtHash>MP_Christmas2018_Tee_091</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_092_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_092</txdHash>
+      <txtHash>MP_Christmas2018_Tee_092</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_092_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_092</txdHash>
+      <txtHash>MP_Christmas2018_Tee_092</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_093_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_093</txdHash>
+      <txtHash>MP_Christmas2018_Tee_093</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_093_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_093</txdHash>
+      <txtHash>MP_Christmas2018_Tee_093</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_094_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_094</txdHash>
+      <txtHash>MP_Christmas2018_Tee_094</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_094_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_094</txdHash>
+      <txtHash>MP_Christmas2018_Tee_094</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_095_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_095</txdHash>
+      <txtHash>MP_Christmas2018_Tee_095</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_095_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_095</txdHash>
+      <txtHash>MP_Christmas2018_Tee_095</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_096_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_096</txdHash>
+      <txtHash>MP_Christmas2018_Tee_096</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_096_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_096</txdHash>
+      <txtHash>MP_Christmas2018_Tee_096</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.670000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_097_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_097</txdHash>
+      <txtHash>MP_Christmas2018_Tee_097</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.680000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_097_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_097</txdHash>
+      <txtHash>MP_Christmas2018_Tee_097</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_098_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_098</txdHash>
+      <txtHash>MP_Christmas2018_Tee_098</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_098_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_098</txdHash>
+      <txtHash>MP_Christmas2018_Tee_098</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_099_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_099</txdHash>
+      <txtHash>MP_Christmas2018_Tee_099</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_099_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_099</txdHash>
+      <txtHash>MP_Christmas2018_Tee_099</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_100_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_100</txdHash>
+      <txtHash>MP_Christmas2018_Tee_100</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_100_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_100</txdHash>
+      <txtHash>MP_Christmas2018_Tee_100</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_101_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_101</txdHash>
+      <txtHash>MP_Christmas2018_Tee_101</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_101_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_101</txdHash>
+      <txtHash>MP_Christmas2018_Tee_101</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_102_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_102</txdHash>
+      <txtHash>MP_Christmas2018_Tee_102</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.150000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_102_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_102</txdHash>
+      <txtHash>MP_Christmas2018_Tee_102</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_103_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_103</txdHash>
+      <txtHash>MP_Christmas2018_Tee_103</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.150000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_103_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_103</txdHash>
+      <txtHash>MP_Christmas2018_Tee_103</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.600000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_104_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_104</txdHash>
+      <txtHash>MP_Christmas2018_Tee_104</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.630000" />
+      <scale x="0.150000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_104_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_104</txdHash>
+      <txtHash>MP_Christmas2018_Tee_104</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_105_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_105</txdHash>
+      <txtHash>MP_Christmas2018_Tee_105</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_105_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_105</txdHash>
+      <txtHash>MP_Christmas2018_Tee_105</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_106_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_106</txdHash>
+      <txtHash>MP_Christmas2018_Tee_106</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_106_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_106</txdHash>
+      <txtHash>MP_Christmas2018_Tee_106</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_107_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_107</txdHash>
+      <txtHash>MP_Christmas2018_Tee_107</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_107_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_107</txdHash>
+      <txtHash>MP_Christmas2018_Tee_107</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_108_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_108</txdHash>
+      <txtHash>MP_Christmas2018_Tee_108</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_108_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_108</txdHash>
+      <txtHash>MP_Christmas2018_Tee_108</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_109_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_109</txdHash>
+      <txtHash>MP_Christmas2018_Tee_109</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_109_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_109</txdHash>
+      <txtHash>MP_Christmas2018_Tee_109</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.620000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_110_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_110</txdHash>
+      <txtHash>MP_Christmas2018_Tee_110</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.650000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_110_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_110</txdHash>
+      <txtHash>MP_Christmas2018_Tee_110</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_111_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_111</txdHash>
+      <txtHash>MP_Christmas2018_Tee_111</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_111_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_111</txdHash>
+      <txtHash>MP_Christmas2018_Tee_111</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_112_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_112</txdHash>
+      <txtHash>MP_Christmas2018_Tee_112</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_112_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_112</txdHash>
+      <txtHash>MP_Christmas2018_Tee_112</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_113_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_113</txdHash>
+      <txtHash>MP_Christmas2018_Tee_113</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_113_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_113</txdHash>
+      <txtHash>MP_Christmas2018_Tee_113</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_114_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_114</txdHash>
+      <txtHash>MP_Christmas2018_Tee_114</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_114_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_114</txdHash>
+      <txtHash>MP_Christmas2018_Tee_114</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_115_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_115</txdHash>
+      <txtHash>MP_Christmas2018_Tee_115</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_115_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_115</txdHash>
+      <txtHash>MP_Christmas2018_Tee_115</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_116_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_116</txdHash>
+      <txtHash>MP_Christmas2018_Tee_116</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_116_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_116</txdHash>
+      <txtHash>MP_Christmas2018_Tee_116</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_117_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_117</txdHash>
+      <txtHash>MP_Christmas2018_Tee_117</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_117_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_117</txdHash>
+      <txtHash>MP_Christmas2018_Tee_117</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_118_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_118</txdHash>
+      <txtHash>MP_Christmas2018_Tee_118</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_118_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_118</txdHash>
+      <txtHash>MP_Christmas2018_Tee_118</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_119_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_119</txdHash>
+      <txtHash>MP_Christmas2018_Tee_119</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_119_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_119</txdHash>
+      <txtHash>MP_Christmas2018_Tee_119</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_120_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_120</txdHash>
+      <txtHash>MP_Christmas2018_Tee_120</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_120_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_120</txdHash>
+      <txtHash>MP_Christmas2018_Tee_120</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.630000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_121_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_121</txdHash>
+      <txtHash>MP_Christmas2018_Tee_121</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.660000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_121_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_121</txdHash>
+      <txtHash>MP_Christmas2018_Tee_121</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.660000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_122_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_122</txdHash>
+      <txtHash>MP_Christmas2018_Tee_122</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.690000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_122_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_122</txdHash>
+      <txtHash>MP_Christmas2018_Tee_122</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_123_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_123</txdHash>
+      <txtHash>MP_Christmas2018_Tee_123</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_123_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_123</txdHash>
+      <txtHash>MP_Christmas2018_Tee_123</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.737000" y="0.640000" />
+      <scale x="0.140000" y="0.140000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_124_M</nameHash>
+      <txdHash>MP_Christmas2018_Tee_124</txdHash>
+      <txtHash>MP_Christmas2018_Tee_124</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_MALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+	<Item>
+      <uvPos x="0.727000" y="0.670000" />
+      <scale x="0.140000" y="0.130000" />
+      <rotation value="0.000000" />
+      <nameHash>MP_Christmas2018_Tee_124_F</nameHash>
+      <txdHash>MP_Christmas2018_Tee_124</txdHash>
+      <txtHash>MP_Christmas2018_Tee_124</txtHash>
+      <zone>ZONE_TORSO</zone>
+      <type>TYPE_BADGE</type>
+      <faction>FM</faction>
+      <garment>All</garment>
+      <gender>GENDER_FEMALE</gender>
+      <award />
+      <awardLevel />
+    </Item>
+  </presets>
+  <nameHash>mpChristmas2018_overlays</nameHash>
+  <medalLocations content="vector2_array">
+    0.140000	0.070000	
+    0.370000	0.070000	
+    0.600000	0.070000	
+    0.835000	0.070000	
+    0.140000	0.150000	
+    0.370000	0.150000	
+    0.600000	0.150000	
+    0.835000	0.150000	
+    0.140000	0.230000	
+    0.370000	0.230000	
+    0.600000	0.230000	
+    0.835000	0.230000	
+    0.100000	0.700000	
+    0.300000	0.700000	
+    0.500000	0.700000	
+    0.700000	0.700000	
+  </medalLocations>
+  <medalScale x="0.240000" y="0.100000" />
+</PedDecorationCollection>
