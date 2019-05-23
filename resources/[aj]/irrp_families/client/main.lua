@@ -91,7 +91,7 @@ end
 		return
 	end
 
-	while  familyBlackMoney == nil do
+	while familyBlackMoney == nil do
 		Citizen.Wait(1)
 		ESX.TriggerServerCallback('irrp_families:getFamilyBlackMoney', function(money)
 			familyBlackMoney = money
