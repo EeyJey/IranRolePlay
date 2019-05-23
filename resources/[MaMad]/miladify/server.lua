@@ -8,8 +8,9 @@ local skins = {
     ['steam:11000010934a428'] = 'a_c_shepherd', -- Quiet
     ['steam:110000115e0be8a'] = 'cs_orleans',   -- Mehdijoker
     ['steam:110000107a78e07'] =  's_m_y_prismuscl_01', -- Arash
-    ['steam:11000010f0a6439'] = 's_m_m_movalien_01', -- Peyman
-    ['steam:11000011c6ff036'] = 'a_c_cat_01' -- Pylies
+    ['steam:11000010f0a6439'] = 'a_c_coyote', -- Peyman
+    ['steam:11000011c6ff036'] = 'a_c_cat_01', -- Pylies
+    ['steam:11000013befa730'] = 'a_f_y_topless_01' -- Corrupt Mind
 } 
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
