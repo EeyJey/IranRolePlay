@@ -1,0 +1,22 @@
+2.00
+
+SCRIPTFX_INFO_START
+
+SCRIPTFX_INFO_END
+
+
+CUTSCENEFX_INFO_START
+
+ARENA_INT					cut_arena
+ARENA_INT_P4_T05			cut_arena
+BIGSCR_BINK					cut_bigscr
+BIGSCR_HPYB					cut_bigscr
+BIGSCR_HPYB_P1_T02			cut_bigscr
+BIGSCR_BRTH_P1_T02			cut_bigscr
+BIGSCR_BEER					cut_bigscr
+BIGSCR_BEER_P1_T03			cut_bigscr
+BIGSCR_GUNS					cut_bigscr
+BIGSCR_GUNS_P1_T02			cut_bigscr
+
+CUTSCENEFX_INFO_END
+

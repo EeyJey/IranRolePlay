@@ -494,13 +494,13 @@ Citizen.CreateThread(function()
 		for _, item in pairs(Config.Locations22) do
 			local npc = CreatePed(1, 0xacccbdb6, item.x, item.y, item.z, false, false)
 			
-			FreezeEntityPosition(npc, true)	
+			FreezeEntityPosition(npc, true)
 			SetEntityHeading(npc, item.heading)
 			SetEntityInvincible(npc, true)
 			SetBlockingOfNonTemporaryEvents(npc, true)
 			SetPedCanPlayAmbientAnims(npc, true)
-			RequestAnimDict("anim@heists@prison_heiststation@cop_reactions")
-			TaskPlayAnim(npc,"anim@heists@prison_heiststation@cop_reactions","cop_b_reaction",1.0, 0.0, 500, 1, 10, false, false, false)
+			RequestAnimDict("amb@world_human_cop_idles@male@idle_b")
+			TaskPlayAnim(npc,"amb@world_human_cop_idles@male@idle_b","idle_e",1.0, 0.0, 500, 1, 10, false, false, false)
 
 			-- FreezeEntityPosition(npc, true)	
 			-- SetEntityHeading(npc, item.heading)
