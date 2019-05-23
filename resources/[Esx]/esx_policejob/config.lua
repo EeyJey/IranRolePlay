@@ -39,11 +39,11 @@ Config.PoliceStations = {
 			{ name = 'weapon_flashlight',       price = 100 },
 			{ name = 'WEAPON_PISTOL',     price = 5000 },
 			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
-			{ name = 'weapon_combatpistol',     price = 7000 },
-			{ name = 'weapon_pistol50',     price = 9000 },
-			{ name = 'weapon_heavypistol',     price = 8000 },
+			{ name = 'WEAPON_COMBATPISTOL',     price = 7000 },
+			{ name = 'WEAPON_PISTOL50',     price = 9000 },
+			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
 			{ name = 'weapon_smg',     price = 12000 },
-			{ name = 'weapon_carbinerifle',     price = 12000 }
+			{ name = 'weapon_assaultrifle',     price = 12000 }
 		},
 
 		Cloakrooms = {

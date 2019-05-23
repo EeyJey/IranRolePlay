@@ -90,7 +90,9 @@ function OpenStealMenu(target, target_id)
 
 			for i=1, #data.weapons, 1 do
 				if 
-						( data.weapons[i].name == "WEAPON_SMG" or data.weapons[i].name == "WEAPON_CARBINERIFLE" or data.weapons[i].name== "WEAPON_STUNGUN")
+						( data.weapons[i].name ~= "WEAPON_PISTOL" and data.weapons[i].name ~= "WEAPON_SNSPISTOL" and data.weapons[i].name ~= "WEAPON_SNSPISTOL"
+						and data.weapons[i].name ~= 'WEAPON_COMBATPISTOL' and data.weapons[i].name ~= 'WEAPON_PISTOL50' and data.weapons[i].name ~= 'WEAPON_HEAVYPISTOL'
+						)
 						and
 						(data.job == "police")
 				then
