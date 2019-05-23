@@ -84,7 +84,7 @@ Config.AllowPolice = false -- If true, police will be able to search players' tr
 
 Config.Locale = "en"
 
-Config.OpenKey = Keys["Y"]
+Config.OpenKey = Keys["LEFTALT"]
 
 -- Limit, unit can be whatever you want. Originally grams (as average people can hold 25kg)
 Config.Limit = 25000
@@ -93,12 +93,23 @@ Config.Limit = 25000
 -- weight == 0 : The item do not affect character inventory weight
 -- weight > 0 : The item cost place on inventory
 -- weight < 0 : The item add place on inventory. Smart people will love it.
-Config.DefaultWeight = 10
+Config.DefaultWeight = 100
 
 Config.localWeight = {
     bread = 125,
     water = 330,
-    WEAPON_SMG = 5000
+    WEAPON_SMG = 5000,
+    WEAPON_ASSAULTRIFLE = 5000,
+    fixkit = 2000,
+    banana = 200,
+    weed = 350,
+    weed_pooch = 350,
+    coke = 600,
+    coke_pooch = 600,
+    opium   = 600,
+    opium_pooch = 600,
+    meth    = 600,
+    meth_pooch = 600
 }
 
 Config.VehicleLimit = {
