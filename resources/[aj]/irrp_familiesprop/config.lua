@@ -142,9 +142,9 @@ Config.families = {
         { x = 93.747489929199, y = -1292.1848144531, z = 28.268768310547 },
       }
     },
-    ['LaFuente'] = {
+    ['La_Fuente'] = {
       Blip = {
-        Pos     = { 1407.130, y = 1153.2783, z = 114.4430 },
+        Pos     = { 1402.365, y = 1116.664, z = 115.6376 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -227,55 +227,55 @@ Config.families = {
         { x = 53.100, y = 543.179, z = 174.853 },
       }
     },
-    -- ['Immortal_Dynasty'] = {
-    --   Blip = {
-    --     Pos     = { x = 129.246, y = -1299.363, z = 29.501 },
-    --     Sprite  = 206,
-    --     Display = 4,
-    --     Scale   = 1.2,
-    --     Colour  = 76,
-    --   },
-    --   AuthorizedWeapons = {
-    --     { name = 'WEAPON_PISTOL',      price = 10000 },
-    --   },
-    --   AuthorizedVehicles = {
-    --     { name = 'Contender',  label = 'Contender' },
-    --     { name = 'Schafter3',    label = 'Schafter' },
-    --     { name = 'CarbonRS',   label = 'CarbonRS' },
-    --   },
-    --   VehicleProp = {
-    --     -- modEngine       = 3,
-    --     -- modBrakes				=	2,
-    --     -- windowTint			=	1,
-    --     -- modArmor				= 4,
-    --     -- modTransmission = 2,
-    --     color2            = 120,
-    --     color1            = 120,
-    --     pearlescentColor  = 120,
-    --   },
-    --   Cloakrooms = {
-    --     { x = 105.65712738037, y = -1302.9646191406, z = 27.768800735474},
-    --   },
-    --   Armories = {
-    --     { x = 108.02396392822, y = -1304.9970703125, z = 27.768775939941},
-    --   },
-    --   Vehicles = {
-    --     {
-    --       Spawner    = { x = 162.36933898926, y = -1305.9147949219, z = 28.354679107666 },
-    --       SpawnPoint = { x = 151.55178833008, y = -1305.4443359375, z = 28.50 },
-    --       Heading    = 85.3702697,
-    --     }
-    --   },
-    --   VehicleDeleters = {
-    --     { x = 166.54556274414, y = -1275.0222167969, z = 28.045101165771 },
-    --   },
-    --   BossActions = {
-    --     { x = 93.747489929199, y = -1292.1848144531, z = 28.268768310547 },
-    --   }
-    -- },
+    ['Serenity'] = {
+      Blip = {
+        Pos     = { x = -1528.885, y = 82.467, z = 57.4450 },
+        Sprite  = 206,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'Contender',  label = 'Contender' },
+        { name = 'Schafter3',    label = 'Schafter' },
+        { name = 'CarbonRS',   label = 'CarbonRS' },
+      },
+      VehicleProp = {
+        modEngine       = 3,
+        modBrakes				=	2,
+        windowTint			=	1,
+        modArmor				= 4,
+        modTransmission = 2,
+        color2            = 120,
+        color1            = 120,
+        pearlescentColor  = 120,
+      },
+      Cloakrooms = {
+        { x = -1538.110, y = 118.748, z = 55.780},
+      },
+      Armories = {
+        { x = -1541.144, y = 92.135, z = 52.897},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = -1546.333, y = 104.943, z = 55.779 },
+          SpawnPoint = { x = -1536.845, y = 106.122, z = 56.779 },
+          Heading    = 224.234,
+        }
+      },
+      VehicleDeleters = {
+        { x = -1528.885, y = 82.467, z = 55.650 },
+      },
+      BossActions = {
+        { x = -1537.536, y = 129.882, z = 56.371 },
+      }
+    },
     ['MK'] = {
       Blip = {
-        Pos     = { x = -820.939, y = 183.472, z = 72.523 },
+        Pos     = { x = -820.939, y = 183.472, z = 72.823 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -314,4 +314,77 @@ Config.families = {
         { x = -806.306, y = 168.434, z = 75.745 },
       }
     },
+    ['Russian_Mafia'] = {
+      Blip = {
+        Pos     = { x = -820.939, y = 183.472, z = 72.523 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'No Car',  label = 'No Car' },
+      },
+      VehicleProp = {
+      },
+      Cloakrooms = {
+        { x = -1130.809, y = 361.346, z = 70.718 },
+      },
+      Armories = {
+        { x = -1101.692, y = 355.453, z = 67.488},
+      },
+      -- Vehicles = {
+      --   {
+      --     Spawner    = { x = -815.987, y = 183.911, z = 71.4048 },
+      --     SpawnPoint = { x = -820.939, y = 183.472, z = 71.023 },
+      --     Heading    = 130.478,
+      --   }
+      -- },
+      -- VehicleDeleters = {
+      --   { x = -818.524, y = 184.931, z = 71.272 },
+      -- },
+      BossActions = {
+        { x = -1135.301, y = 376.953, z = 70.299 },
+      }
+    },
+    ['HildA'] = {
+      Blip = {
+        Pos     = { x = -14.878, y = -1446.033, z = 31.346 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'No Car',  label = 'No Car' },
+      },
+      VehicleProp = {
+      },
+      Cloakrooms = {
+        { x = -17.756, y = -1439.271, z = 30.101 },
+      },
+      Armories = {
+        { x = -16.106, y = -1430.391, z = 30.101},
+      },
+      -- Vehicles = {
+      --   {
+      --     Spawner    = { x = -815.987, y = 183.911, z = 71.4048 },
+      --     SpawnPoint = { x = -820.939, y = 183.472, z = 71.023 },
+      --     Heading    = 130.478,
+      --   }
+      -- },
+      -- VehicleDeleters = {
+      --   { x = -818.524, y = 184.931, z = 71.272 },
+      -- },
+      BossActions = {
+        { x = -10.301, y = -1433.330, z = 30.116 },
+      }
+    },
 }
+

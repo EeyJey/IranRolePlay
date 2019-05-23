@@ -10,7 +10,7 @@ local RegisteredFamilies = {
 		data      = 'family_daltons',
 	},
 	{
-		name      = 'LaFuente',
+		name      = 'La_Fuente',
 		label     = 'family',
 		account   = 'family_lafuente',
 		datastore = 'family_lafuente',
@@ -42,12 +42,12 @@ local RegisteredFamilies = {
 		data      = 'family_knaxvell',
 	},
 	{
-		name      = 'Immortal_Dynasty',
+		name      = 'Serenity',
 		label     = 'family',
-		account   = 'family_immortal_dynasty',
-		datastore = 'family_immortal_dynasty',
-		inventory = 'family_immortal_dynasty',
-		data      = 'family_immortal_dynasty',
+		account   = 'family_serenity',
+		datastore = 'family_serenity',
+		inventory = 'family_serenity',
+		data      = 'family_serenity',
 	},
 	{
 		name      = 'MK',
@@ -56,6 +56,22 @@ local RegisteredFamilies = {
 		datastore = 'family_mk',
 		inventory = 'family_mk',
 		data      = 'family_mk',
+	},
+	{
+		name      = 'Russian_Mafia',
+		label     = 'family',
+		account   = 'family_russian_mafia',
+		datastore = 'family_russian_mafia',
+		inventory = 'family_russian_mafia',
+		data      = 'family_russian_mafia',
+	},
+	{
+		name      = 'HildA',
+		label     = 'family',
+		account   = 'family_hilda',
+		datastore = 'family_hilda',
+		inventory = 'family_hilda',
+		data      = 'family_hilda',
 	},
 }
 
