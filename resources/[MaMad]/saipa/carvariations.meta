@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>pa111fn</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">  <!-- Black -->
+            0
+            8
+            1
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Colony Blue -->
+            172
+            7
+            1
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Gunmetal Gray Metallic -->
+            8
+            6
+            4
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Sea Mist Green -->
+            171
+            170
+            1
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Midland Maroon Metallic -->
+            31
+            8
+            3
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Miami Cream -->
+            169
+            165
+            1
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Bayview Blue Metallic -->
+            62
+            67
+            4
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Birch Gray -->
+            4
+            5
+            1
+            156
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">  <!-- Meadow Green -->
+            170
+            171
+            1
+            156
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="2" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>
