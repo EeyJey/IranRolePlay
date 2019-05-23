@@ -185,7 +185,7 @@ function OpenShopMenu ()
         'default', GetCurrentResourceName(), 'shop_confirm',
         {
           title = _U('buy_vehicle_shop', vehicleData.name, vehicleData.price),
-          align = 'top-left',
+          align = 'top-right',
           elements = {
             {label = _U('yes'), value = 'yes'},
             {label = _U('no'),  value = 'no'},
@@ -227,7 +227,7 @@ function OpenShopMenu ()
                   'default', GetCurrentResourceName(), 'shop_confirm_buy_type',
                   {
                     title = _U('purchase_type'),
-                    align = 'top-left',
+                    align = 'top-right',
                     elements = {
                       {label = _U('staff_type'),   value = 'personnal'},
                       {label = _U('society_type'), value = 'society'},

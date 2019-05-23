@@ -218,7 +218,7 @@ function OpenVehicleSpawnerMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner',
 		{
 			title		= _U('spawn_veh'),
-			align		= 'top-left',
+			align		= 'top-right',
 			elements	= Config.AuthorizedVehicles
 		}, function(data, menu)
 			if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then

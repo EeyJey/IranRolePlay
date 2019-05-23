@@ -17,7 +17,7 @@ function OpenAmbulanceActionsMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'ambulance_actions',
 	{
 		title		= _U('ambulance'),
-		align		= 'top-left',
+		align		= 'top-right',
 		elements	= elements
 	}, function(data, menu)
 		if data.current.value == 'cloakroom' then
@@ -47,7 +47,7 @@ function OpenMobileAmbulanceActionsMenu()
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction',
 			{
 				title		= _U('ems_menu_title'),
-				align		= 'top-left',
+				align		= 'top-right',
 				elements	= {
 					{label = _U('ems_menu_revive'), value = 'revive'},
 					{label = _U('ems_menu_small'), value = 'small'},
@@ -420,7 +420,7 @@ function OpenCloakroomMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom',
 	{
 		title		= _U('cloakroom'),
-		align		= 'top-left',
+		align		= 'top-right',
 		elements = {
 			{label = _U('ems_clothes_civil'), value = 'citizen_wear'},
 			{label = _U('ems_clothes_ems'), value = 'ambulance_wear'},

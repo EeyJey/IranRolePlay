@@ -43,7 +43,7 @@ function OpenBuyLicenseMenu(zone)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop_license', {
 		title = _U('buy_license'),
-		align = 'top-left',
+		align = 'top-right',
 		elements = {
 			{ label = _U('no'), value = 'no' },
 			{ label = _U('yes', ('<span style="color: green;">%s</span>'):format((_U('shop_menu_item', ESX.Math.GroupDigits(Config.LicensePrice))))), value = 'yes' },
@@ -81,7 +81,7 @@ function OpenShopMenu(zone)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
 		title = _U('shop_menu_title'),
-		align = 'top-left',
+		align = 'top-right',
 		elements = elements
 	}, function(data, menu)
 		ESX.TriggerServerCallback('esx_weaponshop:buyWeapon', function(bought)

@@ -31,7 +31,7 @@ function OpenAccessoryMenu()
 		'default', GetCurrentResourceName(), 'set_unset_accessory',
 		{
 			title = _U('set_unset'),
-			align = 'top-left',
+			align = 'top-right',
 			elements = {
 				{label = _U('helmet'), value = 'Helmet'},
 				{label = _U('ears'), value = 'Ears'},
@@ -93,7 +93,7 @@ function OpenShopMenu(accessory)
 			'default', GetCurrentResourceName(), 'shop_confirm',
 			{
 				title = _U('valid_purchase'),
-				align = 'top-left',
+				align = 'top-right',
 				elements = {
 					{label = _U('yes'), value = 'yes'},
 					{label = _U('no'), value = 'no'},

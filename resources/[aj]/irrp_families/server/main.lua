@@ -145,12 +145,11 @@ AddEventHandler('irrp_families:withdrawMoney', function(familyname, amount)
 		return
 	end
 
- 	TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+ 	TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 		if amount > 0 and account.money >= amount then
 			account.removeMoney(amount)
 			xPlayer.addMoney(amount)
-
- 			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_withdrawn', ESX.Math.GroupDigits(amount)))
+			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('have_withdrawn', ESX.Math.GroupDigits(amount)))
 		else
 			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('invalid_amount'))
 		end
@@ -168,7 +167,7 @@ AddEventHandler('irrp_families:withdrawBlackMoney', function(familyname, amount)
 		return
 	end
 
- 	TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+ 	TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 		if amount > 0 and account.black_money >= amount then
 			account.removeBlackMoney(amount)
 			xPlayer.addAccountMoney('black_money', amount)
@@ -194,7 +193,7 @@ AddEventHandler('irrp_families:depositMoney', function(family, amount)
 	end
 
  	if amount > 0 and xPlayer.getMoney() >= amount then
-		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 			xPlayer.removeMoney(amount)
 			account.addMoney(amount)
 		end)
@@ -219,7 +218,7 @@ AddEventHandler('irrp_families:depositBlackMoney', function(family, amount)
 	local m = xPlayer.getAccount('black_money').money
 	
  	if amount > 0 and m >= amount then
-		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 			xPlayer.removeAccountMoney('black_money', amount)
 			account.addBlackMoney(amount)
 		end)
@@ -348,8 +347,20 @@ ESX.RegisterServerCallback('irrp_families:getFamilyMoney', function(source, cb, 
 	local family = GetFamily(family)
 
  	if family then
-		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 			cb(account.money)
+		end)
+	else
+		cb(0)
+	end
+end)
+
+ESX.RegisterServerCallback('irrp_families:getFamilyBlackMoney', function(source, cb, family)
+	local family = GetFamily(family)
+
+ 	if family then
+		TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
+			cb(account.black_money)
 		end)
 	else
 		cb(0)
@@ -475,7 +486,7 @@ end)
 			print(('irrp_families: %s attempted to buy!'):format(xPlayer.identifier))
 			return
 		end
-		TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+		TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
     if account.money >= amount then
       account.removeMoney(amount)
       cb(true)
@@ -493,7 +504,7 @@ end)
 		return
 	end
 
-  TriggerEvent('irrp_families:getSharedInventory', family.account, function(inventory)
+  TriggerEvent('esx_addoninventory:getSharedInventory', family.account, function(inventory)
     cb(inventory.items)
   end)
 
@@ -683,7 +694,7 @@ end
 			local xPlayer = ESX.GetPlayerFromIdentifier(result[i].identifier)
 
  			-- add family money
-			TriggerEvent('irrp_familyaccount:getFamilyAccount', family.account, function(account)
+			TriggerEvent('irrp_familyaccount:updateFamilyAccount', family.account, function(account)
 				account.addMoney(result[i].amount)
 			end)
 

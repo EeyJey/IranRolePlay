@@ -446,7 +446,7 @@ function OpenSocietyActionsMenu()
               'default', GetCurrentResourceName(), 'menu_crafting',
               {
                   title = _U('crafting'),
-                  align = 'top-left',
+                  align = 'top-right',
                   elements = {
                       {label = _U('jagerbomb'),     value = 'jagerbomb'},
                       {label = _U('golem'),         value = 'golem'},

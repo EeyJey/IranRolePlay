@@ -47,3 +47,19 @@ end
 AddEventHandler('irrp_familyaccount:getFamilyAccount', function(name, cb)
 	cb(GetFamilyAccount(name))
 end)
+
+AddEventHandler('irrp_familyaccount:updateFamilyAccount', function(name, cb)
+
+	local result = MySQL.Sync.fetchAll('SELECT * FROM family_account_data WHERE family_name = @family_name', {
+		['@family_name'] = name
+	})
+	
+	local money = nil
+	local blackmoney = nil
+	
+	FamilyAccounts[name].money = result[1].money
+	FamilyAccounts[name].black_money = result[1].black_money
+
+	
+	cb(GetFamilyAccount(name))
+end)
