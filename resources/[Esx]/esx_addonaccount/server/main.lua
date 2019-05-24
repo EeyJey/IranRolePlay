@@ -105,8 +105,9 @@ AddEventHandler('esx:playerLoaded', function(source)
 				['@owner']        = xPlayer.identifier
 			})
 
-			print('money is this: ')
-			print(dump(money))
+			account = CreateAddonAccount(name, xPlayer.identifier, money[1].money)
+			Accounts = table.removeKey(Accounts, name)
+			table.insert(Accounts[name], account)
 		end
 
 		table.insert(addonAccounts, account)
