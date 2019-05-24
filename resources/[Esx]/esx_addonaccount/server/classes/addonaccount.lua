@@ -20,10 +20,7 @@ function CreateAddonAccount(name, owner, money)
 		self.money = self.money - m
 		
 		self.save()
-		-- print('reached here check this shit '..m )
-		-- print('-------------------- Self --------------\n')
-		-- print(self.name)
-
+		
 		TriggerClientEvent('esx_addonaccount:setMoney', -1,  self.name, self.money)
 	end
 
