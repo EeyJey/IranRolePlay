@@ -33,18 +33,18 @@ function SetPropertyOwned(name, price, rented, owner)
 end
 
 function RemoveOwnedProperty(name, owner)
-	MySQL.Async.execute('DELETE FROM owned_properties WHERE name = @name AND owner = @owner',
-	{
-		['@name']  = name,
-		['@owner'] = owner
-	}, function(rowsChanged)
-		local xPlayer = ESX.GetPlayerFromIdentifier(owner)
+	-- MySQL.Async.execute('DELETE FROM owned_properties WHERE name = @name AND owner = @owner',
+	-- {
+	-- 	['@name']  = name,
+	-- 	['@owner'] = owner
+	-- }, function(rowsChanged)
+	-- 	local xPlayer = ESX.GetPlayerFromIdentifier(owner)
 
-		if xPlayer then
-			TriggerClientEvent('esx_property:setPropertyOwned', xPlayer.source, name, false)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('made_property'))
-		end
-	end)
+	-- 	if xPlayer then
+	-- 		TriggerClientEvent('esx_property:setPropertyOwned', xPlayer.source, name, false)
+	-- 		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('made_property'))
+	-- 	end
+	-- end)
 end
 
 MySQL.ready(function()
@@ -176,6 +176,7 @@ end)
 RegisterServerEvent('esx_property:removeOwnedProperty')
 AddEventHandler('esx_property:removeOwnedProperty', function(propertyName)
 	local xPlayer = ESX.GetPlayerFromId(source)
+	
 	RemoveOwnedProperty(propertyName, xPlayer.identifier)
 end)
 
@@ -239,6 +240,8 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 
 			if roomAccountMoney >= count then
 				account.removeMoney(count)
+				print('----------account-------')
+				print(dump(account))
 				xPlayer.addAccountMoney(item, count)
 			else
 				TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
@@ -269,6 +272,19 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 	end
 
 end)
+
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
 
 RegisterServerEvent('esx_property:putItem')
 AddEventHandler('esx_property:putItem', function(owner, type, item, count)
