@@ -54,7 +54,7 @@ function getOwnedVehicule(plate)
   local found = false
   if listPlate then
     for k, v in pairs(listPlate) do
-      if string.find(plate, v) ~= nil then
+      if plate ~= nil and string.find(plate, v) ~= nil then
         found = true
         break
       end
