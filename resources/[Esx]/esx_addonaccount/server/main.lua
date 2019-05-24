@@ -105,7 +105,8 @@ AddEventHandler('esx:playerLoaded', function(source)
 				['@owner']        = xPlayer.identifier
 			})
 
-			print('money is this: '.. money[0].money)
+			print('money is this: ')
+			print(dump(money))
 		end
 
 		table.insert(addonAccounts, account)
@@ -115,3 +116,17 @@ AddEventHandler('esx:playerLoaded', function(source)
 	xPlayer.set('addonAccounts', addonAccounts)
 
 end)
+
+
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
