@@ -94,7 +94,6 @@ files {
   "html/img/items/soda.png",
   "html/img/items/spray.png",
   "html/img/items/tequila.png",
-  "html/img/items/txt.txt",
   "html/img/items/vodka.png",
   "html/img/items/water.png",
   "html/img/items/WEAPON_APPISTOL.png",
