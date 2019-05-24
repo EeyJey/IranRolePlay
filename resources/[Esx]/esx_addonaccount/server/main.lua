@@ -105,7 +105,7 @@ AddEventHandler('esx:playerLoaded', function(source)
 				['@owner']        = xPlayer.identifier
 			})
 
-			account.setMoney(money)
+			-- account.setMoney(money)
 		end
 
 		table.insert(addonAccounts, account)
