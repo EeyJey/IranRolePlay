@@ -17,7 +17,7 @@ ESX = nil
  	RefreshBussHUD()
 end)
 
- RegisterNetEvent('esx:setFamily')
+RegisterNetEvent('esx:setFamily')
 AddEventHandler('esx:setFamily', function(family)
 	ESX.PlayerData.family = family
 	RefreshBussHUD()
@@ -76,6 +76,8 @@ end
 	local isBoss = nil
 	local options  = options or {}
 	local elements = {}
+	local familyMoney = nil
+	local familyBlackMoney = nil
 
  	ESX.TriggerServerCallback('irrp_families:isBoss', function(result)
 		isBoss = result
@@ -87,6 +89,20 @@ end
 
  	if not isBoss then
 		return
+	end
+
+	while familyBlackMoney == nil do
+		Citizen.Wait(1)
+		ESX.TriggerServerCallback('irrp_families:getFamilyBlackMoney', function(money)
+			familyBlackMoney = money
+		end, ESX.PlayerData.family.name)
+	end
+
+	while familyMoney == nil do
+		Citizen.Wait(1)
+		ESX.TriggerServerCallback('irrp_families:getFamilyMoney', function(money)
+			familyMoney = money
+		end, ESX.PlayerData.family.name)
 	end
 
  	local defaultOptions = {
@@ -103,17 +119,19 @@ end
 		end
 	end
 
- 	if options.withdraw then
-		table.insert(elements, {label = _U('withdraw_society_money'), value = 'withdraw_society_money'})
+	if options.withdraw then
+		local formattedMoney = _U('locale_currency', ESX.Math.GroupDigits(familyMoney))
+		table.insert(elements, {label = ('%s: <span style="color:green;">%s</span>'):format(_U('clean_money'), formattedMoney), value = 'withdraw_society_money'})
 	end
 
- 	if options.deposit then
-		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
-	end
+ 	-- if options.deposit then
+	-- 	table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
+	-- end
 
-	table.insert(elements, {label = _U('withdraw_black_money'), value = 'withdraw_black_money'})
+	local formattedDirtyMoney = _U('locale_currency', ESX.Math.GroupDigits(familyBlackMoney))
+	table.insert(elements, {label = ('%s: <span style="color:green;">%s</span>'):format(_U('dirty_money'), formattedDirtyMoney), value = 'withdraw_black_money'})
 
-	table.insert(elements, {label = _U('deposit_black_money'), value = 'deposit_black_money'})
+	-- table.insert(elements, {label = _U('deposit_black_money'), value = 'deposit_black_money'})
 
  	if options.wash then
 		table.insert(elements, {label = _U('wash_money'), value = 'wash_money'})
@@ -129,86 +147,14 @@ end
 
  	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'boss_actions_' .. family, {
 		title    = _U('boss_menu'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = elements
 	}, function(data, menu)
 
  		if data.current.value == 'withdraw_society_money' then
-
- 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_society_money_amount_' .. family, {
-				title = _U('withdraw_amount')
-			}, function(data, menu)
-
- 				local amount = tonumber(data.value)
-
- 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
-				else
-					menu.close()
-					TriggerServerEvent('irrp_families:withdrawMoney', family, amount)
-				end
-
- 			end, function(data, menu)
-				menu.close()
-			end)
-
+			OpenMoneyMenu(family)
 		elseif data.current.value == 'withdraw_black_money' then
-
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_black_money_amount_' .. family, {
-				title = _U('withdraw_black_money')
-			}, function(data, menu)
-
- 				local amount = tonumber(data.value)
-
- 				if amount == nil then
-					ESX.ShowNotification(_U('invalid_amount'))
-				else
-					menu.close()
-					TriggerServerEvent('irrp_families:withdrawBlackMoney', family, amount)
-				end
-
- 			end, function(data, menu)
-				menu.close()
-			end)
-
-		elseif data.current.value == 'deposit_money' then
-
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. family, {
-			   title = _U('deposit_amount')
-		   }, function(data, menu)
-
-				local amount = tonumber(data.value)
-
-				if amount == nil then
-				   ESX.ShowNotification(_U('invalid_amount'))
-			   else
-				   menu.close()
-				   TriggerServerEvent('irrp_families:depositMoney', family, amount)
-			   end
-
-			end, function(data, menu)
-			   menu.close()
-		   end)
-
-		elseif data.current.value == 'deposit_black_money' then
-
-			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_black_money_amount_' .. family, {
-			   title = _U('deposit_black_money_amount')
-		   }, function(data, menu)
-
-				local amount = tonumber(data.value)
-
-				if amount == nil then
-				   ESX.ShowNotification(_U('invalid_amount'))
-			   else
-				   menu.close()
-				   TriggerServerEvent('irrp_families:depositBlackMoney', family, amount)
-			   end
-
-			end, function(data, menu)
-			   menu.close()
-		   end)
-
+			OpenBlackMoneyMenu(family)
  		elseif data.current.value == 'wash_money' then
 
  			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'wash_money_amount_' .. family, {
@@ -246,7 +192,7 @@ end
 
  	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_employees_' .. family, {
 		title    = _U('employee_management'),
-		align    = 'top-left',
+		align    = 'top-right',
 		elements = {
 			{label = _U('employee_list'), value = 'employee_list'},
 			{label = _U('recruit'),       value = 'recruit'}
@@ -264,6 +210,123 @@ end
  	end, function(data, menu)
 		menu.close()
 	end)
+end
+
+function OpenMoneyMenu(family)
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'money_manage_' .. family, {
+	   title    = _U('money_management'),
+	   align    = 'top-right',
+	   elements = {
+		   {label = _U('withdraw_money'), 	value = 'withdraw_money'},
+		   {label = _U('deposit_money')	,  	value = 'deposit_money'}
+	   }
+   }, function(data, menu)
+
+		if data.current.value == 'withdraw_money' then
+			
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_society_money_amount_' .. family, {
+				title = _U('withdraw_money')
+			}, function(data, menu)
+
+ 				local amount = tonumber(data.value)
+
+ 				if amount == nil then
+					ESX.ShowNotification(_U('invalid_amount'))
+				else
+					menu.close()
+					TriggerServerEvent('irrp_families:withdrawMoney', family, amount)
+					OpenBossMenu(family, close, options)
+				end
+
+ 			end, function(data, menu)
+				menu.close()
+			end)
+
+		elseif data.current.value == 'deposit_money' then
+
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. family, {
+				title = _U('deposit_money')
+			}, function(data, menu)
+ 
+				 local amount = tonumber(data.value)
+ 
+				 if amount == nil then
+					ESX.ShowNotification(_U('invalid_amount'))
+				else
+					menu.close()
+					TriggerServerEvent('irrp_families:depositMoney', family, amount)
+					OpenBossMenu(family, close, options)
+				end
+ 
+			 end, function(data, menu)
+				menu.close()
+			end)
+
+	   	end
+
+	end, function(data, menu)
+	   menu.close()
+   end)
+end
+
+function OpenBlackMoneyMenu(family)
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'black_money_manage_' .. family, {
+	   title    = _U('black_money_management'),
+	   align    = 'top-right',
+	   elements = {
+		   {label = _U('withdraw_black_money')	, 	value = 'withdraw_black_money'},
+		   {label = _U('deposit_black_money')	,  	value = 'deposit_black_money'}
+	   }
+   }, function(data, menu)
+
+		if data.current.value == 'withdraw_black_money' then
+
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'withdraw_black_money_amount_' .. family, {
+				title = _U('withdraw_black_money')
+			}, function(data, menu)
+
+ 				local amount = tonumber(data.value)
+
+ 				if amount == nil then
+					ESX.ShowNotification(_U('invalid_amount'))
+				else
+					menu.close()
+					TriggerServerEvent('irrp_families:withdrawBlackMoney', family, amount)
+					OpenBossMenu(family, close, options)
+				end
+
+ 			end, function(data, menu)
+				menu.close()
+			end)
+
+		elseif data.current.value == 'deposit_black_money' then
+
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_black_money_amount_' .. family, {
+			   title = _U('deposit_black_money_amount')
+		   	}, function(data, menu)
+
+				local amount = tonumber(data.value)
+
+				if amount == nil then
+				   ESX.ShowNotification(_U('invalid_amount'))
+			   	else
+				   menu.close()
+				   TriggerServerEvent('irrp_families:depositBlackMoney', family, amount)
+				   OpenBossMenu(family, close, options)
+			   	end
+
+			end, function(data, menu)
+			   menu.close()
+			   OpenBossMenu(family, close, options)
+		   end)
+
+	   	end
+
+	end, function(data, menu)
+	   menu.close()
+   end)
 end
 
  function OpenEmployeeList(family)
@@ -329,13 +392,13 @@ end
 
  		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_' .. family, {
 			title    = _U('recruiting'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 
  			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'recruit_confirm_' .. family, {
 				title    = _U('do_you_want_to_recruit', data.current.name),
-				align    = 'top-left',
+				align    = 'top-right',
 				elements = {
 					{label = _U('no'),  value = 'no'},
 					{label = _U('yes'), value = 'yes'}
@@ -380,7 +443,7 @@ end
 
  		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'promote_employee_' .. familyname, {
 			title    = _U('promote_employee', employee.name),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 			menu.close()
@@ -415,7 +478,7 @@ end
 
  		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_grades_' .. family.name, {
 			title    = _U('salary_management'),
-			align    = 'top-left',
+			align    = 'top-right',
 			elements = elements
 		}, function(data, menu)
 
@@ -449,6 +512,6 @@ end
 
  end
 
- AddEventHandler('irrp_families:openBossMenu', function(family, close, options)
+AddEventHandler('irrp_families:openBossMenu', function(family, close, options)
 	OpenBossMenu(family, close, options)
 end)

@@ -111,7 +111,7 @@ function OpenStealMenu(target, target_id)
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'steal_inventory', {
 			title  = _U('target_inventory'),
 			elements = elements,
-			align = 'top-left'
+			align = 'top-right'
 		}, function(data, menu)
 
 			if data.current.value ~= nil then
@@ -125,7 +125,7 @@ function OpenStealMenu(target, target_id)
 
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'steal_inventory_item', {
 					title = _U('action_choice'),
-					align = 'top-left',
+					align = 'top-right',
 					elements = elements
 				}, function(data2, menu2)
 					if data2.current.action == 'steal' then

@@ -743,7 +743,7 @@ function buy_animal()
     'default', GetCurrentResourceName(), 'animalerie',
     {
         title    = _U('pet_shop2'),
-        align 	 = 'top-left',
+        align 	 = 'top-right',
         elements = elements
     },
     function(data, menu)

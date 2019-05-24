@@ -10,8 +10,8 @@ Locales['en'] = {
   ['employee_management']    = 'Modiriat Azaye Gang',
   ['fire']                   = 'Ekhraj',
   ['grade']                  = 'Magham',
-  ['have_deposited']         = '~r~$%s~s~ Adad Gozashtid',
-  ['have_withdrawn']         = '~g~$%s~s~ Adad Bardashtid',
+  ['have_deposited']         = '~r~$%s~s~ Gozashtid',
+  ['have_withdrawn']         = '~g~$%s~s~ Bardashtid',
   ['invalid_amount']         = 'Meghdar Eshtebah',
   ['invalid_amount_max']     = 'In Meghdar Salary Mojaz nist',
   ['no']                     = 'Kheyr',
@@ -38,4 +38,18 @@ Locales['en'] = {
   ['you_have_been_fired']    = 'Shoma az %s Ekhraj Shodid!',
   ['you_have_promoted']      = 'Shoma tarfi\'e Daraje Dadid %s ra Be %s',
   ['you_have_been_promoted'] = 'Shoma Tarfi\'e ~b~Daraje~s~ Gereftid!',
+  ['clean_money']            = 'Poole Tamiz',
+  ['dirty_money']            = 'Poole Kasif',
+  ['locale_currency']        = '$%s',
+----
+  ['money_management']       = 'Modirate Pool Tamiz',
+  ['withdraw_money']         = 'Bardashtan',
+  ['deposit_money']          = 'Gozashtan',
+-----
+  ['black_money_management'] = 'Modirate Pool Kasif',
+  ['withdraw_black_money']   = 'Bardashtan',
+  ['deposit_black_money']    = 'Gozashtan',
+
+  
+  
 }

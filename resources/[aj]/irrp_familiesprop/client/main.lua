@@ -61,7 +61,7 @@ function OpenCloakroomMenu()
     'default', GetCurrentResourceName(), 'cloakroom',
     {
       title    = _U('cloakroom'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
 
@@ -115,9 +115,9 @@ function OpenCloakroomMenu()
    end,
   function(data, menu)
 
-     menu.close()
+    menu.close()
 
-     CurrentAction     = 'menu_cloakroom'
+    CurrentAction     = 'menu_cloakroom'
     CurrentActionMsg  = _U('open_cloackroom')
     CurrentActionData = {}
   end
@@ -174,9 +174,9 @@ if Config.EnableArmoryManagement then
      end,
     function(data, menu)
 
-       menu.close()
+      menu.close()
 
-       CurrentAction     = 'menu_armory'
+      CurrentAction     = 'menu_armory'
       CurrentActionMsg  = _U('open_armory')
       CurrentActionData = {station = station}
     end
@@ -702,8 +702,8 @@ local family = family
           else
             menu2.close()
             menu.close()
-            OpenGetStocksMenu(family)
             TriggerServerEvent('irrp_families:getStockItem', family, itemName, count)
+            OpenGetStocksMenu(family)
           end
 
          end,
