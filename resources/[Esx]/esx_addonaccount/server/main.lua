@@ -118,6 +118,9 @@ AddEventHandler('esx:playerLoaded', function(source)
 
 end)
 
+TriggerEvent('es:addCommand', 'pacc', function(source, args, user)
+	print(dump(Accounts))
+end)
 
 function dump(o)
 	if type(o) == 'table' then
