@@ -104,7 +104,7 @@ AddEventHandler('esx:playerLoaded', function(source)
 				['@account_name'] = name,
 				['@owner']        = xPlayer.identifier
 			})
-
+			account.money = money
 			-- account.setMoney(money)
 		end
 
