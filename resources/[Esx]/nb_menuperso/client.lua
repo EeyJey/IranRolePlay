@@ -136,13 +136,13 @@ function OpenPersonnelMenu()
 				end
 			
 				if playergroup == 'superadmin' or playergroup == 'owner' then
+					table.insert(elements, {label = 'Tamir Mashin',							value = 'menuperso_modo_vehicle_repair'})
 					table.insert(elements, {label = 'TP roo player',    							value = 'menuperso_modo_tp_toplayer'})
 					table.insert(elements, {label = 'Bring',             			value = 'menuperso_modo_tp_playertome'})
 					table.insert(elements, {label = 'TP ba Mokhtasat [WIP]',						value = 'menuperso_modo_tp_pos'})
 					table.insert(elements, {label = 'NoClip',										value = 'menuperso_modo_no_clip'})
 					table.insert(elements, {label = 'Gheyb',									value = 'menuperso_modo_godmode'})
 					table.insert(elements, {label = 'Rooh',								value = 'menuperso_modo_mode_fantome'})
-					table.insert(elements, {label = 'Tamir Mashin',							value = 'menuperso_modo_vehicle_repair'})
 					table.insert(elements, {label = 'Spawn Mashin',							value = 'menuperso_modo_vehicle_spawn'})
 					table.insert(elements, {label = 'Mashin ro bargardoon',								value = 'menuperso_modo_vehicle_flip'})
 					table.insert(elements, {label = 'Give money',						value = 'menuperso_modo_give_money'})
