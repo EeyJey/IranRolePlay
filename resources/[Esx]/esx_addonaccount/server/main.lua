@@ -115,20 +115,3 @@ AddEventHandler('esx:playerLoaded', function(source)
 	xPlayer.set('addonAccounts', addonAccounts)
 
 end)
-
-TriggerEvent('es:addCommand', 'pacc', function(source, args, user)
-	print(dump(Accounts))
-end)
-
-function dump(o)
-	if type(o) == 'table' then
-	   local s = '{ '
-	   for k,v in pairs(o) do
-		  if type(k) ~= 'number' then k = '"'..k..'"' end
-		  s = s .. '['..k..'] = ' .. dump(v) .. ','
-	   end
-	   return s .. '} '
-	else
-	   return tostring(o)
-	end
- end
