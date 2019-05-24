@@ -144,7 +144,7 @@ Config.families = {
     },
     ['La_Fuente'] = {
       Blip = {
-        Pos     = { 1402.365, y = 1116.664, z = 115.6376 },
+        Pos     = { 1407.1309, y = 1153.2783, z = 115.6376 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
