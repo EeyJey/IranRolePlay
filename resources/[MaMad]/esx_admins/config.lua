@@ -24,11 +24,7 @@ Config.AdminStations = {
     },
 
 	AuthorizedWeapons = {
-      {name = 'WEAPON_COMBATPISTOL',       price = 0},
-      {name = 'WEAPON_ASSAULTRIFLE', price = 0},
-	  {name = 'WEAPON_STUNGUN',            price = 0 },
-      { name = 'WEAPON_FLASHLIGHT',       price = 0 },
-	  { name = 'WEAPON_RAILGUN',        price = 0 },
+      
     },
 
     AuthorizedVehicles = {

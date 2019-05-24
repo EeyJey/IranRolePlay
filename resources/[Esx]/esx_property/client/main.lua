@@ -449,8 +449,11 @@ function OpenRoomMenu(property, owner)
 		table.insert(elements, {label = _U('remove_cloth'), value = 'remove_cloth'})
 	end
 
-	table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
-	table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})
+	-- table.insert(elements, {label = _U('remove_object'),  value = 'room_inventory'})
+	-- table.insert(elements, {label = _U('deposit_object'), value = 'player_inventory'})
+	--Adding New GUI INVENTORY
+	table.insert(elements, {label = "Property inventory", value = "property_inventory"})
+
 
 	ESX.UI.Menu.CloseAll()
 
@@ -544,10 +547,14 @@ function OpenRoomMenu(property, owner)
 				end)
 			end)
 
-		elseif data.current.value == 'room_inventory' then
-			OpenRoomInventoryMenu(property, owner)
-		elseif data.current.value == 'player_inventory' then
-			OpenPlayerInventoryMenu(property, owner)
+		-- elseif data.current.value == 'room_inventory' then
+		-- 	OpenRoomInventoryMenu(property, owner)
+		-- elseif data.current.value == 'player_inventory' then
+		-- 	OpenPlayerInventoryMenu(property, owner)
+		-- Adding GUI inventory 
+		elseif data.current.value == "property_inventory" then
+			menu.close()
+			OpenPropertyInventoryMenu(property, owner)
 		end
 
 	end, function(data, menu)
@@ -557,6 +564,17 @@ function OpenRoomMenu(property, owner)
 		CurrentActionMsg  = _U('press_to_menu')
 		CurrentActionData = {property = property, owner = owner}
 	end)
+end
+
+-- Adding GUI inventory
+function OpenPropertyInventoryMenu(property, owner)
+	ESX.TriggerServerCallback(
+		"esx_property:getPropertyInventory",
+		function(inventory)
+			TriggerEvent("esx_inventoryhud:openPropertyInventory", inventory)
+		end,
+		owner
+	)
 end
 
 function OpenRoomInventoryMenu(property, owner)
