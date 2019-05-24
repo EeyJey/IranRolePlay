@@ -240,8 +240,8 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 
 			if roomAccountMoney >= count then
 				account.removeMoney(count)
-				print('----------account-------')
-				print(dump(account))
+				-- print('----------account-------')
+				-- print(dump(account))
 				xPlayer.addAccountMoney(item, count)
 			else
 				TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))

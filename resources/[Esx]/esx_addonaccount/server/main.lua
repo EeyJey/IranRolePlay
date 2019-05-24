@@ -98,6 +98,14 @@ AddEventHandler('esx:playerLoaded', function(source)
 
 			account = CreateAddonAccount(name, xPlayer.identifier, 0)
 			table.insert(Accounts[name], account)
+		else
+			local money = MySQL.Sync.fetchAll('select money from addon_account_data where owner = @owner and account_name = @account_name',
+			{
+				['@account_name'] = name,
+				['@owner']        = xPlayer.identifier
+			})
+
+			print('money is this: '.. money[0].money)
 		end
 
 		table.insert(addonAccounts, account)
