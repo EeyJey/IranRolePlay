@@ -98,7 +98,14 @@ AddEventHandler('esx:playerLoaded', function(source)
 
 			account = CreateAddonAccount(name, xPlayer.identifier, 0)
 			table.insert(Accounts[name], account)
-		
+		else
+			local money = MySQL.Sync.fetchAll('select money from addon_account_data where owner = @owner and account_name = @account_name',
+			{
+				['@account_name'] = name,
+				['@owner']        = xPlayer.identifier
+			})
+			account.setMyMoney(money)
+			-- account.setMoney(money)
 		end
 
 		table.insert(addonAccounts, account)
@@ -108,3 +115,16 @@ AddEventHandler('esx:playerLoaded', function(source)
 	xPlayer.set('addonAccounts', addonAccounts)
 
 end)
+
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end
