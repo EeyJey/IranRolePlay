@@ -9,13 +9,12 @@ Citizen.CreateThread(function()
 	
 end)
 
-
 local VoiceMode = {
 	{ dist = 5, message = "Voice range set on 5 meters." },
 	{ dist = 10, message = "Voice range set on 10 meters." },
 	{ dist = 20, message = "Voice range set on 20 meters." },
-	{ veh = true, dist = 4, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle." },
-	{ veh = true, dist = 100, func = (function(ped) 
+	{ veh  = true, dist = 4, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle." },
+	{ dist = 70, func = (function(ped) 
 		PlayerData = ESX.GetPlayerData()
 		if (IsPedInAnyVehicle(ped) and PlayerData.job.name == "police")then
 			return true
@@ -24,9 +23,6 @@ local VoiceMode = {
 		end
 	 end), message = "Megaphone." },
 }
-
-
-
 
 local Voice = {}
 Voice.Listeners = {}

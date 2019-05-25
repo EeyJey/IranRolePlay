@@ -1,5 +1,5 @@
 local skins = {
-    ['steam:110000110d40cf8'] = 'a_m_m_genfat_01', -- Milad
+    ['steam:110000110d40cf8'] = 'a_m_m_fatlatin_01', -- Milad  a_m_m_genfat_01
     ['steam:11000010a1b83df'] = 'u_f_m_drowned_01', -- Mamad
     ['steam:110000118eae7af'] = 'u_m_y_pogo_01',   -- Hooman
     ['steam:11000010494a934'] = 'a_c_cat_01',   -- Ebi
@@ -13,7 +13,8 @@ local skins = {
     ['steam:11000013befa730'] = 'a_f_y_topless_01', -- Corrupt Mind
     ['steam:110000136a6d885'] = 's_m_y_prismuscl_01', -- Sadface
     ['steam:110000134e34091'] = 'a_c_husky', -- Arash DEVIL
-    ['steam:1100001075cbf80'] = 'a_c_rabbit_01' -- Rmin
+    ['steam:1100001075cbf80'] = 'a_c_rabbit_01', -- Rmin
+    ['steam:11000011a939660'] = 'a_m_y_soucent_02'
 } 
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
