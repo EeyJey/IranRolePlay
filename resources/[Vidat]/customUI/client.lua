@@ -138,28 +138,44 @@ end)
 
 -- Voice
 
-local prox = 26.0 -- Sets the Default Voice Distance
-local allowProximityChange = true -- Set to True to allow Changing Voice Distance | False to not allow Changing Voice Distance
+-- local prox = 26.0 -- Sets the Default Voice Distance
+-- local allowProximityChange = true -- Set to True to allow Changing Voice Distance | False to not allow Changing Voice Distance
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
-		if IsControlJustPressed(1, Keys["H"]) and allowProximityChange then
-			local vprox
-			if prox <= 2.0 then
-				prox = 10.0
-				vprox = "normal"
-			elseif prox == 10.0 then
-				prox = 26.0
-				vprox = "shout"
-			elseif prox >= 26.0 then
-				prox = 2.0
-				vprox = "whisper"
-			end
-			NetworkSetTalkerProximity(prox)
-			SendNUIMessage({action = "setProximity", value = vprox})
-		end
+-- Citizen.CreateThread(function()
+-- 	while true do
+-- 		Citizen.Wait(0)
+-- 		if IsControlJustPressed(1, Keys["H"]) and allowProximityChange then
+-- 			local vprox
+-- 			if prox <= 2.0 then
+-- 				prox = 10.0
+-- 				vprox = "normal"
+-- 			elseif prox == 10.0 then
+-- 				prox = 26.0
+-- 				vprox = "shout"
+-- 			elseif prox >= 26.0 then
+-- 				prox = 2.0
+-- 				vprox = "whisper"
+-- 			end
+-- 			NetworkSetTalkerProximity(prox)
+-- 			SendNUIMessage({action = "setProximity", value = vprox})
+-- 		end
+-- 	end
+-- end)
+
+AddEventHandler('voicechange', function(show)
+	local voiceShow = "whisper"
+	if show == 1  then
+		voiceShow = "whisper"
+	elseif show == 2 then
+		voiceShow = "normal"
+	elseif show == 3 then
+		voiceShow = "shout"
+	elseif show == 4 then
+		voiceShow = "car"
+	elseif show == 5 then
+		voiceShow = "megaphone"
 	end
+	SendNUIMessage({action = "setProximity", value = voiceShow})
 end)
 
 RegisterNetEvent('ui:toggle')

@@ -143,7 +143,12 @@ function setProximity(value){
 	}else if (value == "shout"){
 		color = "#e53935"
 		speaker = 3;
-
+	}else if (value == "car"){
+		color = "#FFEB3B"
+		speaker = 4;
+	}else if (value == "megaphone"){
+		color = "#e53935"
+		speaker = 5;
 	}
 	$('#voice .bg').css('background-color', color);
 	$('#voice img').attr('src', 'img/speaker'+speaker+'.png');

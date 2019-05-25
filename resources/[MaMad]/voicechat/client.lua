@@ -1,14 +1,37 @@
+ESX = nil
+local PlayerData = nil
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+	PlayerData = ESX.GetPlayerData()
+	
+end)
+
+
 local VoiceMode = {
-	{ dist = 3, message = "Voice range set on 3 meters." },
-	{ dist = 8, message = "Voice range set on 8 meters." },
-	{ dist = 14, message = "Voice range set on 14 meters." },
+	{ dist = 5, message = "Voice range set on 5 meters." },
+	{ dist = 10, message = "Voice range set on 10 meters." },
+	{ dist = 20, message = "Voice range set on 20 meters." },
 	{ veh = true, dist = 4, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle." },
+	{ veh = true, dist = 100, func = (function(ped) 
+		PlayerData = ESX.GetPlayerData()
+		if (IsPedInAnyVehicle(ped) and PlayerData.job.name == "police")then
+			return true
+		else
+			return false
+		end
+	 end), message = "Megaphone." },
 }
+
+
+
 
 local Voice = {}
 Voice.Listeners = {}
 Voice.Mode = 2
-Voice.distance = 8.0
+Voice.distance = 10.0
 Voice.onlyVehicle = false
 
 local function SendVoiceToPlayer(intPlayer, boolSend)
@@ -128,12 +151,18 @@ local function DrawText3D(x,y,z, canSee)
 end
 
 local function UpdateVocalMode(mode)
+
 	local nextMode = mode or Voice.Mode + 1
 	while not VoiceMode[nextMode] or (VoiceMode[nextMode] and VoiceMode[nextMode].func and not VoiceMode[nextMode].func(GetPlayerPed(-1))) do
-		nextMode = VoiceMode[nextMode + 1] or 1
+		if VoiceMode[nextMode + 1] then
+			nextMode = nextMode + 1
+		else
+			nextMode = 1
+		end
 	end
-
 	Voice.Mode = nextMode
+	TriggerEvent("voicechange", Voice.Mode)
+
 	Voice:OnModeModified()
 end
 
@@ -141,11 +170,11 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlJustPressed(1, 167) then
+		if IsControlJustPressed(1, 74) then
 			UpdateVocalMode()
 		end
 
-		if IsControlPressed(1, 167) then
+		if IsControlPressed(1, 74) then
 			local ped = GetPlayerPed(-1)
 			local headPos = GetPedBoneCoords(ped, 12844, .0, .0, .0)
 
@@ -162,3 +191,16 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+function dump(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. dump(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+ end

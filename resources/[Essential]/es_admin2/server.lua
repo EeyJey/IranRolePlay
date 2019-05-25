@@ -619,6 +619,7 @@ TriggerEvent('es:addGroupCommand', 'sw', "admin", function(source, args, user)
 			TriggerEvent("es:getPlayerFromId", player, function(target)
 				if(target)then
 					TriggerClientEvent('chat:addMessage', player, { args = {"^1Admin", text} })--"You have been teleported to by ^2" .. GetPlayerName(source)} })
+					TriggerClientEvent('chat:addMessage', source, { args = {"^1[Admin -> ".. GetPlayerName(player) .. "]", text} })
 				end
 			end)
 		else
@@ -643,6 +644,7 @@ TriggerEvent('es:addGroupCommand', 'w', "mod", function(source, args, user)
 			TriggerEvent("es:getPlayerFromId", player, function(target)
 				if(target)then
 					TriggerClientEvent('chat:addMessage', player, { args = {"^3"..GetPlayerName(source), text} })--"You have been teleported to by ^2" .. GetPlayerName(source)} })
+					TriggerClientEvent('chat:addMessage', source, { args = {"^1[W -> ".. GetPlayerName(player) .. "]", text} })
 				end
 			end)
 		else
