@@ -77,10 +77,9 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 				if k == data.current.modType or isRimMod then
 					if string.match(data.current.label, _U('by_default')) or string.match(data.current.label, _U('installed')) then
 						ESX.ShowNotification(_U('already_own') .. data.current.label)
-						TriggerEvent('esx_lscustommeca:installMod')
+						-- TriggerEvent('esx_lscustommeca:installMod')
 					else
 						local vehiclePrice = 0
-
 						for i=1, #Vehicles, 1 do
 							if GetEntityModel(vehicle) == GetHashKey(Vehicles[i].model) then
 								vehiclePrice = Vehicles[i].price
