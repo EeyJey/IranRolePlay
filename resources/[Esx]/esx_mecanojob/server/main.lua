@@ -124,9 +124,15 @@ local function Craft(source)
       if GazBottleQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_gas_can'))
       else
-        xPlayer.removeInventoryItem('gazbottle', 1)
-        xPlayer.addInventoryItem('blowpipe', 1)
-        Craft(source)
+        if(xPlayer.money > 300) then
+          xPlayer.removeMoney(300)
+          TriggerClientEvent('esx:showNotification', source, "$300 kam shod baraye kapsol gaz")
+          xPlayer.removeInventoryItem('gazbottle', 1)
+          xPlayer.addInventoryItem('blowpipe', 1)
+          Craft(source)
+        else
+          TriggerClientEvent('esx:showNotification', source, "be andaze kafi pool nadari ($300)")
+        end
       end
     end
   end)
@@ -151,15 +157,20 @@ local function Craft2(source)
   SetTimeout(4000, function()
 
     if PlayersCrafting2[source] == true then
-
       local xPlayer  = ESX.GetPlayerFromId(source)
       local FixToolQuantity  = xPlayer.getInventoryItem('fixtool').count
       if FixToolQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_repair_tools'))
       else
-        xPlayer.removeInventoryItem('fixtool', 1)
-        xPlayer.addInventoryItem('fixkit', 1)
-        Craft2(source)
+        if(xPlayer.money > 1500) then
+          xPlayer.removeMoney(1500)
+          TriggerClientEvent('esx:showNotification', source, "$1500 kam shod baraye kit tamir")
+          xPlayer.removeInventoryItem('fixtool', 1)
+          xPlayer.addInventoryItem('fixkit', 1)
+          Craft2(source)
+        else
+          TriggerClientEvent('esx:showNotification', source, "be andaze kafi pool nadari ($1500)")
+        end
       end
     end
   end)
@@ -190,9 +201,15 @@ local function Craft3(source)
             if CaroToolQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_body_tools'))
       else
-        xPlayer.removeInventoryItem('carotool', 1)
-        xPlayer.addInventoryItem('carokit', 1)
-        Craft3(source)
+        if(xPlayer.money > 1500) then
+          xPlayer.removeMoney(1500)
+          TriggerClientEvent('esx:showNotification', source, "$1500 kam shod baraye kit badane")
+          xPlayer.removeInventoryItem('carotool', 1)
+          xPlayer.addInventoryItem('carokit', 1)
+          Craft3(source)
+        else
+          TriggerClientEvent('esx:showNotification', source, "be andaze kafi pool nadari ($1500)")
+        end
       end
     end
   end)

@@ -50,10 +50,10 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
+		Wait(60000)
 		ESX.TriggerServerCallback('esx_ambulancejob:getDeathStatus', function(isDead)
 			isClientDead = isDead
 		end)
-		Wait(60000)
 	end
 end)
 
