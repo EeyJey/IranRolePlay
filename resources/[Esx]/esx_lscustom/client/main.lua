@@ -93,14 +93,23 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 						end
 
 						if isRimMod then
-							price = math.floor(vehiclePrice * data.current.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * data.current.price / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						elseif v.modType == 11 or v.modType == 12 or v.modType == 13 or v.modType == 15 or v.modType == 16 or v.modType == 17 then
-							price = math.floor(vehiclePrice * v.price[data.current.modNum + 1] / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * v.price[data.current.modNum + 1] / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						else
-							price = math.floor(vehiclePrice * v.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * v.price / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						end
 
 					end

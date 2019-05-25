@@ -68,8 +68,6 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 		societyAccount = account
 	end)
 	if buyer then
-		price = tonumber(price)
-		
 		if price < buyerId.getMoney() then
 			TriggerClientEvent('esx_lscustommeca:installMod', _source)
 			buyerId.removeMoney(price)

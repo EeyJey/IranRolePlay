@@ -47,9 +47,4 @@ Locales['en'] = {
   ['deposit_money']          = 'Gozashtan',
 -----
   ['black_money_management'] = 'Modirate Pool Kasif',
-  ['withdraw_black_money']   = 'Bardashtan',
-  ['deposit_black_money']    = 'Gozashtan',
-
-  
-  
 }
