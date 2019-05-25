@@ -35,6 +35,7 @@ Citizen.CreateThread(function()
     end
 end)
 
+-- TODO: we have to check if the player is loaded cause arithmetics does'nt work the other way...
 Citizen.CreateThread(function()
     while true do
         local wait = 500

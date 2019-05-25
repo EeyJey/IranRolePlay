@@ -61,6 +61,8 @@ files {
 	'html/img/speaker1.png',
 	'html/img/speaker2.png',
 	'html/img/speaker3.png',
+	'html/img/speaker4.png',
+	'html/img/speaker5.png',
 	'html/img/backpack.png',
 	'html/img/health.png',
 	'html/img/stamina.png',

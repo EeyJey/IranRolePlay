@@ -129,7 +129,7 @@ AddEventHandler('esx:setAccountMoney', function(account)
 			break
 		end
 	end
-	print("adding money "..account.money)
+	-- print("adding money "..account.money)
 
 	if Config.EnableHud then
 		ESX.UI.HUD.UpdateElement('account_' .. account.name, {

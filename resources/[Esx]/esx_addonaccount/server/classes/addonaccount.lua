@@ -33,6 +33,11 @@ function CreateAddonAccount(name, owner, money)
 		TriggerClientEvent('esx_addonaccount:setMoney', -1,  self.name, self.money)
 	end
 
+	self.setMyMoney = function(m)
+		self.money = m
+		TriggerClientEvent('esx_addonaccount:setMoney', -1,  self.name, self.money)
+	end
+
 	self.save = function()
 
 		if self.owner == nil then
