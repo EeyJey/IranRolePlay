@@ -157,9 +157,14 @@ local function Craft2(source)
       if FixToolQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_repair_tools'))
       else
-        xPlayer.removeInventoryItem('fixtool', 1)
-        xPlayer.addInventoryItem('fixkit', 1)
-        Craft2(source)
+        if(xPlayer.money > 0) then
+          xPlayer.removeMoney(2000)
+          xPlayer.removeInventoryItem('fixtool', 1)
+          xPlayer.addInventoryItem('fixkit', 1)
+          Craft2(source)
+        else
+          TriggerClientEvent('esx:showNotification', source, "be andaze kafi pool nadari")
+        end
       end
     end
   end)
