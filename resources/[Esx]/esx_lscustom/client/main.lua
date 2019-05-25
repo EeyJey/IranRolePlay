@@ -77,10 +77,9 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 				if k == data.current.modType or isRimMod then
 					if string.match(data.current.label, _U('by_default')) or string.match(data.current.label, _U('installed')) then
 						ESX.ShowNotification(_U('already_own') .. data.current.label)
-						TriggerEvent('esx_lscustommeca:installMod')
+						-- TriggerEvent('esx_lscustommeca:installMod')
 					else
 						local vehiclePrice = 0
-
 						for i=1, #Vehicles, 1 do
 							if GetEntityModel(vehicle) == GetHashKey(Vehicles[i].model) then
 								vehiclePrice = Vehicles[i].price
@@ -93,14 +92,23 @@ function OpenLSMenu(elems, menuname, menutitle, parent)
 						end
 
 						if isRimMod then
-							price = math.floor(vehiclePrice * data.current.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * data.current.price / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						elseif v.modType == 11 or v.modType == 12 or v.modType == 13 or v.modType == 15 or v.modType == 16 or v.modType == 17 then
-							price = math.floor(vehiclePrice * v.price[data.current.modNum + 1] / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * v.price[data.current.modNum + 1] / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						else
-							price = math.floor(vehiclePrice * v.price / 150)
-							TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+							ESX.SetTimeout(2000, function()
+								price = math.floor(vehiclePrice * v.price / 150)
+								TriggerServerEvent("esx_lscustommeca:buyMod", price, plate)
+								ESX.ShowNotification('Modifiying You Car!')
+							end)
 						end
 
 					end

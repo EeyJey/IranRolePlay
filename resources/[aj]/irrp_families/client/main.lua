@@ -234,7 +234,7 @@ function OpenMoneyMenu(family)
  				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
-					menu.close()
+					ESX.UI.Menu.CloseAll()
 					TriggerServerEvent('irrp_families:withdrawMoney', family, amount)
 					OpenBossMenu(family, close, options)
 				end
@@ -254,7 +254,7 @@ function OpenMoneyMenu(family)
 				 if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
-					menu.close()
+					ESX.UI.Menu.CloseAll()
 					TriggerServerEvent('irrp_families:depositMoney', family, amount)
 					OpenBossMenu(family, close, options)
 				end
@@ -292,7 +292,7 @@ function OpenBlackMoneyMenu(family)
  				if amount == nil then
 					ESX.ShowNotification(_U('invalid_amount'))
 				else
-					menu.close()
+					ESX.UI.Menu.CloseAll()
 					TriggerServerEvent('irrp_families:withdrawBlackMoney', family, amount)
 					OpenBossMenu(family, close, options)
 				end
@@ -312,7 +312,7 @@ function OpenBlackMoneyMenu(family)
 				if amount == nil then
 				   ESX.ShowNotification(_U('invalid_amount'))
 			   	else
-				   menu.close()
+				   ESX.UI.Menu.CloseAll()
 				   TriggerServerEvent('irrp_families:depositBlackMoney', family, amount)
 				   OpenBossMenu(family, close, options)
 			   	end
