@@ -63,20 +63,27 @@ function DrawText3D(x,y,z, text)
         DrawText(_x,_y)
     end
 end
-
+local ShowButtonHold = false
 Citizen.CreateThread(function()
-    while true do
-		local PlayerData = nil
-		local ShowButtonHold = false
-
+	while true do
 		if IsControlPressed(0, Keys['G']) then
 			ShowButtonHold = true
+			Citizen.Wait(5000)
+			ShowButtonHold = false
 		else
 			ShowButtonHold = false
 		end
 		if IsControlJustReleased(0, Keys['G']) then
 			ShowButtonHold = false
-		end
+		end	
+	end
+end)
+Citizen.CreateThread(function()
+    while true do
+		local PlayerData = nil
+		
+
+		
 		if disableForPlayers then 
 			if ESX == nil then
 				while ESX == nil do

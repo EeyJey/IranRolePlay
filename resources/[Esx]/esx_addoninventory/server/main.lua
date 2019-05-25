@@ -114,6 +114,12 @@ AddEventHandler('esx:playerLoaded', function(source)
 		if inventory == nil then
 			inventory = CreateAddonInventory(name, xPlayer.identifier, {})
 			table.insert(Inventories[name], inventory)
+		else
+			for i=1, #Inventories[name], 1 do
+				if Inventories[name][i].owner == owner then
+					print(dump(Inventories[name][i]))
+				end
+			end
 		end
 
 		table.insert(addonInventories, inventory)
