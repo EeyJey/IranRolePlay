@@ -145,7 +145,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'ambu', label = 'Custom ambu', price = 3000}
 	},
 	
-	pezeshk = boss = {
+	pezeshk  = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
 		{ model = 'ambu', label = 'Custom ambu', price = 3000}
 	},
