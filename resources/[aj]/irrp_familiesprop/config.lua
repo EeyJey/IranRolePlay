@@ -307,7 +307,7 @@ Config.families = {
         { name = 'WEAPON_PISTOL',      price = 10000 },
       },
       AuthorizedVehicles = {
-        { name = 'Contender',  label = 'Contender' },
+        { name = 'dubsta3',   label = 'Dubsta' },
         { name = 'Schafter3',    label = 'Schafter' },
         { name = 'CarbonRS',   label = 'CarbonRS' },
       },
