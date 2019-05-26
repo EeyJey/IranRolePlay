@@ -136,6 +136,7 @@ Config.AuthorizedVehicles = {
 
 	ambulance = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 5000}
+		{ model = 'ambulance', label = 'Ambulance Van', price = 5000}
 	},
 
 	doctor = {
