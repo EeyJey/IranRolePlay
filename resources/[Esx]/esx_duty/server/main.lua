@@ -53,8 +53,8 @@ end)
 RegisterServerEvent('duty:ambulance')
 AddEventHandler('duty:ambulance', function(job)
 
-        local _source = source
-        local xPlayer = ESX.GetPlayerFromId(_source)
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
     if xPlayer.job.name == 'ambulance' and xPlayer.job.grade == 0 then
         xPlayer.setJob('offambulance', 0)
     elseif xPlayer.job.name == 'ambulance' and xPlayer.job.grade == 1 then

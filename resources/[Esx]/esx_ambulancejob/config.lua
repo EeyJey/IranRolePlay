@@ -46,7 +46,8 @@ Config.Hospitals = {
 		},
 
 		Pharmacies = {
-			vector3(230.1, -1366.1, 38.5)
+			vector3(230.1, -1366.1, 38.5),
+			vector3(251, -1346.7, 24.55)
 		},
 
 		Vehicles = {
