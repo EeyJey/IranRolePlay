@@ -124,7 +124,7 @@ local function Craft(source)
       if GazBottleQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_gas_can'))
       else
-        if(xPlayer.money > 300) then
+        if(xPlayer.getMoney() > 300) then
           xPlayer.removeMoney(300)
           TriggerClientEvent('esx:showNotification', source, "$300 kam shod baraye kapsol gaz")
           xPlayer.removeInventoryItem('gazbottle', 1)
@@ -162,7 +162,7 @@ local function Craft2(source)
       if FixToolQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_repair_tools'))
       else
-        if(xPlayer.money > 1500) then
+        if(xPlayer.getMoney() > 1500) then
           xPlayer.removeMoney(1500)
           TriggerClientEvent('esx:showNotification', source, "$1500 kam shod baraye kit tamir")
           xPlayer.removeInventoryItem('fixtool', 1)
@@ -201,7 +201,7 @@ local function Craft3(source)
             if CaroToolQuantity <= 0 then
         TriggerClientEvent('esx:showNotification', source, _U('not_enough_body_tools'))
       else
-        if(xPlayer.money > 1500) then
+        if(xPlayer.getMoney() > 1500) then
           xPlayer.removeMoney(1500)
           TriggerClientEvent('esx:showNotification', source, "$1500 kam shod baraye kit badane")
           xPlayer.removeInventoryItem('carotool', 1)
