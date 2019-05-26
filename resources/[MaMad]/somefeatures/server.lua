@@ -11,5 +11,5 @@ end
 
 RegisterCommand('ti', function(source, args)
     local myTime = GetTime()
-	TriggerClientEvent('chatMessage', source, "[Time]", {253, 216, 53}, myTime.h..':'..myTime.m..':'myTime.s)
+	TriggerClientEvent('chatMessage', source, "[Time]: ", {253, 216, 53}, myTime.d..'  '..myTime.h..':'..myTime.m)
 end)
