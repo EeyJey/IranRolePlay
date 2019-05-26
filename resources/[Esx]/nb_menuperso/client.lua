@@ -1445,7 +1445,7 @@ function admin_tp_marcker()
 	ESX.TriggerServerCallback('NB:getUsergroup', function(group)
 		playergroup = group
 		
-		if playergroup == 'admin' or playergroup == 'superadmin' or playergroup == 'owner' then
+		if playergroup == 'mod' or playergroup == 'admin' or playergroup == 'superadmin' or playergroup == 'owner' then
 			local playerPed = GetPlayerPed(-1)
 			local WaypointHandle = GetFirstBlipInfoId(8)
 			if DoesBlipExist(WaypointHandle) then
