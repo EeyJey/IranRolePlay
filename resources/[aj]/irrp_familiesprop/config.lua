@@ -309,7 +309,7 @@ Config.families = {
       AuthorizedVehicles = {
         { name = 'dubsta3',   label = 'Dubsta' },
         { name = 'Schafter3',    label = 'Schafter' },
-        { name = 'CarbonRS',   label = 'CarbonRS' },
+        { name = 'cliffhanger',   label = 'cliffhanger' },
       },
       VehicleProp = {
         modEngine       = 3,
@@ -328,7 +328,6 @@ Config.families = {
         modSmokeEnabled = 1,
         color1          = 12,
         modRoof         = 3,
-        wheels          = 4,
         modRearBumper   = 1,
         modTransmission = 2,
         modXenon        = 1,
