@@ -425,5 +425,63 @@ Config.families = {
         { x = -10.301, y = -1433.330, z = 30.116 },
       }
     },
+    ['Sicario'] = {
+      Blip = {
+        Pos     = { -102.920, y = -56.737, z = 56.923 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'Contender',   label = 'Contender' },
+        { name = 'Schafter3',    label = 'Schafter' },
+        { name = 'cliffhanger',   label = 'cliffhanger' },
+      },
+      VehicleProp = {
+        modEngine       = 3,
+        modBrakes				=	2,
+        windowTint			=	1,
+        modArmor				= 4,
+        dirtLevel       = 0,
+        plate           = "Sicario",
+        modOrnaments    = -1,
+        tyreSmokeColor  = {41,36,33},
+        wheelColor      = 12,
+        modGrille       = 1,
+        color2          = 12,
+        modFrontBumper  = 5,
+        pearlescentColor= 12,
+        modSmokeEnabled = 1,
+        color1          = 12,
+        modRoof         = 3,
+        modRearBumper   = 1,
+        modTransmission = 2,
+        modXenon        = 1,
+        modFrontWheels  = 6,
+      },
+      Cloakrooms = {
+        { x = -93.328, y = -64.793, z = 57.146 },
+      },
+      Armories = {
+        { x = -94.610, y = -68.600, z = 57.146},
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = -113.405, y = -57.726, z = 55.423 },
+          SpawnPoint = { x = -102.920, y = -56.737, z = 56.423 },
+          Heading    = 250.524,
+        }
+      },
+      VehicleDeleters = {
+        { x = -109.434, y = -55.099, z = 55.497 },
+      },
+      BossActions = {
+        { x = -93.647, y = -66.646, z = 57.146 },
+      }
+    },
 }
 

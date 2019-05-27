@@ -73,6 +73,14 @@ local RegisteredFamilies = {
 		inventory = 'family_hilda',
 		data      = 'family_hilda',
 	},
+	{
+		name      = 'Sicario',
+		label     = 'family',
+		account   = 'family_sicario',
+		datastore = 'family_sicario',
+		inventory = 'family_sicario',
+		data      = 'family_sicario',
+	},
 }
 
  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
