@@ -211,7 +211,7 @@ Config.families = {
     },
     ['BadFamily'] = {
       Blip = { 
-        Pos     = { -1555.42, y = -81.111, z = 54.134 },
+        Pos     = { x = -1555.42, y = -81.111, z = 54.134 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -229,10 +229,10 @@ Config.families = {
         pearlescentColor  = 80,
       },
       Cloakrooms = { 
-        { x = -1529.60, y = -96.77, z = 54.53},
+        { x = -1529.60, y = -96.77, z = 53.53},
       },
       Armories = {
-        { x = -1548.711, y = -99.311, z = 54.52},
+        { x = -1548.711, y = -99.311, z = 53.52},
       },
       -- Vehicles = {
       --   {
@@ -245,7 +245,7 @@ Config.families = {
       --   { x = 51.226, y = 563.214, z = 179.304 },
       -- },
       BossActions = {
-        { x = -1560.34, y = -116.58, z = 54.553 },
+        { x = -1560.34, y = -116.58, z = 53.553 },
       }
     },
     ['Knaxvell'] = {
