@@ -74,6 +74,14 @@ local RegisteredFamilies = {
 		data      = 'family_hilda',
 	},
 	{
+		name      = 'BadFamily',
+		label     = 'family',
+		account   = 'family_badfamily',
+		datastore = 'family_badfamily',
+		inventory = 'family_badfamily',
+		data      = 'family_badfamily',
+	},
+	{
 		name      = 'Sicario',
 		label     = 'family',
 		account   = 'family_sicario',
