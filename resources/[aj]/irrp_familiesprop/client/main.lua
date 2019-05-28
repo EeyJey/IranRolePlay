@@ -1287,6 +1287,7 @@ RegisterCommand('fm', function(source)
     ESX.ShowNotification('Shoma Ozv Family Nistid!')
   end
 end, false)
+
 RegisterCommand('familymenu', function(source)
   if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
@@ -1300,9 +1301,6 @@ Citizen.CreateThread(function()
   TriggerEvent('chat:addSuggestion', '/familymenu', 'Menu family')
 end)
 
-RegisterCommand('getfamilycount', function(source, args)
-  print(#Config.families)
-end, false)
 ---------------------------------------------------------------------------------------------------------
 -- NB : gestion des menu
 ---------------------------------------------------------------------------------------------------------
