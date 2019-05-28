@@ -209,6 +209,45 @@ Config.families = {
         { x = 1407.1422, y = 1139.1545, z = 113.4330 },
       }
     },
+    ['BadFamily'] = {
+      Blip = { 
+        Pos     = { -1555.42, y = -81.111, z = 54.134 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'No Car',  label = '' },
+      },
+      VehicleProp = {
+        color2            = 120,
+        color1            = 120,
+        pearlescentColor  = 80,
+      },
+      Cloakrooms = { 
+        { x = -1529.60, y = -96.77, z = 54.53},
+      },
+      Armories = {
+        { x = -1548.711, y = -99.311, z = 54.52},
+      },
+      -- Vehicles = {
+      --   {
+      --     Spawner    = { x = 29.694, y = 554.887, z = 177.384 },
+      --     SpawnPoint = { x = 50.164, y = 565.350, z = 180.262 },
+      --     Heading    = 33.566,
+      --   }
+      -- },
+      -- VehicleDeleters = {
+      --   { x = 51.226, y = 563.214, z = 179.304 },
+      -- },
+      BossActions = {
+        { x = -1560.34, y = -116.58, z = 54.553 },
+      }
+    },
     ['Knaxvell'] = {
       Blip = {
         Pos     = { 26.1829, y = 558.913, z = 178.582 },

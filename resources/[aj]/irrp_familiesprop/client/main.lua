@@ -932,9 +932,9 @@ local playerPed = GetPlayerPed(-1)
 
    if IsHandcuffed then
 
-     RequestAnimDict('mp_arresting')
+    RequestAnimDict('mp_arresting')
 
-     while not HasAnimDictLoaded('mp_arresting') do
+    while not HasAnimDictLoaded('mp_arresting') do
       Wait(100)
     end
 
@@ -945,7 +945,7 @@ local playerPed = GetPlayerPed(-1)
 
    else
 
-     ClearPedSecondaryTask(playerPed)
+    ClearPedSecondaryTask(playerPed)
     SetEnableHandcuffs(playerPed, false)
     SetPedCanPlayGestureAnims(playerPed,  true)
     FreezeEntityPosition(playerPed, false)
@@ -989,7 +989,7 @@ local coords    = GetEntityCoords(playerPed)
 
    if DoesEntityExist(vehicle) then
 
-     local maxSeats = GetVehicleMaxNumberOfPassengers(vehicle)
+    local maxSeats = GetVehicleMaxNumberOfPassengers(vehicle)
     local freeSeat = nil
 
      for i=maxSeats - 1, 0, -1 do

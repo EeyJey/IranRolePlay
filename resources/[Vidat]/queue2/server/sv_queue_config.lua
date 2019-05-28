@@ -4,8 +4,8 @@ Config = {}
 -- a lot of the steamid converting websites are broken rn and give you the wrong steamid. I use https://steamid.xyz/ with no problems.
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
-    -- ["steam:110000114a058a8"] = 100, -- Vidat Admin
-    ["steam:110000111fc352b"] = 100, -- AJ Owner
+    ["steam:110000114a058a8"] = 100, -- Vidat Owner
+    -- ["steam:110000111fc352b"] = 100, -- AJ 
     ["steam:110000107a78e07"] = 85, -- Arash- Owner
     ["steam:11000011783a55b"] = 85, -- Arman Mekanik
     ["steam:11000010a1b83df"] = 85, -- MaMad Owner
