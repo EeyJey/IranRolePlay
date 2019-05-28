@@ -1096,7 +1096,7 @@ Citizen.CreateThread(function()
 
  while true do
 
-   Wait(0)
+  Wait(0)
 
   if PlayerData.family ~= nil then
     local playerPed      = GetPlayerPed(-1)

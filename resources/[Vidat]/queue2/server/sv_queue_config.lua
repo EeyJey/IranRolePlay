@@ -30,6 +30,7 @@ Config.Priority = {
     -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
     --["steam:11000011a3f0a06"] = 70, --game_over streamer
+    ['steam:1100001175a3989'] = 70, -- amroz
     ["ip:127.0.0.0"] = 85
 }
 
