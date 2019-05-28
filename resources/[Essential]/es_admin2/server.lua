@@ -685,10 +685,12 @@ end, function(source, args, user)
 end, {help = "Teleport to a user", params = {{name = "userid", help = "The ID of the player"}}})
 
 -- Kill yourself
-TriggerEvent('es:addCommand', 'die', function(source, args, user)
+TriggerEvent('es:addCommand', 'die',"mod", function(source, args, user)
 	TriggerClientEvent('es_admin:kill', source)
 	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "You killed yourself"} })
-end, {help = "Suicide"})
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
+end,{help = "Suicide"})
 
 -- Slay a player
 TriggerEvent('es:addGroupCommand', 'slay', "admin", function(source, args, user)

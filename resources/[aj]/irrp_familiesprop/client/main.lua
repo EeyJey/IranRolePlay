@@ -1088,6 +1088,9 @@ while true do
 end
 end)
 
+
+
+
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
 
@@ -1102,7 +1105,7 @@ Citizen.CreateThread(function()
     local currentStation = nil
     local currentPart    = nil
     local currentPartNum = nil
-
+    
     for k,v in pairs(Config.families) do
       if PlayerData.family.name == k then
         for i=1, #v.Cloakrooms, 1 do
@@ -1296,6 +1299,10 @@ Citizen.CreateThread(function()
   TriggerEvent('chat:addSuggestion', '/fm', 'Menu family')
   TriggerEvent('chat:addSuggestion', '/familymenu', 'Menu family')
 end)
+
+RegisterCommand('getfamilycount', function(source, args)
+  print(#Config.families)
+end, false)
 ---------------------------------------------------------------------------------------------------------
 -- NB : gestion des menu
 ---------------------------------------------------------------------------------------------------------
