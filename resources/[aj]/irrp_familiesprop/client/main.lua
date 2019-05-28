@@ -303,6 +303,7 @@ function OpenVehicleSpawnerMenu(station, partNum)
         }, vehicles[partNum].Heading, function(vehicle)
         TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
         SetVehicleMods(vehicle, station)
+        SetVehicleFuelLevel(vehicle,100)
         end)
 
        else
