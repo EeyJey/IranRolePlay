@@ -118,8 +118,12 @@
   </InitDatas>
   <txdRelationships>
     <Item>
-      <parent>vehshare</parent>
+      <parent>300zw1</parent>
       <child>300zw</child>
+	  </Item>
+	  <Item>
+	  <parent>vehshare</parent>
+	  <child>300zw</child>
     </Item>
   </txdRelationships>
 </CVehicleModelInfo__InitDataList>
