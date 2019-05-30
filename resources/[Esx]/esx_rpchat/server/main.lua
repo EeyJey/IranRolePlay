@@ -67,6 +67,7 @@ end
 	RegisterServerEvent('proxevent')
 	AddEventHandler('proxevent', function(message)
 		local name =  GetPlayerName(source)
+		TriggerEvent('DiscordBot:ToDiscord', 'chat', name, 'G push '..message, 'user', true, source, false)
 		TriggerClientEvent("sendProximityMessageProxevent", -1, source, "[Event]", name..' '..message)
 	end)
 
