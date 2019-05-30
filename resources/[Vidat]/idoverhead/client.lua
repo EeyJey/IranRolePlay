@@ -65,21 +65,23 @@ function DrawText3D(x,y,z, text)
 end
 
 Citizen.CreateThread(function()
-	local showedToAll = os.time()
+	local showedToAll = 0
     while true do
 		local PlayerData = nil
 		local ShowButtonHold = false
 		if IsControlPressed(0, Keys['G']) then
 			ShowButtonHold = true
-			
+			showedToAll = showedToAll + 1
 		else
 			ShowButtonHold = false
 		end
 		if IsControlJustReleased(0, Keys['G']) then
 			ShowButtonHold = false
 		end
-		if ShowButtonHold and  os.difftime(showedToAll, os.time()) > 3 then
-			showedToAll = os.time()
+		if showedToAll > 50000 then
+			showedToAll = 0
+		end
+		if ShowButtonHold and showedToAll == 0 then
 			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
 		end 
 		if disableForPlayers then 
