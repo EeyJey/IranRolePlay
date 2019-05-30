@@ -360,7 +360,7 @@ function PurchaseCargo(scenario)
 				SpawnCargoVehicle(scenario)
 				
 				event_is_running = true
-
+				
 				math.random(); math.random(); math.random()
 				random_destination = math.random(1, #Config.CargoDeliveryLocations)
 				event_destination = Config.CargoDeliveryLocations[random_destination]
