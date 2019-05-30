@@ -69,9 +69,7 @@ Citizen.CreateThread(function()
     while true do
 		local PlayerData = nil
 		local ShowButtonHold = false
-		if ShowButtonHold and showedToAll == 0 then
-			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
-		end 
+		
 		if IsControlPressed(0, Keys['G']) then
 			ShowButtonHold = true
 			showedToAll = showedToAll + 1
@@ -84,7 +82,10 @@ Citizen.CreateThread(function()
 		if showedToAll > 50000 then
 			showedToAll = 0
 		end
-		
+		print(showedToAll)
+		if ShowButtonHold and showedToAll == 0 then
+			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
+		end 
 		if disableForPlayers then 
 			if ESX == nil then
 				while ESX == nil do
