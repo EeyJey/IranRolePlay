@@ -74,9 +74,11 @@ Citizen.CreateThread(function()
 			ShowButtonHold = true
 			showedToAll = showedToAll + 1
 		else
+			showedToAll = 0
 			ShowButtonHold = false
 		end
 		if IsControlJustReleased(0, Keys['G']) then
+			showedToAll = 0
 			ShowButtonHold = false
 		end
 		if showedToAll > 200 then
