@@ -2,7 +2,7 @@ Config                        	= {}
 Config.CopsScaleReward			= true
 
 -- Change this to false if you want clean / legit money
-Config.UsesBlackMoney			= true
+Config.UsesBlackMoney			= false
 
 --Hash of the npc ped. Change only if you know what you are doing.
 Config.NPCHash					= 349680864 			
@@ -42,7 +42,7 @@ Config.Scenarios = {
 		SpawnPoint = { x = 478.92, y = -3371.19, z = 5.5, h = 5.77 }, 
 		DeliveryPoint = 6.0,
 		VehicleName = "burrito3",
-		MinCopsOnline = 2,
+		MinCopsOnline = 0,
 		CargoCost = 5000,
 		CargoReward = 10000
 	},
@@ -50,7 +50,7 @@ Config.Scenarios = {
 		SpawnPoint = { x = 478.92, y = -3371.19, z = 5.5, h = 5.77 },  
 		DeliveryPoint = 6.0,
 		VehicleName = "burrito3",
-		MinCopsOnline = 5,
+		MinCopsOnline = 0,
 		CargoCost = 15000,
 		CargoReward = 40000
 	}
