@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
 			showedToAll = 0
 			ShowButtonHold = false
 		end
-		if showedToAll > 200 then
+		if showedToAll > 100 then
 			showedToAll = 0
 		end
 		if ShowButtonHold and showedToAll == 1 then
