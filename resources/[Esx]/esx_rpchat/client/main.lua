@@ -21,6 +21,8 @@ RegisterCommand('mp', function(source, args)
   end
 end, false)
 
+
+
 RegisterNetEvent('sendProximityMessageShout')
 AddEventHandler('sendProximityMessageShout', function(id, name, message)
   local myId = PlayerId()
@@ -42,6 +44,18 @@ AddEventHandler('sendProximityMessageMP', function(id, name, message)
     TriggerEvent('chatMessage', name, {0, 25, 255},  message)
   end
 end)
+
+RegisterNetEvent('sendProximityMessageProxevent')
+AddEventHandler('sendProximityMessageProxevent', function(id, name, message)
+  local myId = PlayerId()
+  local pid = GetPlayerFromServerId(id)
+  if pid == myId then
+    TriggerEvent('chatMessage',  name, {0, 25, 255}, message)
+  elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 40.0 then
+    TriggerEvent('chatMessage', name, {0, 25, 255},  message)
+  end
+end)
+
 
 RegisterNetEvent('sendProximityMessageMMe')
 AddEventHandler('sendProximityMessageMMe', function(id, name, message)

@@ -71,6 +71,7 @@ Citizen.CreateThread(function()
 
 		if IsControlPressed(0, Keys['G']) then
 			ShowButtonHold = true
+			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
 		else
 			ShowButtonHold = false
 		end

@@ -64,6 +64,12 @@ end
 		end
 	end)
 
+	RegisterServerEvent('proxevent')
+	AddEventHandler('proxevent', function(message)
+		local name =  GetPlayerName(source)
+		TriggerClientEvent("sendProximityMessageProxevent", -1, source, "[Event]", name..' '..message)
+	end)
+
 	TriggerEvent('es:addCommand', 'do', function(source, args, user)
 		local name = getIdentity(source)
 		TriggerClientEvent("sendProximityMessageDo", -1, source, name.firstname, table.concat(args, " "))
