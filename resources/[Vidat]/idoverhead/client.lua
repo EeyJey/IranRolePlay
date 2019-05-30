@@ -79,11 +79,10 @@ Citizen.CreateThread(function()
 		if IsControlJustReleased(0, Keys['G']) then
 			ShowButtonHold = false
 		end
-		if showedToAll > 50000 then
+		if showedToAll > 500 then
 			showedToAll = 0
 		end
-		print(showedToAll)
-		if ShowButtonHold and showedToAll == 0 then
+		if ShowButtonHold and showedToAll == 1 then
 			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
 		end 
 		if disableForPlayers then 
