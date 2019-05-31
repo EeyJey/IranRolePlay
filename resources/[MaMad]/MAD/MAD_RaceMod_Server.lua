@@ -1,6 +1,6 @@
-local JRM = JAM.RaceMod
+local JRM = MAD.RaceMod
 
-ESX.RegisterServerCallback('JAM_RaceMod:SetupRace', function(source, cb, racePos, blipCoord, raceID, wager) 
+ESX.RegisterServerCallback('MAD_RaceMod:SetupRace', function(source, cb, racePos, blipCoord, raceID, wager) 
 	JRM.Races = JRM.Races or {}
 	JRM.Races.raceID = { 
 		start = racePos,
@@ -10,7 +10,7 @@ ESX.RegisterServerCallback('JAM_RaceMod:SetupRace', function(source, cb, racePos
 		finished = {},
 	}	
 
-	TriggerClientEvent('JAM_RaceMod:ChallengeNearbyPlayers', -1, racePos, raceID, wager)
+	TriggerClientEvent('MAD_RaceMod:ChallengeNearbyPlayers', -1, racePos, raceID, wager)
 
 	local timer = GetGameTimer()
 	while (GetGameTimer() - timer) < (JRM.WaitForPlayersTimer * 1000) do Citizen.Wait(0); end
@@ -18,8 +18,8 @@ ESX.RegisterServerCallback('JAM_RaceMod:SetupRace', function(source, cb, racePos
 	cb(cbData)
 end)
 
-RegisterNetEvent('JAM_RaceMod:JoinRace')
-AddEventHandler('JAM_RaceMod:JoinRace', function(raceID) 
+RegisterNetEvent('MAD_RaceMod:JoinRace')
+AddEventHandler('MAD_RaceMod:JoinRace', function(raceID) 
 	if JRM.Races and JRM.Races.raceID and JRM.Races.raceID.players then
 		local plys = JRM.Races.raceID.players
 		local isAdded = false
@@ -28,31 +28,31 @@ AddEventHandler('JAM_RaceMod:JoinRace', function(raceID)
 		end
 		if not isAdded then 
 			table.insert(JRM.Races.raceID.players, source)
-			TriggerEvent('JAM_RaceMod:SetMoney', -JRM.Races.raceID.wager) 
+			TriggerEvent('MAD_RaceMod:SetMoney', -JRM.Races.raceID.wager) 
 		end
 	end
 end)
 
-RegisterNetEvent('JAM_RaceMod:StartRace')
-AddEventHandler('JAM_RaceMod:StartRace', function(raceID) 
+RegisterNetEvent('MAD_RaceMod:StartRace')
+AddEventHandler('MAD_RaceMod:StartRace', function(raceID) 
 	if JRM.Races and JRM.Races.raceID and JRM.Races.raceID.players then
 		local race = JRM.Races.raceID
 		for k,v in pairs(race.players) do
-			TriggerClientEvent('JAM_RaceMod:BeginRace', v, raceID, race.finish)
+			TriggerClientEvent('MAD_RaceMod:BeginRace', v, raceID, race.finish)
 		end
 	end
 end)
 
-RegisterNetEvent('JAM_RaceMod:SetMoney')
-AddEventHandler('JAM_RaceMod:SetMoney', function(amount)
+RegisterNetEvent('MAD_RaceMod:SetMoney')
+AddEventHandler('MAD_RaceMod:SetMoney', function(amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	while not xPlayer do Citizen.Wait(0); xPlayer = ESX.GetPlayerFromId(source); end
 	local playerMoney = xPlayer.getMoney()
 	xPlayer.setMoney(playerMoney + amount)
 end)
 
-RegisterNetEvent('JAM_RaceMod:LeaveRace')
-AddEventHandler('JAM_RaceMod:LeaveRace', function(raceID)
+RegisterNetEvent('MAD_RaceMod:LeaveRace')
+AddEventHandler('MAD_RaceMod:LeaveRace', function(raceID)
 	if JRM.Races and JRM.Races.raceID then
 		for k,v in pairs(JRM.Races.raceID.players) do
 			if v == source then
@@ -63,27 +63,27 @@ AddEventHandler('JAM_RaceMod:LeaveRace', function(raceID)
 	end
 end)
 
-ESX.RegisterServerCallback('JAM_RaceMod:FinishStreetRace', function(source, cb, raceID)	
+ESX.RegisterServerCallback('MAD_RaceMod:FinishStreetRace', function(source, cb, raceID)	
 	print(JRM.Races.raceID, JRM.Races.raceID.finished)
 	table.insert(JRM.Races.raceID.finished, source)
 	cb(#JRM.Races.raceID.finished, JRM.Races.raceID.wager, #JRM.Races.raceID.players)
 end)
 
-RegisterNetEvent('JAM_RaceMod:RaceTimeout')
-AddEventHandler('JAM_RaceMod:RaceTimeout', function(raceID)
+RegisterNetEvent('MAD_RaceMod:RaceTimeout')
+AddEventHandler('MAD_RaceMod:RaceTimeout', function(raceID)
 	for k,v in pairs(JRM.Races.raceID.players) do
 		local doSend = true
 		for key,val in pairs(JRM.Races.raceID.finished) do
 			if v == val then doSend = false; end
 		end
-		if doSend then TriggerClientEvent('JAM_RaceMod:Timeout', v); end
+		if doSend then TriggerClientEvent('MAD_RaceMod:Timeout', v); end
 	end
 	JRM.Races.raceID = {}
 end)
 
---[[local JRM = JAM.RaceMod
+--[[local JRM = MAD.RaceMod
 
-ESX.RegisterServerCallback('JAM_RaceMod:SetupStreetRace', function(source, cb, startPos, finPos, wager, raceID) 
+ESX.RegisterServerCallback('MAD_RaceMod:SetupStreetRace', function(source, cb, startPos, finPos, wager, raceID) 
 	JRM.Races = JRM.Races or {}
 	JRM.Races.raceID = {
 		start = startPos,
@@ -93,7 +93,7 @@ ESX.RegisterServerCallback('JAM_RaceMod:SetupStreetRace', function(source, cb, s
 		finished = {}
 	}	
 
-	TriggerClientEvent('JAM_RaceMod:InitializeStreetRace', -1, startPos, finPos, wager, raceID)
+	TriggerClientEvent('MAD_RaceMod:InitializeStreetRace', -1, startPos, finPos, wager, raceID)
 
 	local timer = GetGameTimer()
 	while (GetGameTimer() - timer) < (10 * 1000) do
@@ -103,33 +103,33 @@ ESX.RegisterServerCallback('JAM_RaceMod:SetupStreetRace', function(source, cb, s
 	cb(#JRM.Races.raceID.players)
 end)
 
-RegisterNetEvent('JAM_RaceMod:JoinStreetRace')
-AddEventHandler('JAM_RaceMod:JoinStreetRace', function(raceID)
+RegisterNetEvent('MAD_RaceMod:JoinStreetRace')
+AddEventHandler('MAD_RaceMod:JoinStreetRace', function(raceID)
 	table.insert(JRM.Races.raceID.players, source)
 end)
 
-RegisterNetEvent('JAM_RaceMod:StartStreetRace')
-AddEventHandler('JAM_RaceMod:StartStreetRace', function(raceID)
+RegisterNetEvent('MAD_RaceMod:StartStreetRace')
+AddEventHandler('MAD_RaceMod:StartStreetRace', function(raceID)
 	for k,v in pairs(JRM.Races.raceID.players) do
-		TriggerClientEvent('JAM_RaceMod:BeginStreetRace', v, raceID)
+		TriggerClientEvent('MAD_RaceMod:BeginStreetRace', v, raceID)
 	end
 end)
 
-ESX.RegisterServerCallback('JAM_RaceMod:FinishStreetRace', function(source, cb, raceID)	
+ESX.RegisterServerCallback('MAD_RaceMod:FinishStreetRace', function(source, cb, raceID)	
 	table.insert(JRM.Races.raceID.finished, source)
 	cb(#JRM.Races.raceID.finished, JRM.Races.raceID.wager, #JRM.Races.raceID.players)
 end)
 
 
 
-RegisterNetEvent('JAM_RaceMod:RaceTimeout')
-AddEventHandler('JAM_RaceMod:RaceTimeout', function(raceID)
+RegisterNetEvent('MAD_RaceMod:RaceTimeout')
+AddEventHandler('MAD_RaceMod:RaceTimeout', function(raceID)
 	for k,v in pairs(JRM.Races.raceID.players) do
 		local doSend = true
 		for key,val in pairs(JRM.Races.raceID.finished) do
 			if v == val then doSend = false; end
 		end
-		if doSend then TriggerClientEvent('JAM_RaceMod:Timeout', v); end
+		if doSend then TriggerClientEvent('MAD_RaceMod:Timeout', v); end
 	end
 	JRM.Races.raceID = {}
 end)
@@ -150,15 +150,15 @@ AddEventHandler('playerDropped', function(reason)
 	end
 end)
 
-RegisterNetEvent('JAM_RaceMod:SetMoney')
-AddEventHandler('JAM_RaceMod:SetMoney', function(amount)
+RegisterNetEvent('MAD_RaceMod:SetMoney')
+AddEventHandler('MAD_RaceMod:SetMoney', function(amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	while not xPlayer do Citizen.Wait(0); xPlayer = ESX.GetPlayerFromId(source); end
 	local playerMoney = xPlayer.getMoney()
 	xPlayer.setMoney(playerMoney + amount)
 end)
 
-RegisterNetEvent('JAM_RaceMod:DoStuff')
-AddEventHandler('JAM_RaceMod:DoStuff', function()
-	TriggerClientEvent('JAM_RaceMod:DoingStuff', -1)
+RegisterNetEvent('MAD_RaceMod:DoStuff')
+AddEventHandler('MAD_RaceMod:DoStuff', function()
+	TriggerClientEvent('MAD_RaceMod:DoingStuff', -1)
 end)--]]
