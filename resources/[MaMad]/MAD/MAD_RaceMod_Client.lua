@@ -1,4 +1,4 @@
-local JRM = JAM.RaceMod
+local JRM = MAD.RaceMod
 
 function JRM:Start()
 	if not self then return; end
@@ -6,7 +6,7 @@ function JRM:Start()
 	while not ESX do Citizen.Wait(100); end
 	while not ESX.IsPlayerLoaded() do Citizen.Wait(100); end
 
-	print("JAM_RaceMod:Start() - Succesful")
+	print("MAD_RaceMod:Start() - Succesful")
 
 	self.Started = 1
 	self:Update()
@@ -43,8 +43,8 @@ function JRM:Update()
 
 			if JUtils:GetVecDist(plyPos, self.RaceJoinPos) > self.LeaveDist then
 
-				TriggerServerEvent('JAM_RaceMod:LeaveRace', self.RaceID)
-				TriggerServerEvent('JAM_RaceMod:SetMoney', self.RaceWager)
+				TriggerServerEvent('MAD_RaceMod:LeaveRace', self.RaceID)
+				TriggerServerEvent('MAD_RaceMod:SetMoney', self.RaceWager)
 
 				self.RaceID = false
 				self.RaceJoinPos = false
@@ -57,11 +57,11 @@ function JRM:Update()
 						Citizen.Wait(0)
 						tick = tick + 1
 
-						TriggerEvent('JAM_Notify:ShowNotification', "~r~You left the race.")
+						TriggerEvent('MAD_Notify:ShowNotification', "~r~You left the race.")
 					end
 				end)
 			elseif JUtils:GetVecDist(plyPos, self.RaceJoinPos) > self.LeaveWarnDist then
-				TriggerEvent('JAM_Notify:ShowNotification', "~r~Don't move so far from your start point!")
+				TriggerEvent('MAD_Notify:ShowNotification', "~r~Don't move so far from your start point!")
 			end
 		end
 	end
@@ -72,9 +72,9 @@ RegisterCommand('showJob', function(source, args)
 	if not ESX.IsPlayerLoaded() then return; end
 	local plyData = ESX.GetPlayerData()
 	if plyData and plyData.job and plyData.job.label and plyData.job.grade_label then
-		TriggerEvent('JAM_Notify:ShowNotification', "Job : [~g~"..plyData.job.label.."~s~] : Rank : [~g~"..plyData.job.grade_label.."~s~]")
+		TriggerEvent('MAD_Notify:ShowNotification', "Job : [~g~"..plyData.job.label.."~s~] : Rank : [~g~"..plyData.job.grade_label.."~s~]")
 	else 
-		TriggerEvent('JAM_Notify:ShowNotification', "Couldn't retrieve job data.")
+		TriggerEvent('MAD_Notify:ShowNotification', "Couldn't retrieve job data.")
 	end
 end)
 
@@ -93,7 +93,7 @@ function JRM:SetupRace(wager)
 	local plyPed = GetPlayerPed(plyId)	
 
 	if not IsPedInAnyVehicle(plyPed) then
-		TriggerEvent('JAM_Notify:ShowNotification', "~r~You need to be in a vehicle first.")
+		TriggerEvent('MAD_Notify:ShowNotification', "~r~You need to be in a vehicle first.")
 		return
 	end
 
@@ -106,16 +106,16 @@ function JRM:SetupRace(wager)
 	if DoesBlipExist(blip) then
 		blipCoord = GetBlipInfoIdCoord(blip)		
 	else
-		TriggerEvent('JAM_Notify:ShowNotification', "You need to set a ~r~waypoint ~s~first.")
+		TriggerEvent('MAD_Notify:ShowNotification', "You need to set a ~r~waypoint ~s~first.")
 		return
 	end	
 
 	if wager > 0 then
 		local plyData = ESX.GetPlayerData()
 		if plyData.money >= wager then 
-			TriggerServerEvent('JAM_RaceMod:SetMoney', -wager)
+			TriggerServerEvent('MAD_RaceMod:SetMoney', -wager)
 		else 
-			TriggerEvent('JAM_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money~s~.")
+			TriggerEvent('MAD_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money~s~.")
 			return
 		end
 	end
@@ -123,24 +123,24 @@ function JRM:SetupRace(wager)
 	JRM.RaceID = raceID
 	JRM.RaceWager = wager
 	JRM.RaceJoinPos = plyPos
-	TriggerEvent('JAM_Notifications:Notify', "Streetrace in progress.", 0, blipCoord, "General", "police")
+	TriggerEvent('MAD_Notifications:Notify', "Streetrace in progress.", 0, blipCoord, "General", "police")
 
 	Citizen.CreateThread(function()	
 		local timer = GetGameTimer()
 		while (GetGameTimer() - timer) < (self.WaitForPlayersTimer * 1000) and JRM.RaceJoinPos do	
 			Citizen.Wait(0)	
-			TriggerEvent('JAM_Notify:ShowNotification', "You have ~g~started ~s~a ~g~streetrace~s~. Challenging nearby players.")
+			TriggerEvent('MAD_Notify:ShowNotification', "You have ~g~started ~s~a ~g~streetrace~s~. Challenging nearby players.")
 		end
 	end)
 
 	Citizen.CreateThread(function()
-		ESX.TriggerServerCallback('JAM_RaceMod:SetupRace', function(playersJoined)
+		ESX.TriggerServerCallback('MAD_RaceMod:SetupRace', function(playersJoined)
 			if not JRM.RaceJoinPos then return; end
 			if playersJoined > 1 then
-				TriggerServerEvent('JAM_RaceMod:StartRace', JRM.RaceID)
+				TriggerServerEvent('MAD_RaceMod:StartRace', JRM.RaceID)
 			else
-				TriggerEvent('JAM_Notify:ShowNotification', "~r~Nobody ~s~joined your race.")
-				TriggerServerEvent('JAM_RaceMod:SetMoney', wager)
+				TriggerEvent('MAD_Notify:ShowNotification', "~r~Nobody ~s~joined your race.")
+				TriggerServerEvent('MAD_RaceMod:SetMoney', wager)
 				JRM.RaceID = false
 				JRM.RaceWager = false
 				JRM.RaceJoinPos = false
@@ -150,8 +150,8 @@ function JRM:SetupRace(wager)
 	end)
 end
 
-RegisterNetEvent('JAM_RaceMod:ChallengeNearbyPlayers')
-AddEventHandler('JAM_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, wager)
+RegisterNetEvent('MAD_RaceMod:ChallengeNearbyPlayers')
+AddEventHandler('MAD_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, wager)
 	if JRM.RaceID then return; end
 
 	local canJoin = true
@@ -179,7 +179,7 @@ AddEventHandler('JAM_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, 
 			while (GetGameTimer() - timer) < (JRM.JoinTimeout * 1000) and not JRM.RaceID do
 				Citizen.Wait(0)
 				if tick % 100 == 0 then 
-					TriggerEvent('JAM_Notify:ShowNotification', str)
+					TriggerEvent('MAD_Notify:ShowNotification', str)
 				end
 
 				if (IsControlJustPressed(1, JUtils.Keys["E"]) or IsDisabledControlJustPressed(1, JUtils.Keys["E"])) then
@@ -187,8 +187,8 @@ AddEventHandler('JAM_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, 
 						JRM.RaceID = raceID
 						JRM.RaceWager = wager
 						JRM.RaceJoinPos = plyPos
-						TriggerServerEvent('JAM_RaceMod:SetMoney', -JRM.RaceWager)
-						TriggerServerEvent('JAM_RaceMod:JoinRace', JRM.RaceID)
+						TriggerServerEvent('MAD_RaceMod:SetMoney', -JRM.RaceWager)
+						TriggerServerEvent('MAD_RaceMod:JoinRace', JRM.RaceID)
 					else timer = 0; end
 				end
 				tick = tick + 1
@@ -196,19 +196,19 @@ AddEventHandler('JAM_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, 
 
 			if not JRM.RaceID then 
 				if wager > 0 and not canJoin then
-					TriggerEvent('JAM_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money ~s~to join this race.")
+					TriggerEvent('MAD_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money ~s~to join this race.")
 				else
-					TriggerEvent('JAM_Notify:ShowNotification', "You ~r~didn't ~s~join the race.")
+					TriggerEvent('MAD_Notify:ShowNotification', "You ~r~didn't ~s~join the race.")
 				end
 			else 
-				TriggerEvent('JAM_Notify:ShowNotification', "You ~g~joined ~s~the race.")
+				TriggerEvent('MAD_Notify:ShowNotification', "You ~g~joined ~s~the race.")
 			end
 		end)
 	end
 end)
 
-RegisterNetEvent('JAM_RaceMod:BeginRace')
-AddEventHandler('JAM_RaceMod:BeginRace', function(raceID, blipCoord)
+RegisterNetEvent('MAD_RaceMod:BeginRace')
+AddEventHandler('MAD_RaceMod:BeginRace', function(raceID, blipCoord)
 	if not JRM.RaceID or JRM.RaceID ~= raceID then return; end
 	Citizen.CreateThread(function() 		
 		local timer = GetGameTimer()		
@@ -220,7 +220,7 @@ AddEventHandler('JAM_RaceMod:BeginRace', function(raceID, blipCoord)
 		while (GetGameTimer() - timer) < ((JRM.StartTimer - 1) * 1000) and JRM.RaceJoinPos do
 			local counter = math.floor(((math.floor((JRM.StartTimer) * 1000)) - (GetGameTimer() - timer)) / 1000)
 			local str = "~r~"..counter
-			TriggerEvent('JAM_Notify:ShowNotification', "You will be frozen into position in "..str.." seconds~s~. On your marks.")
+			TriggerEvent('MAD_Notify:ShowNotification', "You will be frozen into position in "..str.." seconds~s~. On your marks.")
 			Citizen.Wait(10)
 		end
 
@@ -237,10 +237,10 @@ AddEventHandler('JAM_RaceMod:BeginRace', function(raceID, blipCoord)
 			local str
 			if counter <= 2.0 then str = "~y~"..counter
 			else str = "~r~"..counter; end
-			TriggerEvent('JAM_Notify:ShowNotification', "Countdown : "..str, 0.1)
+			TriggerEvent('MAD_Notify:ShowNotification', "Countdown : "..str, 0.1)
 		end	
 		Citizen.Wait(0)
-		TriggerEvent('JAM_Notify:ShowNotification', "~g~Go!", 1)
+		TriggerEvent('MAD_Notify:ShowNotification', "~g~Go!", 1)
 		FreezeEntityPosition(plyVeh, false)
 		SetNewWaypoint(blipCoord.x, blipCoord.y)
 		JRM.RaceFinish = vector3(blipCoord.x, blipCoord.y, 1000.0)
@@ -255,13 +255,13 @@ function JRM:FinishRace()
 	self.RaceFinish = false		
 	self.RaceWager = false
 
-	ESX.TriggerServerCallback('JAM_RaceMod:FinishStreetRace', function(position, wager, players)
+	ESX.TriggerServerCallback('MAD_RaceMod:FinishStreetRace', function(position, wager, players)
 		local str = "You finished in position : "
 		if position == 1 then
 			if wager > 0 then
 				local plyData = ESX.GetPlayerData()
 				local prize = wager * players
-				TriggerServerEvent('JAM_RaceMod:SetMoney', prize)
+				TriggerServerEvent('MAD_RaceMod:SetMoney', prize)
 				str = str .. "[~g~" ..position.. "~s~] : You won : $~g~" ..prize
 			else str = str .. "[~g~" ..position.. "~s~]"
 			end
@@ -271,19 +271,19 @@ function JRM:FinishRace()
 				while (GetGameTimer() - timer) < (self.TimeoutTimer * 1000) do
 					Citizen.Wait(0)
 				end
-				TriggerServerEvent('JAM_RaceMod:RaceTimeout', id)
+				TriggerServerEvent('MAD_RaceMod:RaceTimeout', id)
 			end)
 		else str = str .. "[~r~" ..position.. "~s~]"
 		end
 
-		TriggerEvent('JAM_Notify:ShowNotification', str)
+		TriggerEvent('MAD_Notify:ShowNotification', str)
 	end, id)
 end
 
-RegisterNetEvent('JAM_RaceMod:Timeout')
-AddEventHandler('JAM_RaceMod:Timeout', function() 
+RegisterNetEvent('MAD_RaceMod:Timeout')
+AddEventHandler('MAD_RaceMod:Timeout', function() 
 	if not JRM.RaceID then
-		TriggerEvent('JAM_Notify:ShowNotification', "~r~You didn't finish the race.")
+		TriggerEvent('MAD_Notify:ShowNotification', "~r~You didn't finish the race.")
 		JRM.RaceID = false
 		JRM.RaceWager = false
 		JRM.RaceJoinPos = false

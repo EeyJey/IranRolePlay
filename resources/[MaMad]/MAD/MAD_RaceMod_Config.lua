@@ -1,6 +1,6 @@
-JAM.RaceMod = {}
-local JRM = JAM.RaceMod
-JRM.ESX = JAM.ESX
+MAD.RaceMod = {}
+local JRM = MAD.RaceMod
+JRM.ESX = MAD.ESX
 
 JRM.FlagMarkerOffsetZ 	=   10.0
 JRM.GroundMarkerOffsetZ = -  1.0
@@ -15,9 +15,9 @@ JRM.LeaveWarnDist		=    5.0
 JRM.TimeoutTimer		=   30.0
 JRM.FinishRaceDist		=   20.0
 
---[[JAM.RaceMod = {}
-local JRM = JAM.RaceMod
-JRM.ESX = JAM.ESX
+--[[MAD.RaceMod = {}
+local JRM = MAD.RaceMod
+JRM.ESX = MAD.ESX
 
 JRM.FlagMarkerOffsetZ = 5.0
 JRM.GroundMarkerOffsetZ = -1.0

@@ -1,6 +1,6 @@
-JAM.Notify = {}
-local JNotify = JAM.Notify
-JNotify.ESX = JAM.ESX
+MAD.Notify = {}
+local JNotify = MAD.Notify
+JNotify.ESX = MAD.ESX
 
 JNotify.SpriteYSize	= 0.038      	-- can touch if u want? changes the background sprite height
 JNotify.SpriteYOffset = -0.017   	-- can touch if u want? changes how the sprite is positioned behind the text
@@ -15,7 +15,7 @@ function JNotify:Start()
 	while not ESX do Citizen.Wait(100); end
 	self.ESX = ESX
 	while not ESX.IsPlayerLoaded() do Citizen.Wait(100); end
-	print("JAM_Notify:Start() - Successful")
+	print("MAD_Notify:Start() - Successful")
 	self.Started = 1
 end
 
@@ -102,7 +102,7 @@ function JNotify:DrawText( t )
   return true
 end
 
-RegisterNetEvent('JAM_Notify:ShowNotification')
-AddEventHandler('JAM_Notify:ShowNotification', function(msg, timer) JNotify:DoNotify(msg, timer); end)
+RegisterNetEvent('MAD_Notify:ShowNotification')
+AddEventHandler('MAD_Notify:ShowNotification', function(msg, timer) JNotify:DoNotify(msg, timer); end)
 
 Citizen.CreateThread(function(...) JNotify:Start(...); end)
