@@ -218,7 +218,7 @@ AddEventHandler('MAD_RaceMod:BeginRace', function(raceID, blipCoord)
 		while (GetGameTimer() - timer) < ((JRM.StartTimer - 1) * 1000) and JRM.RaceJoinPos do
 			local counter = math.floor(((math.floor((JRM.StartTimer) * 1000)) - (GetGameTimer() - timer)) / 1000)
 			local str = "~r~"..counter
-			TriggerEvent('MAD_Notify:ShowNotification', "Shoma be modate "..str.." sanie~s~ freeze hasti. havaset bashe.")
+			TriggerEvent('MAD_Notify:ShowNotification', "Shoma be modate "..str.." sanie~s~ freeze mishi. havaset bashe.")
 			Citizen.Wait(10)
 		end
 
@@ -260,7 +260,7 @@ function JRM:FinishRace()
 				local plyData = ESX.GetPlayerData()
 				local prize = wager * players
 				TriggerServerEvent('MAD_RaceMod:SetMoney', prize)
-				str = str .. "[~g~" ..position.. "~s~] : You won : $~g~" ..prize
+				str = str .. "[~g~" ..position.. "~s~] : Bordi : $~g~" ..prize
 			else str = str .. "[~g~" ..position.. "~s~]"
 			end
 
@@ -289,5 +289,5 @@ AddEventHandler('MAD_RaceMod:Timeout', function()
 	end
 end)
 
-RegisterCommand('startRace', function(source, args) JRM:SetupRace(args); end)
+RegisterCommand('race', function(source, args) JRM:SetupRace(args); end)
 Citizen.CreateThread(function(...) JRM:Start(...); end)
