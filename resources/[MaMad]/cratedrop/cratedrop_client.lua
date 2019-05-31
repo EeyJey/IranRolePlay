@@ -12,11 +12,11 @@ local validParachutes = {
 }
 
 -- local mass = GetVehicleHandlingFloat(vehicle, "CHandlingData", "fMass") -- awesome things to come
--- print("MASS: " .. mass)
-RegisterCommand("cratedrop", function(playerServerID, args, rawString)
-    local playerCoords = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 10.0, 0.0)
-    TriggerEvent("crateDrop", args[1], tonumber(args[2]), args[3] or false, args[4] or 400.0, {["x"] = playerCoords.x, ["y"] = playerCoords.y, ["z"] = playerCoords.z}, args[5])
-end, false)
+-- --print("MASS: " .. mass)
+--RegisterCommand("cratedrop", function(playerServerID, args, rawString)
+--    local playerCoords = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 10.0, 0.0)
+--    TriggerEvent("crateDrop", args[1], tonumber(args[2]), args[3] or false, args[4] or 400.0, {["x"] = playerCoords.x, ["y"] = playerCoords.y, ["z"] = playerCoords.z}, args[5])
+--end, false)
 
 RegisterNetEvent("crateDrop")
 
@@ -24,24 +24,24 @@ AddEventHandler("crateDrop", function(weapon, ammo, roofCheck, planeSpawnDistanc
     Citizen.CreateThread(function()
 
         if not weapon then
-            print("Error: NO WEAPON ARGUMENT")
+            --print("Error: NO WEAPON ARGUMENT")
             return
         end
 
         if IsWeaponValid(GetHashKey(weapon)) then -- only supports weapon pickups for now, use the function directly to bypass this
             weapon = "pickup_" .. weapon
-            print("WEAPON VALIDITY: true, after concatenating 'pickup_'")
+            --print("WEAPON VALIDITY: true, after concatenating 'pickup_'")
         elseif IsWeaponValid(GetHashKey("weapon_" .. weapon)) then
             weapon = "pickup_weapon_" .. weapon
-            print("WEAPON VALIDITY: true, after concatenating 'pickup_weapon_'")
+            --print("WEAPON VALIDITY: true, after concatenating 'pickup_weapon_'")
         elseif IsWeaponValid(GetHashKey(weapon:sub(8))) then
-            print("WEAPON VALIDITY: true")
+            --print("WEAPON VALIDITY: true")
         else
-            print("WEAPON VALIDITY: false")
+            --print("WEAPON VALIDITY: false")
             return
         end
 
-        print("WEAPON: " .. weapon:lower())
+        --print("WEAPON: " .. weapon:lower())
 
         local ammo = (ammo and tonumber(ammo)) or 250
         if ammo > 9999 then
@@ -50,38 +50,38 @@ AddEventHandler("crateDrop", function(weapon, ammo, roofCheck, planeSpawnDistanc
             ammo = -1
         end
 
-        print("AMMO: " .. ammo)
+        --print("AMMO: " .. ammo)
 
         if dropCoords.x and dropCoords.y and dropCoords.z and tonumber(dropCoords.x) and tonumber(dropCoords.y) and tonumber(dropCoords.z) then
-            print(("DROP COORDS: success, X = %.4f; Y = %.4f; Z = %.4f"):format(dropCoords.x, dropCoords.y, dropCoords.z))
+            --print(("DROP COORDS: success, X = %.4f; Y = %.4f; Z = %.4f"):format(dropCoords.x, dropCoords.y, dropCoords.z))
         else
             dropCoords = {0.0, 0.0, 72.0}
-            print("DROP COORDS: fail, defaulting to X = 0; Y = 0")
+            --print("DROP COORDS: fail, defaulting to X = 0; Y = 0")
         end
 
         if validParachutes[parachuteModel] then
-            print("PARACHUTE: model correct")
+            --print("PARACHUTE: model correct")
         else
             parachuteModel = "p_cargo_chute_s"
-            print("PARACHUTE: model invalid, defaulting to p_cargo_chute_s")
+            --print("PARACHUTE: model invalid, defaulting to p_cargo_chute_s")
         end
 
         if roofCheck and roofCheck ~= "false" then  -- if roofCheck is not false then a check will be performed if a plane can drop a crate to the specified location before actually spawning a plane, if it can't, function won't be called
-            print("ROOFCHECK: true")
+            --print("ROOFCHECK: true")
             local ray = StartShapeTestRay(vector3(dropCoords.x, dropCoords.y, dropCoords.z) + vector3(0.0, 0.0, 500.0), vector3(dropCoords.x, dropCoords.y, dropCoords.z), -1, -1, 0)
             local _, hit, impactCoords = GetShapeTestResult(ray)
-            print("HIT: " .. hit)
-            print(("IMPACT COORDS: X = %.4f; Y = %.4f; Z = %.4f"):format(impactCoords.x, impactCoords.y, impactCoords.z))
-            print("DISTANCE BETWEEN DROP AND IMPACT COORDS: " ..  #(vector3(dropCoords.x, dropCoords.y, dropCoords.z) - vector3(impactCoords)))
+            --print("HIT: " .. hit)
+            --print(("IMPACT COORDS: X = %.4f; Y = %.4f; Z = %.4f"):format(impactCoords.x, impactCoords.y, impactCoords.z))
+            --print("DISTANCE BETWEEN DROP AND IMPACT COORDS: " ..  #(vector3(dropCoords.x, dropCoords.y, dropCoords.z) - vector3(impactCoords)))
             if hit == 0 or (hit == 1 and #(vector3(dropCoords.x, dropCoords.y, dropCoords.z) - vector3(impactCoords)) < 10.0) then -- ± 10 units
-                print("ROOFCHECK: success")
+                --print("ROOFCHECK: success")
                 crateDrop(weapon, ammo, planeSpawnDistance, dropCoords, parachuteModel)
             else
-                print("ROOFCHECK: fail")
+                --print("ROOFCHECK: fail")
                 return
             end
         else
-            print("ROOFCHECK: false")
+            --print("ROOFCHECK: false")
             crateDrop(weapon, ammo, planeSpawnDistance, dropCoords, parachuteModel)
         end
 
@@ -117,8 +117,8 @@ function crateDrop(weapon, ammo, planeSpawnDistance, dropCoords, parachuteModel)
         local theta = (rHeading / 180.0) * 3.14
         local rPlaneSpawn = vector3(dropCoords.x, dropCoords.y, dropCoords.z) - vector3(math.cos(theta) * planeSpawnDistance, math.sin(theta) * planeSpawnDistance, -500.0) -- the plane is spawned at
 
-        print(("PLANE COORDS: X = %.4f; Y = %.4f; Z = %.4f"):format(rPlaneSpawn.x, rPlaneSpawn.y, rPlaneSpawn.z))
-        print("PLANE SPAWN DISTANCE: " .. #(vector2(rPlaneSpawn.x, rPlaneSpawn.y) - vector2(dropCoords.x, dropCoords.y)))
+        --print(("PLANE COORDS: X = %.4f; Y = %.4f; Z = %.4f"):format(rPlaneSpawn.x, rPlaneSpawn.y, rPlaneSpawn.z))
+        --print("PLANE SPAWN DISTANCE: " .. #(vector2(rPlaneSpawn.x, rPlaneSpawn.y) - vector2(dropCoords.x, dropCoords.y)))
 
         local dx = dropCoords.x - rPlaneSpawn.x
         local dy = dropCoords.y - rPlaneSpawn.y
@@ -152,7 +152,7 @@ function crateDrop(weapon, ammo, planeSpawnDistance, dropCoords, parachuteModel)
         end
 
         if IsEntityDead(pilot) then -- I think this will end the script if the pilot dies, no idea how return works
-            print("PILOT: dead")
+            --print("PILOT: dead")
             do return end
         end
 
@@ -247,7 +247,7 @@ end
 AddEventHandler("onResourceStop", function(resource)
     if resource == GetCurrentResourceName() then
 
-        print("RESOURCE: stopped")
+        --print("RESOURCE: stopped")
 
         SetEntityAsMissionEntity(pilot, false, true)
         DeleteEntity(pilot)
