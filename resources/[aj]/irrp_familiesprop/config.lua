@@ -487,9 +487,9 @@ Config.families = {
       },
       VehicleProp = {
         modEngine       = 3,
-        modBrakes				=	2,
-        windowTint			=	1,
-        modArmor				= 4,
+        modBrakes		= 2,
+        windowTint		= 1,
+        modArmor		= 4,
         dirtLevel       = 0,
         plate           = "Sicario",
         modOrnaments    = -1,
@@ -529,7 +529,7 @@ Config.families = {
     },
     ['Slasher'] = {
       Blip = {
-        Pos     = { x = 1664, y = 0.7412, z = 116.61 },
+        Pos     = { x = 1664.1, y = 3.6, z = 165.51 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -547,10 +547,10 @@ Config.families = {
         plate           = "Slasher",
       },
       Cloakrooms = {
-        { x = 1664, y = 0.7412, z = 115.11 },
-      },
+        { x = 1664.0, y = -0.29 , z = 165.11 },
+      }, 
       Armories = {
-        { x = 1664, y = -0.9082, z = 115.11 },
+        { x = 1664.0, y = 3.6, z = 165.11 },
       },
       Vehicles = {
         {
@@ -568,7 +568,7 @@ Config.families = {
     },
 	['Vice_Lord'] = {
       Blip = {
-        Pos     = { x = -676, y = 887.2, z = 224.8 },
+        Pos     = { x = -676.0, y = 887.2, z = 224.8 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -584,9 +584,9 @@ Config.families = {
       },
       VehicleProp = {
         modEngine       = 3,
-        modBrakes				=	2,
-        windowTint			=	1,
-        modArmor				= 4,
+        modBrakes		= 2,
+        windowTint		= 1,
+        modArmor		= 4,
         dirtLevel       = 0,
         plate           = "Vice_Lord",
         modOrnaments    = -1,
@@ -605,10 +605,10 @@ Config.families = {
         modFrontWheels  = 6,
       },
       Cloakrooms = {
-        { x = -676, y = 887.2, z = 224.2 },
+        { x = -676.0, y = 887.2, z = 224.2 },
       },
       Armories = {
-        { x = -650, y = 852, z = 224.14 },
+        { x = -650.0, y = 852.0, z = 224.14 },
       },
       Vehicles = {
         {
@@ -621,7 +621,7 @@ Config.families = {
         { x = -674.8, y = 904.1, z = 229.5 },
       },
       BossActions = {
-        { x = -653, y = 853, z =  228.3 },
+        { x = -653.0, y = 853.0, z =  228.3 },
       }
     },
 }
