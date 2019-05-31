@@ -57,11 +57,11 @@ function JRM:Update()
 						Citizen.Wait(0)
 						tick = tick + 1
 
-						TriggerEvent('MAD_Notify:ShowNotification', "~r~You left the race.")
+						TriggerEvent('MAD_Notify:ShowNotification', "~r~Shoma mosabeghe ro tark kardi.")
 					end
 				end)
 			elseif JUtils:GetVecDist(plyPos, self.RaceJoinPos) > self.LeaveWarnDist then
-				TriggerEvent('MAD_Notify:ShowNotification', "~r~Don't move so far from your start point!")
+				TriggerEvent('MAD_Notify:ShowNotification', "~r~Az makane shoroo kheyli door nasho!")
 			end
 		end
 	end
