@@ -6,7 +6,7 @@
 <Item>
       <modelName>peykan</modelName>
       <txdName>schafter4</txdName>
-      <handlingId>VACCA</handlingId>
+      <handlingId>schafter4</handlingId>
       <gameName>peykan</gameName>
       <vehicleMakeName />
        <expressionDictName>null</expressionDictName>
@@ -16,8 +16,8 @@
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
       <audioNameHash>schafter4</audioNameHash>
-      <layout>LAYOUT_LOW_INFERNUS</layout>
-      <coverBoundOffsets>ZENTORNO_COVER_OFFSET_INFO</coverBoundOffsets>
+      <layout>LAYOUT_LOW_schafter4</layout>
+      <coverBoundOffsets>schafter4_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
       <scenarioLayout />
       <cameraName>FOLLOW_CHEETAH_CAMERA</cameraName>
