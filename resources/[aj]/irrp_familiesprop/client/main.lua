@@ -803,6 +803,12 @@ TriggerEvent('irrp_familiesprop:blip', family.name)
 end)
 
 RegisterNetEvent('irrp_familiesprop:blip')
+
+
+RegisterCommand('myfamily', function(args)
+TriggerEvent('chatMessage',  "[Server]", {0, 0, 255}, ESX.DumpTable(PlayerData.family.name))
+end, false)
+
 -- Create blips
 Citizen.CreateThread(function()
   AddEventHandler('irrp_familiesprop:blip', function(familyname)
