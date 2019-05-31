@@ -5,8 +5,8 @@ admins = {
     'steam:110000118eae7af',
     'steam:110000107a78e07',
     -- 'steam:11000010934a428',
-    'steam:11000010a1b83df'
-
+    'steam:11000010a1b83df',
+    'steam:11000011783a55b'
     --'license:1234975143578921327',
 }
 
