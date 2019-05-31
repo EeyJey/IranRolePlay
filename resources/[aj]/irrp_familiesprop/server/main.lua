@@ -9,36 +9,35 @@ if Config.MaxInService ~= -1 then
 end
 
  -- TriggerEvent('esx_phone:registerNumber', 'family', _U('alert_mafia'), true, true)
-TriggerEvent('irrp_familiesprop:registerFamily', 'Daltons', 'family', 'family_daltons', 'family_daltons', 'family_daltons', {type = 'public'})
 
- RegisterServerEvent('irrp_familiesprop:giveWeapon')
+RegisterServerEvent('irrp_familiesprop:giveWeapon')
 AddEventHandler('irrp_familiesprop:giveWeapon', function(weapon, ammo)
     local xPlayer = ESX.GetPlayerFromId(source)
     xPlayer.addWeapon(weapon, ammo)
 end)
 
- RegisterServerEvent('irrp_familiesprop:handcuff')
+RegisterServerEvent('irrp_familiesprop:handcuff')
 AddEventHandler('irrp_familiesprop:handcuff', function(target)
     TriggerClientEvent('irrp_familiesprop:handcuff', target)
 end)
 
- RegisterServerEvent('irrp_familiesprop:drag')
+RegisterServerEvent('irrp_familiesprop:drag')
 AddEventHandler('irrp_familiesprop:drag', function(target)
     local _source = source
     TriggerClientEvent('irrp_familiesprop:drag', target, _source)
 end)
 
- RegisterServerEvent('irrp_familiesprop:putInVehicle')
+RegisterServerEvent('irrp_familiesprop:putInVehicle')
 AddEventHandler('irrp_familiesprop:putInVehicle', function(target)
     TriggerClientEvent('irrp_familiesprop:putInVehicle', target)
 end)
 
- RegisterServerEvent('irrp_familiesprop:OutVehicle')
+RegisterServerEvent('irrp_familiesprop:OutVehicle')
 AddEventHandler('irrp_familiesprop:OutVehicle', function(target)
     TriggerClientEvent('irrp_familiesprop:OutVehicle', target)
 end)
 
- ESX.RegisterServerCallback('irrp_familiesprop:getOtherPlayerData', function(source, cb, target)
+ESX.RegisterServerCallback('irrp_familiesprop:getOtherPlayerData', function(source, cb, target)
 
    if Config.EnableESXIdentity then
 
@@ -158,7 +157,7 @@ AddEventHandler('irrp_familiesprop:confiscatePlayerItem', function(target, itemT
 
  end)
 
- ESX.RegisterServerCallback('irrp_familiesprop:getPlayerInventory', function(source, cb)
+ESX.RegisterServerCallback('irrp_familiesprop:getPlayerInventory', function(source, cb)
 
          local xPlayer = ESX.GetPlayerFromId(source)
         local items   = xPlayer.inventory

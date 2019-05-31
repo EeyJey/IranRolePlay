@@ -1,102 +1,17 @@
 ESX = nil
 local Families = {}
-local RegisteredFamilies = {
-	{
-		name      = 'Daltons',
-		label     = 'family',
-		account   = 'family_daltons',
-		datastore = 'family_daltons',
-		inventory = 'family_daltons',
-		data      = 'family_daltons',
-	},
-	{
-		name      = 'La_Fuente',
-		label     = 'family',
-		account   = 'family_lafuente',
-		datastore = 'family_lafuente',
-		inventory = 'family_lafuente',
-		data      = 'family_lafuente',
-	},
-	{
-		name      = 'Arazel',
-		label     = 'family',
-		account   = 'family_arazel',
-		datastore = 'family_arazel',
-		inventory = 'family_arazel',
-		data      = 'family_arazel',
-	},
-	{
-		name      = 'Eclipse',
-		label     = 'family',
-		account   = 'family_eclipse',
-		datastore = 'family_eclipse',
-		inventory = 'family_eclipse',
-		data      = 'family_eclipse',
-	},
-	{
-		name      = 'Knaxvell',
-		label     = 'family',
-		account   = 'family_knaxvell',
-		datastore = 'family_knaxvell',
-		inventory = 'family_knaxvell',
-		data      = 'family_knaxvell',
-	},
-	{
-		name      = 'Serenity',
-		label     = 'family',
-		account   = 'family_serenity',
-		datastore = 'family_serenity',
-		inventory = 'family_serenity',
-		data      = 'family_serenity',
-	},
-	{
-		name      = 'MK',
-		label     = 'family',
-		account   = 'family_mk',
-		datastore = 'family_mk',
-		inventory = 'family_mk',
-		data      = 'family_mk',
-	},
-	{
-		name      = 'Russian_Mafia',
-		label     = 'family',
-		account   = 'family_russian_mafia',
-		datastore = 'family_russian_mafia',
-		inventory = 'family_russian_mafia',
-		data      = 'family_russian_mafia',
-	},
-	{
-		name      = 'HildA',
-		label     = 'family',
-		account   = 'family_hilda',
-		datastore = 'family_hilda',
-		inventory = 'family_hilda',
-		data      = 'family_hilda',
-	},
-	{
-		name      = 'BadFamily',
-		label     = 'family',
-		account   = 'family_badfamily',
-		datastore = 'family_badfamily',
-		inventory = 'family_badfamily',
-		data      = 'family_badfamily',
-	},
-	{
-		name      = 'Sicario',
-		label     = 'family',
-		account   = 'family_sicario',
-		datastore = 'family_sicario',
-		inventory = 'family_sicario',
-		data      = 'family_sicario',
-	},
-}
+local RegisteredFamilies = {}
+local TempFamilies = {}
 
- TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 function GetFamily(family)
 	for i=1, #RegisteredFamilies, 1 do
-		if RegisteredFamilies[i].name == family then
-			return RegisteredFamilies[i]
+		if RegisteredFamilies[i] == family then
+			local family
+			family.name = family
+			family.account = 'family_' .. string.lower(family)
+			return family
 		end
 	end
 end
@@ -108,6 +23,7 @@ MySQL.ready(function()
  	for i=1, #result, 1 do
 		Families[result[i].name]        = result[i]
 		Families[result[i].name].grades = {}
+		RegisteredFamilies[i] = result[i].name
 	end
 
  	local result2 = MySQL.Sync.fetchAll('SELECT * FROM family_grades', {})
@@ -117,30 +33,38 @@ MySQL.ready(function()
 	end
 end)
 
- AddEventHandler('irrp_families:registerFamily', function(name, label, account, datastore, inventory, data)
+AddEventHandler('irrp_families:registerFamily', function(source, name, account)
 	local found = false
 
  	local family = {
 		name      = name,
-		label     = label,
 		account   = account,
-		datastore = datastore,
-		inventory = inventory,
-		data      = data,
 	}
 
- 	for i=1, #RegisteredSocieties, 1 do
-		if RegisteredSocieties[i].name == name then
+ 	for i=1, #RegisteredFamilies, 1 do
+		if RegisteredFamilies[i].name == name then
 			found = true
-			RegisteredSocieties[i] = family
+			RegisteredFamilies[i] = family
 			break
 		end
 	end
 
  	if not found then
-		table.insert(RegisteredSocieties, family)
+		table.insert(TempFamilies, family)
+	else
+		TriggerClientEvent('esx:showNotification', source, 'This Family Created Before!')
 	end
 end)
+
+-- AddEventHandler('irrp_families:saveFamilies', function(source)
+-- 	for i=1, #RegisteredFamilies, 1 do
+-- 		for j=1, #TempFamilies, 1 do
+-- 			if RegisteredFamilies[i].name == TempFamilies[j].name
+
+-- 		end
+-- 	end
+
+-- end)
 
 AddEventHandler('irrp_families:getFamilies', function(cb)
 	cb(RegisteredSocieties)

@@ -58,6 +58,17 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('setfamily'), params = {{name = "id", help = _U('id_param')}, {name = "family", help = _U('setfamily_param2')}, {name = "grade_id", help = _U('setfamily_param3')}}})
 
+TriggerEvent('es:addGroupCommand', 'createfamily', 'admin', function(source, args, user)
+	local _source = source
+	if args[1] and tonumber(args[2]) then
+		TriggerEvent('irrp_familiesprop:registerFamily', _source, args[1], 'family_' .. string.lower(args[1]))
+	else
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Invalid usage.' } })
+	end
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = _U('create_family'), params = {{name = "Name", help = _U('family_name')}, {name = "Expire", help = _U('expire_time')}}})
+
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
 	TriggerClientEvent('esx:loadIPL', -1, args[1])
 end, function(source, args, user)

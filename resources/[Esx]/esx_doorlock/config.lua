@@ -236,15 +236,15 @@ Config.DoorList = {
 
 	-- Family Mapping Gates
 	-- MK
-	{
-		objName = 'prop_lrggate_02_ld',
-		objCoords  = {x = -843.949, y = 158.978, z = 65.801},
-		textCoords = {x = -843.949, y = 158.978, z = 66.801},
-		authorizedJobs = { 'police' },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
+	-- {
+	-- 	objName = 'prop_lrggate_02_ld',
+	-- 	objCoords  = {x = -843.949, y = 158.978, z = 65.801},
+	-- 	textCoords = {x = -843.949, y = 158.978, z = 66.801},
+	-- 	authorizedJobs = { 'police' },
+	-- 	locked = true,
+	-- 	distance = 14,
+	-- 	size = 2
+	-- },
 	--
 	-- Addons
 	--

@@ -55,6 +55,7 @@ Config.families = {
         modTransmission = 2,
         modXenon        = 1,
         modFrontWheels  = 6,
+        plate           = "Daltons",
       },
       Cloakrooms = {
         { x = 144.57633972168, y = -2203.7377929688, z = 3.6880254745483},
@@ -96,6 +97,7 @@ Config.families = {
         color2            = 126,
         color1            = 126,
         pearlescentColor  = 88,
+        plate             = "Arazel",
       },
       Cloakrooms = {
         { x = 9.4434595108032, y = 527.27319335938, z = 169.63500976563 },
@@ -137,6 +139,7 @@ Config.families = {
         modEngine       = 3,
         modBrakes				=	2,
         windowTint			=	1,
+        plate           = "Eclipse",
         modArmor				= 4,
         modTransmission = 2,
         color2            = 120,
@@ -183,6 +186,7 @@ Config.families = {
         modEngine         = 3,
         modBrakes				  =	2,
         windowTint		  	=	1,
+        plate           = "La Fuente",
         modArmor			  	= 4,
         modTransmission   = 2,
         color2            = 3,
@@ -307,6 +311,7 @@ Config.families = {
         dirtLevel       = 0,
         modEngine       = 3,
         modBrakes				=	2,
+        plate           = "Serenity",
         windowTint			=	1,
         modArmor				= 4,
         modTransmission = 2,
@@ -520,6 +525,45 @@ Config.families = {
       },
       BossActions = {
         { x = -93.647, y = -66.646, z = 57.146 },
+      }
+    },
+    ['Slasher'] = {
+      Blip = {
+        Pos     = { x = 1664, y = 0.7412, z = 116.61 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+        { name = 'raiden',  label = 'Raiden' },
+        { name = 'contender',  label = 'Contender' },
+        { name = 'dubsta3',  label = 'dubsta 6x6' },
+      },
+      VehicleProp = {
+        plate           = "Slasher",
+      },
+      Cloakrooms = {
+        { x = 1664, y = 0.7412, z = 115.11 },
+      },
+      Armories = {
+        { x = 1664, y = -0.9082, z = 115.11 },
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = 1668.3, y = -62.7, z = 172.9  },
+          SpawnPoint = { x = 1674.13, y = -65.99, z = 173 },
+          Heading    = 130.478,
+        }
+      },
+      VehicleDeleters = {
+        { x = 1659.9.3, y = -76.3, z = 171.6 },
+      },
+      BossActions = {
+        { x = 1662.5, y = -25.9, z = 172.77 },
       }
     },
 }
