@@ -218,7 +218,7 @@ AddEventHandler('MAD_RaceMod:BeginRace', function(raceID, blipCoord)
 		while (GetGameTimer() - timer) < ((JRM.StartTimer - 1) * 1000) and JRM.RaceJoinPos do
 			local counter = math.floor(((math.floor((JRM.StartTimer) * 1000)) - (GetGameTimer() - timer)) / 1000)
 			local str = "~r~"..counter
-			TriggerEvent('MAD_Notify:ShowNotification', "Shoma be modate "..str.." sanie~s~ freeze mishi. havaset bashe.")
+			TriggerEvent('MAD_Notify:ShowNotification', "Shoma ta "..str.." sanie~s~ dige freeze mishi. havaset bashe.")
 			Citizen.Wait(10)
 		end
 
@@ -254,7 +254,7 @@ function JRM:FinishRace()
 	self.RaceWager = false
 
 	ESX.TriggerServerCallback('MAD_RaceMod:FinishStreetRace', function(position, wager, players)
-		local str = "You finished in position : "
+		local str = "Maghame shoma : "
 		if position == 1 then
 			if wager > 0 then
 				local plyData = ESX.GetPlayerData()
