@@ -128,30 +128,30 @@ Config.AuthorizedVehicles = {
 
 	ambulance = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 5000},
-		{ model = 'ambu', label = 'Custom ambu', price = 5000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 5000}
 	},
 
 	doctor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 4500},
-		{ model = 'ambu', label = 'Custom ambu', price = 4500}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 4500}
 	},
 
 	chief_doctor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu', label = 'Custom ambu', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
 	},
 	professor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu', label = 'Custom ambu', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
 	},
 	
 	pezeshk  = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu', label = 'Custom ambu', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
 	},
 	boss = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 2000},
-		{ model = 'ambu', label = 'Custom ambu', price = 2000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 2000}
 	}
 	
 

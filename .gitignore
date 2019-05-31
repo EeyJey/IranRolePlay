@@ -9,6 +9,7 @@ resources/\[MaMad\]/test/
 !resources/*
 !server.cfg
 !tables.sql
+!Arman.cfg
 !vidat.cfg
 !mamadlord.cfg
 !resources.cfg

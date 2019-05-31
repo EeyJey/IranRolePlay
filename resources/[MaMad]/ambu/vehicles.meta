@@ -19,12 +19,12 @@
       <handlingId>ambu</handlingId>
       <gameName>ambu</gameName>
       <vehicleMakeName>ambu</vehicleMakeName>
-      <expressionDictName>null</expressionDictName>
-      <expressionName>null</expressionName>
-      <animConvRoofDictName>null</animConvRoofDictName>
-      <animConvRoofName>null</animConvRoofName>
+      <expressionDictName>ambu</expressionDictName>
+      <expressionName>ambu</expressionName>
+      <animConvRoofDictName>ambu</animConvRoofDictName>
+      <animConvRoofName>ambu</animConvRoofName>
       <animConvRoofWindowsAffected />
-      <ptfxAssetName>null</ptfxAssetName>
+      <ptfxAssetName>ambu</ptfxAssetName>
       <audioNameHash>FBI</audioNameHash>
       <layout>LAYOUT_STANDARD</layout>
       <coverBoundOffsets>DOMINATOR_COVER_OFFSET_INFO</coverBoundOffsets>

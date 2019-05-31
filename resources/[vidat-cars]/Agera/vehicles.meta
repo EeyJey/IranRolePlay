@@ -115,9 +115,13 @@
   </InitDatas>
 
   <txdRelationships>
-    <Item>
+   	<Item>
+   <parent>agerars1</parent>
+   <child>agerars</child>
+	</Item>
+	<Item>
       <parent>vehicles_comet_interior</parent>
-      <child>agerars</child>
+      <child>agerars1</child>
     </Item>
   </txdRelationships>
 
