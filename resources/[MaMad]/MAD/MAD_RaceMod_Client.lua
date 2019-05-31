@@ -6,8 +6,6 @@ function JRM:Start()
 	while not ESX do Citizen.Wait(100); end
 	while not ESX.IsPlayerLoaded() do Citizen.Wait(100); end
 
-	print("MAD_RaceMod:Start() - Succesful")
-
 	self.Started = 1
 	self:Update()
 end
@@ -67,16 +65,16 @@ function JRM:Update()
 	end
 end
 
-RegisterCommand('showJob', function(source, args)
-	if not ESX then return; end
-	if not ESX.IsPlayerLoaded() then return; end
-	local plyData = ESX.GetPlayerData()
-	if plyData and plyData.job and plyData.job.label and plyData.job.grade_label then
-		TriggerEvent('MAD_Notify:ShowNotification', "Job : [~g~"..plyData.job.label.."~s~] : Rank : [~g~"..plyData.job.grade_label.."~s~]")
-	else 
-		TriggerEvent('MAD_Notify:ShowNotification', "Couldn't retrieve job data.")
-	end
-end)
+--RegisterCommand('showJob', function(source, args)
+--	if not ESX then return; end
+--	if not ESX.IsPlayerLoaded() then return; end
+--	local plyData = ESX.GetPlayerData()
+--	if plyData and plyData.job and plyData.job.label and plyData.job.grade_label then
+--		TriggerEvent('MAD_Notify:ShowNotification', "Job : [~g~"..plyData.job.label.."~s~] : Rank : [~g~"..plyData.job.grade_label.."~s~]")
+--	else 
+--		TriggerEvent('MAD_Notify:ShowNotification', "Couldn't retrieve job data.")
+--	end
+--end)
 
 -- So, if you got this far. You're probably wondering "why is there a 'showjob' command in here?"
 -- Interesting question. Somebody was asking for help on how to make this command while I was making
@@ -93,7 +91,7 @@ function JRM:SetupRace(wager)
 	local plyPed = GetPlayerPed(plyId)	
 
 	if not IsPedInAnyVehicle(plyPed) then
-		TriggerEvent('MAD_Notify:ShowNotification', "~r~You need to be in a vehicle first.")
+		TriggerEvent('MAD_Notify:ShowNotification', "~r~Bayad too mashin bashid.")
 		return
 	end
 
@@ -106,7 +104,7 @@ function JRM:SetupRace(wager)
 	if DoesBlipExist(blip) then
 		blipCoord = GetBlipInfoIdCoord(blip)		
 	else
-		TriggerEvent('MAD_Notify:ShowNotification', "You need to set a ~r~waypoint ~s~first.")
+		TriggerEvent('MAD_Notify:ShowNotification', "Aval bayad yek ~r~Mokhtasat ~s~ taiin koni.")
 		return
 	end	
 
@@ -115,7 +113,7 @@ function JRM:SetupRace(wager)
 		if plyData.money >= wager then 
 			TriggerServerEvent('MAD_RaceMod:SetMoney', -wager)
 		else 
-			TriggerEvent('MAD_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money~s~.")
+			TriggerEvent('MAD_Notify:ShowNotification', "Poolet kafi ~r~nist ~s~.")
 			return
 		end
 	end
@@ -123,13 +121,13 @@ function JRM:SetupRace(wager)
 	JRM.RaceID = raceID
 	JRM.RaceWager = wager
 	JRM.RaceJoinPos = plyPos
-	TriggerEvent('MAD_Notifications:Notify', "Streetrace in progress.", 0, blipCoord, "General", "police")
+	TriggerEvent('MAD_Notifications:Notify', "Yek mosabeghe dar hale anjame.", 0, blipCoord, "General", "police")
 
 	Citizen.CreateThread(function()	
 		local timer = GetGameTimer()
 		while (GetGameTimer() - timer) < (self.WaitForPlayersTimer * 1000) and JRM.RaceJoinPos do	
 			Citizen.Wait(0)	
-			TriggerEvent('MAD_Notify:ShowNotification', "You have ~g~started ~s~a ~g~streetrace~s~. Challenging nearby players.")
+			TriggerEvent('MAD_Notify:ShowNotification', "Shoma yek mosabeghe ~g~khiabooni shoroo kardid~s~. Dar hale etela be player haye atraf.")
 		end
 	end)
 
@@ -139,7 +137,7 @@ function JRM:SetupRace(wager)
 			if playersJoined > 1 then
 				TriggerServerEvent('MAD_RaceMod:StartRace', JRM.RaceID)
 			else
-				TriggerEvent('MAD_Notify:ShowNotification', "~r~Nobody ~s~joined your race.")
+				TriggerEvent('MAD_Notify:ShowNotification', "Hichkas ~r~ nayoomad~s~ .")
 				TriggerServerEvent('MAD_RaceMod:SetMoney', wager)
 				JRM.RaceID = false
 				JRM.RaceWager = false
@@ -196,12 +194,12 @@ AddEventHandler('MAD_RaceMod:ChallengeNearbyPlayers', function(racePos, raceID, 
 
 			if not JRM.RaceID then 
 				if wager > 0 and not canJoin then
-					TriggerEvent('MAD_Notify:ShowNotification', "You ~r~don't ~s~have enough ~r~money ~s~to join this race.")
+					TriggerEvent('MAD_Notify:ShowNotification', "~r~Poole~s~ kafi baraye sherkat too mosabeghe ~r~nadari ~s~.")
 				else
-					TriggerEvent('MAD_Notify:ShowNotification', "You ~r~didn't ~s~join the race.")
+					TriggerEvent('MAD_Notify:ShowNotification', "To too mosabeghe ~r~sherkat nakardi ~s~.")
 				end
 			else 
-				TriggerEvent('MAD_Notify:ShowNotification', "You ~g~joined ~s~the race.")
+				TriggerEvent('MAD_Notify:ShowNotification', "To too mosabeghe ~g~sherkat kardi ~s~.")
 			end
 		end)
 	end
@@ -220,7 +218,7 @@ AddEventHandler('MAD_RaceMod:BeginRace', function(raceID, blipCoord)
 		while (GetGameTimer() - timer) < ((JRM.StartTimer - 1) * 1000) and JRM.RaceJoinPos do
 			local counter = math.floor(((math.floor((JRM.StartTimer) * 1000)) - (GetGameTimer() - timer)) / 1000)
 			local str = "~r~"..counter
-			TriggerEvent('MAD_Notify:ShowNotification', "You will be frozen into position in "..str.." seconds~s~. On your marks.")
+			TriggerEvent('MAD_Notify:ShowNotification', "Shoma be modate "..str.." sanie~s~ freeze hasti. havaset bashe.")
 			Citizen.Wait(10)
 		end
 
@@ -237,10 +235,10 @@ AddEventHandler('MAD_RaceMod:BeginRace', function(raceID, blipCoord)
 			local str
 			if counter <= 2.0 then str = "~y~"..counter
 			else str = "~r~"..counter; end
-			TriggerEvent('MAD_Notify:ShowNotification', "Countdown : "..str, 0.1)
+			TriggerEvent('MAD_Notify:ShowNotification', "Shomaresh : "..str, 0.1)
 		end	
 		Citizen.Wait(0)
-		TriggerEvent('MAD_Notify:ShowNotification', "~g~Go!", 1)
+		TriggerEvent('MAD_Notify:ShowNotification', "~g~Boro!", 1)
 		FreezeEntityPosition(plyVeh, false)
 		SetNewWaypoint(blipCoord.x, blipCoord.y)
 		JRM.RaceFinish = vector3(blipCoord.x, blipCoord.y, 1000.0)
@@ -283,13 +281,13 @@ end
 RegisterNetEvent('MAD_RaceMod:Timeout')
 AddEventHandler('MAD_RaceMod:Timeout', function() 
 	if not JRM.RaceID then
-		TriggerEvent('MAD_Notify:ShowNotification', "~r~You didn't finish the race.")
+		TriggerEvent('MAD_Notify:ShowNotification', "~r~Mosabeghe ro tamoom nakardi.")
 		JRM.RaceID = false
 		JRM.RaceWager = false
 		JRM.RaceJoinPos = false
 		JRM.RaceFinish = false
 	end
 end)
-print('AAAAAAAAAAAAAAAAAAAAa')
-RegisterCommand('startRace', function(source, args) print('hi');JRM:SetupRace(args); end)
+
+RegisterCommand('startRace', function(source, args) JRM:SetupRace(args); end)
 Citizen.CreateThread(function(...) JRM:Start(...); end)
