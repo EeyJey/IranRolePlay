@@ -73,6 +73,13 @@ end)
 -- This gets called whenever a user spawns for the first time in the server, it basically loads the player
 function registerUser(identifier, source)
 	local Source = source
+
+	name = GetPlayerName(Source)
+	if string.find(name, "<") ~= nil then
+		DropPlayer(Source, "Name steam e shoma charactere gheyre mojaz < darad lotfan avaz karde va join bedid.")
+		return 
+	end 
+
 	db.doesUserExist(identifier, function(exists)
 		if exists then
 			LoadUser(identifier, Source, false)

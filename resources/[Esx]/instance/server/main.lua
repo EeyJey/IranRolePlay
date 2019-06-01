@@ -60,8 +60,9 @@ function AddPlayerToInstance(instance, player)
     table.insert(Instances[instance].players, player)
   end
 
-  TriggerClientEvent('instance:onEnter', player, Instances[instance])
+  
 
+  TriggerClientEvent('instance:onEnter', player, Instances[instance])
   for i=1, #Instances[instance].players, 1 do
     if Instances[instance].players[i] ~= player then
       TriggerClientEvent('instance:onPlayerEntered', Instances[instance].players[i], Instances[instance], player)
@@ -72,6 +73,8 @@ function AddPlayerToInstance(instance, player)
   TriggerClientEvent('instance:onInstancedPlayersData', -1, GetInstancedPlayers())
 
 end
+
+
 
 function RemovePlayerFromInstance(instance, player)
 
