@@ -70,6 +70,17 @@ AddEventHandler('es:getPlayers', function(cb)
 	cb(Users)
 end)
 
+function setLog(text, source)
+	local time = os.date("%d/%m/%Y %X")
+	local name = GetPlayerName(source)
+	local identifier = GetPlayerIdentifiers(source)
+	local data = time .. ' : ' .. name .. ' - ' .. identifier[1] .. ' : ' .. text
+
+	local content = LoadResourceFile(GetCurrentResourceName(), "log.txt")
+	local newContent = content .. '\r\n' .. data
+	SaveResourceFile(GetCurrentResourceName(), "log.txt", newContent, -1)
+end
+
 -- This gets called whenever a user spawns for the first time in the server, it basically loads the player
 function registerUser(identifier, source)
 	local Source = source
@@ -77,6 +88,7 @@ function registerUser(identifier, source)
 	name = GetPlayerName(Source)
 	if string.find(name, "<") ~= nil then
 		DropPlayer(Source, "Name steam e shoma charactere gheyre mojaz ".."<".." darad lotfan avaz karde va join bedid.")
+		setLog("checking shit", source)
 		return 
 	end 
 
