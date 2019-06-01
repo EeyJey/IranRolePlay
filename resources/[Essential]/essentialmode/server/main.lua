@@ -22,7 +22,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason)
 	end
 
 	if string.find(name, "<") ~= nil or string.find(name, ">") ~= nil then
-		setKickReason("Name steamet moshkel dare fix kon bia")
+		setKickReason("Name steamet moshkel (shamele charachter haye gheyre mojaz) dare fix kon bia")
 		CancelEvent()
 		return 
 	end 
