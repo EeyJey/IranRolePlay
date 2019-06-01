@@ -76,7 +76,7 @@ function registerUser(identifier, source)
 
 	name = GetPlayerName(Source)
 	if string.find(name, "<") ~= nil then
-		DropPlayer(Source, "Name steam e shoma charactere gheyre mojaz < darad lotfan avaz karde va join bedid.")
+		DropPlayer(Source, "Name steam e shoma charactere gheyre mojaz ".."<".." darad lotfan avaz karde va join bedid.")
 		return 
 	end 
 
