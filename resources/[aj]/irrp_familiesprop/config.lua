@@ -487,9 +487,9 @@ Config.families = {
       },
       VehicleProp = {
         modEngine       = 3,
-        modBrakes				=	2,
-        windowTint			=	1,
-        modArmor				= 4,
+        modBrakes		= 2,
+        windowTint		= 1,
+        modArmor		= 4,
         dirtLevel       = 0,
         plate           = "Sicario",
         modOrnaments    = -1,
@@ -529,7 +529,7 @@ Config.families = {
     },
     ['Slasher'] = {
       Blip = {
-        Pos     = { x = 1671.360, y = -43.868, z = 174.27 },
+        Pos     = { x = 1664.1, y = 3.6, z = 165.51 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -547,23 +547,81 @@ Config.families = {
         plate           = "Slasher",
       },
       Cloakrooms = {
-        { x = 1664, y = 0.7412, z = 115.11 },
-      },
+        { x = 1664.0, y = -0.29 , z = 165.11 },
+      }, 
       Armories = {
-        { x = 1664, y = -0.9082, z = 115.11 },
+        { x = 1664.0, y = 3.6, z = 165.11 },
       },
       Vehicles = {
         {
-          Spawner    = { x = 1668.3, y = -62.7, z = 172.8  },
-          SpawnPoint = { x = 1674.13, y = -65.99, z = 173.3 },
+          Spawner    = { x = 1668.3, y = -62.7, z = 172.9  },
+          SpawnPoint = { x = 1674.13, y = -65.99, z = 173 },
           Heading    = 130.478,
         }
       },
       VehicleDeleters = {
-        { x = 1659.9, y = -76.3, z = 171.3 },
+        { x = 1659.9, y = -76.3, z = 171.6 },
       },
       BossActions = {
         { x = 1662.5, y = -25.9, z = 172.77 },
+      }
+    },
+	['Vice_Lord'] = {
+      Blip = {
+        Pos     = { x = -676.0, y = 887.2, z = 224.8 },
+        Sprite  = 88,
+        Display = 4,
+        Scale   = 1.2,
+        Colour  = 76,
+      },
+      AuthorizedWeapons = {
+        { name = 'WEAPON_PISTOL',      price = 10000 },
+      },
+      AuthorizedVehicles = {
+		{ name = 'Schafter3',    label = 'Schafter' },
+        { name = 'contender',  label = 'Contender' },
+        { name = 'dubsta3',  label = 'dubsta 6x6' },
+      },
+      VehicleProp = {
+        modEngine       = 3,
+        modBrakes		= 2,
+        windowTint		= 1,
+        modArmor		= 4,
+        dirtLevel       = 0,
+        plate           = "Vice_Lord",
+        modOrnaments    = -1,
+        tyreSmokeColor  = {0,0,0},
+        wheelColor      = 12,
+        modGrille       = 1,
+        color2          = 12,
+        modFrontBumper  = 5,
+        pearlescentColor= 12,
+        modSmokeEnabled = 1,
+        color1          = 12,
+        modRoof         = 3,
+        modRearBumper   = 1,
+        modTransmission = 2,
+        modXenon        = 1,
+        modFrontWheels  = 6,
+      },
+      Cloakrooms = {
+        { x = -676.0, y = 887.2, z = 224.2 },
+      },
+      Armories = {
+        { x = -650.0, y = 852.0, z = 224.14 },
+      },
+      Vehicles = {
+        {
+          Spawner    = { x = -679.45, y = 904.8, z = 229.5  },
+          SpawnPoint = { x = -670.5, y = 912.3, z = 229.3 },
+          Heading    = 130.478,
+        }
+      },
+      VehicleDeleters = {
+        { x = -674.8, y = 904.1, z = 229.5 },
+      },
+      BossActions = {
+        { x = -653.0, y = 853.0, z =  228.3 },
       }
     },
 }
