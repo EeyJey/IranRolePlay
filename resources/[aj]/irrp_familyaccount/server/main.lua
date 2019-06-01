@@ -35,7 +35,6 @@ MySQL.ready(function()
 
 			local familyAccount   = CreateFamilyAccount(name, nil, money, blackmoney)
 			FamilyAccounts[name] = familyAccount
-
 		end
 	end
 end)
@@ -46,6 +45,12 @@ end
 
 AddEventHandler('irrp_familyaccount:getFamilyAccount', function(name, cb)
 	cb(GetFamilyAccount(name))
+end)
+
+AddEventHandler('irrp_familyaccount:addFamily', function(familyname)
+	family = 'family_' .. string.lower(familyname)
+	local familyAccount   = CreateFamilyAccount(family, nil, 0, 0)
+	FamilyAccounts[family] = familyAccount
 end)
 
 AddEventHandler('irrp_familyaccount:updateFamilyAccount', function(name, cb)

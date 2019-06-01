@@ -114,3 +114,12 @@ AddEventHandler('esx:triggerServerCallback', function(name, requestId, ...)
 		TriggerClientEvent('esx:serverCallback', _source, requestId, ...)
 	end, ...)
 end)
+
+RegisterServerEvent('es_extended:addFamily')
+AddEventHandler('es_extended:addFamily', function(name,ranks)
+	ESX.Families[name] = {name = name,label = 'family'}
+	ESX.Families[name].grades = {}
+	for i=1, #ranks, 1 do
+		ESX.Families[name].grades[tostring(i)] = {family_name = name, grade = i, name = 'Rank'..i, label = 'Rank'..i, salary = 100*i, skin_male = '{}', skin_female = '{}'}
+	end
+end)

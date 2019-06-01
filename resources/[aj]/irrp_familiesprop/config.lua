@@ -529,7 +529,7 @@ Config.families = {
     },
     ['Slasher'] = {
       Blip = {
-        Pos     = { x = 1664, y = 0.7412, z = 116.61 },
+        Pos     = { x = 1671.360, y = -43.868, z = 174.27 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,
@@ -554,13 +554,13 @@ Config.families = {
       },
       Vehicles = {
         {
-          Spawner    = { x = 1668.3, y = -62.7, z = 172.9  },
-          SpawnPoint = { x = 1674.13, y = -65.99, z = 173 },
+          Spawner    = { x = 1668.3, y = -62.7, z = 172.8  },
+          SpawnPoint = { x = 1674.13, y = -65.99, z = 173.3 },
           Heading    = 130.478,
         }
       },
       VehicleDeleters = {
-        { x = 1659.9.3, y = -76.3, z = 171.6 },
+        { x = 1659.9, y = -76.3, z = 171.3 },
       },
       BossActions = {
         { x = 1662.5, y = -25.9, z = 172.77 },

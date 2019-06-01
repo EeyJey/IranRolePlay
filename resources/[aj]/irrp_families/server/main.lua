@@ -8,10 +8,10 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 function GetFamily(family)
 	for i=1, #RegisteredFamilies, 1 do
 		if RegisteredFamilies[i] == family then
-			local family
-			family.name = family
-			family.account = 'family_' .. string.lower(family)
-			return family
+			local fy = {}
+			fy.name = family
+			fy.account = 'family_' .. string.lower(fy.name)
+			return fy
 		end
 	end
 end
@@ -33,38 +33,93 @@ MySQL.ready(function()
 	end
 end)
 
-AddEventHandler('irrp_families:registerFamily', function(source, name, account)
+AddEventHandler('irrp_families:registerFamily', function(source, name)
 	local found = false
 
- 	local family = {
-		name      = name,
-		account   = account,
-	}
+ 	local family = name
 
  	for i=1, #RegisteredFamilies, 1 do
-		if RegisteredFamilies[i].name == name then
+		if RegisteredFamilies[i] == family then
 			found = true
-			RegisteredFamilies[i] = family
 			break
 		end
 	end
 
  	if not found then
 		table.insert(TempFamilies, family)
+		TriggerClientEvent('esx:showNotification', source, family)
 	else
 		TriggerClientEvent('esx:showNotification', source, 'This Family Created Before!')
 	end
 end)
 
--- AddEventHandler('irrp_families:saveFamilies', function(source)
--- 	for i=1, #RegisteredFamilies, 1 do
--- 		for j=1, #TempFamilies, 1 do
--- 			if RegisteredFamilies[i].name == TempFamilies[j].name
+AddEventHandler('irrp_families:saveFamilies', function(source)
+	for j=1, #TempFamilies, 1 do
 
--- 		end
--- 	end
+		local ranks = {'Rank1','Rank2','Rank3','Rank4','Rank5','Rank6'}
+		
+		TriggerEvent('es_extended:addFamily', TempFamilies[j], ranks)
+		TriggerEvent('irrp_familyaccount:addFamily', TempFamilies[j])
 
--- end)
+		MySQL.Async.execute('INSERT INTO `families` (`name`, `label`) VALUES (@name, @label)', {
+			['@name'] 		= TempFamilies[j],
+			['@label']    = 'family',
+		}, function(e)
+		--log here
+		end)
+		for i=1, 6, 1 do
+			MySQL.Async.execute('INSERT INTO `family_grades` (`family_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES (@family_name, @grade, @name, @label, @salary, @skin_male, @skin_female)', {
+				['@family_name'] 		= TempFamilies[j],
+				['@grade']    = i,
+				['@name'] 		= 'Rank '..i,
+				['@label']    = ranks[i],
+				['@salary'] 		= 100*i,
+				['@skin_male']    = '{}',
+				['@skin_female']    = '{}',
+			}, function(e)
+			--log here
+			end)
+		end
+		MySQL.Async.execute('INSERT INTO `family_account` (`name`, `label`, `shared`) VALUES (@name, @label, @shared)', {
+			['@name'] 		= 'family_'..string.lower(TempFamilies[j]),
+			['@label']    = 'family',
+			['@shared']   = 1,
+		}, function(e)
+		--log here
+		end)
+		MySQL.Async.execute('INSERT INTO `family_account_data` (`family_name`, `money`, `owner`) VALUES (@family_name, @money, @owner)', {
+			['@family_name'] 		= 'family_'..string.lower(TempFamilies[j]),
+			['@money']    = 0,
+			['@owner']   = nil,
+		}, function(e)
+		--log here
+		end)
+		MySQL.Async.execute('INSERT INTO `datastore_data` (`name`, `owner`, `data`) VALUES (@name, @owner, @data)', {
+			['@name'] 		= 'family_'..string.lower(TempFamilies[j]),
+			['@owner']   = nil,
+			['@data'] 		= '{}',
+		}, function(e)
+		--log here
+		end)
+		MySQL.Async.execute('INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES (@name, @label, @shared)', {
+			['@name'] 		= 'family_'..string.lower(TempFamilies[j]),
+			['@label']    = 'family',
+			['@shared']   = 1,
+		}, function(e)
+		--log here
+		end)
+		MySQL.Async.execute('INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES (@name, @label, @shared)', {
+			['@name'] 		= 'family_'..string.lower(TempFamilies[j]),
+			['@label']    = 'family',
+			['@shared']   = 1,
+		}, function(e)
+		--log here
+		end)
+		TriggerClientEvent('esx:showNotification', source, 'You Added ' .. TempFamilies[j] .. ' Gang!')
+		table.insert(RegisteredFamilies, TempFamilies[j])
+	end
+TempFamilies = {}
+end)
 
 AddEventHandler('irrp_families:getFamilies', function(cb)
 	cb(RegisteredSocieties)
