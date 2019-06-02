@@ -439,27 +439,27 @@ AddEventHandler('esx_property:removeOutfit', function(label)
 end)
 
 function PayRent(d, h, m)
-	MySQL.Async.fetchAll('SELECT * FROM owned_properties WHERE rented = 1', {}, function (result)
-		for i=1, #result, 1 do
-			local xPlayer = ESX.GetPlayerFromIdentifier(result[i].owner)
+	-- MySQL.Async.fetchAll('SELECT * FROM owned_properties WHERE rented = 1', {}, function (result)
+	-- 	for i=1, #result, 1 do
+	-- 		local xPlayer = ESX.GetPlayerFromIdentifier(result[i].owner)
 
-			-- message player if connected
-			if xPlayer then
-				xPlayer.removeAccountMoney('bank', result[i].price)
-				TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_rent', ESX.Math.GroupDigits(result[i].price)))
-			else -- pay rent either way
-				MySQL.Sync.execute('UPDATE users SET bank = bank - @bank WHERE identifier = @identifier',
-				{
-					['@bank']       = result[i].price,
-					['@identifier'] = result[i].owner
-				})
-			end
+	-- 		-- message player if connected
+	-- 		if xPlayer then
+	-- 			xPlayer.removeAccountMoney('bank', result[i].price)
+	-- 			TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_rent', ESX.Math.GroupDigits(result[i].price)))
+	-- 		else -- pay rent either way
+	-- 			MySQL.Sync.execute('UPDATE users SET bank = bank - @bank WHERE identifier = @identifier',
+	-- 			{
+	-- 				['@bank']       = result[i].price,
+	-- 				['@identifier'] = result[i].owner
+	-- 			})
+	-- 		end
 
-			TriggerEvent('esx_addonaccount:getSharedAccount', 'society_realestateagent', function(account)
-				account.addMoney(result[i].price)
-			end)
-		end
-	end)
+	-- 		TriggerEvent('esx_addonaccount:getSharedAccount', 'society_realestateagent', function(account)
+	-- 			account.addMoney(result[i].price)
+	-- 		end)
+	-- 	end
+	-- end)
 end
 
 TriggerEvent('cron:runAt', 22, 0, PayRent)
