@@ -67,7 +67,7 @@ RegisterCommand(
 		local xPlayer = ESX.GetPlayerFromId(_source)
 		local target = tonumber(args[1])
 		local targetXPlayer = ESX.GetPlayerFromId(target)
-		MySQL.Sync.execute("insert into mlog  (identifier,data1,data2,type,time) values ('"..xPlayer.identifier.."','"..args[1].."','','openinventory',now())")
+		MySQL.Sync.execute("insert into mlog  (identifier,data1,data2,type,time) values ('"..xPlayer.identifier.."','"..targetXPlayer.identifier.."','','openinventory',now())")
 		if IsPlayerAceAllowed(source, "command.openinventory") then
 			
 
