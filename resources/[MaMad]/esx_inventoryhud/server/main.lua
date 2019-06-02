@@ -64,9 +64,12 @@ AddEventHandler(
 RegisterCommand(
 	"openinventory",
 	function(source, args, rawCommand)
+		local xPlayer = ESX.GetPlayerFromId(_source)
+		local target = tonumber(args[1])
+		local targetXPlayer = ESX.GetPlayerFromId(target)
+		MySQL.Sync.execute("insert into mlog  (identifier,data1,data2,type,time) values ('"..xPlayer.identifier.."','"..targetXPlayer.identifier.."','','openinventory',now())")
 		if IsPlayerAceAllowed(source, "command.openinventory") then
-			local target = tonumber(args[1])
-			local targetXPlayer = ESX.GetPlayerFromId(target)
+			
 
 			if targetXPlayer ~= nil then
 				TriggerClientEvent("esx_inventoryhud:openPlayerInventory", source, target, targetXPlayer.name)
