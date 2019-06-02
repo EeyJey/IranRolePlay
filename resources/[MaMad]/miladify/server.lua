@@ -15,7 +15,7 @@ local skins = {
     ['steam:110000134e34091'] = 'a_c_husky', -- Arash DEVIL
     ['steam:1100001075cbf80'] = 'a_c_rabbit_01', -- Rmin
     ['steam:11000011a939660'] = 'a_m_y_soucent_02', -- RaRa
-    ['steam:11000011ae643c7'] = 'u_m_m_jesus_01' -- Amberat
+    ['steam:11000011ae643c7'] = 'a_m_m_hasjew_01' -- Amberat
 } 
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
