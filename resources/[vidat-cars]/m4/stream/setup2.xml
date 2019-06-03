@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_rmodm4gts</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>31/07/2016 00:00:00</timeStamp>
+  <nameHash>rmodm4gts</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>RMODM4GTS_AUTOGEN</Item>
+		<Item platform="ps4|xboxone">RMODM4GTS_PLATFORM_SPECS</Item>
+        <Item>RMODM4GTS_UNLOCKS_AUTOGEN</Item>
+    <Item>
+      <NameHash>GROUP_ON_DEMAND</NameHash>
+      <ContentChangeSets>
+        <Item>RMODM4GTS_ANIM_OVERLAYS</Item>
+      </ContentChangeSets>
+    </Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>
