@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDataFileMgr__ContentsOfDataFileXml>
+  <disabledFiles />
+  <includedXmlFiles />
+  <includedDataFiles />
+  <dataFiles>
+    <Item>
+      <filename>dlc_brabus700:/data/vehicles.meta</filename>
+      <fileType>VEHICLE_METADATA_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+    <Item>
+      <filename>dlc_brabus700:/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+    <Item>
+      <filename>dlc_brabus700:/data/carvariations.meta</filename>
+      <fileType>VEHICLE_VARIATION_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+    <Item>
+      <filename>dlc_brabus700:/data/dlctext.meta</filename>
+      <fileType>TEXTFILE_METAFILE</fileType>
+	  <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+    <Item>
+      <filename>dlc_brabus700:/data/handling.meta</filename>
+      <fileType>HANDLING_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+	<Item>
+      <filename>dlc_brabus700:/data/ai/vehiclelayouts.meta</filename>
+      <fileType>VEHICLE_LAYOUTS_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+	<Item>
+      <filename>dlc_brabus700:/data/anim/clip_sets/clip_sets.xml</filename>
+      <fileType>CLIP_SETS_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+    <Item>
+      <filename>dlc_brabus700:/%PLATFORM%/vehicles.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+	<!-- Use these lines below for every "vehicle_mods.rpf"
+	<Item>
+      <filename>dlc_brabus700:/%PLATFORM%/vehiclemods/VEHICLE_mods.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <locked value="true"/>
+	  <disabled value="true"/>
+	  <persistent value="true"/>
+	  <overlay value="true"/>
+    </Item>
+	-->
+  </dataFiles>
+  <contentChangeSets>
+	<Item>
+	  <changeSetName>brabus700_AUTOGEN</changeSetName>
+	  <filesToDisable />
+	  <filesToEnable>
+        <Item>dlc_brabus700:/data/handling.meta</Item>
+        <Item>dlc_brabus700:/data/vehicles.meta</Item>
+        <Item>dlc_brabus700:/data/carcols.meta</Item>
+        <Item>dlc_brabus700:/data/carvariations.meta</Item>
+        <Item>dlc_brabus700:/data/dlctext.meta</Item>
+		<Item>dlc_brabus700:/data/ai/vehiclelayouts.meta</Item>
+		<Item>dlc_brabus700:/data/anim/clip_sets/clip_sets.xml</Item>
+        <Item>dlc_brabus700:/%PLATFORM%/vehicles.rpf</Item>
+		<!-- Use this line below for every "vehicle_mods.rpf"
+		<Item>dlc_brabus700:/%PLATFORM%/vehiclemods/VEHICLE_mods.rpf</Item>
+		-->
+	  </filesToEnable>
+	  <txdToLoad />
+	  <txdToUnload />
+	  <residentResources />
+	  <unregisterResources />
+	</Item>
+  </contentChangeSets>
+  <patchFiles />
+</CDataFileMgr__ContentsOfDataFileXml>

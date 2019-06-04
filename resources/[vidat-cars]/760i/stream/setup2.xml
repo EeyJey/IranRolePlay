@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_17m760i</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>14/07/2017 09:41:43</timeStamp>
+  <nameHash>17m760i</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>17m760i_AUTOGEN</Item>
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="9" />  
+</SSetupData>

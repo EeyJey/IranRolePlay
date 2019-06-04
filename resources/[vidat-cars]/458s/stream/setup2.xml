@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_vansmods</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>20/09/2015 22:54:11</timeStamp>
+  <nameHash>vansmods</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>vansmods_AUTOGEN</Item>
+        <Item>vansmods_UNLOCKS_AUTOGEN</Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>
