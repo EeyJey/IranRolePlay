@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_rmodm3e36</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>16/12/2016 00:00:00</timeStamp>
+  <nameHash>rmodm3e36</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>RMODM3E36_AUTOGEN</Item>
+		<Item platform="ps4|xboxone">RMODM3E36_PLATFORM_SPECS</Item>
+        <Item>RMODM3E36_UNLOCKS_AUTOGEN</Item>
+    <Item>
+      <NameHash>GROUP_ON_DEMAND</NameHash>
+      <ContentChangeSets>
+        <Item>RMODM3E36_ANIM_OVERLAYS</Item>
+      </ContentChangeSets>
+    </Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>

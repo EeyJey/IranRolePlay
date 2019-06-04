@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_fxxk</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>07/09/2016 00:00:00</timeStamp>
+  <nameHash>fxxk</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>FXXK_AUTOGEN</Item>
+		<Item platform="ps4|xboxone">FXXK_PLATFORM_SPECS</Item>
+        <Item>FXXK_UNLOCKS_AUTOGEN</Item>
+    <Item>
+      <NameHash>GROUP_ON_DEMAND</NameHash>
+      <ContentChangeSets>
+        <Item>FXXK_ANIM_OVERLAYS</Item>
+      </ContentChangeSets>
+    </Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_teslamodels</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>08/08/2017 23:12:00</timeStamp>
+  <nameHash>teslamodels</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>teslamodels_AUTOGEN</Item>
+        <Item>teslamodels_UNLOCKS_AUTOGEN</Item>
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="9" />  
+</SSetupData>

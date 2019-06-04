@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_2017HennesseyCamaroExorcist</deviceName>
+  <deviceName>dlc_zl12017</deviceName>
   <datFile>content.xml</datFile>
   <timeStamp>00/00/0000 00:00:00</timeStamp>
-  <nameHash>2017HennesseyCamaroExorcist</nameHash>
+  <nameHash>zl12017</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>2017HennesseyCamaroExorcist_AUTOGEN</Item>
+        <Item>ZL12017_AUTOGEN</Item>
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>
