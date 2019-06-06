@@ -3,19 +3,18 @@
 <CVehicleModelInfoVariation>
   <variationData>
     <Item>
-      <modelName>exor</modelName>
+      <modelName>zl12017</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            31
-            8
-            11
-            0
-            27
+            12
+            00
+            00
+            00
           </indices>
           <liveries>
             <Item value="false" />
-            <Item value="false" />
+            <Item value="true" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -26,11 +25,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            0
-            8
-            10
-            0
-            27
+            28
+            28
+            00
+            00
           </indices>
           <liveries>
             <Item value="false" />
@@ -45,35 +43,20 @@
         </Item>
       </colors>
       <kits>
-        <Item>0_default_modkit</Item>
+        <Item>1250_ZL12017_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
         <Probabilities>
           <Item>
             <Name>Standard White</Name>
-            <Value value="20" />
-          </Item>
-          <Item>
-            <Name>White Plate 2</Name>
-            <Value value="20" />
-          </Item>
-          <Item>
-            <Name>Blue Plate</Name>
-            <Value value="20" />
-          </Item>
-          <Item>
-            <Name>Yellow Plate</Name>
-            <Value value="20" />
-          </Item>
-          <Item>
-            <Name>yankton plate</Name>
-            <Value value="20" />
+            <Value value="100" />
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="1" />
+      <lightSettings value="1250" />
       <sirenSettings value="0" />
     </Item>
+
   </variationData>
 </CVehicleModelInfoVariation>

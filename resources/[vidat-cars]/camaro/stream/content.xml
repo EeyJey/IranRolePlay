@@ -5,73 +5,73 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/carcols.meta</filename>
-      <fileType>CARCOLS_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/2017hennesseycamaroexorcistcontentunlocks.meta</filename>
-      <fileType>CONTENT_UNLOCKING_META_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/vehicles.meta</filename>
+      <filename>dlc_zl12017:/common/data/levels/gta5/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/carvariations.meta</filename>
-      <fileType>VEHICLE_VARIATION_FILE</fileType>
+      <filename>dlc_zl12017:/common/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/dlctext.meta</filename>
+      <filename>dlc_zl12017:/common/data/carvariations.meta</filename>
+      <fileType>VEHICLE_VARIATION_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>	
+    <Item>
+      <filename>dlc_zl12017:/common/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/data/handling.meta</filename>
+      <filename>dlc_zl12017:/common/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>	
     <Item>
-      <filename>dlc_2017HennesseyCamaroExorcist:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_zl12017:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
-    </Item>    
+    </Item>
+    <Item>
+      <filename>dlc_zl12017:/%PLATFORM%/levels/zl12017/vehiclemods/mods.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
   </dataFiles>
   <contentChangeSets>
 	<Item>
-	  <changeSetName>2017HennesseyCamaroExorcist_AUTOGEN</changeSetName>
+	  <changeSetName>zl12017_AUTOGEN</changeSetName>
 	  <filesToDisable />
 	  <filesToEnable>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/carcols.meta</Item>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/2017hennesseycamaroexorcistcontentunlocks.meta</Item>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/handling.meta</Item>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/vehicles.meta</Item>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/carvariations.meta</Item>
-        <Item>dlc_2017HennesseyCamaroExorcist:/data/dlctext.meta</Item>	
-        <Item>dlc_2017HennesseyCamaroExorcist:/%PLATFORM%/vehicles.rpf</Item>        
+        <Item>dlc_zl12017:/common/data/handling.meta</Item>
+        <Item>dlc_zl12017:/common/data/levels/gta5/vehicles.meta</Item>
+        <Item>dlc_zl12017:/common/data/carcols.meta</Item>
+        <Item>dlc_zl12017:/common/data/carvariations.meta</Item>
+        <Item>dlc_zl12017:/common/data/dlctext.meta</Item>	
+        <Item>dlc_zl12017:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</Item>
+        <Item>dlc_zl12017:/%PLATFORM%/levels/zl12017/vehiclemods/mods.rpf</Item>	
 	  </filesToEnable>
 	  <txdToLoad />
 	  <txdToUnload />
 	  <residentResources />
 	  <unregisterResources />
-	</Item>
+        </Item>
   </contentChangeSets>
   <patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>

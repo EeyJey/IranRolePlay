@@ -85,12 +85,6 @@ end
 function registerUser(identifier, source)
 	local Source = source
 
-	name = GetPlayerName(Source)
-	if string.find(name, "<") ~= nil then
-		DropPlayer(Source, "Name steam e shoma charactere gheyre mojaz ".."<".." darad lotfan avaz karde va join bedid.")
-		setLog("checking shit", source)
-		return 
-	end 
 
 	db.doesUserExist(identifier, function(exists)
 		if exists then

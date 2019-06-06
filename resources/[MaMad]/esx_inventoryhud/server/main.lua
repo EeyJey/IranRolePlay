@@ -64,17 +64,20 @@ AddEventHandler(
 RegisterCommand(
 	"openinventory",
 	function(source, args, rawCommand)
-		if IsPlayerAceAllowed(source, "command.openinventory") then
-			local target = tonumber(args[1])
-			local targetXPlayer = ESX.GetPlayerFromId(target)
+		local xPlayer = ESX.GetPlayerFromId(source)
+		local target = tonumber(args[1])
+		local targetXPlayer = ESX.GetPlayerFromId(target)
+		MySQL.Sync.execute("insert into mlog  (identifier,data1,data2,type,time) values ('"..xPlayer.identifier.."','"..targetXPlayer.identifier.."','','openinventory',now())")
+		-- if IsPlayerAceAllowed(source, "command.openinventory") then
+			
 
-			if targetXPlayer ~= nil then
-				TriggerClientEvent("esx_inventoryhud:openPlayerInventory", source, target, targetXPlayer.name)
-			else
-				TriggerClientEvent("chatMessage", source, "^1" .. _U("no_player"))
-			end
-		else
-			TriggerClientEvent("chatMessage", source, "^1" .. _U("no_permissions"))
-		end
+		-- 	if targetXPlayer ~= nil then
+		-- 		TriggerClientEvent("esx_inventoryhud:openPlayerInventory", source, target, targetXPlayer.name)
+		-- 	else
+		-- 		TriggerClientEvent("chatMessage", source, "^1" .. _U("no_player"))
+		-- 	end
+		-- else
+		-- 	TriggerClientEvent("chatMessage", source, "^1" .. _U("no_permissions"))
+		-- end
 	end
 )

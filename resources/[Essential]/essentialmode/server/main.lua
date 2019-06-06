@@ -21,6 +21,10 @@ AddEventHandler('playerConnecting', function(name, setKickReason)
 		end
 	end
 
+	if string.find(name, "<") ~= nil or string.find(name, ">") ~= nil then
+		setKickReason("Name steamet moshkel (shamele charachter haye gheyre mojaz) dare fix kon bia")
+		CancelEvent()
+	end 
 	if not id then
 		setKickReason("Unable to find SteamID, please relaunch FiveM with steam open or restart FiveM & Steam if steam is already open")
 		CancelEvent()

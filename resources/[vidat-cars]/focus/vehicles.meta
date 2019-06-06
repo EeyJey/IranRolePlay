@@ -134,17 +134,13 @@
 
   </InitDatas>
   <txdRelationships>
-    <Item>
+     <Item>
       <parent>focusrs1</parent>
       <child>focusrs</child>
     </Item>
     <Item>
-      <parent>focusrs2</parent>
-      <child>focusrs1</child>
-    </Item>
-    <Item>
       <parent>vehicles_dom_interior</parent>
-      <child>focusrs2</child>
+      <child>focusrs1</child>
     </Item>
 
 
