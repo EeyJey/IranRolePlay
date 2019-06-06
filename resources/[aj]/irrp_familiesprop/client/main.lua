@@ -843,6 +843,7 @@ end)
 
 Citizen.CreateThread(function()
   while blips do
+    Wait(0)
     if PlayerData.family ~= nil and PlayerData.family.name ~= 'nofamily' and Data.blip ~= nil then
       local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
       table.insert(allBlip, blipCoord)
