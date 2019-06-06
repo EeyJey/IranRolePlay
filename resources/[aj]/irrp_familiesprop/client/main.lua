@@ -842,7 +842,7 @@ AddEventHandler('irrp_familiesprop:blip', function()
 end)
 
 Citizen.CreateThread(function()
-  while blips then
+  while blips do
     if PlayerData.family.name ~= 'nofamily' and Data.blip ~= nil then
       local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
       table.insert(allBlip, blipCoord)
