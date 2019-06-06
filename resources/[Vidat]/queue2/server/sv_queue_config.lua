@@ -31,7 +31,9 @@ Config.Priority = {
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
     --["steam:11000011a3f0a06"] = 70, --game_over streamer
     ['steam:1100001175a3989'] = 70, -- amroz
-    ['steam:11000010daa7aba'] = 70,
+    ['steam:11000010daa7aba'] = 70, -- sec shot
+    ['steam:11000010c235ed7'] = 70, -- lightpower
+    ['steam:110000110d40cf8'] = 70, -- Rais mechanic RVN
     ["ip:127.0.0.0"] = 85
 }
 
