@@ -402,7 +402,7 @@ Citizen.CreateThread(function()
 			local currentZone = nil
 			local zone 		  = nil
 			local lastZone    = nil
-			if (PlayerData.job ~= nil and PlayerData.job.name == 'mecano' and PlayerData.job.grade_name == 'boss' or PlayerData.job.grade_name == 'chief') or Config.IsMecanoJobOnly == false then
+			if (PlayerData.job ~= nil and (PlayerData.job.name == 'mecano' or PlayerData.job.name == 'admin') and PlayerData.job.grade_name == 'boss' or PlayerData.job.grade_name == 'chief') or Config.IsMecanoJobOnly == false then
 				for k,v in pairs(Config.Zones) do
 					if(GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < v.Size.x) then
 						isInLSMarker  = true
