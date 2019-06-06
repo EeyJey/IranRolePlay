@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_rs6</deviceName>
+  <deviceName>dlc_rs6pd600</deviceName>
   <datFile>content.xml</datFile>
-  <timeStamp>24/11/2014 12:00:00</timeStamp>
-  <nameHash>rs6</nameHash>
+  <timeStamp>00/00/0000 00:00:00</timeStamp>
+  <nameHash>rs6pd600</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>rs6_AUTOGEN</Item>
-        <Item>rs6_UNLOCKS_AUTOGEN</Item>
+        <Item>rs6pd600_AUTOGEN</Item>
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>

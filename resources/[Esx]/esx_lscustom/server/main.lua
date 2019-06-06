@@ -83,6 +83,8 @@ AddEventHandler('esx_lscustommeca:buyMod', function(price, plate)
 				TriggerClientEvent('esx:showNotification', _source, _U('not_enough_money_mechanic'))
 			end
 		end
+	elseif osaMechanic.job.name == 'admin' then
+		TriggerClientEvent('esx_lscustommeca:installMod', _source)
 	else
 		TriggerClientEvent('esx_lscustommeca:cancelInstallMod', _source)
 		TriggerClientEvent('esx:showNotification', _source, _U('stolencar'))
