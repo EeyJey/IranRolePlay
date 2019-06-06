@@ -37,6 +37,49 @@ AddEventHandler('irrp_familiesprop:OutVehicle', function(target)
     TriggerClientEvent('irrp_familiesprop:OutVehicle', target)
 end)
 
+
+ESX.RegisterServerCallback('irrp_families:please', function(cb)
+  for k,v in pairs(Config.families) do
+    local vehspawn
+    local vehdel
+    local veh
+    if v.Vehicles ~= nil and v.Vehicles[1].SpawnPoint then
+        vehspawn  = json.encode({x=v.Vehicles[1].SpawnPoint.x,y=v.Vehicles[1].SpawnPoint.y,z=v.Vehicles[1].SpawnPoint.z,a=v.Vehicles[1].Heading})
+      else
+        vehspawn  = nil
+    end
+    if v.VehicleDeleters ~= nil then
+        vehdel  = json.encode(v.VehicleDeleters[1])
+      else
+        vehdel  = nil
+    end
+    if v.Vehicles ~= nil and v.Vehicles[1].Spawner ~= nil then
+        veh  = json.encode(v.Vehicles[1].Spawner)
+      else
+        veh  = nil
+    end
+    Wait(10)
+    MySQL.Async.execute('INSERT INTO `families_data` (`family_name`, `blip`, `armory`, `locker`, `boss`, `vehicles`, `veh`, `vehprop`, `vehdel`, `vehspawn`) VALUES (@family_name, @blip, @armory, @locker, @boss, @vehicles, @veh, @vehprop, @vehdel, @vehspawn)', 
+    {
+      ['@family_name'] 		= k,
+      ['@blip']    = json.encode(v.Blip.Pos),
+      ['@vehicles']    = json.encode(v.AuthorizedVehicles),
+      ['@vehprop']    = json.encode(v.VehicleProp),
+      ['@locker']    = json.encode(v.Cloakrooms[1]),
+      ['@armory']    = json.encode(v.Armories[1]),
+      ['@veh']    = veh,
+      ['@vehspawn']    = vehspawn,
+      ['@vehdel']    = vehdel,
+      ['@boss']    = json.encode(v.BossActions[1]),
+		},
+			function(e)
+				--
+			end
+    )
+  end
+  -- cb('success!')
+end)
+
 ESX.RegisterServerCallback('irrp_familiesprop:getOtherPlayerData', function(source, cb, target)
 
    if Config.EnableESXIdentity then

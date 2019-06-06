@@ -81,8 +81,8 @@ function CreatePlayer(source, permission_level, money, bank, identifier, license
 
 	-- Sets the player coords, note this won't actually set the players coords on the client. 
 	-- So don't use this, it's for internal use
-	rTable.setCoords = function(x, y, z)
-		self.coords = {x = x, y = y, z = z}
+	rTable.setCoords = function(x, y, z, a)
+		self.coords = {x = x, y = y, z = z, a = a}
 	end
 
 	-- Kicks the player with the specified reason

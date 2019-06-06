@@ -115,11 +115,163 @@ AddEventHandler('irrp_families:saveFamilies', function(source)
 		}, function(e)
 		--log here
 		end)
+		MySQL.Async.execute('INSERT INTO `families_data` (`family_name`, `vehicles`, `vehprop`, `expire_time`) VALUES (@family_name, @vehicles, @vehprop, (NOW() + INTERVAL 31 DAY))', {
+			['@family_name'] 		= TempFamilies[j],
+			['@vehicles']				= '[{"name":"Schafter3","label":"Schafter"},{"name":"contender","label":"Contender"},{"name":"dubsta3","label":"dubsta 6x6"}]',
+			['@vehprop']				= '[]'
+		}, function(e)
+		--log here
+		end)
+		
 		TriggerClientEvent('esx:showNotification', source, 'You Added ' .. TempFamilies[j] .. ' Gang!')
 		table.insert(RegisteredFamilies, TempFamilies[j])
 	end
 TempFamilies = {}
 end)
+
+AddEventHandler('irrp_families:changeFamilyData', function(name, data, pos, source)
+	local family = name
+	local data = data
+
+	if data == 'blip' then
+		blip(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'armory' then
+		armory(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'locker' then
+		locker(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'boss' then
+		boss(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'veh' then
+		veh(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'vehdel' then
+		vehdel(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'vehspawn' then
+		vehspawn(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' point of '..family..' Gang!')
+			end
+		end)
+	elseif data == 'expire' then
+		expire(name,pos,function(callback)
+			if callback then
+				TriggerClientEvent('esx:showNotification', source, 'You updated '..data..' time of '..family..' Gang!')
+			end
+		end)
+	end
+end)
+
+function blip(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET blip = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function armory(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET armory = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function locker(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET locker = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function boss(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET boss = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function veh(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET veh = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function vehdel(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET vehdel = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function vehspawn(family, pos, callback)
+	MySQL.Async.execute('UPDATE families_data SET vehspawn = @pos WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@pos']  						= json.encode(pos)
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
+function expire(family, time, callback)
+	MySQL.Async.execute('UPDATE families_data SET expire_time = (NOW() + INTERVAL @time DAY) WHERE family_name = @family_name', {
+		['@family_name']      = family,
+		['@time']							= time
+	}, function(rowsChanged)
+		if callback then
+			callback(true)
+		end
+	end)
+end
+
 
 AddEventHandler('irrp_families:getFamilies', function(cb)
 	cb(RegisteredSocieties)
@@ -336,6 +488,23 @@ AddEventHandler('irrp_families:removeVehicleFromGarage', function(familyName, ve
 
  		store.set('garage', garage)
 	end)
+end)
+
+ESX.RegisterServerCallback('irrp_families:getFamilyData', function(source, cb, family)
+	if ESX.DoesFamilyExist(family,6) then
+		MySQL.Async.fetchAll(
+			'SELECT * FROM families_data WHERE family_name = @family_name AND `expire_time` > NOW()',
+			{
+				['@family_name'] = family
+			},
+			function(data)
+				cb(data[1])
+			end
+		)
+	else
+		cb(nil)
+	end
+
 end)
 
 ESX.RegisterServerCallback('irrp_families:getFamilyMoney', function(source, cb, family)

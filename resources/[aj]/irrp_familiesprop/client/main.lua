@@ -10,12 +10,12 @@ local Keys = {
   ["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
+local set                       = false
 local PlayerData                = {}
 local GUI                       = {}
 local HasAlreadyEnteredMarker   = false
 local LastStation               = nil
 local LastPart                  = nil
-local LastPartNum               = nil
 local LastEntity                = nil
 local CurrentAction             = nil
 local CurrentActionMsg          = ''
@@ -24,6 +24,7 @@ local IsHandcuffed              = false
 local IsDragged                 = false
 local CopPed                    = 0
 local allBlip                   = {}
+local Data                      = {}
 
 ESX                             = nil
 GUI.Time                        = 0
@@ -37,15 +38,9 @@ end)
 
 function SetVehicleMods(vehicle, family)
   local props = {}
-  for k,v in pairs(Config.families) do
-    if k == family then
-      props = v.VehicleProp
-      break
-    end
+  if Data.vehprop ~= nil then
+    props = Data.vehprop
   end
-
-  ESX.Game.SetVehicleProperties(vehicle, props)
-
 end
 
 function OpenCloakroomMenu()
@@ -219,9 +214,7 @@ if Config.EnableArmoryManagement then
 
 end
 
-function OpenVehicleSpawnerMenu(station, partNum)
-
- local vehicles = Config.families[station].Vehicles
+function OpenVehicleSpawnerMenu(station)
 
  ESX.UI.Menu.CloseAll()
 
@@ -274,54 +267,55 @@ function OpenVehicleSpawnerMenu(station, partNum)
 
   local elements = {}
 
-  for i=1, #Config.families[station].AuthorizedVehicles, 1 do
-    local vehicle = Config.families[station].AuthorizedVehicles[i]
-    table.insert(elements, {label = vehicle.label, value = vehicle.name})
-  end
+  if Data.vehicles then
+    for i=1, #Data.vehicles, 1 do
+      local vehicle = Data.vehicles[i]
+      table.insert(elements, {label = vehicle.label, value = vehicle.name})
+    end
 
-   ESX.UI.Menu.Open(
-    'default', GetCurrentResourceName(), 'vehicle_spawner',
-    {
-      title    = _U('vehicle_menu'),
-      align    = 'top-left',
-      elements = elements,
-    },
-    function(data, menu)
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'vehicle_spawner',
+      {
+        title    = _U('vehicle_menu'),
+        align    = 'top-left',
+        elements = elements,
+      },
+      function(data, menu)
 
-       menu.close()
+        menu.close()
 
-       local model = data.current.value
+        local model = data.current.value
 
-       local vehicle = GetClosestVehicle(vehicles[partNum].SpawnPoint.x,  vehicles[partNum].SpawnPoint.y,  vehicles[partNum].SpawnPoint.z,  3.0,  0,  71)
+        local vehicle = GetClosestVehicle(Data.vehspawn.x,  Data.vehspawn.y,  Data.vehspawn.z,  3.0,  0,  71)
 
-       if not DoesEntityExist(vehicle) then
-        local playerPed = GetPlayerPed(-1)
-        ESX.Game.SpawnVehicle(model, {
-        x = vehicles[partNum].SpawnPoint.x,
-        y = vehicles[partNum].SpawnPoint.y,
-        z = vehicles[partNum].SpawnPoint.z
-        }, vehicles[partNum].Heading, function(vehicle)
-        TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-        SetVehicleMods(vehicle, station)
-        SetVehicleFuelLevel(vehicle,100)
-        end)
+        if not DoesEntityExist(vehicle) then
+          local playerPed = GetPlayerPed(-1)
+          ESX.Game.SpawnVehicle(model, {
+          x = Data.vehspawn.x,
+          y = Data.vehspawn.y,
+          z = Data.vehspawn.z
+          }, Data.vehspawn.a, function(vehicle)
+          TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
+          ESX.Game.SetVehicleProperties(vehicle, Data.props)
+          SetVehicleFuelLevel(vehicle,100)
+          end)
 
-       else
-        ESX.ShowNotification(_U('vehicle_out'))
+        else
+          ESX.ShowNotification(_U('vehicle_out'))
+        end
+
+      end,
+      function(data, menu)
+
+        menu.close()
+
+        CurrentAction     = 'menu_vehicle_spawner'
+        CurrentActionMsg  = _U('vehicle_spawner')
+        CurrentActionData = {station = station}
+
       end
-
-     end,
-    function(data, menu)
-
-      menu.close()
-
-      CurrentAction     = 'menu_vehicle_spawner'
-      CurrentActionMsg  = _U('vehicle_spawner')
-      CurrentActionData = {station = station, partNum = partNum}
-
-     end
-  )
-
+    )
+  end
  -- end
 
 end
@@ -788,7 +782,6 @@ end
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
 PlayerData = xPlayer
-TriggerEvent('irrp_familiesprop:blip', xPlayer.family.name)
 end)
 
 RegisterNetEvent('esx:setJob')
@@ -798,37 +791,58 @@ end)
 
 RegisterNetEvent('esx:setFamily')
 AddEventHandler('esx:setFamily', function(family)
+set = false
 PlayerData.family = family
-TriggerEvent('irrp_familiesprop:blip', family.name)
 end)
 
-RegisterNetEvent('irrp_familiesprop:blip')
--- Create blips
 Citizen.CreateThread(function()
-  AddEventHandler('irrp_familiesprop:blip', function(familyname)
-    for _, blip in pairs(allBlip) do
-      RemoveBlip(blip)
+  while true do
+    Wait(0)
+    if not set and PlayerData.family ~= nil and PlayerData.family.name ~= 'nofamily' then
+      Data = {}
+      ESX.TriggerServerCallback('irrp_families:getFamilyData', function(data)
+        if data.family_name ~= nil then
+          Data.family_name  = data.family_name
+          Data.blip         = json.decode(data.blip)
+          Data.armory       = json.decode(data.armory)
+          Data.locker       = json.decode(data.locker)
+          Data.boss         = json.decode(data.boss)
+          Data.vehicles     = json.decode(data.vehicles)
+          Data.veh          = json.decode(data.veh)
+          Data.vehdel       = json.decode(data.vehdel)
+          Data.vehspawn     = json.decode(data.vehspawn)
+          Data.vehprop      = json.decode(data.vehprop)
+        else
+          --Delete Player Family
+        end
+      end, PlayerData.family.name)
+      set = true
+      TriggerEvent('irrp_familiesprop:blip')
     end
-    for k,v in pairs(Config.families) do
-      if familyname == k then
-        local blipMarker = v.Blip
-        local blipCoord = AddBlipForCoord(blipMarker.Pos.x, blipMarker.Pos.y, blipMarker.Pos.z)
-        table.insert(allBlip, blipCoord)
-        SetBlipSprite (blipCoord, blipMarker.Sprite)
-        SetBlipDisplay(blipCoord, blipMarker.Display)
-        SetBlipScale  (blipCoord, blipMarker.Scale)
-        SetBlipColour (blipCoord, blipMarker.Colour)
-        SetBlipAsShortRange(blipCoord, true)
-  
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString('Family')
-        EndTextCommandSetBlipName(blipCoord)
-      end
-    end
-  end)
+  end
 end)
 
-AddEventHandler('irrp_familiesprop:hasEnteredMarker', function(station, part, partNum)
+-- Create blips
+RegisterNetEvent('irrp_familiesprop:blip')
+AddEventHandler('irrp_familiesprop:blip', function()
+  for _, blip in pairs(allBlip) do
+    RemoveBlip(blip)
+  end
+  local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
+  table.insert(allBlip, blipCoord)
+  SetBlipSprite (blipCoord, 88)
+  SetBlipDisplay(blipCoord, 4)
+  SetBlipScale  (blipCoord, 1.2)
+  SetBlipColour (blipCoord, 76)
+  SetBlipAsShortRange(blipCoord, true)
+  BeginTextCommandSetBlipName("STRING")
+  AddTextComponentString('Family')
+  EndTextCommandSetBlipName(blipCoord)
+  
+end)
+
+
+AddEventHandler('irrp_familiesprop:hasEnteredMarker', function(station, part)
 
  if part == 'Cloakroom' then
   CurrentAction     = 'menu_cloakroom'
@@ -845,7 +859,7 @@ end
  if part == 'VehicleSpawner' then
   CurrentAction     = 'menu_vehicle_spawner'
   CurrentActionMsg  = _U('vehicle_spawner')
-  CurrentActionData = {station = station, partNum = partNum}
+  CurrentActionData = {station = station}
 end
 
  if part == 'VehicleDeleter' then
@@ -860,7 +874,7 @@ end
     if DoesEntityExist(vehicle) then
       CurrentAction     = 'delete_vehicle'
       CurrentActionMsg  = _U('store_vehicle')
-      CurrentActionData = {vehicle = vehicle, station = station, partNum = partNum}
+      CurrentActionData = {vehicle = vehicle, station = station}
     end
 
   end
@@ -875,7 +889,7 @@ end
 
 end)
 
-AddEventHandler('irrp_familiesprop:hasExitedMarker', function(station, part, partNum)
+AddEventHandler('irrp_familiesprop:hasExitedMarker', function(station, part)
 ESX.UI.Menu.CloseAll()
 CurrentAction = nil
 end)
@@ -1035,55 +1049,38 @@ while true do
 
   local playerPed = GetPlayerPed(-1)
   local coords    = GetEntityCoords(playerPed)
-  if PlayerData.family ~= nil then
-    for k,v in pairs(Config.families) do
-      if PlayerData.family.name == k then
+  if Data.locker ~= nil then
+    if GetDistanceBetweenCoords(coords,  Data.locker.x,  Data.locker.y,  Data.locker.z,  true) < Config.DrawDistance then
+      DrawMarker(Config.MarkerType, Data.locker.x,  Data.locker.y,  Data.locker.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+    end
+  end
 
-        for i=1, #v.Cloakrooms, 1 do
-          if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.DrawDistance then
-            DrawMarker(Config.MarkerType, v.Cloakrooms[i].x, v.Cloakrooms[i].y, v.Cloakrooms[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-          end
-        end
+  if Data.armory ~= nil then
+    if GetDistanceBetweenCoords(coords,  Data.armory.x,  Data.armory.y,  Data.armory.z,  true) < Config.DrawDistance then
+      DrawMarker(Config.MarkerType, Data.armory.x,  Data.armory.y,  Data.armory.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+    end
+  end
 
-        for i=1, #v.Armories, 1 do
-          if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.DrawDistance then
-            DrawMarker(Config.MarkerType, v.Armories[i].x, v.Armories[i].y, v.Armories[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-          end
-        end
+  if Data.veh ~= nil then
+    if GetDistanceBetweenCoords(coords,  Data.veh.x,  Data.veh.y,  Data.veh.z,  true) < Config.DrawDistance then
+      DrawMarker(Config.MarkerType, Data.veh.x,  Data.veh.y,  Data.veh.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+    end
+  end
 
-        if v.Vehicles ~= nil then
-          for i=1, #v.Vehicles, 1 do
-            if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.DrawDistance then
-              DrawMarker(Config.MarkerType, v.Vehicles[i].Spawner.x, v.Vehicles[i].Spawner.y, v.Vehicles[i].Spawner.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-            end
-          end
+  if Data.vehdel ~= nil then
+    if GetDistanceBetweenCoords(coords,   Data.vehdel.x,  Data.vehdel.y,  Data.vehdel.z,  true) < Config.DrawDistance then
+      DrawMarker(Config.MarkerType, Data.vehdel.x,  Data.vehdel.y,  Data.vehdel.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+    end
+  end
 
-          for i=1, #v.VehicleDeleters, 1 do
-            if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.DrawDistance then
-              DrawMarker(Config.MarkerType, v.VehicleDeleters[i].x, v.VehicleDeleters[i].y, v.VehicleDeleters[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-            end
-          end
-        end
-
-        if Config.EnablePlayerManagement and PlayerData.family ~= nil then
-
-          for i=1, #v.BossActions, 1 do
-            if not v.BossActions[i].disabled and GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.DrawDistance then
-              DrawMarker(Config.MarkerType, v.BossActions[i].x, v.BossActions[i].y, v.BossActions[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
-            end
-          end
-
-        end
-        break
-      end
+  if Data.boss ~= nil then
+    if GetDistanceBetweenCoords(coords,  Data.boss.x,  Data.boss.y,  Data.boss.z,  true) < Config.DrawDistance then
+      DrawMarker(Config.MarkerType, Data.boss.x,  Data.boss.y,  Data.boss.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.MarkerSize.x, Config.MarkerSize.y, Config.MarkerSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
     end
   end
     
 end
 end)
-
-
-
 
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
@@ -1098,101 +1095,79 @@ Citizen.CreateThread(function()
     local isInMarker     = false
     local currentStation = nil
     local currentPart    = nil
-    local currentPartNum = nil
     
-    for k,v in pairs(Config.families) do
-      if PlayerData.family.name == k then
-        for i=1, #v.Cloakrooms, 1 do
+    if Data.locker ~= nil then
+      if GetDistanceBetweenCoords(coords,  Data.locker.x,  Data.locker.y,  Data.locker.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'Cloakroom'
+      end
+    end
 
-          if GetDistanceBetweenCoords(coords,  v.Cloakrooms[i].x,  v.Cloakrooms[i].y,  v.Cloakrooms[i].z,  true) < Config.MarkerSize.x then
-            isInMarker     = true
-            currentStation = k
-            currentPart    = 'Cloakroom'
-            currentPartNum = i
-          end
-        end
+    if Data.armory ~= nil then
+      if GetDistanceBetweenCoords(coords,  Data.armory.x,  Data.armory.y,  Data.armory.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'Armory'
+      end
+    end
 
-        for i=1, #v.Armories, 1 do
-          if GetDistanceBetweenCoords(coords,  v.Armories[i].x,  v.Armories[i].y,  v.Armories[i].z,  true) < Config.MarkerSize.x then
-            isInMarker     = true
-            currentStation = k
-            currentPart    = 'Armory'
-            currentPartNum = i
-          end
-        end
+    if Data.veh ~= nil then
+      if GetDistanceBetweenCoords(coords,  Data.veh.x,  Data.veh.y,  Data.veh.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'VehicleSpawner'
+      end
+    end
 
-        if v.Vehicles ~= nil then
-          for i=1, #v.Vehicles, 1 do
-            if GetDistanceBetweenCoords(coords,  v.Vehicles[i].Spawner.x,  v.Vehicles[i].Spawner.y,  v.Vehicles[i].Spawner.z,  true) < Config.MarkerSize.x then
-              isInMarker     = true
-              currentStation = k
-              currentPart    = 'VehicleSpawner'
-              currentPartNum = i
-            end
+    if Data.vehspawn ~= nil then
+      if GetDistanceBetweenCoords(coords,  Data.vehspawn.x,  Data.vehspawn.y,  Data.vehspawn.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'VehicleSpawnPoint'
+      end
+    end
 
-            if GetDistanceBetweenCoords(coords,  v.Vehicles[i].SpawnPoint.x,  v.Vehicles[i].SpawnPoint.y,  v.Vehicles[i].SpawnPoint.z,  true) < Config.MarkerSize.x then
-              isInMarker     = true
-              currentStation = k
-              currentPart    = 'VehicleSpawnPoint'
-              currentPartNum = i
-            end
-          end
+    if Data.vehdel ~= nil then
+      if GetDistanceBetweenCoords(coords,  Data.vehdel.x,  Data.vehdel.y,  Data.vehdel.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'VehicleDeleter'
+      end
+    end
 
-
-          for i=1, #v.VehicleDeleters, 1 do
-            if GetDistanceBetweenCoords(coords,  v.VehicleDeleters[i].x,  v.VehicleDeleters[i].y,  v.VehicleDeleters[i].z,  true) < Config.MarkerSize.x then
-              isInMarker     = true
-              currentStation = k
-              currentPart    = 'VehicleDeleter'
-              currentPartNum = i
-            end
-          end
-        end
-
-        if PlayerData.family ~= nil and PlayerData.family.label == 'family' and PlayerData.family.grade == 6 then
-
-          for i=1, #v.BossActions, 1 do
-            if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then
-              isInMarker     = true
-              currentStation = k
-              currentPart    = 'BossActions'
-              currentPartNum = i
-            end
-          end
-
-        end
+    if Data.boss ~= nil and PlayerData.family ~= nil and PlayerData.family.grade == 6 then
+      if GetDistanceBetweenCoords(coords,   Data.boss.x,  Data.boss.y,  Data.boss.z,  true) < Config.MarkerSize.x then
+        isInMarker     = true
+        currentStation = Data.family_name
+        currentPart    = 'BossActions' 
       end
     end
 
     local hasExited = false
-
-    if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum) ) then
-
+    
+    if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastStation ~= currentStation or LastPart ~= currentPart)) then
       if
-        (LastStation ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
-        (LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
+        (LastStation ~= nil and LastPart ~= nil) and
+        (LastStation ~= currentStation or LastPart ~= currentPart)
       then
-        TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
+        TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart)
         hasExited = true
       end
-
       HasAlreadyEnteredMarker = true
       LastStation             = currentStation
       LastPart                = currentPart
-      LastPartNum             = currentPartNum
 
-      TriggerEvent('irrp_familiesprop:hasEnteredMarker', currentStation, currentPart, currentPartNum)
+      TriggerEvent('irrp_familiesprop:hasEnteredMarker', currentStation, currentPart)
     end
 
     if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
 
       HasAlreadyEnteredMarker = false
 
-      TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart, LastPartNum)
+      TriggerEvent('irrp_familiesprop:hasExitedMarker', LastStation, LastPart)
     end
-
   end
-
  end
 end)
 
@@ -1215,7 +1190,7 @@ while true do
       elseif CurrentAction == 'menu_armory' and PlayerData.family.grade > 1 then
         OpenArmoryMenu(CurrentActionData.station)
       elseif CurrentAction == 'menu_vehicle_spawner' then
-        OpenVehicleSpawnerMenu(CurrentActionData.station, CurrentActionData.partNum)
+        OpenVehicleSpawnerMenu(CurrentActionData.station)
       elseif CurrentAction == 'delete_vehicle' then
 
          -- if Config.EnableSocietyOwnedVehicles then

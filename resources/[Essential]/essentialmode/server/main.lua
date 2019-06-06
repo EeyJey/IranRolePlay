@@ -289,9 +289,9 @@ AddEventHandler('es:addACECommand', function(command, group, callback)
 end)
 
 RegisterServerEvent('es:updatePositions')
-AddEventHandler('es:updatePositions', function(x, y, z)
+AddEventHandler('es:updatePositions', function(x, y, z, a)
 	if(Users[source])then
-		Users[source].setCoords(x, y, z)
+		Users[source].setCoords(x, y, z, a)
 	end
 end)
 

@@ -254,7 +254,7 @@ Config.families = {
     },
     ['Knaxvell'] = {
       Blip = {
-        Pos     = { 26.1829, y = 558.913, z = 178.582 },
+        Pos     = { x = 26.1829, y = 558.913, z = 178.582 },
         Sprite  = 88,
         Display = 4,
         Scale   = 1.2,

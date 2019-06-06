@@ -45,8 +45,8 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		return self.player.get('coords')
 	end
 
-	self.setCoords = function(x, y, z)
-		self.player.coords = {x = x, y = y, z = z}
+	self.setCoords = function(x, y, z, a)
+		self.player.coords = {x = x, y = y, z = z, a = a}
 	end
 
 	self.kick = function(reason)

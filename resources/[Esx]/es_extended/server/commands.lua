@@ -76,6 +76,63 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('create_family'), params = {{name = "Name", help = _U('family_name')}}})
 
+TriggerEvent('es:addGroupCommand', 'kireasb', 'admin', function(source, args, user)
+	ESX.TriggerServerCallback('irrp_families:please', function(cb)
+		TriggerClientEvent('chat:addMessage', source, cb)
+	end)
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = _U('create_family'), params = {{name = "Name", help = _U('family_name')}}})
+
+TriggerEvent('es:addGroupCommand', 'changefamilydata', 'admin', function(source, args, user)
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	local playerPos = xPlayer.getCoords()
+	if ESX.DoesFamilyExist(args[1], 6) then
+		if args[2] == 'blip' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = playerPos.z + 0.5 }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'armory' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'locker' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'boss' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'veh' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'vehdel' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'vehspawn' then
+			local Pos     = { x = playerPos.x, y = playerPos.y, z = playerPos.z , a = playerPos.a }
+			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
+			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
+		elseif args[2] == 'expire' then
+			if tonumber(args[3]) then
+				TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], args[3])
+			else
+				TriggerClientEvent('esx:showNotification', source, 'Please enter a number for days are gonna to set until expire, like: 30')
+			end
+		else
+			TriggerClientEvent('esx:showNotification', source, 'You Entered Invalid Option!')
+		end
+	else
+		TriggerClientEvent('esx:showNotification', source, 'You Entered Invalid Family!')
+	end
+end, function(source, args, user)
+	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+end, {help = _U('change_family'), params = {{name = "Name", help = _U('family_name')}, {name = "Option", help = _U('data_change')}  }})
+
 TriggerEvent('es:addGroupCommand', 'loadipl', 'admin', function(source, args, user)
 	TriggerClientEvent('esx:loadIPL', -1, args[1])
 end, function(source, args, user)
