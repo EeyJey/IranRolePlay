@@ -5,66 +5,73 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_plml:/data/vehicles.meta</filename>
+      <filename>dlc_grandgt18:/data/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_plml:/data/carcols.meta</filename>
+      <filename>dlc_grandgt18:/data/carcols.meta</filename>
       <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_plml:/data/carvariations.meta</filename>
+      <filename>dlc_grandgt18:/data/handling.meta</filename>
+      <fileType>HANDLING_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_grandgt18:/data/carvariations.meta</filename>
       <fileType>VEHICLE_VARIATION_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_plml:/data/dlctext.meta</filename>
+      <filename>dlc_grandgt18:/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_plml:/data/handling.meta</filename>
-      <fileType>HANDLING_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>	
-    <Item>
-      <filename>dlc_plml:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_grandgt18:/%PLATFORM%/vehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
     </Item>
-
+    <Item>
+      <filename>dlc_grandgt18:/%PLATFORM%/vehiclemods/grandgt18_mods.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
   </dataFiles>
   <contentChangeSets>
-    <Item>
-      <changeSetName>plml_AUTOGEN</changeSetName>
-      <filesToDisable />
-      <filesToEnable>
-        <Item>dlc_plml:/data/handling.meta</Item>
-        <Item>dlc_plml:/data/vehicles.meta</Item>
-        <Item>dlc_plml:/data/carcols.meta</Item>
-        <Item>dlc_plml:/data/carvariations.meta</Item>
-        <Item>dlc_plml:/data/dlctext.meta</Item>	
-        <Item>dlc_plml:/%PLATFORM%/vehicles.rpf</Item>
-      </filesToEnable>
-      <txdToLoad />
-      <txdToUnload />
-      <residentResources />
-      <unregisterResources />
-    </Item>
+	<Item>
+	  <changeSetName>grandgt18_AUTOGEN</changeSetName>
+	  <filesToDisable />
+	  <filesToEnable>
+        <Item>dlc_grandgt18:/data/vehicles.meta</Item>
+        <Item>dlc_grandgt18:/data/carcols.meta</Item>
+	<Item>dlc_grandgt18:/data/handling.meta</Item>
+        <Item>dlc_grandgt18:/data/carvariations.meta</Item>
+        <Item>dlc_grandgt18:/data/dlctext.meta</Item>	
+        <Item>dlc_grandgt18:/%PLATFORM%/vehicles.rpf</Item>
+        <Item>dlc_grandgt18:/%PLATFORM%/vehiclemods/grandgt18_mods.rpf</Item>	
+	  </filesToEnable>
+	  <txdToLoad />
+	  <txdToUnload />
+	  <residentResources />
+	  <unregisterResources />
+	</Item>
   </contentChangeSets>
   <patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>

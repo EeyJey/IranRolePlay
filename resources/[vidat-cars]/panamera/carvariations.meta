@@ -3,17 +3,19 @@
 <CVehicleModelInfoVariation>
   <variationData>
     <Item>
-      <modelName>palameila</modelName>
+      <modelName>grandgt18</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            5
-            34
-            0
-            156
+            49 
+            00 
+            156 
+            00
+						103
+            38
           </indices>
           <liveries>
-            <Item value="true" />
+            <Item value="false" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -25,32 +27,20 @@
         </Item>
       </colors>
       <kits>
-        <Item>5043_monkeyaddon_modkit</Item>
-	      </kits>
+        <Item>4519_grandgt18_modkit</Item>
+      </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
         <Probabilities>
           <Item>
             <Name>Standard White</Name>
-            <Value value="25" />
-          </Item>
-          <Item>
-            <Name>White Plate 2</Name>
-            <Value value="50" />
-          </Item>
-          <Item>
-            <Name>Blue Plate</Name>
-            <Value value="10" />
-          </Item>
-          <Item>
-            <Name>Yellow Plate</Name>
-            <Value value="15" />
+            <Value value="100" />
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="0" />        
-	      <sirenSettings value="0" />
-    </Item>       
+      <lightSettings value="4519" />
+      <sirenSettings value="0" />
+    </Item>
 
   </variationData>
 </CVehicleModelInfoVariation>
