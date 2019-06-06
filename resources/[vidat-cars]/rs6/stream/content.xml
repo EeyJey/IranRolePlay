@@ -5,63 +5,49 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_rs6:/common/data/vehiclelayouts.meta</filename>
-      <fileType>VEHICLE_LAYOUTS_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_rs6:/common/data/vehicles.meta</filename>
+      <filename>dlc_rs6pd600:/data/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_rs6:/common/data/carcols.meta</filename>
+      <filename>dlc_rs6pd600:/data/carcols.meta</filename>
       <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
+		    <Item>
+      <filename>dlc_rs6pd600:/data/handling.meta</filename>
+      <fileType>HANDLING_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
     <Item>
-      <filename>dlc_rs6:/common/data/carvariations.meta</filename>
+      <filename>dlc_rs6pd600:/data/carvariations.meta</filename>
       <fileType>VEHICLE_VARIATION_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_rs6:/common/data/rs6ContentUnlocks.meta</filename>
-      <fileType>CONTENT_UNLOCKING_META_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>	
-    <Item>
-      <filename>dlc_rs6:/common/data/dlctext.meta</filename>
+      <filename>dlc_rs6pd600:/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_rs6:/common/data/handling.meta</filename>
-      <fileType>HANDLING_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>	
-    <Item>
-      <filename>dlc_rs6:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</filename>
+      <filename>dlc_rs6pd600:/%PLATFORM%/vehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
     </Item>
-	<Item>
-      <filename>dlc_rs6:/%PLATFORM%/levels/rs6_mods.rpf</filename>
+    <Item>
+      <filename>dlc_rs6pd600:/%PLATFORM%/vehiclemods/rs6pd600_mods.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
@@ -70,28 +56,16 @@
   </dataFiles>
   <contentChangeSets>
 	<Item>
-	  <changeSetName>rs6_AUTOGEN</changeSetName>
+	  <changeSetName>rs6pd600_AUTOGEN</changeSetName>
 	  <filesToDisable />
 	  <filesToEnable>
-        <Item>dlc_rs6:/common/data/handling.meta</Item>
-        <Item>dlc_rs6:/common/data/vehiclelayouts.meta</Item>
-        <Item>dlc_rs6:/common/data/vehicles.meta</Item>
-        <Item>dlc_rs6:/common/data/carcols.meta</Item>
-        <Item>dlc_rs6:/common/data/carvariations.meta</Item>
-        <Item>dlc_rs6:/common/data/dlctext.meta</Item>	
-        <Item>dlc_rs6:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</Item>
-		<Item>dlc_rs6:/%PLATFORM%/levels/rs6_mods.rpf</Item>
-	  </filesToEnable>
-	  <txdToLoad />
-	  <txdToUnload />
-	  <residentResources />
-	  <unregisterResources />
-	</Item>
-	<Item>
-	  <changeSetName>rs6_UNLOCKS_AUTOGEN</changeSetName>
-	  <filesToDisable />
-	  <filesToEnable>
-        <Item>dlc_rs6:/common/data/rs6ContentUnlocks.meta</Item>	    
+        <Item>dlc_rs6pd600:/data/vehicles.meta</Item>
+        <Item>dlc_rs6pd600:/data/carcols.meta</Item>
+				<Item>dlc_rs6pd600:/data/handling.meta</Item>
+        <Item>dlc_rs6pd600:/data/carvariations.meta</Item>
+        <Item>dlc_rs6pd600:/data/dlctext.meta</Item>	
+        <Item>dlc_rs6pd600:/%PLATFORM%/vehicles.rpf</Item>
+        <Item>dlc_rs6pd600:/%PLATFORM%/vehiclemods/rs6pd600_mods.rpf</Item>	
 	  </filesToEnable>
 	  <txdToLoad />
 	  <txdToUnload />

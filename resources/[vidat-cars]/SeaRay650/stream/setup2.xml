@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_sr650fly</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>11/09/2015 21:18:11</timeStamp>
+  <nameHash>sr650fly</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>sr650fly_AUTOGEN</Item>
+        <Item>sr650fly_UNLOCKS_AUTOGEN</Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>
