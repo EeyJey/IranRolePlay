@@ -25,6 +25,7 @@ local IsDragged                 = false
 local CopPed                    = 0
 local allBlip                   = {}
 local Data                      = {}
+local blips                     = true
 
 ESX                             = nil
 GUI.Time                        = 0
@@ -828,7 +829,6 @@ AddEventHandler('irrp_familiesprop:blip', function()
   for _, blip in pairs(allBlip) do
     RemoveBlip(blip)
   end
-  if Data.blip ~= nil then
   local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
   table.insert(allBlip, blipCoord)
   SetBlipSprite (blipCoord, 88)
@@ -839,8 +839,24 @@ AddEventHandler('irrp_familiesprop:blip', function()
   BeginTextCommandSetBlipName("STRING")
   AddTextComponentString('Family')
   EndTextCommandSetBlipName(blipCoord)
+end)
+
+Citizen.CreateThread(function()
+  while blips then
+    if PlayerData.family.name ~= 'nofamily' and Data.blip ~= nil then
+      local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
+      table.insert(allBlip, blipCoord)
+      SetBlipSprite (blipCoord, 88)
+      SetBlipDisplay(blipCoord, 4)
+      SetBlipScale  (blipCoord, 1.2)
+      SetBlipColour (blipCoord, 76)
+      SetBlipAsShortRange(blipCoord, true)
+      BeginTextCommandSetBlipName("STRING")
+      AddTextComponentString('Family')
+      EndTextCommandSetBlipName(blipCoord)
+      blips = false
+    end
   end
-  
 end)
 
 
