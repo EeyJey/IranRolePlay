@@ -5,7 +5,7 @@ Config = {}
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
     ["steam:110000114a058a8"] = 100, -- Vidat Owner
-    -- ["steam:110000111fc352b"] = 100, -- AJ 
+    ["steam:110000111fc352b"] = 100, -- AJ 
     ["steam:110000107a78e07"] = 85, -- Arash- Owner
     ["steam:11000011783a55b"] = 85, -- Arman Mekanik
     ["steam:11000010a1b83df"] = 85, -- MaMad Owner
@@ -34,6 +34,7 @@ Config.Priority = {
     ['steam:11000010daa7aba'] = 70, -- sec shot
     ['steam:11000010c235ed7'] = 70, -- lightpower
     ['steam:110000110d40cf8'] = 70, -- Rais mechanic RVN
+    -- [''] = 70,
     ["ip:127.0.0.0"] = 85
 }
 

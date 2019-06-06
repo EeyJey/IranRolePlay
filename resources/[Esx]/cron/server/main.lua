@@ -33,15 +33,17 @@ function OnTime(d, h, m)
 end
 
 function Tick()
-
-	local time = GetTime()
-
-	if time.h ~= LastTime.h or time.m ~= LastTime.m then
-		OnTime(time.d, time.h, time.m)
-		LastTime = time
-	end
-
-	SetTimeout(60000, Tick)
+    Citizen.CreateThread(function()
+		local time = GetTime()
+		while true do
+			if time.h ~= LastTime.h or time.m ~= LastTime.m then
+				OnTime(time.d, time.h, time.m)
+				LastTime = time
+			end
+			print('croning' .. #Jobs)
+			Citizen.Wait(60*1000)
+		end
+	end)
 end
 
 LastTime = GetTime()
