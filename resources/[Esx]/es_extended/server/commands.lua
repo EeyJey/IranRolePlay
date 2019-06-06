@@ -74,7 +74,7 @@ TriggerEvent('es:addGroupCommand', 'savefamilies', 'admin', function(source, arg
 	TriggerEvent('irrp_families:saveFamilies', _source)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
-end, {help = _U('create_family'), params = {{name = "Name", help = _U('family_name')}}})
+end, {help = _U('create_family')})
 
 TriggerEvent('es:addGroupCommand', 'kireasb', 'admin', function(source, args, user)
 	ESX.TriggerServerCallback('irrp_families:please', function(cb)
@@ -91,31 +91,24 @@ TriggerEvent('es:addGroupCommand', 'changefamilydata', 'admin', function(source,
 	if ESX.DoesFamilyExist(args[1], 6) then
 		if args[2] == 'blip' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = playerPos.z + 0.5 }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'armory' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'locker' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'boss' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'veh' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'vehdel' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = (playerPos.z - 1.0) }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'vehspawn' then
 			local Pos     = { x = playerPos.x, y = playerPos.y, z = playerPos.z , a = playerPos.a }
-			TriggerClientEvent('chatMessage', source, ESX.DumpTable(Pos))
 			TriggerEvent('irrp_families:changeFamilyData', args[1], args[2], Pos, _source)
 		elseif args[2] == 'expire' then
 			if tonumber(args[3]) then
