@@ -813,23 +813,23 @@ Citizen.CreateThread(function()
           Data.vehdel       = json.decode(data.vehdel)
           Data.vehspawn     = json.decode(data.vehspawn)
           Data.vehprop      = json.decode(data.vehprop)
+          TriggerEvent('irrp_familiesprop:blip', Data.blip)
         else
           --Delete Player Family
         end
       end, PlayerData.family.name)
       set = true
-      TriggerEvent('irrp_familiesprop:blip')
     end
   end
 end)
 
 -- Create blips
 RegisterNetEvent('irrp_familiesprop:blip')
-AddEventHandler('irrp_familiesprop:blip', function()
+AddEventHandler('irrp_familiesprop:blip', function(blip)
   for _, blip in pairs(allBlip) do
     RemoveBlip(blip)
   end
-  local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
+  local blipCoord = AddBlipForCoord(blip.x, blip.y, blip.z)
   table.insert(allBlip, blipCoord)
   SetBlipSprite (blipCoord, 88)
   SetBlipDisplay(blipCoord, 4)
@@ -843,7 +843,7 @@ end)
 
 Citizen.CreateThread(function()
   while blips do
-    if PlayerData.family.name ~= 'nofamily' and Data.blip ~= nil then
+    if PlayerData.family ~= nil and PlayerData.family.name ~= 'nofamily' and Data.blip ~= nil then
       local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
       table.insert(allBlip, blipCoord)
       SetBlipSprite (blipCoord, 88)
