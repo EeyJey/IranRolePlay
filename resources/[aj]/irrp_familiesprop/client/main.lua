@@ -828,6 +828,7 @@ AddEventHandler('irrp_familiesprop:blip', function()
   for _, blip in pairs(allBlip) do
     RemoveBlip(blip)
   end
+  if Data.blip ~= nil then
   local blipCoord = AddBlipForCoord(Data.blip.x, Data.blip.y, Data.blip.z)
   table.insert(allBlip, blipCoord)
   SetBlipSprite (blipCoord, 88)
@@ -838,6 +839,7 @@ AddEventHandler('irrp_familiesprop:blip', function()
   BeginTextCommandSetBlipName("STRING")
   AddTextComponentString('Family')
   EndTextCommandSetBlipName(blipCoord)
+  end
   
 end)
 

@@ -894,7 +894,7 @@ Citizen.CreateThread(function()
   SetBlipColour (blip, 5)
   SetBlipAsShortRange(blip, true)
   BeginTextCommandSetBlipName("STRING")
-  AddTextComponentString(_U('Mechanic'))
+  AddTextComponentString(_U('mechanic'))
   EndTextCommandSetBlipName(blip)
 end)
 
