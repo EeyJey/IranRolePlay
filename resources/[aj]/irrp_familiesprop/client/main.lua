@@ -40,10 +40,10 @@ end)
 function SetVehicleMods(vehicle)
   local props = {}
   if Data.vehprop ~= nil then
-    props = Data.vehprop
+    props       = Data.vehprop
+    props.plate = tostring(Data.family_name)
+    ESX.Game.SetVehicleProperties(vehicle, props)
   end
-
-  ESX.Game.SetVehicleProperties(vehicle, props)
 end
 
 function OpenCloakroomMenu()
@@ -299,7 +299,6 @@ function OpenVehicleSpawnerMenu(station)
           z = Data.vehspawn.z
           }, Data.vehspawn.a, function(vehicle)
           TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-          ESX.Game.SetVehicleProperties(vehicle, Data.props)
           SetVehicleMods(vehicle)
           SetVehicleFuelLevel(vehicle,60)
           end)
