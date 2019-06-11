@@ -37,10 +37,12 @@ while ESX == nil do
 end
 end)
 
-function SetVehicleMods(vehicle, family)
+function SetVehicleMods(vehicle)
   local props = {}
   if Data.vehprop ~= nil then
-    props = Data.vehprop
+    props       = Data.vehprop
+    props.plate = tostring(Data.family_name)
+    ESX.Game.SetVehicleProperties(vehicle, props)
   end
 end
 
@@ -297,8 +299,8 @@ function OpenVehicleSpawnerMenu(station)
           z = Data.vehspawn.z
           }, Data.vehspawn.a, function(vehicle)
           TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-          ESX.Game.SetVehicleProperties(vehicle, Data.props)
-          SetVehicleFuelLevel(vehicle,100)
+          SetVehicleMods(vehicle)
+          SetVehicleFuelLevel(vehicle,60)
           end)
 
         else
