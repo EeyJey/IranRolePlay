@@ -46,7 +46,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
                 end
             end
 
-            TriggerClientEvent('esx_policestuff:sendProximityMessage', xPlayers[i], source, "^4[^2^*Radio ^4| ^1^*".. jobGrade .. "^4] ^3" .. name.." ^8^*^~>>^r", "^0^* " .. string.sub(msg,4), { 0, 0, 255 })
+            TriggerClientEvent('sendProximityMessage', xPlayers[i], source, "^4[^2^*Radio ^4| ^1^*".. jobGrade .. "^4] ^3" .. name.." ^8^*^~>>^r", "^0^* " .. string.sub(msg,4), { 0, 0, 255 })
         end
     elseif sm[1] == "/f" then
         CancelEvent()
