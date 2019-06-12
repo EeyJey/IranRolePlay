@@ -21,14 +21,17 @@ AddEventHandler('chatMessage', function(source, name, msg)
 
         xPlayer = ESX.GetPlayerFromId(source)
         job = string.lower(xPlayer.job.name)
+        playerCoords = GetEntityCoords()
 
 
         characterName = GetCharacterName(source);
         if characterName ~= nil then name = characterName end
 
+
         if job ~= "police" then
-            print('You are not a cop!')
+           message("Shoma police ya onduty nistid.")
         else
+            
             str = xPlayer.job.grade_label
             jobGrade = str:gsub("^%l", string.upper)
 
@@ -36,6 +39,8 @@ AddEventHandler('chatMessage', function(source, name, msg)
             for i=1, #xPlayers, 1 do
                 local xP = ESX.GetPlayerFromId(xPlayers[i])
                 xPJob = string.lower(xP.job.name)
+				if xPJob ~= 'police' then
+				TriggerClientEvent("sendProximityMessage", xPlayers[i], source, "^4[^2^*Radio^4] ^3" .. name.." ^8^*: ^r", "^0^* " .. string.sub(msg,4), { 0, 0, 255 }) end
 
                 if xPJob == 'police' then
                     TriggerClientEvent('chat:addMessage', xPlayers[i], {
@@ -45,8 +50,6 @@ AddEventHandler('chatMessage', function(source, name, msg)
                     })
                 end
             end
-
-            TriggerClientEvent('sendProximityMessage', xPlayers[i], source, "^4[^2^*Radio ^4| ^1^*".. jobGrade .. "^4] ^3" .. name.." ^8^*^~>>^r", "^0^* " .. string.sub(msg,4), { 0, 0, 255 })
         end
     elseif sm[1] == "/f" then
         CancelEvent()
@@ -55,7 +58,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
         job = string.lower(xPlayer.job.name)
 
         if job ~= "police" and job ~= "offpolice" then
-            print('you are not a cop!')
+            message("Shoma police nistid.")
         else
             str = xPlayer.job.grade_label
             jobGrade = str:gsub("^%l", string.upper)
@@ -88,3 +91,6 @@ function stringsplit(inputstr, sep)
     end
     return t
 end
+function message(text)
+    TriggerEvent("chatMessage", "[Server]", {255, 47, 47}, "^0" .. text)
+end 
