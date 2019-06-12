@@ -34,56 +34,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- End ESX Initialisation
---- Generate map blips
-
--- RegisterCommand('s', function()
-
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
--- end, false)
-
--- RegisterCommand('c1', function()
--- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
--- 	table.insert(Spawned, car)
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(car))
--- end, false)
-
--- RegisterCommand('cc', function()
--- 	local playerPed = GetPlayerPed(-1)
--- 	local vehicle = GetVehiclePedIsIn(playerPed,false) 
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(vehicle))
--- end, false)
-   
-
--- RegisterCommand('c2', function()
--- 	local x = IsPedInAnyVehicle(PlayerPedId(-1), true)
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(x))
--- end, false)
-
--- RegisterCommand('c3', function()
-
--- 	while not IsPedInAnyVehicle(PlayerPedId(-1), false) do
--- 		Wait(1)
--- 	end
--- 	local car = GetVehiclePedIsUsing(GetPlayerPed(-1))
--- 	table.insert(Spawned, car)
-
-
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  "lol")
--- end, false)
-
--- RegisterCommand('d', function()
--- 	for _,v in pairs(Spawned) do
--- 		ESX.Game.DeleteVehicle(v)
--- 		TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(v))
--- 	end
--- end, false)
-
--- RegisterCommand('r', function()
--- 	Spawned = {}
--- 	TriggerEvent('chatMessage', "[Mamad]", {0, 255, 0},  dump(Spawned))
--- end, false)
-
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
     --PlayerData = xPlayer
