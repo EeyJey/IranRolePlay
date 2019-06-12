@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CVehicleModelInfoVariation>
-  <variationData>
-  <Item>
+  <variationData> 
+
+
+
+
+
+
+
+
+
+
+    <Item>
       <modelName>peykan</modelName>
       <colors>
         <Item>
           <indices content="char_array">
+            134 
+            134 
+            0 
             0
-            138
-            0
-            156
-	        1
           </indices>
           <liveries>
-            <Item value="false" />
+            <Item value="true" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -26,11 +35,117 @@
         </Item>
         <Item>
           <indices content="char_array">
-            147
-            88
-            122
-            122
-	        11
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="true" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            134 
+            0 
+            0
           </indices>
           <liveries>
             <Item value="false" />
@@ -40,7 +155,7 @@
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
-            <Item value="false" />
+            <Item value="true" />
           </liveries>
         </Item>
       </colors>
@@ -49,32 +164,20 @@
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
-        <Probabilities>
-          <Item>
-            <Name>Standard White</Name>
-            <Value value="25" />
-          </Item>
-          <Item>
-            <Name>White Plate 2</Name>
-            <Value value="25" />
-          </Item>
-          <Item>
-            <Name>Blue Plate</Name>
-            <Value value="10" />
-          </Item>
-          <Item>
-            <Name>Yellow Plate</Name>
-            <Value value="15" />
-          </Item>
-          <Item>
-            <Name>yankton plate</Name>
-            <Value value="25" />
-          </Item>
-        </Probabilities>
+        <Probabilities />
       </plateProbabilities>
-      <lightSettings value="0" />
+      <lightSettings value="1" />
       <sirenSettings value="0" />
     </Item>
+
+
+
+
+
+
+
+
+
 
   </variationData>
 </CVehicleModelInfoVariation>
