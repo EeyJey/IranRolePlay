@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
 	while true do
 		Wait(0)
 
-		if IsControlPressed(0, Keys['LEFTSHIFT']) and IsControlPressed(0, Keys['G']) and not isTackling and GetGameTimer() - lastTackleTime > 10 * 1000 and PlayerData.job.name == PoliceJob then
+		if IsControlPressed(0, Keys['LEFTSHIFT']) and IsControlPressed(0, Keys['X']) and not isTackling and GetGameTimer() - lastTackleTime > 10 * 1000 and PlayerData.job.name == PoliceJob then
 			Citizen.Wait(10)
 			local closestPlayer, distance = ESX.Game.GetClosestPlayer()
 
