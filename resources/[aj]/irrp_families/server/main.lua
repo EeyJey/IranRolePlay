@@ -19,19 +19,19 @@ end
 
 MySQL.ready(function()
 	local result = MySQL.Sync.fetchAll('SELECT * FROM families', {})
-
- 	for i=1, #result, 1 do
-		Families[result[i].name]        = result[i]
-		Families[result[i].name].grades = {}
-		RegisteredFamilies[i] = result[i].name
-	end
+	print(ESX.DumpTable(result))
+ 	-- for i=1, #result, 1 do
+	-- 	Families[result[i].name]        = result[i]
+	-- 	Families[result[i].name].grades = {}
+	-- 	RegisteredFamilies[i] = result[i].name
+	-- end
 
  	local result2 = MySQL.Sync.fetchAll('SELECT * FROM family_grades', {})
-
- 	for i=1, #result2, 1 do
-		Families[result2[i].family_name].grades[tostring(result2[i].grade)] = result2[i]
-	end
-	print(ESX.DumpTable(Families))
+	 print(ESX.DumpTable(result2))
+ 	-- for i=1, #result2, 1 do
+	-- 	Families[result2[i].family_name].grades[tostring(result2[i].grade)] = result2[i]
+	-- end
+	
 end)
 
 AddEventHandler('irrp_families:registerFamily', function(source, name)
