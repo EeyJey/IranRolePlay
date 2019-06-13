@@ -1,495 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<CVehicleModelInfoVarGlobal>     
+<CVehicleModelInfoVarGlobal>    
   <Kits>
     <Item>
-      <kitName>1999_r35_modkit</kitName>
-      <id value="1999" />	 	  
+      <kitName>688_gtr_modkit</kitName>
+      <id value="688" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
-			   <Item>
-          <modelName>r35_bumf</modelName>
-          <modShopLabel>r35_bumf</modShopLabel>
+        <Item>
+          <modelName>gtr_bumf_1</modelName>
+          <modShopLabel>gtr_bumf_1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_c</Item> 
+            <Item>bumper_f</Item>
           </turnOffBones>
           <type>VMT_BUMPER_F</type>
           <bone>bumper_f</bone>
-          <collisionBone>chassis</collisionBone>
+          <collisionBone>bumper_f</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
-          <weight value="0" />
+          <weight value="20" />
           <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
+          <disableBonnetCamera value="true" />
           <allowBonnetSlide value="true" />
-        </Item>				
-				<Item>
-          <modelName>r35_bumr</modelName>
-          <modShopLabel>r35_bumr</modShopLabel>
+        </Item>
+        <Item>
+          <modelName>gtr_bumf_2</modelName>
+          <modShopLabel>gtr_bumf_2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_a</Item> 
+            <Item>bumper_f</Item>
+          </turnOffBones>
+          <type>VMT_BUMPER_F</type>
+          <bone>bumper_f</bone>
+          <collisionBone>bumper_f</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="true" />
+          <allowBonnetSlide value="true" />
+        </Item>
+        <Item>
+          <modelName>gtr_bumf_3</modelName>
+          <modShopLabel>gtr_bumf_3</modShopLabel>
+          <linkedModels />
+          <turnOffBones>
+            <Item>bumper_f</Item>
+          </turnOffBones>
+          <type>VMT_BUMPER_F</type>
+          <bone>bumper_f</bone>
+          <collisionBone>bumper_f</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="true" />
+          <allowBonnetSlide value="true" />
+        </Item>
+        <Item>
+          <modelName>gtr_bumr_1</modelName>
+          <modShopLabel>gtr_bumr_1</modShopLabel>
+          <linkedModels />
+          <turnOffBones>
+            <Item>bumper_r</Item>
           </turnOffBones>
           <type>VMT_BUMPER_R</type>
           <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
+          <collisionBone>bumper_r</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
-          <weight value="0" />
+          <weight value="20" />
           <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
+          <disableBonnetCamera value="true" />
           <allowBonnetSlide value="true" />
         </Item>
-				<Item>
-          <modelName>r35_skirt</modelName>
-          <modShopLabel>r35_skirt</modShopLabel>
+        <Item>
+          <modelName>gtr_bumr_2</modelName>
+          <modShopLabel>gtr_bumr_2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_e</Item> 
+            <Item>bumper_r</Item>
+          </turnOffBones>
+          <type>VMT_BUMPER_R</type>
+          <bone>bumper_r</bone>
+          <collisionBone>bumper_r</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="true" />
+          <allowBonnetSlide value="true" />
+        </Item>
+        <Item>
+          <modelName>gtr_bumr_3</modelName>
+          <modShopLabel>gtr_bumr_3</modShopLabel>
+          <linkedModels />
+          <turnOffBones>
+            <Item>bumper_r</Item>
+          </turnOffBones>
+          <type>VMT_BUMPER_R</type>
+          <bone>bumper_r</bone>
+          <collisionBone>bumper_r</collisionBone>
+          <cameraPos>VMCP_DEFAULT</cameraPos>
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <turnOffExtra value="false" />
+          <disableBonnetCamera value="true" />
+          <allowBonnetSlide value="true" />
+        </Item>
+        <Item>
+          <modelName>gtr_skirt_1</modelName>
+          <modShopLabel>gtr_skirt_1</modShopLabel>
+          <linkedModels />
+          <turnOffBones>
+            <Item>misc_g</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
           <collisionBone>chassis</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-         <Item>
-          <modelName>r35_sv_bumf</modelName>
-          <modShopLabel>sv_bumf</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_c</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
+          <weight value="20" />
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
         <Item>
-          <modelName>r35_sv_wing</modelName>
-          <modShopLabel>sv_wing</modShopLabel>
-          <linkedModels>
-					  <Item>r35_line_a</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>misc_b</Item>
-          </turnOffBones>
-          <type>VMT_SPOILER</type>
-          <bone>boot</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_sv_exh</modelName>
-          <modShopLabel>sv_exh</modShopLabel>
+          <modelName>gtr_skirt_2</modelName>
+          <modShopLabel>gtr_skirt_2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_f</Item>
-          </turnOffBones>
-          <type>VMT_EXHAUST</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-         <Item>
-          <modelName>r35_dba_bumf</modelName>
-          <modShopLabel>dba_bumf</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-	      <Item>
-          <modelName>r35_dba_bumr</modelName>
-          <modShopLabel>dba_bumr</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_a</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_cw_bumf</modelName>
-          <modShopLabel>cw_bumf</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_cw_bumr</modelName>
-          <modShopLabel>cw_bumr</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_a</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_cw_skirt</modelName>
-          <modShopLabel>cw_skirt</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_e</Item> 
+            <Item>misc_g</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
           <collisionBone>chassis</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
-          <weight value="0" />
+          <weight value="20" />
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
-				<Item>
-          <modelName>r35_ts_bumf</modelName>
-          <modShopLabel>ts_bumf</modShopLabel>
+        <Item>
+          <modelName>gtr_skirt_3</modelName>
+          <modShopLabel>gtr_skirt_3</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_c</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_ts_bumr</modelName>
-          <modShopLabel>ts_bumr</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_a</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_ts_skirt</modelName>
-          <modShopLabel>ts_skirt</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_e</Item> 
+            <Item>misc_g</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
           <collisionBone>chassis</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_ts_exh</modelName>
-          <modShopLabel>ts_exh</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_f</Item>
-            <Item>exhaust</Item>
-            <Item>exhaust_2</Item>
-            <Item>exhaust_3</Item>
-            <Item>exhaust_4</Item>
-          </turnOffBones>
-          <type>VMT_EXHAUST</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
           <weight value="20" />
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
-				<Item>
-          <modelName>r35_wa_bumf</modelName>
-          <modShopLabel>wa_bumf</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-	      <Item>
-          <modelName>r35_wa_bumr</modelName>
-          <modShopLabel>wa_bumr</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_a</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_wa_skirt</modelName>
-          <modShopLabel>wa_skirt</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_e</Item> 
-          </turnOffBones>
-          <type>VMT_SKIRT</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_wa_wing</modelName>
-          <modShopLabel>wa_wing</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_b</Item>
-          </turnOffBones>
-          <type>VMT_SPOILER</type>
-          <bone>boot</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumf</modelName>
-          <modShopLabel>va_bumf2</modShopLabel>
-          <linkedModels>
-					  <Item>r35_line_d</Item>
-          </linkedModels>
-          <turnOffBones>
-					  <Item>misc_g</Item>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumf</modelName>
-          <modShopLabel>va_bumf3</modShopLabel>
-          <linkedModels>
-					  <Item>r35_line_e</Item>
-          </linkedModels>
-          <turnOffBones>
-					  <Item>misc_g</Item>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumf</modelName>
-          <modShopLabel>va_bumf</modShopLabel>
-          <linkedModels>
-					  <Item>r35_line_c</Item>
-          </linkedModels>
-          <turnOffBones>
-					  <Item>misc_g</Item>
-            <Item>bumper_f</Item>
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>bumper_f</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumr2</modelName>
-          <modShopLabel>va_bumr2</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_a</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumr</modelName>
-          <modShopLabel>va_bumr3</modShopLabel>
-          <linkedModels>
-					  <Item>r35_va_bumr2</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>bumper_r</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-	      <Item>
-          <modelName>r35_va_bumr</modelName>
-          <modShopLabel>va_bumr</modShopLabel>
-          <linkedModels>
-					  <Item>r35_line_b</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>bumper_r</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_R</type>
-          <bone>bumper_r</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_varis2</modelName>
-          <modShopLabel>varis2</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_d</Item>
-						<Item>misc_e</Item> 
-          </turnOffBones>
-          <type>VMT_CHASSIS</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-         <Item>
-          <modelName>r35_varis</modelName>
-          <modShopLabel>varis</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_d</Item>
-						<Item>misc_e</Item> 
-          </turnOffBones>
-          <type>VMT_CHASSIS</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_wing2</modelName>
-          <modShopLabel>va_wing2</modShopLabel>
+        <Item>
+          <modelName>gtr_wing_1</modelName>
+          <modShopLabel>gtr_wing_1</modShopLabel>
           <linkedModels />
           <turnOffBones>
             <Item>misc_b</Item>
@@ -505,8 +178,8 @@
           <allowBonnetSlide value="true" />
         </Item>
         <Item>
-          <modelName>r35_va_wing</modelName>
-          <modShopLabel>va_wing</modShopLabel>
+          <modelName>gtr_wing_2</modelName>
+          <modShopLabel>gtr_wing_2</modShopLabel>
           <linkedModels />
           <turnOffBones>
             <Item>misc_b</Item>
@@ -521,134 +194,9 @@
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
-				<Item>
-          <modelName>r35_va_bon2</modelName>
-          <modShopLabel>va_bon2</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bonnet</Item>
-          </turnOffBones>
-          <type>VMT_BONNET</type>
-          <bone>bonnet</bone>
-          <collisionBone>bonnet</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-	      <Item>
-          <modelName>r35_va_bon</modelName>
-          <modShopLabel>va_bon</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bonnet</Item>
-          </turnOffBones>
-          <type>VMT_BONNET</type>
-          <bone>bonnet</bone>
-          <collisionBone>bonnet</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_va_boot</modelName>
-          <modShopLabel>va_boot</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>boot</Item>
-          </turnOffBones>
-          <type>VMT_ROOF</type>
-          <bone>boot</bone>
-          <collisionBone>boot</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bumf</modelName>
-          <modShopLabel>r35_mi_bumf</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>misc_c</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bumf</modelName>
-          <modShopLabel>r35_mi_bumf2</modShopLabel>
-          <linkedModels>
-					  <Item>r35_mi_bumf2</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>misc_c</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bumf</modelName>
-          <modShopLabel>r35_mi_bumf3</modShopLabel>
-          <linkedModels>
-					  <Item>r35_mi_bumf2</Item>
-						<Item>r35_mi_bumf3</Item>
-          </linkedModels>
-          <turnOffBones>
-					  <Item>bumper_f</Item>
-            <Item>misc_c</Item> 
-          </turnOffBones>
-          <type>VMT_BUMPER_F</type>
-          <bone>bumper_f</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bon</modelName>
-          <modShopLabel>r35_mi_bon</modShopLabel>
-          <linkedModels />
-          <turnOffBones>
-            <Item>bonnet</Item>
-          </turnOffBones>
-          <type>VMT_BONNET</type>
-          <bone>bonnet</bone>
-          <collisionBone>bonnet</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_wing</modelName>
-          <modShopLabel>r35_mi_wing</modShopLabel>
+        <Item>
+          <modelName>gtr_wing_3</modelName>
+          <modShopLabel>gtr_wing_3</modShopLabel>
           <linkedModels />
           <turnOffBones>
             <Item>misc_b</Item>
@@ -663,79 +211,14 @@
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
-				<Item>
-          <modelName>r35_mi_wing</modelName>
-          <modShopLabel>r35_mi_wing2</modShopLabel>
-          <linkedModels>
-					  <Item>r35_mi_wing2</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>misc_b</Item>
-          </turnOffBones>
-          <type>VMT_SPOILER</type>
-          <bone>boot</bone>
-          <collisionBone>mod_col_1</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_skirt</modelName>
-          <modShopLabel>r35_mi_skirt</modShopLabel>
-          <linkedModels />
-          <turnOffBones />
-          <type>VMT_SKIRT</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>remove</modelName>
-          <modShopLabel>remove</modShopLabel>
+        <Item>
+          <modelName>gtr_arch_1</modelName>
+          <modShopLabel>gtr_arch_1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item>
+            <Item>misc_e</Item>
           </turnOffBones>
-          <type>VMT_BONNET</type>
-          <bone>bonnet</bone>
-          <collisionBone>bonnet</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-				<Item>
-          <modelName>windows_paint_2</modelName>
-          <modShopLabel>windows_paint_2</modShopLabel>
-          <linkedModels>
-            <Item>r35_wfp_2</Item>
-            <Item>r35_wrp_2</Item>
-            <Item>r35_wrfp_2</Item>
-            <Item>r35_wlfp_2</Item>
-            <Item>r35_wlrp_2</Item>
-            <Item>r35_wrrp_2</Item>
-          </linkedModels>
-          <turnOffBones>
-            <Item>window_lf</Item> 
-            <Item>window_rf</Item>
-            <Item>window_lr</Item>
-            <Item>window_rr</Item>
-            <Item>windscreen_r</Item>
-            <Item>misc_h</Item>
-	    <Item>r35_wfp_3</Item>
-	    <Item>r35_wfp_4</Item>
-          </turnOffBones>
-          <type>VMT_WING_R</type>
+          <type>VMT_WING_L</type>
           <bone>chassis</bone>
           <collisionBone>chassis</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
@@ -746,27 +229,13 @@
           <allowBonnetSlide value="true" />
         </Item>
         <Item>
-          <modelName>windows_paint_3</modelName>
-          <modShopLabel>windows_paint_3</modShopLabel>
-          <linkedModels>
-            <Item>r35_wfp_3</Item>
-            <Item>r35_wrp_3</Item>
-            <Item>r35_wrfp_3</Item>
-            <Item>r35_wlfp_3</Item>
-            <Item>r35_wlrp_3</Item>
-            <Item>r35_wrrp_3</Item>
-          </linkedModels>
+          <modelName>gtr_arch_2</modelName>
+          <modShopLabel>gtr_arch_2</modShopLabel>
+          <linkedModels />
           <turnOffBones>
-            <Item>window_lf</Item> 
-            <Item>window_rf</Item>
-            <Item>window_lr</Item>
-            <Item>window_rr</Item>
-            <Item>windscreen_r</Item>
-            <Item>misc_h</Item>
-	    <Item>r35_wfp_2</Item>
-	    <Item>r35_wfp_4</Item>
+            <Item>misc_e</Item>
           </turnOffBones>
-          <type>VMT_WING_R</type>
+          <type>VMT_WING_L</type>
           <bone>chassis</bone>
           <collisionBone>chassis</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
@@ -777,29 +246,15 @@
           <allowBonnetSlide value="true" />
         </Item>
         <Item>
-          <modelName>windows_paint_4</modelName>
-          <modShopLabel>windows_paint_4</modShopLabel>
-          <linkedModels>
-            <Item>r35_wfp_4</Item>
-            <Item>r35_wrp_4</Item>
-            <Item>r35_wrfp_4</Item>
-            <Item>r35_wlfp_4</Item>
-            <Item>r35_wlrp_4</Item>
-            <Item>r35_wrrp_4</Item>
-          </linkedModels>
+          <modelName>gtr_hood_1</modelName>
+          <modShopLabel>gtr_hood_1</modShopLabel>
+          <linkedModels />
           <turnOffBones>
-            <Item>window_lf</Item> 
-            <Item>window_rf</Item>
-            <Item>window_lr</Item>
-            <Item>window_rr</Item>
-            <Item>windscreen_r</Item>
-            <Item>misc_h</Item>
-	    <Item>r35_wfp_3</Item>
-	    <Item>r35_wfp_2</Item>
+            <Item>bonnet</Item>
           </turnOffBones>
-          <type>VMT_WING_R</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
+          <type>VMT_BONNET</type>
+          <bone>bonnet</bone>
+          <collisionBone>bonnet</collisionBone>
           <cameraPos>VMCP_DEFAULT</cameraPos>
           <audioApply value="1.000000" />
           <weight value="20" />
@@ -808,161 +263,11 @@
           <allowBonnetSlide value="true" />
         </Item>
       </visibleMods>
-	<linkMods>
-	      <Item>
-          <modelName>r35_line_a</modelName>
-          <bone>bumper_r</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_line_b</modelName>
-          <bone>bumper_r</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_line_c</modelName>
-          <bone>bumper_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_line_d</modelName>
-          <bone>bumper_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_line_e</modelName>
-          <bone>bumper_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_va_bumr2</modelName>
-          <bone>bumper_r</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bumf2</modelName>
-          <bone>bumper_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_bumf3</modelName>
-          <bone>bumper_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-				<Item>
-          <modelName>r35_mi_wing2</modelName>
-          <bone>boot</bone>
-          <turnOffExtra value="false" />
-        </Item>
-	      <Item>
-          <modelName>r35_wfp_2</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrp_2</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrrp_2</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlrp_2</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrfp_2</modelName>
-          <bone>door_pside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlfp_2</modelName>
-          <bone>door_dside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wfp_3</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrp_3</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrrp_3</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlrp_3</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrfp_3</modelName>
-          <bone>door_pside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlfp_3</modelName>
-          <bone>door_dside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wfp_4</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrp_4</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrrp_4</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlrp_4</modelName>
-          <bone>chassis</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wrfp_4</modelName>
-          <bone>door_pside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-        <Item>
-          <modelName>r35_wlfp_4</modelName>
-          <bone>door_dside_f</bone>
-          <turnOffExtra value="false" />
-        </Item>
-	</linkMods>
+      <linkMods />
       <statMods>
         <Item>
           <identifier />
-          <modifier value="15" />
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <type>VMT_ENGINE</type>
-        </Item>
-        <Item>
-          <identifier />
-          <modifier value="20" />
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <type>VMT_ENGINE</type>
-        </Item>
-        <Item>
-          <identifier />
-          <modifier value="35" />
+          <modifier value="25" />
           <audioApply value="1.000000" />
           <weight value="20" />
           <type>VMT_ENGINE</type>
@@ -976,10 +281,17 @@
         </Item>
         <Item>
           <identifier />
-          <modifier value="15" />
+          <modifier value="75" />
           <audioApply value="1.000000" />
-          <weight value="5" />
-          <type>VMT_BRAKES</type>
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="20" />
+          <type>VMT_ENGINE</type>
         </Item>
         <Item>
           <identifier />
@@ -990,28 +302,35 @@
         </Item>
         <Item>
           <identifier />
-          <modifier value="50" />
+          <modifier value="65" />
           <audioApply value="1.000000" />
           <weight value="5" />
           <type>VMT_BRAKES</type>
         </Item>
         <Item>
           <identifier />
-          <modifier value="15" />
+          <modifier value="100" />
+          <audioApply value="1.000000" />
+          <weight value="5" />
+          <type>VMT_BRAKES</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="25" />
           <audioApply value="1.000000" />
           <weight value="5" />
           <type>VMT_GEARBOX</type>
         </Item>
         <Item>
           <identifier />
-          <modifier value="20" />
+          <modifier value="50" />
           <audioApply value="1.000000" />
           <weight value="5" />
           <type>VMT_GEARBOX</type>
         </Item>
         <Item>
           <identifier />
-          <modifier value="80" />
+          <modifier value="100" />
           <audioApply value="1.000000" />
           <weight value="5" />
           <type>VMT_GEARBOX</type>
@@ -1329,21 +648,21 @@
         </Item>
         <Item>
           <identifier />
-          <modifier value="20" />
+          <modifier value="15" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_SUSPENSION</type>
         </Item>
         <Item>
           <identifier />
-          <modifier value="25" />
+          <modifier value="30" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_SUSPENSION</type>
         </Item>
         <Item>
           <identifier />
-          <modifier value="40" />
+          <modifier value="45" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_SUSPENSION</type>
@@ -1355,7 +674,7 @@
   </Kits>
     <Lights>
     <Item>
-      <id value="657" />	
+      <id value="656" />	
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -1484,7 +803,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>r35</name>
+      <name>GTR</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>

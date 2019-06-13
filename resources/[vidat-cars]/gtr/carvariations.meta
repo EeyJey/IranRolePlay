@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CVehicleModelInfoVariation>
-  <variationData>
+  <variationData> 
     <Item>
-      <modelName>r35</modelName>
+      <modelName>gtr</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            38
-            5
             0
-            2
+            0
+            6
+            0
           </indices>
           <liveries>
-            <Item value="true" />
+            <Item value="false" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -25,13 +25,13 @@
         </Item>
         <Item>
           <indices content="char_array">
-            29
-            158
+            36
             0
+            6
             0
           </indices>
           <liveries>
-            <Item value="true" />
+            <Item value="false" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -43,13 +43,13 @@
         </Item>
         <Item>
           <indices content="char_array">
-            4
-            154
-            4
-            2
+            64
+            0
+            6
+            0
           </indices>
           <liveries>
-            <Item value="true" />
+            <Item value="false" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -61,49 +61,13 @@
         </Item>
         <Item>
           <indices content="char_array">
+            27
             0
-            154
-            10
-            2
-          </indices>
-          <liveries>
-            <Item value="true" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            4
-            154
-            4
-            2
-          </indices>
-          <liveries>
-            <Item value="true" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            29
-            158
-            0
+            6
             0
           </indices>
           <liveries>
-            <Item value="true" />
+            <Item value="false" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -115,31 +79,14 @@
         </Item>
       </colors>
       <kits>
-        <Item>1999_r35_modkit</Item>
+        <Item>688_gtr_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
-        <Probabilities>
-          <Item>
-            <Name>Standard White</Name>
-            <Value value="25" />
-          </Item>
-          <Item>
-            <Name>White Plate 2</Name>
-            <Value value="50" />
-          </Item>
-          <Item>
-            <Name>Blue Plate</Name>
-            <Value value="10" />
-          </Item>
-          <Item>
-            <Name>Yellow Plate</Name>
-            <Value value="15" />
-          </Item>
-        </Probabilities>
+        <Probabilities />
       </plateProbabilities>
-      <lightSettings value="657" />        
+      <lightSettings value="656" />
       <sirenSettings value="0" />
-    </Item>       
+    </Item>
   </variationData>
 </CVehicleModelInfoVariation>

@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_r35</deviceName>
+  <deviceName>dlc_gtr</deviceName>
   <datFile>content.xml</datFile>
-  <timeStamp>05/12/2016 08:14:30</timeStamp>
-  <nameHash>r35</nameHash>
+  <timeStamp>00/00/0000 00:00:00</timeStamp>
+  <nameHash>gtr</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>r35_AUTOGEN</Item>
+        <Item>gtr_AUTOGEN</Item>
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>

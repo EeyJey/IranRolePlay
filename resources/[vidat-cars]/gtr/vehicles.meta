@@ -4,10 +4,10 @@
   <residentAnims />
   <InitDatas>
     <Item>
-      <modelName>r35</modelName>
-      <txdName>r35</txdName>
-      <handlingId>r35</handlingId>
-      <gameName>r35</gameName>
+      <modelName>gtr</modelName>
+      <txdName>gtr</txdName>
+      <handlingId>gtr</handlingId>
+      <gameName>GTR</gameName>
       <vehicleMakeName>Nissan</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionName>null</expressionName>
@@ -111,8 +111,8 @@
   </InitDatas>
   <txdRelationships>
     <Item>
-      <parent>vehicles_supergt_interior</parent>
-      <child>r35</child>
+      <parent>vehicles_btype_interior</parent>
+      <child>gtr</child>
     </Item>
- </txdRelationships>
-</CVehicleModelInfo__InitDataList> 
+  </txdRelationships>
+</CVehicleModelInfo__InitDataList>

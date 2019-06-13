@@ -5,56 +5,49 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_r35:/data/vehicles.meta</filename>
+      <filename>dlc_gtr:/data/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_r35:/data/carcols.meta</filename>
+      <filename>dlc_gtr:/data/carcols.meta</filename>
       <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_r35:/data/ai/vehiclelayouts.meta</filename>
-      <fileType>VEHICLE_LAYOUTS_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_r35:/data/carvariations.meta</filename>
+      <filename>dlc_gtr:/data/carvariations.meta</filename>
       <fileType>VEHICLE_VARIATION_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_r35:/data/dlctext.meta</filename>
+      <filename>dlc_gtr:/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_r35:/data/handling.meta</filename>
+      <filename>dlc_gtr:/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
-    </Item>
+    </Item>	
     <Item>
-      <filename>dlc_r35:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_gtr:/%PLATFORM%/vehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
     </Item>
     <Item>
-      <filename>dlc_r35:/%PLATFORM%/vehiclemods/r35_mods.rpf</filename>
+      <filename>dlc_gtr:/%PLATFORM%/vehiclemods/gtr_mods.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
@@ -62,24 +55,23 @@
     </Item>
   </dataFiles>
   <contentChangeSets>
-    <Item>
-      <changeSetName>r35_AUTOGEN</changeSetName>
-      <filesToDisable />
-      <filesToEnable>
-        <Item>dlc_r35:/data/ai/vehiclelayouts.meta</Item>
-        <Item>dlc_r35:/data/handling.meta</Item>
-        <Item>dlc_r35:/data/vehicles.meta</Item>
-        <Item>dlc_r35:/data/carcols.meta</Item>
-        <Item>dlc_r35:/data/carvariations.meta</Item>
-        <Item>dlc_r35:/data/dlctext.meta</Item>
-        <Item>dlc_r35:/%PLATFORM%/vehicles.rpf</Item>
-        <Item>dlc_r35:/%PLATFORM%/vehiclemods/r35_mods.rpf</Item>
-      </filesToEnable>
-      <txdToLoad />
-      <txdToUnload />
-      <residentResources />
-      <unregisterResources />
-    </Item>
+	<Item>
+	  <changeSetName>gtr_AUTOGEN</changeSetName>
+	  <filesToDisable />
+	  <filesToEnable>
+        <Item>dlc_gtr:/data/handling.meta</Item>
+        <Item>dlc_gtr:/data/vehicles.meta</Item>
+        <Item>dlc_gtr:/data/carcols.meta</Item>
+        <Item>dlc_gtr:/data/carvariations.meta</Item>
+        <Item>dlc_gtr:/data/dlctext.meta</Item>	
+        <Item>dlc_gtr:/%PLATFORM%/vehicles.rpf</Item>
+        <Item>dlc_gtr:/%PLATFORM%/vehiclemods/gtr_mods.rpf</Item>
+	  </filesToEnable>
+	  <txdToLoad />
+	  <txdToUnload />
+	  <residentResources />
+	  <unregisterResources />
+	</Item>
   </contentChangeSets>
   <patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>
