@@ -713,7 +713,6 @@ end)
 						name        = result[i].family,
 						label       = Families[result[i].family].label,
 						grade       = result[i].family_grade,
-						grade_name  = Families[result[i].family].grades[tostring(result[i].family_grade)].name,
 						grade_label = Families[result[i].family].grades[tostring(result[i].family_grade)].label
 					}
 				})
