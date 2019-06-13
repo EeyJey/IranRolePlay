@@ -31,7 +31,6 @@ MySQL.ready(function()
  	for i=1, #result2, 1 do
 		Families[result2[i].family_name].grades[tostring(result2[i].grade)] = result2[i]
 	end
-	print(ESX.DumpTable(Families))
 end)
 
 AddEventHandler('irrp_families:registerFamily', function(source, name)
