@@ -76,14 +76,6 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
 end, {help = _U('create_family')})
 
-TriggerEvent('es:addGroupCommand', 'kireasb', 'admin', function(source, args, user)
-	ESX.TriggerServerCallback('irrp_families:please', function(cb)
-		TriggerClientEvent('chat:addMessage', source, cb)
-	end)
-end, function(source, args, user)
-	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
-end, {help = _U('create_family'), params = {{name = "Name", help = _U('family_name')}}})
-
 TriggerEvent('es:addGroupCommand', 'changefamilydata', 'admin', function(source, args, user)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
