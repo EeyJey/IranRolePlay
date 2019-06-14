@@ -37,6 +37,7 @@ Config.Priority = {
     ['steam:110000113d8b713'] = 70, -- Majestic
     ['steam:11000010900dc25'] = 70, -- King mml
     ['steam:110000104a518bd'] = 70, -- Alixreza
+    ['steam:110000107069137'] = 70, -- Alixreza
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
 }
