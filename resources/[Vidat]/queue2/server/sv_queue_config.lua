@@ -29,11 +29,14 @@ Config.Priority = {
     ["steam:11000011a939660"] = 70, -- RaRa Avis (gift from mamad)
     -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
-    --["steam:11000011a3f0a06"] = 70, --game_over streamer
+    -- ["steam:11000011a3f0a06"] = 70, --game_over streamer
     ['steam:1100001175a3989'] = 70, -- amroz
     ['steam:11000010daa7aba'] = 70, -- sec shot
     ['steam:11000010c235ed7'] = 70, -- lightpower
     ['steam:110000110d40cf8'] = 70, -- Rais mechanic RVN
+    ['steam:110000113d8b713'] = 70, -- Majestic
+    ['steam:11000010900dc25'] = 70, -- King mml
+    ['steam:110000104a518bd'] = 70, -- Alixreza
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
 }
