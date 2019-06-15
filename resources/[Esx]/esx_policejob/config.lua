@@ -118,7 +118,7 @@ Config.AuthorizedVehicles = {
 		},
 	},
 
-	officer = {
+	sergeant = {
 		{
 			model = 'police',
 			label = 'police1'
@@ -145,7 +145,7 @@ Config.AuthorizedVehicles = {
 		},
 	},
 
-	sergeant = {
+	officer = {
 		{
 			model = 'police',
 			label = 'police1'
@@ -388,7 +388,7 @@ Config.AuthorizedVehicles = {
 Config.Uniforms = {
 	recruit_wear = {
 		male = {
-			['tshirt_1'] = 58,  ['tshirt_2'] = 1,
+			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 41,
@@ -399,7 +399,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		},
 		female = {
-			['tshirt_1'] = 35,  ['tshirt_2'] = 1,
+			['tshirt_1'] = 35,  ['tshirt_2'] = 0,
 			['torso_1'] = 48,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 44,
