@@ -244,7 +244,7 @@ Citizen.CreateThread(function()
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom',
 				{
 					title    = _U('securitycams_menu'),
-					align    = 'top-left',
+					align    = 'top-right',
 					elements = elements
 				}, function(data, menu)
 

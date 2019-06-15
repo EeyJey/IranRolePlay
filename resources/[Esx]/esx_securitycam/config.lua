@@ -88,5 +88,20 @@ Config.Locations = {
 			{label = _U('pcam6'), x = 433.249, y = -977.786, z = 33.456, r = {x = -40.0, y = 0.0, z = 100.49}, canRotate = true},
 			{label = _U('pcam7'), x = 449.440, y = -987.639, z = 33.25, r = {x = -30.0, y = 0.0, z = 50.50}, canRotate = true}
 		},
+
+	mechanicCamLabel = {label = _U('mechanic')},
+		mechanicCameras = {
+			{label = _U('mcam'), x = -216.191, y = -1333.313 , z = 36.5, r = {x = -25.0, y = 0.0, z = -132.05}, canRotate = true},
+			{label = _U('mcam2'), x = -203.671, y = -1311.313 , z = 35.523, r = {x = -25.0, y = 0.0, z = -225.05}, canRotate = true},
+			{label = _U('mcam3'), x = -195.495 , y = -1314.233 , z = 33.790, r = {x = -25.0, y = 0.0, z = -225.05}, canRotate = true},
+			{label = _U('mcam4'), x = -228.872 , y = -1335.214 , z = 33.994, r = {x = -25.0, y = 0.0, z = -400.05}, canRotate = true},
+			{label = _U('mcam5'), x = -196.770 , y = -1294.375 , z = 38.282, r = {x = -25.0, y = 0.0, z = -200.05}, canRotate = true}
+		},
+
+	townCamLabel = {label = _U('town')},
+		townCameras = {
+			{label = _U('tcam'), x = 218.424, y = -752.044 , z = 46.476, r = {x = -25.0, y = 0.0, z = -132.05}, canRotate = true},
+			{label = _U('tcam2'), x = -196.770 , y = -1294.375 , z = 38.282, r = {x = -25.0, y = 0.0, z = -200.05}, canRotate = true}
+		},
 	}
 }

@@ -144,7 +144,7 @@ if Config.EnableArmoryManagement then
     'default', GetCurrentResourceName(), 'armory',
     {
       title    = _U('armory'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -195,7 +195,7 @@ if Config.EnableArmoryManagement then
     'default', GetCurrentResourceName(), 'armory',
     {
       title    = _U('armory'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -235,7 +235,7 @@ function OpenVehicleSpawnerMenu(station)
 --       'default', GetCurrentResourceName(), 'vehicle_spawner',
 --       {
 --         title    = _U('vehicle_menu'),
---         align    = 'top-left',
+--         align    = 'top-right',
 --         elements = elements,
 --       },
 --       function(data, menu)
@@ -280,7 +280,7 @@ function OpenVehicleSpawnerMenu(station)
       'default', GetCurrentResourceName(), 'vehicle_spawner',
       {
         title    = _U('vehicle_menu'),
-        align    = 'top-left',
+        align    = 'top-right',
         elements = elements,
       },
       function(data, menu)
@@ -331,7 +331,7 @@ function OpenGangActionsMenu()
   'default', GetCurrentResourceName(), 'gang_actions',
   {
     title    = PlayerData.family.name,
-    align    = 'top-left',
+    align    = 'top-right',
     elements = {
       {label = _U('citizen_interaction'), value = 'citizen_interaction'},
       {label = _U('vehicle_interaction'), value = 'vehicle_interaction'},
@@ -345,7 +345,7 @@ function OpenGangActionsMenu()
         'default', GetCurrentResourceName(), 'citizen_interaction',
         {
           title    = _U('citizen_interaction'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = {
             {label = _U('search'),        value = 'body_search'},
             {label = _U('handcuff'),    value = 'handcuff'},
@@ -398,7 +398,7 @@ function OpenGangActionsMenu()
         'default', GetCurrentResourceName(), 'vehicle_interaction',
         {
           title    = _U('vehicle_interaction'),
-          align    = 'top-left',
+          align    = 'top-right',
           elements = {
             {label = _U('pick_lock'),    value = 'hijack_vehicle'},
           },
@@ -517,7 +517,7 @@ function OpenBodySearchMenu(player)
     'default', GetCurrentResourceName(), 'body_search',
     {
       title    = _U('search'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -562,7 +562,7 @@ local family = family
     'default', GetCurrentResourceName(), 'armory_get_weapon',
     {
       title    = _U('get_weapon_menu'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
@@ -604,7 +604,7 @@ end
   'default', GetCurrentResourceName(), 'armory_put_weapon',
   {
     title    = _U('put_weapon_menu'),
-    align    = 'top-left',
+    align    = 'top-right',
     elements = elements,
   },
   function(data, menu)
@@ -636,7 +636,7 @@ local family = family
     'default', GetCurrentResourceName(), 'armory_buy_weapons',
     {
       title    = _U('buy_weapon_menu'),
-      align    = 'top-left',
+      align    = 'top-right',
       elements = elements,
     },
     function(data, menu)
