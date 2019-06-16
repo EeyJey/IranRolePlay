@@ -5,6 +5,7 @@ Locales['en'] = {
   ['police_wear'] = 'police Outfit',
   ['gilet_wear'] = 'orange reflective jacket',
   ['bullet_wear'] = 'bulletproof vest',
+  ['bullet_unwear'] = 'unwear bulletproof vest',
   ['no_outfit'] = 'there\'s no uniform that fits you!',
   ['open_cloackroom'] = 'press ~INPUT_CONTEXT~ to change ~y~clothes~s~.',
   -- Armory
@@ -40,7 +41,6 @@ Locales['en'] = {
   ['put_in_vehicle'] = 'put in Vehicle',
   ['out_the_vehicle'] = 'drag out from vehicle',
   ['fine'] = 'fine',
-  ['jail'] = 'jail',
   ['unpaid_bills'] = 'manage unpaid bills',
   ['license_check'] = 'manage license',
   ['license_revoke'] = 'revoke license',
@@ -66,7 +66,9 @@ Locales['en'] = {
   -- Traffic interaction
   ['traffic_interaction'] = 'interaction Traffic',
   ['cone'] = 'cone',
-  ['barrier'] = 'barrier',
+  ['barrier'] = 'Road Barrier',
+  ['barrier1'] = 'Crosswalk Barrier',
+  ['barrier2'] = 'Pointer Barrie',
   ['spikestrips'] = 'spikestrips',
   ['box'] = 'box',
   ['cash'] = 'box of cash',
@@ -129,4 +131,7 @@ Locales['en'] = {
   -- Notifications
   ['alert_police'] = 'police alert',
   ['phone_police'] = 'police',
+  -- Panic stuff
+  ['distress_sent'] = 'Panic alarm shoma ferestade shod!',
+  ['police_distress_message'] = 'PANIC alarm tavasot yeki az police ha feretade shod, CODE 1',
 }

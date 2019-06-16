@@ -2,17 +2,17 @@ Config                            = {}
 
 Config.DrawDistance               = 100.0
 Config.MarkerType                 = 1
-Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
+Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 0.5 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
 
 Config.EnablePlayerManagement     = true
 Config.EnableArmoryManagement     = true
 Config.EnableESXIdentity          = true -- enable if you're using esx_identity
-Config.EnableNonFreemodePeds      = false -- turn this on if you want custom peds
+Config.EnableNonFreemodePeds      = true -- turn this on if you want custom peds
 Config.EnableSocietyOwnedVehicles = false
 Config.EnableLicenses             = true -- enable if you're using esx_license
 
-Config.EnableHandcuffTimer        = true -- enable handcuff timer? will unrestrain player after the time ends
+Config.EnableHandcuffTimer        = false -- enable handcuff timer? will unrestrain player after the time ends
 Config.HandcuffTimer              = 10 * 60000 -- 10 mins
 
 Config.EnableJobBlip              = true -- enable blips for colleagues, requires esx_society
@@ -49,9 +49,14 @@ Config.PoliceStations = {
 		Cloakrooms = {
 			{ x = 452.600, y = -993.306, z = 29.750 },
 		},
+		
+		Stocks = {
+			{ x = 437.691, y = -991.346, z = 29.689 },
+		},
+
 
 		Armories = {
-			{ x = 459.76, y = -981.11, z = 29.689 },
+			{ x = 460.844, y = -982.201, z = 29.689 },
 		},
 
 		Vehicles = {
@@ -70,7 +75,7 @@ Config.PoliceStations = {
 
 		Helicopters = {
 			{
-				Spawner    = { x = 466.477, y = -982.819, z = 42.691 },
+				Spawner    = { x = 464.558, y = -987.504, z = 42.691 },
 				SpawnPoint = { x = 450.04, y = -981.14, z = 42.691 },
 				Heading    = 0.0
 			}
@@ -97,149 +102,192 @@ Config.AuthorizedVehicles = {
 			model = 'pbus',
 			label = 'Bus'
 		},	
-	},
-
-	recruit = {
 		{
 			model = 'police',
-			label = 'police1'
+			label = 'Police Cruiser'
 		},	
 		{
 			model = 'police2',
-			label = 'police2'
+			label = 'Police Buffalo'
 		},
+		{
+			model = 'policet',
+			label = 'Transporter Van'
+		},
+		{
+			model = 'towtruck',
+			label = 'Tow truck'
+		}
+	},
+
+	cadet = {
+
+	},
+
+	po1 = {
 		{
 			model = 'police3',
-			label = 'police3'
-		},	
-		{
-			model = 'Towtruck',
-			label = 'Tow truck'
+			label = 'Police Interceptor'
 		},
+		{
+			model = 'policeb',
+			label = 'Police Bike'
+		},		
+		{
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
+		},
+		{
+			model = 'brickade',
+			label = 'Brickade'
+		}
+	},
+
+	po2 = {
+		{
+			model = 'police3',
+			label = 'Police Interceptor'
+		},
+		{
+			model = 'policeb',
+			label = 'Police Bike'
+		},		
+		{
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
+		},
+		{
+			model = 'brickade',
+			label = 'Brickade'
+		}
+	},
+
+	po3 = {	
+		{
+			model = 'police3',
+			label = 'Police Interceptor'
+		},
+		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
+		},
+		{
+			model = 'police4',
+			label = 'Unmarked Crusier'
+		},
+		{
+			model = 'fbi',
+			label = 'FBI Dodge'
+		},
+		{
+			model = 'fbi2',
+			label = 'FBI SUV'
+	    },
+		{
+			model = 'policeb',
+			label = 'Police Bike'
+		},		
+		{
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
+		},
+		{
+			model = 'brickade',
+			label = 'Brickade'
+		},
+	},
+
+	slo = {
+		{
+			model = 'police3',
+			label = 'Police Interceptor'
+		},
+		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
+		},
+		{
+			model = 'police4',
+			label = 'Unmarked Crusier'
+		},
+		{
+			model = 'fbi',
+			label = 'FBI Dodge'
+		},
+		{
+			model = 'fbi2',
+			label = 'FBI SUV'
+		},
+		{
+			model = 'policeb',
+			label = 'Police Bike'
+		},		
+		{
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
+		},
+		{
+			model = 'brickade',
+			label = 'Brickade'
+		}
 	},
 
 	sergeant = {
 		{
-			model = 'police',
-			label = 'police1'
-		},	
-		{
-			model = 'police2',
-			label = 'police2'
+			model = 'polgs350',
+			label = 'Police Lexus'
 		},
 		{
 			model = 'police3',
-			label = 'police3'
-		},	
-		{
-			model = 'Towtruck',
-			label = 'Tow truck'
+			label = 'Police Interceptor'
 		},
-    	{
+		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
+		},
+		{
+			model = 'police5',
+			label = 'Police Lamborghini'
+		},
+		{
+			model = 'police4',
+			label = 'Unmarked Crusier'
+		},
+		{
+			model = 'fbi',
+			label = 'FBI Dodge'
+		},
+		{
+			model = 'fbi2',
+			label = 'FBI SUV'
+	    },
+		{
 			model = 'policeb',
-			label = 'Motor'
-		},	
+			label = 'Police Bike'
+		},		
 		{
 			model = 'Sheriff',
-			label = 'Sheriff'
-		},
-	},
-
-	officer = {
-		{
-			model = 'police',
-			label = 'police1'
-		},	
-		{
-			model = 'police2',
-			label = 'police2'
+			label = 'Sheriff Crusier'
 		},
 		{
-			model = 'police3',
-			label = 'police3'
-		},	
-		{
-			model = 'Towtruck',
-			label = 'Tow truck'
-		},
-		{
-			model = 'policeb',
-			label = 'Motor'
-		},	
-		{
-			model = 'sheriff',
-			label = 'Sheriff'
-		},
-		{
-			model = 'police4',
-			label = 'Unmarked car'
-		},
-		{
-			model = 'brickade',
-			label = 'Brickade'
-		},
-		{
-			model = 'sheriff2',
-			label = 'Patrol Sheriff'
-		},
-	},
-
-	lieutenant = {
-		{
-			model = 'police',
-			label = 'police1'
-		},	
-		{
-			model = 'police2',
-			label = 'Dodge Charger'
-		},
-		{
-			model = 'police3',
-			label = 'police3'
-		},	
-		{
-			model = 'Towtruck',
-			label = 'Tow truck'
-		},
-		{
-			model = 'policeb',
-			label = 'Motor'
-		},	
-		{
-			model = 'sheriff',
-			label = 'Sheriff'
-		},
-    	{
-			model = 'police2',
-			label = 'Police2'
-		},
-		{
-			model = 'police4',
-			label = 'Unmarked car'
-		},
-		{
-			model = 'fbi',
-			label = 'FBI'
-		},
-		{
-			model = 'sheriff2',
-			label = 'Patrol Sheriff'
-		},
-		{
-			model = 'police5',
-			label = 'Lamburghini'
-		},
-		{
-			model = 'polgs350',
-			label = 'Lexus'
-		},
-		{
-			model = 'policeold1',
-			label = 'Mashin barf'
-		},
-		{
-			model = 'policeold2',
-			label = 'Patrol barf'
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
 		},
 		{
 			model = 'brickade',
@@ -247,146 +295,156 @@ Config.AuthorizedVehicles = {
 		}
 	},
 
-	chef = {
+	commander = {	
 		{
-			model = 'police',
-			label = 'police1'
-		},	
+			model = 'polgs350',
+			label = 'Police Lexus'
+		},
 		{
-			model = 'police2',
-			label = 'Police2'
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
 		},
 		{
 			model = 'police3',
-			label = 'police3'
-		},	
+			label = 'Police Interceptor'
+		},
+		{
+			model = 'police5',
+			label = 'Police Lamborghini'
+		},
 		{
 			model = 'police4',
-			label = 'Unmarked car'
+			label = 'Unmarked Crusier'
 		},
 		{
-			model = 'Towtruck',
-			label = 'Tow truck'
+			model = 'fbi',
+			label = 'FBI Dodge'
 		},
+		{
+			model = 'fbi2',
+			label = 'FBI SUV'
+	    },
 		{
 			model = 'policeb',
-			label = 'Motor'
-		},	
+			label = 'Police Bike'
+		},		
 		{
-			model = 'sheriff',
-			label = 'Sheriff'
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
 		},
 		{
 			model = 'brickade',
 			label = 'Brickade'
-		},
-		{
-			model = 'fbi',
-			label = 'FBI'
-		},
-		{
-			model = 'sheriff2',
-			label = 'Patrol sheriff'
-		},
-		{
-			model = 'police5',
-			label = 'Lamburghini'
-		},
-		{
-			model = 'polgs350',
-			label = 'Lexus'
-		},
-		{
-			model = 'insurgent2',
-			label = 'S.W.A.T'
-		},
-		{
-			model = 'Fbi2',
-			label = 'Patrol FBI'
-		},
-		{
-			model = 'policeold1',
-			label = 'Mashin barf'
-		},
-		{
-			model = 'policeold2',
-			label = 'Patrol barf'
 		}
 	},
 
-	boss = {
+	chief = {	
 		{
-			model = 'police',
-			label = 'police1'
-		},	
+			model = 'polgs350',
+			label = 'Police Lexus'
+		},
 		{
-			model = 'police2',
-			label = 'Police2'
+			model = 'polp1',
+			label = 'McLaren P1'
+		},
+		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
 		},
 		{
 			model = 'police3',
-			label = 'police3'
-		},	
+			label = 'Police Interceptor'
+		},
+		{
+			model = 'police5',
+			label = 'Police Lamborghini'
+		},
 		{
 			model = 'police4',
-			label = 'Unmarked car'
+			label = 'Unmarked Crusier'
 		},
 		{
-			model = 'Towtruck',
-			label = 'Tow truck'
+			model = 'fbi',
+			label = 'FBI Dodge'
 		},
+		{
+			model = 'fbi2',
+			label = 'FBI SUV'
+	    },
 		{
 			model = 'policeb',
-			label = 'Motor'
-		},	
+			label = 'Police Bike'
+		},		
 		{
-			model = 'sheriff',
-			label = 'Sheriff'
+			model = 'Sheriff',
+			label = 'Sheriff Crusier'
+		},
+		{
+			model = 'Sheriff2',
+			label = 'Sheriff SUV'
 		},
 		{
 			model = 'brickade',
 			label = 'Brickade'
-		},
-		{
-			model = 'fbi',
-			label = 'FBI'
-		},
-		{
-			model = 'sheriff2',
-			label = 'Patrol sheriff'
-		},
-		{
-			model = 'police5',
-			label = 'Lamburghini'
-		},
-		{
-			model = 'polgs350',
-			label = 'Lexus'
-		},
-		{
-			model = 'insurgent2',
-			label = 'S.W.A.T'
-		},
-		{
-			model = 'Fbi2',
-			label = 'Patrol FBI'
-		},
-		{
-			model = 'policeold1',
-			label = 'Mashin barf'
-		},
-		{
-			model = 'policeold2',
-			label = 'Patrol barf'
 		}
-	},
+	}
 }
 
+Config.AuthorizedHelicopters = {
+	cadet = {
+
+	},
+
+	po1 = {
+
+	},
+
+	po2 = {
+		{
+			model = 'polmav',
+			label = 'Police Helicopter'
+		}
+	},
+
+	po3 = {
+		{
+			model = 'polmav',
+			label = 'Police Helicopter'
+		}
+	},
+
+	slo = {
+		{
+			model = 'polmav',
+			label = 'Police Helicopter'
+		}
+	},
+
+	
+
+	commander = {
+		{
+			model = 'polmav',
+			label = 'Police Helicopter'
+		}
+	},
+
+	chief = {
+		{
+			model = 'polmav',
+			label = 'Police Helicopter'
+		}
+	}
+}
 
 -- CHECK SKINCHANGER CLIENT MAIN.LUA for matching elements
 
 Config.Uniforms = {
-	recruit_wear = {
+	cadet_wear = {
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
@@ -410,7 +468,55 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		}
 	},
-	officer_wear = {
+	po1_wear = {
+		male = {
+			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
+			['torso_1'] = 55,   ['torso_2'] = 0,
+			['decals_1'] = 0,   ['decals_2'] = 0,
+			['arms'] = 41,
+			['pants_1'] = 25,   ['pants_2'] = 0,
+			['shoes_1'] = 25,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+		},
+		female = {
+			['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+			['torso_1'] = 48,   ['torso_2'] = 0,
+			['decals_1'] = 0,   ['decals_2'] = 0,
+			['arms'] = 44,
+			['pants_1'] = 34,   ['pants_2'] = 0,
+			['shoes_1'] = 27,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+		}
+	},
+	po2_wear = {
+		male = {
+			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
+			['torso_1'] = 55,   ['torso_2'] = 0,
+			['decals_1'] = 0,   ['decals_2'] = 0,
+			['arms'] = 41,
+			['pants_1'] = 25,   ['pants_2'] = 0,
+			['shoes_1'] = 25,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+		},
+		female = {
+			['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+			['torso_1'] = 48,   ['torso_2'] = 0,
+			['decals_1'] = 0,   ['decals_2'] = 0,
+			['arms'] = 44,
+			['pants_1'] = 34,   ['pants_2'] = 0,
+			['shoes_1'] = 27,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+		}
+	},
+	po3_wear = {
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
@@ -458,7 +564,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		}
 	},
-	intendent_wear = {
+	slo_wear = { -- currently the same as intendent_wear
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
@@ -482,31 +588,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		}
 	},
-	lieutenant_wear = { -- currently the same as intendent_wear
-		male = {
-			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
-			['torso_1'] = 55,   ['torso_2'] = 0,
-			['decals_1'] = 8,   ['decals_2'] = 2,
-			['arms'] = 41,
-			['pants_1'] = 25,   ['pants_2'] = 0,
-			['shoes_1'] = 25,   ['shoes_2'] = 0,
-			['helmet_1'] = -1,  ['helmet_2'] = 0,
-			['chain_1'] = 0,    ['chain_2'] = 0,
-			['ears_1'] = 2,     ['ears_2'] = 0
-		},
-		female = {
-			['tshirt_1'] = 35,  ['tshirt_2'] = 0,
-			['torso_1'] = 48,   ['torso_2'] = 0,
-			['decals_1'] = 7,   ['decals_2'] = 2,
-			['arms'] = 44,
-			['pants_1'] = 34,   ['pants_2'] = 0,
-			['shoes_1'] = 27,   ['shoes_2'] = 0,
-			['helmet_1'] = -1,  ['helmet_2'] = 0,
-			['chain_1'] = 0,    ['chain_2'] = 0,
-			['ears_1'] = 2,     ['ears_2'] = 0
-		}
-	},
-	chef_wear = {
+	commander_wear = {
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
@@ -530,7 +612,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		}
 	},
-	boss_wear = { -- currently the same as chef_wear
+	chief_wear = { -- currently the same as chef_wear
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,
