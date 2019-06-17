@@ -124,7 +124,7 @@ local Keys = {
 	  elseif grade == 'commander' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'commander_wear'})
 	  else
-		  table.insert(elements, {label = _U('police_wear'), value = 'chief_wear'})
+		  table.insert(elements, {label = _U('police_wear'), value = 'boss_wear'})
 	  end 
   
 	  if Config.EnableNonFreemodePeds and grade ~= 'cadet' and grade ~= 'po1' then
@@ -236,7 +236,7 @@ local Keys = {
 			  data.current.value == 'sergeant_wear' or
 			  data.current.value == 'slo_wear' or
 			  data.current.value == 'commander_wear' or
-			  data.current.value == 'chief_wear' or
+			  data.current.value == 'boss_wear' or
 			  data.current.value == 'bullet_wear' or
 			  data.current.value == 'gilet_wear'
 		  then
@@ -283,7 +283,7 @@ local Keys = {
 		{label = _U('deposit_object'), value = 'put_stock'}
 	  }
   
-	  if PlayerData.job.grade_name == 'chief' then
+	  if PlayerData.job.grade_name == 'boss' then
 		table.insert(elements, {label = _U('buy_weapons'), value = 'buy_weapons'})
 	  end
   
@@ -1706,7 +1706,7 @@ local Keys = {
 			end
 		  end
   
-		  if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'police' and PlayerData.job.grade_name == 'chief' then
+		  if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'police' and PlayerData.job.grade_name == 'boss' then
   
 			for i=1, #v.BossActions, 1 do
 			  if not v.BossActions[i].disabled and GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.DrawDistance then
@@ -1804,7 +1804,7 @@ local Keys = {
 			end
 		  end
   
-		  if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'police' and PlayerData.job.grade_name == 'chief' then
+		  if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'police' and PlayerData.job.grade_name == 'boss' then
   
 			for i=1, #v.BossActions, 1 do
 			  if GetDistanceBetweenCoords(coords,  v.BossActions[i].x,  v.BossActions[i].y,  v.BossActions[i].z,  true) < Config.MarkerSize.x then

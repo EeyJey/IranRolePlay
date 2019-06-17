@@ -342,7 +342,7 @@ Config.AuthorizedVehicles = {
 		}
 	},
 
-	chief = {	
+	boss = {	
 		{
 			model = 'polgs350',
 			label = 'Police Lexus'
@@ -433,7 +433,7 @@ Config.AuthorizedHelicopters = {
 		}
 	},
 
-	chief = {
+	boss = {
 		{
 			model = 'polmav',
 			label = 'Police Helicopter'
@@ -612,7 +612,7 @@ Config.Uniforms = {
 			['ears_1'] = 2,     ['ears_2'] = 0
 		}
 	},
-	chief_wear = { -- currently the same as chef_wear
+	boss_wear = { -- currently the same as chef_wear
 		male = {
 			['tshirt_1'] = 58,  ['tshirt_2'] = 0,
 			['torso_1'] = 55,   ['torso_2'] = 0,

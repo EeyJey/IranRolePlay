@@ -332,6 +332,8 @@ function isPlayerBoss(playerId, job)
 		return true
 	else
 		print(('esx_society: %s attempted open a society boss menu!'):format(xPlayer.identifier))
+		print(job)
+		print(xPlayer.job.name)
 		return false
 	end
 end
