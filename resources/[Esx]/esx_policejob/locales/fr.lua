@@ -5,20 +5,27 @@ Locales['fr'] = {
   ['police_wear'] = 'tenue Policier',
   ['gilet_wear'] = 'gilet orange',
   ['bullet_wear'] = 'gilet pare-balles',
+  ['bullet_unwear'] = 'enlever gilet pare-balles',
   ['no_outfit'] = 'il n\'y a pas d\'uniforme à votre taille...',
   ['open_cloackroom'] = 'appuyez sur ~INPUT_CONTEXT~ pour vous changer',
+  -- Stock
+  ['deposit_stock']             = 'Déposer Stock',
+  ['withdraw_stock']            = 'Prendre Stock',
+  ['stocks'] = 'stock Police',
+  ['open_stock'] = 'appuyez sur ~INPUT_CONTEXT~ pour accéder au stock',
   -- Armory
-  ['remove_object'] = 'prendre Objet',
-  ['deposit_object'] = 'déposer objet',
   ['get_weapon'] = 'prendre Arme',
   ['put_weapon'] = 'déposer Arme',
   ['buy_weapons'] = 'acheter Armes',
   ['armory'] = 'armurerie',
   ['open_armory'] = 'appuyez sur ~INPUT_CONTEXT~ pour accéder à l\'armurerie',
+  ['cadet'] = 'vous ne pouvez pas ouvrir l\'armurie en tant que cadet',
   -- Vehicles
   ['vehicle_menu'] = 'véhicule',
+  ['helicopter_menu'] = 'hélicoptère',
   ['vehicle_out'] = 'il y a déja un véhicule de sorti',
   ['vehicle_spawner'] = 'appuyez sur ~INPUT_CONTEXT~ pour sortir un véhicule',
+  ['helicopter_spawner'] = 'appuyez sur ~INPUT_CONTEXT~ pour sortir un hélicoptère',
   ['store_vehicle'] = 'appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
   -- Service
   ['service_max'] = 'you cannot enter service, max officers in service: %s/%s',
@@ -32,7 +39,6 @@ Locales['fr'] = {
   ['citizen_interaction'] = 'interaction citoyen',
   ['vehicle_interaction'] = 'interaction véhicule',
   ['object_spawner'] = 'placer objets',
-
   ['id_card'] = 'carte d\'identité',
   ['search'] = 'fouiller',
   ['handcuff'] = 'menotter / Démenotter',

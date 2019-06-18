@@ -128,30 +128,36 @@ Config.AuthorizedVehicles = {
 
 	ambulance = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 5000},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 5000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 5000},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	},
 
 	doctor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 4500},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 4500}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 4500},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	},
 
 	chief_doctor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	},
 	professor = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	},
 	
 	pezeshk  = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 3000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 3000},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	},
 	boss = {
 		{ model = 'ambulance', label = 'Ambulance Van', price = 2000},
-		{ model = 'ambu1', label = 'Custom ambu2', price = 2000}
+		{ model = 'ambu1', label = 'Custom ambu2', price = 2000},
+		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	}
 	
 
@@ -163,17 +169,20 @@ Config.AuthorizedHelicopters = {
 	ambulance = {},
 
 	doctor = {
-		{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 150000 }
+		{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 150000 },
+		{ model = 'uh1mash', label = 'Medic Heli', price = 150000 }
 	},
 
 	chief_doctor = {
 		{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 150000 },
-		{ model = 'seasparrow', label = 'Sea Sparrow', price = 300000 }
+		{ model = 'seasparrow', label = 'Sea Sparrow', price = 300000 },
+		{ model = 'uh1mash', label = 'Medic Heli', price = 150000 }
 	},
 
 	boss = {
 		{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 10000 },
-		{ model = 'seasparrow', label = 'Sea Sparrow', price = 250000 }
+		{ model = 'seasparrow', label = 'Sea Sparrow', price = 250000 },
+		{ model = 'uh1mash', label = 'Medic Heli', price = 150000 }
 	}
 
 }

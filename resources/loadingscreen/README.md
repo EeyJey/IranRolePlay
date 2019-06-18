@@ -1,110 +1,55 @@
-# Synn's Loading Screen
-
-A simple loading screen resource for FiveM.
-
-<hr>
-
-## Features
-
-- Progressbar  
-    - Can have multiple progress bars for each type.
-    - Can have single progress bars for all types
-- Loading screen image
-- Rotating loading messages
-- Music player
-    - Play videos directly from youtube.
-    - Pause and unpause and control volume on the fly.
-- Backgrounds
-    - Rotating backgrounds with fade in and fade out.
-- All of the above can be edited in the config.
-
-<hr>
-
-## Planned
+# FiveM GTA Loading Screen
  
-- Open for idea's! <3
+### Description
+This resource must be use with FiveM, it will show a vanilla GTA loading screen using HTML/CSS/JS.
+Characters and background are showed randomly so your loading screen is "**Never the same**"
+### Installation
+Download the resource or git clone it and put it in your resources folder with the name `fivem-gta-loading`
 
-<hr>
+In your `citmp-server.yml` file, add the resource: 
+```YML
+ - fivem-gta-loading
+```
+### Questions
 
-## Example
+#### How to change image files ?
 
-![Loading screen example](docs/single.png "Example of single progressbar")
-![Loading screen example](docs/multi.png "Example of multiple progressbars")
-![Loading screen example](docs/collapse.png "Example of collapsed progressbars")
+Just replace files in `files/img/background` and `files/img/characters`
+#### How to add/remove images and edit the animation duration time ? 
+Example : 
+You want to have just 3 backgrounds and 4 different characters.
+Just edit `files/js/loader.js` with these values :
+```JAVASCRIPT
+maxCharacters  = 4;
+maxBackgrounds = 3;
+animationTime  = 7000;
+```
+Be sure to only have 4 backgrounds and 3 characters images file in the /img folders and keep the files naming.
+#### How to change music file ?
+
+Replace `files/sound/intro.ogg` file, MP3 is not allowed in NUI browser
+
+#### The volume is too loud, how can i change it ?
+
+Replace the volume value in `files/js/loader.js`
+```JAVASCRIPT
+volume = 0.5;
+```
+### Update
+[v0.0.1](https://github.com/bt0r/fivem-gta-loading/archive/v0.0.1.tar.gz): First version
+
+[v0.0.2](https://github.com/bt0r/fivem-gta-loading/archive/v0.0.2.tar.gz): 
+- Change javascript library to use a modern one : VueJS
+- Bugfix : Math.round -> Math.ceil ( 0 value could be possible )
+
+[v0.0.3](https://github.com/bt0r/fivem-gta-loading/archive/v0.0.3.tar.gz): Remove "StopAudio" button ( NUI doesn't support it )
 
 
-<hr>
+### License
+This fivem resource is under Creative Commons CC-BY-NC-SA
 
-## Installing
+### Credits
 
-1) Download the files from the repository (or see [releases](https://github.com/Syntasu/synn-loadscreen/releases))
+Twitch: http://twitch.tv/bt0r
 
-2) Create a folder in your resources folder named "synn-loadscreen"
-
-3) Add the files into the newly create folder in the resources.
-
-4) Add "start synn-loadscreen" to your server.cfg
-
-And you are good to go!
-
-<hr>
-
-## Known issues
-
-[Issue 1](https://github.com/Syntasu/synn-loadscreen/issues/1)
-Race condition between my loadscreen resource and the events that need to get passed to the loadscreen.
-Implications are that some loadbars do not fill and upon connecting nothing happens.
-
-<hr>
-
-## Contributing
-
-Feel free to make any pull request, if you believe it is an improvement to the current state.
-
-Feature requests and/or enhancements can be posted into the issues.
-
-<hr>
-
-## License
-
-This project falls under the GNU GPLv2 license. (see LICENSE)
-
-<hr>
-
-## Modification and distribution
-
-If you intend to modify this resource:
-- Have a reference back to this GitHub repository
-- The source must be publicly available (as stated in GPL 2.0)
-- State the changes you made.
-- Include the same license (GNU GPL 2.0) (See LICENSE)
-
-If you intend to distibute
-- Have a reference back to this GitHub repository or FiveM topic.
-
-<hr>
-
-## Sources and acknowledgements
-The follow source(s) were used to create this resource. This might be useful for further research.
-
-* [Loading Screen guide by Denziel0495](https://forum.fivem.net/t/how-to-custom-loading-screen-with-music/5746)
-* [Default loading screen of FiveM](https://github.com/citizenfx/fivem/blob/fde2bb3120cb1bc7a3ecfc31c3ff103896bd0b12/ext/ui-build/data/loadscreen/code.js)
-* [TheStonedTurtle's implementation](https://github.com/TheStonedTurtle/FiveM-PercentLoadScreen)
-* The Elements/FiveM developers in the [FiveM discord](https://discord.gg/GtvkUsc) for lending a hand.
-
-<hr>
-
-## Contact
-
-Feel free to contact me about issues, feature request or questions. (anything really!)
-
-If you wish to contact me:
-
-- Via the [FiveM discord](https://discord.gg/GtvkUsc), send me a friend request (PM's are disabled) 
-- Via my own discord, [here](https://discord.gg/QbMfZvH)
-- Via the [FiveM forums](https://forum.fivem.net/u/syntasu)
-- Via e-mail: `fivem at synn.nl`
-
-&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  <sub><sub>Discord is the prefered way of contact.</sub></sub>
-
-<hr>
+Twitter: http://twitter.com/biiitor

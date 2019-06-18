@@ -16,7 +16,7 @@
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
       <audioNameHash>bullet</audioNameHash>
-      <layout>LAYOUT_LOW</layout>
+      <layout>LAYOUT_LOW_NSX</layout>
       <coverBoundOffsets>RAPIDGT_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
       <scenarioLayout />

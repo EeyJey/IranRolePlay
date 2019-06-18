@@ -95,7 +95,6 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
-	local oocname =  GetPlayerName(source)
 
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)
 
@@ -110,7 +109,6 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 			else
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
-				TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew '.. count .. ' ' .. itemName, 'user', true, source, false)
 				TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
 			end
 		else
@@ -124,10 +122,6 @@ RegisterServerEvent('esx_policejob:putStockItems')
 AddEventHandler('esx_policejob:putStockItems', function(itemName, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
-	local oocname =  GetPlayerName(source)
-
-
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored '..count..' items ' .. itemName, 'user', true, source, false)
 
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_police', function(inventory)
 
@@ -300,12 +294,10 @@ end)
 ESX.RegisterServerCallback('esx_policejob:addArmoryWeapon', function(source, cb, weaponName, removeWeapon)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local oocname =  GetPlayerName(source)
 
 	if removeWeapon then
 		xPlayer.removeWeapon(weaponName)
 	end
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Stored a weapon ' .. weaponName, 'user', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
@@ -341,10 +333,8 @@ end)
 ESX.RegisterServerCallback('esx_policejob:removeArmoryWeapon', function(source, cb, weaponName)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local oocname =  GetPlayerName(source)
-	
+
 	xPlayer.addWeapon(weaponName, 500)
-	TriggerEvent('DiscordBot:ToDiscord', 'pwi', oocname, 'Withdrew a weapon ' .. weaponName, 'user', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 
