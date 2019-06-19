@@ -68,3 +68,12 @@ ESX.RegisterUsableItem('soda', function(source)
 	TriggerClientEvent('extendeditems:onDrinkSoda', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_soda'))
 end)
+
+ESX.RegisterUsableItem('armor', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('armor', 1)
+
+	TriggerClientEvent('extendeditems:onUserArmor', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_armor'))
+end)

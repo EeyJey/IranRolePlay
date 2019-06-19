@@ -5,6 +5,9 @@ INSERT INTO `items` (`name`, `label`, `limit`) VALUES
 	('donut', 'Donut', 20)
 ;
 
+INSERT INTO `items` (`name`, `label`, `limit`) VALUES
+('armor', 'Armor', 1),
+
 INSERT INTO `shops` (store, item, price) VALUES
 	('TwentyFourSeven','banana',10),
 	('TwentyFourSeven','orange',10),

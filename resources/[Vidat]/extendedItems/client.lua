@@ -188,3 +188,9 @@ AddEventHandler('extendeditems:onDrinkSoda', function(prop_name)
 		end)
 	end
 end)
+
+RegisterNetEvent('extendeditems:onUserArmor')
+AddEventHandler('extendeditems:onUserArmor', function(prop_name)
+	local playerPed = GetPlayerPed(-1)
+	SetPedArmour(playerPed, 50)
+end)
