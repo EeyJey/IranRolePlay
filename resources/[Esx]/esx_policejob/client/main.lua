@@ -108,6 +108,7 @@ local Keys = {
 		  { label = _U('citizen_wear'), value = 'citizen_wear' },
 		  { label = _U('bullet_wear'), value = 'bullet_wear' },
 	  }
+
   
 	  if grade == 'cadet' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'cadet_wear'})
@@ -129,6 +130,7 @@ local Keys = {
   
 	  if Config.EnableNonFreemodePeds and grade ~= 'cadet' and grade ~= 'po1' then
 		  table.insert(elements, {label = 'Swat Outfit', value = 'freemode_ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'})
+		  table.insert(elements, {label = 'Test', value = 'freemode_ped', maleModel = 'mp_m_freemode_01', femaleModel = 's_m_y_swat_01'})
 	  end
   
 	  ESX.UI.Menu.CloseAll()
