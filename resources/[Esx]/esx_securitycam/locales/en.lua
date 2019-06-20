@@ -6,10 +6,14 @@ Locales['en'] = {
   ['securitycams_menu'] = 'Security Cameras',
   ['bank_menu_selection'] = 'Bank Markazi',
   ['police_menu_selection'] = 'Edare Police',
+  ['mechanic_menu_selection'] = 'Mechanici',
+  ['town_menu_selection'] = 'Dorbinhaye Shahr',
 
   -- In Cameras
-  ['pacific_standard_bank'] = 'Pacific Standard Bank',
-  ['police_station'] = 'Police Station',
+  ['pacific_standard_bank'] = 'Bank Markazi',
+  ['police_station'] = 'Edare Police',
+  ['mechanic'] = 'Mechanici',
+  ['town'] = 'Dorbinhaye Shahr',
 
   -- Pacific Standard Bank Cameras
   ['bcam'] = 'Main Entrance',
@@ -32,6 +36,17 @@ Locales['en'] = {
   ['pcam5'] = 'Polices Parking Lot & Garage',
   ['pcam6'] = 'Outside Entrance',
   ['pcam7'] = 'Lobby',
+
+  -- Mechanic Cameras
+  ['mcam'] = 'Lobby',
+  ['mcam2'] = 'Main Entrance',
+  ['mcam3'] = 'Workshop #1',
+  ['mcam4'] = 'Workshop #2',
+  ['mcam5'] = 'Outside',
+  
+  -- Town Cameras
+  ['tcam'] = 'Parking lot',
+  ['tcam2'] = 'Parking lot2',
 
   -- Settings
   ['next'] = 'NEXT CAMERA',

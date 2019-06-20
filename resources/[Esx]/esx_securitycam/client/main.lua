@@ -20,6 +20,8 @@ local LastZone = nil
 local menuopen = false
 local bankcamera = false
 local policecamera = false
+local mechaniccamera = false
+local towncamera = false
 local blockbuttons = false
 local bankHacked = false
 local policeHacked  = false
@@ -86,7 +88,7 @@ Citizen.CreateThread(function()
 				if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then
 					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
-					if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
+					if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 0 then
 						DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Didan Dorbin ha.", 0.80)
 					end
 				end
@@ -236,7 +238,9 @@ Citizen.CreateThread(function()
 
 				local elements = {
 					{label = _U('bank_menu_selection'),   value = 'bankmenu'},
-					{label = _U('police_menu_selection'), value = 'policemenu'}
+					{label = _U('mechanic_menu_selection'), value = 'mechanicmenu'},
+					{label = _U('police_menu_selection'), value = 'policemenu'},
+					{label = _U('town_menu_selection'), value = 'townmenu'},
 				}
 
 				ESX.UI.Menu.CloseAll()
@@ -244,7 +248,7 @@ Citizen.CreateThread(function()
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom',
 				{
 					title    = _U('securitycams_menu'),
-					align    = 'top-right',
+					align    = 'top-left',
 					elements = elements
 				}, function(data, menu)
 
@@ -331,6 +335,88 @@ Citizen.CreateThread(function()
 							TriggerEvent('esx_securitycam:freeze', true)
 						end
 
+					    elseif data.current.value == 'mechanicmenu' then
+
+							if policeHacked then
+								if Config.pNotify then
+									TriggerEvent("pNotify:SendNotification",{
+										text = _U('broken_cameras'),
+										type = "warning",
+										timeout = (10000),
+										layout = "bottomCenter",
+										queue = "global"
+									})
+								else
+									ESX.ShowNotification(_U('broken_cameras'))
+								end
+							else
+								menu.close()
+								mechaniccamera = true
+								blockbuttons = true
+								local firstCamx = Config.Locations[1].mechanicCameras[1].x
+								local firstCamy = Config.Locations[1].mechanicCameras[1].y
+								local firstCamz = Config.Locations[1].mechanicCameras[1].z
+								local firstCamr = Config.Locations[1].mechanicCameras[1].r
+								SetFocusArea(firstCamx, firstCamy, firstCamz, firstCamx, firstCamy, firstCamz)
+								ChangeSecurityCamera(firstCamx, firstCamy, firstCamz, firstCamr)
+	
+								if Config.HideRadar then
+									StartHideHUD()
+								end
+	
+								SendNUIMessage({
+									type = "enablecam",
+									label = Config.Locations[1].mechanicCameras[1].label,
+									box = Config.Locations[1].mechanicCameras.label
+								})
+	
+								currentCameraIndex = 1
+								currentCameraIndexIndex = 1
+								menuopen = false
+								TriggerEvent('esx_securitycam:freeze', true)
+							end
+
+						elseif data.current.value == 'townmenu' then
+
+							if policeHacked then
+								if Config.pNotify then
+									TriggerEvent("pNotify:SendNotification",{
+										text = _U('broken_cameras'),
+										type = "warning",
+										timeout = (10000),
+										layout = "bottomCenter",
+										queue = "global"
+									})
+								else
+									ESX.ShowNotification(_U('broken_cameras'))
+								end
+							else
+								menu.close()
+								towncamera = true
+								blockbuttons = true
+								local firstCamx = Config.Locations[1].townCameras[1].x
+								local firstCamy = Config.Locations[1].townCameras[1].y
+								local firstCamz = Config.Locations[1].townCameras[1].z
+								local firstCamr = Config.Locations[1].townCameras[1].r
+								SetFocusArea(firstCamx, firstCamy, firstCamz, firstCamx, firstCamy, firstCamz)
+								ChangeSecurityCamera(firstCamx, firstCamy, firstCamz, firstCamr)
+	
+								if Config.HideRadar then
+									StartHideHUD()
+								end
+	
+								SendNUIMessage({
+									type = "enablecam",
+									label = Config.Locations[1].townCameras[1].label,
+									box = Config.Locations[1].townCameras.label
+								})
+	
+								currentCameraIndex = 1
+								currentCameraIndexIndex = 1
+								menuopen = false
+								TriggerEvent('esx_securitycam:freeze', true)
+							end
+
 					end
 
 				end, function(data, menu)
@@ -358,6 +444,8 @@ Citizen.CreateThread(function()
 				CurrentAction = nil
 				bankcamera = false
 				policecamera = false
+				mechaniccamera = false
+				towncamera = false
 				blockbuttons = false
 				if Config.HideRadar then
 					StopHideHUD()
@@ -411,6 +499,52 @@ Citizen.CreateThread(function()
 
 					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
 					currentCameraIndexIndex = newCamIndex
+				
+				elseif mechaniccamera then
+					local newCamIndex
+
+					if currentCameraIndexIndex == 1 then
+						newCamIndex = #Config.Locations[currentCameraIndex].mechanicCameras
+					else
+						newCamIndex = currentCameraIndexIndex - 1
+					end
+
+					local newCamx = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].x
+					local newCamy = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].y
+					local newCamz = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].z
+					local newCamr = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].r
+
+					SetFocusArea(newCamx, newCamy, newCamz, newCamx, newCamy, newCamz)
+					SendNUIMessage({
+						type = "updatecam",
+						label = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].label
+					})
+
+					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
+					currentCameraIndexIndex = newCamIndex
+				
+				elseif towncamera then
+					local newCamIndex
+
+					if currentCameraIndexIndex == 1 then
+						newCamIndex = #Config.Locations[currentCameraIndex].townCameras
+					else
+						newCamIndex = currentCameraIndexIndex - 1
+					end
+
+					local newCamx = Config.Locations[currentCameraIndex].townCameras[newCamIndex].x
+					local newCamy = Config.Locations[currentCameraIndex].townCameras[newCamIndex].y
+					local newCamz = Config.Locations[currentCameraIndex].townCameras[newCamIndex].z
+					local newCamr = Config.Locations[currentCameraIndex].townCameras[newCamIndex].r
+
+					SetFocusArea(newCamx, newCamy, newCamz, newCamx, newCamy, newCamz)
+					SendNUIMessage({
+						type = "updatecam",
+						label = Config.Locations[currentCameraIndex].townCameras[newCamIndex].label
+					})
+
+					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
+					currentCameraIndexIndex = newCamIndex
 				end
 			end
 
@@ -437,6 +571,7 @@ Citizen.CreateThread(function()
 
 					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
 					currentCameraIndexIndex = newCamIndex
+
 				elseif policecamera then
 					local newCamIndex
 
@@ -454,6 +589,50 @@ Citizen.CreateThread(function()
 					SendNUIMessage({
 						type = "updatecam",
 						label = Config.Locations[currentCameraIndex].policeCameras[newCamIndex].label
+					})
+
+					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
+					currentCameraIndexIndex = newCamIndex
+
+				elseif mechaniccamera then
+					local newCamIndex
+
+					if currentCameraIndexIndex == #Config.Locations[currentCameraIndex].mechanicCameras then
+						newCamIndex = 1
+					else
+						newCamIndex = currentCameraIndexIndex + 1
+					end
+
+					local newCamx = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].x
+					local newCamy = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].y
+					local newCamz = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].z
+					local newCamr = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].r
+
+					SendNUIMessage({
+						type = "updatecam",
+						label = Config.Locations[currentCameraIndex].mechanicCameras[newCamIndex].label
+					})
+
+					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
+					currentCameraIndexIndex = newCamIndex
+				
+				elseif towncamera then
+					local newCamIndex
+
+					if currentCameraIndexIndex == #Config.Locations[currentCameraIndex].townCameras then
+						newCamIndex = 1
+					else
+						newCamIndex = currentCameraIndexIndex + 1
+					end
+
+					local newCamx = Config.Locations[currentCameraIndex].townCameras[newCamIndex].x
+					local newCamy = Config.Locations[currentCameraIndex].townCameras[newCamIndex].y
+					local newCamz = Config.Locations[currentCameraIndex].townCameras[newCamIndex].z
+					local newCamr = Config.Locations[currentCameraIndex].townCameras[newCamIndex].r
+
+					SendNUIMessage({
+						type = "updatecam",
+						label = Config.Locations[currentCameraIndex].townCameras[newCamIndex].label
 					})
 
 					ChangeSecurityCamera(newCamx, newCamy, newCamz, newCamr)
@@ -486,6 +665,33 @@ Citizen.CreateThread(function()
 				if IsControlPressed(1, Keys['N6']) then
 					SetCamRot(createdCamera, getCameraRot.x, 0.0, getCameraRot.z - 0.7, 2)
 				end
+
+			elseif Config.Locations[currentCameraIndex].mechanicCameras[currentCameraIndexIndex].canRotate then
+				local getCameraRot = GetCamRot(createdCamera, 2)
+
+				-- ROTATE LEFT
+				if IsControlPressed(1, Keys['N4']) then
+					SetCamRot(createdCamera, getCameraRot.x, 0.0, getCameraRot.z + 0.7, 2)
+				end
+
+				-- ROTATE RIGHT
+				if IsControlPressed(1, Keys['N6']) then
+					SetCamRot(createdCamera, getCameraRot.x, 0.0, getCameraRot.z - 0.7, 2)
+				end
+
+			elseif Config.Locations[currentCameraIndex].townCameras[currentCameraIndexIndex].canRotate then
+				local getCameraRot = GetCamRot(createdCamera, 2)
+
+				-- ROTATE LEFT
+				if IsControlPressed(1, Keys['N4']) then
+					SetCamRot(createdCamera, getCameraRot.x, 0.0, getCameraRot.z + 0.7, 2)
+				end
+
+				-- ROTATE RIGHT
+				if IsControlPressed(1, Keys['N6']) then
+					SetCamRot(createdCamera, getCameraRot.x, 0.0, getCameraRot.z - 0.7, 2)
+				end
+
 			end
 
 		end
@@ -496,7 +702,6 @@ function StartHideHUD()
 	Citizen.CreateThread(function()
 		while blockbuttons do
 			Citizen.Wait(100)
-			-- DisplayRadar(false)
 			ESX.UI.HUD.SetDisplay(0.0)
 			TriggerEvent('es:setMoneyDisplay', 0.0)
 			TriggerEvent('esx_status:setDisplay', 0.0)
@@ -508,7 +713,6 @@ function StopHideHUD()
 	Citizen.CreateThread(function()
 		while not blockbuttons do
 			Citizen.Wait(100)
-			-- DisplayRadar(true)
 			ESX.UI.HUD.SetDisplay(1.0)
 			TriggerEvent('es:setMoneyDisplay', 1.0)
 			TriggerEvent('esx_status:setDisplay', 1.0)

@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 		
 		if pvpEnabled then
-			for i = 0,256 do
+			for i = 0,127 do
 				if NetworkIsPlayerActive(i) then
 					SetCanAttackFriendly(GetPlayerPed(i), true, true)
 					NetworkSetFriendlyFireOption(true)

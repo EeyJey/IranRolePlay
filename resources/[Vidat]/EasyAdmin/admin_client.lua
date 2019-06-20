@@ -53,7 +53,7 @@ Citizen.CreateThread( function()
 		end
     players = {}
     local localplayers = {}
-    for i = 0, 255 do -- infinite sluts!!!
+    for i = 0, 127 do -- infinite sluts!!!
       if NetworkIsPlayerActive( i ) then
         table.insert( localplayers, GetPlayerServerId(i) )
       end

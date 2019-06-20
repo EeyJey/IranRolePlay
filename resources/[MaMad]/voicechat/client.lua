@@ -36,7 +36,7 @@ end
 
 local function GetPlayers()
 	local players = {}
-	for i = 0, 64 do
+	for i = 0, 127 do
 		if NetworkIsPlayerActive(i) then
 			players[#players + 1] = i
 		end
@@ -108,7 +108,7 @@ end
 
 local shouldReset = false
 Citizen.CreateThread(function()
-	for i = 0, 63 do SendVoiceToPlayer(i, false) end
+	for i = 0, 127 do SendVoiceToPlayer(i, false) end
 
 	while true do
 		Citizen.Wait(300)
@@ -122,7 +122,7 @@ Citizen.CreateThread(function()
 		elseif not sendVoice and shouldReset then
 			shouldReset = false
 			--TriggerEvent("pichot:toggleNUI", { voip = false })
-			for i = 0, 63 do
+			for i = 0, 127 do
 				SendVoiceToPlayer(i, false)
 			end
 		end
