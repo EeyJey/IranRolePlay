@@ -39,7 +39,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 
-		if IsControlJustPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
+		if IsControlJustPressed(1, Keys['H']) then
 			voice.current = (voice.current + 1) % 3
 			if voice.current == 0 then
 				NetworkSetTalkerProximity(voice.default)
@@ -61,10 +61,10 @@ Citizen.CreateThread(function()
 			voice.level = _U('whisper')
 		end
 
-		if NetworkIsPlayerTalking(PlayerId()) then
-			drawLevel(41, 128, 185, 255)
-		elseif not NetworkIsPlayerTalking(PlayerId()) then
-			drawLevel(185, 185, 185, 255)
-		end
+		-- if NetworkIsPlayerTalking(PlayerId()) then
+		-- 	drawLevel(41, 128, 185, 255)
+		-- elseif not NetworkIsPlayerTalking(PlayerId()) then
+		-- 	drawLevel(185, 185, 185, 255)
+		-- end
 	end
 end)
