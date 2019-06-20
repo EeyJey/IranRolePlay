@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 	SendNUIMessage({
 		action = 'updateServerInfo',
 
-		maxPlayers = 32,
+		maxPlayers = 128,
 		uptime = 'unknown',
 		playTime = '00h 00m'
 	})
