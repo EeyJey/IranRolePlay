@@ -4,7 +4,7 @@ AddEventHandler('ioh:checkadmin', function()
 	TriggerEvent('es:getPlayerFromId', _source, function(user)
 		if user ~= nil then 
 			if user.getGroup() == "superadmin" then
-				TriggerClientEvent('ioh:isAdmin')
+				TriggerClientEvent('ioh:isAdmin', source)
 			end
 		end
 	end)

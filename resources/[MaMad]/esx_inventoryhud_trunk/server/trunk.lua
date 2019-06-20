@@ -61,18 +61,15 @@ function getOwnedVehicule(plate)
     end
   end
   if not found then
-    local result = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles")
+    local result = MySQL.Sync.fetchAll("SELECT * FROM owned_vehicles WHERE plate = @plate",
+    {
+      ['@plate'] = plate
+    })
     while result == nil do
       Wait(5)
     end
     if result ~= nil and #result > 0 then
-      for _, v in pairs(result) do
-        local vehicle = json.decode(v.vehicle)
-        if vehicle.plate == plate then
-          found = true
-          break
-        end
-      end
+      found = true
     end
   end
   return found

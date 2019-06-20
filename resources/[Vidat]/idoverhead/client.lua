@@ -98,10 +98,10 @@ Citizen.CreateThread(function()
 			PlayerData = ESX.GetPlayerData()
 		end
 		if PlayerData == nil or (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
-			for i=0,99 do
+			for i=0,255 do
 				N_0x31698aa80e0223f8(i)
 			end
-			for id = 0, 31 do
+			for id = 0, 255 do
 				if  ((NetworkIsPlayerActive( id )) and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) then
 					ped = GetPlayerPed( id )
 					blip = GetBlipFromEntity( ped ) 
