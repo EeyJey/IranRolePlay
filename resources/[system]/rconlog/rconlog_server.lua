@@ -1,30 +1,21 @@
-RconLog({ msgType = 'serverStart', hostname = 'lovely', maxplayers = 64 })
+RconLog({ msgType = 'serverStart', hostname = 'lovely', maxplayers = 128 })
 
 RegisterServerEvent('rlPlayerActivated')
 
 local names = {}
-local trustedPlayer
-
-local function SetTrustedPlayer()
-    trustedPlayer = nil
-    for k,_ in pairs(names) do
-        trustedPlayer = k
-        break
-    end
-end
 
 AddEventHandler('rlPlayerActivated', function()
     RconLog({ msgType = 'playerActivated', netID = source, name = GetPlayerName(source), guid = GetPlayerIdentifiers(source)[1], ip = GetPlayerEP(source) })
 
     names[source] = { name = GetPlayerName(source), id = source }
 
-    TriggerClientEvent('rlUpdateNames', trustedPlayer or source)
+    TriggerClientEvent('rlUpdateNames', GetHostId())
 end)
 
 RegisterServerEvent('rlUpdateNamesResult')
 
 AddEventHandler('rlUpdateNamesResult', function(res)
-    if source ~= trustedPlayer then
+    if source ~= tonumber(GetHostId()) then
         print('bad guy')
         return
     end
@@ -52,10 +43,6 @@ AddEventHandler('playerDropped', function()
     RconLog({ msgType = 'playerDropped', netID = source, name = GetPlayerName(source) })
 
     names[source] = nil
-
-    if source == trustedPlayer then
-        SetTrustedPlayer()
-    end
 end)
 
 AddEventHandler('chatMessage', function(netID, name, message)
@@ -70,7 +57,7 @@ AddEventHandler('rconCommand', function(commandName, args)
             if guid and guid[1] and data then
                 local ping = GetPlayerPing(netid)
 
-                RconPrint(netid .. '\t' .. guid[1] .. '\t' .. data.name .. '\t' .. GetPlayerEP(netid) .. '\t' .. ping .. "\n")
+                RconPrint(netid .. ' ' .. guid[1] .. ' ' .. data.name .. ' ' .. GetPlayerEP(netid) .. ' ' .. ping .. "\n")
             end
         end
 
@@ -80,14 +67,6 @@ AddEventHandler('rconCommand', function(commandName, args)
         local msg = table.concat(args, ' ')
 
         DropPlayer(playerId, msg)
-
-        CancelEvent()
-    elseif commandName:lower() == 'kickall' then
-        
-        for netid, data in pairs(names) do
-            wait(2000)
-            DropPlayer(netid, 'Server Restart')
-        end
 
         CancelEvent()
     elseif commandName:lower() == 'tempbanclient' then
