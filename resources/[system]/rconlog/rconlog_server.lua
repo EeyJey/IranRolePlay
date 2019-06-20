@@ -70,7 +70,7 @@ AddEventHandler('rconCommand', function(commandName, args)
             if guid and guid[1] and data then
                 local ping = GetPlayerPing(netid)
 
-                RconPrint(netid .. ' ' .. guid[1] .. ' ' .. data.name .. ' ' .. GetPlayerEP(netid) .. ' ' .. ping .. "\n")
+                RconPrint(netid .. '\t' .. guid[1] .. '\t' .. data.name .. '\t' .. GetPlayerEP(netid) .. '\t' .. ping .. "\n")
             end
         end
 
@@ -80,6 +80,14 @@ AddEventHandler('rconCommand', function(commandName, args)
         local msg = table.concat(args, ' ')
 
         DropPlayer(playerId, msg)
+
+        CancelEvent()
+    elseif commandName:lower() == 'kickall' then
+        
+        for netid, data in pairs(names) do
+            wait(2000)
+            DropPlayer(netid, 'Server Restart')
+        end
 
         CancelEvent()
     elseif commandName:lower() == 'tempbanclient' then
