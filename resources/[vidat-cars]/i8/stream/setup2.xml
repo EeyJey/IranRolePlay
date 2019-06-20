@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_i8</deviceName>
+  <deviceName>dlc_rmodmi8</deviceName>
   <datFile>content.xml</datFile>
-  <timeStamp>00/00/0000 00:00:00</timeStamp>
-  <nameHash>i8</nameHash>
+  <timeStamp>10/06/2019 00:00:00</timeStamp>
+  <nameHash>rmodmi8</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>i8_AUTOGEN</Item>
+        <Item>RMODMI8_AUTOGEN</Item>
+		<Item platform="ps4|xboxone">RMODMI8_PLATFORM_SPECS</Item>
+        <Item>RMODMI8_UNLOCKS_AUTOGEN</Item>
+    <Item>
+      <NameHash>GROUP_ON_DEMAND</NameHash>
+      <ContentChangeSets>
+        <Item>RMODMI8_ANIM_OVERLAYS</Item>
+      </ContentChangeSets>
+    </Item>	
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>
   <type>EXTRACONTENT_COMPAT_PACK</type>
-  <order value="9" />  
+  <order value="13" />  
 </SSetupData>
