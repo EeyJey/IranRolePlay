@@ -85,7 +85,6 @@ AddEventHandler('rconCommand', function(commandName, args)
     elseif commandName:lower() == 'kickall' then
         
         for netid, data in pairs(names) do
-            wait(2000)
             DropPlayer(netid, 'Server Restart')
         end
 
