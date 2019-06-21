@@ -482,13 +482,13 @@ Config.Uniforms = {
 	},
 	po1_wear = {
 		male = {
-			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 31,   ['torso_2'] = 0,
+			['tshirt_1'] = 57,  ['tshirt_2'] = 0,
+			['torso_1'] = 29,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
-			['arms'] = 14,
-			['pants_1'] = 34,   ['pants_2'] = 0,
-			['shoes_1'] = 27,   ['shoes_2'] = 0,
-			['helmet_1'] = 0,  ['helmet_2'] = 0,
+			['arms'] = 0,
+			['pants_1'] = 47,   ['pants_2'] = 0,
+			['shoes_1'] = 25,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
 			['chain_1'] = 6,    ['chain_2'] = 0,
 			['ears_1'] = 2,     ['ears_2'] = 0
 		},
