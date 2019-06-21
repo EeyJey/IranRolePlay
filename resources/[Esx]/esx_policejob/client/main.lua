@@ -129,8 +129,7 @@ local Keys = {
 	  end 
   
 	  if Config.EnableNonFreemodePeds and grade ~= 'cadet' and grade ~= 'po1' then
-		  table.insert(elements, {label = 'Swat Outfit', value = 'freemode_ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'})
-		  table.insert(elements, {label = 'Test', value = 'freemode_ped', maleModel = 'mp_m_freemode_01', femaleModel = 's_m_y_swat_01'})
+		table.insert(elements, {label = _U('swat_wear'), value = 'swat_wear'})
 	  end
   
 	  ESX.UI.Menu.CloseAll()
@@ -240,6 +239,7 @@ local Keys = {
 			  data.current.value == 'commander_wear' or
 			  data.current.value == 'boss_wear' or
 			  data.current.value == 'bullet_wear' or
+			  data.current.value == 'swat_wear' or
 			  data.current.value == 'gilet_wear'
 		  then
 			  setUniform(data.current.value, playerPed)
