@@ -97,6 +97,10 @@ function CreateExtendedPlayer(player, accounts, inventory, job, family, loadout,
 		self.player.displayMoney(money)
 	end
 
+	self.displayMoney = function(money)
+		self.player.displayMoney(money)
+	end
+
 	self.displayBank = function(money)
 		self.player.displayBank(money)
 	end
