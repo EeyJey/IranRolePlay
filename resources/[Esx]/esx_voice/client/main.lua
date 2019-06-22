@@ -10,61 +10,74 @@ local Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
-local voice = {default = 5.0, shout = 12.0, whisper = 1.0, current = 0, level = nil}
+ESX = nil
+
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+	NetworkSetTalkerProximity(10.0)
+end)
+
+local voice = {default = 10.0, shout = 26.0, whisper = 2.0, current = 0, level = nil}
+local x = 0.121
+local y = 0.988
 
 function drawLevel(r, g, b, a)
-	SetTextFont(4)
+	SetTextFont(9)
+	SetTextProportional(1)
 	SetTextScale(0.5, 0.5)
 	SetTextColour(r, g, b, a)
-	SetTextDropshadow(0, 0, 0, 0, 255)
+	SetTextDropShadow(0, 0, 0, 0, 255)
+	SetTextEdge(1, 0, 0, 0, 255)
 	SetTextDropShadow()
 	SetTextOutline()
 
 	BeginTextCommandDisplayText("STRING")
 	AddTextComponentSubstringPlayerName(_U('voice', voice.level))
-	EndTextCommandDisplayText(0.175, 0.92)
+	EndTextCommandDisplayText(0.275, 0.492)
 end
 
 AddEventHandler('onClientMapStart', function()
 	if voice.current == 0 then
 		NetworkSetTalkerProximity(voice.default)
-	elseif voice.current == 1 then
-		NetworkSetTalkerProximity(voice.shout)
-	elseif voice.current == 2 then
-		NetworkSetTalkerProximity(voice.whisper)
 	end
 end)
+
+local prox = 10.0 -- Sets the Default Voice Distance
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 
-		if IsControlJustPressed(1, Keys['H']) then
+		if IsControlJustPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
 			voice.current = (voice.current + 1) % 3
 			if voice.current == 0 then
 				NetworkSetTalkerProximity(voice.default)
 				voice.level = _U('normal')
-			elseif voice.current == 1 then
-				NetworkSetTalkerProximity(voice.shout)
-				voice.level = _U('shout')
-			elseif voice.current == 2 then
-				NetworkSetTalkerProximity(voice.whisper)
-				voice.level = _U('whisper')
+				prox = 10.0
 			end
 		end
 
 		if voice.current == 0 then
-			voice.level = _U('normal')
-		elseif voice.current == 1 then
-			voice.level = _U('shout')
-		elseif voice.current == 2 then
-			voice.level = _U('whisper')
+			drawRct((x-0.0163), y, 0.035,0.01,128,128,128,240)
 		end
 
-		-- if NetworkIsPlayerTalking(PlayerId()) then
-		-- 	drawLevel(41, 128, 185, 255)
-		-- elseif not NetworkIsPlayerTalking(PlayerId()) then
-		-- 	drawLevel(185, 185, 185, 255)
-		-- end
+		if NetworkIsPlayerTalking(PlayerId()) then
+			drawRct(x, y, 0.068,0.01,255,0,0,200)
+		elseif not NetworkIsPlayerTalking(PlayerId()) then
+			drawRct(x, y, 0.068,0.01,50,50,50,100)
+		end
+		
+		if IsControlPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
+			local posPlayer = GetEntityCoords(GetPlayerPed(-1))
+			DrawMarker(1, posPlayer.x, posPlayer.y, posPlayer.z - 1, 0, 0, 0, 0, 0, 0, prox * 2, prox * 2, 0.8001, 0, 75, 255, 165, 0,0, 0,0)
+		end
 	end
 end)
+
+function drawRct(x,y,width,height,r,g,b,a)
+	DrawRect(x, y, width, height, r, g, b, a)
+end
+

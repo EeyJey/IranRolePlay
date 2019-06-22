@@ -93,6 +93,68 @@ Config.PoliceStations = {
 
 	},
 
+	SHERIFF = {
+
+		Blip = {
+			Pos     = { x = 1855.13, y = 3686.33, z = 34.27 },
+			Sprite  = 60,
+			Display = 4,
+			Scale   = 1.2,
+			Colour  = 29,
+		},
+
+		-- https://wiki.rage.mp/index.php?title=Weapons
+		AuthorizedWeapons = {
+			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
+			{ name = 'WEAPON_STUNGUN',       price = 500 },
+			{ name = 'weapon_flashlight',       price = 100 },
+			{ name = 'WEAPON_PISTOL',     price = 5000 },
+			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
+			{ name = 'WEAPON_COMBATPISTOL',     price = 7000 },
+			{ name = 'WEAPON_PISTOL50',     price = 9000 },
+			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
+			{ name = 'weapon_smg',     price = 12000 },
+			{ name = 'weapon_assaultrifle',     price = 12000 }
+		},
+
+		Cloakrooms = {
+			{ x = 1856.06, y = 3688.79, z = 33.27 },
+		},
+		
+		Stocks = {
+			{ x = 1851.13, y = 3683.18, z = 33.27 },
+		},
+
+
+		Armories = {
+			{ x = 1851.05, y = 3690.89, z = 33.27 },
+		},
+
+		Vehicles = {
+			{
+				Spawner    = { x = 1852.79, y = 3680.51, z = 33.27 },
+				SpawnPoint = { x = 1856.26, y = 3673.43, z = 33.75 },
+				Heading    = 214.22
+			}
+		},
+		Helicopters = {
+			{
+				Spawner    = {},
+				SpawnPoint = {},
+				Heading    = {}
+			}
+		},
+
+		VehicleDeleters = {
+			{ x = 1851.04, y = 3673.2, z = 32.74 }
+		},
+
+		BossActions = {
+			{ x = 1853.06, y = 3689.6, z = 33.27 }
+		},
+
+	},
+
 }
 
 -- https://wiki.rage.mp/index.php?title=Vehicles
