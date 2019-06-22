@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_scuderiag</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>23/04/2016 00:00:00</timeStamp>
+  <nameHash>scuderiag</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>SCUDERIAG_AUTOGEN</Item>
+		<Item platform="ps4|xboxone">SCUDERIAG_PLATFORM_SPECS</Item>
+        <Item>SCUDERIAG_UNLOCKS_AUTOGEN</Item>
+    <Item>
+      <NameHash>GROUP_ON_DEMAND</NameHash>
+      <ContentChangeSets>
+        <Item>SCUDERIAG_ANIM_OVERLAYS</Item>
+      </ContentChangeSets>
+    </Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="13" />  
+</SSetupData>

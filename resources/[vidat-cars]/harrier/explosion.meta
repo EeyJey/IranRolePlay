@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CExplosionInfoManager>
+  <aExplosionTagData>
+    <Item>
+      <name>EXP_TAG_BOMB_G4M</name>
+      <damageAtCentre value="1000.000000" />
+      <damageAtEdge value="1000.000000" />
+      <networkPlayerModifier value="2.000000" />
+      <networkPedModifier value="1.000000" />
+      <endRadius value="15.000000" />
+      <initSpeed value="50.000000" />
+      <decayFactor value="-2.000000" />
+      <forceFactor value="60.000000" />
+      <fRagdollForceModifier value="0.002000" />
+      <fSelfForceModifier value="1.000000" />
+      <directedWidth value="0.000000" />
+      <directedLifeTime value="0.000000" />
+      <camShakeName>GRENADE_EXPLOSION_SHAKE</camShakeName>
+      <camShake value="0.8500000" />
+      <camShakeRollOffScaling value="1.000000" />
+      <shockingEventVisualRangeOverride value="-1.000000" />
+      <shockingEventAudioRangeOverride value="-1.000000" />
+      <minorExplosion value="false" />
+      <vfxTagHashName>EXP_VFXTAG_BOMB_STANDARD</vfxTagHashName>
+      <fragDamage value="2500.000000" />
+      <bAppliesContinuousDamage value="false" />
+      <bPostProcessCollisionsWithNoForce value="true" />
+      <bDamageVehicles value="true" />
+      <bDamageObjects value="true" />
+      <bOnlyAffectsLivePeds value="false" />
+      <bIgnoreExplodingEntity value="false" />
+      <bNoOcclusion value="false" />
+      <explodeAttachEntityWhenFinished value="false" />
+      <bCanSetPedOnFire value="true" />
+	  <bCanSetPlayerOnFire value="true" />
+    </Item>
+  </aExplosionTagData>
+</CExplosionInfoManager>

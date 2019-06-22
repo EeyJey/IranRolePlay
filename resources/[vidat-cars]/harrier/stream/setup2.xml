@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_harrier2</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>11/09/2015 21:18:11</timeStamp>
+  <nameHash>harrier2</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>harrier2_AUTOGEN</Item>
+        <Item>harrier2_UNLOCKS_AUTOGEN</Item>	
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="28" />  
+</SSetupData>
