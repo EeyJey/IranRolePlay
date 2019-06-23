@@ -166,7 +166,7 @@ Citizen.CreateThread(function()
 			local targetPed	  = GetPlayerPed(targetPlayerId)
 			local coords	 = GetEntityCoords(targetPed)
 
-			for i=0, 32, 1 do
+			for i=0, 255, 1 do
 				if i ~= PlayerId() then
 					local otherPlayerPed = GetPlayerPed(i)
 					SetEntityNoCollisionEntity(playerPed,  otherPlayerPed,  true)

@@ -80,6 +80,8 @@ local Keys = {
   
 			  if job == 'bullet_wear' then
 				  SetPedArmour(playerPed, 100)
+			  elseif job == 'sbullet_wear' then
+				  SetPedArmour(playerPed, 100)
 			  elseif job == 'swat_wear' then
 				  SetPedArmour(playerPed, 100)
 			  end
@@ -111,25 +113,34 @@ local Keys = {
 	  local elements = {
 		  { label = _U('citizen_wear'), value = 'citizen_wear' },
 		  { label = _U('bullet_wear'), value = 'bullet_wear' },
+		  { label = _U('sbullet_wear'), value = 'sbullet_wear' },
 	  }
 
   
 	  if grade == 'cadet' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'cadet_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'scadet_wear'})
 	  elseif grade == 'po1' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'po1_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'spo1_wear'})
 	  elseif grade == 'po2' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'po2_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'spo2_wear'})
 	  elseif grade == 'po3' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'po3_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'spo3_wear'})
 	  elseif grade == 'sergeant' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'sergeant_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'ssergeant_wear'})
 	  elseif grade == 'slo' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'slo_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'sslo_wear'})
 	  elseif grade == 'commander' then
 		  table.insert(elements, {label = _U('police_wear'), value = 'commander_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'scommander_wear'})
 	  else
 		  table.insert(elements, {label = _U('police_wear'), value = 'boss_wear'})
+		  table.insert(elements, {label = _U('sheriff_wear'), value = 'sboss_wear'})
 	  end 
   
 	  if Config.EnableNonFreemodePeds and grade ~= 'cadet' and grade ~= 'po1' then
@@ -242,8 +253,18 @@ local Keys = {
 			  data.current.value == 'slo_wear' or
 			  data.current.value == 'commander_wear' or
 			  data.current.value == 'boss_wear' or
+			  data.current.value == 'scadet_wear' or
+			  data.current.value == 'spo1_wear' or
+			  data.current.value == 'spo2_wear' or
+			  data.current.value == 'spo3_wear' or
+			  data.current.value == 'ssergeant_wear' or
+			  data.current.value == 'sslo_wear' or
+			  data.current.value == 'scommander_wear' or
+			  data.current.value == 'sboss_wear' or
 			  data.current.value == 'bullet_wear' or
+			  data.current.value == 'sbullet_wear' or
 			  data.current.value == 'swat_wear' or
+			  
 			  data.current.value == 'gilet_wear'
 		  then
 			  setUniform(data.current.value, playerPed)
