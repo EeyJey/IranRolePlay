@@ -135,4 +135,8 @@ Locales['en'] = {
   -- Panic stuff
   ['distress_sent'] = 'Panic alarm shoma ferestade shod!',
   ['police_distress_message'] = 'PANIC alarm tavasot yeki az police ha feretade shod, CODE 1',
+  -- Sheriff stuff
+  ['sbullet_wear'] = 'Sheriff Bullet Proof Vest',
+  ['sheriff_wear'] = 'Sheriff Outfit',
+
 }
