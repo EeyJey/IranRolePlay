@@ -1,4 +1,4 @@
-local tiempo = 4000 -- 1000 ms = 1s
+local tiempo = 10000 -- 1000 ms = 1s
 local isTaz = false
 Citizen.CreateThread(function()
 	while true do

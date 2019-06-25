@@ -100,3 +100,8 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+function drawRct(x,y,width,height,r,g,b,a)
+	DrawRect(x, y, width, height, r, g, b, a)
+end
+

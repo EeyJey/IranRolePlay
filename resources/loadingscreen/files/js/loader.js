@@ -2,7 +2,7 @@ var loader = new Vue(
     {
         el: '#loader',
         data: {
-            volume: 0.25,
+            volume: 0.10,
             maxCharacters: 15,
             maxBackgrounds: 13,
             animationTime: 7000,
