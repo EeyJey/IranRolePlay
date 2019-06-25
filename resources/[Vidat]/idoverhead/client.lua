@@ -63,14 +63,24 @@ function DrawText3D(x,y,z, text)
     end
 end
 
+function ShowNotification(msg)
+	SetNotificationTextEntry('STRING')
+	AddTextComponentString(msg)
+	DrawNotification(0,1)
+end
+
 Citizen.CreateThread(function()
 	local ShowButtonHold = false
 	local time = 0
     while true do
 		if IsControlJustPressed(0, Keys['G']) then
-			TriggerServerEvent("proxevent", "Be ID ha Negah Kard.")
-			ShowButtonHold = true
-			time = GetGameTimer()
+			if GetGameTimer() - time > 10000 then
+				TriggerServerEvent("proxevent", "Be ID ha Negah Kard.")
+				ShowButtonHold = true
+				time = GetGameTimer()
+			else
+				ShowNotification("~r~Lotfan Spam Nakonid!")
+			end
 		end
 
 		if GetGameTimer() - time > 5000 then
@@ -92,9 +102,9 @@ Citizen.CreateThread(function()
 
 				if distance < playerNamesDist then
 					if NetworkIsPlayerTalking(id) then
-						red = 95
-						green = 175
-						blue = 105
+						red = 0
+						green = 0
+						blue = 255
 						DrawText3D(x2, y2, z2 + displayIDHeight, "[" .. GetPlayerServerId(id) .. "] Talking . . .")
 					elseif ShowButtonHold or isAdmin then
 						red = 255
