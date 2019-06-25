@@ -8,7 +8,7 @@ end)
 RegisterCommand('addcar', function(source, args)
     if IsPedInAnyVehicle(PlayerPedId(-1), true) then
         if tonumber(args[1]) then
-            ESX.TriggerServerCallback('IsPlayerAdmin', function(bool)
+            ESX.TriggerServerCallback('IsPlayerSuperAdmin', function(bool)
                 if bool then
                     local vehicle = GetVehiclePedIsIn(PlayerPedId(-1), false)
                     local newPlate     = exports.esx_vehicleshop:GeneratePlate()
