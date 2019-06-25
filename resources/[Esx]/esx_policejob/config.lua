@@ -115,7 +115,7 @@ Config.PoliceStations = {
 			{ name = 'WEAPON_PISTOL50',     price = 9000 },
 			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
 			{ name = 'weapon_smg',     price = 12000 },
-			{ name = 'weapon_assaultrifle',     price = 12000 }
+			{ name = 'weapon_assaultrifle',     price = 12000 },
 			{ name = 'weapon_carbinerifle', price = 15000}
 		},
 
