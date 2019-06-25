@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CExtraTextMetaFile>
 	<hasGlobalTextFile value="true"/>
 	<hasAdditionalText value="true"/>
 	<isTitleUpdate value="false"/>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CExtraTextMetaFile>
+	<hasGlobalTextFile value="true"/>
+	<hasAdditionalText value="true"/>
+	<isTitleUpdate value="false"/>
+>>>>>>> 0a13a5127238a89a8c0ed25d6a00a4b354e28a61
 </CExtraTextMetaFile>
