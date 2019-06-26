@@ -68,7 +68,7 @@ Config.PoliceStations = {
 			},
 
 			{
-				Spawner    = { x = 470.05, y = -982.62, z = 41.00 },
+				Spawner    = { x = 473.38, y = -1018.43, z = 27.00 },
 				SpawnPoint = { x = 475.98, y = -1021.65, z = 28.06 },
 				Heading    = 276.11
 			}
@@ -76,7 +76,7 @@ Config.PoliceStations = {
 
 		Helicopters = {
 			{
-				Spawner    = { x = 464.558, y = -987.504, z = 42.691 },
+				Spawner    = { x = 470.05, y = -982.62, z = 41.00 },
 				SpawnPoint = { x = 450.04, y = -981.14, z = 42.691 },
 				Heading    = 0.0
 			}
@@ -85,7 +85,7 @@ Config.PoliceStations = {
 		VehicleDeleters = {
 			{ x = 462.74, y = -1014.4, z = 27.065 },
 			{ x = 462.40, y = -1019.7, z = 27.104 },
-			{ x = 449.32, y = -981.2, z = 43.691 },
+			{ x = 449.32, y = -981.2, z = 42.691 },
 			{ x = 469.12, y = -1024.52, z = 27.20 }
 		},
 
