@@ -76,7 +76,7 @@ Config.PoliceStations = {
 
 		Helicopters = {
 			{
-				Spawner    = { x = 470.05, y = -982.62, z = 41.00 },
+				Spawner    = { x = 470.05, y = -982.62, z = 41.30 },
 				SpawnPoint = { x = 450.04, y = -981.14, z = 42.691 },
 				Heading    = 0.0
 			}
