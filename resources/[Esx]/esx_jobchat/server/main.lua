@@ -69,6 +69,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
                     })
                 end
             end
+        end
     elseif sm[1] == "/f" then
         CancelEvent()
 
@@ -122,6 +123,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
                     })
                 end
             end
+        end
 		
     elseif sm[1] == "/dep" then
         CancelEvent()
@@ -135,7 +137,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
         if characterName ~= nil then name = characterName end
 
 
-        if job == "police" or job == "ambulance" then
+        if job == "police" or job == "ambulance" or job == "mecano" then
             
             str = xPlayer.job.grade_label
             jobGrade = str:gsub("^%l", string.upper)
@@ -144,7 +146,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
             for i=1, #xPlayers, 1 do
                 local xP = ESX.GetPlayerFromId(xPlayers[i])
                 xPJob = string.lower(xP.job.name)
-				if xPJob ~= 'police' and xPJob ~='ambulance' then
+				if xPJob ~= 'police' and xPJob ~='ambulance' and xPJob ~= 'mecano' then
 				TriggerClientEvent("sendProximityMessage", xPlayers[i], source, "^4[^2^*Radio^4] ^3" .. name.." ^8^*: ^r", "^0^* " .. string.sub(msg,6), { 0, 0, 255 })
 
                 elseif xPJob == 'police' then
@@ -162,6 +164,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
                 end
             end
         end
+    end
 end)
 
 function stringsplit(inputstr, sep)
