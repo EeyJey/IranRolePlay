@@ -381,7 +381,7 @@ function ban(source,db,identifier,license,liveid,xblid,discord,playerip,targetpl
 	if expiration < os.time() then
 		expiration = os.time()+expiration
 	end
-	
+	if db == "banlist" then
 		table.insert(BanList, {
 			identifier = identifier,
 			license    = license,
@@ -392,8 +392,8 @@ function ban(source,db,identifier,license,liveid,xblid,discord,playerip,targetpl
 			reason     = reason,
 			expiration = expiration,
 			permanent  = permanent
-          })
-
+		})
+	end
 
 
 
