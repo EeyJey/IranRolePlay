@@ -133,20 +133,20 @@ Config.PoliceStations = {
 		Vehicles = {
 			{
 				Spawner    = { x = 1852.79, y = 3680.51, z = 33.27 },
-				SpawnPoint = { x = 1856.26, y = 3673.43, z = 33.75 },
-				Heading    = 214.22
+				SpawnPoint = { x = 1853.89, y = 3675.7, z = 33.03 },
+				Heading    = 210.86
 			}
 		},
 		Helicopters = {
 			{
-				Spawner    = {},
-				SpawnPoint = {},
-				Heading    = {}
+				Spawner    = { x = 1863.47, y = 3683.33, z = 36.45 },
+				SpawnPoint = { x = 1833.19, y = 3681.13, z = 40.52 },
+				Heading    = 210.86
 			}
 		},
 
 		VehicleDeleters = {
-			{ x = 1851.04, y = 3673.2, z = 32.74 }
+			{ x = 1860.13, y = 3677.47, z = 32.65 }
 		},
 
 		BossActions = {
