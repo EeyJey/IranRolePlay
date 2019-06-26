@@ -103,8 +103,8 @@ Citizen.CreateThread(function()
 				if distance < playerNamesDist then
 					if NetworkIsPlayerTalking(id) then
 						red = 0
-						green = 0
-						blue = 255
+						green = 255
+						blue = 0
 						DrawText3D(x2, y2, z2 + displayIDHeight, "[" .. GetPlayerServerId(id) .. "] Talking . . .")
 					elseif ShowButtonHold or isAdmin then
 						red = 255
