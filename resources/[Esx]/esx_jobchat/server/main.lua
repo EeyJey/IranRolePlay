@@ -162,7 +162,6 @@ AddEventHandler('chatMessage', function(source, name, msg)
                 end
             end
         end
-    end
 end)
 
 function stringsplit(inputstr, sep)
