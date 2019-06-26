@@ -178,11 +178,11 @@ TriggerEvent('es:addGroupCommand', 'sqlban', Config.permission, function (source
 				
 					if duree > 0 then
 						ban(source,identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,duree,reason,permanent)
-						DropPlayer(target, Text.yourban .. reason)
+						-- DropPlayer(target, Text.yourban .. reason)
 					else
 						local permanent = 1
 						ban(source,identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,duree,reason,permanent)
-						DropPlayer(target, Text.yourpermban .. reason)
+						-- DropPlayer(target, Text.yourpermban .. reason)
 					end
 				
 				else
@@ -333,7 +333,7 @@ function ban(source,identifier,license,liveid,xblid,discord,playerip,targetplaye
 
 
 		MySQL.Async.execute(
-                'INSERT INTO banlist (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
+                'INSERT INTO banlist2 (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
                 { 
 				['@identifier']       = identifier,
 				['@license']          = license,
