@@ -23,10 +23,10 @@ end)
 
 local currentvoice = 1
 local voice = {
-	{dist = 5, message = "Voice range set on 5 meters."},
-	{dist = 10, message = "Voice range set on 10 meters."},
-	{dist = 15, message = "Voice range set on 15 meters."},
-	{dist = 4, veh = true, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle."},
+	{dist = 5.0, message = "Voice range set on 5 meters."},
+	{dist = 10.0, message = "Voice range set on 10 meters."},
+	{dist = 15.0, message = "Voice range set on 15 meters."},
+	{dist = 4.0, veh = true, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle."},
 	-- {dist = 70, veh = true, func = (function(ped) PlayerData = ESX.GetPlayerData() if (IsPedInAnyVehicle(ped) and PlayerData.job.name == "police") then return true else return false end end), message = "~b~You are talking on MegaPhone!"}
 }
 
