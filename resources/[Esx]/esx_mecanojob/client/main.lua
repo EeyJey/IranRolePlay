@@ -160,10 +160,8 @@ function OpenMecanoActionsMenu()
           else
 
             local elements = {
-              {label = _U('10ram'),  value = '10ram'},
-			  {label = _U('pjtrailer'),  value = 'pjtrailer'},
-              {label = _U('tow_truck'), value = 'towtruck'}
-
+              {label = _U('flat_bed'),  value = 'flatbed'},
+              {label = _U('tow_truck'), value = 'towtruck2'}
             }
 
             if Config.EnablePlayerManagement and PlayerData.job ~= nil and
@@ -1033,9 +1031,8 @@ Citizen.CreateThread(function()
               else
 
                 if
-                  GetEntityModel(vehicle) == GetHashKey('10ram')  or
-				  GetEntityModel(vehicle) == GetHashKey('pjtrailer') or
-                  GetEntityModel(vehicle) == GetHashKey('towtruck') or
+                  GetEntityModel(vehicle) == GetHashKey('flatbed')   or
+                  GetEntityModel(vehicle) == GetHashKey('towtruck2') or
                   GetEntityModel(vehicle) == GetHashKey('Sentinel')
                 then
                   TriggerServerEvent('esx_service:disableService', 'mecano')

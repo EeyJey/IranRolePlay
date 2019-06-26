@@ -34,7 +34,6 @@ end)
 
 RegisterNetEvent('ioh:isAdmin')
 AddEventHandler('ioh:isAdmin', function()
-	print("admin","true")
 	isAdmin = true
 end)
 
@@ -64,85 +63,57 @@ function DrawText3D(x,y,z, text)
     end
 end
 
+function ShowNotification(msg)
+	SetNotificationTextEntry('STRING')
+	AddTextComponentString(msg)
+	DrawNotification(0,1)
+end
+
 Citizen.CreateThread(function()
-	local showedToAll = 0
+	local ShowButtonHold = false
+	local time = 0
     while true do
-		local PlayerData = nil
-		local ShowButtonHold = false
-		
-		if IsControlPressed(0, Keys['G']) then
-			ShowButtonHold = true
-			showedToAll = showedToAll + 1
-		else
-			showedToAll = 0
+		if IsControlJustPressed(0, Keys['G']) then
+			if GetGameTimer() - time > 10000 then
+				TriggerServerEvent("proxevent", "Be ID ha Negah Kard.")
+				ShowButtonHold = true
+				time = GetGameTimer()
+			else
+				ShowNotification("~r~Lotfan Spam Nakonid!")
+			end
+		end
+
+		if GetGameTimer() - time > 5000 then
 			ShowButtonHold = false
 		end
-		if IsControlJustReleased(0, Keys['G']) then
-			showedToAll = 0
-			ShowButtonHold = false
+
+		for i=0,255 do
+			N_0x31698aa80e0223f8(i)
 		end
-		if showedToAll > 100 then
-			showedToAll = 0
-		end
-		if ShowButtonHold and showedToAll == 1 then
-			TriggerServerEvent("proxevent", "Dar hale moshahedeye ID hast")
-		end 
-		if disableForPlayers then 
-			if ESX == nil then
-				while ESX == nil do
-					TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-					Citizen.Wait(0)
-				end
-				TriggerServerEvent('ioh:checkadmin')
-			end
-			PlayerData = ESX.GetPlayerData()
-		end
-		if PlayerData == nil or (PlayerData.job.name ~= nil and PlayerData.job.name == "ambulance") or isAdmin then
-			for i=0,255 do
-				N_0x31698aa80e0223f8(i)
-			end
-			for id = 0, 255 do
-				if  ((NetworkIsPlayerActive( id )) and GetPlayerPed( id ) ~= GetPlayerPed( -1 )) then
-					ped = GetPlayerPed( id )
-					blip = GetBlipFromEntity( ped ) 
+		for id = 0, 255 do
+
+			if NetworkIsPlayerActive( id ) and GetPlayerPed( id ) ~= GetPlayerPed( -1 ) then
+				ped = GetPlayerPed( id )
+				blip = GetBlipFromEntity( ped ) 
 	 
-					x1, y1, z1 = table.unpack( GetEntityCoords( GetPlayerPed( -1 ), true ) )
-					x2, y2, z2 = table.unpack( GetEntityCoords( GetPlayerPed( id ), true ) )
-					distance = math.floor(GetDistanceBetweenCoords(x1,  y1,  z1,  x2,  y2,  z2,  true))
+				x1, y1, z1 = table.unpack( GetEntityCoords( GetPlayerPed( -1 ), true ) )
+				x2, y2, z2 = table.unpack( GetEntityCoords( GetPlayerPed( id ), true ) )
+				distance = math.floor(GetDistanceBetweenCoords(x1,  y1,  z1,  x2,  y2,  z2,  true))
 
-					if(ignorePlayerNameDistance) then
-						if NetworkIsPlayerTalking(id) then
-							red = 0
-							green = 0
-							blue = 255
-							DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-						else
-							red = 255
-							green = 255
-							blue = 255
-							DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-						end
+				if distance < playerNamesDist then
+					if NetworkIsPlayerTalking(id) then
+						red = 0
+						green = 255
+						blue = 0
+						DrawText3D(x2, y2, z2 + displayIDHeight, "[" .. GetPlayerServerId(id) .. "] Talking . . .")
+					elseif ShowButtonHold or isAdmin then
+						red = 255
+						green = 255
+						blue = 255
+						DrawText3D(x2, y2, z2 + displayIDHeight, "[" .. GetPlayerServerId(id) .. "] | " .. GetPlayerName(id))
 					end
-
-					if ((distance < playerNamesDist)) then
-						if (not (ignorePlayerNameDistance)) and ShowButtonHold then
-							if NetworkIsPlayerTalking(id) then
-								red = 0
-								green = 0
-								blue = 255
-								DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-							else
-								red = 255
-								green = 255
-								blue = 255
-								DrawText3D(x2, y2, z2 + displayIDHeight, GetPlayerServerId(id))
-							end
-						end
-					end  
-				end
+				end  
 			end
-		else
-			Citizen.Wait(1000)
 		end
         Citizen.Wait(0)
     end

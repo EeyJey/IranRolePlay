@@ -1,4 +1,4 @@
-DensityMultiplier = 0.1
+DensityMultiplier = 0
 Citizen.CreateThread(function()
 	while true do
 	    Citizen.Wait(0)

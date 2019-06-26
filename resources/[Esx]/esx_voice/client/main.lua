@@ -11,73 +11,92 @@ local Keys = {
 }
 
 ESX = nil
-
+local PlayerData = nil
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
-	NetworkSetTalkerProximity(10.0)
+	PlayerData = ESX.GetPlayerData()
+	
 end)
 
-local voice = {default = 10.0, shout = 26.0, whisper = 2.0, current = 0, level = nil}
-local x = 0.121
-local y = 0.988
+local currentvoice = 1
+local voice = {
+	{dist = 5.0, message = "Voice range set on 5 meters."},
+	{dist = 10.0, message = "Voice range set on 10 meters."},
+	{dist = 15.0, message = "Voice range set on 15 meters."},
+	{dist = 4.0, veh = true, func = function(ped) return IsPedInAnyVehicle(ped) end, message = "Voice range set to your vehicle."},
+	-- {dist = 70, veh = true, func = (function(ped) PlayerData = ESX.GetPlayerData() if (IsPedInAnyVehicle(ped) and PlayerData.job.name == "police") then return true else return false end end), message = "~b~You are talking on MegaPhone!"}
+}
 
-function drawLevel(r, g, b, a)
-	SetTextFont(9)
-	SetTextProportional(1)
-	SetTextScale(0.5, 0.5)
-	SetTextColour(r, g, b, a)
-	SetTextDropShadow(0, 0, 0, 0, 255)
-	SetTextEdge(1, 0, 0, 0, 255)
-	SetTextDropShadow()
-	SetTextOutline()
+local function ShowAboveRadarMessage(message)
+	SetNotificationTextEntry("jamyfafi")
+	AddTextComponentString(message)
+	return DrawNotification(0, 1)
+end
 
-	BeginTextCommandDisplayText("STRING")
-	AddTextComponentSubstringPlayerName(_U('voice', voice.level))
-	EndTextCommandDisplayText(0.275, 0.492)
+local notifID
+function ShowNotif()
+	if voice[currentvoice].message then
+		if notifID then RemoveNotification(notifID) end
+		notifID = ShowAboveRadarMessage(voice[currentvoice].message)
+		Citizen.SetTimeout(4000, function() if notifID then RemoveNotification(notifID) end end)
+	end
 end
 
 AddEventHandler('onClientMapStart', function()
-	if voice.current == 0 then
-		NetworkSetTalkerProximity(voice.default)
-	end
+	NetworkSetTalkerProximity(voice[currentvoice].dist)
 end)
 
-local prox = 10.0 -- Sets the Default Voice Distance
+function UpdateVoice(c)
+	if voice[c + 1] then
+		if voice[c + 1].func then
+			if voice[c + 1].func(GetPlayerPed(-1)) then
+				return c + 1
+			else
+				return UpdateVoice(c+1)
+			end
+		else
+			return c + 1
+		end
+	else
+		return 1
+	end
+end
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 
-		if IsControlJustPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
-			voice.current = (voice.current + 1) % 3
-			if voice.current == 0 then
-				NetworkSetTalkerProximity(voice.default)
-				voice.level = _U('normal')
-				prox = 10.0
-			end
-		end
-
-		if voice.current == 0 then
-			drawRct((x-0.0163), y, 0.035,0.01,128,128,128,240)
-		end
-
-		if NetworkIsPlayerTalking(PlayerId()) then
-			drawRct(x, y, 0.068,0.01,255,0,0,200)
-		elseif not NetworkIsPlayerTalking(PlayerId()) then
-			drawRct(x, y, 0.068,0.01,50,50,50,100)
-		end
-		
-		if IsControlPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
-			local posPlayer = GetEntityCoords(GetPlayerPed(-1))
-			DrawMarker(1, posPlayer.x, posPlayer.y, posPlayer.z - 1, 0, 0, 0, 0, 0, 0, prox * 2, prox * 2, 0.8001, 0, 75, 255, 165, 0,0, 0,0)
+		if IsControlJustPressed(1, Keys['H']) then
+			currentvoice = UpdateVoice(currentvoice)
+			ShowNotif()
+			TriggerEvent("voicechange", currentvoice)
+			NetworkSetTalkerProximity(voice[currentvoice].dist)
 		end
 	end
 end)
 
-function drawRct(x,y,width,height,r,g,b,a)
-	DrawRect(x, y, width, height, r, g, b, a)
-end
+Citizen.CreateThread(function()
+    RequestAnimDict("facials@gen_male@variations@normal")
+    RequestAnimDict("mp_facial")
 
+    local talkingPlayers = {}
+    while true do
+        Citizen.Wait(300)
+
+        for k,v in pairs(GetPlayers()) do
+            local boolTalking = NetworkIsPlayerTalking(v)
+            if v ~= PlayerId() then
+                if boolTalking and not talkingPlayers[v] then
+                    PlayFacialAnim(GetPlayerPed(v), "mic_chatter", "mp_facial")
+                    talkingPlayers[v] = true
+                elseif not boolTalking and talkingPlayers[v] then
+                    PlayFacialAnim(GetPlayerPed(v), "mood_normal_1", "facials@gen_male@variations@normal")
+                    talkingPlayers[v] = nil
+                end
+            end
+        end
+    end
+end)

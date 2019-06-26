@@ -43,7 +43,8 @@ Config.PoliceStations = {
 			{ name = 'WEAPON_PISTOL50',     price = 9000 },
 			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
 			{ name = 'weapon_smg',     price = 12000 },
-			{ name = 'weapon_assaultrifle',     price = 12000 }
+			{ name = 'weapon_assaultrifle',     price = 12000 },
+			{ name = 'weapon_carbinerifle', price = 15000}
 		},
 
 		Cloakrooms = {
@@ -75,7 +76,7 @@ Config.PoliceStations = {
 
 		Helicopters = {
 			{
-				Spawner    = { x = 464.558, y = -987.504, z = 42.691 },
+				Spawner    = { x = 470.05, y = -982.62, z = 41.00 },
 				SpawnPoint = { x = 450.04, y = -981.14, z = 42.691 },
 				Heading    = 0.0
 			}
@@ -84,6 +85,8 @@ Config.PoliceStations = {
 		VehicleDeleters = {
 			{ x = 462.74, y = -1014.4, z = 27.065 },
 			{ x = 462.40, y = -1019.7, z = 27.104 },
+			{ x = 449.32, y = -981.2, z = 42.900 },
+			{ x = 480.0, y = -982.320, z = 40.100},
 			{ x = 469.12, y = -1024.52, z = 27.20 }
 		},
 
@@ -114,7 +117,8 @@ Config.PoliceStations = {
 			{ name = 'WEAPON_PISTOL50',     price = 9000 },
 			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
 			{ name = 'weapon_smg',     price = 12000 },
-			{ name = 'weapon_assaultrifle',     price = 12000 }
+			{ name = 'weapon_assaultrifle',     price = 12000 },
+			{ name = 'weapon_carbinerifle', price = 15000}
 		},
 
 		Cloakrooms = {
