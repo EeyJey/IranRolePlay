@@ -17,7 +17,7 @@
       <animConvRoofWindowsAffected />
       <ptfxAssetName>null</ptfxAssetName>
       <audioNameHash>blista2</audioNameHash>
-      <layout>LAYOUT_LOW_NC1</layout>
+      <layout>LAYOUT_LOW</layout>
       <coverBoundOffsets>SENTINEL_COVER_OFFSET_INFO</coverBoundOffsets>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
       <scenarioLayout />

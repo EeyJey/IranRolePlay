@@ -2,26 +2,10 @@
 <CVehicleModelInfoVarGlobal>    
   <Kits>
     <Item>
-      <kitName>1994_supersport_modkit</kitName>
-      <id value="1994" />	 	  
+      <kitName>1986_SENNA_modkit</kitName>
+      <id value="1986" />	 	  
       <kitType>MKT_SPECIAL</kitType>
-      <visibleMods>
-        <Item>
-          <modelName>brakelights_red</modelName>
-          <modShopLabel>BRAKELIGHTS_RED</modShopLabel>
-          <linkedModels />
-          <turnOffBones />
-          <type>VMT_SPOILER</type>
-          <bone>chassis</bone>
-          <collisionBone>chassis</collisionBone>
-          <cameraPos>VMCP_DEFAULT</cameraPos>
-          <audioApply value="1.000000" />
-          <weight value="20" />
-          <turnOffExtra value="false" />
-          <disableBonnetCamera value="false" />
-          <allowBonnetSlide value="true" />
-        </Item>
-      </visibleMods>
+      <visibleMods />
       <linkMods />
       <statMods>
         <Item>
@@ -185,7 +169,7 @@
           <weight value="0" />
           <type>VMT_HORN</type>
         </Item>
-		    <Item>
+		<Item>
           <identifier>HORN_SAD_TROMBONE</identifier>
           <modifier value="632950117" />
           <audioApply value="1.000000" />
@@ -233,70 +217,70 @@
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-	    	</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>MUSICAL_HORN_BUSINESS_7</identifier>
           <modifier value="3203290992" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_C0</identifier>
           <modifier value="771284519" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-	    	</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_D0</identifier>
           <modifier value="2586621229" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-	    	</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_E0</identifier>
           <modifier value="283386134" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-	    	</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_F0</identifier>
           <modifier value="3884502400" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
-    		<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_G0</identifier>
           <modifier value="265723083" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_A0</identifier>
           <modifier value="1746883687" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
-	    	<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_B0</identifier>
           <modifier value="1919870950" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
-    		<Item>
+		</Item>
+		<Item>
           <identifier>DLC_BUSI2_C_MAJOR_NOTES_C1</identifier>
           <modifier value="1085277077" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_HORN</type>
-    		</Item>
+		</Item>
         <Item>
           <identifier>HIPSTER_HORN_1</identifier>
           <modifier value="444549672" />
@@ -353,65 +337,6 @@
           <weight value="0" />
           <type>VMT_HORN</type>
         </Item>
-	    	<Item>
-          <identifier>LUXE_HORN_1</identifier>
-          <modifier value="3199657341" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-	    	<Item>
-          <identifier>LUXE_HORN_2</identifier>
-          <modifier value="2900378064" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-	    	<Item>
-          <identifier>LUXE_HORN_3</identifier>
-          <modifier value="3956195248" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-		<!-- PREVIEW HORN - FOR MOD SHOP USE ONLY -->
-	    	<Item>
-          <identifier>LUXORY_HORN_1</identifier>
-          <modifier value="676333254" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-		<!-- PREVIEW HORN - FOR MOD SHOP USE ONLY -->
-    		<Item>
-          <identifier>LUXURY_HORN_2</identifier>
-          <modifier value="2099578296" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-		<!-- PREVIEW HORN - FOR MOD SHOP USE ONLY -->
-	    	<Item>
-          <identifier>LUXURY_HORN_3</identifier>
-          <modifier value="1373384483" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_HORN</type>
-        </Item>
-        <Item>
-          <identifier />
-          <modifier value="1" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_SUSPENSION</type>
-        </Item>
-        <Item>
-          <identifier />
-          <modifier value="2" />
-          <audioApply value="1.000000" />
-          <weight value="0" />
-          <type>VMT_SUSPENSION</type>
-        </Item>
         <Item>
           <identifier />
           <modifier value="3" />
@@ -421,17 +346,27 @@
         </Item>
         <Item>
           <identifier />
-          <modifier value="4" />
+          <modifier value="6" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="9" />
+          <audioApply value="1.000000" />
+          <weight value="0" />
+          <type>VMT_SUSPENSION</type>
+        </Item>
+        <Item>
+          <identifier />
+          <modifier value="12" />
           <audioApply value="1.000000" />
           <weight value="0" />
           <type>VMT_SUSPENSION</type>
         </Item>
       </statMods>
       <slotNames />
-        <Item>
-          <slot>VMT_CHASSIS</slot>
-          <name>TOP_CAGE</name>
-        </Item>
       <liveryNames />
     </Item>
   </Kits>
@@ -439,7 +374,7 @@
     <Item>
       <id value="998" />	
       <indicator>
-        <intensity value="0.375000" />
+        <intensity value="0.575000" />
         <falloffMax value="2.500000" />
         <falloffExponent value="8.000000" />
         <innerConeAngle value="30.000000" />
@@ -478,7 +413,7 @@
         <pullCoronaIn value="false" />
       </frontIndicatorCorona>
       <tailLight>
-        <intensity value="0.250000" />
+        <intensity value="0.150000" />
         <falloffMax value="4.000000" />
         <falloffExponent value="16.000000" />
         <innerConeAngle value="45.000000" />
@@ -566,7 +501,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>supersport</name>
+      <name>senna</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>

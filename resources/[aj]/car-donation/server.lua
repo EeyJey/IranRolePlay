@@ -3,6 +3,7 @@ admins = {
     'steam:110000111fc352b',
     'steam:11000010a1b83df', -- MaMad Owner
     'steam:11000010494a934'  -- Obi Vika
+	'steam:11000011783a55b'  -- Arman
 }
 
 ESX = nil

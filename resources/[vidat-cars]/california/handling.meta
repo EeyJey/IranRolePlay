@@ -5,7 +5,7 @@
     <Item type="CHandlingData">
       <handlingName>fc15</handlingName>
       <fMass value="1570.000000"/>
-      <fInitialDragCoeff value="7.7419996"/>
+      <fInitialDragCoeff value="6.2419996"/>
       <fDownforceModifier value="1.510000"/>
       <fPercentSubmerged value="72.000000"/>
       <vecCentreOfMassOffset x="0.000000" y="-0.130000" z="0.010000"/>
