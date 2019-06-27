@@ -117,8 +117,7 @@ Config.PoliceStations = {
 			{ name = 'WEAPON_PISTOL50',     price = 9000 },
 			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
 			{ name = 'weapon_smg',     price = 12000 },
-			{ name = 'weapon_assaultrifle',     price = 12000 },
-			{ name = 'weapon_carbinerifle', price = 15000}
+			{ name = 'weapon_assaultrifle',     price = 12000 }
 		},
 
 		Cloakrooms = {
@@ -137,15 +136,15 @@ Config.PoliceStations = {
 		Vehicles = {
 			{
 				Spawner    = { x = 1852.79, y = 3680.51, z = 33.27 },
-				SpawnPoint = { x = 1853.89, y = 3675.7, z = 33.03 },
+				SpawnPoint = { x = 1871.31, y = 3692.39, z = 33.6 },
 				Heading    = 210.86
 			}
 		},
 		Helicopters = {
 			{
-				Spawner    = { x = 1863.47, y = 3683.33, z = 36.45 },
-				SpawnPoint = { x = 1833.19, y = 3681.13, z = 40.52 },
-				Heading    = 210.86
+				Spawner    = { x = 1859.43, y = 3657.82, z = 34.55 },
+				SpawnPoint = { x = 1863.63, y = 3650.59, z = 34.76 },
+				Heading    = 31.72
 			}
 		},
 
@@ -155,6 +154,67 @@ Config.PoliceStations = {
 
 		BossActions = {
 			{ x = 1853.06, y = 3689.6, z = 33.27 }
+		},
+
+	},
+	PALETOBAY = {
+
+		Blip = {
+			Pos     = { x = -444.68, y = 6014.44, z = 31.72 },
+			Sprite  = 60,
+			Display = 4,
+			Scale   = 1.2,
+			Colour  = 29,
+		},
+
+		-- https://wiki.rage.mp/index.php?title=Weapons
+		AuthorizedWeapons = {
+			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
+			{ name = 'WEAPON_STUNGUN',       price = 500 },
+			{ name = 'weapon_flashlight',       price = 100 },
+			{ name = 'WEAPON_PISTOL',     price = 5000 },
+			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
+			{ name = 'WEAPON_COMBATPISTOL',     price = 7000 },
+			{ name = 'WEAPON_PISTOL50',     price = 9000 },
+			{ name = 'WEAPON_HEAVYPISTOL',     price = 8000 },
+			{ name = 'weapon_smg',     price = 12000 },
+			{ name = 'weapon_assaultrifle',     price = 12000 }
+		},
+
+		Cloakrooms = {
+			{ x = -448.73, y = 6015.81, z = 30.72 },
+		},
+		
+		Stocks = {
+			{},
+		},
+
+
+		Armories = {
+			{ x = -449.5, y = 6010.53, z = 30.72 },
+		},
+
+		Vehicles = {
+			{
+				Spawner    = { x = -441.7, y = 6021.09, z = 30.49 },
+				SpawnPoint = { x = -438.83, y = 6029.31, z = 30.51 },
+				Heading    = 33.14
+			}
+		},
+		Helicopters = {
+			{
+				Spawner    = { x = -466.39, y = 5996.45, z = 30.25 },
+				SpawnPoint = { x = -475.04, y = 5987.94, z = 33.47 },
+				Heading    = 314.51
+			}
+		},
+
+		VehicleDeleters = {
+			{ x = -449.99, y = 6032.45, z = 30.34 }
+		},
+
+		BossActions = {
+			{ x = -448.96, y = 6012.71, z = 30.72 }
 		},
 
 	},
