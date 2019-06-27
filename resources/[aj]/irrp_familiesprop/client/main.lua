@@ -347,7 +347,6 @@ function OpenGangActionsMenu()
           title    = _U('citizen_interaction'),
           align    = 'top-right',
           elements = {
-            {label = _U('search'),        value = 'body_search'},
             {label = _U('handcuff'),    value = 'handcuff'},
             {label = _U('drag'),      value = 'drag'},
             {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
@@ -359,10 +358,6 @@ function OpenGangActionsMenu()
            local player, distance = ESX.Game.GetClosestPlayer()
 
            if distance ~= -1 and distance <= 3.0 then
-
-             if data2.current.value == 'body_search' then
-              OpenBodySearchMenu(player)
-            end
 
              if data2.current.value == 'handcuff' then
               TriggerServerEvent('irrp_familiesprop:handcuff', GetPlayerServerId(player))
