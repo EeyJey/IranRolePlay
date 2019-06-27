@@ -14,11 +14,10 @@ function OpenAmbulanceActionsMenu()
 
 	ESX.UI.Menu.CloseAll()
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'ambulance_actions',
-	{
-		title		= _U('ambulance'),
-		align		= 'top-right',
-		elements	= elements
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'ambulance_actions', {
+		title    = _U('ambulance'),
+		align    = 'top-left',
+		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'cloakroom' then
 			OpenCloakroomMenu()
@@ -38,17 +37,16 @@ function OpenMobileAmbulanceActionsMenu()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_ambulance_actions', {
 		title    = _U('ambulance'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = {
 			{label = _U('ems_menu'), value = 'citizen_interaction'}
 		}
 	}, function(data, menu)
 		if data.current.value == 'citizen_interaction' then
-			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction',
-			{
-				title		= _U('ems_menu_title'),
-				align		= 'top-right',
-				elements	= {
+			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
+				title    = _U('ems_menu_title'),
+				align    = 'top-left',
+				elements = {
 					{label = _U('ems_menu_revive'), value = 'revive'},
 					{label = _U('ems_menu_small'), value = 'small'},
 					{label = _U('ems_menu_big'), value = 'big'},
@@ -289,32 +287,32 @@ Citizen.CreateThread(function()
 				end
 			end
 
-			-- Logic for exiting & entering markers
-			if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastHospital ~= currentHospital or LastPart ~= currentPart or LastPartNum ~= currentPartNum)) then
+		end
 
-				if
-					(LastHospital ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
-					(LastHospital ~= currentHospital or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
-				then
-					TriggerEvent('esx_ambulancejob:hasExitedMarker', LastHospital, LastPart, LastPartNum)
-					hasExited = true
-				end
+		-- Logic for exiting & entering markers
+		if isInMarker and not HasAlreadyEnteredMarker or (isInMarker and (LastHospital ~= currentHospital or LastPart ~= currentPart or LastPartNum ~= currentPartNum)) then
 
-				HasAlreadyEnteredMarker, LastHospital, LastPart, LastPartNum = true, currentHospital, currentPart, currentPartNum
-
-				TriggerEvent('esx_ambulancejob:hasEnteredMarker', currentHospital, currentPart, currentPartNum)
-
-			end
-
-			if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
-				HasAlreadyEnteredMarker = false
+			if
+				(LastHospital ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
+				(LastHospital ~= currentHospital or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
+			then
 				TriggerEvent('esx_ambulancejob:hasExitedMarker', LastHospital, LastPart, LastPartNum)
+				hasExited = true
 			end
 
-			if letSleep then
-				Citizen.Wait(500)
-			end
+			HasAlreadyEnteredMarker, LastHospital, LastPart, LastPartNum = true, currentHospital, currentPart, currentPartNum
 
+			TriggerEvent('esx_ambulancejob:hasEnteredMarker', currentHospital, currentPart, currentPartNum)
+
+		end
+
+		if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
+			HasAlreadyEnteredMarker = false
+			TriggerEvent('esx_ambulancejob:hasExitedMarker', LastHospital, LastPart, LastPartNum)
+		end
+
+		if letSleep then
+			Citizen.Wait(500)
 		end
 	end
 end)
@@ -417,10 +415,9 @@ AddEventHandler('esx_ambulancejob:putInVehicle', function()
 end)
 
 function OpenCloakroomMenu()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom',
-	{
-		title		= _U('cloakroom'),
-		align		= 'top-right',
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom', {
+		title    = _U('cloakroom'),
+		align    = 'top-left',
 		elements = {
 			{label = _U('ems_clothes_civil'), value = 'citizen_wear'},
 			{label = _U('ems_clothes_ems'), value = 'ambulance_wear'},
@@ -456,7 +453,7 @@ function OpenVehicleSpawnerMenu(hospital, partNum)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle', {
 		title    = _U('garage_title'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 
@@ -507,7 +504,7 @@ function OpenVehicleSpawnerMenu(hospital, partNum)
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_garage', {
 						title    = _U('garage_title'),
-						align    = 'top-right',
+						align    = 'top-left',
 						elements = garage
 					}, function(data2, menu2)
 						if data2.current.stored then
@@ -637,7 +634,7 @@ function OpenHelicopterSpawnerMenu(hospital, partNum)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'helicopter_spawner', {
 		title    = _U('helicopter_title'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 
@@ -689,7 +686,7 @@ function OpenHelicopterSpawnerMenu(hospital, partNum)
 
 					ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'helicopter_garage', {
 						title    = _U('helicopter_garage_title'),
-						align    = 'top-right',
+						align    = 'top-left',
 						elements = garage
 					}, function(data2, menu2)
 						if data2.current.stored then
@@ -733,14 +730,13 @@ function OpenShopMenu(elements, restoreCoords, shopCoords)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_shop', {
 		title    = _U('vehicleshop_title'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = elements
 	}, function(data, menu)
 
-		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_shop_confirm',
-		{
+		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_shop_confirm', {
 			title    = _U('vehicleshop_confirm', data.current.name, data.current.price),
-			align    = 'top-right',
+			align    = 'top-left',
 			elements = {
 				{ label = _U('confirm_no'), value = 'no' },
 				{ label = _U('confirm_yes'), value = 'yes' }
@@ -850,10 +846,9 @@ end
 
 function drawLoadingText(text, red, green, blue, alpha)
 	SetTextFont(4)
-	SetTextProportional(0)
 	SetTextScale(0.0, 0.5)
 	SetTextColour(red, green, blue, alpha)
-	SetTextDropShadow(0, 0, 0, 0, 255)
+	SetTextDropshadow(0, 0, 0, 0, 255)
 	SetTextEdge(1, 0, 0, 0, 255)
 	SetTextDropShadow()
 	SetTextOutline()
@@ -867,10 +862,9 @@ end
 function OpenPharmacyMenu()
 	ESX.UI.Menu.CloseAll()
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'pharmacy',
-	{
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'pharmacy', {
 		title    = _U('pharmacy_menu_title'),
-		align    = 'top-right',
+		align    = 'top-left',
 		elements = {
 			{label = _U('pharmacy_take', _U('medikit')), value = 'medikit'},
 			{label = _U('pharmacy_take', _U('bandage')), value = 'bandage'}
