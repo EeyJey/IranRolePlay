@@ -86,11 +86,6 @@ Citizen.CreateThread(function()
 			EnableControlAction(0, Keys['G'], true)
 			EnableControlAction(0, Keys['T'], true)
 			EnableControlAction(0, Keys['E'], true)
-			EnableControlAction(0, 177, true)
-			EnableControlAction(0, 200, true)
-			EnableControlAction(0, 249, true)
-			EnableControlAction(0, 202, true)
-			EnableControlAction(0, 322, true)
 		else
 			Citizen.Wait(500)
 		end
@@ -98,25 +93,6 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
-	print(ESX.GetPlayerData().jailed)
-	if ESX.GetPlayerData().jailed == 1 then
-		TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
-
-		local formattedCoords	= {
-			x = Config.RespawnPointJailed.coords.x,
-			y = Config.RespawnPointJailed.coords.y,
-			z = Config.RespawnPointJailed.coords.z
-		}
-		ESX.UI.Menu.CloseAll()
-
-		ESX.SetPlayerData('lastPosition', formattedCoords)
-		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
-		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
-
-	StartScreenEffect('DeathFailOut', 0, false)
-		return
-	end 
-
 	IsDead = true
 	ESX.UI.Menu.CloseAll()
 	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
@@ -176,10 +152,9 @@ function StartDistressSignal()
 			timer = timer - 30
 
 			SetTextFont(4)
-			SetTextProportional(1)
 			SetTextScale(0.45, 0.45)
 			SetTextColour(185, 185, 185, 255)
-			SetTextDropShadow(0, 0, 0, 0, 255)
+			SetTextDropshadow(0, 0, 0, 0, 255)
 			SetTextEdge(1, 0, 0, 0, 255)
 			SetTextDropShadow()
 			SetTextOutline()
@@ -205,21 +180,18 @@ end
 
 function SendDistressSignal()
 	local playerPed = PlayerPedId()
-	PedPosition		= GetEntityCoords(playerPed)
-	
-	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
+	local coords = GetEntityCoords(playerPed)
 
 	ESX.ShowNotification(_U('distress_sent'))
-
-    TriggerServerEvent('esx_addons_gcphone:startCall', 'ambulance', _U('distress_message'), PlayerCoords, {
-
-		PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+	TriggerServerEvent('esx_phone:send', 'ambulance', _U('distress_message'), false, {
+		x = coords.x,
+		y = coords.y,
+		z = coords.z
 	})
 end
 
 function DrawGenericTextThisFrame()
 	SetTextFont(4)
-	SetTextProportional(0)
 	SetTextScale(0.0, 0.5)
 	SetTextColour(255, 255, 255, 255)
 	SetTextDropshadow(0, 0, 0, 0, 255)
@@ -298,7 +270,7 @@ function StartDeathTimer()
 			if not Config.EarlyRespawnFine then
 				text = text .. _U('respawn_bleedout_prompt')
 
-				if IsControlPressed(0, Keys['E']) and timeHeld > 60  then
+				if IsControlPressed(0, Keys['E']) and timeHeld > 60 then
 					RemoveItemsAfterRPDeath()
 					break
 				end
@@ -342,13 +314,15 @@ function RemoveItemsAfterRPDeath()
 		end
 
 		ESX.TriggerServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function()
-			local formattedCoords	= {
+			local formattedCoords = {
 				x = Config.RespawnPoint.coords.x,
 				y = Config.RespawnPoint.coords.y,
 				z = Config.RespawnPoint.coords.z
 			}
+
 			ESX.SetPlayerData('lastPosition', formattedCoords)
 			ESX.SetPlayerData('loadout', {})
+
 			TriggerServerEvent('esx:updateLastPosition', formattedCoords)
 			RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPoint.heading)
 
@@ -356,10 +330,6 @@ function RemoveItemsAfterRPDeath()
 			DoScreenFadeIn(800)
 		end)
 	end)
-end
-
-function RemoveLootedItemsAfterRPDeath()
-	TriggerServerEvent()
 end
 
 function RespawnPed(ped, coords, heading)

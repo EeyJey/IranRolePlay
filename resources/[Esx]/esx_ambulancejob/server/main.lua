@@ -46,7 +46,7 @@ ESX.RegisterServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function(
 
 	if Config.RemoveCashAfterRPDeath then
 		if xPlayer.getMoney() > 0 then
-			xPlayer.removeMoney(xPlayer.getMoney()*0.25)
+			xPlayer.removeMoney(xPlayer.getMoney())
 		end
 
 		if xPlayer.getAccount('black_money').money > 0 then
@@ -119,23 +119,23 @@ ESX.RegisterServerCallback('esx_ambulancejob:buyJobVehicle', function(source, cb
 	if price == 0 then
 		print(('esx_ambulancejob: %s attempted to exploit the shop! (invalid vehicle model)'):format(xPlayer.identifier))
 		cb(false)
-	end
-
-	if xPlayer.getMoney() >= price then
-		xPlayer.removeMoney(price)
-
-		MySQL.Async.execute('INSERT INTO owned_vehicles (owner, vehicle, plate, type, job, `stored`) VALUES (@owner, @vehicle, @plate, @type, @job, @stored)', {
-			['@owner'] = xPlayer.identifier,
-			['@vehicle'] = json.encode(vehicleProps),
-			['@plate'] = vehicleProps.plate,
-			['@type'] = type,
-			['@job'] = xPlayer.job.name,
-			['@stored'] = true
-		}, function (rowsChanged)
-			cb(true)
-		end)
 	else
-		cb(false)
+		if xPlayer.getMoney() >= price then
+			xPlayer.removeMoney(price)
+	
+			MySQL.Async.execute('INSERT INTO owned_vehicles (owner, vehicle, plate, type, job, `stored`) VALUES (@owner, @vehicle, @plate, @type, @job, @stored)', {
+				['@owner'] = xPlayer.identifier,
+				['@vehicle'] = json.encode(vehicleProps),
+				['@plate'] = vehicleProps.plate,
+				['@type'] = type,
+				['@job'] = xPlayer.job.name,
+				['@stored'] = true
+			}, function (rowsChanged)
+				cb(true)
+			end)
+		else
+			cb(false)
+		end
 	end
 end)
 
@@ -237,7 +237,7 @@ AddEventHandler('esx_ambulancejob:giveItem', function(itemName)
 	end
 end)
 
-TriggerEvent('es:addGroupCommand', 'revive', 'mod', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'revive', 'admin', function(source, args, user)
 	if args[1] ~= nil then
 		if GetPlayerName(tonumber(args[1])) ~= nil then
 			print(('esx_ambulancejob: %s used admin revive'):format(GetPlayerIdentifiers(source)[1]))
