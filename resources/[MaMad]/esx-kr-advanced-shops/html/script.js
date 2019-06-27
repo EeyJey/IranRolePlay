@@ -34,7 +34,7 @@ $(function() {
 			}
 
 			$('#wrapper').append(
-				` <h6 class = "h4" style = "right: 47.125%; position: absolute;" bottom = ${id - 5}>Made by KRILLE</h6>`
+				` <h6 class = "h4" style = "right: 47.125%; position: absolute;" bottom = ${id - 5}></h6>`
 			)
 
 			if (event.data.owner == true) {
@@ -74,15 +74,15 @@ $(function() {
 							<h6>${cb[i].label}</h4>
 							<h6>$${cb[i].price} per item</h4>
 							<h6>In stock: ${cb[i].count}</h4>
-							<input type="text" id = ${cb[i].item} count = ${cb[i].count} class = "textareas" placeholder = "How many?"></textarea>
+							<input type="text" id = ${cb[i].item} count = ${cb[i].count} class = "textareas" placeholder = "Chand ta?"></textarea>
 							</div>`
 								);
 							};
 
 							$('#cart').append(
 							`
-							<button class = "button" id = "buybutton" style = "position: absolute; right: 15px; top: 5px;">Purchase</button>
-							<button class = "button" id = "back" style = "position: absolute; left: 15px; top: 5px;">Back</button>
+							<button class = "button" id = "buybutton" style = "position: absolute; right: 15px; top: 5px;">Kharid</button>
+							<button class = "button" id = "back" style = "position: absolute; left: 15px; top: 5px;">Bargasht</button>
 							`
 						);
 					});
