@@ -4,11 +4,7 @@ Config.DrawDistance               = 100.0
 
 Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 
-<<<<<<< HEAD
-Config.ReviveReward               = 700  -- revive reward, set to 0 if you don't want it enabled
-=======
-Config.ReviveReward               = 4000  -- revive reward, set to 0 if you don't want it enabled
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
+Config.ReviveReward               = 3999  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = true -- disable if you're using fivem-ipl or other IPL loaders
 
@@ -17,189 +13,107 @@ Config.Locale                     = 'en'
 local second = 1000
 local minute = 60 * second
 
-Config.EarlyRespawnTimer          = 5 * minute  -- Time til respawn is available
-<<<<<<< HEAD
-Config.BleedoutTimer              = 10 * minute -- Time til the player bleeds out
-=======
-Config.BleedoutTimer              = 60 * minute -- Time til the player bleeds out
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
+Config.EarlyRespawnTimer          = 6 * minute  -- Time til respawn is available
+Config.BleedoutTimer              = 300 * minute -- Time til the player bleeds out
 
-Config.EnablePlayerManagement     = false
+Config.EnablePlayerManagement     = true
+Config.EnableSocietyOwnedVehicles = false
 
 Config.RemoveWeaponsAfterRPDeath  = true
-Config.RemoveCashAfterRPDeath     = false
+Config.RemoveCashAfterRPDeath     = true
 Config.RemoveItemsAfterRPDeath    = true
 
 -- Let the player pay for respawning early, only if he can afford it.
 Config.EarlyRespawnFine           = false
 Config.EarlyRespawnFineAmount     = 5000
 
-<<<<<<< HEAD
-Config.RespawnPoint = { coords = vector3(363.79, -578.72, 28.84), heading = 206.36 }
-=======
 Config.RespawnPoint = { coords = vector3(341.0, -1397.3, 32.5), heading = 48.5 }
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
+Config.RespawnPointJailed = { coords = vector3(1799, 2483, -122), heading = 300}
 
 Config.Hospitals = {
 
 	CentralLosSantos = {
 
 		Blip = {
-			coords = vector3(364.81, -591.5, 28.69),
+			coords = vector3(307.7, -1433.4, 28.9),
 			sprite = 61,
 			scale  = 1.2,
 			color  = 2
 		},
 
 		AmbulanceActions = {
-			vector3(336.3, -580.37, 27.79)
+			vector3(270.5, -1363.0, 23.5)
 		},
 
 		Pharmacies = {
-<<<<<<< HEAD
-			vector3(335.03, -585.14, 27.79)
-=======
-			vector3(230.1, -1366.1, 38.5)
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
+			vector3(230.1, -1366.1, 38.5),
+			vector3(251, -1347.2, 23.55)
 		},
 
 		Vehicles = {
 			{
-				Spawner = vector3(329.0, -557.72, 28.74),
-				InsideShop = vector3(365.22, -565.07, 39.06),
+				Spawner = vector3(307.7, -1433.4, 30.0),
+				InsideShop = vector3(446.7, -1355.6, 43.5),
 				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
 				SpawnPoints = {
-					{ coords = vector3(335.08, -542.29, 28.53), heading = 179.95, radius = 4.0 },
-					{ coords = vector3(329.39, -542.59, 28.53), heading = 179.95, radius = 4.0 },
-					{ coords = vector3(323.7, -542.88, 28.53), heading = 179.95, radius = 4.0 },
-					{ coords = vector3(317.88, -547.85, 28.53), heading = 268.55, radius = 4.0 }
+					{ coords = vector3(297.2, -1429.5, 29.8), heading = 227.6, radius = 4.0 },
+					{ coords = vector3(294.0, -1433.1, 29.8), heading = 227.6, radius = 4.0 },
+					{ coords = vector3(309.4, -1442.5, 29.8), heading = 227.6, radius = 6.0 }
 				}
 			}
 		},
 
 		Helicopters = {
 			{
-				Spawner = vector3(341.1, -590.1, 74.14),
-				InsideShop = vector3(312.59, -575.68, 93.65),
+				Spawner = vector3(317.5, -1449.5, 46.5),
+				InsideShop = vector3(305.6, -1419.7, 41.5),
 				Marker = { type = 34, x = 1.5, y = 1.5, z = 1.5, r = 100, g = 150, b = 150, a = 100, rotate = true },
 				SpawnPoints = {
-					{ coords = vector3(351.87, -588.15, 73.34), heading = 341.15, radius = 10.0 }
+					{ coords = vector3(313.5, -1465.1, 46.5), heading = 142.7, radius = 10.0 },
+					{ coords = vector3(299.5, -1453.2, 46.5), heading = 142.7, radius = 10.0 }
 				}
 			}
 		},
 
 		FastTravels = {
-			
-		},
-
-		FastTravelsPrompt = {
 			{
-				From = vector3(340.49, -595.27, 27.79),
-				To = { coords = vector3(343.13, -595.51, 74.17), heading = 247.11 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
-				Prompt = _U('helipad')
+				From = vector3(294.7, -1448.1, 29.0),
+				To = { coords = vector3(272.8, -1358.8, 23.5), heading = 0.0 },
+				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
-
 			{
-<<<<<<< HEAD
-				From = vector3(339.74, -584.33, 73.17),
-				To = { coords = vector3(337.76, -594.37, 28.79), heading = 68.35 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
-				Prompt = _U('inside')
-			}
-		}
-
-	},
-	
-	Sandy = {
-
-		Blip = {
-			coords = vector3(1838.82, 3673.6, 34.28),
-			sprite = 61,
-			scale  = 1.2,
-			color  = 2
-		},
-
-		AmbulanceActions = {
-			vector3(1837.36, 3670.62, 9.73)
-		},
-
-		Pharmacies = {
-			vector3(1834.93, 3669.99, 9.69)
-		},
-
-		Vehicles = {
-			{
-				Spawner = vector3(1842.4, 3667.07, 33.68),
-				InsideShop = vector3(1830.4, 3633.24, 34.4),
-				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
-				SpawnPoints = {
-					{ coords = vector3(1848.8, 3670.44, 33.28), heading = 298.6, radius = 4.0 }
-				}
-			}
-		},
-
-		Helicopters = {
-=======
 				From = vector3(275.3, -1361, 23.5),
 				To = { coords = vector3(295.8, -1446.5, 28.9), heading = 0.0 },
 				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
-
 			{
 				From = vector3(247.3, -1371.5, 23.5),
 				To = { coords = vector3(333.1, -1434.9, 45.5), heading = 138.6 },
 				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
-
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
 			{
-				Spawner = vector3(1843.25, 3641.65, 35.83),
-				InsideShop = vector3(1769.8, 3239.73, 42.12),
-				Marker = { type = 34, x = 1.5, y = 1.5, z = 1.5, r = 100, g = 150, b = 150, a = 100, rotate = true },
-				SpawnPoints = {
-					{ coords = vector3(1844.9, 3639.13, 35), heading = 31.37, radius = 10.0 }
-				}
-			}
-		},
-
-		FastTravels = {
-			{
-				From = vector3(1840.75, 3673.59, 33.28),
-				To = { coords = vector3(1840.88, 3673.52, 9.69), heading = 31.74 },
+				From = vector3(335.5, -1432.0, 45.50),
+				To = { coords = vector3(249.1, -1369.6, 23.5), heading = 0.0 },
 				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
-
 			{
-				From = vector3(1841.66, 3671.35, 9.96),
-				To = { coords = vector3(1838.24, 3672.11, 33.28), heading = 0.0 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
+				From = vector3(234.5, -1373.7, 20.9),
+				To = { coords = vector3(320.9, -1478.6, 28.8), heading = 0.0 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
-<<<<<<< HEAD
-			
-=======
-
 			{
 				From = vector3(317.9, -1476.1, 28.9),
 				To = { coords = vector3(238.6, -1368.4, 23.5), heading = 0.0 },
 				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			}
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
 		},
-
 		FastTravelsPrompt = {
 			{
 				From = vector3(237.4, -1373.8, 26.0),
 				To = { coords = vector3(251.9, -1363.3, 38.5), heading = 0.0 },
 				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
 				Prompt = _U('fast_travel')
-<<<<<<< HEAD
-			}
-		}
-
-=======
 			},
-
 			{
 				From = vector3(256.5, -1357.7, 36.0),
 				To = { coords = vector3(235.4, -1372.8, 26.3), heading = 0.0 },
@@ -207,73 +121,6 @@ Config.Hospitals = {
 				Prompt = _U('fast_travel')
 			}
 		}
-
-	},
-	
-	Sandy = {
-
-		Blip = {
-			coords = vector3(1838.82, 3673.6, 34.28),
-			sprite = 61,
-			scale  = 1.2,
-			color  = 2
-		},
-
-		AmbulanceActions = {
-			vector3(1837.36, 3670.62, 9.73)
-		},
-
-		Pharmacies = {
-			vector3(1834.93, 3669.99, 9.69)
-		},
-
-		Vehicles = {
-			{
-				Spawner = vector3(1842.4, 3667.07, 33.68),
-				InsideShop = vector3(1830.4, 3633.24, 34.4),
-				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
-				SpawnPoints = {
-					{ coords = vector3(1819.47, 3655.71, 33.28), heading = 298.6, radius = 4.0 }
-				}
-			}
-		},
-
-		Helicopters = {
-			{
-				Spawner = vector3(1843.25, 3641.65, 35.83),
-				InsideShop = vector3(1769.8, 3239.73, 42.12),
-				Marker = { type = 34, x = 1.5, y = 1.5, z = 1.5, r = 100, g = 150, b = 150, a = 100, rotate = true },
-				SpawnPoints = {
-					{ coords = vector3(1844.9, 3639.13, 35), heading = 31.37, radius = 10.0 }
-				}
-			}
-		},
-
-		FastTravels = {
-			{
-				From = vector3(1840.75, 3673.59, 33.28),
-				To = { coords = vector3(1840.88, 3673.52, 9.69), heading = 31.74 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-
-			{
-				From = vector3(1841.66, 3671.35, 9.96),
-				To = { coords = vector3(1838.24, 3672.11, 33.28), heading = 0.0 },
-				Marker = { type = 1, x = 2.0, y = 2.0, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
-			},
-			
-		},
-
-		FastTravelsPrompt = {
-			{
-				From = vector3(237.4, -1373.8, 26.0),
-				To = { coords = vector3(251.9, -1363.3, 38.5), heading = 0.0 },
-				Marker = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false },
-				Prompt = _U('fast_travel')
-			}
-		}
-
->>>>>>> 7f18d3d04d65f93404bc72c0b959bdecd3d4e05a
 	}
 }
 
@@ -312,6 +159,8 @@ Config.AuthorizedVehicles = {
 		{ model = 'ambu1', label = 'Custom ambu2', price = 2000},
 		{ model = 'ambulance4', label = 'ambulance Benz', price = 5000}
 	}
+	
+
 
 }
 
