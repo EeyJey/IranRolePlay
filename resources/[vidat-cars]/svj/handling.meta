@@ -3,7 +3,7 @@
   <HandlingData>
     <Item type="CHandlingData">
       <handlingName>lamboavj</handlingName>
-     <fMass value="1500.000000" />
+      <fMass value="1500.000000" />
       <fInitialDragCoeff value="2.000000" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.050000" z="0.000000" />
