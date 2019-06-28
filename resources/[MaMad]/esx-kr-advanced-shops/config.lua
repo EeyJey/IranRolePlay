@@ -3,20 +3,36 @@ Config.DrawDistance               = 20.0
 Config.Locale = 'en'
 Config.DeliveryTime = 3600 -- IN SECOUNDS DEFAULT (18000) IS 5 HOURS / 300 MINUTES
 Config.TimeBetweenRobberies = 3600
-Config.CutOnRobbery = 10 -- IN PERCENTAGE FROM THE TARGET SHOP
+Config.CutOnRobbery = 2 -- IN PERCENTAGE FROM THE TARGET SHOP
 Config.RequiredPolices = 3 -- For the robbery
 Config.SellValue = 2 -- This is the shops value divided by 2
 Config.ChangeNamePrice = 500 -- In $ - how much you can change the shops name for
 
 -- CONFIG ITEMS, DON'T FORGET TO ADD CORRECT NUMBER IN THE BRACKETS
 Config.Items = {
-    [1] = {label = "Water",       item = "water",        price = 5},
-    [2] = {label = "Bread",      item = "bread",       price = 5},
+    [1] = {label = "Ghazaye sag",       item = "croquettes",        price = 20},
+    [2] = {label = "Moz",      item =  "banana" ,       price = 70},
+    [3] = {label = "Porteghal" ,      item = "orange" ,       price = 50},
+    [4] = {label = "Donut" ,      item = "donut" ,       price = 100},
+    [5] = {label =  "Energy za",      item = "energy",       price = 50},
+    [6] = {label = "soda",      item = "soda",       price = 100},
+    [7] = {label = "Ab" ,      item = "water",       price = 50},
+    [8] = {label = "Hamburger",      item = "Hamburger",       price = 150},
+    [9] = {label = "Ab mive" ,      item = "jusfruit",       price = 50},
 }
 
+
+
 Config.Images = {
-  [1] = {item = "water",   src = "img/bottle.png"},
-  [2] = {item = "bread",   src = "img/burger.png"},
+  [1] = {item = "croquettes",   src = "img/croquettes.png"},
+  [2] = {item = "banana",   src = "img/banana.png"},
+  [3] = {item = "orange",   src = "img/orange.png"},
+  [4] = {item = "donut",   src = "img/donut.png"},
+  [5] = {item = "energy",   src = "img/energy.png"},
+  [6] = {item = "soda",   src = "img/soda.png"},
+  [7] = {item = "water",   src = "img/water.png"},
+  [8] = {item = "Hamburger",   src = "img/bread.png"},
+  [8] = {item = "jusfruit",   src = "img/jusfruit.png"},
 }
 
 Config.Zones = {

@@ -12,7 +12,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_door01',
 		objCoords  = {x = 434.747, y = -980.618, z = 30.839},
 		textCoords = {x = 434.747, y = -981.50, z = 31.50},
-		authorizedJobs = { 'police','offpolice' },
+		authorizedJobs = { 'police' },
 		locked = false,
 		distance = 2.5
 	},
@@ -21,7 +21,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_door002',
 		objCoords  = {x = 434.747, y = -983.215, z = 30.839},
 		textCoords = {x = 434.747, y = -982.50, z = 31.50},
-		authorizedJobs = { 'police','offpolice' },
+		authorizedJobs = { 'police' },
 		locked = false,
 		distance = 2.5
 	},
@@ -31,7 +31,7 @@ Config.DoorList = {
 		objName = 'v_ilev_ph_gendoor004',
 		objCoords  = {x = 449.698, y = -986.469, z = 30.689},
 		textCoords = {x = 450.104, y = -986.388, z = 31.739},
-		authorizedJobs = { 'police','offpolice' },
+		authorizedJobs = { 'police', 'offpolice' },
 		locked = true
 	},
 
@@ -234,21 +234,38 @@ Config.DoorList = {
 		size = 2
 	},
 
-	-- Family Mapping Gates
-	-- MK
-	-- {
-	-- 	objName = 'prop_lrggate_02_ld',
-	-- 	objCoords  = {x = -843.949, y = 158.978, z = 65.801},
-	-- 	textCoords = {x = -843.949, y = 158.978, z = 66.801},
-	-- 	authorizedJobs = { 'police' },
-	-- 	locked = true,
-	-- 	distance = 14,
-	-- 	size = 2
-	-- },
 	--
 	-- Addons
 	--
-
+	{
+		objName = 'p_gate_prison_01_s',
+		objCoords  = {x = -461.46, y = 6027.857, z = 30.339},
+		textCoords = {x = -458.44, y = 6025.58, z = 34.339},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 12,
+		size = 2
+	},
+	
+	{
+		objName = 'prop_facgate_01',
+		objCoords  = {x = 1857.1255, y = 3657.1543, z = 33.0147},
+		textCoords = {x = 1859.33, y = 3658.75, z = 36.0147},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 12,
+		size = 2
+	},
+	
+	{
+		objName = 'prop_facgate_01',
+		objCoords  = {x = 1835.8856, y = 3645.0862, z = 33.2223},
+		textCoords = {x = 1838.11, y = 3647.37, z = 36.2223},
+		authorizedJobs = { 'ambulance' },
+		locked = true,
+		distance = 12,
+		size = 2
+	},
 	--[[
 	-- Entrance Gate (Mission Row mod) https://www.gta5-mods.com/maps/mission-row-pd-ymap-fivem-v1
 	{

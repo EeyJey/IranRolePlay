@@ -395,58 +395,56 @@ function ban(source,db,identifier,license,liveid,xblid,discord,playerip,targetpl
 		})
 	end
 
+	MySQL.Async.execute(
+			'INSERT INTO '..db..' (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
+			{ 
+			['@identifier']       = identifier,
+			['@license']          = license,
+			['@liveid']           = liveid,
+			['@xblid']            = xblid,
+			['@discord']          = discord,
+			['@playerip']         = playerip,
+			['@targetplayername'] = targetplayername,
+			['@sourceplayername'] = sourceplayername,
+			['@reason']           = reason,
+			['@expiration']       = expiration,
+			['@timeat']           = os.time(),
+			['@permanent']        = permanent,
+			},
+			function ()
+	end)
 
+	if permanent == 0 then
+		TriggerEvent('bansql:sendMessage', source, (Text.youban .. targetplayername .. Text.during .. duree .. Text.forr .. reason))
+		message = (identifier .." ".. license .." ".. liveid .." ".. xblid .." ".. discord .." ".. playerip .." ".. targetplayername .. Text.isban .." ".. duree .. Text.forr .. reason .." ".. Text.by .." ".. sourceplayername)
+	else
+		TriggerEvent('bansql:sendMessage', source, (Text.youban .. targetplayername .. Text.permban .. reason))
+		message = (identifier .." ".. license .." ".. liveid .." ".. xblid .." ".. discord .." ".. playerip .." ".. targetplayername .. Text.isban .." ".. Text.permban .. reason .." ".. Text.by .." ".. sourceplayername)
+	end
+	if Config.EnableDiscordLink then
+		sendToDiscord(Config.webhookban, "BanSql", message, Config.red)
+	end
 
-		MySQL.Async.execute(
-                'INSERT INTO '..db..' (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
-                { 
-				['@identifier']       = identifier,
-				['@license']          = license,
-				['@liveid']           = liveid,
-				['@xblid']            = xblid,
-				['@discord']          = discord,
-				['@playerip']         = playerip,
-				['@targetplayername'] = targetplayername,
-				['@sourceplayername'] = sourceplayername,
-				['@reason']           = reason,
-				['@expiration']       = expiration,
-				['@timeat']           = os.time(),
-				['@permanent']        = permanent,
-				},
-				function ()
-		end)
-
-		if permanent == 0 then
-			TriggerEvent('bansql:sendMessage', source, (Text.youban .. targetplayername .. Text.during .. duree .. Text.forr .. reason))
-			message = (identifier .." ".. license .." ".. liveid .." ".. xblid .." ".. discord .." ".. playerip .." ".. targetplayername .. Text.isban .." ".. duree .. Text.forr .. reason .." ".. Text.by .." ".. sourceplayername)
-		else
-			TriggerEvent('bansql:sendMessage', source, (Text.youban .. targetplayername .. Text.permban .. reason))
-			message = (identifier .." ".. license .." ".. liveid .." ".. xblid .." ".. discord .." ".. playerip .." ".. targetplayername .. Text.isban .." ".. Text.permban .. reason .." ".. Text.by .." ".. sourceplayername)
-		end
-		if Config.EnableDiscordLink then
-			sendToDiscord(Config.webhookban, "BanSql", message, Config.red)
-		end
-
-		MySQL.Async.execute(
-                'INSERT INTO banlisthistory (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
-                { 
-				['@identifier']       = identifier,
-				['@license']          = license,
-				['@liveid']           = liveid,
-				['@xblid']            = xblid,
-				['@discord']          = discord,
-				['@playerip']         = playerip,
-				['@targetplayername'] = targetplayername,
-				['@sourceplayername'] = sourceplayername,
-				['@reason']           = reason,
-				['@expiration']       = expiration,
-				['@timeat']           = os.time(),
-				['@permanent']        = permanent,
-				},
-				function ()
-		end)
-		
-		BanListHistoryLoad = false
+	MySQL.Async.execute(
+			'INSERT INTO banlisthistory (identifier,license,liveid,xblid,discord,playerip,targetplayername,sourceplayername,reason,expiration,timeat,permanent) VALUES (@identifier,@license,@liveid,@xblid,@discord,@playerip,@targetplayername,@sourceplayername,@reason,@expiration,@timeat,@permanent)',
+			{ 
+			['@identifier']       = identifier,
+			['@license']          = license,
+			['@liveid']           = liveid,
+			['@xblid']            = xblid,
+			['@discord']          = discord,
+			['@playerip']         = playerip,
+			['@targetplayername'] = targetplayername,
+			['@sourceplayername'] = sourceplayername,
+			['@reason']           = reason,
+			['@expiration']       = expiration,
+			['@timeat']           = os.time(),
+			['@permanent']        = permanent,
+			},
+			function ()
+	end)
+	
+	BanListHistoryLoad = false
 end
 
 function loadBanList()

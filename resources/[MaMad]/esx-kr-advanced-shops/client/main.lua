@@ -848,8 +848,8 @@ function Robbery(id)
                         y = coords1[id].y,
                         z = coords1[id].z,
 					}
-						TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
-						TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
+						-- TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
+						-- TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
 						--1089807209
 						-- coords.z = coords.z + 3
 						-- print('x '.. coords.x .. ' y '.. coords.y .. ' z '..coords.z)

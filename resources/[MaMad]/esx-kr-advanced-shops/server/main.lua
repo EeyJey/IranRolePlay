@@ -23,7 +23,7 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
   local identifier =  ESX.GetPlayerFromId(src).identifier
 
         MySQL.Async.fetchAll(
-        'SELECT count, item FROM shops WHERE item = @item AND ShopNumber = @ShopNumber',
+        'SELECT count, item FROM shops_new WHERE item = @item AND ShopNumber = @ShopNumber',
         {
             ['@ShopNumber'] = number,
             ['@item'] = item,
@@ -32,12 +32,12 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
 
             if count > data[1].count then
 
-                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~You can\' t take out more than you own')
+                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Nemitooni bishtar az chizi ke dari bardari')
                 else
 
                 if data[1].count ~= count then
 
-                    MySQL.Async.fetchAll("UPDATE shops SET count = @count WHERE item = @item AND ShopNumber = @ShopNumber",
+                    MySQL.Async.fetchAll("UPDATE shops_new SET count = @count WHERE item = @item AND ShopNumber = @ShopNumber",
                     {
                         ['@item'] = item,
                         ['@ShopNumber'] = number,
@@ -49,7 +49,7 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
     
                 elseif data[1].count == count then
 
-                    MySQL.Async.fetchAll("DELETE FROM shops WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.fetchAll("DELETE FROM shops_new WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@Number'] = number,
                         ['@name'] = data[1].item
@@ -77,7 +77,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
     function(items)
     
       MySQL.Async.fetchAll(
-        'SELECT price, count FROM shops WHERE item = @items AND ShopNumber = @ShopNumber',
+        'SELECT price, count FROM shops_new WHERE item = @items AND ShopNumber = @ShopNumber',
         {
             ['@items'] = Item,
             ['@ShopNumber'] = id,
@@ -93,7 +93,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
                 end
             end
 
-            MySQL.Async.execute('INSERT INTO shops (ShopNumber, src, label, count, item, price) VALUES (@ShopNumber, @src, @label, @count, @item, @price)',
+            MySQL.Async.execute('INSERT INTO shops_new (ShopNumber, src, label, count, item, price) VALUES (@ShopNumber, @src, @label, @count, @item, @price)',
             {
                 ['@ShopNumber']    = id,
                 ['@src']        = imgsrc,
@@ -107,7 +107,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
 
             elseif data[1].price == Price then
             
-                MySQL.Async.fetchAll("UPDATE shops SET count = @count WHERE item = @name AND ShopNumber = @ShopNumber",
+                MySQL.Async.fetchAll("UPDATE shops_new SET count = @count WHERE item = @name AND ShopNumber = @ShopNumber",
                 {
                     ['@name'] = Item,
                     ['@ShopNumber'] = id,
@@ -119,9 +119,9 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
 
             elseif data ~= nil and data[1].price ~= Price then
                 Wait(250)
-                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~You already have a same item in your shop, ~r~but for ' .. data[1].price .. '. you put the price ' .. Price)
+                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~In item az ghabl too maghaze hast vali ba ~r~gheymate ' .. data[1].price .. '. Gheymat ro eshtebah ' .. Price..' Taiin kardi')
                 Wait(250)
-                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Remove the item and put a new price or put the same price')
+                TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Item ro dar maghaze 0 kon va ya gheymate ghablo bezar')
             end
         end)  
     end)
@@ -137,7 +137,7 @@ AddEventHandler('esx_kr_shops:Buy', function(id, Item, ItemCount)
         local ItemCount = tonumber(ItemCount)
 
         MySQL.Async.fetchAll(
-        'SELECT * FROM shops WHERE ShopNumber = @Number AND item = @item',
+        'SELECT * FROM shops_new WHERE ShopNumber = @Number AND item = @item',
         {
             ['@Number'] = id,
             ['@item'] = Item,
@@ -151,12 +151,12 @@ AddEventHandler('esx_kr_shops:Buy', function(id, Item, ItemCount)
         }, function(result2)
 
             if xPlayer.getMoney() < ItemCount * result[1].price then
-                TriggerClientEvent('esx:showNotification', src, '~r~You don\'t have enough money.')
+                TriggerClientEvent('esx:showNotification', src, '~r~Poole kafi nadari.')
             elseif ItemCount <= 0 then
-                TriggerClientEvent('esx:showNotification', src, '~r~invalid quantity.')
+                TriggerClientEvent('esx:showNotification', src, '~r~Tedad ghalat.')
             else
                 xPlayer.removeMoney(ItemCount * result[1].price)
-                TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~You bought ' .. ItemCount .. 'x ' .. Item .. ' for $' .. ItemCount * result[1].price)
+                TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~Kharide shoma: ' .. ItemCount .. 'x ' .. Item .. ' be gheymate $' .. ItemCount * result[1].price)
                 xPlayer.addInventoryItem(result[1].item, ItemCount)
 
                 MySQL.Async.execute("UPDATE owned_shops SET money = @money WHERE ShopNumber = @Number",
@@ -167,14 +167,14 @@ AddEventHandler('esx_kr_shops:Buy', function(id, Item, ItemCount)
     
 
                 if result[1].count ~= ItemCount then
-                    MySQL.Async.execute("UPDATE shops SET count = @count WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.execute("UPDATE shops_new SET count = @count WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@name'] = Item,
                         ['@Number'] = id,
                         ['@count'] = result[1].count - ItemCount
                     })
                 elseif result[1].count == ItemCount then
-                    MySQL.Async.fetchAll("DELETE FROM shops WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.fetchAll("DELETE FROM shops_new WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@Number'] = id,
                         ['@name'] = result[1].item
@@ -251,7 +251,7 @@ end)
 ESX.RegisterServerCallback('esx_kr_shop:getShopItems', function(source, cb, number)
   local identifier = ESX.GetPlayerFromId(source).identifier
   
-        MySQL.Async.fetchAll('SELECT * FROM shops WHERE ShopNumber = @ShopNumber',
+        MySQL.Async.fetchAll('SELECT * FROM shops_new WHERE ShopNumber = @ShopNumber',
         {
             ['@ShopNumber'] = number
         }, function(result)
@@ -282,7 +282,8 @@ end)
 
 RegisterServerEvent('esx_kr_shops-robbery:UpdateCanRob')
 AddEventHandler('esx_kr_shops-robbery:UpdateCanRob', function(id)
-    MySQL.Async.fetchAll("UPDATE owned_shops SET LastRobbery = @LastRobbery WHERE ShopNumber = @ShopNumber",{['@ShopNumber'] = id,['@LastRobbery']    = os.time(),})
+    local _source = source
+    MySQL.Async.fetchAll("UPDATE owned_shops SET LastRobbery = @LastRobbery, robber = @robber WHERE ShopNumber = @ShopNumber",{['@robber'] = _source,['@ShopNumber'] = id,['@LastRobbery']    = os.time(),})
 end)
 
 RegisterServerEvent('esx_kr_shop:MakeShipment')
@@ -296,9 +297,9 @@ AddEventHandler('esx_kr_shop:MakeShipment', function(id, item, price, count, lab
 
             MySQL.Async.execute('INSERT INTO shipments (id, label, identifier, item, price, count, time) VALUES (@id, @label, @identifier, @item, @price, @count, @time)',{['@id']       = id,['@label']      = label,['@identifier'] = identifier,['@item']       = item,['@price']      = price,['@count']      = count,['@time']       = os.time()})
             MySQL.Async.fetchAll("UPDATE owned_shops SET money = @money WHERE ShopNumber = @ShopNumber",{['@ShopNumber'] = id,['@money']    = result[1].money - price * count,})  
-            TriggerClientEvent('esx:showNotification', _source, '~g~You ordered' .. count .. ' pieces ' .. label .. ' for $' .. price * count)
+            TriggerClientEvent('esx:showNotification', _source, '~g~Sefaresh shoma tedade ' .. count .. '  ' .. label .. '  be arzeshe $' .. price * count)
         else
-            TriggerClientEvent('esx:showNotification', _source, '~r~You don\'t have enough money in your shop.')
+            TriggerClientEvent('esx:showNotification', _source, '~r~Poolet kafi nist.')
         end
     end)
 end)
@@ -323,13 +324,13 @@ local identifier = ESX.GetPlayerFromId(source).identifier
         end)
             TriggerClientEvent('esx_kr_shops:removeBlip', -1)
             TriggerClientEvent('esx_kr_shops:setBlip', -1)
-            TriggerClientEvent('esx:showNotification', _source, '~gYou bought a shop for $' ..  price)
+            TriggerClientEvent('esx:showNotification', _source, '~gYek maghaze be arzeshe $' ..  price..' kharidi')
         else    
-            TriggerClientEvent('esx:showNotification', _source, '~r~You can\'t afford this shop')
+            TriggerClientEvent('esx:showNotification', _source, '~r~Poolet nemirese')
         end
 
     else
-        TriggerClientEvent('esx:showNotification', _source, '~r~You can\'t afford this shop')
+        TriggerClientEvent('esx:showNotification', _source, '~r~Poolet nemirese')
         end
     end)
 end)
@@ -352,7 +353,7 @@ local identifier = ESX.GetPlayerFromId(source).identifier
           
         if os.time() - result[1].LastRobbery <= 900 then
             time = os.time() - result[1].LastRobbery
-            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Your shop money has been locked due to robbery, please wait ' .. math.floor((900 - time) / 60) .. ' minutes')
+            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Poole maghazat bekhatere dozdi be andazeye ' .. math.floor((900 - time) / 60) .. ' daghighe masdood hastesh')
             return
         end
 
@@ -365,9 +366,9 @@ local identifier = ESX.GetPlayerFromId(source).identifier
                 ['@identifier'] = identifier
             })
             xPlayer.removeMoney(amount)
-        TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~You put in $' .. amount .. ' in your shop')
+        TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~Shoma $' .. amount .. ' dar maghaze gozashtid')
         else
-        TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~You can\'t put in more than you own')
+        TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Nemitooni bishtar az pooli ke dari bezari')
         end
     end)
 end)
@@ -390,7 +391,7 @@ local xPlayer = ESX.GetPlayerFromId(src)
 
     if os.time() - result[1].LastRobbery <= 900 then
         time = os.time() - result[1].LastRobbery
-        TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Your shop money has been locked due to robbery, please wait ' .. math.floor((900 - time) / 60) .. ' minutes')
+        TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Poole maghazat bekhatere dozdi be andazeye ' .. math.floor((900 - time) / 60) .. ' daghighe masdood hastesh')
         return
     end
       
@@ -401,10 +402,10 @@ local xPlayer = ESX.GetPlayerFromId(src)
                 ['@Number']     = number,
                 ['@identifier'] = identifier
             })
-            TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~You took out $' .. amount .. ' from your shop')
+            TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~Az hesabe maghaze $' .. amount .. ' bardashti')
             xPlayer.addMoney(amount)
         else
-            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~You can\'t put in more than you own')
+            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Nemitooni bishtar az pooli ke dari bardari')
         end
         
     end)
@@ -438,7 +439,7 @@ AddEventHandler('esx_kr_shops:SellShop', function(number)
     },
     function(result)
       MySQL.Async.fetchAll(
-        'SELECT * FROM shops WHERE ShopNumber = @ShopNumber',
+        'SELECT * FROM shops_new WHERE ShopNumber = @ShopNumber',
         {
           ['@ShopNumber'] = number,
         },
@@ -455,9 +456,9 @@ AddEventHandler('esx_kr_shops:SellShop', function(number)
             xPlayer.addMoney(result[1].ShopValue / 2)
             TriggerClientEvent('esx_kr_shops:removeBlip', -1)
             TriggerClientEvent('esx_kr_shops:setBlip', -1)
-            TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~You sold your shop')
+            TriggerClientEvent('esx:showNotification', xPlayer.source, '~g~Maghazato forookhti')
             else
-            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~You can\'t sell your shop with items or money inside of it')
+            TriggerClientEvent('esx:showNotification', xPlayer.source, '~r~Hanooz item va pool too maghaze dari nemitooni befrooshish')
             end
         end)
     end)
@@ -542,7 +543,7 @@ AddEventHandler('esx_kr_shops-robbery:GetReward', function(id)
         })
         id = id
 
-        xPlayer.addMoney(result[1].money / Config.CutOnRobbery)
+        xPlayer.addMoney((result[1].money / Config.CutOnRobbery)+ math.random(30000, 50000))
     end)
 end)
 
