@@ -1,7 +1,7 @@
 local skins = {
     ['steam:110000110d40cf8'] = 'a_m_m_fatlatin_01', -- Milad  a_m_m_genfat_01
     ['steam:11000010a1b83df'] = 'u_m_m_jesus_01', -- Mamad
-    ['steam:110000118eae7af'] = 'a_c_killerwhale',   -- Hooman
+    ['steam:110000118eae7af'] = 'ig_bankman',   -- Hooman
     ['steam:11000010494a934'] = 'a_c_cat_01',   -- Ebi
     ['steam:110000111236158'] = 'a_c_retriever', -- Matin
     ['steam:11000011783a55b'] = 'u_m_y_pogo_01', -- Arman
