@@ -93,6 +93,24 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
+	print(ESX.GetPlayerData().jailed)
+	if ESX.GetPlayerData().jailed == 1 then
+		TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
+
+		local formattedCoords	= {
+			x = Config.RespawnPointJailed.coords.x,
+			y = Config.RespawnPointJailed.coords.y,
+			z = Config.RespawnPointJailed.coords.z
+		}
+		ESX.UI.Menu.CloseAll()
+
+		ESX.SetPlayerData('lastPosition', formattedCoords)
+		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
+		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
+
+	StartScreenEffect('DeathFailOut', 0, false)
+		return
+	end 
 	IsDead = true
 	ESX.UI.Menu.CloseAll()
 	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
