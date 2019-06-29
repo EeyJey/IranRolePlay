@@ -21,7 +21,7 @@ Config.EnablePeds = true -- If true then it will add Peds on Markers | false doe
 
 Config.Locations = {
 	--{ x = 402.85, y = -998.4, z = -100.0, heading = 180.0 }, -- Police Booking Room
-	{ x = 260.3, y = -1343.68, z = 23.54, heading = 257.66 } -- Hospital Bottom Floor
+	{ x = 328.03, y = -572.04, z = 27.79, heading = 257.66 } -- Hospital Bottom Floor
 }
 
 Config.Zones = {}
