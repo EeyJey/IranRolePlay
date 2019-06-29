@@ -180,14 +180,14 @@ end
 
 function SendDistressSignal()
 	local playerPed = PlayerPedId()
-	PedPosition = GetEntityCoords(playerPed)
-
-	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
+	local coords = GetEntityCoords(playerPed)
 
 	ESX.ShowNotification(_U('distress_sent'))
-	TriggerServerEvent('esx_addons_gcphone:startCall', 'ambulance', _U('distress_message'), PlayerCoords, {
-
-		PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+	TriggerServerEvent('esx_addons_gcphone:startCall', 'ambulance', _U('distress_message'), false, {
+		x = coords.x,
+		y = coords.y,
+		z = coords.z
+	})
 end
 
 function DrawGenericTextThisFrame()
