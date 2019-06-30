@@ -279,11 +279,29 @@ AddEventHandler('esx_kr_shops:GetAllItems', function(id)
     end)
 end)
 
+local robbed = 0
+ESX.RegisterServerCallback('IsRobbedBefore', function(source, cb, id)
+    local identifier = ESX.GetPlayerFromId(source).identifier
+  
+    MySQL.Async.fetchAll(
+      'SELECT * FROM owned_shops WHERE ShopNumber = @ShopNumber',
+      {
+        ['@ShopNumber'] = id,
+      },
+      function(result)
+        if (os.time() - result[1].LastRobbery >= Config.TimeBetweenRobberies) or (result[1].robber == identifier) then  
+            cb(false)
+        else
+            cb(true)
+        end
+      end)
+end)
 
 RegisterServerEvent('esx_kr_shops-robbery:UpdateCanRob')
 AddEventHandler('esx_kr_shops-robbery:UpdateCanRob', function(id)
     local _source = source
-    MySQL.Async.fetchAll("UPDATE owned_shops SET LastRobbery = @LastRobbery, robber = @robber WHERE ShopNumber = @ShopNumber",{['@robber'] = _source,['@ShopNumber'] = id,['@LastRobbery']    = os.time(),})
+    local identifier = ESX.GetPlayerFromId(source).identifier
+    MySQL.Async.fetchAll("UPDATE owned_shops SET LastRobbery = @LastRobbery, robber = @robber WHERE ShopNumber = @ShopNumber",{['@robber'] = identifier,['@ShopNumber'] = id,['@LastRobbery']    = os.time(),})
 end)
 
 RegisterServerEvent('esx_kr_shop:MakeShipment')
@@ -543,7 +561,9 @@ AddEventHandler('esx_kr_shops-robbery:GetReward', function(id)
         })
         id = id
 
-        xPlayer.addMoney((result[1].money / Config.CutOnRobbery)+ math.random(30000, 50000))
+        money = (result[1].money / Config.CutOnRobbery)+ math.random(30000, 50000)
+        xPlayer.addMoney(money)
+        TriggerClientEvent('esx:showNotification', _source, 'Shoma Mablaqe ~g~$' .. money .. ' ~s~ Serqat Kardid.')
     end)
 end)
 
