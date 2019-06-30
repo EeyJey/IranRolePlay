@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSetupData>
+  <deviceName>dlc_rxf7</deviceName>
+  <datFile>content.xml</datFile>
+  <timeStamp>00/00/0000 00:00:00</timeStamp>
+  <nameHash>rxf7</nameHash>
+  <contentChangeSetGroups>
+    <Item>
+      <NameHash>GROUP_STARTUP</NameHash>
+      <ContentChangeSets>
+        <Item>rxf7_AUTOGEN</Item>
+        <Item>rxf7_UNLOCKS_AUTOGEN</Item>
+      </ContentChangeSets>
+    </Item>
+  </contentChangeSetGroups>
+  <type>EXTRACONTENT_COMPAT_PACK</type>
+  <order value="9" />
+</SSetupData>
