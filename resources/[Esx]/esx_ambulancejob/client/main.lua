@@ -93,6 +93,23 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
+	print(ESX.GetPlayerData().jailed)
+	if ESX.GetPlayerData().jailed == 1 then
+		TriggerServerEvent('esx_ambulancejob:setDeathStatus', false)
+
+		local formattedCoords	= {
+			x = Config.RespawnPointJailed.coords.x,
+			y = Config.RespawnPointJailed.coords.y,
+			z = Config.RespawnPointJailed.coords.z
+		}
+		ESX.UI.Menu.CloseAll()
+
+		ESX.SetPlayerData('lastPosition', formattedCoords)
+		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
+		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
+
+		return
+	end 
 	IsDead = true
 	ESX.UI.Menu.CloseAll()
 	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
@@ -180,13 +197,15 @@ end
 
 function SendDistressSignal()
 	local playerPed = PlayerPedId()
-	local coords = GetEntityCoords(playerPed)
+	PedPosition		= GetEntityCoords(playerPed)
+	
+	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
 
 	ESX.ShowNotification(_U('distress_sent'))
-	TriggerServerEvent('esx_phone:send', 'ambulance', _U('distress_message'), false, {
-		x = coords.x,
-		y = coords.y,
-		z = coords.z
+
+    TriggerServerEvent('esx_addons_gcphone:startCall', 'ambulance', _U('distress_message'), PlayerCoords, {
+
+		PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
 	})
 end
 
