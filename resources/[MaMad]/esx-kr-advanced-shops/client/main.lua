@@ -841,33 +841,33 @@ function Robbery(id)
 
 			if result.cb ~= nil then
 				if results >= Config.RequiredPolices then
-				ESX.TriggerServerCallback('IsRobbedBefore', function(robbed)
-					if not robbed then
-						TriggerServerEvent('esx_kr_shops-robbery:UpdateCanRob', id)
-					
-						local coords = {
-							x = coords1[id].x,
-							y = coords1[id].y,
-							z = coords1[id].z,
-						}
-							-- TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
-							-- TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
-							--1089807209
-							-- coords.z = coords.z + 3
-							-- print('x '.. coords.x .. ' y '.. coords.y .. ' z '..coords.z)
-							ESX.Game.SpawnObject(1089807209, coords, function(safe)
-								SetEntityHeading(safe, coords1[id].heading)
-								FreezeEntityPosition(safe, true)
+					ESX.TriggerServerCallback('IsRobbedBefore', function(robbed)
+						if not robbed then
+							TriggerServerEvent('esx_kr_shops-robbery:UpdateCanRob', id)
+						
+							local coords = {
+								x = coords1[id].x,
+								y = coords1[id].y,
+								z = coords1[id].z,
+							}
+								-- TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
+								-- TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
+								-- 1089807209
+								-- coords.z = coords.z + 3
+								-- print('x '.. coords.x .. ' y '.. coords.y .. ' z '..coords.z)
+								ESX.Game.SpawnObject(1089807209, coords, function(safe)
+									SetEntityHeading(safe, coords1[id].heading)
+									FreezeEntityPosition(safe, true)
 
-								SetEntityHealth(safe, 10000)
-								OnRobbery = true
-								Var = safe
-								Id = id
-								Coordss = coords
-								Name = result.name
-							end)
-					end
-				end, id)
+									SetEntityHealth(safe, 10000)
+									OnRobbery = true
+									Var = safe
+									Id = id
+									Coordss = coords
+									Name = result.name
+								end)
+						end
+					end, id)
                 else
 					ESX.ShowNotification("~r~There is not enough polices online " .. results .. '/' .. Config.RequiredPolices)
 				end
