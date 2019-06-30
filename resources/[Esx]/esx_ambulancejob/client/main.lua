@@ -108,7 +108,6 @@ function OnPlayerDeath()
 		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
 		RespawnPed(PlayerPedId(), formattedCoords, Config.RespawnPointJailed.heading)
 
-	StartScreenEffect('DeathFailOut', 0, false)
 		return
 	end 
 	IsDead = true
