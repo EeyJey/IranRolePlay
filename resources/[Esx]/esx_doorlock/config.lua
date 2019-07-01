@@ -266,6 +266,213 @@ Config.DoorList = {
 		distance = 12,
 		size = 2
 	},
+		{
+		objName = 'prop_fnclink_09gate1',
+		objCoords  = {x = 1689.1713, y = 2499.3757, z = -43.4438},
+		textCoords = {x = 1689.1713, y = 2499.3757, z = -43.4438},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+			{
+		objName = 'prop_fnclink_02gate7',
+		objCoords  = {x = 1678.2024, y = 2504.9021, z = -43.4438},
+		textCoords = {x = 1678.2024, y = 2504.9021, z = -43.4438},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'apa_heist_apart2_door',
+		objCoords  = {x = 1689.4746, y = 2510.0684, z = -43.5733},
+		textCoords = {x = 1689.4746, y = 2510.0684, z = -43.5733},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_ph_cellgate02',
+		objCoords  = {x = 1700.8767, y = 2505.1138, z = -43.6058},
+		textCoords = {x = 1700.8767, y = 2505.1138, z = -43.6058},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_ph_cellgate02',
+		objCoords  = {x = 1706.9487, y = 2506.4087, z = -43.6023},
+		textCoords = {x = 1706.9487, y = 2506.4087, z = -43.6023},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_ph_cellgate02',
+		objCoords  = {x = 1719.4128, y = 2512.8159, z = -43.5950},
+		textCoords = {x = 1719.4128, y = 2512.8159, z = -43.5950},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_ph_cellgate02',
+		objCoords  = {x = 1717.1321, y = 2522.5620, z = -43.6023},
+		textCoords = {x = 1717.1321, y = 2522.5620, z = -43.6023},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'hei_prop_heist_cutscene_doorc_l',
+		objCoords  = {x = 1725.2661, y = 2511.5200, z = -43.5904},
+		textCoords = {x = 1725.2661, y = 2511.5200, z = -43.5904},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 1,
+		size = 1
+	},
+	{
+		objName = 'hei_prop_heist_cutscene_doorc_r',
+		objCoords  = {x = 1726.0580, y = 2511.5381, z = -43.5904},
+		textCoords = {x = 1726.0580, y = 2511.5381, z = -43.5904},
+		authorizedJobs = { 'police' },
+		locked = true,
+		distance = 1,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1722.4220, y = 2524.8499, z = -43.4945},
+		textCoords = {x = 1722.4220, y = 2524.8499, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1722.3837, y = 2529.6780, z = -43.4945},
+		textCoords = {x = 1722.3837, y = 2529.6780, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1722.3557, y = 2534.4763, z = -43.4945},
+		textCoords = {x = 1722.3557, y = 2534.4763, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1722.3335, y = 2539.3083, z = -43.4945},
+		textCoords = {x = 1722.3335, y = 2539.3083, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1722.4386, y = 2544.1079, z = -43.4945},
+		textCoords = {x = 1722.4386, y = 2544.1079, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1721.7828, y = 2548.8232, z = -43.4945},
+		textCoords = {x = 1721.7828, y = 2548.8232, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.4502, y = 2550.4194, z = -43.4945},
+		textCoords = {x = 1713.4502, y = 2550.4194, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.1820, y = 2545.6841, z = -43.4945},
+		textCoords = {x = 1713.1820, y = 2545.6841, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.1283, y = 2540.8857, z = -43.4945},
+		textCoords = {x = 1713.1283, y = 2540.8857, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.1748, y = 2535.9827, z = -43.4945},
+		textCoords = {x = 1713.1748, y = 2535.9827, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.1650, y = 2531.1462, z = -43.4945},
+		textCoords = {x = 1713.1650, y = 2531.1462, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_fingate',
+		objCoords  = {x = 1713.1317, y = 2526.3252, z = -43.4945},
+		textCoords = {x = 1713.1317, y = 2526.3252, z = -43.4945},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'v_ilev_ph_cellgate02',
+		objCoords  = {x = 1717.3939, y = 2552.0103, z = -43.6023},
+		textCoords = {x = 1717.3939, y = 2552.0103, z = -43.6023},
+		authorizedJobs = { 'police' },
+		locked = false,
+		distance = 3,
+		size = 1
+	},
+	{
+		objName = 'ex_prop_door_arcad_roof_r',
+		objCoords  = {x = 1709.7, y = 2555.54, z = -43.72},
+		textCoords = {x = 1709.7, y = 2555.54, z = -43.72},
+		authorizedJobs = { 'admin' },
+		locked = true,
+		distance = 3,
+		size = 1
+	},
 	--[[
 	-- Entrance Gate (Mission Row mod) https://www.gta5-mods.com/maps/mission-row-pd-ymap-fivem-v1
 	{
