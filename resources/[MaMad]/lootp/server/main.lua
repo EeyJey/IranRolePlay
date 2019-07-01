@@ -38,9 +38,10 @@ function RobbedBefore(identity, robber)
 	MYSQL.Async.fetchall('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
 		['identifer'] = identity
 	}, function(data)
-		if (robber == data[1].robber) or (os.time() - data[1].lastrobbed >= 1800) then
+		if (robber == data[1].robber) or data[1].lastrobbed == nil or (os.time() - data[1].lastrobbed >= 1800) then
 			return false
 		end
+		return true
 	end)
 end
 
