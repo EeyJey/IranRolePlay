@@ -73,7 +73,7 @@ AddEventHandler('rconCommand', function(commandName, args)
         
         for netid, data in pairs(names) do
             DropPlayer(netid, 'Server Restart')
-            Citizen.Wait(1000)
+            Citizen.Wait(100)
         end
 
         CancelEvent()
