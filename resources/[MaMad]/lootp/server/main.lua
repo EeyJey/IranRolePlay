@@ -27,7 +27,7 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 end)
 
 function updateLastRob(identity, robber)
-	MYSQL.Async.execure('UPDATE users SET `lastrobbed` = @lastrobbed, `robber` = @robber WHERE `identifier` = @identifer', {
+	MySQL.Async.execute('UPDATE users SET `lastrobbed` = @lastrobbed, `robber` = @robber WHERE `identifier` = @identifer', {
 		['@lastrobbed'] = os.time(),
 		['@robber'] = robber,
 		['@identifer'] = identity
@@ -35,7 +35,7 @@ function updateLastRob(identity, robber)
 end
 
 function RobbedBefore(identity, robber)
-	MYSQL.Async.fetchall('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
+	MYSQL.Async.fetchAll('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
 		['identifer'] = identity
 	}, function(data)
 		if robber == data[1].robber and (os.time() - data[1].lastrobbed >= 90) or data[1].lastrobbed == nil or (os.time() - data[1].lastrobbed >= 1800) then
