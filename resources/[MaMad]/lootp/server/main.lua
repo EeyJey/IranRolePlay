@@ -35,7 +35,7 @@ function updateLastRob(identity, robber)
 end
 
 function RobbedBefore(identity, robber)
-	MYSQL.Async.fetchAll('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
+	MySQL.Async.fetchAll('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
 		['identifer'] = identity
 	}, function(data)
 		if robber == data[1].robber and (os.time() - data[1].lastrobbed >= 90) or data[1].lastrobbed == nil or (os.time() - data[1].lastrobbed >= 1800) then
