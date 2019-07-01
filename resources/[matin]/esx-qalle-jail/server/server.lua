@@ -21,17 +21,17 @@ RegisterCommand("jail", function(src, args, raw)
 				
 				if args[3] ~= nil then
 					GetRPName(jailPlayer, function(Firstname, Lastname)
-						TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. args[3] }, color = { 249, 166, 0 } })
+						TriggerClientEvent('chat:addMessage', -1, { args = { "^4[POLICE]^3 ",  Firstname .. " " .. Lastname .. " ^0Zendani shod be elat^8:^0 " .. args[3] }, color = { 249, 166, 0 } })
 					end)
 				end
 			else
-				TriggerClientEvent("esx:showNotification", src, "This time is invalid!")
+				TriggerClientEvent("esx:showNotification", src, "Zaman vared shode sahih nist!")
 			end
 		else
-			TriggerClientEvent("esx:showNotification", src, "This ID is not online!")
+			TriggerClientEvent("esx:showNotification", src, "ID vared shode online nist!")
 		end
 	else
-		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
+		TriggerClientEvent("esx:showNotification", src, "Shoma police nistid!")
 	end
 end)
 
@@ -46,10 +46,10 @@ RegisterCommand("unjail", function(src, args)
 		if GetPlayerName(jailPlayer) ~= nil then
 			UnJail(jailPlayer)
 		else
-			TriggerClientEvent("esx:showNotification", src, "This ID is not online!")
+			TriggerClientEvent("esx:showNotification", src, "ID vared shode online nist!")
 		end
 	else
-		TriggerClientEvent("esx:showNotification", src, "You are not an officer!")
+		TriggerClientEvent("esx:showNotification", src, "Shoma police nistid!")
 	end
 end)
 
@@ -63,7 +63,7 @@ AddEventHandler("esx-qalle-jail:jailPlayer", function(targetSrc, jailTime, jailR
 		JailPlayer(targetSrc, jailTime)
 
 		GetRPName(targetSrc, function(Firstname, Lastname)
-			TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. jailReason }, color = { 249, 166, 0 } })
+			TriggerClientEvent('chat:addMessage', -1, { args = { "^4[POLICE]^3 ",  Firstname .. " " .. Lastname .. " ^0Zendani shod be elat^8:^0 " .. jailReason }, color = { 249, 166, 0 } })
 		end)
 
 		TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Jailed for " .. jailTime .. " minutes!")
