@@ -26,6 +26,24 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 	cb(data)
 end)
 
+function updateLastRob(identity, robber)
+	MYSQL.Async.execure('UPDATE users SET `lastrobbed` = @lastrobbed, `robber` = @robber WHERE `identifier` = @identifer', {
+		['@lastrobbed'] = os.time(),
+		['@robber'] = robber,
+		['@identifer'] = identity
+	})
+end
+
+function RobbedBefore(identity, robber)
+	MYSQL.Async.fetchall('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
+		['identifer'] = identity
+	}, function(data)
+		if (robber == data[1].robber) or (os.time() - data[1].lastrobbed >= 3600) then
+			return false
+		end
+	end)
+end
+
 RegisterServerEvent('esx_thief:stealPlayerItem')
 AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName, amount)
 	local _source = source
@@ -48,11 +66,16 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 				TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('ex_inv_lim_target'))
 				TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('ex_inv_lim_source'))
 			else
-				targetXPlayer.removeInventoryItem(itemName, amount)
-				sourceXPlayer.addInventoryItem(itemName, amount)
+				updateLastRob(targetXPlayer.identifier, sourceXPlayer.identifer)
+				if not RobbedBefore(targetXPlayer.identifier, sourceXPlayer.identifer) and not (targetXPlayer.getGroup() == 'admin' or xPlayer.getGroup() == 'superadmin') then
+					targetXPlayer.removeInventoryItem(itemName, amount)
+					sourceXPlayer.addInventoryItem(itemName, amount)
 
-				TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
-				TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
+					TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_stole') .. ' ~g~x' .. amount .. ' ' .. label .. ' ~w~' .. _U('from_your_target') )
+					TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('someone_stole') .. ' ~r~x'  .. amount .. ' ' .. label )
+				else 
+					TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'This Player is under script protection from robbery for next 30 min')
+				end
 			end
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))

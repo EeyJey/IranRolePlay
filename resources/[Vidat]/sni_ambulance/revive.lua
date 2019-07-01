@@ -36,7 +36,6 @@ TriggerEvent('es:addGroupCommand', 'revivea', 'user', function(source, args, use
 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 		if xPlayer.getGroup() == 'admin' or xPlayer.getGroup() == 'superadmin' then
 			AdminsConnected = AdminsConnected + 1
-			
 		end
 	end
 	if AdminsConnected > 0 then
