@@ -544,6 +544,7 @@ RegisterServerEvent('esx_kr_shops-robbery:GetReward')
 AddEventHandler('esx_kr_shops-robbery:GetReward', function(id)
   local _source = source
   local xPlayer = ESX.GetPlayerFromId(_source)
+  local oocname =  GetPlayerName(source)
 
 
         MySQL.Async.fetchAll(
@@ -563,6 +564,7 @@ AddEventHandler('esx_kr_shops-robbery:GetReward', function(id)
 
         money = (result[1].money / Config.CutOnRobbery)+ math.random(30000, 50000)
         xPlayer.addMoney(money)
+        TriggerEvent('DiscordBot:ToDiscord', 'rob', oocname, 'robbed Shop ['..id..'] and rewarded: $'.. money ,'user', true, source, false)
         TriggerClientEvent('esx:showNotification', _source, 'Shoma Mablaqe ~g~$' .. money .. ' ~s~ Serqat Kardid.')
     end)
 end)
