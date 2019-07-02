@@ -129,9 +129,8 @@ function InJail()
 
 	--Jail Timer--
 	
+	--Check if player is dead--
 	Citizen.CreateThread(function()
-		local playerPed = PlayerPedId()
-        local JailPosition = Config.JailPositions["Cell"]
 		while jailTime > 0 do
 
 			-- Check if player is dead then revive --
@@ -140,19 +139,34 @@ function InJail()
 					TriggerEvent('esx_ambulancejob:revive', -1)
 				end
 			end)
+
+			Citizen.Wait(2000)
+		end
+
+	end)
+	--Check if player is dead--
+
+	--Check Coordinates and disbale hot keys--
+    Citizen.CreateThread(function()
+		local playerPed = PlayerPedId()
+        local JailPosition = Config.JailPositions["Cell"]
+		while jailTime > 0 do
+
 			DisableControlAction(0, Keys['F1'],true)
 			DisableControlAction(0, Keys['F3'],true)
 			DisableControlAction(0, Keys['F5'],true)
+
 			-- end of that fucking shit --
 			if GetDistanceBetweenCoords(GetEntityCoords(playerPed), JailPosition.x, JailPosition.y, JailPosition.z) > 90 then
 				ESX.Game.Teleport(playerPed, JailPosition)
 				ESX.ShowNotification("~r~~h~Shoma nemitavanid az zendan farar konid.")
 			end
 
-			Citizen.Wait(2000)
+			Citizen.Wait(0)
 		end
 
 	end)
+	--Check Coordinates and disbale hot keys--
 
 	--Prison Work--
 
