@@ -149,7 +149,7 @@ function InJail()
 				ESX.ShowNotification("~r~~h~Shoma nemitavanid az zendan farar konid.")
 			end
 
-			Citizen.Wait(0)
+			Citizen.Wait(2000)
 		end
 
 	end)
