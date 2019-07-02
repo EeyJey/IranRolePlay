@@ -17,11 +17,11 @@ RegisterCommand("jail", function(src, args, raw)
 			if jailTime ~= nil then
 				JailPlayer(jailPlayer, jailTime)
 
-				TriggerClientEvent("esx:showNotification", src, GetPlayerName(jailPlayer) .. " Jailed for " .. jailTime .. " minutes!")
+				TriggerClientEvent("esx:showNotification", src, GetPlayerName(jailPlayer) .. " Zendani shod baraye ~r~~h~" .. jailTime .. " ~w~Daghighe!")
 				
 				if args[3] ~= nil then
 					GetRPName(jailPlayer, function(Firstname, Lastname)
-						TriggerClientEvent('chat:addMessage', -1, { args = { "JUDGE",  Firstname .. " " .. Lastname .. " Is now in jail for the reason: " .. args[3] }, color = { 249, 166, 0 } })
+						TriggerClientEvent('chat:addMessage', -1, { args = { "^4[POLICE]^3 ",  Firstname .. " " .. Lastname .. " ^0Zendani shod be elate^8:^0 " .. args[3] }, color = { 249, 166, 0 } })
 					end)
 				end
 			else
@@ -57,14 +57,19 @@ RegisterServerEvent("esx-qalle-jail:jailPlayer")
 AddEventHandler("esx-qalle-jail:jailPlayer", function(targetSrc, jailTime, jailReason)
 	local src = source
 	local targetSrc = tonumber(targetSrc)
+    local xPlayer = ESX.GetPlayerFromId(src)
 
-	JailPlayer(targetSrc, jailTime)
+	if xPlayer["job"]["name"] == "police" then
+		JailPlayer(targetSrc, jailTime)
 
-	GetRPName(targetSrc, function(Firstname, Lastname)
-		TriggerClientEvent('chat:addMessage', -1, { args = { "Police",  Firstname .. " " .. Lastname .. " zendeni shod be dalil e: " .. jailReason }, color = { 249, 166, 0 } })
-	end)
+		GetRPName(targetSrc, function(Firstname, Lastname)
+			TriggerClientEvent('chat:addMessage', -1, { args = { "^4[POLICE]^3 ",  Firstname .. " " .. Lastname .. " ^0Zendani shod be elate^8:^0 " .. jailReason }, color = { 249, 166, 0 } })
+		end)
 
-	TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " baraye  " .. jailTime .. " daghighe zendani shod!")
+		TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Zendani shod baraye ~r~~h~" .. jailTime .. " ~w~Daghighe!")
+	else
+		return xPlayer.kick("Don't event think about it faggot!😈")
+	end
 end)
 
 RegisterServerEvent("esx-qalle-jail:unJailPlayer")
@@ -154,6 +159,16 @@ ESX.RegisterServerCallback("esx-qalle-jail:retrieveJailedPlayers", function(sour
 		end
 
 		cb(jailedPersons)
+	end)
+end)
+
+ESX.RegisterServerCallback('esx_jailer:getDeathStatus', function(source, cb)
+	local identifier = GetPlayerIdentifiers(source)[1]
+
+	MySQL.Async.fetchScalar('SELECT is_dead FROM users WHERE identifier = @identifier', {
+		['@identifier'] = identifier
+	}, function(isDead)
+		cb(isDead)
 	end)
 end)
 

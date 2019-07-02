@@ -99,7 +99,7 @@ function UnJail()
 		TriggerEvent('skinchanger:loadSkin', skin)
 	end)
 
-	ESX.ShowNotification("Az zendan azad shodid, dige khata nakonid")
+	ESX.ShowNotification("~g~~h~Shoma Azad Shodid!")
 end
 
 function InJail()
@@ -112,7 +112,7 @@ function InJail()
 			
 			jailTime = jailTime - 1
 
-			ESX.ShowNotification("Az zaman e zendan e shoma " .. jailTime .. " baghi mande!")
+			ESX.ShowNotification("Shoma ~r~" .. jailTime .. "~w~ Daghighe digar azad mishavid!")
 
 			TriggerServerEvent("esx-qalle-jail:updateJailTime", jailTime)
 
@@ -128,6 +128,31 @@ function InJail()
 	end)
 
 	--Jail Timer--
+	
+	Citizen.CreateThread(function()
+		local playerPed = PlayerPedId()
+        local JailPosition = Config.JailPositions["Cell"]
+		while jailTime > 0 do
+
+			-- Check if player is dead then revive --
+			ESX.TriggerServerCallback('esx_jailer:getDeathStatus', function(isDead)
+				if isDead then
+					TriggerEvent('esx_ambulancejob:revive', -1)
+				end
+			end)
+			DisableControlAction(0, Keys['F1'],true)
+			DisableControlAction(0, Keys['F3'],true)
+			DisableControlAction(0, Keys['F5'],true)
+			-- end of that fucking shit --
+			if GetDistanceBetweenCoords(GetEntityCoords(playerPed), JailPosition.x, JailPosition.y, JailPosition.z) > 90 then
+				ESX.Game.Teleport(playerPed, JailPosition)
+				ESX.ShowNotification("~r~~h~Shoma nemitavanid az zendan farar konid.")
+			end
+
+			Citizen.Wait(0)
+		end
+
+	end)
 
 	--Prison Work--
 

@@ -1,2 +1,0 @@
-ALTER TABLE `users`
-	ADD COLUMN `jail` INT(11) NOT NULL DEFAULT '0';
