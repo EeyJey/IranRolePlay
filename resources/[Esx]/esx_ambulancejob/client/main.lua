@@ -93,6 +93,16 @@ Citizen.CreateThread(function()
 end)
 
 function OnPlayerDeath()
+	IsDead = true
+	ESX.UI.Menu.CloseAll()
+	TriggerServerEvent('esx_ambulancejob:setDeathStatus', true)
+
+	StartDeathTimer()
+	StartDistressSignal()
+
+	StartScreenEffect('DeathFailOut', 0, false)
+end
+
 RegisterNetEvent('esx_ambulancejob:useItem')
 AddEventHandler('esx_ambulancejob:useItem', function(itemName)
 	ESX.UI.Menu.CloseAll()
