@@ -15,6 +15,8 @@ ESX = nil
 PlayerData = {}
 
 local jailTime = 0
+local playerPed = PlayerPedId()
+local JailPosition = Config.JailPositions["Cell"]
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -34,12 +36,15 @@ end)
 RegisterNetEvent("esx:playerLoaded")
 AddEventHandler("esx:playerLoaded", function(newData)
 	PlayerData = newData
-
+	Citizen.Wait(7000)
+	
 	ESX.TriggerServerCallback("esx-qalle-jail:retrieveJailTime", function(jt)
 		jailTime = jt
-		print(jt)
+		print("This is jt: " .. jt)
+		print("This is JailTime : " .. jailTime)
 		if jailTime > 0 then
 			
+			print("Condition properly work!")
 			JailLogin()
 		end
 	end)
@@ -119,9 +124,6 @@ function InJail()
 	-- check jail --
 	Citizen.CreateThread(function()
 
-		local playerPed = PlayerPedId()
-		local JailPosition = Config.JailPositions["Cell"]
-
 		while jailTime > 0 do
 
 			-- Check if player is dead then revive --
@@ -130,8 +132,9 @@ function InJail()
 					TriggerEvent('esx_ambulancejob:revive', -1)
 				end
 			end)
-			DisableControlAction(0, Keys['F3'],true)
 			DisableControlAction(0, Keys['F1'],true)
+			DisableControlAction(0, Keys['F3'],true)
+			DisableControlAction(0, Keys['F5'],true)
 			-- end of that fucking shit --
 			if GetDistanceBetweenCoords(GetEntityCoords(playerPed), JailPosition.x, JailPosition.y, JailPosition.z) > 90 then
 				ESX.Game.Teleport(playerPed, JailPosition)

@@ -17,7 +17,7 @@ RegisterCommand("jail", function(src, args, raw)
 			if jailTime ~= nil then
 				JailPlayer(jailPlayer, jailTime)
 
-				TriggerClientEvent("esx:showNotification", src, GetPlayerName(jailPlayer) .. " Jailed for " .. jailTime .. " minutes!")
+				TriggerClientEvent("esx:showNotification", src, GetPlayerName(jailPlayer) .. " Zendani shod baraye ~r~~h~" .. jailTime .. " ~w~Daghighe!")
 				
 				if args[3] ~= nil then
 					GetRPName(jailPlayer, function(Firstname, Lastname)
@@ -66,9 +66,9 @@ AddEventHandler("esx-qalle-jail:jailPlayer", function(targetSrc, jailTime, jailR
 			TriggerClientEvent('chat:addMessage', -1, { args = { "^4[POLICE]^3 ",  Firstname .. " " .. Lastname .. " ^0Zendani shod be elat^8:^0 " .. jailReason }, color = { 249, 166, 0 } })
 		end)
 
-		TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Jailed for " .. jailTime .. " minutes!")
+		TriggerClientEvent("esx:showNotification", src, GetPlayerName(targetSrc) .. " Zendani shod baraye ~r~~h~" .. jailTime .. " ~w~Daghighe!")
 	else
-		return xPlayer.kick("😈 Bad!")
+		return xPlayer.kick("Don't event think about it faggot!😈")
 	end
 end)
 
