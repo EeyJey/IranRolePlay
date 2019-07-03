@@ -47,7 +47,7 @@ local Keys = {
   function SetVehicleMaxMods(vehicle)
 	  local props = {
 		  modEngine       = 3,
-		  modBrakes				=	2,
+		  modBrakes				=	5,
 		  windowTint			=	-1,
 		  modArmor				= 4,
 		  modTransmission = 2,
