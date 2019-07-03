@@ -308,24 +308,10 @@ function SpawnVehicle(request)
 			local vehicle = CreateVehicle(hash, x + 2, y + 2, z + 1, 0.0, true, false)
 			SetVehicleDoorsLocked(vehicle, 1)
 			SetVehicleNumberPlateText(vehicle, "RENTAL")
-			Fuel(hash)
 			canBeCharged = true
 			arrestCheckAlreadyRan = false
 			isInPrison = false
 			TaskWarpPedIntoVehicle(GetPlayerPed(-1),vehicle,-1)
-end
-
-function Fuel(modelHash)
-    local vehicle = CreateVehicle(modelHash, coords.x, coords.y, coords.z, true, false)
-
-    exports["LegacyFuel"]:SetFuel(vehicle, 100)
-end
-
-function StoreVehicleInGarage(vehicle)
-    local plate = GetVehicleNumberPlateText(vehicle)
-    local fuelLevel = exports["LegacyFuel"]:GetFuel(vehicle)
-
-    TriggerServerEvent('vehiclesStored', plate, fuelLevel)
 end
 
 --Return vehicle script
@@ -338,7 +324,6 @@ function returnVehicle()
 			SetEntityAsMissionEntity(currentVehicle, true, true)
 			local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
 			SetEntityCoords(GetPlayerPed(-1), x - 2, y, z)
-			StoreVehicleInGarage(currentVehicle)
 			DeleteVehicle(currentVehicle)
 end
 
