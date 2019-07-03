@@ -27,16 +27,16 @@ ESX.RegisterServerCallback('esx_thief:getOtherPlayerData', function(source, cb, 
 end)
 
 function updateLastRob(identity, robber)
-	MySQL.Async.execute('UPDATE users SET `lastrobbed` = @lastrobbed, `robber` = @robber WHERE `identifier` = @identifer', {
+	MySQL.Async.execute('UPDATE users SET `lastrobbed` = @lastrobbed, `robber` = @robber WHERE `identifier` = @identifier', {
 		['@lastrobbed'] = os.time(),
 		['@robber'] = robber,
-		['@identifer'] = identity
+		['@identifier'] = identity
 	})
 end
 
 function RobbedBefore(identity, robber)
-	MySQL.Async.fetchAll('SELECT lastrobbed, robber FROM users WHERE `identifer` = @identifer', {
-		['identifer'] = identity
+	MySQL.Async.fetchAll('SELECT lastrobbed, robber FROM users WHERE `identifier` = @identifier', {
+		['identifier'] = identity
 	}, function(data)
 		if robber == data[1].robber and (os.time() - data[1].lastrobbed >= 90) or data[1].lastrobbed == nil or (os.time() - data[1].lastrobbed >= 1800) then
 			return false
@@ -52,11 +52,12 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 	local targetXPlayer = ESX.GetPlayerFromId(target)
 	local oocname =  GetPlayerName(source)
 	local targetName =  GetPlayerName(target)
-	updateLastRob(targetXPlayer.identifier, sourceXPlayer.identifer)
+	updateLastRob(targetXPlayer.identifier, sourceXPlayer.identifier)
 
 	TriggerEvent('DiscordBot:ToDiscord', 'loot', oocname, 'Stole '..amount ..' of '.. itemName .. ' from ' .. targetName,'user', true, source, false)
 
-	if not RobbedBefore(targetXPlayer.identifier, sourceXPlayer.identifer) and not (targetXPlayer.getGroup() == 'admin' or xPlayer.getGroup() == 'superadmin') then
+	if not RobbedBefore(targetXPlayer.identifier, sourceXPlayer.identifier) then
+		--and not (targetXPlayer.getGroup() == 'admin' or targetXPlayer.getGroup() == 'superadmin')
 		if itemType == 'item_standard' then
 			local label = sourceXPlayer.getInventoryItem(itemName).label
 			local itemLimit = sourceXPlayer.getInventoryItem(itemName).limit
