@@ -56,7 +56,8 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
 
 	TriggerEvent('DiscordBot:ToDiscord', 'loot', oocname, 'Stole '..amount ..' of '.. itemName .. ' from ' .. targetName,'user', true, source, false)
 
-	if not RobbedBefore(targetXPlayer.identifier, sourceXPlayer.identifier) and not (targetXPlayer.getGroup() == 'admin' or targetXPlayer.getGroup() == 'superadmin') then
+	if not RobbedBefore(targetXPlayer.identifier, sourceXPlayer.identifier) then
+		--and not (targetXPlayer.getGroup() == 'admin' or targetXPlayer.getGroup() == 'superadmin')
 		if itemType == 'item_standard' then
 			local label = sourceXPlayer.getInventoryItem(itemName).label
 			local itemLimit = sourceXPlayer.getInventoryItem(itemName).limit
