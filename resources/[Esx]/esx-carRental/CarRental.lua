@@ -321,6 +321,13 @@ function Fuel(modelHash)
     exports["LegacyFuel"]:SetFuel(vehicle, 100)
 end
 
+function StoreVehicleInGarage(vehicle)
+    local plate = GetVehicleNumberPlateText(vehicle)
+    local fuelLevel = exports["LegacyFuel"]:GetFuel(vehicle)
+
+    TriggerServerEvent('vehiclesStored', plate, fuelLevel)
+end
+
 --Return vehicle script
 function returnVehicle()
 			isBeingCharged = false
@@ -331,6 +338,7 @@ function returnVehicle()
 			SetEntityAsMissionEntity(currentVehicle, true, true)
 			local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
 			SetEntityCoords(GetPlayerPed(-1), x - 2, y, z)
+			StoreVehicleInGarage(currentVehicle)
 			DeleteVehicle(currentVehicle)
 end
 
