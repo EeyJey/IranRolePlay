@@ -76,6 +76,8 @@ end
 			TriggerClientEvent("pNotify:SendNotification", source, {text = "Tabligh ferestade shod", type = "success", timeout = 3000, layout = "bottomCenter"})
 			local name = getIdentity(source)
 			TriggerClientEvent('chatMessage', -1, "[Tablighat] @" .. name.firstname ..'_'.. name.lastname .. "", {30, 144, 255}, table.concat(args, " "))
+		else
+			TriggerClientEvent("pNotify:SendNotification", source, {text = "Shoma Khabar negar nistid", type = "error", timeout = 3000, layout = "bottomCenter"})
 		end
 	end, {help = 'ye tablighat befres'})
 
