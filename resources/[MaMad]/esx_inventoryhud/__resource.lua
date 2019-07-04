@@ -130,5 +130,9 @@ files {
   "html/img/items/weed.png",
   "html/img/items/weed_pooch.png",
   "html/img/items/whisky.png",
+  "html/img/items/headbag.png",
+  "html/img/items/WEAPON_VINTAGEPISTOL.png",
+  "html/img/items/flashlight.png",
+  "html/img/items/MedArmor.png",
   "html/img/items/wine.png"
 }

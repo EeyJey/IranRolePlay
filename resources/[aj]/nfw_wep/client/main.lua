@@ -110,11 +110,11 @@ AddEventHandler('nfw_wep:MedArmor', function()
             anim = "kneel_idle_a",
         },
         prop = {
-            model = "prop_bodyarmour_02",
+            model = "prop_bodyarmour_03",
         }
     }, function(status)
         if not status then
-            SetPedComponentVariation(ped, 9, 10, 0, 0)
+            SetPedComponentVariation(ped, 9, 11, 1, 0)
             AddArmourToPed(ped, 60)
             exports['mythic_notify']:DoHudText('inform', 'You have put on Medium Body Armor.')
         end

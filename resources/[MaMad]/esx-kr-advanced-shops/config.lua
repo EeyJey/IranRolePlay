@@ -19,6 +19,7 @@ Config.Items = {
     [7] = {label = "Ab" ,      item = "water",       price = 50},
     [8] = {label = "Hamburger",      item = "Hamburger",       price = 150},
     [9] = {label = "Ab mive" ,      item = "jusfruit",       price = 50},
+    [10] = {label = "Gooni" ,      item = "headbag",       price = 5000},
 }
 
 
@@ -33,6 +34,7 @@ Config.Images = {
   [7] = {item = "water",   src = "img/water.png"},
   [8] = {item = "Hamburger",   src = "img/bread.png"},
   [8] = {item = "jusfruit",   src = "img/jusfruit.png"},
+  [9] = {item = "headbag",   src = "img/headbag.png"},
 }
 
 Config.Zones = {

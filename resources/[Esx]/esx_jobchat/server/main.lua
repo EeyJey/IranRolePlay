@@ -207,6 +207,31 @@ AddEventHandler('chatMessage', function(source, name, msg)
                 end
             end
         end
+
+    elseif sm[1] == "/news" then
+        CancelEvent()
+
+        xPlayer = ESX.GetPlayerFromId(source)
+        job = string.lower(xPlayer.job.name)
+
+
+        str = xPlayer.job.grade_label
+        jobGrade = str:gsub("^%l", string.upper)
+
+        local xPlayers = ESX.GetPlayers()
+        for i=1, #xPlayers, 1 do
+            local xP = ESX.GetPlayerFromId(xPlayers[i])
+            xPJob = string.lower(xP.job.name)
+            if xPJob == 'journaliste' then
+                TriggerClientEvent('chat:addMessage', xPlayers[i], {
+                    color = { 255, 0, 0},
+                    multiline = true,
+                    args = {"^4[^2 NEWS ^4]: ^3" .. name .. ": ^4 " .. "^0^*" .. string.sub(msg,6) .. "^4 "}
+                })
+            else
+                TriggerClientEvent('esx:showNotification', source, '^4[^2 NEWS ^4]: ^3Payame Shoma daryaft shod! Lotfan mokhtasate khod ra az tarighe SMS ersal konid!')
+            end
+        end
     end
 end)
 
