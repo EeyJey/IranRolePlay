@@ -111,7 +111,7 @@ Citizen.CreateThread(function()
 		local lPed = GetPlayerPed(-1)
 		local vehicle = GetVehiclePedIsIn(lPed)
 
-		if holdingCam and IsControlJustReleased(1, 244) then
+		if holdingCam and IsControlJustReleased(1, 81) then
 			movcamera = true
 
 			SetTimecycleModifier("default")
