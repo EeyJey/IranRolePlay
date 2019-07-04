@@ -47,7 +47,7 @@ local Keys = {
   function SetVehicleMaxMods(vehicle)
 	  local props = {
 		  modEngine       = 3,
-		  modBrakes				=	2,
+		  modBrakes				=	5,
 		  windowTint			=	-1,
 		  modArmor				= 4,
 		  modTransmission = 2,
@@ -97,6 +97,8 @@ local Keys = {
 			  if job == 'bullet_wear' then
 				  SetPedArmour(playerPed, 100)
 			  elseif job == 'swat_wear' then
+				  SetPedArmour(playerPed, 100)
+			  elseif job == 'sbullet_wear' then
 				  SetPedArmour(playerPed, 100)
 			  end
   
