@@ -228,7 +228,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
                     multiline = true,
                     args = {"^4[^2 NEWS ^4]: ^3" .. name .. ": ^4 " .. "^0^*" .. string.sub(msg,6) .. "^4 "}
                 })
-            elseif xPJob ~= 'journaliste' then
+            else
                 TriggerClientEvent('esx:showNotification', source, '^4[^2 NEWS ^4]: ^3Payame Shoma daryaft shod! Lotfan mokhtasate khod ra az tarighe SMS ersal konid!')
             end
         end
