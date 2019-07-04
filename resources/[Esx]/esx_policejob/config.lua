@@ -869,7 +869,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 0,   ['decals_2'] = 0,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -895,7 +895,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 7,   ['decals_2'] = 2,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -923,7 +923,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 7,   ['decals_2'] = 3,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -951,7 +951,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 10,   ['decals_2'] = 5,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -979,7 +979,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 10,   ['decals_2'] = 5,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -1007,7 +1007,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 10,   ['decals_2'] = 5,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,
@@ -1035,7 +1035,7 @@ Config.Uniforms = {
 		},
 		female = {
 			['tshirt_1'] = 51,  ['tshirt_2'] = 1,
-			['torso_1'] = 25,   ['torso_2'] = 0,
+			['torso_1'] = 90,   ['torso_2'] = 0,
 			['decals_1'] = 10,   ['decals_2'] = 5,
 			['arms'] = 14,
 			['pants_1'] = 41,   ['pants_2'] = 1,

@@ -98,6 +98,8 @@ local Keys = {
 				  SetPedArmour(playerPed, 100)
 			  elseif job == 'swat_wear' then
 				  SetPedArmour(playerPed, 100)
+			  elseif job == 'sbullet_wear' then
+				  SetPedArmour(playerPed, 100)
 			  end
   
 		  end
