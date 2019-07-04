@@ -327,7 +327,7 @@ function ShowNotification( text )
 end
 -- S A V E --
 RegisterNetEvent('save')
-AddEventHandler('save',function() 
+AddEventHandler('save',function(pelak) 
 	local player = GetPlayerPed(-1)
 	if (IsPedSittingInAnyVehicle(player)) and PlayerData.job.name == "police" then 
 		if  saved == true then
@@ -342,7 +342,7 @@ AddEventHandler('save',function()
 			local vehicle = saveVehicle
 			targetBlip = AddBlipForEntity(vehicle)
 			SetBlipSprite(targetBlip,225)
-			SetVehicleNumberPlateText(vehicle, "Police")
+			SetVehicleNumberPlateText(vehicle, pelak)
 			ShowNotification("~y~" .. GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))) .. "~w~ Be onvan mashin shoma ~g~save ~w~Shod.")
 			saved = true
 		end
