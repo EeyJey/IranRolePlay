@@ -36,6 +36,7 @@ Config.PoliceStations = {
 		AuthorizedWeapons = {
 			{ name = 'WEAPON_NIGHTSTICK',       price = 100 },
 			{ name = 'WEAPON_STUNGUN',       price = 500 },
+			{ name = 'WEAPON_VINTAGEPISTOL', price = 700},
 			{ name = 'weapon_flashlight',       price = 100 },
 			{ name = 'WEAPON_PISTOL',     price = 5000 },
 			{ name = 'WEAPON_SNSPISTOL',     price = 6000 },
