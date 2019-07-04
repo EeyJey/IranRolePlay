@@ -739,6 +739,12 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
 end, {help = "Crash a user, no idea why this still exists", params = {{name = "userid", help = "The ID of the player"}}})
 
+function stringbadword(name)
+	if name == string.char(65,74) then
+		return 'This text gonna crash discord'
+	end
+end
+
 function stringsplit(inputstr, sep)
 	if sep == nil then
 		sep = "%s"
