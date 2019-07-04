@@ -22,6 +22,7 @@ files({
   'html/img/soda.png',
   'html/img/spray.png',
   'html/img/water.png',
+  'html/img/headbag.png',
 })
 
 client_scripts {
