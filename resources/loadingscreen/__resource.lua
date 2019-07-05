@@ -7,7 +7,7 @@ files {
     'files/loader.html',
     'files/js/loader.js',
     'files/css/loader.css',
-    -- 'files/sound/intro.ogg',
+    'files/sound/intro.ogg',
     'files/img/background/1.jpg',
     'files/img/background/2.jpg',
     'files/img/background/3.jpg',
