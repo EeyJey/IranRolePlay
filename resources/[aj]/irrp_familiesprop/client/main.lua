@@ -1271,7 +1271,7 @@ while true do
 end)
 
 RegisterCommand('fm', function(source)
-  if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
   else
     ESX.ShowNotification('Shoma Ozv Family Nistid!')
@@ -1279,7 +1279,7 @@ RegisterCommand('fm', function(source)
 end, false)
 
 RegisterCommand('familymenu', function(source)
-  if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
   else
     ESX.ShowNotification('Shoma Ozv Family Nistid!')
