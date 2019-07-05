@@ -8,6 +8,9 @@ server_script 'server.lua'
 server_exports {
 	'stringbadword'
 }
+exports {
+	'stringbadword'
+}
 
 ui_page 'ui/index.html'
 

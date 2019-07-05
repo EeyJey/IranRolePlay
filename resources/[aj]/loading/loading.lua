@@ -17,25 +17,29 @@ function InitialSetup()
     end
 end
 
+function ClearScreen()
+    SetCloudHatOpacity(cloudOpacity)
+end
+
 Citizen.CreateThread(function()
     InitialSetup()
     while GetPlayerSwitchState() ~= 5 do
         Citizen.Wait(0)
         ClearScreen()
     end
-    
+    ClearScreen()
     ShutdownLoadingScreen()
-    SetCloudHatOpacity(cloudOpacity)
+    ClearScreen()
     Citizen.Wait(0)
     DoScreenFadeOut(0)
     ShutdownLoadingScreenNui()
     
-    SetCloudHatOpacity(cloudOpacity)
+    ClearScreen()
     Citizen.Wait(0)
     DoScreenFadeIn(500)
     while not IsScreenFadedIn() do
         Citizen.Wait(0)
-        SetCloudHatOpacity(cloudOpacity)
+        ClearScreen()
     end
     
     local timer = GetGameTimer()
@@ -43,16 +47,17 @@ Citizen.CreateThread(function()
     TriggerServerEvent('es:firstJoinProper')
     TriggerEvent('es:allowedToSpawn')
     while true do
-        SetCloudHatOpacity(cloudOpacity)
+        ClearScreen()
         Citizen.Wait(0)
         if GetGameTimer() - timer > 5000 then
             SwitchInPlayer(PlayerPedId())
             while GetPlayerSwitchState() ~= 12 do
                 Citizen.Wait(0)
-                SetCloudHatOpacity(cloudOpacity)
+                ClearScreen()
             end
             break
         end
     end
+    ClearDrawOrigin()
     TriggerEvent('ui:toggle', true)
 end)
