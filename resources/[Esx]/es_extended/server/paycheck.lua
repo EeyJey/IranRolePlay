@@ -6,12 +6,25 @@ ESX.StartPayCheck = function()
 		for i=1, #xPlayers, 1 do
 			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
 			local job     = xPlayer.job.grade_name
+			local family  = xPlayer.family.name
+			local familyaccount = 'family_' .. string.lower(family)
+			local fsalary = xPlayer.family.grade_salary
 			local salary  = xPlayer.job.grade_salary
 
 			if salary > 0 then
 				if job == 'unemployed' then -- unemployed
 					xPlayer.addAccountMoney('bank', salary)
 					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_help', salary), 'CHAR_BANK_MAZE', 9)
+				elseif family ~= 'nofamily' then
+					TriggerEvent('irrp_familyaccount:getFamilyAccount', familyaccount, function(account)
+						if account.money >= fsalary and account.pay then
+							xPlayer.addAccountMoney('bank', salary)
+							account.removeMoney(salary)
+							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+						else
+							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney'), 'CHAR_BANK_MAZE', 1)
+						end
+					end)
 				elseif Config.EnableSocietyPayouts then -- possibly a society
 					TriggerEvent('esx_society:getSociety', xPlayer.job.name, function (society)
 						if society ~= nil then -- verified society

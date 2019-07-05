@@ -110,6 +110,7 @@ AddEventHandler('esx_policejob:getStockItem', function(itemName, count)
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
 				TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
+				TriggerEvent('DiscordBot:ToDiscord', 'pwi', xPlayer.name, 'Withdrawn x' ..count ..' '..inventoryItem.label ,'user', true, source, false)
 			end
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('quantity_invalid'))
@@ -297,6 +298,7 @@ ESX.RegisterServerCallback('esx_policejob:addArmoryWeapon', function(source, cb,
 
 	if removeWeapon then
 		xPlayer.removeWeapon(weaponName)
+		TriggerEvent('DiscordBot:ToDiscord', 'pwi', xPlayer.name, 'Deposited ' .. weaponName ,'user', true, source, false)
 	end
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
@@ -335,6 +337,7 @@ ESX.RegisterServerCallback('esx_policejob:removeArmoryWeapon', function(source, 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	xPlayer.addWeapon(weaponName, 500)
+	TriggerEvent('DiscordBot:ToDiscord', 'pwi', xPlayer.name, 'Withdrawn ' .. weaponName ,'user', true, source, false)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_police', function(store)
 

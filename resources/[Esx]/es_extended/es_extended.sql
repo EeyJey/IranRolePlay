@@ -18,6 +18,7 @@ CREATE TABLE `items` (
 
 	PRIMARY KEY (`name`)
 );
+ALTER TABLE family_account_data ADD COLUMN pay bool DEFAULT 'false' AFTER black_money
 
 CREATE TABLE `job_grades` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,

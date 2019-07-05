@@ -3,17 +3,17 @@
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
+-- Citizen.CreateThread(function()
+-- 	while true do
+-- 		Citizen.Wait(0)
 
-		if NetworkIsSessionStarted() then
-			TriggerServerEvent('es:firstJoinProper')
-			TriggerEvent('es:allowedToSpawn')
-			return
-		end
-	end
-end)
+-- 		if NetworkIsSessionStarted() then
+-- 			TriggerServerEvent('es:firstJoinProper')
+-- 			TriggerEvent('es:allowedToSpawn')
+-- 			return
+-- 		end
+-- 	end
+-- end)
 
 local loaded = false
 local oldPos

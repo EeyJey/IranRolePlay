@@ -4,16 +4,15 @@ Config = {}
 -- a lot of the steamid converting websites are broken rn and give you the wrong steamid. I use https://steamid.xyz/ with no problems.
 -- you can also give priority through the API, read the examples/readme.
 Config.Priority = {
-    ["steam:110000114a058a8"] = 100, -- Vidat Owner
     ["steam:110000111fc352b"] = 100, -- AJ 
     ["steam:110000107a78e07"] = 100, -- Arash- Owner
     ["steam:11000011783a55b"] = 85, -- Arman Semi-Dev
     ["steam:11000010a1b83df"] = 100, -- MaMad Owner
     ["steam:11000010494a934"] = 80, -- Obi Vika
-    ["steam:110000118eae7af"] = 80, -- hooman :| dahanamo gaiidi :|
-    ["steam:11000011926c808"] = 80, -- Armin.luckynoob medic
-    ["steam:11000010f0a6439"] = 70, -- Peyman- Admin
-    ["steam:110000115e0be8a"] = 70, -- MehdiJokerPir- Rais medic
+    ["steam:110000118eae7af"] = 74, -- hooman :| dahanamo gaiidi :|
+    ["steam:11000011926c808"] = 71, -- Armin.luckynoob medic
+    ["steam:11000010f0a6439"] = 72, -- Peyman- Admin
+    ["steam:110000115e0be8a"] = 74, -- MehdiJokerPir- Rais medic
     ["steam:110000111ca680b"] = 70, -- Bigezmoge streamer
     ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
     ["steam:110000102c04e96"] = 70, -- PythQn
@@ -34,12 +33,15 @@ Config.Priority = {
     ['steam:11000010daa7aba'] = 70, -- sec shot
     ['steam:11000010c235ed7'] = 85, -- lightpower Semi-Dev
     ['steam:110000110d40cf8'] = 70, -- Rais mechanic RVN
-    ['steam:110000113d8b713'] = 70, -- Majestic
+    ['steam:110000113d8b713'] = 71, -- Majestic
     ['steam:11000010900dc25'] = 70, -- King mml
     ['steam:110000104a518bd'] = 70, -- Alixreza
     ['steam:110000107069137'] = 70, -- Alixreza
     ['steam:11000011926282d'] = 70, -- noclip
-    ['steam:11000013bc9f61b'] = 70, -- TwiTch.Tv/AmirMhmd
+    ['steam:11000011cd6e829'] = 70, -- TwiTch.Tv/Bugmazel
+    ['steam:11000010934a428'] = 71, -- Quiet Moderator
+    ['steam:110000113d8089e'] = 71, -- Supetdaxter Moderator
+
 
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
