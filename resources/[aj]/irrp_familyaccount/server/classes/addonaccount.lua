@@ -1,10 +1,11 @@
-function CreateFamilyAccount(name, owner, money, blackmoney)
+function CreateFamilyAccount(name, owner, money, blackmoney, pay)
 	local self = {}
 
 	self.name  = name
 	self.owner = owner
 	self.money = money
 	self.black_money = blackmoney
+	self.pay	= pay
 
 	self.addMoney = function(m)
 		self.money = self.money + m
