@@ -39,6 +39,7 @@ Config.Priority = {
     ['steam:110000107069137'] = 70, -- Alixreza
     ['steam:11000011926282d'] = 70, -- noclip
     ['steam:11000011cd6e829'] = 70, -- TwiTch.Tv/Bugmazel
+    ['steam:11000010934a428'] = 70, -- quiet
 
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
