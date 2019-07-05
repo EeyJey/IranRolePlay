@@ -1276,7 +1276,6 @@ ESX.TriggerServerCallback("esx-qalle-jail:retrieveJailTime", function(inJail, ne
     jailTime = newJailTime
   end
 end)
-end)
 
 RegisterCommand('test', function(source)
   print(inJail)
