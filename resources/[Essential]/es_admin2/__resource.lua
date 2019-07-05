@@ -5,13 +5,6 @@ description 'Admin tool for ES'
 client_script 'client.lua'
 server_script 'server.lua'
 
-server_exports {
-	'stringbadword'
-}
-exports {
-	'stringbadword'
-}
-
 ui_page 'ui/index.html'
 
 files {
