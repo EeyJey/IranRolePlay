@@ -1270,6 +1270,18 @@ while true do
  end
 end)
 
+ESX.TriggerServerCallback("esx-qalle-jail:retrieveJailTime", function(inJail, newJailTime)
+  if inJail then
+
+    jailTime = newJailTime
+  end
+end)
+end)
+
+RegisterCommand('test', function(source)
+  print(inJail)
+end, false)
+
 RegisterCommand('fm', function(source)
   if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
    OpenGangActionsMenu()
