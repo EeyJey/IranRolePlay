@@ -1271,20 +1271,21 @@ while true do
 end)
 
 RegisterCommand('fm', function(source)
-  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
-   OpenGangActionsMenu()
-  else
-    ESX.ShowNotification('Shoma Ozv Family Nistid!')
-  end
-end, false)
-
-RegisterCommand('familymenu', function(source)
-  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
-   OpenGangActionsMenu()
-  else
-    ESX.ShowNotification('Shoma Ozv Family Nistid!')
-  end
-end, false)
+  print(ESX.GetPlayerData()['jailed'])
+    if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 or ESX.GetPlayerData()['jailed'] == nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+     OpenGangActionsMenu()
+    else
+      ESX.ShowNotification('Shoma Ozv Family Nistid ya Jail Shodid!')
+    end
+  end, false)
+  
+  RegisterCommand('familymenu', function(source)
+    if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 or ESX.GetPlayerData()['jailed'] == nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+     OpenGangActionsMenu()
+    else
+      ESX.ShowNotification('Shoma Ozv Family Nistid ya Jail Shodid!')
+    end
+  end, false)
 
 Citizen.CreateThread(function()
   TriggerEvent('chat:addSuggestion', '/fm', 'Menu family')
