@@ -804,7 +804,7 @@ Citizen.CreateThread(function()
     if not set and PlayerData.family ~= nil and PlayerData.family.name ~= 'nofamily' then
       Data = {}
       ESX.TriggerServerCallback('irrp_families:getFamilyData', function(data)
-        if data.family_name ~= nil then
+        if data ~= nil then
           Data.family_name  = data.family_name
           Data.blip         = json.decode(data.blip)
           Data.armory       = json.decode(data.armory)
@@ -817,7 +817,7 @@ Citizen.CreateThread(function()
           Data.vehprop      = json.decode(data.vehprop)
           TriggerEvent('irrp_familiesprop:blip', Data.blip)
         else
-          --Delete Player Family
+          ESX.ShowNotification('You Family has been expired, Contact admins for recharge!')
         end
       end, PlayerData.family.name)
       set = true
@@ -1271,20 +1271,21 @@ while true do
 end)
 
 RegisterCommand('fm', function(source)
-  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
-   OpenGangActionsMenu()
-  else
-    ESX.ShowNotification('Shoma Ozv Family Nistid!')
-  end
-end, false)
-
-RegisterCommand('familymenu', function(source)
-  if PlayerData.family ~= nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
-   OpenGangActionsMenu()
-  else
-    ESX.ShowNotification('Shoma Ozv Family Nistid!')
-  end
-end, false)
+  print(ESX.GetPlayerData()['jailed'])
+    if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 or ESX.GetPlayerData()['jailed'] == nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+     OpenGangActionsMenu()
+    else
+      ESX.ShowNotification('Shoma Ozv Family Nistid ya Jail Shodid!')
+    end
+  end, false)
+  
+  RegisterCommand('familymenu', function(source)
+    if PlayerData.family ~= nil and ESX.GetPlayerData()['jailed'] == 0 or ESX.GetPlayerData()['jailed'] == nil and PlayerData.family.label == 'family' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'gang_actions')  then
+     OpenGangActionsMenu()
+    else
+      ESX.ShowNotification('Shoma Ozv Family Nistid ya Jail Shodid!')
+    end
+  end, false)
 
 Citizen.CreateThread(function()
   TriggerEvent('chat:addSuggestion', '/fm', 'Menu family')

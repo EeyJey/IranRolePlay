@@ -4,7 +4,7 @@ Config.DrawDistance               = 100.0
 
 Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 
-Config.ReviveReward               = 4000  -- revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 3500  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = true -- disable if you're using fivem-ipl or other IPL loaders
 
@@ -19,7 +19,7 @@ Config.BleedoutTimer              = 10 * minute -- Time til the player bleeds ou
 Config.EnablePlayerManagement     = true
 
 Config.RemoveWeaponsAfterRPDeath  = true
-Config.RemoveCashAfterRPDeath     = false
+Config.RemoveCashAfterRPDeath     = true
 Config.RemoveItemsAfterRPDeath    = true
 
 -- Let the player pay for respawning early, only if he can afford it.

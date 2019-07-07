@@ -26,7 +26,7 @@ Config.Priority = {
     ["steam:11000010b421c27"] = 70, -- AmoBig streamer
     ["steam:110000139d27238"] = 70, -- Mostafa hojati
     ["steam:11000011a939660"] = 70, -- RaRa Avis (gift from mamad)
-    -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
+    ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
     -- ["steam:11000011a3f0a06"] = 70, --game_over streamer
     ['steam:1100001175a3989'] = 70, -- amroz
@@ -39,9 +39,9 @@ Config.Priority = {
     ['steam:110000107069137'] = 70, -- Alixreza
     ['steam:11000011926282d'] = 70, -- noclip
     ['steam:11000011cd6e829'] = 70, -- TwiTch.Tv/Bugmazel
-	['steam:110000137a8ae0e'] = 70, -- Amir touch(arash) 
     ['steam:11000010934a428'] = 71, -- Quiet Moderator
     ['steam:110000113d8089e'] = 71, -- Supetdaxter Moderator
+
 	
 
 

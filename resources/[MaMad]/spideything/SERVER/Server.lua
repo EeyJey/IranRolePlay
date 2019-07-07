@@ -164,6 +164,8 @@ AddEventHandler('DiscordBot:ToDiscord', function(WebHook, Name, Message, Image, 
 			WebHook = DiscordWebhookHome
 		elseif WebHook:lower() == 'impound' then
 			WebHook = DiscordWebhookimpound
+		elseif WebHook:lower() == 'admin' then
+			WebHook = DiscordWebhookAdmins
 		elseif not Webhook:find('discordapp.com/api/webhooks') then
 			print('ToDiscord event called without a specified webhook!')
 			return nil
