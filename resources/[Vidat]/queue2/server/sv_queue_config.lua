@@ -7,6 +7,7 @@ Config.Priority = {
     ["steam:110000111fc352b"] = 100, -- AJ 
     ["steam:110000107a78e07"] = 100, -- Arash- Owner
     ["steam:11000011783a55b"] = 85, -- Arman Semi-Dev
+    ["steam:11000010a1b83df"] = 100, -- MaMad Owner
     ["steam:11000010494a934"] = 80, -- Obi Vika
     ["steam:110000118eae7af"] = 74, -- hooman :| dahanamo gaiidi :|
     ["steam:11000011926c808"] = 71, -- Armin.luckynoob medic
@@ -25,7 +26,7 @@ Config.Priority = {
     ["steam:11000010b421c27"] = 70, -- AmoBig streamer
     ["steam:110000139d27238"] = 70, -- Mostafa hojati
     ["steam:11000011a939660"] = 70, -- RaRa Avis (gift from mamad)
-    -- ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
+    ["steam:110000137a8ae0e"] = 70, -- Refiqe arash o Ebi
     -- ["steam:110000111eff7bf"] = 70, -- Mazel Streamer
     -- ["steam:11000011a3f0a06"] = 70, --game_over streamer
     ['steam:1100001175a3989'] = 70, -- amroz
@@ -44,6 +45,8 @@ Config.Priority = {
     ['steam:11000013335dda6'] = 71, -- https://www.aparat.com/aleffamily/live2
     
     
+
+	
 
 
     -- [''] = 70,
