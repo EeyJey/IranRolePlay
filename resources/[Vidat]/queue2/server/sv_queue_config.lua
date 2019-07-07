@@ -41,6 +41,8 @@ Config.Priority = {
     ['steam:11000010934a428'] = 71, -- Quiet Moderator
     ['steam:110000113d8089e'] = 71, -- Supetdaxter Moderator
     ['steam:1100001374c549f'] = 71, -- ali comix
+    ['steam:11000013335dda6'] = 71, -- https://www.aparat.com/aleffamily/live2
+    
     
 
 
