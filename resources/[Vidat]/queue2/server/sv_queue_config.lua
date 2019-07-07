@@ -7,7 +7,6 @@ Config.Priority = {
     ["steam:110000111fc352b"] = 100, -- AJ 
     ["steam:110000107a78e07"] = 100, -- Arash- Owner
     ["steam:11000011783a55b"] = 85, -- Arman Semi-Dev
-    ["steam:11000010a1b83df"] = 100, -- MaMad Owner
     ["steam:11000010494a934"] = 80, -- Obi Vika
     ["steam:110000118eae7af"] = 74, -- hooman :| dahanamo gaiidi :|
     ["steam:11000011926c808"] = 71, -- Armin.luckynoob medic
