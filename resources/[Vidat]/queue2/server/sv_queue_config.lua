@@ -39,8 +39,10 @@ Config.Priority = {
     ['steam:110000107069137'] = 70, -- Alixreza
     ['steam:11000011926282d'] = 70, -- noclip
     ['steam:11000011cd6e829'] = 70, -- TwiTch.Tv/Bugmazel
+	['steam:110000137a8ae0e'] = 70, -- Amir touch(arash) 
     ['steam:11000010934a428'] = 71, -- Quiet Moderator
     ['steam:110000113d8089e'] = 71, -- Supetdaxter Moderator
+	
 
 
     -- [''] = 70,
