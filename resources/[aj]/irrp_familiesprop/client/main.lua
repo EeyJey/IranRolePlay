@@ -804,7 +804,7 @@ Citizen.CreateThread(function()
     if not set and PlayerData.family ~= nil and PlayerData.family.name ~= 'nofamily' then
       Data = {}
       ESX.TriggerServerCallback('irrp_families:getFamilyData', function(data)
-        if data.family_name ~= nil then
+        if data ~= nil then
           Data.family_name  = data.family_name
           Data.blip         = json.decode(data.blip)
           Data.armory       = json.decode(data.armory)
@@ -817,7 +817,7 @@ Citizen.CreateThread(function()
           Data.vehprop      = json.decode(data.vehprop)
           TriggerEvent('irrp_familiesprop:blip', Data.blip)
         else
-          --Delete Player Family
+          ESX.ShowNotification('You Family has been expired, Contact admins for recharge!')
         end
       end, PlayerData.family.name)
       set = true

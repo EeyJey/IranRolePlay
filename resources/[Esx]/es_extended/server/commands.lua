@@ -183,10 +183,13 @@ TriggerEvent('es:addGroupCommand', 'setmoney', 'superadmin', function(source, ar
 	if target and money_type and money_amount and xPlayer ~= nil then
 		if money_type == 'cash' then
 			xPlayer.setMoney(money_amount)
+			TriggerEvent('DiscordBot:ToDiscord', 'admin', GetPlayerName(source), 'Added $' .. money_amount ..' cash money to ' .. xPlayer.name ,'user', true, source, false)
 		elseif money_type == 'bank' then
 			xPlayer.setAccountMoney('bank', money_amount)
+			TriggerEvent('DiscordBot:ToDiscord', 'admin', GetPlayerName(source), 'Added $' .. money_amount ..' bank money to ' .. xPlayer.name ,'user', true, source, false)
 		elseif money_type == 'black' then
 			xPlayer.setAccountMoney('black_money', money_amount)
+			TriggerEvent('DiscordBot:ToDiscord', 'admin', GetPlayerName(source), 'Added $' .. money_amount ..' black money to ' .. xPlayer.name ,'user', true, source, false)
 		else
 			TriggerClientEvent('chatMessage', _source, "SYSTEM", {255, 0, 0}, "^2" .. money_type .. " ^0 is not a valid money type!")
 			return
@@ -195,8 +198,6 @@ TriggerEvent('es:addGroupCommand', 'setmoney', 'superadmin', function(source, ar
 		TriggerClientEvent('chatMessage', _source, "SYSTEM", {255, 0, 0}, "Invalid arguments.")
 		return
 	end
-	
-	print('es_extended: ' .. GetPlayerName(source) .. ' just set $' .. money_amount .. ' (' .. money_type .. ') to ' .. xPlayer.name)
 	
 	if xPlayer.source ~= _source then
 		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('money_set', money_amount, money_type))
