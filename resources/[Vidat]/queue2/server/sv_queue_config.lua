@@ -14,7 +14,7 @@ Config.Priority = {
     ["steam:11000010f0a6439"] = 72, -- Peyman- Admin
     ["steam:110000115e0be8a"] = 74, -- MehdiJokerPir- Rais medic
     ["steam:110000111ca680b"] = 70, -- Bigezmoge streamer
-    ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
+    -- ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
     ["steam:110000102c04e96"] = 70, -- PythQn
     ["steam:110000111236158"] = 85, -- Matin_Dark Semi-Dev
     ["steam:11000011c6ff036"] = 70, -- gift from arash
@@ -43,6 +43,8 @@ Config.Priority = {
     ['steam:110000113d8089e'] = 71, -- Supetdaxter Moderator
     ['steam:1100001374c549f'] = 71, -- ali comix
     ['steam:11000013335dda6'] = 71, -- https://www.aparat.com/aleffamily/live2
+    ['steam:11000013bc9f61b'] = 70, -- https://aparat.com/amirmhmd1 , https://twitch.tv/amirmhmd
+    
     
     
 

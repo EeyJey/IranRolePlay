@@ -305,7 +305,7 @@ function OpenVehicleSpawnerMenu(station)
           }, Data.vehspawn.a, function(vehicle)
           TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
           SetVehicleMods(vehicle)
-          SetVehicleFuelLevel(vehicle,60)
+          TriggerEvent('vehicule:sendFuel', 1, 0.142)
           end)
 
         else
