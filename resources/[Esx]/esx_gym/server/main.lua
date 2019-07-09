@@ -102,8 +102,8 @@ AddEventHandler('esx_gym:buyMembership', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if(xPlayer.getMoney() >= 800) then
-		xPlayer.removeMoney(800)
+	if(xPlayer.getMoney() >= 20000) then
+		xPlayer.removeMoney(20000)
 		
 		xPlayer.addInventoryItem('gym_membership', 1)		
 		notification("You purchased a ~g~membership")
@@ -120,8 +120,8 @@ AddEventHandler('esx_gym:buyProteinshake', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if(xPlayer.getMoney() >= 6) then
-		xPlayer.removeMoney(6)
+	if(xPlayer.getMoney() >= 150) then
+		xPlayer.removeMoney(150)
 		
 		xPlayer.addInventoryItem('protein_shake', 1)
 		
@@ -148,8 +148,8 @@ AddEventHandler('esx_gym:buyWater', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if(xPlayer.getMoney() >= 1) then
-		xPlayer.removeMoney(1)
+	if(xPlayer.getMoney() >= 50) then
+		xPlayer.removeMoney(50)
 		
 		xPlayer.addInventoryItem('water', 1)
 		
@@ -164,8 +164,8 @@ AddEventHandler('esx_gym:buySportlunch', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if(xPlayer.getMoney() >= 2) then
-		xPlayer.removeMoney(2)
+	if(xPlayer.getMoney() >= 150) then
+		xPlayer.removeMoney(150)
 		
 		xPlayer.addInventoryItem('sportlunch', 1)
 		
