@@ -498,10 +498,10 @@ function OpenGymShopMenu()
         {
             title    = 'Gym - Shop',
             elements = {
-				{label = 'Protein Shake ($6)', value = 'protein_shake'},
-				{label = 'Water ($1)', value = 'water'},
-				{label = 'Sportlunch ($2)', value = 'sportlunch'},
-				{label = 'Powerade ($4)', value = 'powerade'},
+				{label = 'Protein Shake ($150)', value = 'protein_shake'},
+				{label = 'Water ($50)', value = 'water'},
+				{label = 'Sportlunch ($150)', value = 'sportlunch'},
+				{label = 'Powerade ($150)', value = 'powerade'},
 				{label = 'Bandage ($50)', value = 'bandage'}
             }
         },
@@ -532,7 +532,7 @@ function OpenGymShipMenu()
         {
             title    = 'Gym - Membership',
             elements = {
-				{label = 'Membership ($800)', value = 'membership'},
+				{label = 'Membership ($20000)', value = 'membership'},
             }
         },
         function(data, menu)
