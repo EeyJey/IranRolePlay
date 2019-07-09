@@ -14,7 +14,6 @@ Config.Priority = {
     ["steam:11000010f0a6439"] = 72, -- Peyman- Admin
     ["steam:110000115e0be8a"] = 74, -- MehdiJokerPir- Rais medic
     ["steam:110000111ca680b"] = 70, -- Bigezmoge streamer
-    ["steam:11000011ae643c7"] = 70, -- amberat streamer good RP and funny guy
     ["steam:110000102c04e96"] = 70, -- PythQn
     ["steam:110000111236158"] = 85, -- Matin_Dark Semi-Dev
     ["steam:11000011c6ff036"] = 70, -- gift from arash
@@ -47,7 +46,9 @@ Config.Priority = {
     ['steam:11000013c6c8d87'] = 70, -- dafi mafiyay arash-
     ['steam:110000135e883f8'] = 70, -- dafi mafiyay arash-
     ['steam:110000134e34091'] = 70, -- Arash Lafuente be darkhast homan hamahang shode ba arash-
+	['steam:11000011ae643c7'] = 70, -- Amberat
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
+
     
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
