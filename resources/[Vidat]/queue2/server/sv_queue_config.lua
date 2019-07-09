@@ -46,6 +46,8 @@ Config.Priority = {
     ['steam:11000013bc9f61b'] = 70, -- https://aparat.com/amirmhmd1 , https://twitch.tv/amirmhmd
     ['steam:11000013c6c8d87'] = 70, -- dafi mafiyay arash-
     ['steam:110000135e883f8'] = 70, -- dafi mafiyay arash-
+    ['steam:110000134e34091'] = 70, -- Arash Lafuente be darkhast homan hamahang shode ba arash-
+    ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
     
     -- [''] = 70,
     ["ip:127.0.0.0"] = 85
