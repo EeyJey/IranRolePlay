@@ -192,8 +192,8 @@ AddEventHandler('esx_gym:buyPowerade', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if(xPlayer.getMoney() >= 4) then
-		xPlayer.removeMoney(4)
+	if(xPlayer.getMoney() >= 150) then
+		xPlayer.removeMoney(150)
 		
 		xPlayer.addInventoryItem('powerade', 1)
 		
