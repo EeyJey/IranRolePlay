@@ -236,6 +236,10 @@ Config.AuthorizedVehicles = {
 			label = 'Police Cruiser'
 		},	
 		{
+			model = 'police3',
+			label = 'Police Interceptor'
+		},
+		{
 			model = 'police2',
 			label = 'Police Buffalo'
 		},
@@ -261,7 +265,12 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'policeb',
 			label = 'Police Bike'
-		},		
+		
+        },	
+		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
+		},
 		{
 			model = 'Sheriff',
 			label = 'Sheriff Crusier'
@@ -286,6 +295,14 @@ Config.AuthorizedVehicles = {
 			label = 'Police Bike'
 		},		
 		{
+			model = '2015polstang',
+			label = 'Ford Mustang GT'
+		},
+		{
+			model = 'polgs350',
+			label = 'Police Lexus'
+		},
+		{
 			model = 'Sheriff',
 			label = 'Sheriff Crusier'
 		},
@@ -307,6 +324,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = '2015polstang',
 			label = 'Ford Mustang GT'
+		},
+		{
+			model = 'polgs350',
+			label = 'Police Lexus'
 		},
 		{
 			model = 'police4',
@@ -350,6 +371,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'police4',
 			label = 'Unmarked Crusier'
+		},
+		{
+			model = 'polgs350',
+			label = 'Police Lexus'
 		},
 		{
 			model = 'fbi',
@@ -398,7 +423,8 @@ Config.AuthorizedVehicles = {
 			model = 'police5',
 			label = 'Police Lamborghini'
 		},
-		{
+		
+        {
 			model = 'police4',
 			label = 'Unmarked Crusier'
 		},
@@ -448,6 +474,10 @@ Config.AuthorizedVehicles = {
 		{
 			model = 'police5',
 			label = 'Police Lamborghini'
+		},
+		{
+			model = 'polp1',
+			label = 'McLaren P1'
 		},
 		{
 			model = 'police4',
