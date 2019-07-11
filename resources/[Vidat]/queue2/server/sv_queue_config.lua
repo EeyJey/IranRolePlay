@@ -51,6 +51,7 @@ Config.Priority = {
 	['steam:11000010b684a45'] = 70, -- Ayda 
 	['steam:11000010b8c3a31'] = 70, -- foton(arash)
 	['steam:11000011ae643c7'] = 70, -- Amberat
+	['steam:110000111bb18cf'] = 70, -- mahta
 	['steam:11000010f75759b'] = 70, -- streamer right
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
 
