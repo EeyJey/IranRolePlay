@@ -46,6 +46,9 @@ Config.Priority = {
     ['steam:11000013c6c8d87'] = 70, -- dafi mafiyay arash-
     ['steam:110000135e883f8'] = 70, -- dafi mafiyay arash-
     ['steam:110000134e34091'] = 70, -- Arash Lafuente be darkhast homan hamahang shode ba arash-
+	['steam:11000010c18174a'] = 70, -- Mate (arash)
+	['steam:11000013bcf9f75'] = 70, -- bikMilad22
+	['steam:11000010b8c3a31'] = 70, -- foton
 	['steam:11000011ae643c7'] = 70, -- Amberat
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
 
