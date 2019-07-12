@@ -134,5 +134,6 @@ files {
   "html/img/items/WEAPON_VINTAGEPISTOL.png",
   "html/img/items/flashlight.png",
   "html/img/items/MedArmor.png",
+  "html/img/items/radio.png",
   "html/img/items/wine.png"
 }
