@@ -44,14 +44,15 @@ Config.Priority = {
     ['steam:11000013335dda6'] = 71, -- https://www.aparat.com/aleffamily/live2
     ['steam:11000013bc9f61b'] = 70, -- https://aparat.com/amirmhmd1 , https://twitch.tv/amirmhmd
     ['steam:11000013c6c8d87'] = 70, -- dafi mafiyay arash-
-    ['steam:110000135e883f8'] = 70, -- dafi mafiyay arash-
     ['steam:110000134e34091'] = 70, -- Arash Lafuente be darkhast homan hamahang shode ba arash-
 	['steam:11000010c18174a'] = 70, -- Mate (arash)
 	['steam:11000013bcf9f75'] = 70, -- bikMilad22 
 	['steam:11000010b684a45'] = 70, -- Ayda 
+	['steam:1100001086bb072'] = 70, -- Bardia
 	['steam:11000010b8c3a31'] = 70, -- foton(arash)
 	['steam:11000011ae643c7'] = 70, -- Amberat
 	['steam:110000111bb18cf'] = 70, -- mahta
+	['steam:110000135e883f8'] = 70, -- Fati arash-
 	['steam:11000010f75759b'] = 70, -- streamer right
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
 
