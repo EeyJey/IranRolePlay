@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_e46</deviceName>
+  <deviceName>dlc_iverson</deviceName>
   <datFile>content.xml</datFile>
-  <timeStamp>00/00/0000 00:00:00</timeStamp>
-  <nameHash>e46</nameHash>
+  <timeStamp>2/10/2015 20:9:10</timeStamp>
+  <nameHash>iverson</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>e46_AUTOGEN</Item>
+        <Item>IVERSON_AUTOGEN</Item>	
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>
   <type>EXTRACONTENT_COMPAT_PACK</type>
-  <order value="9" />  
+  <order value="13" />  
 </SSetupData>
