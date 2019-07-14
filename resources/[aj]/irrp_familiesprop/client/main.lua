@@ -42,11 +42,12 @@ function SetVehicleMods(vehicle)
   if Data.vehprop ~= nil then
     props       = Data.vehprop
     local res = tostring(Data.family_name)
-    res = res .. ' '
+    plate = string.sub(res, 1, 1) .. string.sub(res, #res, #res)
+    plate = plate .. ' '
     for i = 1, 3 do
-      res = res .. math.random(0,9)
+      plate = plate .. math.random(0,9)
     end
-    props.plate = tostring(res)
+    props.plate = tostring(plate)
     ESX.Game.SetVehicleProperties(vehicle, props)
   end
 end
