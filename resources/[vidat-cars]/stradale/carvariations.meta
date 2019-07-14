@@ -3,35 +3,35 @@
 <CVehicleModelInfoVariation>
   <variationData>
     <Item>
-      <modelName>250tr</modelName>
+      <modelName>300s</modelName>
       <colors>
         <Item>
-          <indices content="char_array"> <!-- Red -->
+          <indices content="char_array">
             28
-            28
-            0
-            156
-						0
+            4
+            4
+            4
           </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
         </Item>
       </colors>
       <kits>
-        <Item>0_default_modkit</Item>
+        <Item>959_300s_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
-        <Probabilities>
-          <Item>
-            <Name>Yellow Plate</Name>
-            <Value value="50" />
-          </Item>
-          <Item>
-            <Name>Blue Plate</Name>
-            <Value value="50" />
-          </Item>
-        </Probabilities>
+        <Probabilities />
       </plateProbabilities>
-      <lightSettings value="2" />
+      <lightSettings value="959" />
       <sirenSettings value="0" />
     </Item>
   </variationData>

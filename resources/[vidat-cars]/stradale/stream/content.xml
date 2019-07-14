@@ -5,35 +5,63 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_alfa67:/data/vehicles.meta</filename>
+      <filename>dlc_300s:/common/data/levels/gta5/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_alfa67:/data/carvariations.meta</filename>
+      <filename>dlc_300s:/common/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+	<Item>
+      <filename>dlc_300s:/common/data/ai/vehiclelayouts.meta</filename>
+      <fileType>VEHICLE_LAYOUTS_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_300s:/common/data/carvariations.meta</filename>
       <fileType>VEHICLE_VARIATION_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_alfa67:/data/dlctext.meta</filename>
+      <filename>dlc_300s:/common/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_alfa67:/data/handling.meta</filename>
+      <filename>dlc_300s:/common/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
-    </Item>	
+    </Item>
+	<Item>
+      <filename>dlc_300s:/common/data/300scontentunlocks.meta</filename>
+      <fileType>CONTENT_UNLOCKING_META_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
     <Item>
-      <filename>dlc_alfa67:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_300s:/%PLATFORM%/levels/gta5/vehicles/300svehicles.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
+    <Item>
+      <filename>dlc_300s:/%PLATFORM%/levels/300s/vehiclemods/300s_mods.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
@@ -42,20 +70,37 @@
   </dataFiles>
   <contentChangeSets>
 	<Item>
-	  <changeSetName>alfa67_AUTOGEN</changeSetName>
+	  <changeSetName>300S_AUTOGEN</changeSetName>
 	  <filesToDisable />
 	  <filesToEnable>
-        <Item>dlc_alfa67:/data/handling.meta</Item>
-        <Item>dlc_alfa67:/data/vehicles.meta</Item>
-        <Item>dlc_alfa67:/data/carvariations.meta</Item>
-        <Item>dlc_alfa67:/data/dlctext.meta</Item>	
-        <Item>dlc_alfa67:/%PLATFORM%/vehicles.rpf</Item>
+        <Item>dlc_300s:/common/data/levels/gta5/vehicles.meta</Item>
+        <Item>dlc_300s:/common/data/carcols.meta</Item>
+		<Item>dlc_300s:/common/data/ai/vehiclelayouts.meta</Item>
+        <Item>dlc_300s:/common/data/carvariations.meta</Item>
+        <Item>dlc_300s:/common/data/dlctext.meta</Item>
+		<Item>dlc_300s:/common/data/handling.meta</Item>
+        <Item>dlc_300s:/%PLATFORM%/levels/gta5/vehicles/300svehicles.rpf</Item>
+        <Item>dlc_300s:/%PLATFORM%/levels/300s/vehiclemods/300s_mods.rpf</Item>	
 	  </filesToEnable>
 	  <txdToLoad />
 	  <txdToUnload />
 	  <residentResources />
 	  <unregisterResources />
 	</Item>
+	<Item>
+      <changeSetName>300S_UNLOCKS_AUTOGEN</changeSetName>
+      <mapChangeSetData />
+      <filesToInvalidate />
+      <filesToDisable />
+      <filesToEnable>
+      <Item>dlc_300s:/common/data/300scontentunlocks.meta</Item>
+      </filesToEnable>
+	  <txdToLoad />
+      <txdToUnload />
+      <residentResources />
+      <unregisterResources />
+      <requiresLoadingScreen value="false" />
+     </Item>
   </contentChangeSets>
   <patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>
