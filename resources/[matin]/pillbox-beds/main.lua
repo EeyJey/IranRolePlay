@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 			if not OnBed then
 				local BedCoords = GetEntityCoords(CurrentBed)
 
-				Draw3DText({x = BedCoords.x, y = BedCoords.y, z = (BedCoords.z+1)}, 'Press ~g~[E] ~w~to lie down', 0.35)
+				Draw3DText({x = BedCoords.x, y = BedCoords.y, z = (BedCoords.z+1)}, '~g~[E] ~w~ro feshar bede ta bekhabi', 0.35)
 			end
 		end
 	end
@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
 			TaskPlayAnim(PlayerPed, 'missfbi1', 'cpr_pumpchest_idle', 8.0, -8.0, -1, 1, 0, false, false, false)
 
 			OnBed = true
-		elseif IsControlJustReleased(0, 288) and IsEntityPlayingAnim(PlayerPedId(), 'missfbi1', 'cpr_pumpchest_idle', 3) then
+		elseif IsControlJustReleased(0, 73) and IsEntityPlayingAnim(PlayerPedId(), 'missfbi1', 'cpr_pumpchest_idle', 3) then
 			ClearPedTasks(PlayerPedId())
 
 			OnBed = false
