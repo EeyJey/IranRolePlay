@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
 			TaskPlayAnim(PlayerPed, 'missfbi1', 'cpr_pumpchest_idle', 8.0, -8.0, -1, 1, 0, false, false, false)
 
 			OnBed = true
-		elseif IsControlJustReleased(0, 73) and IsEntityPlayingAnim(PlayerPedId(), 'missfbi1', 'cpr_pumpchest_idle', 3) then
+		elseif IsControlJustReleased(0, 73) and OnBed == true then
 			ClearPedTasks(PlayerPedId())
 
 			OnBed = false
