@@ -12,6 +12,15 @@ Config.EnableLicenses             = false
 Config.MaxInService               = -1
 Config.Locale                     = 'en'
 
+Config.Uniforms = {
+  male = {
+    ['bproof_1'] = 12,  ['bproof_2'] = 3
+  },
+  female = {
+    ['bproof_1'] = 4,  ['bproof_2'] = 4
+  }
+}
+
 Config.families = {
     ['Daltons'] = {
       Blip = {

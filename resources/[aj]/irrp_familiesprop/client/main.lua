@@ -42,11 +42,12 @@ function SetVehicleMods(vehicle)
   if Data.vehprop ~= nil then
     props       = Data.vehprop
     local res = tostring(Data.family_name)
-    res = res .. ' '
+    plate = string.sub(res, 1, 1) .. string.sub(res, #res, #res)
+    plate = plate .. ' '
     for i = 1, 3 do
-      res = res .. math.random(0,9)
+      plate = plate .. math.random(0,9)
     end
-    props.plate = tostring(res)
+    props.plate = tostring(plate)
     ESX.Game.SetVehicleProperties(vehicle, props)
   end
 end
@@ -136,7 +137,8 @@ if Config.EnableArmoryManagement then
     {label = _U('get_weapon'), value = 'get_weapon'},
     {label = _U('put_weapon'), value = 'put_weapon'},
     {label = _U('get_stock'),  value = 'get_stock'},
-    {label = _U('put_stock'),  value = 'put_stock'}
+    {label = _U('put_stock'),  value = 'put_stock'},
+    {label = _U('get_armor'),  value = 'get_armor'}
   }
 
    -- if PlayerData.family.grade = 6 then
@@ -172,6 +174,24 @@ if Config.EnableArmoryManagement then
 
        if data.current.value == 'get_stock' then
         OpenGetStocksMenu(station)
+      end
+
+      if data.current.value == 'get_armor' then
+
+        TriggerEvent('skinchanger:getSkin', function(skin)
+  
+          if skin.sex == 0 then
+            TriggerEvent('skinchanger:loadClothes', skin, Config.Uniforms.male)
+
+            SetPedArmour(playerPed, 50)
+      
+          else
+            TriggerEvent('skinchanger:loadClothes', skin, Config.Uniforms.female)
+
+            SetPedArmour(playerPed, 50)
+          end
+        end)
+        
       end
 
      end,
