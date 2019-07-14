@@ -54,6 +54,7 @@ Config.Priority = {
 	['steam:110000111bb18cf'] = 70, -- mahta
 	['steam:11000010f75759b'] = 70, -- streamer right
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
+    ['steam:1100001322d1a86'] = 70, -- vip
 
 
     
