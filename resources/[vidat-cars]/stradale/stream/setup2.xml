@@ -1,24 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_300s</deviceName>
-  <datFile>content.xml</datFile>
-  <timeStamp>04/02/2018 09:00:00</timeStamp>
-  <nameHash>300s</nameHash>
-  <contentChangeSets />
-  <contentChangeSetGroups>
-    <Item>
-      <NameHash>GROUP_STARTUP</NameHash>
-      <ContentChangeSets>
-        <Item>300S_AUTOGEN</Item>
-        <Item>300S_UNLOCKS_AUTOGEN</Item>
-      </ContentChangeSets>
-    </Item>
-  </contentChangeSetGroups>
-  <startupScript />
-  <scriptCallstackSize value="0" />
-  <type>EXTRACONTENT_COMPAT_PACK</type>
-  <isLevelPack value="false" />
-  <dependencyPackHash />
-  <requiredVersion />
-  <subPackCount value="0" />
+	<deviceName>dlc_mtl_race</deviceName>
+	<datFile>content.xml</datFile>
+	<timeStamp>01/01/2018 00:00:00</timeStamp>
+	<nameHash>MTL_RACE</nameHash>
+	<contentChangeSets />
+	<contentChangeSetGroups>
+		<Item>
+			<NameHash>GROUP_STARTUP</NameHash>
+			<ContentChangeSets>
+				<Item>MTL_RACE_AUTOGEN</Item>
+			</ContentChangeSets>
+		</Item>
+	</contentChangeSetGroups>
+	<startupScript />
+	<type>EXTRACONTENT_COMPAT_PACK</type>
+	<order value="35" />
 </SSetupData>
