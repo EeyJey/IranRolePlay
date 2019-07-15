@@ -2,69 +2,33 @@
 
 <CVehicleModelInfoVariation>
   <variationData>
-    <Item>
-      <modelName>e46</modelName>
+   <Item>
+      <modelName>m3e46</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            5 
-            2
-            111 
-            156 
-          </indices>
-          <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            2 
-            2 
-            5 
-            156 
-          </indices>
-          <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            150
-            2 
-            42 
-            156 
-          </indices>
-          <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            112 
-            2 
+            147 
+            73
+            4
             0 
-            156 
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+	<Item>
+          <indices content="char_array">
+            5 
+            73
+            111
+            0 
           </indices>
           <liveries>
             <Item value="false" />
@@ -79,10 +43,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            66
-            2 
-            0
-            156 
+            1
+            73
+            5
+            0 
           </indices>
           <liveries>
             <Item value="false" />
@@ -95,12 +59,12 @@
             <Item value="false" />
           </liveries>
         </Item>
-        <Item>
+	<Item>
           <indices content="char_array">
-            21
-            2 
-            0
-            156 
+            31 
+            73
+            27
+            0 
           </indices>
           <liveries>
             <Item value="false" />
@@ -113,12 +77,12 @@
             <Item value="false" />
           </liveries>
         </Item>
-        <Item>
+	<Item>	
           <indices content="char_array">
-            64 
-            2 
-            68
-            156 
+            33 
+            73
+            47
+            0 
           </indices>
           <liveries>
             <Item value="false" />
@@ -131,12 +95,84 @@
             <Item value="false" />
           </liveries>
         </Item>
-        <Item>
+	<Item>
+          <indices content="char_array">
+            143 
+            73
+            31
+            0 
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+	<Item>
           <indices content="char_array">
             141
-            2
-            73 
-            156 
+            73
+            73
+            0 
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+	<Item>
+          <indices content="char_array">
+            62 
+            73
+            68
+            0 
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+	<Item>
+          <indices content="char_array">
+            111 
+            73
+            0
+            0 
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+	<Item>
+          <indices content="char_array">
+            146 
+            73
+            145
+            0 
           </indices>
           <liveries>
             <Item value="false" />
@@ -151,7 +187,7 @@
         </Item>
       </colors>
       <kits>
-        <Item>9411_e46_modkit</Item>
+        <Item>19851985_m3e46_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>

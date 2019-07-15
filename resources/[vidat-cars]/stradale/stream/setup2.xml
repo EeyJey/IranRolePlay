@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_alfa67</deviceName>
-  <datFile>content.xml</datFile>
-  <timeStamp>00/00/0000 00:00:00</timeStamp>
-  <nameHash>alfa67</nameHash>
-  <contentChangeSetGroups>
-    <Item>
-      <NameHash>GROUP_STARTUP</NameHash>
-      <ContentChangeSets>
-        <Item>alfa67_AUTOGEN</Item>
-        <Item>alfa67_UNLOCKS_AUTOGEN</Item>
-      </ContentChangeSets>
-    </Item>
-  </contentChangeSetGroups>
-  <type>EXTRACONTENT_COMPAT_PACK</type>
-  <order value="9" />  
+	<deviceName>dlc_mtl_race</deviceName>
+	<datFile>content.xml</datFile>
+	<timeStamp>01/01/2018 00:00:00</timeStamp>
+	<nameHash>MTL_RACE</nameHash>
+	<contentChangeSets />
+	<contentChangeSetGroups>
+		<Item>
+			<NameHash>GROUP_STARTUP</NameHash>
+			<ContentChangeSets>
+				<Item>MTL_RACE_AUTOGEN</Item>
+			</ContentChangeSets>
+		</Item>
+	</contentChangeSetGroups>
+	<startupScript />
+	<type>EXTRACONTENT_COMPAT_PACK</type>
+	<order value="35" />
 </SSetupData>
