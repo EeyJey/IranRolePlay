@@ -2240,7 +2240,6 @@ function SendPoliceDistressSignal()
 	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
 
 	ESX.ShowNotification(_U('distress_sent'))
-	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 2.0, 'demo', 1.0)
 	TriggerServerEvent('esx_addons_gcphone:startCall', 'police', _U('police_distress_message'), PlayerCoords, {
 
 		PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
