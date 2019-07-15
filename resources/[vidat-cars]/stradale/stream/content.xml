@@ -1,61 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDataFileMgr__ContentsOfDataFileXml>
-  <disabledFiles />
-  <includedXmlFiles />
-  <includedDataFiles />
-  <dataFiles>
-    <Item>
-      <filename>dlc_alfa67:/data/vehicles.meta</filename>
-      <fileType>VEHICLE_METADATA_FILE</fileType>
+	<disabledFiles />
+	<includedXmlFiles />
+	<includedDataFiles />
+	<dataFiles>        
+		<Item>
+			<filename>dlc_mtl_race:/common/data/dlctext.meta</filename>
+			<fileType>TEXTFILE_METAFILE</fileType>
+			<overlay value="false" />
+			<disabled value="true" />
+			<persistent value="false" />
+		</Item>
+		<Item>
+			<filename>dlc_mtl_race:/common/data/vehicles.meta</filename>
+			<fileType>VEHICLE_METADATA_FILE</fileType>
+			<overlay value="true" />
+			<disabled value="true" />
+			<persistent value="false" />
+		</Item>
+	<Item>
+      <filename>dlc_mtl_race:/common/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
+		<Item>
+			<filename>dlc_mtl_race:/common/data/carvariations.meta</filename>
+			<fileType>VEHICLE_VARIATION_FILE</fileType>
+			<overlay value="true" />
+			<disabled value="true" />
+			<persistent value="false" />
+		</Item>
     <Item>
-      <filename>dlc_alfa67:/data/carvariations.meta</filename>
-      <fileType>VEHICLE_VARIATION_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_alfa67:/data/dlctext.meta</filename>
-      <fileType>TEXTFILE_METAFILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_alfa67:/data/handling.meta</filename>
+      <filename>dlc_mtl_race:/common/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
-    </Item>	
-    <Item>
-      <filename>dlc_alfa67:/%PLATFORM%/vehicles.rpf</filename>
+    </Item>
+		<Item>
+			<filename>dlc_mtl_race:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</filename>
+			<fileType>RPF_FILE</fileType>
+			<overlay value="true" />
+			<disabled value="true" />
+			<persistent value="false" />
+		</Item>
+		<Item>
+      <filename>dlc_mtl_race:/%PLATFORM%/levels/mtl/vehiclemods/packer3_mods.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
     </Item>
-  </dataFiles>
-  <contentChangeSets>
-	<Item>
-	  <changeSetName>alfa67_AUTOGEN</changeSetName>
-	  <filesToDisable />
-	  <filesToEnable>
-        <Item>dlc_alfa67:/data/handling.meta</Item>
-        <Item>dlc_alfa67:/data/vehicles.meta</Item>
-        <Item>dlc_alfa67:/data/carvariations.meta</Item>
-        <Item>dlc_alfa67:/data/dlctext.meta</Item>	
-        <Item>dlc_alfa67:/%PLATFORM%/vehicles.rpf</Item>
-	  </filesToEnable>
-	  <txdToLoad />
-	  <txdToUnload />
-	  <residentResources />
-	  <unregisterResources />
-	</Item>
-  </contentChangeSets>
-  <patchFiles />
+	</dataFiles>
+	<contentChangeSets>
+		<Item>
+			<changeSetName>MTL_RACE_AUTOGEN</changeSetName>
+			<mapChangeSetData />
+			<filesToInvalidate />
+			<filesToDisable />
+			<filesToEnable>                                              
+				<Item>dlc_mtl_race:/common/data/dlctext.meta</Item>
+				<Item>dlc_mtl_race:/common/data/vehicles.meta</Item>
+				<Item>dlc_mtl_race:/common/data/carcols.meta</Item>
+				<Item>dlc_mtl_race:/common/data/carvariations.meta</Item>
+				<Item>dlc_mtl_race:/common/data/handling.meta</Item>
+				<Item>dlc_mtl_race:/%PLATFORM%/levels/gta5/vehicles/vehicles.rpf</Item>
+				<Item>dlc_mtl_race:/%PLATFORM%/levels/mtl/vehiclemods/packer3_mods.rpf</Item>
+			</filesToEnable>
+			<txdToLoad />
+			<txdToUnload />
+			<residentResources />
+			<unregisterResources />
+			<requiresLoadingScreen value="false" />
+		</Item>
+	</contentChangeSets>
+	<patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>

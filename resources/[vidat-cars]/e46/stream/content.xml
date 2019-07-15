@@ -5,49 +5,42 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_e46:/data/vehicles.meta</filename>
+      <filename>dlc_iverson:/common/data/levels/gta5/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_e46:/data/carcols.meta</filename>
-      <fileType>CARCOLS_FILE</fileType>
-      <overlay value="false" />
-      <disabled value="true" />
-      <persistent value="false" />
-    </Item>
-    <Item>
-      <filename>dlc_e46:/data/carvariations.meta</filename>
+      <filename>dlc_iverson:/common/data/carvariations.meta</filename>
       <fileType>VEHICLE_VARIATION_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_e46:/data/dlctext.meta</filename>
-      <fileType>TEXTFILE_METAFILE</fileType>
+      <filename>dlc_iverson:/common/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_e46:/data/handling.meta</filename>
+      <filename>dlc_iverson:/common/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="false" />
-    </Item>	
+    </Item>
     <Item>
-      <filename>dlc_e46:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_iverson:/%PLATFORM%/levels/gta5/vehicles/iversonvehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
       <persistent value="true" />
     </Item>
     <Item>
-      <filename>dlc_e46:/%PLATFORM%/e46_mods.rpf</filename>
+      <filename>dlc_iverson:/%PLATFORM%/levels/iverson/vehiclemods/m3e46_mods.rpf</filename>
       <fileType>RPF_FILE</fileType>
       <overlay value="false" />
       <disabled value="true" />
@@ -55,23 +48,24 @@
     </Item>
   </dataFiles>
   <contentChangeSets>
-	<Item>
-	  <changeSetName>e46_AUTOGEN</changeSetName>
-	  <filesToDisable />
-	  <filesToEnable>
-        <Item>dlc_e46:/data/handling.meta</Item>
-        <Item>dlc_e46:/data/vehicles.meta</Item>
-        <Item>dlc_e46:/data/carcols.meta</Item>
-        <Item>dlc_e46:/data/carvariations.meta</Item>
-        <Item>dlc_e46:/data/dlctext.meta</Item>	
-        <Item>dlc_e46:/%PLATFORM%/vehicles.rpf</Item>
-        <Item>dlc_e46:/%PLATFORM%/e46_mods.rpf</Item>
+    <Item>
+      <changeSetName>IVERSON_AUTOGEN</changeSetName>
+      <mapChangeSetData />
+      <filesToInvalidate />
+      <filesToDisable />
+      <filesToEnable>
+        <Item>dlc_iverson:/common/data/handling.meta</Item>
+        <Item>dlc_iverson:/common/data/levels/gta5/vehicles.meta</Item>
+        <Item>dlc_iverson:/common/data/carcols.meta</Item>
+        <Item>dlc_iverson:/common/data/carvariations.meta</Item>
+        <Item>dlc_iverson:/%PLATFORM%/levels/gta5/vehicles/iversonvehicles.rpf</Item>
+        <Item>dlc_iverson:/%PLATFORM%/levels/iverson/vehiclemods/m3e46_mods.rpf</Item>
 	  </filesToEnable>
 	  <txdToLoad />
 	  <txdToUnload />
 	  <residentResources />
 	  <unregisterResources />
-	</Item>
+    </Item>	
   </contentChangeSets>
   <patchFiles />
 </CDataFileMgr__ContentsOfDataFileXml>
