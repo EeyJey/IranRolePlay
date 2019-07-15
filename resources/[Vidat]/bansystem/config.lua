@@ -1,20 +1,15 @@
 Config                   = {}
 
 --GENERAL
-Config.Lang              = 'en' --Set lang (fr-en)
+Config.Lang              = 'fr'    --Set lang (fr-en)
 Config.permission        = "admin" --Permission need to use FiveM-BanSql commands (mod-admin-superadmin)
+Config.MultiServerSync   = false   --This will check if a ban is add in the sql all 30 second, use it only if you have more then 1 server (true-false)
 
 
 --WEBHOOK
-Config.EnableDiscordLink = false -- only turn this on if you want link the log to a discord
+Config.EnableDiscordLink = false --Turn this true if you want link the log to a discord (true-false)
 Config.webhookban        = "https://discordapp.com/api/webhooks/473571126690316298/oJZBU9YLz9ksOCG_orlf-wpMZ2pkFedfpEsC34DN_iHO0CBBp6X06W3mMJ2RvMMK7vIO"
 Config.webhookunban      = "https://discordapp.com/api/webhooks/473571126690316298/oJZBU9YLz9ksOCG_orlf-wpMZ2pkFedfpEsC34DN_iHO0CBBp6X06W3mMJ2RvMMK7vIO"
-Config.green             = 56108
-Config.grey              = 8421504
-Config.red               = 16711680
-Config.orange            = 16744192
-Config.blue              = 2061822
-Config.purple            = 11750815
 
 
 --LANGUAGE
@@ -24,11 +19,6 @@ Config.TextFr = {
 	banlistloaded = "La BanList a ete charger avec succes.",
 	historyloaded = "La BanListHistory a ete charger avec succes.",
 	loaderror     = "ERROR : La BanList n a pas été charger.",
-	cmdban        = "/sqlban (ID) (Durée en jours) (Raison)",
-	cmdbanoff     = "/sqlbanoffline (Durée en jours) (Nom steam)",
-	cmdunban      = "/sqlunban (Steam name)",
-	cmdhistory    = "/sqlbanhistory (Steam name) or /sqlbanhistory 1,2,2,4......",
-	cmdbanreload  = "/sqlbanreload",
 	forcontinu    = " jours. Pour continuer entrer /sqlreason (Raison du ban)",
 	noreason      = "Raison Inconnue",
 	during        = " pendant : ",
@@ -50,6 +40,14 @@ Config.TextFr = {
 	hour          = " Heures ",
 	minute        = " Minutes ",
 	by            = "par",
+	ban           = "Bannir un joueurs qui est en ligne",
+	banoff        = "Bannir un joueurs qui est hors ligne",
+	dayhelp       = "Nombre de jours",
+	reason        = "Raison du ban",
+	history       = "Affiche tout les bans d'un joueur",
+	reload        = "Recharge la BanList et la BanListHistory",
+	unban         = "Retirez un ban de la liste",
+	steamname     = "(Nom Steam)",
 }
 
 
@@ -59,11 +57,6 @@ Config.TextEn = {
 	banlistloaded = "The BanList has been loaded successfully.",
 	historyloaded = "The BanListHistory has been loaded successfully.",
 	loaderror     = "ERROR: The BanList was not loaded.",
-	cmdban        = "/sqlban (ID) (Duration in days) (Ban reason)",
-	cmdbanoff     = "/sqlbanoffline (Duration in days) (Steam name)",
-	cmdunban      = "/sqlunban (Steam name)",
-	cmdhistory    = "/sqlbanhistory (Steam name) or /sqlbanhistory 1,2,2,4......",
-	cmdbanreload  = "/sqlbanreload",
 	forcontinu    = " days. To continue entering /sqlreason (Ban reason)",
 	noreason      = "unknown reason",
 	during        = " during : ",
@@ -85,4 +78,12 @@ Config.TextEn = {
 	hour          = " Hours ",
 	minute        = " Minutes ",
 	by            = "by",
+	ban           = "Ban one online player",
+	banoff        = "Ban one offline player",
+	dayhelp       = "Number of day",
+	reason        = "Reason of ban",
+	history       = "Show all ban of a player",
+	reload        = "Reload BanList and BanListHistory",
+	unban         = "Remove one ban from the list",
+	steamname     = "(Steam Name)",
 }
