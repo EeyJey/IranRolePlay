@@ -17,10 +17,8 @@ Citizen.CreateThread(function ()
 	PlayerData.job = job
   end)  
 
-RegisterCommand("givelicense", function(target)
-    if PlayerData.job.name == "police" then
-
       RegisterCommand('delobject', function(source, args, rawCommand)
+      if PlayerData.job.name == "police" then
         local prop = 0
         local deelz = 10
         local deelxy = 2
@@ -44,9 +42,8 @@ RegisterCommand("givelicense", function(target)
             SetEntityAsMissionEntity(prop)
             DeleteObject(prop)
         end
-    end, false)
-
+      end
     else
-        TriggerClientEvent('esx:showNotification', _source, '~r~Shoma police nistid')
+      TriggerClientEvent('esx:showNotification', _source, '~r~Shoma police nistid')
     end
-end)
+    end, false)
