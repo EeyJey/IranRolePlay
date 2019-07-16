@@ -43,7 +43,4 @@ Citizen.CreateThread(function ()
         DeleteObject(prop)
     end
   end
-else
-  TriggerClientEvent('esx:showNotification', _source, '~r~Shoma police nistid')
-end
 end, false)
