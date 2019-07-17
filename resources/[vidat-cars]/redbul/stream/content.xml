@@ -5,85 +5,44 @@
   <includedDataFiles />
   <dataFiles>
     <Item>
-      <filename>dlc_F1:/data/vehicles.meta</filename>
+      <filename>dlc_fw40:/data/vehicles.meta</filename>
       <fileType>VEHICLE_METADATA_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_F1:/data/carcols.meta</filename>
-      <fileType>CARCOLS_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
-    </Item>
-    <Item>
-      <filename>dlc_F1:/data/carvariations.meta</filename>
-      <fileType>VEHICLE_VARIATION_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
-    </Item>
-    <Item>
-      <filename>dlc_F1:/data/dlctext.meta</filename>
+      <filename>dlc_fw40:/data/dlctext.meta</filename>
       <fileType>TEXTFILE_METAFILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
     </Item>
     <Item>
-      <filename>dlc_F1:/data/handling.meta</filename>
+      <filename>dlc_fw40:/data/handling.meta</filename>
       <fileType>HANDLING_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
     </Item>	
     <Item>
-      <filename>dlc_F1:/%PLATFORM%/vehicles.rpf</filename>
+      <filename>dlc_fw40:/%PLATFORM%/vehicles.rpf</filename>
       <fileType>RPF_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
-    </Item>
-	<Item>
-      <filename>dlc_F1:/data/carraddonContentUnlocks.meta</filename>
-      <fileType>CONTENT_UNLOCKING_META_FILE</fileType>
-      <locked value="true"/>
-	  <disabled value="true"/>
-	  <persistent value="true"/>
-	  <overlay value="true"/>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
     </Item>
   </dataFiles>
-  <Item>
-          <filename>dlc_F1:/%PLATFORM%/vehiclemods/car_mods.rpf</filename>
-          <fileType>RPF_FILE</fileType>
-          <locked value="true"/>
-          <disabled value="true"/>
-          <persistent value="true"/>
-          <overlay value="true"/>
-        </Item>
   <contentChangeSets>
 	<Item>
-	  <changeSetName>F1_AUTOGEN</changeSetName>
+	  <changeSetName>fw40_AUTOGEN</changeSetName>
 	  <filesToDisable />
 	  <filesToEnable>
-        <Item>dlc_F1:/data/handling.meta</Item>
-        <Item>dlc_F1:/data/vehicles.meta</Item>
-        <Item>dlc_F1:/data/carcols.meta</Item>
-        <Item>dlc_F1:/data/carvariations.meta</Item>
-        <Item>dlc_F1:/data/dlctext.meta</Item>	
-		<Item>dlc_F1:/data/carraddonContentUnlocks.meta</Item>	
-        <Item>dlc_F1:/%PLATFORM%/vehicles.rpf</Item>
+        <Item>dlc_fw40:/data/handling.meta</Item>
+        <Item>dlc_fw40:/data/vehicles.meta</Item>
+        <Item>dlc_fw40:/data/dlctext.meta</Item>	
+        <Item>dlc_fw40:/%PLATFORM%/vehicles.rpf</Item>	
 	  </filesToEnable>
-	  
-    <Item>dlc_F1:/%PLATFORM%/vehiclemods/car_mods.rpf</Item>   
 	  <txdToLoad />
 	  <txdToUnload />
 	  <residentResources />

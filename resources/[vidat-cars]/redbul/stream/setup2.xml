@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <SSetupData>
-  <deviceName>dlc_F1</deviceName>
+  <deviceName>dlc_fw40</deviceName>
   <datFile>content.xml</datFile>
   <timeStamp>00/00/0000 00:00:00</timeStamp>
-  <nameHash>F1</nameHash>
+  <nameHash>fw40</nameHash>
   <contentChangeSetGroups>
     <Item>
       <NameHash>GROUP_STARTUP</NameHash>
       <ContentChangeSets>
-        <Item>F1_AUTOGEN</Item>
+        <Item>fw40_AUTOGEN</Item>
       </ContentChangeSets>
     </Item>
   </contentChangeSetGroups>
