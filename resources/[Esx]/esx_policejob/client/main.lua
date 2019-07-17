@@ -2006,6 +2006,9 @@ local Keys = {
 			  
 			  CurrentTask.Busy = false
 		  end
+		  if IsControlJustPressed(0, Keys['Y']) and GetLastInputMethod(2) and PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+			SendPoliceDistressSignal()
+		end
 	  end
   end)
   
@@ -2227,3 +2230,19 @@ function UnblockMenuInput()
         blockinput = false 
     end )
 end
+------------------------------
+-- Police Distress Singal   --
+------------------------------
+function SendPoliceDistressSignal()
+	local playerPed = PlayerPedId()
+	PedPosition		= GetEntityCoords(playerPed)
+	
+	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
+
+	ESX.ShowNotification(_U('distress_sent'))
+	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 2.0, 'demo', 0.5)
+	TriggerServerEvent('esx_addons_gcphone:startCall', 'police', _U('police_distress_message'), PlayerCoords, {
+
+		PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+	})
+end	

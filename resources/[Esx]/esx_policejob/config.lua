@@ -840,10 +840,10 @@ Config.Uniforms = {
 			['pants_1'] = 31,   ['pants_2'] = 2,
 			['shoes_1'] = 25,   ['shoes_2'] = 0,
 			['glasses_1'] = 0,
-			['helmet_1'] = 117,  ['helmet_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
 			['chain_1'] = 1,    ['chain_2'] = 0,
 			['ears_1'] = 2,     ['ears_2'] = 0,
-			['mask_1'] = 130,   ['mask_2'] = 0,
+			['mask_1'] = 89,   ['mask_2'] = 0,
 			['bproof_1'] = 12,  ['bproof_2'] = 0
 		},
 		female = {
@@ -853,11 +853,11 @@ Config.Uniforms = {
 			['arms'] = 44,
 			['pants_1'] = 54,   ['pants_2'] = 1,
 			['shoes_1'] = 25,   ['shoes_2'] = 0,
-			['helmet_1'] = 116,  ['helmet_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
 			['chain_1'] = 1,    ['chain_2'] = 0,
 			['glasses_1'] = 5,  ['glasses_2'] = 0,
 			['ears_1'] = 2,     ['ears_2'] = 0,
-			['mask_1'] = 130,   ['mask_2'] = 0,
+			['mask_1'] = 89,   ['mask_2'] = 0,
 			['bproof_1'] = 3,  ['bproof_2'] = 3
 		}
 	},

@@ -1,20 +1,15 @@
 Config                   = {}
 
 --GENERAL
-Config.Lang              = 'en' --Set lang (fr-en)
+Config.Lang              = 'en'    --Set lang (fr-en)
 Config.permission        = "admin" --Permission need to use FiveM-BanSql commands (mod-admin-superadmin)
+Config.MultiServerSync   = false   --This will check if a ban is add in the sql all 30 second, use it only if you have more then 1 server (true-false)
 
 
 --WEBHOOK
-Config.EnableDiscordLink = false -- only turn this on if you want link the log to a discord
-Config.webhookban        = "https://discordapp.com/api/webhooks/473571126690316298/oJZBU9YLz9ksOCG_orlf-wpMZ2pkFedfpEsC34DN_iHO0CBBp6X06W3mMJ2RvMMK7vIO"
-Config.webhookunban      = "https://discordapp.com/api/webhooks/473571126690316298/oJZBU9YLz9ksOCG_orlf-wpMZ2pkFedfpEsC34DN_iHO0CBBp6X06W3mMJ2RvMMK7vIO"
-Config.green             = 56108
-Config.grey              = 8421504
-Config.red               = 16711680
-Config.orange            = 16744192
-Config.blue              = 2061822
-Config.purple            = 11750815
+Config.EnableDiscordLink = false --Turn this true if you want link the log to a discord (true-false)
+Config.webhookban        = "https://discordapp.com/api/webhooks/600239481978880000/I_Vt9eT0ht4JNGRTGAdRVsMpsFzzIcXBcTNrthxbfKAfSQlMuvn6ctmv9uxkmdBEoQwR"
+Config.webhookunban      = "https://discordapp.com/api/webhooks/600239481978880000/I_Vt9eT0ht4JNGRTGAdRVsMpsFzzIcXBcTNrthxbfKAfSQlMuvn6ctmv9uxkmdBEoQwR"
 
 
 --LANGUAGE
@@ -24,11 +19,6 @@ Config.TextFr = {
 	banlistloaded = "La BanList a ete charger avec succes.",
 	historyloaded = "La BanListHistory a ete charger avec succes.",
 	loaderror     = "ERROR : La BanList n a pas été charger.",
-	cmdban        = "/sqlban (ID) (Durée en jours) (Raison)",
-	cmdbanoff     = "/sqlbanoffline (Durée en jours) (Nom steam)",
-	cmdunban      = "/sqlunban (Steam name)",
-	cmdhistory    = "/sqlbanhistory (Steam name) or /sqlbanhistory 1,2,2,4......",
-	cmdbanreload  = "/sqlbanreload",
 	forcontinu    = " jours. Pour continuer entrer /sqlreason (Raison du ban)",
 	noreason      = "Raison Inconnue",
 	during        = " pendant : ",
@@ -50,39 +40,50 @@ Config.TextFr = {
 	hour          = " Heures ",
 	minute        = " Minutes ",
 	by            = "par",
+	ban           = "Bannir un joueurs qui est en ligne",
+	banoff        = "Bannir un joueurs qui est hors ligne",
+	dayhelp       = "Nombre de jours",
+	reason        = "Raison du ban",
+	history       = "Affiche tout les bans d'un joueur",
+	reload        = "Recharge la BanList et la BanListHistory",
+	unban         = "Retirez un ban de la liste",
+	steamname     = "(Nom Steam)",
 }
 
 
 Config.TextEn = {
-	start         = "The BanList and history has been loaded successfully.",
-	starterror    = "ERROR: The BanList and history has not been loaded new try.",
-	banlistloaded = "The BanList has been loaded successfully.",
-	historyloaded = "The BanListHistory has been loaded successfully.",
-	loaderror     = "ERROR: The BanList was not loaded.",
-	cmdban        = "/sqlban (ID) (Duration in days) (Ban reason)",
-	cmdbanoff     = "/sqlbanoffline (Duration in days) (Steam name)",
-	cmdunban      = "/sqlunban (Steam name)",
-	cmdhistory    = "/sqlbanhistory (Steam name) or /sqlbanhistory 1,2,2,4......",
-	cmdbanreload  = "/sqlbanreload",
-	forcontinu    = " days. To continue entering /sqlreason (Ban reason)",
-	noreason      = "unknown reason",
-	during        = " during : ",
-	noresult      = "There are not as many results!",
-	isban         = " was ban",
-	isunban       = " was unban",
-	invalidsteam  =  "You should open steam",
-	invalidid     = "Player ID incorrect",
-	invalidname   = "The name is not valid",
-	invalidtime   = "Bad ban duration",
-	yourban       = "You have been ban for : ",
-	yourpermban   = "You have been ban permanent for : ",
-	youban        = "You have ban : ",
-	forr          = " days. For : ",
-	permban       = " permanently for : ",
-	timeleft      = ". Time remains : ",
-	toomanyresult = "Too many results, be sure to be more precise.",
-	day           = " Days ",
-	hour          = " Hours ",
-	minute        = " Minutes ",
+	start         = "BanList and BanListHistory loaded successfully.",
+	starterror    = "ERROR: BanList and BanListHistory failed to load, please retry.",
+	banlistloaded = "BanList loaded successfully.",
+	historyloaded = "BanListHistory loaded successfully.",
+	loaderror     = "ERROR: The BanList failed to load.",
+	forcontinu    = " days. To continue, execute /sqlreason [reason]",
+	noreason      = "No reason provided.",
+	during        = " during: ",
+	noresult      = "No results found.",
+	isban         = " was banned",
+	isunban       = " was unbanned",
+	invalidsteam  = "Steam is required to join this server.",
+	invalidid     = "Player ID not found",
+	invalidname   = "The specified name is not valid",
+	invalidtime   = "Invalid ban duration",
+	yourban       = "You have been banned for: ",
+	yourpermban   = "You have been permanently banned for: ",
+	youban        = "You are banned from this server for: ",
+	forr          = " days. For: ",
+	permban       = " permanently for: ",
+	timeleft      = ". Time remaining: ",
+	toomanyresult = "Too many results, be more specific to shorten the results.",
+	day           = " days ",
+	hour          = " hours ",
+	minute        = " minutes ",
 	by            = "by",
+	ban           = "Ban a player",
+	banoff        = "Manually ban a (offline) player",
+	dayhelp       = "Duration (days) of ban",
+	reason        = "Reason for ban",
+	history       = "Shows all previous bans for a certain player",
+	reload        = "Refreshes the ban list and history.",
+	unban         = "Unban a player.",
+	steamname     = "Steam name",
 }
