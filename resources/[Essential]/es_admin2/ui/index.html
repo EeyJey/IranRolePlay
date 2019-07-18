@@ -77,7 +77,6 @@
 			$("#bring").click(function () { $.post('http://es_admin2/quick', JSON.stringify({ id: selected, type: 'bring' })); $(this).blur(); });
 			$("#goto").click(function () { $.post('http://es_admin2/quick', JSON.stringify({ id: selected, type: 'goto' })); $(this).blur(); });
 			$("#slap").click(function () { $.post('http://es_admin2/quick', JSON.stringify({ id: selected, type: 'slap' })); $(this).blur(); });
-			$("#crash").click(function () { $.post('http://es_admin2/quick', JSON.stringify({ id: selected, type: 'crash' })); $(this).blur(); });
 			$("#ban").click(function () { $.post('http://es_admin2/quick', JSON.stringify({ id: selected, type: 'ban' })); $(this).blur(); });
 			$("#setgroup").click(function () { $.post('http://es_admin2/set', JSON.stringify({ user: selected, type: 'group', param: $("#newgroup").val() })); $(this).blur(); });
 			$("#setlevel").click(function () { $.post('http://es_admin2/set', JSON.stringify({ user: selected, type: 'level', param: $("#newlevel").val() })); $(this).blur(); });
