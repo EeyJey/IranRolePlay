@@ -855,7 +855,7 @@ Config.Uniforms = {
 			['shoes_1'] = 25,   ['shoes_2'] = 0,
 			['helmet_1'] = -1,  ['helmet_2'] = 0,
 			['chain_1'] = 1,    ['chain_2'] = 0,
-			['glasses_1'] = 24,  ['glasses_2'] = 2,
+			['glasses_1'] = 26,  ['glasses_2'] = 2,
 			['ears_1'] = 2,     ['ears_2'] = 0,
 			['mask_1'] = 104,   ['mask_2'] = 25,
 			['bproof_1'] = 3,  ['bproof_2'] = 3
