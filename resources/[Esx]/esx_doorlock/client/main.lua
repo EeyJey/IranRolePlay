@@ -90,7 +90,7 @@ function ApplyDoorState(doorID)
 	FreezeEntityPosition(closeDoor, doorID.locked)
 end
 
-ffunction IsAuthorized(doorID)
+function IsAuthorized(doorID)
 if ESX.PlayerData.job == nil then
 		return false
 end
