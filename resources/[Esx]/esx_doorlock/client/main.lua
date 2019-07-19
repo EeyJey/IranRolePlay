@@ -91,17 +91,17 @@ function ApplyDoorState(doorID)
 end
 
 function IsAuthorized(doorID)
-if ESX.PlayerData.job == nil then
+	if ESX.PlayerData.job == nil then
 		return false
-end
+	end
 
-for _,job in pairs(doorID.authorizedJobs) do
-		if job['name'] == ESX.PlayerData.job.name and  (ESX.PlayerData.job.grade == job['grade'] or job['grade'] == -1)  then
-				return true
+	for i=1, #doorID.authorizedJobs, 1 do
+		if doorID.authorizedJobs[i] == ESX.PlayerData.job.name then
+			return true
 		end
-end
+	end
 
-return false
+	return false
 end
 
 -- Set state for a door
