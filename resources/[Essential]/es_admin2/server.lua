@@ -689,29 +689,6 @@ end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
 end, {help = "Slay a user", params = {{name = "userid", help = "The ID of the player"}}})
 
--- Crashing
-TriggerEvent('es:addGroupCommand', 'crash', "superadmin", function(source, args, user)
-	if args[1] then
-		if(tonumber(args[1]) and GetPlayerName(tonumber(args[1])))then
-			local player = tonumber(args[1])
-
-			-- User permission check
-			TriggerEvent("es:getPlayerFromId", player, function(target)
-
-				TriggerClientEvent('es_admin:crash', player)
-
-				TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Player ^2" .. GetPlayerName(player) .. "^0 has been crashed."} })
-			end)
-		else
-			TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Incorrect player ID"}})
-		end
-	else
-		TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Incorrect player ID"}})
-	end
-end, function(source, args, user)
-	TriggerClientEvent('chat:addMessage', source, { args = {"^1SYSTEM", "Insufficienct permissions!"} })
-end, {help = "Crash a user, no idea why this still exists", params = {{name = "userid", help = "The ID of the player"}}})
-
 function stringsplit(inputstr, sep)
 	if sep == nil then
 		sep = "%s"
