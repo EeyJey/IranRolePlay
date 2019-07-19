@@ -354,7 +354,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 			else
 				sourceXPlayer.removeInventoryItem(itemName, itemCount)
 				targetXPlayer.addInventoryItem   (itemName, itemCount)
-				
+				TriggerEvent('DiscordBot:ToDiscord', 'inventory', sourceXPlayer.name, 'gaved '.. itemCount .. 'x ' .. ESX.Items[itemName].label .. ' to ' .. targetXPlayer.name ,'user', true, source, false)
 				TriggerClientEvent('esx:showNotification', _source, _U('gave_item', itemCount, ESX.Items[itemName].label, targetXPlayer.name))
 				TriggerClientEvent('esx:showNotification', target,  _U('received_item', itemCount, ESX.Items[itemName].label, sourceXPlayer.name))
 			end
@@ -368,7 +368,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 		if itemCount > 0 and sourceXPlayer.getMoney() >= itemCount then
 			sourceXPlayer.removeMoney(itemCount)
 			targetXPlayer.addMoney   (itemCount)
-
+			TriggerEvent('DiscordBot:ToDiscord', 'inventory', sourceXPlayer.name, 'gaved $'.. ESX.Math.GroupDigits(itemCount) .. ' to ' .. targetXPlayer.name ,'user', true, source, false)
 			TriggerClientEvent('esx:showNotification', _source, _U('gave_money', ESX.Math.GroupDigits(itemCount), targetXPlayer.name))
 			TriggerClientEvent('esx:showNotification', target,  _U('received_money', ESX.Math.GroupDigits(itemCount), sourceXPlayer.name))
 		else
@@ -380,7 +380,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 		if itemCount > 0 and sourceXPlayer.getAccount(itemName).money >= itemCount then
 			sourceXPlayer.removeAccountMoney(itemName, itemCount)
 			targetXPlayer.addAccountMoney   (itemName, itemCount)
-
+			TriggerEvent('DiscordBot:ToDiscord', 'inventory', sourceXPlayer.name, 'gaved $'.. ESX.Math.GroupDigits(itemCount) ..' ' .. Config.AccountLabels[itemName] .. ' to ' .. targetXPlayer.name ,'user', true, source, false)
 			TriggerClientEvent('esx:showNotification', _source, _U('gave_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], targetXPlayer.name))
 			TriggerClientEvent('esx:showNotification', target,  _U('received_account_money', ESX.Math.GroupDigits(itemCount), Config.AccountLabels[itemName], sourceXPlayer.name))
 		else
@@ -399,6 +399,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 				TriggerClientEvent('esx:showNotification', _source, _U('gave_weapon_ammo', weaponLabel, itemCount, targetXPlayer.name))
 				TriggerClientEvent('esx:showNotification', target,  _U('received_weapon_ammo', weaponLabel, itemCount, sourceXPlayer.name))
 			else
+				TriggerEvent('DiscordBot:ToDiscord', 'inventory', sourceXPlayer.name, 'gaved '.. weaponLabel .. ' to ' .. targetXPlayer.name ,'user', true, source, false)
 				TriggerClientEvent('esx:showNotification', _source, _U('gave_weapon', weaponLabel, targetXPlayer.name))
 				TriggerClientEvent('esx:showNotification', target,  _U('received_weapon', weaponLabel, sourceXPlayer.name))
 			end
