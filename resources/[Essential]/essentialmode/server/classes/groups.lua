@@ -79,12 +79,13 @@ user = Group("user", "")
 admin = Group("admin", "user")
 superadmin = Group("superadmin", "admin")
 
+-- Developer, unused by default only for developer
+dev = Group("_dev", "superadmin")
+
 -- ACL
 ExecuteCommand('add_principal group.admin group.user')
 ExecuteCommand('add_principal group.superadmin group.admin')
-
--- Developer, unused by default only for developer
-dev = Group("_dev", "superadmin")
+ExecuteCommand('add_principal group._dev group.superadmin')
 
 -- Custom groups
 AddEventHandler("es:addGroup", function(group, inherit, aceGroup)
