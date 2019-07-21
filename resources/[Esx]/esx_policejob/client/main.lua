@@ -56,6 +56,7 @@ local Keys = {
 	  }
   
 	  ESX.Game.SetVehicleProperties(vehicle, props)
+	  SetVehicleDirtLevel(vehicle, 0.0)
   end
 
   function SetVehicleMaxMods2(vehicle)
