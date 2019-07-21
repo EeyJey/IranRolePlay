@@ -64,8 +64,8 @@
       <envEffScaleMax value="1.000000" />
       <envEffScaleMin2 value="0.000000" />
       <envEffScaleMax2 value="1.000000" />
-      <damageMapScale value="0.600000" />
-      <damageOffsetScale value="1.000000" />
+      <damageMapScale value="0.400000" />
+      <damageOffsetScale value="0.400000" />
       <diffuseTint value="0x00FFFFFF" />
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
