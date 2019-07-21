@@ -56,7 +56,43 @@ local Keys = {
 	  }
   
 	  ESX.Game.SetVehicleProperties(vehicle, props)
+	  SetVehicleDirtLevel(vehicle, 0.0)
   end
+
+  function SetVehicleMaxMods2(vehicle)
+	local props = {
+		modEngine       = 5,
+		modBrakes				=	5,
+		windowTint			=	1,
+		modArmor				= 5,
+		modTransmission = 2,
+		modSuspension   = 4,
+		modTurbo        = true,
+	}
+	
+
+	ESX.Game.SetVehicleProperties(vehicle, props)
+	SetVehicleDirtLevel(vehicle, 0.0)
+end
+
+function SetVehicleMaxMods3(vehicle)
+	local props = {
+		modEngine       = 5,
+		modBrakes				=	5,
+		windowTint			=	1,
+		modArmor				= 5,
+		modTransmission = 2,
+		color1 = 0,
+		color2 = 0,
+		pearlescentColo = 0,
+		modSuspension   = 4,
+		modTurbo        = true,
+	}
+	
+
+	ESX.Game.SetVehicleProperties(vehicle, props)
+	SetVehicleDirtLevel(vehicle, 0.0)
+end
   
   function cleanPlayer(playerPed)
 	  SetPedArmour(playerPed, 0)
@@ -470,7 +506,13 @@ local Keys = {
   
 					  ESX.Game.SpawnVehicle(model, vehicles[partNum].SpawnPoint, vehicles[partNum].Heading, function(vehicle)
 						  TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
-						  SetVehicleMaxMods(vehicle)
+						  if model == "fbi2" or model == "fbi" then
+							SetVehicleMaxMods2(vehicle)
+							elseif model == "insurgent2" or model == "brickade" then
+							  SetVehicleMaxMods3(vehicle)
+							else
+							  SetVehicleMaxMods(vehicle)
+							end
 					  end)
 				  else
   
