@@ -20,7 +20,8 @@ end
 MySQL.ready(function()
 	local result = MySQL.Sync.fetchAll('SELECT * FROM families', {})
 
- 	for i=1, #result, 1 do
+	 for i=1, #result, 1 do
+		print('Family '.. result[i].name .. ' Loaded')
 		Families[result[i].name]        = result[i]
 		Families[result[i].name].grades = {}
 		RegisteredFamilies[i] = result[i].name

