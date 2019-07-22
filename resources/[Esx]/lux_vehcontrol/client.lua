@@ -61,6 +61,7 @@ local eModelsWithPcall =
 	"AMBULANCE",
 	"FIRETRUK",
 	"LGUARD",
+	"POLP1",
 }
 
 
