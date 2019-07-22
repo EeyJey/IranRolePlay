@@ -243,10 +243,7 @@ Config.AuthorizedVehicles = {
 			model = 'police2',
 			label = 'Police Buffalo'
 		},
-		{
-			model = 'policet',
-			label = 'Transporter Van'
-		},
+
 		{
 			model = 'towtruck',
 			label = 'Tow truck'
@@ -456,7 +453,7 @@ Config.AuthorizedVehicles = {
 
 	commander = {	
 		{
-			model = "insurgent2",
+			model = " ",
 			label = "SWAT Insurgent"
 		},
 		{
