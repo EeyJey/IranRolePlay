@@ -13,10 +13,10 @@ local Keys = {
 local PlayerData              = {}
 local HasAlreadyEnteredMarker = false
 local LastZone                = nil
-local CurrentAction           = nil
 local CurrentActionMsg        = ''
 local CurrentActionData       = {}
 local Blips                   = {}
+local CurrentAction           = nil
 
 local isInMarker              = false
 local isInPublicMarker        = false
@@ -277,6 +277,181 @@ function OpenVaultMenu()
   end
 
 end
+
+function WeazelNews()
+
+    local elements = {
+      {label = "Factor", value = 'billing'},
+      {label = "Vasayel", value = 'objects'}
+    }
+    
+
+    ESX.UI.Menu.CloseAll()
+
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'Weazel',
+      {
+        title    = "Weazel News",
+        align    = 'top-left',
+        elements = elements,
+      },
+      function(data, menu)
+
+        if data.current.value == 'billing' then
+          menu.close()
+          OpenBillingMenu()
+        end
+
+        if data.current.value == 'objects' then
+          ESX.UI.Menu.Open(
+			  'default', GetCurrentResourceName(), 'citizen_interaction',
+			  {
+				  title    = "Vasayel Kar",
+				  align    = 'top-right',
+				  elements = {
+					  {label = "Stand With Umbrella",		    value = 'prop_studio_light_03'},
+					  {label = "Stand 1 Light",		            value = 'prop_studio_light_02'},
+					  {label = "Stand 4 Light",		            value = 'prop_studio_light_01'},
+					  {label = "TV Camera",		                value = 'prop_tv_cam_02'},
+					  {label = "Stand 3 Light Horizontal",		value = 'prop_kino_light_03'},
+					  {label = "Stand 3 Light VerticaII",		value = 'prop_kino_light_02'},
+					  {label = "Black screen",                  value = 'prop_scrim_02'},
+					  {label = "Stand 1 Light Vertical",	    value = 'xm_prop_base_tripod_lampb'},
+					  {label = "Stand Mic",		                value = 'v_ilev_fos_mic'},
+					  {label = "Tower Lamp",		            value = 'xm_prop_base_tower_lampa'},
+					  {label = "Lamps Area",		            value = 'v_ilev_carmodlamps'}
+				  }
+			  }, function(data2, menu2)
+				  local model     = data2.current.value
+				  local playerPed = PlayerPedId()
+				  local coords    = GetEntityCoords(playerPed)
+				  local forward   = GetEntityForwardVector(playerPed)
+				  local x, y, z   = table.unpack(coords + forward * 1.0)
+					  z = z - 2.0
+				  
+  
+				  ESX.Game.SpawnObject(model, {
+					  x = x,
+					  y = y,
+					  z = z
+				  }, function(obj)
+					  SetEntityHeading(obj, GetEntityHeading(playerPed))
+					  PlaceObjectOnGroundProperly(obj)
+				  end)
+  
+			  end, function(data2, menu2)
+				  menu2.close()
+			  end)
+        end
+
+      end,
+      
+      function(data, menu)
+        menu.close()
+      end
+    )
+
+end
+
+Citizen.CreateThread(function()
+  
+	local trackedEntities = {
+	  'prop_studio_light_03',
+	  'prop_studio_light_02',
+	  'prop_studio_light_01',
+	  'prop_tv_cam_02',
+	  'prop_kino_light_03',
+	  'prop_kino_light_02',
+	  'prop_scrim_02',
+	  'xm_prop_base_tripod_lampb',
+    'v_ilev_fos_mic',
+    'xm_prop_base_tower_lampa',
+    'v_ilev_carmodlamps'
+	}
+  
+	while true do
+  
+	  Citizen.Wait(1)
+  
+	  local playerPed = PlayerPedId()
+	  local coords    = GetEntityCoords(playerPed)
+  
+	  local closestDistance = -1
+	  local closestEntity   = nil
+  
+	  for i=1, #trackedEntities, 1 do
+  
+		local object = GetClosestObjectOfType(coords.x,  coords.y,  coords.z,  3.0,   GetHashKey(trackedEntities[i]), false, false, false)
+  
+		if DoesEntityExist(object) then
+  
+		  local objCoords = GetEntityCoords(object)
+		  local distance  = GetDistanceBetweenCoords(coords.x,  coords.y,  coords.z,  objCoords.x,  objCoords.y,  objCoords.z,  true)
+  
+		  if closestDistance == -1 or closestDistance > distance then
+			closestDistance = distance
+			closestEntity   = object
+		  end
+  
+		end
+  
+	  end
+  
+	  if closestDistance ~= -1 and closestDistance <= 3.0 then
+  
+		if LastEntity ~= closestEntity then
+		  TriggerEvent('esx_journaliste:EnteredEntityZone', closestEntity)
+		  LastEntity = closestEntity
+		end
+  
+	  else
+  
+		if LastEntity ~= nil then
+		  TriggerEvent('esx_journaliste:ExitedEntityZone', LastEntity)
+		  LastEntity = nil
+		end
+  
+	  end
+  
+	end
+  end)
+
+  AddEventHandler('esx_journaliste:EnteredEntityZone', function(entity)
+  
+    local playerPed = PlayerPedId()
+    
+    if PlayerData.job ~= nil and PlayerData.job.name == 'journaliste' and not IsPedInAnyVehicle(playerPed, false) then
+      CurrentAction     = 'remove_entity'
+      CurrentActionMsg  = "~INPUT_CONTEXT~ ro feshar bede ta object delete she"
+      CurrentActionData = {entity = entity}
+    end
+    
+    if GetEntityModel(entity) == GetHashKey('p_ld_stinger_s') then
+    
+      local playerPed = PlayerPedId()
+      local coords    = GetEntityCoords(playerPed)
+    
+      if IsPedInAnyVehicle(playerPed,  false) then
+    
+      local vehicle = GetVehiclePedIsIn(playerPed)
+    
+      for i=0, 7, 1 do
+        SetVehicleTyreBurst(vehicle,  i,  true,  1000)
+      end
+    
+      end
+    
+    end
+    
+  end)
+
+    AddEventHandler('esx_journaliste:ExitedEntityZone', function(entity)
+  
+      if CurrentAction == 'remove_entity' then
+        CurrentAction = nil
+      end
+      
+    end)
 
 function OpenGetStocksMenu()
 
@@ -754,6 +929,10 @@ Citizen.CreateThread(function()
             OpenVehicleSpawnerMenu()
         end
 
+       if CurrentAction == 'remove_entity' then
+        DeleteEntity(CurrentActionData.entity)
+       end
+
         if CurrentAction == 'delete_vehicle' then
 
           if Config.EnableSocietyOwnedVehicles then
@@ -801,9 +980,9 @@ Citizen.CreateThread(function()
     end
 
     if IsControlJustReleased(0,  Keys['F6']) and IsJobTrue()then
-        OpenBillingMenu()
+       WeazelNews()
     end
 
-
   end
+  
 end)
