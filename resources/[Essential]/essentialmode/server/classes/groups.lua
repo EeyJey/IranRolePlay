@@ -85,7 +85,6 @@ dev = Group("_dev", "superadmin")
 -- ACL
 ExecuteCommand('add_principal group.admin group.user')
 ExecuteCommand('add_principal group.superadmin group.admin')
-ExecuteCommand('add_principal group._dev group.superadmin')
 
 -- Custom groups
 AddEventHandler("es:addGroup", function(group, inherit, aceGroup)

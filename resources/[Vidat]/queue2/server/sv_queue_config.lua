@@ -1,4 +1,4 @@
-Config = {}
+﻿Config = {}
 
 -- priority list can be any identifier. (hex steamid, steamid32, ip) Integer = power over other people with priority
 -- a lot of the steamid converting websites are broken rn and give you the wrong steamid. I use https://steamid.xyz/ with no problems.
@@ -59,6 +59,7 @@ Config.Priority = {
     ['steam:110000106979c8c'] = 70, -- SMZ be darkhast homan hamahang shode ba arash-
     ['steam:1100001322d1a86'] = 70, -- vip
     ['steam:110000136a08587'] = 70, -- Kher3mehraboon streamer
+    ['steam:11000013c19c056'] = 70, -- Kher3mehraboon streamer
 
 
     
