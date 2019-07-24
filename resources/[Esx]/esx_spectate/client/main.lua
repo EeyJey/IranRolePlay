@@ -99,6 +99,134 @@ function getPlayersList()
 	return data
 end
 
+function OpenAdminActionMenu(player)
+
+    ESX.TriggerServerCallback('esx_spectate:getOtherPlayerData', function(data)
+
+      local jobLabel    = nil
+      local sexLabel    = nil
+      local sex         = nil
+      local dobLabel    = nil
+      local heightLabel = nil
+      local idLabel     = nil
+	  local Money		= 0
+	  local Bank		= 0
+	  local blackMoney	= 0
+	  local Inventory	= nil
+	  
+    for i=1, #data.accounts, 1 do
+      if data.accounts[i].name == 'black_money' then
+        blackMoney = data.accounts[i].money
+      end
+    end
+
+	  if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
+        jobLabel = 'Job : ' .. data.job.label .. ' - ' .. data.job.grade_label
+      else
+        jobLabel = 'Job : ' .. data.job.label
+      end
+
+      if data.sex ~= nil then
+        if (data.sex == 'm') or (data.sex == 'M') then
+          sex = 'Male'
+        else
+          sex = 'Female'
+        end
+        sexLabel = 'Sex : ' .. sex
+      else
+        sexLabel = 'Sex : Unknown'
+      end
+	  
+	  if data.money ~= nil then
+		Money = data.money
+		else
+		Money = 'No Data'
+	  end
+
+ 	  if data.bank ~= nil then
+		Bank = data.bank
+		else
+		Bank = 'No Data'
+	  end
+	  
+      if data.dob ~= nil then
+        dobLabel = 'DOB : ' .. data.dob
+      else
+        dobLabel = 'DOB : Unknown'
+      end
+
+      if data.height ~= nil then
+        heightLabel = 'Height : ' .. data.height
+      else
+        heightLabel = 'Height : Unknown'
+      end
+
+      if data.name ~= nil then
+        idLabel = 'Steam ID : ' .. data.name
+      else
+        idLabel = 'Steam ID : Unknown'
+      end
+	  
+      local elements = {
+        {label = 'Name: ' .. data.firstname .. " " .. data.lastname, value = nil},
+        {label = 'Money: '.. data.money, value = nil},
+        {label = 'Bank: '.. data.bank, value = nil},
+        {label = 'Black Money: '.. blackMoney, value = nil, itemType = 'item_account', amount = blackMoney},
+		{label = jobLabel,    value = nil},
+        {label = idLabel,     value = nil},
+    }
+	
+    table.insert(elements, {label = '--- Inventory ---', value = nil})
+
+    for i=1, #data.inventory, 1 do
+      if data.inventory[i].count > 0 then
+        table.insert(elements, {
+          label          = data.inventory[i].label .. ' x ' .. data.inventory[i].count,
+          value          = nil,
+          itemType       = 'item_standard',
+          amount         = data.inventory[i].count,
+        })
+      end
+    end
+	
+    table.insert(elements, {label = '--- Weapons ---', value = nil})
+
+    for i=1, #data.weapons, 1 do
+      table.insert(elements, {
+        label          = ESX.GetWeaponLabel(data.weapons[i].name),
+        value          = nil,
+        itemType       = 'item_weapon',
+        amount         = data.ammo,
+      })
+    end
+      if data.licenses ~= nil then
+
+        table.insert(elements, {label = '--- Licenses ---', value = nil})
+
+        for i=1, #data.licenses, 1 do
+          table.insert(elements, {label = data.licenses[i].label, value = nil})
+        end
+
+      end
+
+      ESX.UI.Menu.Open(
+        'default', GetCurrentResourceName(), 'citizen_interaction',
+        {
+          title    = 'Player Control',
+          align    = 'top-left',
+          elements = elements,
+        },
+        function(data, menu)
+
+        end,
+        function(data, menu)
+          menu.close()
+        end
+      )
+
+    end, GetPlayerServerId(player))
+end
+
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
@@ -153,6 +281,8 @@ RegisterNUICallback('kick', function(data, cb)
 	TriggerEvent('esx_spectate:spectate')
 end)
 
+
+
 Citizen.CreateThread(function()
 
   	while true do
@@ -166,10 +296,11 @@ Citizen.CreateThread(function()
 			local targetPed	  = GetPlayerPed(targetPlayerId)
 			local coords	 = GetEntityCoords(targetPed)
 
-			for i=0, 255, 1 do
+			for i=0, 32, 1 do
 				if i ~= PlayerId() then
 					local otherPlayerPed = GetPlayerPed(i)
 					SetEntityNoCollisionEntity(playerPed,  otherPlayerPed,  true)
+					SetEntityVisible(playerPed, false)
 				end
 			end
 
@@ -206,6 +337,39 @@ Citizen.CreateThread(function()
 			PointCamAtEntity(cam,  targetPed)
 			SetEntityCoords(playerPed,  coords.x, coords.y, coords.z + 10)
 
+			if IsControlPressed(2, 47) then
+			OpenAdminActionMenu(targetPlayerId)
+			end
+			
+-- taken from Easy Admin (thx to Bluethefurry)  --
+			local text = {}
+			-- cheat checks
+			local targetGod = GetPlayerInvincible(targetPlayerId)
+			if targetGod then
+				table.insert(text,"Godmode: ~r~Found~w~")
+			else
+				table.insert(text,"Godmode: ~g~Not Found~w~")
+			end
+			if not CanPedRagdoll(targetPed) and not IsPedInAnyVehicle(targetPed, false) and (GetPedParachuteState(targetPed) == -1 or GetPedParachuteState(targetPed) == 0) and not IsPedInParachuteFreeFall(targetPed) then
+				table.insert(text,"~r~Anti-Ragdoll~w~")
+			end
+			-- health info
+			table.insert(text,"Health"..": "..GetEntityHealth(targetPed).."/"..GetEntityMaxHealth(targetPed))
+			table.insert(text,"Armor"..": "..GetPedArmour(targetPed))
+
+			for i,theText in pairs(text) do
+				SetTextFont(0)
+				SetTextProportional(1)
+				SetTextScale(0.0, 0.30)
+				SetTextDropshadow(0, 0, 0, 0, 255)
+				SetTextEdge(1, 0, 0, 0, 255)
+				SetTextDropShadow()
+				SetTextOutline()
+				SetTextEntry("STRING")
+				AddTextComponentString(theText)
+				EndTextCommandDisplayText(0.3, 0.7+(i/30))
+			end
+-- end of taken from easyadmin -- 
 		end
 
   	end

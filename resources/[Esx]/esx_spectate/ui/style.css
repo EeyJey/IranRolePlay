@@ -10,6 +10,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	display: none;
+
 }
 
 
@@ -37,6 +38,8 @@
 
 .spectate .users{
 	padding: 5px;
+	max-height: 700px;
+    overflow: auto;
 
 }
 
