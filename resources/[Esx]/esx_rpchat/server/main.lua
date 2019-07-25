@@ -1,5 +1,9 @@
-ESX = nil
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ESX = nil 
+Citizen.CreateThread(function()    
+   while ESX == nil do              TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)        
+   Citizen.Wait(0)    
+end     
+end)
 
 function getIdentity(source)
 	local identifier = GetPlayerIdentifiers(source)[1]
@@ -35,6 +39,17 @@ end
 	TriggerEvent('es:addCommand', 'b', function(source, args, user)
 		local name =  GetPlayerName(source)
 		TriggerClientEvent("sendProximityMessageMe", -1, source, "OOC | " .. name, table.concat(args, " "))
+	end)
+
+	TriggerEvent('es:addCommand', 'aooc', function(source, args, user)	
+		local src = source
+		local xPlayer = ESX.GetPlayerFromId(src)
+		print('This is group' .. xPlayer.getGroup())
+		if xPlayer.getGroup() == "superadmin" or "admin" then
+			TriggerClientEvent("sendProximityMessageMe", -1, source, "^1^*Admin ^0| ^2" .. name, table.concat(args, " "))
+		else
+			ESX.ShowNotfication("~r~~h~Shoma Admin nistid!")
+		end
 	end)
 
 	TriggerEvent('es:addCommand', 's', function(source, args, user)
