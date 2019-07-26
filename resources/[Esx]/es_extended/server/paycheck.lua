@@ -11,11 +11,12 @@ ESX.StartPayCheck = function()
 			local fsalary = xPlayer.family.grade_salary
 			local salary  = xPlayer.job.grade_salary
 
-			if salary > 0 then
+			if salary > 0 or fsalary > 0 then
 				if job == 'unemployed' then -- unemployed
 					xPlayer.addAccountMoney('bank', salary)
 					TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), _U('received_paycheck'), _U('received_help', salary), 'CHAR_BANK_MAZE', 9)
-				elseif family ~= 'nofamily' then
+				end
+				if family ~= 'nofamily' then
 					TriggerEvent('irrp_familyaccount:getFamilyAccount', familyaccount, function(account)
 						if account.money >= fsalary and account.pay then
 							xPlayer.addAccountMoney('bank', salary)
@@ -25,7 +26,8 @@ ESX.StartPayCheck = function()
 							TriggerClientEvent('esx:showAdvancedNotification', xPlayer.source, _U('bank'), '', _U('company_nomoney'), 'CHAR_BANK_MAZE', 1)
 						end
 					end)
-				elseif Config.EnableSocietyPayouts then -- possibly a society
+				end
+				if Config.EnableSocietyPayouts then -- possibly a society
 					TriggerEvent('esx_society:getSociety', xPlayer.job.name, function (society)
 						if society ~= nil then -- verified society
 							TriggerEvent('esx_addonaccount:getSharedAccount', society.account, function (account)
