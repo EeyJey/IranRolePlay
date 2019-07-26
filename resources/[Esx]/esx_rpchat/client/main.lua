@@ -3,6 +3,24 @@
   ESX RP Chat
 
 --]]
+ESX = nil
+Citizen.CreateThread(function ()
+	while ESX == nil do
+	  TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+	  Citizen.Wait(0)
+	   PlayerData = ESX.GetPlayerData()
+	end
+  end)
+  
+  RegisterNetEvent('esx:playerLoaded')
+  AddEventHandler('esx:playerLoaded', function(xPlayer)
+	PlayerData = xPlayer
+  end)
+  
+  RegisterNetEvent('esx:setJob')
+  AddEventHandler('esx:setJob', function(job)
+	PlayerData.job = job
+  end)  
 
 RegisterNetEvent('sendProximityMessage')
 AddEventHandler('sendProximityMessage', function(id, name, message)
@@ -16,9 +34,36 @@ AddEventHandler('sendProximityMessage', function(id, name, message)
 end)
 
 RegisterCommand('mp', function(source, args)
-  if IsPedInAnyVehicle(PlayerPedId(-1), true) and args[1] then
+
+  local player = GetPlayerPed(-1)
+	if PlayerData.job.name == "police" then 
+		if (IsPedSittingInAnyVehicle(player)) then
+			local vehicles = {1912215274, -2007026063, 2046537925, -1627000575, 456714581, -1323100960, 2071877360, 831758577, 699188170, 1341474454, -1674384553, -1973172295, 1127131465, -1647941228, -34623805, -1683328900, 1922257928, -305727417}
+
+			local function contains(table, val)
+				for i=1,#table do
+				   if table[i] == val then 
+					  return true
+				   end
+				end
+				return false
+       end
+       
+  if contains(vehicles, GetEntityModel(GetVehiclePedIsIn(player))) then
+    if args[1] then
     TriggerServerEvent('mpCommand', table.concat(args," "))
+    else
+      ESX.ShowNotification('~r~~h~Shoma Hadeaghal bayad yek kalame type konid.')
+    end
+  else
+    ESX.ShowNotification('~r~~h~Shoma Savar mashin police nistid!')
   end
+else
+  ESX.ShowNotification('~g~~h~Baraye estefade az in command bayad dakhel mashin bashid')
+end
+else
+  ESX.ShowNotification('~r~~h~Shoma Police nistid!')
+end
 end, false)
 
 

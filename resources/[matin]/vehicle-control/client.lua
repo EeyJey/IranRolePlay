@@ -301,7 +301,8 @@ AddEventHandler('lock',function()
     local vehicle = saveVehicle
 	local islocked = GetVehicleDoorLockStatus(vehicle)
 	local distanceToVeh = GetDistanceBetweenCoords(GetEntityCoords(player), GetEntityCoords(vehicle), 1)
-		if DoesEntityExist(vehicle) and PlayerData.job.name == "police" then
+		if DoesEntityExist(vehicle) then
+			if PlayerData.job.name == "police" then
 			if distanceToVeh <= lockDistance then
 				if (islocked == 1)then
 				SetVehicleDoorsLocked(vehicle, 2)
@@ -318,6 +319,9 @@ AddEventHandler('lock',function()
 		else
 			ShowNotification("~r~No saved vehicle.")
 		end
+	else
+		ShowNotification("~r~~h~Shoma police nistid")
+	end
 	end)
 
 function ShowNotification( text )
@@ -329,7 +333,20 @@ end
 RegisterNetEvent('save')
 AddEventHandler('save',function(pelak) 
 	local player = GetPlayerPed(-1)
-	if (IsPedSittingInAnyVehicle(player)) and PlayerData.job.name == "police" then 
+	if (IsPedSittingInAnyVehicle(player)) then 
+		print("This is vehicle model: " .. GetEntityModel(GetVehiclePedIsIn(player)))
+		if PlayerData.job.name == "police" then
+			local vehicles = {1912215274, -2007026063, 2046537925, -1627000575, 456714581, -1323100960, 2071877360, 831758577, 699188170, 1341474454, -1674384553, -1973172295, 1127131465, -1647941228, -34623805, -1683328900, 1922257928, -305727417}
+
+			local function contains(table, val)
+				for i=1,#table do
+				   if table[i] == val then 
+					  return true
+				   end
+				end
+				return false
+			 end
+	if contains(vehicles, GetEntityModel(GetVehiclePedIsIn(player))) then
 		if  saved == true then
 			--remove from saved.
 			saveVehicle = nil
@@ -346,6 +363,14 @@ AddEventHandler('save',function(pelak)
 			ShowNotification("~y~" .. GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))) .. "~w~ Be onvan mashin shoma ~g~save ~w~Shod.")
 			saved = true
 		end
+	else
+	ShowNotification("~r~~h~Shoma Faghat Ghader be save kardan mashin haye police hastid")
+	end
+	else
+		ShowNotification("~r~~h~Shoma police nistid")
+	end
+else
+	ShowNotification("~g~~h~Shoma baraye estefade az in command bayad dakhel mashin bashid")
 	end
 end)
 -- R E M O T E --
